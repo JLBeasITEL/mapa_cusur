@@ -275,8 +275,9 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
         origenSeleccionado = nombreAmigable;
       } else { destinoSeleccionado = nombreAmigable; }
       mapTapKey++; 
-      if (origenSeleccionado.isNotEmpty && destinoSeleccionado.isNotEmpty) calcularRuta();
-      else { rutaCalculada = []; tiempoEstimado = ""; }
+      if (origenSeleccionado.isNotEmpty && destinoSeleccionado.isNotEmpty) {
+        calcularRuta();
+      } else { rutaCalculada = []; tiempoEstimado = ""; }
     });
   }
 
@@ -289,7 +290,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
         child: Stack(
           children: [
             Positioned(
-              top: 0, left: 0, right: 0, height: screenHeight * 0.55, 
+              top: 0, left: 0, right: 0, height: screenHeight * 0.4, 
               child: MapImageArea(
                 ruta: rutaCalculada, pixeles: datosDelCampus?['coordenadas_pix'] ?? {},
                 conexiones: datosDelCampus?['conexiones'] ?? {}, coordenadasGeo: datosDelCampus?['coordenadas_geo'] ?? {}, 
@@ -298,7 +299,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
               ),
             ),
             Positioned(
-              bottom: 0, left: 0, right: 0, height: screenHeight * 0.4, 
+              bottom: 0, left: 0, right: 0, height: screenHeight * 0.5, 
               child: PlanningPanel(
                 ubicaciones: ubicacionesDisponibles,
                 onCalcular: () {
