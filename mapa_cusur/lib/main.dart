@@ -53,7 +53,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   int disparadorZoom = 0; // Disparador manual de cámara
 
   final Map<String, String> diccionarioNombres = {
-    'EntradaA': 'Entrada Principal (A)', 'EntradaB': 'Entrada Peatonal (B)', 'EntradaC': 'Entrada Estacionamiento (C)', 'Estacionamiento1': 'Estacionamiento 1', 'Estacionamiento2': 'Estacionamiento 2', 'Estacionamiento3': 'Estacionamiento 3', 'Estacionamiento4': 'Estacionamiento 4', 'Estacionamiento5': 'Estacionamiento 5', 'Edificio_B': 'Edificio B', 'Edificio_C': 'Edificio C', 'Edificio_F': 'Edificio F', 'Edificio_G': 'Edificio G', 'Edificio_H': 'Edificio H', 'Edificio_I': 'Edificio I', 'Edificio_J': 'Edificio J', 'Edificio_L': 'Edificio L', 'Edificio_M': 'Edificio M', 'Edificio_N': 'Edificio N', 'Edificio_P': 'Edificio P', 'Edificio_Q': 'Edificio Q', 'Edificio_R': 'Edificio R', 'Edificio_S': 'Edificio S', 'Edificio_T': 'Edificio T', 'Edificio_U': 'Edificio U', 'Edificio_V': 'Edificio V', 'Edificio_W': 'Edificio W', 'Edificio_X': 'Edificio X', 'Edificio_Y': 'Edificio Y', 'Edificio_Z': 'Edificio Z', 'C_Acuatico': 'Centro Acuático', 'Gimnasio': 'Gimnasio Auditorio', 'CASA': 'C.A.S.A. (Biblioteca)', 'Cafeteria': 'Cafetería Principal', 'Cafeteria_P': 'Cafetería Pequeña', 'Rectoria': 'Rectoría', 'Veterinaria': 'Hospital Veterinario', 'Clinica_Escuela': 'Clínica Escuela', 'Bufete_Juridico': 'Bufete Jurídico', 'Auditorio_Ochoa': 'Auditorio Hugo Gutiérrez Ochoa', 'Auditorio_Zinser': 'Auditorio Adolfo Aguilar Zínser', 'Auditorio_CASA': 'Auditorio C.A.S.A.', 'Sala_de_Gobierno': 'Sala de Gobierno', 'CMID': 'C.M.I.D. (Discapacidad)', 'RadioUDG': 'Radio UDG', 'Proteccion_Civil': 'Protección Civil',
+    'EntradaA': 'Entrada Sur', 'EntradaB': 'Entrada Principal', 'EntradaC': 'Entrada Este', 'Estacionamiento1': 'Estacionamiento 1', 'Estacionamiento2': 'Estacionamiento 2', 'Estacionamiento3': 'Estacionamiento 3', 'Estacionamiento4': 'Estacionamiento 4', 'Estacionamiento5': 'Estacionamiento 5', 'Edificio_B': 'Edificio B', 'Edificio_C': 'Edificio C', 'Edificio_F': 'Edificio F', 'Edificio_G': 'Edificio G', 'Edificio_H': 'Edificio H', 'Edificio_I': 'Edificio I', 'Edificio_J': 'Edificio J', 'Edificio_L': 'Edificio L', 'Edificio_M': 'Edificio M', 'Edificio_N': 'Edificio N', 'Edificio_P': 'Edificio P', 'Edificio_Q': 'Edificio Q', 'Edificio_R': 'Edificio R', 'Edificio_S': 'Edificio S', 'Edificio_T': 'Edificio T', 'Edificio_U': 'Edificio U', 'Edificio_V': 'Edificio V', 'Edificio_W': 'Edificio W', 'Edificio_X': 'Edificio X', 'Edificio_Y': 'Edificio Y', 'Edificio_Z': 'Edificio Z', 'C_Acuatico': 'Centro Acuático', 'Gimnasio': 'Gimnasio', 'CASA': 'C.A.S.A. (Biblioteca)', 'Cafeteria': 'Cafetería Principal', 'Cafeteria_P': 'Cafetería Pequeña', 'Rectoria': 'Rectoría', 'Veterinaria': 'Hospital Veterinario', 'Clinica_Escuela': 'Clínica Escuela', 'Bufete_Juridico': 'Bufete Jurídico', 'Auditorio_Ochoa': 'Auditorio Antonio González Ochoa', 'Auditorio_Zinser': 'Auditorio Adolfo Aguilar Zínser', 'Auditorio_CASA': 'Auditorio C.A.S.A.', 'Sala_de_Gobierno': 'Sala de Gobierno', 'CMID': 'C.M.I.D.', 'RadioUDG': 'Radio UDG', 'Proteccion_Civil': 'Protección Civil',
   };
 
   @override
@@ -84,11 +84,103 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
     try {
       final String respuesta = await rootBundle.loadString('assets/campus_data.json');
       final data = json.decode(respuesta);
+      
+      // ¡MAGIA! Generamos los puntos intermedios automáticamente
+      _interpolarGrafo(data);
+      
       final Map<String, dynamic> coordenadasGeo = data['coordenadas_geo'];
-      final List<String> filtrados = coordenadasGeo.keys.where((id) => diccionarioNombres.containsKey(id)).map((id) => diccionarioNombres[id]!).toList();
+      final List<String> filtrados = coordenadasGeo.keys
+          .where((id) => diccionarioNombres.containsKey(id))
+          .map((id) => diccionarioNombres[id]!)
+          .toList();
+
       filtrados.sort();
-      setState(() { datosDelCampus = data; ubicacionesDisponibles = filtrados; });
-    } catch (e) { print("Error cargando datos: $e"); }
+
+      setState(() {
+        datosDelCampus = data;
+        ubicacionesDisponibles = filtrados;
+      });
+    } catch (e) {
+      print("❌ Error cargando datos: $e");
+    }
+  }
+
+  // --- EL ALGORITMO CREADOR DE PUNTOS FANTASMA (CORREGIDO) ---
+  void _interpolarGrafo(Map<String, dynamic> data) {
+    Map<String, dynamic> geo = data['coordenadas_geo'];
+    Map<String, dynamic> pix = data['coordenadas_pix'];
+    Map<String, dynamic> con = data['conexiones'];
+
+    Map<String, dynamic> nuevasGeo = Map<String, dynamic>.from(geo);
+    Map<String, dynamic> nuevasPix = Map<String, dynamic>.from(pix);
+    Map<String, dynamic> nuevasCon = {};
+    
+    for(String nodo in con.keys) {
+      nuevasCon[nodo] = Map<String, dynamic>.from(con[nodo]);
+    }
+
+    double maxDistanciaMetros = 8.0; 
+
+    Set<String> aristasProcesadas = {};
+    List<String> nodosOriginales = con.keys.toList();
+
+    for (String origen in nodosOriginales) {
+      Map<String, dynamic> vecinos = Map<String, dynamic>.from(con[origen] ?? {});
+      
+      for (String destino in vecinos.keys) {
+        if (!geo.containsKey(origen) || !geo.containsKey(destino)) continue;
+
+        String aristaId = origen.compareTo(destino) < 0 ? "${origen}_$destino" : "${destino}_$origen";
+        if (aristasProcesadas.contains(aristaId)) continue;
+        aristasProcesadas.add(aristaId);
+        
+        double lat1 = geo[origen][0]; double lng1 = geo[origen][1];
+        double lat2 = geo[destino][0]; double lng2 = geo[destino][1];
+        
+        double distancia = Geolocator.distanceBetween(lat1, lng1, lat2, lng2);
+        
+        if (distancia > maxDistanciaMetros) {
+          int numPuntos = (distancia / maxDistanciaMetros).floor();
+          
+          double p1x = pix[origen][0].toDouble(); double p1y = pix[origen][1].toDouble();
+          double p2x = pix[destino][0].toDouble(); double p2y = pix[destino][1].toDouble();
+          
+          // --- ¡AQUÍ ESTÁ LA CORRECCIÓN DE LOS MINUTOS! ---
+          // Tomamos el tiempo original (ej. 1.5 minutos) y lo dividimos entre los tramos
+          double pesoOriginal = (vecinos[destino] as num).toDouble();
+          double tiempoPorTramo = pesoOriginal / (numPuntos + 1); 
+          
+          nuevasCon[origen]?.remove(destino);
+          nuevasCon[destino]?.remove(origen);
+          
+          String nodoAnterior = origen;
+          
+          for (int i = 1; i <= numPuntos; i++) {
+            double fraccion = i / (numPuntos + 1);
+            String nuevoId = "${aristaId}_inter_$i"; 
+            
+            nuevasGeo[nuevoId] = [lat1 + (lat2 - lat1) * fraccion, lng1 + (lng2 - lng1) * fraccion];
+            nuevasPix[nuevoId] = [p1x + (p2x - p1x) * fraccion, p1y + (p2y - p1y) * fraccion];
+            
+            if (nuevasCon[nodoAnterior] == null) nuevasCon[nodoAnterior] = <String, dynamic>{};
+            nuevasCon[nodoAnterior][nuevoId] = tiempoPorTramo; // Usamos el tiempo fraccionado
+            
+            if (nuevasCon[nuevoId] == null) nuevasCon[nuevoId] = <String, dynamic>{};
+            nuevasCon[nuevoId][nodoAnterior] = tiempoPorTramo; // Usamos el tiempo fraccionado
+            
+            nodoAnterior = nuevoId;
+          }
+          
+          nuevasCon[nodoAnterior][destino] = tiempoPorTramo;
+          if (nuevasCon[destino] == null) nuevasCon[destino] = <String, dynamic>{};
+          nuevasCon[destino][nodoAnterior] = tiempoPorTramo;
+        }
+      }
+    }
+    
+    data['coordenadas_geo'] = nuevasGeo;
+    data['coordenadas_pix'] = nuevasPix;
+    data['conexiones'] = nuevasCon;
   }
 
   String _encontrarNodoMasCercanoAlGps(double userLat, double userLng) {
@@ -513,9 +605,15 @@ class RoutePainter extends CustomPainter {
     }
 
     for (var origen in conexiones.keys) {
-      var p1 = pixeles[origen]; if (p1 == null) continue;
+      var p1 = pixeles[origen];
+      if (p1 == null) continue;
       Offset punto1 = transformarPunto(p1);
-      canvas.drawCircle(punto1, 8.0 / zoomScale, paintNodo); 
+      
+      // Ocultamos los puntos fantasmas visualmente, pero dejamos que la línea pase por ellos
+      if (!origen.contains('_inter_')) {
+        canvas.drawCircle(punto1, 8.0 / zoomScale, paintNodo); 
+      }
+      
       Map<String, dynamic> vecinos = conexiones[origen] ?? {};
       for (var destino in vecinos.keys) {
         var p2 = pixeles[destino];
