@@ -166,3 +166,6 @@ El nombre visible de la app es **RutaCUSur** en ambas plataformas (configurado e
 - `test/widget_test.dart` es todavía la prueba por defecto de un proyecto Flutter nuevo (contador), no cubre la lógica real de la app.
 - No hay modularización: toda la lógica vive en un único archivo `main.dart`.
 - No hay CI configurado.
+
+
+- © 2026 Juan Luis Beas. Todos los derechos reservados. Código publicado solo como portafolio.
