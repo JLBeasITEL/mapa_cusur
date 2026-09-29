@@ -1364,11 +1364,11 @@
         },
         "B1": {
             "Rectoria": 0.45,
-            "B2": 0.0,
-            "B3": 0.72,
+            "B2": 0.63,
+            "B3": 0.35,
             "Edificio_B": 0.22,
-            "S3": 1.02,
-            "S4": 1.1,
+            "S3": 0.41,
+            "S4": 0.53,
             "RB": 0.34,
             "R3": 0.38
         },
@@ -1629,8 +1629,7 @@
         "R4": {
             "R3": 0.19,
             "S3": 0.16,
-            "Edificio_S": 0.42,
-            "R4": 0.0
+            "Edificio_S": 0.42
         },
         "Edificio_R": {
             "R3": 0.24,
@@ -1926,9 +1925,9 @@
         },
         "Estacionamiento1": {
             "VT": 1.17,
-            "M10": 2.22,
-            "U4": 1.96,
-            "U2": 1.41
+            "M10": 1.16,
+            "U4": 0.95,
+            "U2": 0.34
         },
         "Estacionamiento2": {
             "CF2": 0.37,
@@ -2003,5 +2002,15 @@
             "Y4": 0.65,
             "X3": 0.53
         }
-    }
+    },
+    "puntos_control": [
+        "Bufete_Juridico",
+        "Edificio_F",
+        "Edificio_L",
+        "Edificio_N",
+        "Edificio_T",
+        "Edificio_W",
+        "Edificio_Y",
+        "Proteccion_Civil"
+    ]
 }
