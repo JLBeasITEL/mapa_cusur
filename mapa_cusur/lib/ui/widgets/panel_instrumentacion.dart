@@ -10,7 +10,7 @@ import '../../utils/cronometro.dart';
 /// instrumentación está activo -ver `kModoInstrumentacion` en
 /// `campus_map_screen.dart`-, así que no aparece en una build de release
 /// normal.
-class PanelInstrumentacion extends StatelessWidget {
+class PanelInstrumentacion extends StatefulWidget {
   final Cronometro cronometro;
   final SesionCampo? sesionActiva;
   final String? rutaArchivoActivo;
@@ -38,6 +38,11 @@ class PanelInstrumentacion extends StatelessWidget {
     );
   }
 
+  @override
+  State<PanelInstrumentacion> createState() => _PanelInstrumentacionState();
+}
+
+class _PanelInstrumentacionState extends State<PanelInstrumentacion> {
   String _ms(double micros) => (micros / 1000).toStringAsFixed(2);
 
   @override
@@ -55,14 +60,27 @@ class PanelInstrumentacion extends StatelessWidget {
         children: [
           Text('Instrumentación de campo', style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: 16),
-          Text('Cronómetro', style: Theme.of(context).textTheme.titleMedium),
+          Row(
+            children: [
+              Expanded(
+                child: Text('Cronómetro',
+                    style: Theme.of(context).textTheme.titleMedium),
+              ),
+              // Para medir cada recorrido por separado sin cerrar la app.
+              TextButton.icon(
+                onPressed: () => setState(widget.cronometro.limpiar),
+                icon: const Icon(Icons.restart_alt),
+                label: const Text('Reiniciar cronómetro'),
+              ),
+            ],
+          ),
           const SizedBox(height: 4),
-          if (cronometro.etiquetas.isEmpty)
+          if (widget.cronometro.etiquetas.isEmpty)
             const Text('Sin mediciones todavía.')
           else
-            for (final etiqueta in cronometro.etiquetas)
+            for (final etiqueta in widget.cronometro.etiquetas)
               Builder(builder: (_) {
-                final r = cronometro.resumenDe(etiqueta);
+                final r = widget.cronometro.resumenDe(etiqueta);
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 2),
                   child: Text(
@@ -74,23 +92,23 @@ class PanelInstrumentacion extends StatelessWidget {
           const Divider(height: 32),
           Text('Registro de recorrido', style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 8),
-          if (sesionActiva == null)
+          if (widget.sesionActiva == null)
             ElevatedButton.icon(
-              onPressed: onIniciarSesion,
+              onPressed: widget.onIniciarSesion,
               icon: const Icon(Icons.fiber_manual_record),
               label: const Text('Iniciar sesión de registro'),
             )
           else ...[
-            Text('Activa: ${sesionActiva!.dispositivo} · ${sesionActiva!.recorridoId}'),
-            if (rutaArchivoActivo != null)
+            Text('Activa: ${widget.sesionActiva!.dispositivo} · ${widget.sesionActiva!.recorridoId}'),
+            if (widget.rutaArchivoActivo != null)
               Padding(
                 padding: const EdgeInsets.only(top: 4),
-                child: SelectableText(rutaArchivoActivo!,
+                child: SelectableText(widget.rutaArchivoActivo!,
                     style: const TextStyle(fontSize: 11, color: Colors.grey)),
               ),
             const SizedBox(height: 8),
             ElevatedButton.icon(
-              onPressed: onDetenerSesion,
+              onPressed: widget.onDetenerSesion,
               icon: const Icon(Icons.stop),
               label: const Text('Detener sesión'),
             ),
@@ -102,8 +120,8 @@ class PanelInstrumentacion extends StatelessWidget {
             subtitle: const Text(
                 'Al tocar un nodo en el mapa, registra el error de ambos '
                 'modelos de transformación con la lectura de GPS actual.'),
-            value: modoVerificacion,
-            onChanged: onCambiarModoVerificacion,
+            value: widget.modoVerificacion,
+            onChanged: widget.onCambiarModoVerificacion,
           ),
         ],
       ),
