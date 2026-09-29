@@ -24,6 +24,10 @@ class RegistroCsvCampo {
 
   RegistroCsvCampo({required this.sesion, required this.directorio});
 
+  /// Ruta completa del CSV de esta sesión, para mostrarla en pantalla y
+  /// saber dónde buscarlo en el teléfono.
+  String get rutaArchivo => '${directorio.path}/${sesion.nombreArchivo}';
+
   /// Nombres de columna, en el orden exacto en que se escriben. Cualquier
   /// columna ausente en una fila dada se escribe vacía -nunca se omite ni
   /// se reordena una columna, para que el CSV sea siempre rectangular.
@@ -75,7 +79,7 @@ class RegistroCsvCampo {
     if (!await directorio.exists()) {
       await directorio.create(recursive: true);
     }
-    final nuevo = File('${directorio.path}/${sesion.nombreArchivo}');
+    final nuevo = File(rutaArchivo);
     _archivo = nuevo;
     return nuevo;
   }

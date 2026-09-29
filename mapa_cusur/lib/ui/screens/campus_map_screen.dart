@@ -6,7 +6,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:path_provider/path_provider.dart';
 
 import '../../data/campus_repository.dart';
 import '../../data/diccionario_nombres.dart';
@@ -14,6 +13,7 @@ import '../../domain/dijkstra.dart';
 import '../../domain/interpolacion_nodos.dart';
 import '../../domain/transformacion_geo.dart';
 import '../../domain/ubicacion_en_ruta.dart';
+import '../../instrumentacion/directorio_registros.dart';
 import '../../instrumentacion/registro_csv_campo.dart';
 import '../../instrumentacion/sesion_campo.dart';
 import '../../models/grafo_campus.dart';
@@ -364,15 +364,15 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   Future<void> _iniciarSesionCampo() async {
     final sesion = await SelectorSesionCampoDialog.mostrar(context);
     if (sesion == null || !mounted) return;
-    final directorio = await getApplicationDocumentsDirectory();
+    final directorio = await resolverDirectorioRegistros();
+    if (!mounted) return;
+    final registro = RegistroCsvCampo(sesion: sesion, directorio: directorio);
     setState(() {
       _sesionCampo = sesion;
-      _registroCampo = RegistroCsvCampo(sesion: sesion, directorio: directorio);
+      _registroCampo = registro;
     });
-    if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Registro iniciado: ${sesion.nombreArchivo}')));
-    }
+    ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Registro iniciado: ${registro.rutaArchivo}')));
   }
 
   void _detenerSesionCampo() {
@@ -442,7 +442,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
       PanelInstrumentacion(
         cronometro: _cronometro,
         sesionActiva: _sesionCampo,
-        nombreArchivoActivo: _sesionCampo?.nombreArchivo,
+        rutaArchivoActivo: _registroCampo?.rutaArchivo,
         modoVerificacion: _modoVerificacion,
         onIniciarSesion: () {
           Navigator.of(context).pop();

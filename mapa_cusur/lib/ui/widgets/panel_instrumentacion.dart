@@ -13,7 +13,7 @@ import '../../utils/cronometro.dart';
 class PanelInstrumentacion extends StatelessWidget {
   final Cronometro cronometro;
   final SesionCampo? sesionActiva;
-  final String? nombreArchivoActivo;
+  final String? rutaArchivoActivo;
   final bool modoVerificacion;
   final VoidCallback onIniciarSesion;
   final VoidCallback onDetenerSesion;
@@ -23,7 +23,7 @@ class PanelInstrumentacion extends StatelessWidget {
     super.key,
     required this.cronometro,
     required this.sesionActiva,
-    required this.nombreArchivoActivo,
+    required this.rutaArchivoActivo,
     required this.modoVerificacion,
     required this.onIniciarSesion,
     required this.onDetenerSesion,
@@ -82,10 +82,10 @@ class PanelInstrumentacion extends StatelessWidget {
             )
           else ...[
             Text('Activa: ${sesionActiva!.dispositivo} · ${sesionActiva!.recorridoId}'),
-            if (nombreArchivoActivo != null)
+            if (rutaArchivoActivo != null)
               Padding(
                 padding: const EdgeInsets.only(top: 4),
-                child: Text(nombreArchivoActivo!,
+                child: SelectableText(rutaArchivoActivo!,
                     style: const TextStyle(fontSize: 11, color: Colors.grey)),
               ),
             const SizedBox(height: 8),
