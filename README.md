@@ -257,4 +257,6 @@ El nombre visible de la app es **RutaCUSur** en ambas plataformas; el identifica
 - 38 asimetrías en `conexiones` (de las 50 originales, se corrigieron 7 + un autolazo) y 2 pares de valores distintos entre direcciones siguen sin resolverse -documentadas en `REPORTE_DATOS.md`, pendientes de una decisión humana sobre el criterio de corrección-.
 - La lista de dispositivos para la instrumentación de campo (`--dart-define=DISPOSITIVO=...`) no tiene un catálogo fijo en la app a propósito: aún no está definido qué equipos se usarán en las pruebas de campo.
 - No hay CI configurado.
-- Declarado explícitamente fuera de alcance (no es una limitación, es una decisión de diseño): brújula, sensores inerciales, dead reckoning, rutas de accesibilidad, panel administrativo, editor visual del grafo.
+
+
+- © 2026 Juan Luis Beas. Todos los derechos reservados. Código publicado solo como portafolio.

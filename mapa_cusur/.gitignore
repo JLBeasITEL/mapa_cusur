@@ -44,10 +44,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-MATERIAL_TECNICO_TESIS.md
-MEJORAS.md
-REPORTE_DATOS.md
-
 # Secretos y configuración sensible
 .env
 .env.*
@@ -56,3 +52,8 @@ google-services.json
 GoogleService-Info.plist
 *.pem
 *.p12
+
+# Documentos de trabajo de la tesis (no públicos)
+MATERIAL_TECNICO_TESIS.md
+MEJORAS.md
+REPORTE_DATOS.md
