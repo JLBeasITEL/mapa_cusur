@@ -44,6 +44,10 @@ const String _modoTransformacion =
 /// menú de nodo llegan a existir.
 const bool _modoInstrumentacion = bool.fromEnvironment('INSTRUMENTACION');
 
+/// Cuánto se espera la lectura de GPS de un punto de verificación antes de
+/// darla por fallida.
+const Duration _kTiempoMaximoLecturaVerificacion = Duration(seconds: 15);
+
 class CampusMapScreen extends StatefulWidget {
   const CampusMapScreen({super.key});
 
@@ -81,12 +85,6 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   UbicacionEnGrafo? _ubicacionActual;
   UbicacionEnGrafo? _ultimaUbicacionUsadaParaRuta; // para la histéresis
 
-  // Última lectura cruda del GPS (sin filtrar ni suavizar), para el modo
-  // punto de verificación (Fase 5, ítem 3): ahí interesa el error del
-  // modelo de transformación sobre la lectura real, no sobre la posición
-  // ya corregida.
-  Position? _ultimaPosicionCruda;
-
   // Registro en paralelo del nodo que habría devuelto el método anterior
   // (snapping al nodo más cercano, sin filtro ni suavizado) con la misma
   // lectura cruda de GPS: permite reportar en campo el error real de
@@ -97,6 +95,9 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   SesionCampo? _sesionCampo;
   RegistroCsvCampo? _registroCampo;
   bool _modoVerificacion = false;
+  // Evita pedir dos lecturas a la vez (y registrar filas duplicadas) si se
+  // toca otro nodo mientras la primera todavía no llega.
+  bool _obteniendoLecturaVerificacion = false;
 
   int disparadorZoom = 0; // Disparador manual de cámara
 
@@ -211,7 +212,6 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
         _rastreandoGPS = false;
         _ubicacionActual = null;
         _ultimaUbicacionUsadaParaRuta = null;
-        _ultimaPosicionCruda = null;
         nodoMasCercanoMetodoAnterior = null;
       });
       return;
@@ -245,8 +245,6 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   void _procesarLecturaGps(Position position) {
     final grafo = _grafo;
     if (grafo == null) return;
-
-    _ultimaPosicionCruda = position;
 
     // Registro en paralelo: qué nodo habría devuelto el snapping por nodo
     // más cercano con esta misma lectura cruda -sin filtro de precisión ni
@@ -390,20 +388,61 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   }
 
   /// Modo punto de verificación (Fase 5, ítem 3): el usuario confirma que
-  /// está parado en [nodoId] y se compara la lectura de GPS cruda más
-  /// reciente contra lo que predice cada modelo de transformación para esa
-  /// misma posición conocida.
+  /// está parado en [nodoId], se pide una lectura de GPS nueva en ese
+  /// momento y se compara contra lo que predice cada modelo de
+  /// transformación para esa misma posición conocida. Si la lectura falla
+  /// o tarda más de [_kTiempoMaximoLecturaVerificacion], no se registra
+  /// nada.
   Future<void> _registrarVerificacionEnNodo(String nodoId) async {
+    if (_obteniendoLecturaVerificacion) return;
     final grafo = _grafo;
-    final posicion = _ultimaPosicionCruda;
     final dosPuntos = _transformacionDosPuntos;
-    if (grafo == null || posicion == null || dosPuntos == null) {
+    if (grafo == null || dosPuntos == null) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Aún no hay una lectura de GPS para verificar.')));
+          content: Text('El mapa aún no termina de cargar.')));
       return;
     }
     final Nodo? nodo = grafo.nodos[nodoId];
     if (nodo == null) return;
+
+    final mensajero = ScaffoldMessenger.of(context);
+    mensajero.showSnackBar(const SnackBar(
+      duration: Duration(minutes: 1), // se oculta a mano al terminar
+      content: Row(
+        children: [
+          SizedBox(
+            width: 18,
+            height: 18,
+            child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+          ),
+          SizedBox(width: 12),
+          Text('Obteniendo lectura…'),
+        ],
+      ),
+    ));
+
+    _obteniendoLecturaVerificacion = true;
+    final Position posicion;
+    try {
+      posicion = await Geolocator.getCurrentPosition(
+        locationSettings:
+            const LocationSettings(accuracy: LocationAccuracy.bestForNavigation),
+      ).timeout(_kTiempoMaximoLecturaVerificacion);
+    } catch (e) {
+      final String motivo = e is TimeoutException
+          ? 'tardó más de ${_kTiempoMaximoLecturaVerificacion.inSeconds} s'
+          : '$e';
+      if (mounted) {
+        mensajero
+          ..hideCurrentSnackBar()
+          ..showSnackBar(SnackBar(
+              content: Text('No se pudo obtener la lectura de GPS ($motivo). '
+                  'No se registró nada.')));
+      }
+      return;
+    } finally {
+      _obteniendoLecturaVerificacion = false;
+    }
 
     // Error del GPS solo: lectura cruda vs. coordenadas reales del nodo,
     // sin pasar por ningún modelo de transformación.
@@ -438,7 +477,8 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
     );
 
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    mensajero.hideCurrentSnackBar();
+    mensajero.showSnackBar(SnackBar(
       content: Text('Verificación en $nodoId — '
           'GPS: ${errorGpsM.toStringAsFixed(1)} m · '
           'dos puntos: ${errorMDosPuntos.toStringAsFixed(1)} m · '
