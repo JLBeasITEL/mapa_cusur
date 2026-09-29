@@ -71,6 +71,11 @@ class RegistroCsvCampo {
     'pixel_y_afin',
     'error_px_afin',
     'error_m_afin',
+    // --- Solo en filas de punto de verificación (agregadas al final para
+    // no romper los CSV ya generados ni el analizador) ---
+    'nodo_lat',
+    'nodo_lng',
+    'error_gps_m', // lectura cruda vs. nodo, sin pasar por la proyección
   ];
 
   Future<File> _obtenerArchivo() async {
@@ -145,10 +150,15 @@ class RegistroCsvCampo {
   /// Registra un punto de verificación manual (ítem 3): el usuario confirmó
   /// que está físicamente parado en [nodoVerificado], y se compara esa
   /// posición conocida contra lo que predice cada modelo de transformación
-  /// para la lectura de GPS actual.
+  /// para la lectura de GPS actual. [errorGpsM] es la distancia entre la
+  /// lectura cruda y ([nodoLat], [nodoLng]): el error del sensor solo, sin
+  /// el de la proyección a píxeles que sí incluyen los errores por modelo.
   Future<void> registrarPuntoVerificacion({
     required Position position,
     required String nodoVerificado,
+    required double nodoLat,
+    required double nodoLng,
+    required double errorGpsM,
     required ({double x, double y}) pixelDosPuntos,
     required double errorPxDosPuntos,
     required double errorMDosPuntos,
@@ -167,6 +177,9 @@ class RegistroCsvCampo {
     fila['pixel_y_afin'] = pixelAfin.y.toString();
     fila['error_px_afin'] = errorPxAfin.toString();
     fila['error_m_afin'] = errorMAfin.toString();
+    fila['nodo_lat'] = nodoLat.toString();
+    fila['nodo_lng'] = nodoLng.toString();
+    fila['error_gps_m'] = errorGpsM.toString();
     await _escribirFila(fila);
   }
 

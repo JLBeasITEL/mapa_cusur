@@ -97,11 +97,15 @@ def analizar_puntos_verificacion(filas):
         return
 
     print(f"\n=== Puntos de verificación ({len(puntos)} filas) ===")
+    # error_gps_m se agregó después: los CSV anteriores no la traen, y en
+    # ese caso _flotante() recibe None y _resumen() reporta "sin datos".
+    errores_gps = [_flotante(f.get("error_gps_m")) for f in puntos]
     errores_dospuntos = [_flotante(f.get("error_m_dospuntos")) for f in puntos]
     errores_afin = [_flotante(f.get("error_m_afin")) for f in puntos]
 
-    print("Error del modelo de dos puntos: " + _resumen(errores_dospuntos, " m"))
-    print("Error del modelo afín:          " + _resumen(errores_afin, " m"))
+    print("Error del GPS (lectura vs. nodo): " + _resumen(errores_gps, " m"))
+    print("Error del modelo de dos puntos:   " + _resumen(errores_dospuntos, " m"))
+    print("Error del modelo afín:            " + _resumen(errores_afin, " m"))
 
     print("\nPor nodo verificado:")
     por_nodo = defaultdict(list)
@@ -109,9 +113,11 @@ def analizar_puntos_verificacion(filas):
         nodo = f.get("nodo_verificado_manualmente", "?")
         por_nodo[nodo].append(f)
     for nodo, filas_nodo in sorted(por_nodo.items()):
+        e_gps = [_flotante(f.get("error_gps_m")) for f in filas_nodo]
         e_dos = [_flotante(f.get("error_m_dospuntos")) for f in filas_nodo]
         e_afin = [_flotante(f.get("error_m_afin")) for f in filas_nodo]
-        print(f"  {nodo}: dos puntos {_resumen(e_dos, ' m')} | "
+        print(f"  {nodo}: GPS {_resumen(e_gps, ' m')} | "
+              f"dos puntos {_resumen(e_dos, ' m')} | "
               f"afín {_resumen(e_afin, ' m')}")
 
 

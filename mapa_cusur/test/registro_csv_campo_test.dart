@@ -101,6 +101,10 @@ void main() {
     // ausentes -la fila sigue siendo rectangular-.
     expect(fila['proyeccion_lat'], '');
     expect(fila['arista_a'], '');
+    // Las columnas propias del punto de verificación también quedan vacías.
+    expect(fila['nodo_lat'], '');
+    expect(fila['nodo_lng'], '');
+    expect(fila['error_gps_m'], '');
   });
 
   test('columnas derivadas se llenan cuando hay una ubicación proyectada',
@@ -165,6 +169,9 @@ void main() {
     await registro.registrarPuntoVerificacion(
       position: _posicionDePrueba(),
       nodoVerificado: 'Edificio_F',
+      nodoLat: 19.72503,
+      nodoLng: -103.46204,
+      errorGpsM: 5.3,
       pixelDosPuntos: (x: 100.0, y: 200.0),
       errorPxDosPuntos: 15.0,
       errorMDosPuntos: 8.5,
@@ -183,9 +190,22 @@ void main() {
     expect(double.parse(fila['error_m_dospuntos']!), 8.5);
     expect(double.parse(fila['error_px_afin']!), 3.0);
     expect(double.parse(fila['error_m_afin']!), 1.7);
+    // Error del GPS solo, con las coordenadas del nodo contra las que se
+    // midió.
+    expect(double.parse(fila['nodo_lat']!), closeTo(19.72503, 1e-9));
+    expect(double.parse(fila['nodo_lng']!), closeTo(-103.46204, 1e-9));
+    expect(double.parse(fila['error_gps_m']!), 5.3);
     // Los datos crudos de la lectura siguen ahí.
     expect(double.parse(fila['lat']!), closeTo(19.7250, 1e-9));
     expect(double.parse(fila['accuracy_m']!), 8.0);
+  });
+
+  test('las columnas del error del GPS van al final, sin mover las '
+      'existentes', () {
+    const columnas = RegistroCsvCampo.columnas;
+    expect(columnas.sublist(columnas.length - 3),
+        ['nodo_lat', 'nodo_lng', 'error_gps_m']);
+    expect(columnas[columnas.length - 4], 'error_m_afin');
   });
 
   test('varias filas se anexan al mismo archivo con un solo encabezado',
@@ -200,6 +220,9 @@ void main() {
     await registro.registrarPuntoVerificacion(
       position: _posicionDePrueba(),
       nodoVerificado: 'Edificio_F',
+      nodoLat: 1.0,
+      nodoLng: 1.0,
+      errorGpsM: 1.0,
       pixelDosPuntos: (x: 1.0, y: 1.0),
       errorPxDosPuntos: 1.0,
       errorMDosPuntos: 1.0,

@@ -20,6 +20,7 @@ import '../../models/grafo_campus.dart';
 import '../../models/nodo.dart';
 import '../../models/ruta.dart';
 import '../../utils/cronometro.dart';
+import '../../utils/geodesia.dart';
 import '../../utils/indice_espacial.dart';
 import '../widgets/map_image_area.dart';
 import '../widgets/panel_instrumentacion.dart';
@@ -404,6 +405,11 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
     final Nodo? nodo = grafo.nodos[nodoId];
     if (nodo == null) return;
 
+    // Error del GPS solo: lectura cruda vs. coordenadas reales del nodo,
+    // sin pasar por ningún modelo de transformación.
+    final double errorGpsM = distanciaHaversineMetros(
+        posicion.latitude, posicion.longitude, nodo.lat, nodo.lng);
+
     final pixelDosPuntos = dosPuntos.aPixeles(posicion.latitude, posicion.longitude);
     final double errorPxDosPuntos = _distanciaPx(pixelDosPuntos, nodo);
     final double errorMDosPuntos =
@@ -420,6 +426,9 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
     await _registroCampo?.registrarPuntoVerificacion(
       position: posicion,
       nodoVerificado: nodoId,
+      nodoLat: nodo.lat,
+      nodoLng: nodo.lng,
+      errorGpsM: errorGpsM,
       pixelDosPuntos: pixelDosPuntos,
       errorPxDosPuntos: errorPxDosPuntos,
       errorMDosPuntos: errorMDosPuntos,
@@ -430,9 +439,10 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
 
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text('Verificación en $nodoId — dos puntos: '
-          '${errorMDosPuntos.toStringAsFixed(1)} m, afín: '
-          '${afin != null ? errorMAfin.toStringAsFixed(1) : "no disponible"} m'),
+      content: Text('Verificación en $nodoId — '
+          'GPS: ${errorGpsM.toStringAsFixed(1)} m · '
+          'dos puntos: ${errorMDosPuntos.toStringAsFixed(1)} m · '
+          'afín: ${afin != null ? "${errorMAfin.toStringAsFixed(1)} m" : "no disponible"}'),
     ));
   }
 
