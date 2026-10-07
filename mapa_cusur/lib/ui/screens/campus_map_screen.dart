@@ -103,6 +103,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   bool _obteniendoLecturaVerificacion = false;
 
   int disparadorZoom = 0; // Disparador manual de cámara
+  int disparadorReinicioCamara = 0; // Regresa el mapa a su vista original
 
   @override
   void initState() {
@@ -371,6 +372,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
       rutaCalculada = Ruta.vacia;
       tiempoEstimado = "";
       _navegando = false;
+      disparadorReinicioCamara++;
       mapTapKey++; // reconstruye los campos para que se vean vacíos
     });
   }
@@ -397,6 +399,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
       _navegando = false;
       rutaCalculada = Ruta.vacia;
       tiempoEstimado = "";
+      disparadorReinicioCamara++;
       // El destino se conserva para poder volver a empezar.
     });
   }
@@ -574,6 +577,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
                 onNodoSeleccionado: _seleccionarDesdeMapa,
                 ubicacionGPS: _ubicacionActual,
                 disparadorZoom: disparadorZoom,
+                disparadorReinicioCamara: disparadorReinicioCamara,
                 onVerificarAqui:
                     _modoVerificacion ? _registrarVerificacionEnNodo : null,
               ),

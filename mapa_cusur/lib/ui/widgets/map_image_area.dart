@@ -27,6 +27,10 @@ class MapImageArea extends StatefulWidget {
   final UbicacionEnGrafo? ubicacionGPS;
   final int disparadorZoom;
 
+  /// Cada vez que aumenta, la cámara deja de seguir al usuario y regresa
+  /// a la vista inicial del mapa completo ("Limpiar" y "Detener ruta").
+  final int disparadorReinicioCamara;
+
   /// Si no es `null`, el menú de nodo (Fase 5, modo punto de verificación)
   /// ofrece un tercer botón "Registrar punto de verificación aquí" que
   /// invoca esto con el ID interno del nodo tocado.
@@ -41,6 +45,7 @@ class MapImageArea extends StatefulWidget {
     required this.onNodoSeleccionado,
     required this.ubicacionGPS,
     required this.disparadorZoom,
+    required this.disparadorReinicioCamara,
     this.onVerificarAqui,
   });
 
@@ -134,10 +139,28 @@ class _MapImageAreaState extends State<MapImageArea>
     _animationController.forward(from: 0);
   }
 
+  void _reiniciarCamara() {
+    _animationController.duration = const Duration(milliseconds: 600);
+    _animationReset = Matrix4Tween(
+      begin: _transformationController.value,
+      end: Matrix4.identity(),
+    ).animate(CurvedAnimation(
+        parent: _animationController, curve: Curves.fastOutSlowIn));
+
+    _animationController.forward(from: 0);
+  }
+
   @override
   void didUpdateWidget(MapImageArea oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.disparadorZoom > oldWidget.disparadorZoom) {
+    // El reinicio va primero: si en el mismo frame también aumentó
+    // disparadorZoom, gana el reinicio.
+    if (widget.disparadorReinicioCamara > oldWidget.disparadorReinicioCamara) {
+      _isCameraLocked = false;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _reiniciarCamara();
+      });
+    } else if (widget.disparadorZoom > oldWidget.disparadorZoom) {
       _isCameraLocked = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _moverCamara(1000);
