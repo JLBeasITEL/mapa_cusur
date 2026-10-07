@@ -22,6 +22,8 @@ import '../../models/ruta.dart';
 import '../../utils/cronometro.dart';
 import '../../utils/geodesia.dart';
 import '../../utils/indice_espacial.dart';
+import '../navegacion/llegada_destino.dart';
+import '../theme/poppins.dart';
 import '../widgets/map_image_area.dart';
 import '../widgets/panel_instrumentacion.dart';
 import '../widgets/planning_panel.dart';
@@ -80,6 +82,8 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   // Navegación en curso con la ubicación actual como origen: el botón
   // principal se convierte en "Detener ruta" mientras sea true.
   bool _navegando = false;
+  // Evita mostrar el diálogo de llegada más de una vez por navegación.
+  bool _llegadaNotificada = false;
 
   // Posición del usuario ya filtrada (precisión), suavizada (media móvil)
   // y proyectada ortogonalmente sobre la arista más cercana (Fase 3). Es lo
@@ -302,16 +306,68 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
       nodoMetodoAnterior: nodoMetodoAnterior,
       seRecalculoRuta: seRecalculo,
     );
+
+    // Después del registro: la lectura que provoca la llegada queda en el
+    // CSV como cualquier otra, y el diálogo no se espera aquí.
+    _comprobarLlegada(ubicacion);
+  }
+
+  void _comprobarLlegada(UbicacionEnGrafo ubicacion) {
+    if (!_navegando || _llegadaNotificada) return;
+    final Nodo? nodoDestino = _grafo?.nodos[_obtenerId(destinoSeleccionado)];
+    if (nodoDestino == null) return;
+
+    final double distancia = distanciaHaversineMetros(
+        ubicacion.lat, ubicacion.lng, nodoDestino.lat, nodoDestino.lng);
+    if (!llegoAlDestino(
+        nodosEnRuta: rutaCalculada.nodos.length,
+        distanciaMetros: distancia)) {
+      return;
+    }
+
+    _llegadaNotificada = true;
+    _mostrarDialogoLlegada();
+  }
+
+  Future<void> _mostrarDialogoLlegada() async {
+    await showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => AlertDialog(
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: Text('¡Llegaste a tu destino!',
+            style: poppins(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xFF1E293B))),
+        content: Text('Estás en $destinoSeleccionado.',
+            style: poppins(fontSize: 15, color: const Color(0xFF64748B))),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text('Aceptar',
+                style: poppins(
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFF3B82F6))),
+          ),
+        ],
+      ),
+    );
+    // Misma lógica que "Detener ruta" (el destino se conserva).
+    if (mounted && _navegando) _detenerRuta();
+  }
+
+  /// ID interno del nodo cuyo nombre amigable es [texto], o el mismo
+  /// [texto] si no corresponde a ningún nombre amigable.
+  String _obtenerId(String texto) {
+    for (var entry in diccionarioNombres.entries) {
+      if (entry.value == texto) return entry.key;
+    }
+    return texto;
   }
 
   void calcularRuta() {
-    String obtenerId(String texto) {
-      for (var entry in diccionarioNombres.entries) {
-        if (entry.value == texto) return entry.key;
-      }
-      return texto;
-    }
-
     final grafo = _grafo;
     if (grafo == null) return;
 
@@ -322,10 +378,10 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
       origenSeleccionado = diccionarioNombres[idInicio] ?? idInicio;
       // NOTA: Aquí quitamos el disparadorZoom++. Solo se activa al presionar el botón.
     } else {
-      idInicio = obtenerId(origenSeleccionado);
+      idInicio = _obtenerId(origenSeleccionado);
     }
 
-    final String idDestino = obtenerId(destinoSeleccionado);
+    final String idDestino = _obtenerId(destinoSeleccionado);
     if (idInicio.isEmpty || idDestino.isEmpty) return;
     if (!grafo.conexiones.containsKey(idInicio) ||
         !grafo.conexiones.containsKey(idDestino)) {
@@ -378,6 +434,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   }
 
   void _comenzarRuta() {
+    _llegadaNotificada = false;
     // AQUÍ DISPARAMOS EL ZOOM MANUALMENTE
     setState(() {
       disparadorZoom++;
