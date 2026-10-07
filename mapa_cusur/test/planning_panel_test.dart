@@ -9,11 +9,16 @@ PlanningPanel _panel({
   String origen = "",
   String destino = "",
   bool rastreando = false,
+  bool navegando = false,
+  VoidCallback? onCalcular,
+  VoidCallback? onDetener,
   VoidCallback? onLimpiar,
 }) {
   return PlanningPanel(
     ubicaciones: const ['Biblioteca', 'Cafetería'],
-    onCalcular: () {},
+    onCalcular: onCalcular ?? () {},
+    onDetener: onDetener ?? () {},
+    navegando: navegando,
     onGpsPressed: () {},
     isTracking: rastreando,
     tiempoEstimado: "",
@@ -93,6 +98,42 @@ void main() {
           _envolver(_panel(destino: 'Cafetería', onLimpiar: () => llamadas++)));
       await tester.tap(find.text('Limpiar'));
       expect(llamadas, 1);
+    });
+  });
+
+  group('PlanningPanel — botón principal', () {
+    testWidgets('sin navegar dice "Comenzar Ruta" y llama a onCalcular',
+        (WidgetTester tester) async {
+      var calcular = 0, detener = 0;
+      await tester.pumpWidget(_envolver(_panel(
+          onCalcular: () => calcular++, onDetener: () => detener++)));
+
+      expect(find.text('Comenzar Ruta'), findsOneWidget);
+      expect(find.text('Detener ruta'), findsNothing);
+      await tester.tap(find.text('Comenzar Ruta'));
+      expect((calcular, detener), (1, 0));
+    });
+
+    testWidgets('navegando dice "Detener ruta", en rojo, y llama a onDetener',
+        (WidgetTester tester) async {
+      var calcular = 0, detener = 0;
+      await tester.pumpWidget(_envolver(_panel(
+          rastreando: true,
+          destino: 'Cafetería',
+          navegando: true,
+          onCalcular: () => calcular++,
+          onDetener: () => detener++)));
+
+      expect(find.text('Detener ruta'), findsOneWidget);
+      expect(find.text('Comenzar Ruta'), findsNothing);
+      expect(find.byIcon(Icons.stop_circle_outlined), findsOneWidget);
+      final boton =
+          tester.widget<ElevatedButton>(find.byType(ElevatedButton));
+      expect(boton.style!.backgroundColor!.resolve({}),
+          const Color(0xFFEF4444));
+
+      await tester.tap(find.text('Detener ruta'));
+      expect((calcular, detener), (0, 1));
     });
   });
 }

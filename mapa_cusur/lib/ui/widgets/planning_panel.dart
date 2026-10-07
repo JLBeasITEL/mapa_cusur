@@ -6,6 +6,8 @@ import 'autocomplete_input_field.dart';
 class PlanningPanel extends StatelessWidget {
   final List<String> ubicaciones;
   final VoidCallback onCalcular;
+  final VoidCallback onDetener;
+  final bool navegando;
   final VoidCallback onGpsPressed;
   final bool isTracking;
   final String tiempoEstimado;
@@ -20,6 +22,8 @@ class PlanningPanel extends StatelessWidget {
     super.key,
     required this.ubicaciones,
     required this.onCalcular,
+    required this.onDetener,
+    required this.navegando,
     required this.onGpsPressed,
     required this.isTracking,
     required this.tiempoEstimado,
@@ -30,6 +34,9 @@ class PlanningPanel extends StatelessWidget {
     required this.onDestinoChanged,
     required this.onLimpiar,
   });
+
+  Color get _colorBotonPrincipal =>
+      navegando ? const Color(0xFFEF4444) : const Color(0xFF3B82F6);
 
   bool get _hayAlgoQueLimpiar =>
       origenValue.isNotEmpty || destinoValue.isNotEmpty || isTracking;
@@ -216,30 +223,40 @@ class PlanningPanel extends StatelessWidget {
                 ),
               ),
 
-            // --- BOTÓN PRINCIPAL ---
+            // --- BOTÓN PRINCIPAL ("Detener ruta" mientras se navega) ---
             Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                        color: const Color(0xFF3B82F6).withValues(alpha: 0.3),
+                        color: _colorBotonPrincipal.withValues(alpha: 0.3),
                         blurRadius: 15,
                         offset: const Offset(0, 8))
                   ]),
               child: ElevatedButton(
-                onPressed: onCalcular,
+                onPressed: navegando ? onDetener : onCalcular,
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF3B82F6),
+                    backgroundColor: _colorBotonPrincipal,
                     minimumSize: const Size(double.infinity, 56),
                     shape:
                         RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                     elevation: 0),
-                child: Text('Comenzar Ruta',
-                    style: poppins(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 0.5)),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (navegando) ...[
+                      const Icon(Icons.stop_circle_outlined,
+                          color: Colors.white, size: 22),
+                      const SizedBox(width: 8),
+                    ],
+                    Text(navegando ? 'Detener ruta' : 'Comenzar Ruta',
+                        style: poppins(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 0.5)),
+                  ],
+                ),
               ),
             ),
             const SizedBox(height: 10),

@@ -77,6 +77,9 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
 
   StreamSubscription<Position>? _gpsStream;
   bool _rastreandoGPS = false;
+  // Navegación en curso con la ubicación actual como origen: el botón
+  // principal se convierte en "Detener ruta" mientras sea true.
+  bool _navegando = false;
 
   // Posición del usuario ya filtrada (precisión), suavizada (media móvil)
   // y proyectada ortogonalmente sobre la arista más cercana (Fase 3). Es lo
@@ -210,6 +213,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
       _gpsStream?.cancel();
       setState(() {
         _rastreandoGPS = false;
+        _navegando = false;
         _ubicacionActual = null;
         _ultimaUbicacionUsadaParaRuta = null;
         nodoMasCercanoMetodoAnterior = null;
@@ -347,6 +351,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
         origenSeleccionado = nombreAmigable;
       } else {
         destinoSeleccionado = nombreAmigable;
+        _navegando = false;
       }
       mapTapKey++;
       if (origenSeleccionado.isNotEmpty && destinoSeleccionado.isNotEmpty) {
@@ -365,7 +370,34 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
       destinoSeleccionado = "";
       rutaCalculada = Ruta.vacia;
       tiempoEstimado = "";
+      _navegando = false;
       mapTapKey++; // reconstruye los campos para que se vean vacíos
+    });
+  }
+
+  void _comenzarRuta() {
+    // AQUÍ DISPARAMOS EL ZOOM MANUALMENTE
+    setState(() {
+      disparadorZoom++;
+    });
+    calcularRuta();
+    // Solo la navegación con GPS se puede "detener"; una ruta con origen
+    // elegido a mano es estática.
+    if (_rastreandoGPS &&
+        destinoSeleccionado.isNotEmpty &&
+        !rutaCalculada.esVacia) {
+      setState(() => _navegando = true);
+    }
+  }
+
+  void _detenerRuta() {
+    // Apagar el GPS también pone _navegando en false.
+    if (_rastreandoGPS) _toggleRastreoGPS();
+    setState(() {
+      _navegando = false;
+      rutaCalculada = Ruta.vacia;
+      tiempoEstimado = "";
+      // El destino se conserva para poder volver a empezar.
     });
   }
 
@@ -553,13 +585,9 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
               height: screenHeight * 0.5,
               child: PlanningPanel(
                 ubicaciones: ubicacionesDisponibles,
-                onCalcular: () {
-                  // AQUÍ DISPARAMOS EL ZOOM MANUALMENTE
-                  setState(() {
-                    disparadorZoom++;
-                  });
-                  calcularRuta();
-                },
+                onCalcular: _comenzarRuta,
+                onDetener: _detenerRuta,
+                navegando: _navegando,
                 onGpsPressed: _toggleRastreoGPS,
                 isTracking: _rastreandoGPS,
                 tiempoEstimado: tiempoEstimado,
@@ -576,6 +604,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
                 onDestinoChanged: (val) {
                   setState(() {
                     destinoSeleccionado = val;
+                    _navegando = false;
                     rutaCalculada = Ruta.vacia;
                     tiempoEstimado = "";
                   });
