@@ -14,6 +14,7 @@ class PlanningPanel extends StatelessWidget {
   final int mapTapKey;
   final Function(String) onOrigenChanged;
   final Function(String) onDestinoChanged;
+  final VoidCallback onLimpiar;
 
   const PlanningPanel({
     super.key,
@@ -27,7 +28,11 @@ class PlanningPanel extends StatelessWidget {
     required this.mapTapKey,
     required this.onOrigenChanged,
     required this.onDestinoChanged,
+    required this.onLimpiar,
   });
+
+  bool get _hayAlgoQueLimpiar =>
+      origenValue.isNotEmpty || destinoValue.isNotEmpty || isTracking;
 
   @override
   Widget build(BuildContext context) {
@@ -57,13 +62,33 @@ class PlanningPanel extends StatelessWidget {
                     color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(10))),
 
-            Align(
-                alignment: Alignment.centerLeft,
-                child: Text('Tu Ruta',
-                    style: poppins(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF1E293B)))),
+            Row(
+              children: [
+                Expanded(
+                  child: Text('Tu Ruta',
+                      style: poppins(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF1E293B))),
+                ),
+                if (_hayAlgoQueLimpiar)
+                  TextButton(
+                    onPressed: onLimpiar,
+                    style: TextButton.styleFrom(
+                        foregroundColor: const Color(0xFF64748B),
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        minimumSize: const Size(0, 32),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16))),
+                    child: Text('Limpiar',
+                        style: poppins(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: const Color(0xFF64748B))),
+                  ),
+              ],
+            ),
             const SizedBox(height: 16),
 
             // --- NUEVO DISEÑO: FILA DE ORIGEN + BOTÓN GPS COMPACTO ---

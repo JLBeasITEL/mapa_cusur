@@ -358,6 +358,17 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
     });
   }
 
+  void _limpiarRuta() {
+    if (_rastreandoGPS) _toggleRastreoGPS();
+    setState(() {
+      origenSeleccionado = "";
+      destinoSeleccionado = "";
+      rutaCalculada = Ruta.vacia;
+      tiempoEstimado = "";
+      mapTapKey++; // reconstruye los campos para que se vean vacíos
+    });
+  }
+
   // --- Instrumentación de campo (Fase 5) ---
 
   Future<void> _iniciarSesionCampo() async {
@@ -569,6 +580,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
                     tiempoEstimado = "";
                   });
                 },
+                onLimpiar: _limpiarRuta,
               ),
             ),
             if (_modoInstrumentacion)
