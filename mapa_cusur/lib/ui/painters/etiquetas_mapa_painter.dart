@@ -81,12 +81,12 @@ const double kCoberturaSubtitulo = 0.75;
 /// Tamaño máximo en pantalla de la letra de un edificio.
 const double kTamanoLetra = 15;
 
-/// La letra mide a lo más este factor por el radio (en pantalla) del
-/// círculo más grande que cabe en su edificio...
-const double kFactorRadioLetra = 1.3;
+/// La diagonal de la caja de la letra ocupa a lo más esta fracción del
+/// diámetro del círculo libre de su edificio (ver [_ubicarLetras]).
+const double kFraccionDiametroLetra = 0.9;
 
-/// ...y si así queda por debajo de este tamaño, no se dibuja a ese zoom.
-const double kTamanoMinimoLetra = 7;
+/// Margen en metros alrededor de cada insignia que la letra debe evitar.
+const double kMargenInsigniaLetra = 1;
 
 /// Margen en pantalla alrededor de cada etiqueta para la detección de
 /// colisiones.
@@ -153,11 +153,6 @@ class _Texto {
   /// depende si se ven ([kCoberturaSubtitulo]).
   final Size? cajaEdificio;
 
-  /// Solo en las letras de edificio: radio en metros del círculo más
-  /// grande que cabe en el edificio (con centro en [ancla]), del que
-  /// depende el tamaño de la letra.
-  final double? radioPolo;
-
   /// La insignia bajo la que va el texto, si la hay: entonces su
   /// separación depende del radio actual de la insignia, no de [dy].
   final _Insignia? insignia;
@@ -178,25 +173,12 @@ class _Texto {
     this.dueno,
     this.grupo,
     this.cajaEdificio,
-    this.radioPolo,
     this.anguloGrados = 0,
     this.insignia,
     this.linea = 0,
     this.lineas = 1,
     this.interlineado = 0,
   });
-
-  /// Factor por el que se escala el texto maquetado con
-  /// [pantallaPorMetro] píxeles de pantalla por metro: 1 salvo en las
-  /// letras de edificio, que miden min(15 px, 1.3 × radio del círculo en
-  /// pantalla). 0 si la letra quedaría por debajo de 7 px (no se dibuja).
-  double factorDeTamano(double pantallaPorMetro) {
-    final radio = radioPolo;
-    if (radio == null) return 1;
-    final tamano =
-        math.min(kTamanoLetra, kFactorRadioLetra * radio * pantallaPorMetro);
-    return tamano < kTamanoMinimoLetra ? 0 : tamano / kTamanoLetra;
-  }
 
   /// Desplazamiento vertical en pantalla del centro del texto con [zoom].
   /// Si su insignia está oculta, el texto (todas sus líneas juntas) queda
@@ -212,6 +194,38 @@ class _Texto {
         linea * interlineado;
   }
 }
+
+/// La letra de un edificio, maquetada a [kTamanoLetra] con caja de línea
+/// del alto de la letra (así su rectángulo es el de la letra). Dónde va y
+/// de qué tamaño dependen del viewport ([_ubicarLetras]).
+class _Letra {
+  final Edificio edificio;
+  final TextPainter relleno;
+
+  _Letra(this.edificio, this.relleno);
+
+  /// Diagonal de la caja de la letra por cada píxel de tamaño de fuente.
+  double get diagonalPorPx =>
+      math.sqrt(relleno.width * relleno.width +
+          relleno.height * relleno.height) /
+      kTamanoLetra;
+
+  /// Factor (tamaño en pantalla ÷ [kTamanoLetra]) para que la diagonal
+  /// quepa en [kFraccionDiametroLetra] del diámetro de un círculo libre de
+  /// [radioMetros] con [pantallaPorMetro]. Sin mínimo: siempre se dibuja.
+  double factor(double radioMetros, double pantallaPorMetro) {
+    final tamano = math.min(
+        kTamanoLetra,
+        kFraccionDiametroLetra * 2 * radioMetros * pantallaPorMetro /
+            diagonalPorPx);
+    return tamano / kTamanoLetra;
+  }
+}
+
+/// Posiciones fijadas a mano para la letra de algunos edificios, en
+/// metros, cuando el cálculo automático no basta. Vacío: por ahora todas
+/// las letras salen de [_ubicarLetras].
+const Map<String, Offset> kPosicionLetraManual = {};
 
 /// Una posición posible para el nombre de una calle.
 class _PosicionCalle {
@@ -262,9 +276,10 @@ class EtiquetasMapaVectorial {
   final List<_Insignia> _insignias;
   final List<_Texto> _textos;
   final List<_Calle> _calles;
+  final List<_Letra> _letras;
 
-  EtiquetasMapaVectorial._(
-      this.meta, this._insignias, this._textos, this._calles);
+  EtiquetasMapaVectorial._(this.meta, this._insignias, this._textos,
+      this._calles, this._letras);
 
   int get totalInsignias => _insignias.length;
 
@@ -279,17 +294,68 @@ class EtiquetasMapaVectorial {
   }
   int get totalTextos => _textos.length;
 
-  /// Tamaño en pantalla con que se dibuja la letra [letra] con
-  /// [pantallaPorMetro] píxeles por metro; `null` si no se dibuja.
+  /// Dónde y de qué tamaño se dibuja la letra [letra]: su centro y el
+  /// radio de su círculo libre en metros, y el tamaño de su caja en
+  /// pantalla con [zoom], en un viewport con [pantallaPorMetroZoom1]
+  /// píxeles por metro con zoom ×1. `null` si no hay esa letra.
   @visibleForTesting
-  Size? tamanoDeLetraEnPantalla(String letra,
-      {required double pantallaPorMetro}) {
-    for (final t in _textos) {
-      if (t.clase != _Clase.letra || t.relleno.plainText != letra) continue;
-      final f = t.factorDeTamano(pantallaPorMetro);
-      return f == 0 ? null : t.relleno.size * f;
+  ({Offset centro, double radioLibre, Size caja})? letraEnPantalla(
+      String letra,
+      {required double pantallaPorMetroZoom1,
+      required double zoom}) {
+    final ubicacion = _ubicarLetras(pantallaPorMetroZoom1);
+    for (final l in _letras) {
+      if (l.relleno.plainText != letra) continue;
+      final polo = ubicacion[l]!;
+      final f = l.factor(polo.radio, pantallaPorMetroZoom1 * zoom);
+      return (centro: polo.centro, radioLibre: polo.radio,
+          caja: l.relleno.size * f);
     }
     return null;
+  }
+
+  // Última ubicación de las letras y los px/m (×1) con que se calculó.
+  Map<_Letra, PoloDeInaccesibilidad>? _ubicacionLetras;
+  double? _clavePantallaPorMetroZoom1;
+
+  /// Centro y radio (en metros) del círculo libre de cada letra: el más
+  /// grande que cabe en su edificio sin tocar las insignias que caen sobre
+  /// él (las de lugares y la del propio edificio), cada una con su radio
+  /// en metros más [kMargenInsigniaLetra]. Ese radio en metros es el de
+  /// zoom ×1, que no cambia al acercar hasta el tope de la insignia, así
+  /// que solo se recalcula si cambia el viewport
+  /// ([pantallaPorMetroZoom1]).
+  Map<_Letra, PoloDeInaccesibilidad> _ubicarLetras(
+      double pantallaPorMetroZoom1) {
+    final previa = _ubicacionLetras;
+    if (previa != null && _clavePantallaPorMetroZoom1 == pantallaPorMetroZoom1) {
+      return previa;
+    }
+    final ubicacion = Map<_Letra, PoloDeInaccesibilidad>.identity();
+    for (final l in _letras) {
+      final e = l.edificio;
+      final exclusiones = <CirculoExcluido>[
+        if (pantallaPorMetroZoom1 > 0)
+          for (final i in _insignias)
+            if (i.dueno is Lugar || identical(i.dueno, e))
+              (
+                centro: i.ancla,
+                radio: radioInsignia(1, tamano: i.tamano) /
+                        pantallaPorMetroZoom1 +
+                    kMargenInsigniaLetra,
+              ),
+      ]
+          .where((c) => distanciaLibre(c.centro, e.anillos) > -c.radio)
+          .toList();
+      final manual = kPosicionLetraManual[e.nombre];
+      ubicacion[l] = manual != null
+          ? PoloDeInaccesibilidad(manual,
+              distanciaLibre(manual, e.anillos, exclusiones: exclusiones))
+          : poloDeInaccesibilidad(e.anillos,
+              precision: 0.5, exclusiones: exclusiones);
+    }
+    _clavePantallaPorMetroZoom1 = pantallaPorMetroZoom1;
+    return _ubicacionLetras = ubicacion;
   }
 
   /// Cuántas insignias y textos se dibujan con [pantallaPorMetro]
@@ -311,6 +377,7 @@ class EtiquetasMapaVectorial {
   /// calles siempre están en la lista, pero además solo se dibujan si caben
   /// ([colocar]).
   Set<String> textosCon(double pantallaPorMetro, {Size? vista}) => {
+        for (final l in _letras) l.relleno.plainText,
         for (final t in _textos)
           if (_textoVisible(t, pantallaPorMetro, vista)) t.relleno.plainText,
         for (final c in _calles) c.relleno.plainText,
@@ -402,7 +469,6 @@ class EtiquetasMapaVectorial {
       Object? dueno,
       Object? grupo,
       Size? cajaEdificio,
-      double? radioPolo,
       double? altoDeLinea,
       double anguloGrados = 0,
       Object? debajoDe,
@@ -435,7 +501,6 @@ class EtiquetasMapaVectorial {
         dueno: dueno,
         grupo: grupo,
         cajaEdificio: cajaEdificio,
-        radioPolo: radioPolo,
         insignia: debajoDe == null ? null : insigniaDe[debajoDe],
         linea: linea,
         lineas: lineas,
@@ -471,22 +536,28 @@ class EtiquetasMapaVectorial {
       insignia(e, e.nombre, e.pos, 'directions_car');
     }
 
+    // --- Letras (su lugar se calcula por viewport, ver _ubicarLetras) ---
+    final letras = [
+      for (final e in mapa.edificios)
+        if (e.letra != null)
+          _Letra(
+            e,
+            TextPainter(
+              text: TextSpan(
+                  text: e.letra,
+                  style: poppins(
+                          fontSize: kTamanoLetra,
+                          fontWeight: FontWeight.w600,
+                          color: ColoresMapaVectorial.textoEdificio)
+                      .copyWith(height: 1)),
+              textDirection: TextDirection.ltr,
+            )..layout(),
+          ),
+    ];
+
     // --- Textos ---
     for (final e in mapa.edificios) {
       final polo = polos[e];
-      if (e.letra != null && polo != null) {
-        // En el centro del círculo más grande que cabe en el edificio (no
-        // en `etiqueta`), con la caja de línea del alto de la letra para
-        // que su rectángulo sea el de la letra.
-        texto(polo.centro, e.letra!,
-            tamano: kTamanoLetra,
-            peso: FontWeight.w600,
-            color: ColoresMapaVectorial.textoEdificio,
-            clase: _Clase.letra,
-            dueno: e,
-            radioPolo: polo.radio,
-            altoDeLinea: 1);
-      }
       if (e.texto != null) {
         final techada = e.tipo == TipoEdificio.techada;
         texto(e.etiqueta, e.texto!,
@@ -597,7 +668,8 @@ class EtiquetasMapaVectorial {
         ),
     ];
 
-    return EtiquetasMapaVectorial._(mapa.meta, insignias, textos, calles);
+    return EtiquetasMapaVectorial._(
+        mapa.meta, insignias, textos, calles, letras);
   }
 
   /// Puntos a [kFraccionesAlternativasCalle] de la longitud de la vialidad
@@ -712,12 +784,10 @@ class EtiquetasMapaVectorial {
 
     Rect? rectangulo(_Texto t) {
       if (!_textoVisible(t, pantallaPorMetro, vista)) return null;
-      final f = t.factorDeTamano(pantallaPorMetro);
-      if (f == 0) return null;
       return _rectanguloDeTexto(
           enPantalla(t.ancla) +
               Offset(0, t.dyCon(zoom, mostrarIconos: mostrarIconos)),
-          t.relleno.size * f,
+          t.relleno.size,
           t.anguloGrados);
     }
 
@@ -725,19 +795,28 @@ class EtiquetasMapaVectorial {
       for (final t in _textos) {
         if (t.clase != clase) continue;
         final rect = rectangulo(t);
-        // Las letras registran su dueño: el subtítulo de su edificio va
-        // justo debajo de ella, a propósito.
-        if (rect != null) {
-          registrar(t.relleno.plainText, clase.name, rect,
-              clase == _Clase.letra ? t.dueno : null);
-        }
+        if (rect != null) registrar(t.relleno.plainText, clase.name, rect, null);
       }
     }
 
     // Por prioridad: entradas, letras e insignias.
     registrarInsignias((i) => !i.ocultable);
     registrarTextos(_Clase.entrada);
-    registrarTextos(_Clase.letra);
+    // Las letras registran su dueño: el subtítulo de su edificio va justo
+    // debajo de ella, a propósito.
+    final ubicacion = _ubicarLetras(pantallaPorMetro / zoom);
+    for (final l in _letras) {
+      final polo = ubicacion[l]!;
+      registrar(
+          l.relleno.plainText,
+          _Clase.letra.name,
+          Rect.fromCenter(
+              center: enPantalla(polo.centro),
+              width: l.relleno.width * l.factor(polo.radio, pantallaPorMetro),
+              height:
+                  l.relleno.height * l.factor(polo.radio, pantallaPorMetro)),
+          l.edificio);
+    }
     registrarInsignias((i) => i.ocultable);
 
     // Los nombres largos, en orden y por bloques: un bloque que choca con
@@ -886,6 +965,9 @@ class EtiquetasMapaVectorial {
     for (final c in _calles) {
       c.relleno.dispose();
     }
+    for (final l in _letras) {
+      l.relleno.dispose();
+    }
   }
 }
 
@@ -966,17 +1048,28 @@ class EtiquetasMapaPainter extends CustomPainter {
       canvas.restore();
     }
 
+    // Las letras de edificio, siempre, en su círculo libre.
+    final ubicacion = etiquetas._ubicarLetras(pantallaPorMetro / zoom);
+    for (final l in etiquetas._letras) {
+      final polo = ubicacion[l]!;
+      final ancla = _aLienzo(polo.centro);
+      canvas.save();
+      canvas.translate(ancla.dx, ancla.dy);
+      canvas.scale(k * l.factor(polo.radio, pantallaPorMetro));
+      l.relleno
+          .paint(canvas, Offset(-l.relleno.width / 2, -l.relleno.height / 2));
+      canvas.restore();
+    }
+
     for (final t in etiquetas._textos) {
       if (!EtiquetasMapaVectorial._textoVisible(t, pantallaPorMetro, vista) ||
           colocacion._ocultos.contains(t)) {
         continue;
       }
-      final f = t.factorDeTamano(pantallaPorMetro);
-      if (f == 0) continue;
       final ancla = _aLienzo(t.ancla);
       canvas.save();
       canvas.translate(ancla.dx, ancla.dy);
-      canvas.scale(k * f);
+      canvas.scale(k);
       if (t.anguloGrados != 0) canvas.rotate(t.anguloGrados * math.pi / 180);
       final esquina =
           Offset(-t.relleno.width / 2,

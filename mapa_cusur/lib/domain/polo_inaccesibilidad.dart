@@ -20,11 +20,16 @@ class PoloDeInaccesibilidad {
 /// ninguna celda pueda mejorar el resultado en más de [precision].
 ///
 /// [anillos]: el primero es el contorno y los demás son huecos, que
-/// cuentan como fuera del polígono.
+/// cuentan como fuera del polígono. [exclusiones]: círculos que también
+/// cuentan como fuera (por ejemplo, las insignias dibujadas sobre un
+/// edificio): el resultado es el círculo libre más grande que cabe en el
+/// polígono sin tocarlos.
 PoloDeInaccesibilidad poloDeInaccesibilidad(
   List<List<Offset>> anillos, {
   double precision = 0.5,
+  List<CirculoExcluido> exclusiones = const [],
 }) {
+  final zona = _Zona(anillos, exclusiones);
   final contorno = anillos.first;
   var minX = double.infinity, minY = double.infinity;
   var maxX = double.negativeInfinity, maxY = double.negativeInfinity;
@@ -44,14 +49,14 @@ PoloDeInaccesibilidad poloDeInaccesibilidad(
   final mitad = tamanoCelda / 2;
   for (var x = minX; x < maxX; x += tamanoCelda) {
     for (var y = minY; y < maxY; y += tamanoCelda) {
-      cola.add(_Celda(Offset(x + mitad, y + mitad), mitad, anillos));
+      cola.add(_Celda(Offset(x + mitad, y + mitad), mitad, zona));
     }
   }
 
   // Primeros candidatos: el centroide y el centro de la caja.
-  var mejor = _celdaCentroide(anillos);
+  var mejor = _celdaCentroide(zona);
   final celdaCaja =
-      _Celda(Offset(minX + ancho / 2, minY + alto / 2), 0, anillos);
+      _Celda(Offset(minX + ancho / 2, minY + alto / 2), 0, zona);
   if (celdaCaja.distancia > mejor.distancia) mejor = celdaCaja;
 
   while (cola.isNotEmpty) {
@@ -63,14 +68,33 @@ PoloDeInaccesibilidad poloDeInaccesibilidad(
     final h = celda.mitad / 2;
     final c = celda.centro;
     cola
-      ..add(_Celda(c + Offset(-h, -h), h, anillos))
-      ..add(_Celda(c + Offset(h, -h), h, anillos))
-      ..add(_Celda(c + Offset(-h, h), h, anillos))
-      ..add(_Celda(c + Offset(h, h), h, anillos));
+      ..add(_Celda(c + Offset(-h, -h), h, zona))
+      ..add(_Celda(c + Offset(h, -h), h, zona))
+      ..add(_Celda(c + Offset(-h, h), h, zona))
+      ..add(_Celda(c + Offset(h, h), h, zona));
   }
 
   return PoloDeInaccesibilidad(mejor.centro, mejor.distancia);
 }
+
+/// Un círculo que [poloDeInaccesibilidad] trata como fuera del polígono.
+typedef CirculoExcluido = ({Offset centro, double radio});
+
+/// El polígono y sus círculos excluidos.
+class _Zona {
+  final List<List<Offset>> anillos;
+  final List<CirculoExcluido> exclusiones;
+
+  const _Zona(this.anillos, this.exclusiones);
+}
+
+/// Distancia de [p] al borde de la zona libre de [poloDeInaccesibilidad]
+/// (positiva dentro del polígono y fuera de los círculos excluidos;
+/// negativa fuera). Sirve para medir el círculo libre alrededor de un
+/// punto dado.
+double distanciaLibre(Offset p, List<List<Offset>> anillos,
+        {List<CirculoExcluido> exclusiones = const []}) =>
+    _distanciaConSigno(p, _Zona(anillos, exclusiones));
 
 class _Celda {
   final Offset centro;
@@ -87,13 +111,15 @@ class _Celda {
   _Celda._(this.centro, this.mitad, this.distancia)
       : maximo = distancia + mitad * math.sqrt2;
 
-  factory _Celda(Offset centro, double mitad, List<List<Offset>> anillos) =>
-      _Celda._(centro, mitad, _distanciaConSigno(centro, anillos));
+  factory _Celda(Offset centro, double mitad, _Zona zona) =>
+      _Celda._(centro, mitad, _distanciaConSigno(centro, zona));
 }
 
-/// Distancia de [p] al borde más cercano de [anillos]: positiva dentro del
-/// polígono (fuera de los huecos) y negativa fuera.
-double _distanciaConSigno(Offset p, List<List<Offset>> anillos) {
+/// Distancia de [p] al borde más cercano de la [zona]: positiva dentro del
+/// polígono (fuera de los huecos y de los círculos excluidos) y negativa
+/// fuera.
+double _distanciaConSigno(Offset p, _Zona zona) {
+  final anillos = zona.anillos;
   var dentro = false;
   var minimaAlCuadrado = double.infinity;
   for (final anillo in anillos) {
@@ -109,7 +135,12 @@ double _distanciaConSigno(Offset p, List<List<Offset>> anillos) {
     }
   }
   final distancia = math.sqrt(minimaAlCuadrado);
-  return dentro ? distancia : -distancia;
+  var resultado = dentro ? distancia : -distancia;
+  // Cada círculo excluido resta: dentro de él la distancia es negativa.
+  for (final c in zona.exclusiones) {
+    resultado = math.min(resultado, (p - c.centro).distance - c.radio);
+  }
+  return resultado;
 }
 
 double _distanciaAlSegmentoAlCuadrado(Offset p, Offset a, Offset b) {
@@ -125,8 +156,8 @@ double _distanciaAlSegmentoAlCuadrado(Offset p, Offset a, Offset b) {
 }
 
 /// Celda en el centroide del contorno (por área).
-_Celda _celdaCentroide(List<List<Offset>> anillos) {
-  final contorno = anillos.first;
+_Celda _celdaCentroide(_Zona zona) {
+  final contorno = zona.anillos.first;
   var area = 0.0, x = 0.0, y = 0.0;
   for (var i = 0, j = contorno.length - 1; i < contorno.length; j = i++) {
     final a = contorno[i];
@@ -136,6 +167,6 @@ _Celda _celdaCentroide(List<List<Offset>> anillos) {
     y += (a.dy + b.dy) * f;
     area += f * 3;
   }
-  if (area == 0) return _Celda(contorno.first, 0, anillos);
-  return _Celda(Offset(x / area, y / area), 0, anillos);
+  if (area == 0) return _Celda(contorno.first, 0, zona);
+  return _Celda(Offset(x / area, y / area), 0, zona);
 }

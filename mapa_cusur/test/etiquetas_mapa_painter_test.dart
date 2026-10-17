@@ -73,7 +73,6 @@ void main() {
 
     test('los textos que no van debajo de un ícono no se mueven', () {
       for (final zoom in [1.0, 2.0, 8.0]) {
-        expect(etiquetas.desplazamientoDe('Z', zoom: zoom), 0);
         expect(etiquetas.desplazamientoDe('Coordinación de tecnologías',
             zoom: zoom), 13);
         expect(etiquetas.desplazamientoDe('Sala de Gobierno', zoom: zoom), 0);
@@ -256,8 +255,7 @@ void main() {
           etiquetas.desplazamientoDe('Entrada Sur',
               zoom: 2, mostrarIconos: false),
           radioInsignia(2, tamano: 1.25) + 8);
-      expect(etiquetas.desplazamientoDe('Z', zoom: 2, mostrarIconos: false),
-          0);
+      // Las letras no dependen del botón: ver letras_edificio_test.dart.
     });
 
     test('cambiar el botón repinta la capa', () {

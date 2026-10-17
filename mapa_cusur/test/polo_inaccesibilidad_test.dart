@@ -2,13 +2,10 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
 
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mapa_cusur/data/mapa_vectorial_parser.dart';
 import 'package:mapa_cusur/domain/polo_inaccesibilidad.dart';
-import 'package:mapa_cusur/domain/proyeccion_local.dart';
 import 'package:mapa_cusur/models/mapa_vectorial.dart';
-import 'package:mapa_cusur/ui/painters/etiquetas_mapa_painter.dart';
 import 'package:mapa_cusur/ui/painters/mapa_vectorial_painter.dart';
 
 List<Offset> _rectangulo(double x0, double y0, double x1, double y1) => [
@@ -33,15 +30,6 @@ bool _dentro(Offset p, List<List<Offset>> anillos) {
     }
   }
   return dentro;
-}
-
-Future<void> _cargarPoppins() async {
-  final cargador = FontLoader('Poppins');
-  for (final peso in ['Regular', 'Medium', 'SemiBold', 'Bold']) {
-    final bytes = File('assets/fonts/Poppins-$peso.ttf').readAsBytesSync();
-    cargador.addFont(Future.value(ByteData.sublistView(bytes)));
-  }
-  await cargador.load();
 }
 
 void main() {
@@ -112,37 +100,6 @@ void main() {
         final polo = polos[e]!;
         expect(_dentro(polo.centro, e.anillos), isTrue, reason: e.letra);
         expect(polo.radio, greaterThan(0), reason: e.letra);
-      }
-    });
-
-    test('con 412 × 360 y zoom ×1, cada letra cabe dentro de su círculo',
-        () async {
-      await _cargarPoppins();
-      final etiquetas = EtiquetasMapaVectorial(mapa, polos: polos);
-      addTearDown(etiquetas.dispose);
-
-      final proyeccion = ProyeccionLocal(mapa.meta);
-      final tamano = proyeccion.tamanoLienzo;
-      final pantallaPorMetro = proyeccion.escala *
-          math.min(412 / tamano.width, 360 / tamano.height);
-
-      for (final e in conLetra) {
-        final letra = etiquetas.tamanoDeLetraEnPantalla(e.letra!,
-            pantallaPorMetro: pantallaPorMetro);
-        final radioEnPantalla = polos[e]!.radio * pantallaPorMetro;
-        if (letra == null) {
-          // No se dibuja: quedaría por debajo de 7 px.
-          expect(kFactorRadioLetra * radioEnPantalla,
-              lessThan(kTamanoMinimoLetra),
-              reason: e.letra);
-          continue;
-        }
-        final mediaDiagonal =
-            math.sqrt(math.pow(letra.width / 2, 2) + math.pow(letra.height / 2, 2));
-        expect(mediaDiagonal, lessThanOrEqualTo(radioEnPantalla),
-            reason: '${e.letra}: ${letra.width.toStringAsFixed(1)} × '
-                '${letra.height.toStringAsFixed(1)} px en un círculo de '
-                'radio ${radioEnPantalla.toStringAsFixed(1)} px');
       }
     });
   });
