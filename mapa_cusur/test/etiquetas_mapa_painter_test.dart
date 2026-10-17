@@ -64,9 +64,10 @@ void main() {
             r + 8);
         expect(etiquetas.desplazamientoDe('Entrada Sur', zoom: zoom),
             radioInsignia(zoom, tamano: 1.25) + 8);
-        // La segunda línea de un lugar va una línea más abajo.
+        // La segunda línea de un lugar va una línea más abajo (y su
+        // insignia es del 80 %).
         expect(etiquetas.desplazamientoDe('Periodismo', zoom: zoom),
-            closeTo(r + 8 + 1.15 * 10.5, 1e-9));
+            closeTo(radioInsignia(zoom, tamano: 0.8) + 8 + 1.15 * 10.5, 1e-9));
       }
     });
 
@@ -139,11 +140,25 @@ void main() {
           isNot(contains('Coordinación de tecnologías')));
     });
 
-    test('las insignias de los lugares solo se ven desde 3.1 px/m', () {
-      expect(etiquetas.visiblesCon(kDetallePxPorMetro - 0.01).insignias,
-          etiquetas.totalInsignias - mapa.lugares.length);
-      expect(etiquetas.visiblesCon(kDetallePxPorMetro).insignias,
-          etiquetas.totalInsignias);
+    test('todas las insignias, también las de lugares, se ven a cualquier '
+        'distancia; los nombres de los lugares, solo desde 3.1 px/m', () {
+      expect(etiquetas.visiblesCon(0.5).insignias, etiquetas.totalInsignias);
+      expect(etiquetas.textosCon(kDetallePxPorMetro - 0.01),
+          isNot(contains('Periodismo')));
+      expect(etiquetas.textosCon(kDetallePxPorMetro), contains('Periodismo'));
+    });
+
+    test('lugares y canchas usan insignias al 80 % de las de edificio', () {
+      expect(etiquetas.tamanoDeInsignia('Laboratorio de Periodismo'), 0.8);
+      expect(etiquetas.tamanoDeInsignia('Parque de las ardillas'), 0.8);
+      expect(etiquetas.tamanoDeInsignia('sports_tennis'), 0.8);
+      expect(etiquetas.tamanoDeInsignia('sports_basketball'), 0.8);
+      expect(etiquetas.tamanoDeInsignia('Cancha de fútbol'), 0.8);
+      expect(etiquetas.tamanoDeInsignia('Cafetería Principal'), 1.0);
+      expect(etiquetas.tamanoDeInsignia('Entrada Sur'), 1.25);
+      // Misma regla con el zoom y mismo tope, a escala.
+      expect(radioInsignia(1, tamano: 0.8), closeTo(4.4, 1e-9));
+      expect(radioInsignia(8, tamano: 0.8), closeTo(17.6, 1e-9));
     });
 
     test('el nombre de una zona fuera de meta.limites no se dibuja', () {

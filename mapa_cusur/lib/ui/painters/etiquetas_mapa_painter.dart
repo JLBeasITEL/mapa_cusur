@@ -66,6 +66,10 @@ const double kSeparacionTextoInsignia = 8;
 double radioInsignia(double zoom, {double tamano = 1}) =>
     math.min(kRadioInsigniaZoom1 * zoom, kRadioInsigniaMaximo) * tamano;
 
+/// Tamaño de las insignias de lugares y canchas respecto a las de
+/// edificio (misma regla de crecimiento con el zoom y mismo tope, a escala).
+const double kTamanoInsigniaSecundaria = 0.8;
+
 /// Radio con el que se maquetan las insignias (el de zoom ×2); al
 /// dibujarlas se escalan a [radioInsignia].
 const double _radioMaquetado = 11;
@@ -104,7 +108,7 @@ class _Insignia {
   /// El elemento del mapa al que pertenece (edificio, lugar, entrada...).
   final Object dueno;
   final Offset ancla; // metros
-  final double tamano; // 1 normal; 1.25 en las entradas
+  final double tamano; // 1 edificios; 1.25 entradas; 0.8 lugares y canchas
   final Color fondo;
   final Color borde;
   final TextPainter icono;
@@ -263,6 +267,16 @@ class EtiquetasMapaVectorial {
       this.meta, this._insignias, this._textos, this._calles);
 
   int get totalInsignias => _insignias.length;
+
+  /// Tamaño relativo (1 = edificio) de la primera insignia llamada
+  /// [nombre]; `null` si no existe.
+  @visibleForTesting
+  double? tamanoDeInsignia(String nombre) {
+    for (final i in _insignias) {
+      if (i.nombre == nombre) return i.tamano;
+    }
+    return null;
+  }
   int get totalTextos => _textos.length;
 
   /// Tamaño en pantalla con que se dibuja la letra [letra] con
@@ -342,13 +356,16 @@ class EtiquetasMapaVectorial {
 
     void insignia(Object elemento, String nombre, Offset ancla,
         String nombreIcono,
-        {bool soloDetalle = false, bool esEntrada = false}) {
+        {bool soloDetalle = false,
+        bool esEntrada = false,
+        bool secundaria = false}) {
       final icono = kIconosMapa[nombreIcono];
       if (icono == null) {
         debugPrint('Ícono desconocido en campus_vector.json: $nombreIcono');
         return;
       }
-      final tamano = esEntrada ? 1.25 : 1.0;
+      final tamano =
+          esEntrada ? 1.25 : (secundaria ? kTamanoInsigniaSecundaria : 1.0);
       insignias.add(insigniaDe[elemento] = _Insignia(
         nombre: nombre,
         dueno: elemento,
@@ -434,16 +451,18 @@ class EtiquetasMapaVectorial {
     }
     for (final c in mapa.canchasFutbol) {
       if (c.icono != null && c.iconoPos != null) {
-        insignia(c, c.nombre ?? c.icono!, c.iconoPos!, c.icono!);
+        insignia(c, c.nombre ?? c.icono!, c.iconoPos!, c.icono!,
+            secundaria: true);
       }
     }
     for (final c in mapa.canchas) {
       if (c.icono != null && c.iconoPos != null) {
-        insignia(c, c.icono!, c.iconoPos!, c.icono!);
+        insignia(c, c.icono!, c.iconoPos!, c.icono!, secundaria: true);
       }
     }
     for (final l in mapa.lugares) {
-      insignia(l, l.nombre, l.pos, l.icono, soloDetalle: true);
+      // Siempre visible (su nombre, en cambio, solo desde el umbral).
+      insignia(l, l.nombre, l.pos, l.icono, secundaria: true);
     }
     for (final e in mapa.entradas) {
       insignia(e, e.nombre, e.pos, 'door_front', esEntrada: true);
