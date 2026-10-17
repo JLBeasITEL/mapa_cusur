@@ -116,6 +116,47 @@ void main() {
     });
   });
 
+  group('botón de íconos', () {
+    EtiquetasMapaPainter capaDeEtiquetas(WidgetTester tester) => tester
+        .widgetList<CustomPaint>(find.byType(CustomPaint))
+        .map((c) => c.painter)
+        .whereType<EtiquetasMapaPainter>()
+        .single;
+
+    testWidgets('por defecto muestra los íconos y al tocarlo los oculta',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(area(modo: ModoMapa.vectorial, datos: mapa));
+
+      expect(find.byIcon(Icons.layers_rounded), findsOneWidget);
+      expect(find.byTooltip('Ocultar íconos'), findsOneWidget);
+      expect(find.bySemanticsLabel('Ocultar íconos'), findsOneWidget);
+      expect(capaDeEtiquetas(tester).mostrarIconos, isTrue);
+
+      await tester.tap(find.byIcon(Icons.layers_rounded));
+      await tester.pump();
+
+      expect(find.byTooltip('Mostrar íconos'), findsOneWidget);
+      expect(find.bySemanticsLabel('Mostrar íconos'), findsOneWidget);
+      expect(capaDeEtiquetas(tester).mostrarIconos, isFalse);
+
+      await tester.tap(find.byIcon(Icons.layers_rounded));
+      await tester.pump();
+
+      expect(find.byTooltip('Ocultar íconos'), findsOneWidget);
+      expect(capaDeEtiquetas(tester).mostrarIconos, isTrue);
+    });
+
+    testWidgets('va en la esquina superior derecha del mapa',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(area(modo: ModoMapa.vectorial, datos: mapa));
+
+      final boton = tester.getRect(find.byIcon(Icons.layers_rounded));
+      final mapaRect = tester.getRect(find.byType(MapImageArea));
+      expect(mapaRect.right - boton.right, lessThan(30));
+      expect(boton.top - mapaRect.top, lessThan(30));
+    });
+  });
+
   testWidgets('en modo imagen no hay capas vectoriales ni atribución',
       (WidgetTester tester) async {
     await tester.pumpWidget(area(modo: ModoMapa.imagen, datos: mapa));
@@ -124,6 +165,7 @@ void main() {
     expect(pintaCon<MapaVectorialPainter>(tester), isFalse);
     expect(pintaCon<EtiquetasMapaPainter>(tester), isFalse);
     expect(find.text('© colaboradores de OpenStreetMap'), findsNothing);
+    expect(find.byIcon(Icons.layers_rounded), findsNothing);
     expect(find.image(const AssetImage('assets/mapa_CUSur.png')),
         findsOneWidget);
   });

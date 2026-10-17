@@ -74,6 +74,9 @@ class _Insignia {
   final TextPainter icono;
   final bool soloDetalle;
 
+  /// Si el botón de íconos la oculta: todas menos las de las entradas.
+  final bool ocultable;
+
   _Insignia({
     required this.ancla,
     required this.tamano,
@@ -81,6 +84,7 @@ class _Insignia {
     required this.borde,
     required this.icono,
     required this.soloDetalle,
+    required this.ocultable,
   });
 }
 
@@ -98,9 +102,10 @@ class _Texto {
   /// separación depende del radio actual de la insignia, no de [dy].
   final _Insignia? insignia;
 
-  /// Número de línea (desde 0) de un texto de varias líneas y la
+  /// Número de línea (desde 0) de un texto de [lineas] líneas y la
   /// distancia en pantalla entre líneas.
   final int linea;
+  final int lineas;
   final double interlineado;
 
   _Texto({
@@ -112,13 +117,19 @@ class _Texto {
     this.anguloGrados = 0,
     this.insignia,
     this.linea = 0,
+    this.lineas = 1,
     this.interlineado = 0,
   });
 
   /// Desplazamiento vertical en pantalla del centro del texto con [zoom].
-  double dyCon(double zoom) {
+  /// Si su insignia está oculta, el texto (todas sus líneas juntas) queda
+  /// centrado donde estaba la insignia.
+  double dyCon(double zoom, {required bool mostrarIconos}) {
     final i = insignia;
     if (i == null) return dy;
+    if (!mostrarIconos && i.ocultable) {
+      return (linea - (lineas - 1) / 2) * interlineado;
+    }
     return radioInsignia(zoom, tamano: i.tamano) +
         kSeparacionTextoInsignia +
         linea * interlineado;
@@ -156,9 +167,12 @@ class EtiquetasMapaVectorial {
   /// Desplazamiento vertical en pantalla del primer texto igual a
   /// [contenido] con [zoom]; `null` si no existe.
   @visibleForTesting
-  double? desplazamientoDe(String contenido, {required double zoom}) {
+  double? desplazamientoDe(String contenido,
+      {required double zoom, bool mostrarIconos = true}) {
     for (final t in _textos) {
-      if (t.relleno.plainText == contenido) return t.dyCon(zoom);
+      if (t.relleno.plainText == contenido) {
+        return t.dyCon(zoom, mostrarIconos: mostrarIconos);
+      }
     }
     return null;
   }
@@ -194,6 +208,7 @@ class EtiquetasMapaVectorial {
                 ? ColoresMapaVectorial.iconoEntrada
                 : ColoresMapaVectorial.iconoInsignia),
         soloDetalle: soloDetalle,
+        ocultable: !esEntrada,
       ));
     }
 
@@ -210,6 +225,7 @@ class EtiquetasMapaVectorial {
       double anguloGrados = 0,
       Object? debajoDe,
       int linea = 0,
+      int lineas = 1,
       double interlineado = 0,
     }) {
       TextPainter maquetar(TextStyle estilo) => TextPainter(
@@ -234,6 +250,7 @@ class EtiquetasMapaVectorial {
         soloDetalle: soloDetalle,
         insignia: debajoDe == null ? null : insigniaDe[debajoDe],
         linea: linea,
+        lineas: lineas,
         interlineado: interlineado,
       ));
     }
@@ -307,6 +324,7 @@ class EtiquetasMapaVectorial {
                 : ColoresMapaVectorial.edificio,
             debajoDe: l,
             linea: k,
+            lineas: l.lineas.length,
             interlineado: 1.15 * 10.5,
             soloDetalle: true);
       }
@@ -416,11 +434,17 @@ class EtiquetasMapaPainter extends CustomPainter {
   /// textos se ven ([kZoomDetalle]).
   final double zoom;
 
+  /// Con `false` no se dibujan las insignias de edificios, canchas,
+  /// lugares y estacionamientos (las de las entradas, sí), y sus textos
+  /// quedan centrados donde estaba la insignia.
+  final bool mostrarIconos;
+
   EtiquetasMapaPainter({
     required this.etiquetas,
     required this.proyeccion,
     required this.pantallaPorLienzo,
     required this.zoom,
+    this.mostrarIconos = true,
   });
 
   @override
@@ -433,6 +457,7 @@ class EtiquetasMapaPainter extends CustomPainter {
 
     for (final i in etiquetas._insignias) {
       if (!EtiquetasMapaVectorial._visible(i.soloDetalle, zoom)) continue;
+      if (!mostrarIconos && i.ocultable) continue;
       final ancla = _aLienzo(i.ancla);
       canvas.save();
       canvas.translate(ancla.dx, ancla.dy);
@@ -460,7 +485,9 @@ class EtiquetasMapaPainter extends CustomPainter {
       canvas.scale(k);
       if (t.anguloGrados != 0) canvas.rotate(t.anguloGrados * math.pi / 180);
       final esquina =
-          Offset(-t.relleno.width / 2, t.dyCon(zoom) - t.relleno.height / 2);
+          Offset(-t.relleno.width / 2,
+              t.dyCon(zoom, mostrarIconos: mostrarIconos) -
+                  t.relleno.height / 2);
       t.halo?.paint(canvas, esquina);
       t.relleno.paint(canvas, esquina);
       canvas.restore();
@@ -475,5 +502,6 @@ class EtiquetasMapaPainter extends CustomPainter {
       !identical(oldDelegate.etiquetas, etiquetas) ||
       oldDelegate.pantallaPorLienzo != pantallaPorLienzo ||
       oldDelegate.zoom != zoom ||
+      oldDelegate.mostrarIconos != mostrarIconos ||
       oldDelegate.proyeccion.escala != proyeccion.escala;
 }

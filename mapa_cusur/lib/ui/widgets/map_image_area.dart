@@ -51,6 +51,10 @@ class MapImageArea extends StatefulWidget {
   /// tanto no se dibuja nada, porque sin `meta` no hay lienzo.
   final MapaVectorial? mapaVectorial;
 
+  /// Distancia del borde superior al botón de íconos (modo vectorial).
+  /// La pantalla la aumenta cuando su propio botón ocupa esa esquina.
+  final double margenSuperiorBotones;
+
   const MapImageArea({
     super.key,
     required this.ruta,
@@ -64,6 +68,7 @@ class MapImageArea extends StatefulWidget {
     this.onVerificarAqui,
     this.modo = kModoMapa,
     this.mapaVectorial,
+    this.margenSuperiorBotones = 8,
   });
 
   @override
@@ -103,6 +108,10 @@ class _MapImageAreaState extends State<MapImageArea>
   /// Lo que el modo vectorial construye una sola vez por cada
   /// `mapaVectorial` (no en cada build ni en cada frame de zoom).
   _CapasVectoriales? _capas;
+
+  /// Botón de íconos del modo vectorial. Vive solo en este estado: no se
+  /// guarda entre sesiones.
+  bool _mostrarIconos = true;
 
   void _actualizarCapasVectoriales() {
     final mapa =
@@ -398,6 +407,16 @@ class _MapImageAreaState extends State<MapImageArea>
                     child: _Atribucion(capas.mapa.meta.atribucion),
                   ),
                 ),
+              if (capas != null)
+                Positioned(
+                  top: widget.margenSuperiorBotones,
+                  right: 8,
+                  child: _BotonIconos(
+                    mostrando: _mostrarIconos,
+                    onPressed: () =>
+                        setState(() => _mostrarIconos = !_mostrarIconos),
+                  ),
+                ),
             ],
           );
         },
@@ -450,6 +469,7 @@ class _MapImageAreaState extends State<MapImageArea>
                     proyeccion: capas.lienzo.proyeccion,
                     pantallaPorLienzo: ajuste * zoom,
                     zoom: zoom,
+                    mostrarIconos: _mostrarIconos,
                   ),
                 ),
               ),
@@ -493,6 +513,50 @@ class _CapasVectoriales {
       : lienzo = LienzoVectorial(ProyeccionLocal(mapa.meta)),
         geometria = GeometriaMapaVectorial(mapa),
         etiquetas = EtiquetasMapaVectorial(mapa);
+}
+
+/// Muestra u oculta las insignias del mapa vectorial. Mismo estilo que el
+/// botón de ubicación del panel (azul claro, esquinas redondeadas), más
+/// chico y con una sombra suave porque flota sobre el mapa.
+class _BotonIconos extends StatelessWidget {
+  final bool mostrando;
+  final VoidCallback onPressed;
+
+  const _BotonIconos({required this.mostrando, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    final String texto = mostrando ? 'Ocultar íconos' : 'Mostrar íconos';
+    return Semantics(
+      button: true,
+      label: texto,
+      child: Tooltip(
+        message: texto,
+        excludeFromSemantics: true,
+        child: Material(
+          color: mostrando ? const Color(0xFFEFF6FF) : Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          elevation: 3,
+          shadowColor: Colors.black26,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(12),
+            onTap: onPressed,
+            child: SizedBox(
+              width: 40,
+              height: 40,
+              child: Icon(
+                Icons.layers_rounded,
+                size: 22,
+                color: mostrando
+                    ? const Color(0xFF3B82F6)
+                    : const Color(0xFF64748B),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 /// "© colaboradores de OpenStreetMap" (`meta.atribucion`), que la ODbL

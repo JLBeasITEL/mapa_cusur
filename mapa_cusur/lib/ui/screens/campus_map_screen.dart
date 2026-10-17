@@ -657,6 +657,9 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
                 onVerificarAqui:
                     _modoVerificacion ? _registrarVerificacionEnNodo : null,
                 mapaVectorial: _mapaVectorial,
+                // El botón del panel de instrumentación ocupa la esquina
+                // superior derecha (top: 8, 40 px de alto).
+                margenSuperiorBotones: _modoInstrumentacion ? 56 : 8,
               ),
             ),
             Positioned(

@@ -7,6 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mapa_cusur/data/mapa_vectorial_parser.dart';
 import 'package:mapa_cusur/domain/proyeccion_local.dart';
 import 'package:mapa_cusur/models/mapa_vectorial.dart';
+import 'package:mapa_cusur/ui/mapa/colores_mapa_vectorial.dart';
 import 'package:mapa_cusur/ui/painters/etiquetas_mapa_painter.dart';
 
 void main() {
@@ -152,4 +153,97 @@ void main() {
       expect(painter(1.0).shouldRepaint(painter(1.2)), isTrue);
     });
   });
+
+  group('íconos ocultos', () {
+    final etiquetas = EtiquetasMapaVectorial(mapa);
+    tearDownAll(etiquetas.dispose);
+
+    // El relleno de cada insignia dibujada (una por insignia: el borde
+    // es un trazo).
+    List<Color> rellenosDeInsignias({required bool mostrarIconos}) {
+      final canvas = _CanvasEspia();
+      EtiquetasMapaPainter(
+        etiquetas: etiquetas,
+        proyeccion: proyeccion,
+        pantallaPorLienzo: 0.08 * 8,
+        zoom: 8, // con zoom alto se ven todas, también las de los lugares
+        mostrarIconos: mostrarIconos,
+      ).paint(canvas, proyeccion.tamanoLienzo);
+      return canvas.rellenosDeCirculos;
+    }
+
+    test('con los íconos visibles se dibujan todas las insignias', () {
+      expect(rellenosDeInsignias(mostrarIconos: true),
+          hasLength(etiquetas.totalInsignias));
+    });
+
+    test('con los íconos ocultos solo se dibujan las de las entradas', () {
+      final rellenos = rellenosDeInsignias(mostrarIconos: false);
+
+      // Se compara el ARGB: Paint.color no devuelve el mismo tipo de Color.
+      expect(rellenos, hasLength(mapa.entradas.length));
+      expect(rellenos.map((c) => c.toARGB32()),
+          everyElement(ColoresMapaVectorial.entrada.toARGB32()));
+    });
+
+    test('sus textos quedan centrados donde estaba la insignia', () {
+      const interlineado = 1.15 * 10.5;
+      for (final zoom in [kZoomDetalle, 4.0]) {
+        expect(
+            etiquetas.desplazamientoDe('Estacionamiento 1',
+                zoom: zoom, mostrarIconos: false),
+            0);
+        expect(
+            etiquetas.desplazamientoDe('Cafetería Principal',
+                zoom: zoom, mostrarIconos: false),
+            0);
+        // Un lugar de dos líneas: el bloque centrado en la insignia.
+        expect(
+            etiquetas.desplazamientoDe('Laboratorio de',
+                zoom: zoom, mostrarIconos: false),
+            closeTo(-interlineado / 2, 1e-9));
+        expect(
+            etiquetas.desplazamientoDe('Periodismo',
+                zoom: zoom, mostrarIconos: false),
+            closeTo(interlineado / 2, 1e-9));
+      }
+    });
+
+    test('las entradas, las letras y la visibilidad de los textos no cambian',
+        () {
+      expect(
+          etiquetas.desplazamientoDe('Entrada Sur',
+              zoom: 2, mostrarIconos: false),
+          radioInsignia(2, tamano: 1.25) + 8);
+      expect(etiquetas.desplazamientoDe('Z', zoom: 2, mostrarIconos: false),
+          0);
+    });
+
+    test('cambiar el botón repinta la capa', () {
+      EtiquetasMapaPainter con(bool mostrar) => EtiquetasMapaPainter(
+            etiquetas: etiquetas,
+            proyeccion: proyeccion,
+            pantallaPorLienzo: 0.08,
+            zoom: 1,
+            mostrarIconos: mostrar,
+          );
+
+      expect(con(true).shouldRepaint(con(false)), isTrue);
+      expect(con(false).shouldRepaint(con(false)), isFalse);
+    });
+  });
+}
+
+/// Registra el color de cada círculo relleno que se dibuja; todo lo demás
+/// lo ignora.
+class _CanvasEspia implements Canvas {
+  final List<Color> rellenosDeCirculos = [];
+
+  @override
+  void drawCircle(Offset c, double radius, Paint paint) {
+    if (paint.style == PaintingStyle.fill) rellenosDeCirculos.add(paint.color);
+  }
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => null;
 }
