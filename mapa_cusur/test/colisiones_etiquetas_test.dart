@@ -68,7 +68,7 @@ void main() {
     }
   });
 
-  for (final zoom in [1.0, kZoomDetalle, 3.0, 8.0]) {
+  for (final zoom in [1.0, 2.0, 4.0, 8.0]) {
     for (final mostrarIconos in [true, false]) {
       test(
           'con zoom $zoom${mostrarIconos ? '' : ' y sin íconos'}, ningún '

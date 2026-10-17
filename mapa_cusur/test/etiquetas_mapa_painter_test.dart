@@ -79,11 +79,12 @@ void main() {
     });
   });
 
-  group('EtiquetasMapaVectorial: visibilidad por zoom', () {
+  group('EtiquetasMapaVectorial: visibilidad por píxeles por metro', () {
     final etiquetas = EtiquetasMapaVectorial(mapa);
     tearDownAll(etiquetas.dispose);
 
-    test('con zoom 1 se ven letras, entradas y calles, pero no nombres', () {
+    test('lejos (1 px/m) se ven letras, entradas y calles, pero no nombres',
+        () {
       final visibles = etiquetas.textosCon(1.0);
 
       expect(visibles, containsAll(['Z', 'C', 'M']));
@@ -96,8 +97,12 @@ void main() {
       expect(visibles, isNot(contains('Cancha de fútbol')));
     });
 
-    test('desde zoom 1.8 se ven también los textos largos', () {
-      final visibles = etiquetas.textosCon(kZoomDetalle);
+    test('desde 3.1 px/m se ven también los textos largos', () {
+      expect(kDetallePxPorMetro, 3.1);
+      expect(etiquetas.textosCon(kDetallePxPorMetro - 0.01),
+          isNot(contains('Cafetería Principal')));
+
+      final visibles = etiquetas.textosCon(kDetallePxPorMetro);
 
       expect(
           visibles,
@@ -110,13 +115,14 @@ void main() {
             'Laboratorio de',
             'Periodismo',
           ]));
-      expect(etiquetas.visiblesCon(kZoomDetalle).textos, etiquetas.totalTextos);
+      expect(etiquetas.visiblesCon(kDetallePxPorMetro).textos,
+          etiquetas.totalTextos);
     });
 
-    test('las insignias de los lugares solo se ven desde zoom 1.8', () {
-      expect(etiquetas.visiblesCon(1.0).insignias,
+    test('las insignias de los lugares solo se ven desde 3.1 px/m', () {
+      expect(etiquetas.visiblesCon(kDetallePxPorMetro - 0.01).insignias,
           etiquetas.totalInsignias - mapa.lugares.length);
-      expect(etiquetas.visiblesCon(kZoomDetalle).insignias,
+      expect(etiquetas.visiblesCon(kDetallePxPorMetro).insignias,
           etiquetas.totalInsignias);
     });
 
@@ -138,7 +144,7 @@ void main() {
           zoom: zoom,
         );
 
-    for (final zoom in [1.0, kZoomDetalle, 8.0]) {
+    for (final zoom in [1.0, 4.0, 8.0]) {
       test('pinta sin excepciones con zoom $zoom', () {
         final recorder = ui.PictureRecorder();
 
@@ -188,7 +194,7 @@ void main() {
 
     test('sus textos quedan centrados donde estaba la insignia', () {
       const interlineado = 1.15 * 10.5;
-      for (final zoom in [kZoomDetalle, 4.0]) {
+      for (final zoom in [1.8, 4.0]) {
         expect(
             etiquetas.desplazamientoDe('Estacionamiento 1',
                 zoom: zoom, mostrarIconos: false),

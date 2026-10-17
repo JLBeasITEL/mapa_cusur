@@ -99,7 +99,7 @@ void main() {
           .widget<InteractiveViewer>(find.byType(InteractiveViewer))
           .transformationController!;
 
-      for (final zoom in [1.5, kZoomDetalle, 4.0, 8.0]) {
+      for (final zoom in [1.5, 1.8, 4.0, 8.0]) {
         controller.value = Matrix4.identity()
           ..scaleByDouble(zoom, zoom, zoom, 1);
         await tester.pump();

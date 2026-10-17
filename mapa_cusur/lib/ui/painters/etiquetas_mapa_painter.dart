@@ -40,10 +40,13 @@ const Map<String, IconData> kIconosMapa = {
   'directions_car': Icons.directions_car_rounded,
 };
 
-/// Zoom del `InteractiveViewer` (1 = mapa completo) desde el que se ven
-/// los textos largos: nombres, subtítulos, lugares, estacionamientos y
-/// zonas deportivas.
-const double kZoomDetalle = 1.8;
+/// Píxeles de pantalla por metro desde los que se ven los textos largos
+/// (nombres, subtítulos, lugares, estacionamientos y zonas deportivas) y
+/// las insignias de los lugares. Es lo que daba el zoom ×1.8 en la caja de
+/// la referencia HTML; medido así, y no como zoom, aparecen con el mismo
+/// detalle en cualquier tamaño de pantalla (en un panel de 412 × 360,
+/// desde ×4).
+const double kDetallePxPorMetro = 3.1;
 
 /// Radio en pantalla de una insignia con zoom ×1; crece en proporción al
 /// zoom, como si fuera parte del mapa (11 px con ×2).
@@ -243,23 +246,29 @@ class EtiquetasMapaVectorial {
     return null;
   }
 
-  /// Cuántas insignias y textos se dibujan con [zoom].
-  ({int insignias, int textos}) visiblesCon(double zoom) => (
-        insignias: _insignias.where((i) => _visible(i.soloDetalle, zoom)).length,
-        textos: _textos.where((t) => _visible(t.soloDetalle, zoom)).length,
+  /// Cuántas insignias y textos se dibujan con [pantallaPorMetro]
+  /// píxeles de pantalla por metro.
+  ({int insignias, int textos}) visiblesCon(double pantallaPorMetro) => (
+        insignias: _insignias
+            .where((i) => _visible(i.soloDetalle, pantallaPorMetro))
+            .length,
+        textos: _textos
+            .where((t) => _visible(t.soloDetalle, pantallaPorMetro))
+            .length,
       );
 
-  /// Textos (sin repetir) que se dibujan con [zoom]. Los nombres de
+  /// Textos (sin repetir) que se dibujan con [pantallaPorMetro] píxeles
+  /// de pantalla por metro. Los nombres de
   /// calles siempre están en la lista, pero además solo se dibujan si caben
   /// ([colocar]).
-  Set<String> textosCon(double zoom) => {
+  Set<String> textosCon(double pantallaPorMetro) => {
         for (final t in _textos)
-          if (_visible(t.soloDetalle, zoom)) t.relleno.plainText,
+          if (_visible(t.soloDetalle, pantallaPorMetro)) t.relleno.plainText,
         for (final c in _calles) c.relleno.plainText,
       };
 
-  static bool _visible(bool soloDetalle, double zoom) =>
-      !soloDetalle || zoom >= kZoomDetalle;
+  static bool _visible(bool soloDetalle, double pantallaPorMetro) =>
+      !soloDetalle || pantallaPorMetro >= kDetallePxPorMetro;
 
   /// Desplazamiento vertical en pantalla del primer texto igual a
   /// [contenido] con [zoom]; `null` si no existe.
@@ -588,7 +597,10 @@ class EtiquetasMapaVectorial {
 
     void registrarInsignias(bool Function(_Insignia) cuales) {
       for (final i in _insignias) {
-        if (!cuales(i) || !_insigniaVisible(i, zoom, mostrarIconos)) continue;
+        if (!cuales(i) ||
+            !_insigniaVisible(i, pantallaPorMetro, mostrarIconos)) {
+          continue;
+        }
         registrar(
             i.nombre,
             Rect.fromCircle(
@@ -599,7 +611,9 @@ class EtiquetasMapaVectorial {
 
     void registrarTextos(_Clase clase) {
       for (final t in _textos) {
-        if (t.clase != clase || !_visible(t.soloDetalle, zoom)) continue;
+        if (t.clase != clase || !_visible(t.soloDetalle, pantallaPorMetro)) {
+          continue;
+        }
         final f = t.factorDeTamano(pantallaPorMetro);
         if (f == 0) continue;
         registrar(
@@ -647,8 +661,10 @@ class EtiquetasMapaVectorial {
     return _colocacion = ColocacionEtiquetas(ocupados, calles);
   }
 
-  static bool _insigniaVisible(_Insignia i, double zoom, bool mostrarIconos) =>
-      _visible(i.soloDetalle, zoom) && (mostrarIconos || !i.ocultable);
+  static bool _insigniaVisible(
+          _Insignia i, double pantallaPorMetro, bool mostrarIconos) =>
+      _visible(i.soloDetalle, pantallaPorMetro) &&
+      (mostrarIconos || !i.ocultable);
 
   /// Rectángulo (alineado a los ejes) que envuelve un texto de [tamano]
   /// centrado en [centro] y girado [anguloGrados].
@@ -720,8 +736,8 @@ class EtiquetasMapaPainter extends CustomPainter {
   /// Píxeles de pantalla por unidad de lienzo.
   final double pantallaPorLienzo;
 
-  /// Escala del `InteractiveViewer` (1 = mapa completo); decide qué
-  /// textos se ven ([kZoomDetalle]).
+  /// Escala del `InteractiveViewer` (1 = mapa completo); decide el
+  /// tamaño de las insignias ([radioInsignia]).
   final double zoom;
 
   /// Con `false` no se dibujan las insignias de edificios, canchas,
@@ -744,9 +760,11 @@ class EtiquetasMapaPainter extends CustomPainter {
 
     final fondo = Paint();
     final borde = Paint()..style = PaintingStyle.stroke;
+    final pantallaPorMetro = proyeccion.escala * pantallaPorLienzo;
 
     for (final i in etiquetas._insignias) {
-      if (!EtiquetasMapaVectorial._insigniaVisible(i, zoom, mostrarIconos)) {
+      if (!EtiquetasMapaVectorial._insigniaVisible(
+          i, pantallaPorMetro, mostrarIconos)) {
         continue;
       }
       final ancla = _aLienzo(i.ancla);
@@ -768,9 +786,10 @@ class EtiquetasMapaPainter extends CustomPainter {
       canvas.restore();
     }
 
-    final pantallaPorMetro = proyeccion.escala * pantallaPorLienzo;
     for (final t in etiquetas._textos) {
-      if (!EtiquetasMapaVectorial._visible(t.soloDetalle, zoom)) continue;
+      if (!EtiquetasMapaVectorial._visible(t.soloDetalle, pantallaPorMetro)) {
+        continue;
+      }
       final f = t.factorDeTamano(pantallaPorMetro);
       if (f == 0) continue;
       final ancla = _aLienzo(t.ancla);
