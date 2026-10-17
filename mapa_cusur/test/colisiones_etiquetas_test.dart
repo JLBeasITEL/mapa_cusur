@@ -20,6 +20,19 @@ Future<void> _cargarPoppins() async {
   await cargador.load();
 }
 
+/// Si [a] y [b] son líneas de un mismo bloque de texto (un lugar de varias
+/// líneas o un subtítulo).
+bool _mismoBloque(String a, String b) {
+  final mapa = parsearMapaVectorial(
+      json.decode(File('assets/campus_vector.json').readAsStringSync()));
+  final bloques = [
+    for (final l in mapa.lugares) l.lineas,
+    for (final e in mapa.edificios)
+      if (e.subtitulo != null) e.subtitulo!,
+  ];
+  return bloques.any((lineas) => lineas.contains(a) && lineas.contains(b));
+}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -84,6 +97,76 @@ void main() {
       });
     }
   }
+
+  group('nombres largos', () {
+    for (final zoom in [1.0, 2.0, 4.0, 6.0, 8.0]) {
+      for (final mostrarIconos in [true, false]) {
+        test(
+            'con zoom $zoom${mostrarIconos ? '' : ' y sin íconos'}, ningún '
+            'nombre largo dibujado se encima con otro texto', () {
+          final colocacion = colocar(zoom, mostrarIconos: mostrarIconos);
+          final textos =
+              colocacion.ocupados.where((o) => o.tipo != 'insignia').toList();
+          for (final largo in textos.where((o) => o.tipo == 'largo')) {
+            for (final otro in textos) {
+              if (identical(otro, largo)) continue;
+              // Las líneas de un mismo bloque se tocan por el margen.
+              if (otro.tipo == 'largo' &&
+                  _mismoBloque(largo.nombre, otro.nombre)) {
+                continue;
+              }
+              expect(largo.rect.overlaps(otro.rect), isFalse,
+                  reason: '${largo.nombre} choca con ${otro.nombre}');
+            }
+          }
+        });
+      }
+    }
+
+    test('a ×4 se ocultan los que chocan y el resto se dibuja', () {
+      final colocacion = colocar(4);
+      final dibujados = colocacion.ocupados
+          .where((o) => o.tipo == 'largo')
+          .map((o) => o.nombre)
+          .toList();
+
+      expect(colocacion.largosOcultos, isNotEmpty);
+      // "Laboratorio de" es la primera línea de varios lugares: puede estar
+      // oculta en uno y dibujada en otro.
+      for (final oculto in colocacion.largosOcultos) {
+        if (oculto == 'Laboratorio de') continue;
+        expect(dibujados, isNot(contains(oculto)));
+      }
+    });
+
+    test('un texto no se oculta por chocar con su propia insignia', () {
+      final dibujados = colocar(8)
+          .ocupados
+          .where((o) => o.tipo == 'largo')
+          .map((o) => o.nombre)
+          .toSet();
+
+      expect(
+          dibujados,
+          containsAll(
+              ['Cafetería Principal', 'Estacionamiento 1', 'Clínica Escuela']));
+    });
+
+    test('las líneas de un bloque se dibujan todas o ninguna', () {
+      for (final zoom in [4.0, 6.0, 8.0]) {
+        final colocacion = colocar(zoom);
+        final ocultos = colocacion.largosOcultos;
+        for (final lugar in mapa.lugares.where((l) => l.lineas.length > 1)) {
+          // La última línea es única de cada lugar ("Periodismo"...); la
+          // primera puede repetirse ("Laboratorio de").
+          if (ocultos.contains(lugar.lineas.last)) {
+            expect(ocultos, containsAll(lugar.lineas),
+                reason: '${lugar.nombre} con zoom $zoom');
+          }
+        }
+      }
+    });
+  });
 
   test('la colocación no se recalcula si no cambian la escala ni el zoom', () {
     expect(identical(colocar(2), colocar(2)), isTrue);
