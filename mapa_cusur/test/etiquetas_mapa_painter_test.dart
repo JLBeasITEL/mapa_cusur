@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -109,14 +110,33 @@ void main() {
           containsAll([
             'Cafetería Principal',
             'Estacionamiento 1',
-            'Coordinación de tecnologías',
-            'para el aprendizaje',
             'Cancha de fútbol',
             'Laboratorio de',
             'Periodismo',
           ]));
+      // Todos menos las dos líneas del subtítulo del Edificio C, que
+      // dependen de cuánto cubre el edificio la pantalla.
       expect(etiquetas.visiblesCon(kDetallePxPorMetro).textos,
-          etiquetas.totalTextos);
+          etiquetas.totalTextos - 2);
+    });
+
+    test('el subtítulo solo se ve cuando el edificio cubre el 75 % de la vista',
+        () {
+      const vista = Size(412, 360);
+      final c = mapa.edificios.singleWhere((e) => e.subtitulo != null);
+      final xs = c.anillos.first.map((p) => p.dx);
+      final ancho = xs.reduce(math.max) - xs.reduce(math.min);
+      // Px por metro con los que el ancho del edificio llena el 75 %.
+      final umbral = kCoberturaSubtitulo * vista.width / ancho;
+
+      expect(
+          etiquetas.textosCon(umbral * 0.98, vista: vista),
+          isNot(contains('Coordinación de tecnologías')));
+      expect(etiquetas.textosCon(umbral * 1.02, vista: vista),
+          containsAll(['Coordinación de tecnologías', 'para el aprendizaje']));
+      // Sin vista no hay forma de saber cuánto cubre: no se dibuja.
+      expect(etiquetas.textosCon(100),
+          isNot(contains('Coordinación de tecnologías')));
     });
 
     test('las insignias de los lugares solo se ven desde 3.1 px/m', () {

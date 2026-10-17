@@ -168,6 +168,38 @@ void main() {
     });
   });
 
+  group('subtítulo del Edificio C', () {
+    ColocacionEtiquetas conVista(double zoom) => etiquetas.colocar(
+          proyeccion: proyeccion,
+          pantallaPorLienzo: ajusteTelefono * zoom,
+          zoom: zoom,
+          mostrarIconos: true,
+          vista: const Size(412, 360),
+        );
+
+    Set<String> largosDibujados(ColocacionEtiquetas c) => c.ocupados
+        .where((o) => o.tipo == 'largo')
+        .map((o) => o.nombre)
+        .toSet();
+
+    test('no aparece con ×8 (el edificio cubre el 61 % del ancho)', () {
+      expect(largosDibujados(conVista(8)),
+          isNot(contains('Coordinación de tecnologías')));
+    });
+
+    test('aparece con ×10 y ×12, sin chocar con su letra ni con nada más',
+        () {
+      for (final zoom in [10.0, 12.0]) {
+        final colocacion = conVista(zoom);
+        expect(largosDibujados(colocacion),
+            containsAll(['Coordinación de tecnologías', 'para el aprendizaje']),
+            reason: 'zoom $zoom');
+        expect(colocacion.largosOcultos,
+            isNot(contains('Coordinación de tecnologías')));
+      }
+    });
+  });
+
   test('la colocación no se recalcula si no cambian la escala ni el zoom', () {
     expect(identical(colocar(2), colocar(2)), isTrue);
     expect(identical(colocar(2), colocar(2.5)), isFalse);

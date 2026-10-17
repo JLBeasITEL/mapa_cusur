@@ -16,6 +16,14 @@ import '../painters/mapa_vectorial_painter.dart';
 import '../painters/route_painter.dart';
 import '../theme/poppins.dart';
 
+/// Zoom máximo del modo imagen (el de siempre).
+const double kZoomMaximoImagen = 8.0;
+
+/// Zoom máximo del modo vectorial: más que en el modo imagen para poder
+/// acercarse hasta que un edificio casi llene la pantalla (cuando aparecen
+/// los subtítulos, ver `kCoberturaSubtitulo`).
+const double kZoomMaximoVectorial = 12.0;
+
 class MapImageArea extends StatefulWidget {
   final List<String> ruta;
   final GrafoCampus? grafo;
@@ -376,7 +384,7 @@ class _MapImageAreaState extends State<MapImageArea>
     if (widget.modo == ModoMapa.imagen) {
       return Container(
         color: Colors.white,
-        child: _visor(context, ajuste: 0),
+        child: _visor(context, ajuste: 0, vista: null),
       );
     }
 
@@ -396,7 +404,13 @@ class _MapImageAreaState extends State<MapImageArea>
           return Stack(
             fit: StackFit.expand,
             children: [
-              _visor(context, ajuste: ajuste.isFinite ? ajuste : 0),
+              _visor(
+                context,
+                ajuste: ajuste.isFinite ? ajuste : 0,
+                vista: restricciones.biggest.isFinite
+                    ? restricciones.biggest
+                    : null,
+              ),
               // Atribución obligatoria de la ODbL, fuera del
               // InteractiveViewer para que no se mueva con el mapa.
               if (capas != null)
@@ -424,14 +438,17 @@ class _MapImageAreaState extends State<MapImageArea>
     );
   }
 
-  /// [ajuste]: escala del FittedBox (solo la usa la capa de etiquetas del
-  /// modo vectorial).
-  Widget _visor(BuildContext context, {required double ajuste}) {
+  /// [ajuste]: escala del FittedBox, y [vista]: tamaño del área del mapa
+  /// (solo los usa la capa de etiquetas del modo vectorial).
+  Widget _visor(BuildContext context,
+      {required double ajuste, required Size? vista}) {
     final lienzo = _lienzo;
     return InteractiveViewer(
       transformationController: _transformationController,
       minScale: 1.0,
-      maxScale: 8.0,
+      maxScale: widget.modo == ModoMapa.vectorial
+          ? kZoomMaximoVectorial
+          : kZoomMaximoImagen,
       onInteractionStart: (details) {
         setState(() {
           _isCameraLocked = false;
@@ -443,12 +460,13 @@ class _MapImageAreaState extends State<MapImageArea>
         // campus_vector.json.
         child: lienzo == null
             ? const SizedBox.shrink()
-            : _contenido(context, lienzo, ajuste),
+            : _contenido(context, lienzo, ajuste, vista),
       ),
     );
   }
 
-  Widget _contenido(BuildContext context, LienzoMapa lienzo, double ajuste) {
+  Widget _contenido(
+      BuildContext context, LienzoMapa lienzo, double ajuste, Size? vista) {
     final grafo = widget.grafo;
     final capas = _capas;
     return GestureDetector(
@@ -468,6 +486,7 @@ class _MapImageAreaState extends State<MapImageArea>
                     etiquetas: capas.etiquetas,
                     proyeccion: capas.lienzo.proyeccion,
                     pantallaPorLienzo: ajuste * zoom,
+                    vista: vista,
                     zoom: zoom,
                     mostrarIconos: _mostrarIconos,
                   ),

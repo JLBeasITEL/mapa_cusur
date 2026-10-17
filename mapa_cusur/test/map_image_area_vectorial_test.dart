@@ -127,6 +127,35 @@ void main() {
           findsNothing);
     });
 
+    testWidgets('el zoom máximo es ×12 en modo vectorial y ×8 en modo imagen',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(area(modo: ModoMapa.vectorial, datos: mapa));
+      expect(
+          tester
+              .widget<InteractiveViewer>(find.byType(InteractiveViewer))
+              .maxScale,
+          12);
+
+      await tester.pumpWidget(area(modo: ModoMapa.imagen, datos: mapa));
+      expect(
+          tester
+              .widget<InteractiveViewer>(find.byType(InteractiveViewer))
+              .maxScale,
+          8);
+    });
+
+    testWidgets('la capa de etiquetas recibe el tamaño del área del mapa',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(area(modo: ModoMapa.vectorial, datos: mapa));
+
+      final capa = tester
+          .widgetList<CustomPaint>(find.byType(CustomPaint))
+          .map((c) => c.painter)
+          .whereType<EtiquetasMapaPainter>()
+          .single;
+      expect(capa.vista, const Size(400, 340));
+    });
+
     testWidgets('la atribución no aparece mientras no hay datos',
         (WidgetTester tester) async {
       await tester.pumpWidget(area(modo: ModoMapa.vectorial, datos: null));

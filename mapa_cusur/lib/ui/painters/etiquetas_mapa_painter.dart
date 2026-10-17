@@ -70,6 +70,10 @@ double radioInsignia(double zoom, {double tamano = 1}) =>
 /// dibujarlas se escalan a [radioInsignia].
 const double _radioMaquetado = 11;
 
+/// Fracción de la pantalla que debe cubrir un edificio (a lo ancho o a lo
+/// alto) para que se vea su subtítulo: solo cuando casi lo llena.
+const double kCoberturaSubtitulo = 0.75;
+
 /// Tamaño máximo en pantalla de la letra de un edificio.
 const double kTamanoLetra = 15;
 
@@ -134,12 +138,16 @@ class _Texto {
   final _Clase clase;
 
   /// El elemento del mapa al que pertenece: un texto no choca con la
-  /// insignia de su mismo elemento.
+  /// insignia ni con la letra de su mismo elemento.
   final Object? dueno;
 
   /// Las líneas de un mismo bloque (un lugar de dos líneas, un subtítulo)
   /// comparten grupo: se dibujan todas o ninguna.
   final Object? grupo;
+
+  /// Solo en los subtítulos: ancho y alto en metros del edificio, del que
+  /// depende si se ven ([kCoberturaSubtitulo]).
+  final Size? cajaEdificio;
 
   /// Solo en las letras de edificio: radio en metros del círculo más
   /// grande que cabe en el edificio (con centro en [ancla]), del que
@@ -165,6 +173,7 @@ class _Texto {
     required this.clase,
     this.dueno,
     this.grupo,
+    this.cajaEdificio,
     this.radioPolo,
     this.anguloGrados = 0,
     this.insignia,
@@ -270,13 +279,16 @@ class EtiquetasMapaVectorial {
   }
 
   /// Cuántas insignias y textos se dibujan con [pantallaPorMetro]
-  /// píxeles de pantalla por metro.
-  ({int insignias, int textos}) visiblesCon(double pantallaPorMetro) => (
+  /// píxeles de pantalla por metro en una [vista] de ese tamaño (sin
+  /// [vista], ningún subtítulo).
+  ({int insignias, int textos}) visiblesCon(double pantallaPorMetro,
+          {Size? vista}) =>
+      (
         insignias: _insignias
             .where((i) => _visible(i.soloDetalle, pantallaPorMetro))
             .length,
         textos: _textos
-            .where((t) => _visible(t.soloDetalle, pantallaPorMetro))
+            .where((t) => _textoVisible(t, pantallaPorMetro, vista))
             .length,
       );
 
@@ -284,14 +296,25 @@ class EtiquetasMapaVectorial {
   /// de pantalla por metro. Los nombres de
   /// calles siempre están en la lista, pero además solo se dibujan si caben
   /// ([colocar]).
-  Set<String> textosCon(double pantallaPorMetro) => {
+  Set<String> textosCon(double pantallaPorMetro, {Size? vista}) => {
         for (final t in _textos)
-          if (_visible(t.soloDetalle, pantallaPorMetro)) t.relleno.plainText,
+          if (_textoVisible(t, pantallaPorMetro, vista)) t.relleno.plainText,
         for (final c in _calles) c.relleno.plainText,
       };
 
   static bool _visible(bool soloDetalle, double pantallaPorMetro) =>
       !soloDetalle || pantallaPorMetro >= kDetallePxPorMetro;
+
+  /// Como [_visible], pero un subtítulo además solo se ve cuando su
+  /// edificio cubre al menos [kCoberturaSubtitulo] de la [vista].
+  static bool _textoVisible(_Texto t, double pantallaPorMetro, Size? vista) {
+    final caja = t.cajaEdificio;
+    if (caja == null) return _visible(t.soloDetalle, pantallaPorMetro);
+    if (vista == null || vista.isEmpty) return false;
+    final cobertura = math.max(caja.width * pantallaPorMetro / vista.width,
+        caja.height * pantallaPorMetro / vista.height);
+    return cobertura >= kCoberturaSubtitulo;
+  }
 
   /// Desplazamiento vertical en pantalla del primer texto igual a
   /// [contenido] con [zoom]; `null` si no existe.
@@ -361,6 +384,7 @@ class EtiquetasMapaVectorial {
       _Clase clase = _Clase.largo,
       Object? dueno,
       Object? grupo,
+      Size? cajaEdificio,
       double? radioPolo,
       double? altoDeLinea,
       double anguloGrados = 0,
@@ -393,6 +417,7 @@ class EtiquetasMapaVectorial {
         clase: clase,
         dueno: dueno,
         grupo: grupo,
+        cajaEdificio: cajaEdificio,
         radioPolo: radioPolo,
         insignia: debajoDe == null ? null : insigniaDe[debajoDe],
         linea: linea,
@@ -461,13 +486,16 @@ class EtiquetasMapaVectorial {
       final subtitulo = e.subtitulo ?? const <String>[];
       final bloqueSubtitulo = Object();
       for (var k = 0; k < subtitulo.length; k++) {
-        texto(e.etiqueta, subtitulo[k],
+        // Debajo de la letra (13 y 24 px), donde ahora está la letra: en el
+        // polo del edificio si lo tiene.
+        texto(polo?.centro ?? e.etiqueta, subtitulo[k],
             tamano: 9.5,
             peso: FontWeight.w500,
             color: ColoresMapaVectorial.textoEdificio,
             dy: 13.0 + 11 * k,
             dueno: e,
             grupo: bloqueSubtitulo,
+            cajaEdificio: _caja(e.anillos.first),
             soloDetalle: true);
       }
     }
@@ -608,12 +636,12 @@ class EtiquetasMapaVectorial {
   // la escala, el zoom ni el botón de íconos (por ejemplo, al desplazar el
   // mapa o con cada lectura de GPS), no se vuelve a calcular.
   ColocacionEtiquetas? _colocacion;
-  (double, double, bool, double)? _claveColocacion;
+  (double, double, bool, double, Size?)? _claveColocacion;
 
   /// Coloca las etiquetas en pantalla (ver [ColocacionEtiquetas]). Las
   /// entradas, las letras y las insignias se registran tal como se
   /// dibujan. Cada nombre largo (o bloque de líneas) se dibuja solo si no
-  /// choca con nada de lo ya registrado, salvo su propia insignia. Cada nombre de
+  /// choca con nada de lo ya registrado, salvo su propia insignia o letra. Cada nombre de
   /// calle va en la primera de sus posiciones que no choque con nada, o
   /// no se dibuja.
   ColocacionEtiquetas colocar({
@@ -621,8 +649,10 @@ class EtiquetasMapaVectorial {
     required double pantallaPorLienzo,
     required double zoom,
     required bool mostrarIconos,
+    Size? vista,
   }) {
-    final clave = (pantallaPorLienzo, zoom, mostrarIconos, proyeccion.escala);
+    final clave =
+        (pantallaPorLienzo, zoom, mostrarIconos, proyeccion.escala, vista);
     final previa = _colocacion;
     if (previa != null && _claveColocacion == clave) return previa;
 
@@ -639,8 +669,8 @@ class EtiquetasMapaVectorial {
           rect: rect.inflate(kMargenColision),
           dueno: dueno,
         ));
-    // Choca con algo ya registrado, sin contar la insignia de su mismo
-    // elemento (el texto de un lugar va justo debajo de ella).
+    // Choca con algo ya registrado, sin contar la insignia o la letra de
+    // su mismo elemento (el texto va justo debajo de ellas, a propósito).
     bool choca(Rect rect, Object? dueno) => ocupados.any((o) =>
         (dueno == null || !identical(o.dueno, dueno)) &&
         o.rect.overlaps(rect));
@@ -662,7 +692,7 @@ class EtiquetasMapaVectorial {
     }
 
     Rect? rectangulo(_Texto t) {
-      if (!_visible(t.soloDetalle, pantallaPorMetro)) return null;
+      if (!_textoVisible(t, pantallaPorMetro, vista)) return null;
       final f = t.factorDeTamano(pantallaPorMetro);
       if (f == 0) return null;
       return _rectanguloDeTexto(
@@ -676,10 +706,11 @@ class EtiquetasMapaVectorial {
       for (final t in _textos) {
         if (t.clase != clase) continue;
         final rect = rectangulo(t);
-        // Solo las insignias registran su dueño: un texto puede ir sobre su
-        // propia insignia, pero no sobre su propia letra.
+        // Las letras registran su dueño: el subtítulo de su edificio va
+        // justo debajo de ella, a propósito.
         if (rect != null) {
-          registrar(t.relleno.plainText, clase.name, rect, null);
+          registrar(t.relleno.plainText, clase.name, rect,
+              clase == _Clase.letra ? t.dueno : null);
         }
       }
     }
@@ -803,6 +834,14 @@ class EtiquetasMapaVectorial {
         textDirection: TextDirection.ltr,
       )..layout();
 
+  /// Ancho y alto de la caja que envuelve [poligono].
+  static Size _caja(List<Offset> poligono) {
+    final xs = poligono.map((p) => p.dx);
+    final ys = poligono.map((p) => p.dy);
+    return Size(xs.reduce(math.max) - xs.reduce(math.min),
+        ys.reduce(math.max) - ys.reduce(math.min));
+  }
+
   /// Promedio de los vértices, sin contar el punto que cierra el polígono.
   static Offset _centro(List<Offset> poligono) {
     final vertices = poligono.length > 1 && poligono.first == poligono.last
@@ -853,12 +892,17 @@ class EtiquetasMapaPainter extends CustomPainter {
   /// quedan centrados donde estaba la insignia.
   final bool mostrarIconos;
 
+  /// Tamaño en pantalla del área del mapa: decide si se ven los
+  /// subtítulos ([kCoberturaSubtitulo]). Sin él no se dibuja ninguno.
+  final Size? vista;
+
   EtiquetasMapaPainter({
     required this.etiquetas,
     required this.proyeccion,
     required this.pantallaPorLienzo,
     required this.zoom,
     this.mostrarIconos = true,
+    this.vista,
   });
 
   @override
@@ -876,6 +920,7 @@ class EtiquetasMapaPainter extends CustomPainter {
       pantallaPorLienzo: pantallaPorLienzo,
       zoom: zoom,
       mostrarIconos: mostrarIconos,
+      vista: vista,
     );
 
     for (final i in etiquetas._insignias) {
@@ -903,7 +948,7 @@ class EtiquetasMapaPainter extends CustomPainter {
     }
 
     for (final t in etiquetas._textos) {
-      if (!EtiquetasMapaVectorial._visible(t.soloDetalle, pantallaPorMetro) ||
+      if (!EtiquetasMapaVectorial._textoVisible(t, pantallaPorMetro, vista) ||
           colocacion._ocultos.contains(t)) {
         continue;
       }
@@ -947,5 +992,6 @@ class EtiquetasMapaPainter extends CustomPainter {
       oldDelegate.pantallaPorLienzo != pantallaPorLienzo ||
       oldDelegate.zoom != zoom ||
       oldDelegate.mostrarIconos != mostrarIconos ||
+      oldDelegate.vista != vista ||
       oldDelegate.proyeccion.escala != proyeccion.escala;
 }
