@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/polo_inaccesibilidad.dart';
 import '../../models/mapa_vectorial.dart';
 import '../mapa/colores_mapa_vectorial.dart';
 
@@ -32,6 +33,10 @@ class GeometriaMapaVectorial {
   /// Círculos y semicírculos rojos de las canchas.
   final Path marcasCanchas;
 
+  /// Polo de inaccesibilidad (en metros) de cada edificio con letra: la
+  /// letra se dibuja en su centro y su tamaño depende de su radio.
+  final Map<Edificio, PoloDeInaccesibilidad> polos;
+
   GeometriaMapaVectorial._({
     required this.mapa,
     required this.campus,
@@ -46,6 +51,7 @@ class GeometriaMapaVectorial {
     required this.canchas,
     required this.lineasCanchas,
     required this.marcasCanchas,
+    required this.polos,
   });
 
   /// Desplazamiento de la sombra de los edificios, en metros.
@@ -126,8 +132,20 @@ class GeometriaMapaVectorial {
       canchas: canchas,
       lineasCanchas: lineasCanchas,
       marcasCanchas: marcasCanchas,
+      polos: polosDeEdificios(mapa),
     );
   }
+
+  /// Polo de inaccesibilidad de cada edificio con letra (con sus huecos),
+  /// con precisión de 0.5 m.
+  static Map<Edificio, PoloDeInaccesibilidad> polosDeEdificios(
+          MapaVectorial mapa) =>
+      Map.unmodifiable(Map<Edificio, PoloDeInaccesibilidad>.identity()
+        ..addEntries([
+          for (final e in mapa.edificios)
+            if (e.letra != null)
+              MapEntry(e, poloDeInaccesibilidad(e.anillos, precision: 0.5)),
+        ]));
 
   static Path _polilinea(List<Offset> puntos) {
     final path = Path();

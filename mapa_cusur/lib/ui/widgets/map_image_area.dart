@@ -509,10 +509,18 @@ class _CapasVectoriales {
   final GeometriaMapaVectorial geometria;
   final EtiquetasMapaVectorial etiquetas;
 
-  _CapasVectoriales(this.mapa)
-      : lienzo = LienzoVectorial(ProyeccionLocal(mapa.meta)),
-        geometria = GeometriaMapaVectorial(mapa),
-        etiquetas = EtiquetasMapaVectorial(mapa);
+  _CapasVectoriales._(this.mapa, this.lienzo, this.geometria, this.etiquetas);
+
+  factory _CapasVectoriales(MapaVectorial mapa) {
+    final geometria = GeometriaMapaVectorial(mapa);
+    return _CapasVectoriales._(
+      mapa,
+      LienzoVectorial(ProyeccionLocal(mapa.meta)),
+      geometria,
+      // Los polos de los edificios ya los calculó la geometría.
+      EtiquetasMapaVectorial(mapa, polos: geometria.polos),
+    );
+  }
 }
 
 /// Muestra u oculta las insignias del mapa vectorial. Mismo estilo que el

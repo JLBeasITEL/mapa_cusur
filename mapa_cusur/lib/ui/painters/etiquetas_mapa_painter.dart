@@ -2,10 +2,12 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../domain/polo_inaccesibilidad.dart';
 import '../../domain/proyeccion_local.dart';
 import '../../models/mapa_vectorial.dart';
 import '../mapa/colores_mapa_vectorial.dart';
 import '../theme/poppins.dart';
+import 'mapa_vectorial_painter.dart';
 
 /// Íconos de Material (variante *rounded*) por el nombre que usa
 /// `campus_vector.json`. Es un mapa `const` para que el tree-shaking de
@@ -65,6 +67,16 @@ double radioInsignia(double zoom, {double tamano = 1}) =>
 /// dibujarlas se escalan a [radioInsignia].
 const double _radioMaquetado = 11;
 
+/// Tamaño máximo en pantalla de la letra de un edificio.
+const double kTamanoLetra = 15;
+
+/// La letra mide a lo más este factor por el radio (en pantalla) del
+/// círculo más grande que cabe en su edificio...
+const double kFactorRadioLetra = 1.3;
+
+/// ...y si así queda por debajo de este tamaño, no se dibuja a ese zoom.
+const double kTamanoMinimoLetra = 7;
+
 /// Margen en pantalla alrededor de cada etiqueta para la detección de
 /// colisiones.
 const double kMargenColision = 4;
@@ -114,6 +126,11 @@ class _Texto {
   final bool soloDetalle;
   final _Clase clase;
 
+  /// Solo en las letras de edificio: radio en metros del círculo más
+  /// grande que cabe en el edificio (con centro en [ancla]), del que
+  /// depende el tamaño de la letra.
+  final double? radioPolo;
+
   /// La insignia bajo la que va el texto, si la hay: entonces su
   /// separación depende del radio actual de la insignia, no de [dy].
   final _Insignia? insignia;
@@ -131,12 +148,25 @@ class _Texto {
     required this.halo,
     required this.soloDetalle,
     required this.clase,
+    this.radioPolo,
     this.anguloGrados = 0,
     this.insignia,
     this.linea = 0,
     this.lineas = 1,
     this.interlineado = 0,
   });
+
+  /// Factor por el que se escala el texto maquetado con
+  /// [pantallaPorMetro] píxeles de pantalla por metro: 1 salvo en las
+  /// letras de edificio, que miden min(15 px, 1.3 × radio del círculo en
+  /// pantalla). 0 si la letra quedaría por debajo de 7 px (no se dibuja).
+  double factorDeTamano(double pantallaPorMetro) {
+    final radio = radioPolo;
+    if (radio == null) return 1;
+    final tamano =
+        math.min(kTamanoLetra, kFactorRadioLetra * radio * pantallaPorMetro);
+    return tamano < kTamanoMinimoLetra ? 0 : tamano / kTamanoLetra;
+  }
 
   /// Desplazamiento vertical en pantalla del centro del texto con [zoom].
   /// Si su insignia está oculta, el texto (todas sus líneas juntas) queda
@@ -200,6 +230,19 @@ class EtiquetasMapaVectorial {
   int get totalInsignias => _insignias.length;
   int get totalTextos => _textos.length;
 
+  /// Tamaño en pantalla con que se dibuja la letra [letra] con
+  /// [pantallaPorMetro] píxeles por metro; `null` si no se dibuja.
+  @visibleForTesting
+  Size? tamanoDeLetraEnPantalla(String letra,
+      {required double pantallaPorMetro}) {
+    for (final t in _textos) {
+      if (t.clase != _Clase.letra || t.relleno.plainText != letra) continue;
+      final f = t.factorDeTamano(pantallaPorMetro);
+      return f == 0 ? null : t.relleno.size * f;
+    }
+    return null;
+  }
+
   /// Cuántas insignias y textos se dibujan con [zoom].
   ({int insignias, int textos}) visiblesCon(double zoom) => (
         insignias: _insignias.where((i) => _visible(i.soloDetalle, zoom)).length,
@@ -231,7 +274,11 @@ class EtiquetasMapaVectorial {
     return null;
   }
 
-  factory EtiquetasMapaVectorial(MapaVectorial mapa) {
+  /// [polos]: los de `GeometriaMapaVectorial`, para no calcularlos dos
+  /// veces; si no se dan, se calculan aquí.
+  factory EtiquetasMapaVectorial(MapaVectorial mapa,
+      {Map<Edificio, PoloDeInaccesibilidad>? polos}) {
+    polos ??= GeometriaMapaVectorial.polosDeEdificios(mapa);
     final insignias = <_Insignia>[];
     final textos = <_Texto>[];
     // La insignia de cada edificio, lugar, entrada y estacionamiento, para
@@ -279,6 +326,8 @@ class EtiquetasMapaVectorial {
       double anchoHalo = 3,
       bool soloDetalle = false,
       _Clase clase = _Clase.largo,
+      double? radioPolo,
+      double? altoDeLinea,
       double anguloGrados = 0,
       Object? debajoDe,
       int linea = 0,
@@ -294,8 +343,9 @@ class EtiquetasMapaVectorial {
         ancla: ancla,
         dy: dy,
         anguloGrados: anguloGrados,
-        relleno: maquetar(
-            poppins(fontSize: tamano, fontWeight: peso, color: color)),
+        relleno: maquetar(poppins(
+                fontSize: tamano, fontWeight: peso, color: color)
+            .copyWith(height: altoDeLinea)),
         halo: colorHalo == null
             ? null
             : maquetar(poppins(fontSize: tamano, fontWeight: peso).copyWith(
@@ -306,6 +356,7 @@ class EtiquetasMapaVectorial {
                   ..color = colorHalo)),
         soloDetalle: soloDetalle,
         clase: clase,
+        radioPolo: radioPolo,
         insignia: debajoDe == null ? null : insigniaDe[debajoDe],
         linea: linea,
         lineas: lineas,
@@ -341,12 +392,18 @@ class EtiquetasMapaVectorial {
 
     // --- Textos ---
     for (final e in mapa.edificios) {
-      if (e.letra != null) {
-        texto(e.etiqueta, e.letra!,
-            tamano: 15,
+      final polo = polos[e];
+      if (e.letra != null && polo != null) {
+        // En el centro del círculo más grande que cabe en el edificio (no
+        // en `etiqueta`), con la caja de línea del alto de la letra para
+        // que su rectángulo sea el de la letra.
+        texto(polo.centro, e.letra!,
+            tamano: kTamanoLetra,
             peso: FontWeight.w600,
             color: ColoresMapaVectorial.textoEdificio,
-            clase: _Clase.letra);
+            clase: _Clase.letra,
+            radioPolo: polo.radio,
+            altoDeLinea: 1);
       }
       if (e.texto != null) {
         final techada = e.tipo == TipoEdificio.techada;
@@ -523,6 +580,7 @@ class EtiquetasMapaVectorial {
 
     Offset enPantalla(Offset metros) =>
         proyeccion.localALienzo(metros.dx, metros.dy) * pantallaPorLienzo;
+    final pantallaPorMetro = proyeccion.escala * pantallaPorLienzo;
 
     final ocupados = <({String nombre, Rect rect})>[];
     void registrar(String nombre, Rect rect) =>
@@ -542,12 +600,14 @@ class EtiquetasMapaVectorial {
     void registrarTextos(_Clase clase) {
       for (final t in _textos) {
         if (t.clase != clase || !_visible(t.soloDetalle, zoom)) continue;
+        final f = t.factorDeTamano(pantallaPorMetro);
+        if (f == 0) continue;
         registrar(
             t.relleno.plainText,
             _rectanguloDeTexto(
                 enPantalla(t.ancla) +
                     Offset(0, t.dyCon(zoom, mostrarIconos: mostrarIconos)),
-                t.relleno.size,
+                t.relleno.size * f,
                 t.anguloGrados));
       }
     }
@@ -708,12 +768,15 @@ class EtiquetasMapaPainter extends CustomPainter {
       canvas.restore();
     }
 
+    final pantallaPorMetro = proyeccion.escala * pantallaPorLienzo;
     for (final t in etiquetas._textos) {
       if (!EtiquetasMapaVectorial._visible(t.soloDetalle, zoom)) continue;
+      final f = t.factorDeTamano(pantallaPorMetro);
+      if (f == 0) continue;
       final ancla = _aLienzo(t.ancla);
       canvas.save();
       canvas.translate(ancla.dx, ancla.dy);
-      canvas.scale(k);
+      canvas.scale(k * f);
       if (t.anguloGrados != 0) canvas.rotate(t.anguloGrados * math.pi / 180);
       final esquina =
           Offset(-t.relleno.width / 2,
