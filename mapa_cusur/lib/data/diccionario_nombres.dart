@@ -52,4 +52,12 @@ const Map<String, String> diccionarioNombres = {
   'CMID': 'C.M.I.D.',
   'RadioUDG': 'Radio UDG',
   'Proteccion_Civil': 'Protección Civil',
+  // Nodos de acceso agregados con el mapa vectorial (posición en la orilla
+  // del lugar, tomada de campus_vector.json; píxeles derivados).
+  'Cancha_Futbol_Central': 'Cancha de fútbol central',
+  'Cancha_Futbol_Norte': 'Cancha de fútbol norte',
+  'Cancha_Multiple': 'Cancha múltiple',
+  'Lab_Programacion': 'Laboratorio de Programación',
+  'Lab_Electronica': 'Laboratorio de Electrónica',
+  'Lab_Periodismo': 'Laboratorio de Periodismo',
 };

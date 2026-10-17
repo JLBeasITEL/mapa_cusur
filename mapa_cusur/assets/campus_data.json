@@ -575,6 +575,30 @@
         "Proteccion_Civil": [
             19.723795126247566,
             -103.46091226145016
+        ],
+        "Cancha_Futbol_Central": [
+            19.724969385,
+            -103.460883517
+        ],
+        "Cancha_Futbol_Norte": [
+            19.726059153,
+            -103.462031549
+        ],
+        "Cancha_Multiple": [
+            19.726036891,
+            -103.461720577
+        ],
+        "Lab_Programacion": [
+            19.725118092,
+            -103.461960092
+        ],
+        "Lab_Electronica": [
+            19.725180556,
+            -103.461533901
+        ],
+        "Lab_Periodismo": [
+            19.72539804,
+            -103.461799941
         ]
     },
     "coordenadas_pix": {
@@ -1153,6 +1177,30 @@
         "Proteccion_Civil": [
             390,
             140
+        ],
+        "Cancha_Futbol_Central": [
+            383,
+            355
+        ],
+        "Cancha_Futbol_Norte": [
+            168,
+            578
+        ],
+        "Cancha_Multiple": [
+            253,
+            588
+        ],
+        "Lab_Programacion": [
+            182,
+            391
+        ],
+        "Lab_Electronica": [
+            272,
+            406
+        ],
+        "Lab_Periodismo": [
+            238,
+            448
         ]
     },
     "conexiones": {
@@ -1181,7 +1229,8 @@
             "Gimnasio": 1.23,
             "G2": 0.34,
             "G1": 0.37,
-            "GG": 0.64
+            "GG": 0.64,
+            "Lab_Programacion": 0.08
         },
         "L2": {
             "L1": 0.19,
@@ -1202,7 +1251,8 @@
             "L2": 0.83,
             "B2": 0.77,
             "Edificio_L": 0.43,
-            "Edificio_C": 0.23
+            "Edificio_C": 0.23,
+            "Lab_Electronica": 0.06
         },
         "L5": {
             "L2": 0.25,
@@ -1391,7 +1441,8 @@
             "L7": 0.42
         },
         "L8": {
-            "L7": 0.3
+            "L7": 0.3,
+            "Lab_Periodismo": 0.09
         },
         "M1": {
             "M3": 0.25,
@@ -1412,7 +1463,8 @@
             "M2": 0.23,
             "Edificio_M": 0.11,
             "M3": 0.23,
-            "M9": 0.77
+            "M9": 0.77,
+            "Cancha_Multiple": 0.01
         },
         "Edificio_M": {
             "M4": 0.11,
@@ -1454,7 +1506,8 @@
             "Cafeteria": 0.68,
             "SP4": 0.91,
             "SP6": 0.34,
-            "M7": 0.66
+            "M7": 0.66,
+            "Cancha_Futbol_Norte": 0.04
         },
         "SP4": {
             "SP3": 0.91,
@@ -1761,7 +1814,8 @@
         "Ce4": {
             "Ce3": 0.81,
             "Ce2": 0.35,
-            "C1": 0.23
+            "C1": 0.23,
+            "Cancha_Futbol_Central": 0.15
         },
         "Clinica_Escuela": {
             "Ce1": 0.3,
@@ -2001,6 +2055,24 @@
             "Y3": 0.6,
             "Y4": 0.65,
             "X3": 0.53
+        },
+        "Cancha_Futbol_Central": {
+            "Ce4": 0.15
+        },
+        "Cancha_Futbol_Norte": {
+            "SP3": 0.04
+        },
+        "Cancha_Multiple": {
+            "M4": 0.01
+        },
+        "Lab_Programacion": {
+            "L1": 0.08
+        },
+        "Lab_Electronica": {
+            "L4": 0.06
+        },
+        "Lab_Periodismo": {
+            "L8": 0.09
         }
     },
     "puntos_control": [
