@@ -12,9 +12,7 @@ enum ModoMapa { imagen, vectorial }
 /// Modo activo de la app. Cambiar a [ModoMapa.imagen] para la versión
 /// documentada en la tesis: con él, la app se comporta exactamente igual
 /// que antes del mapa vectorial.
-// Mientras el mapa vectorial no se dibuja (Fase 3) se queda en imagen;
-// pasa a vectorial cuando el dibujo esté listo (Fase 4).
-const ModoMapa kModoMapa = ModoMapa.imagen;
+const ModoMapa kModoMapa = ModoMapa.vectorial;
 
 /// El espacio del lienzo donde se dibujan la ruta, los pines y el marcador
 /// GPS, y la conversión de nodos y posiciones geográficas a ese espacio.

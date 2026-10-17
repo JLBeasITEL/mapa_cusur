@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -8,7 +9,10 @@ import '../../domain/transformacion_geo.dart';
 import '../../domain/ubicacion_en_ruta.dart';
 import '../../models/grafo_campus.dart';
 import '../../models/mapa_vectorial.dart';
+import '../mapa/colores_mapa_vectorial.dart';
 import '../mapa/lienzo_mapa.dart';
+import '../painters/etiquetas_mapa_painter.dart';
+import '../painters/mapa_vectorial_painter.dart';
 import '../painters/route_painter.dart';
 import '../theme/poppins.dart';
 
@@ -92,14 +96,26 @@ class _MapImageAreaState extends State<MapImageArea>
       case ModoMapa.imagen:
         return LienzoImagen(widget.transformacion);
       case ModoMapa.vectorial:
-        final mapa = widget.mapaVectorial;
-        return mapa == null ? null : LienzoVectorial(ProyeccionLocal(mapa.meta));
+        return _capas?.lienzo;
     }
+  }
+
+  /// Lo que el modo vectorial construye una sola vez por cada
+  /// `mapaVectorial` (no en cada build ni en cada frame de zoom).
+  _CapasVectoriales? _capas;
+
+  void _actualizarCapasVectoriales() {
+    final mapa =
+        widget.modo == ModoMapa.vectorial ? widget.mapaVectorial : null;
+    if (identical(_capas?.mapa, mapa)) return;
+    _capas?.etiquetas.dispose();
+    _capas = mapa == null ? null : _CapasVectoriales(mapa);
   }
 
   @override
   void initState() {
     super.initState();
+    _actualizarCapasVectoriales();
     _animationController = AnimationController(vsync: this)
       ..addListener(() {
         if (_animationReset != null) {
@@ -182,6 +198,7 @@ class _MapImageAreaState extends State<MapImageArea>
   @override
   void didUpdateWidget(MapImageArea oldWidget) {
     super.didUpdateWidget(oldWidget);
+    _actualizarCapasVectoriales();
     // El reinicio va primero: si en el mismo frame también aumentó
     // disparadorZoom, gana el reinicio.
     if (widget.disparadorReinicioCamara > oldWidget.disparadorReinicioCamara) {
@@ -207,6 +224,7 @@ class _MapImageAreaState extends State<MapImageArea>
     _transformationController.dispose();
     _animationController.dispose();
     _zoomNotifier.dispose();
+    _capas?.etiquetas.dispose();
     super.dispose();
   }
 
@@ -325,54 +343,117 @@ class _MapImageAreaState extends State<MapImageArea>
 
   /// El fondo del lienzo, que además le da su tamaño al `Stack`.
   Widget _fondo(LienzoMapa lienzo) {
-    switch (widget.modo) {
-      case ModoMapa.imagen:
-        return Image.asset('assets/mapa_CUSur.png');
-      case ModoMapa.vectorial:
-        // Fase 3: el mapa vectorial todavía no se dibuja; el lienzo ya
-        // tiene su tamaño y la imagen queda solo como relleno provisional
-        // (no coincide con las coordenadas vectoriales).
-        return SizedBox.fromSize(
-          size: lienzo.tamano,
-          child: Image.asset('assets/mapa_CUSur.png', fit: BoxFit.contain),
-        );
+    final capas = _capas;
+    if (widget.modo == ModoMapa.imagen || capas == null) {
+      return Image.asset('assets/mapa_CUSur.png');
     }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final lienzo = _lienzo;
-    return Container(
-      color: Colors.white,
-      child: InteractiveViewer(
-        transformationController: _transformationController,
-        minScale: 1.0,
-        maxScale: 8.0,
-        onInteractionStart: (details) {
-          setState(() {
-            _isCameraLocked = false;
-          });
-        },
-        child: FittedBox(
-          fit: BoxFit.contain,
-          // Solo es null en modo vectorial, mientras carga
-          // campus_vector.json.
-          child: lienzo == null
-              ? const SizedBox.shrink()
-              : _contenido(context, lienzo),
+    // La capa estática no depende del zoom: en su propio RepaintBoundary,
+    // no se vuelve a pintar al hacer zoom ni con cada lectura de GPS.
+    return SizedBox.fromSize(
+      size: lienzo.tamano,
+      child: RepaintBoundary(
+        child: CustomPaint(
+          painter: MapaVectorialPainter(
+            geometria: capas.geometria,
+            escala: capas.lienzo.proyeccion.escala,
+          ),
         ),
       ),
     );
   }
 
-  Widget _contenido(BuildContext context, LienzoMapa lienzo) {
+  @override
+  Widget build(BuildContext context) {
+    if (widget.modo == ModoMapa.imagen) {
+      return Container(
+        color: Colors.white,
+        child: _visor(context, ajuste: 0),
+      );
+    }
+
+    final capas = _capas;
+    return Container(
+      color: ColoresMapaVectorial.fondo,
+      child: LayoutBuilder(
+        builder: (context, restricciones) {
+          // Escala del FittedBox (BoxFit.contain): píxeles de pantalla por
+          // unidad de lienzo con zoom 1. La capa de etiquetas la necesita
+          // para que sus textos tengan tamaño constante en pantalla.
+          final double ajuste = capas == null
+              ? 0
+              : math.min(
+                  restricciones.maxWidth / capas.lienzo.tamano.width,
+                  restricciones.maxHeight / capas.lienzo.tamano.height);
+          return Stack(
+            fit: StackFit.expand,
+            children: [
+              _visor(context, ajuste: ajuste.isFinite ? ajuste : 0),
+              // Atribución obligatoria de la ODbL, fuera del
+              // InteractiveViewer para que no se mueva con el mapa.
+              if (capas != null)
+                Positioned(
+                  right: 6,
+                  bottom: 6,
+                  child: IgnorePointer(
+                    child: _Atribucion(capas.mapa.meta.atribucion),
+                  ),
+                ),
+            ],
+          );
+        },
+      ),
+    );
+  }
+
+  /// [ajuste]: escala del FittedBox (solo la usa la capa de etiquetas del
+  /// modo vectorial).
+  Widget _visor(BuildContext context, {required double ajuste}) {
+    final lienzo = _lienzo;
+    return InteractiveViewer(
+      transformationController: _transformationController,
+      minScale: 1.0,
+      maxScale: 8.0,
+      onInteractionStart: (details) {
+        setState(() {
+          _isCameraLocked = false;
+        });
+      },
+      child: FittedBox(
+        fit: BoxFit.contain,
+        // Solo es null en modo vectorial, mientras carga
+        // campus_vector.json.
+        child: lienzo == null
+            ? const SizedBox.shrink()
+            : _contenido(context, lienzo, ajuste),
+      ),
+    );
+  }
+
+  Widget _contenido(BuildContext context, LienzoMapa lienzo, double ajuste) {
     final grafo = widget.grafo;
+    final capas = _capas;
     return GestureDetector(
       onTapUp: (details) => _manejarToqueEnMapa(context, details.localPosition),
       child: Stack(
         key: _stackKey,
         children: [
           _fondo(lienzo),
+          // Insignias y textos del mapa vectorial: se repintan con el zoom
+          // para mantener su tamaño en pantalla.
+          if (capas != null)
+            Positioned.fill(
+              child: ValueListenableBuilder<double>(
+                valueListenable: _zoomNotifier,
+                builder: (context, zoom, _) => CustomPaint(
+                  painter: EtiquetasMapaPainter(
+                    etiquetas: capas.etiquetas,
+                    proyeccion: capas.lienzo.proyeccion,
+                    pantallaPorLienzo: ajuste * zoom,
+                    zoom: zoom,
+                  ),
+                ),
+              ),
+            ),
           // La ruta resaltada, los pines y el marcador de GPS -lo que
           // cambia con cada actualización de posición-. El trazado
           // estático del grafo (aristas y nodos azules) no se dibuja:
@@ -394,6 +475,44 @@ class _MapImageAreaState extends State<MapImageArea>
               ),
             ),
         ],
+      ),
+    );
+  }
+}
+
+/// Lo que el modo vectorial construye una sola vez por cada
+/// [MapaVectorial]: el lienzo, los `Path` de la capa estática y las
+/// etiquetas ya maquetadas.
+class _CapasVectoriales {
+  final MapaVectorial mapa;
+  final LienzoVectorial lienzo;
+  final GeometriaMapaVectorial geometria;
+  final EtiquetasMapaVectorial etiquetas;
+
+  _CapasVectoriales(this.mapa)
+      : lienzo = LienzoVectorial(ProyeccionLocal(mapa.meta)),
+        geometria = GeometriaMapaVectorial(mapa),
+        etiquetas = EtiquetasMapaVectorial(mapa);
+}
+
+/// "© colaboradores de OpenStreetMap" (`meta.atribucion`), que la ODbL
+/// exige mostrar junto a los datos.
+class _Atribucion extends StatelessWidget {
+  final String texto;
+
+  const _Atribucion(this.texto);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.75),
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Text(
+        texto,
+        style: poppins(fontSize: 11, color: ColoresMapaVectorial.tenue),
       ),
     );
   }
