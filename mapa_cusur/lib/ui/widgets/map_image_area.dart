@@ -401,8 +401,8 @@ class _MapImageAreaState extends State<MapImageArea>
               // InteractiveViewer para que no se mueva con el mapa.
               if (capas != null)
                 Positioned(
-                  right: 6,
-                  bottom: 6,
+                  left: 8,
+                  top: 8,
                   child: IgnorePointer(
                     child: _Atribucion(capas.mapa.meta.atribucion),
                   ),
@@ -571,12 +571,12 @@ class _Atribucion extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.75),
+        color: Colors.white.withValues(alpha: 0.7),
         borderRadius: BorderRadius.circular(4),
       ),
       child: Text(
         texto,
-        style: poppins(fontSize: 11, color: ColoresMapaVectorial.tenue),
+        style: poppins(fontSize: 9, color: ColoresMapaVectorial.tenue),
       ),
     );
   }

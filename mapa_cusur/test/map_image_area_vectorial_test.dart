@@ -107,6 +107,26 @@ void main() {
       }
     });
 
+    testWidgets(
+        'la atribución va arriba a la izquierda, en 9 px y sin capturar '
+        'toques', (WidgetTester tester) async {
+      await tester.pumpWidget(area(modo: ModoMapa.vectorial, datos: mapa));
+
+      final texto = find.text('© colaboradores de OpenStreetMap');
+      final mapaRect = tester.getRect(find.byType(MapImageArea));
+      final caja = tester.getRect(find
+          .ancestor(of: texto, matching: find.byType(Container))
+          .first);
+      expect(caja.topLeft - mapaRect.topLeft, const Offset(8, 8));
+      expect(tester.widget<Text>(texto).style!.fontSize, 9);
+      expect(
+          find.ancestor(of: texto, matching: find.byType(IgnorePointer)),
+          findsWidgets);
+      expect(
+          find.ancestor(of: texto, matching: find.byType(InteractiveViewer)),
+          findsNothing);
+    });
+
     testWidgets('la atribución no aparece mientras no hay datos',
         (WidgetTester tester) async {
       await tester.pumpWidget(area(modo: ModoMapa.vectorial, datos: null));
