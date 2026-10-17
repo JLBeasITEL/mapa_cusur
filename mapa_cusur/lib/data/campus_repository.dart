@@ -3,12 +3,14 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../models/grafo_campus.dart';
+import '../models/mapa_vectorial.dart';
 import '../utils/cronometro.dart';
 import 'campus_json_parser.dart';
+import 'mapa_vectorial_parser.dart';
 
 /// Carga los datos del campus (el grafo base, antes de interpolar, y los
-/// IDs de los puntos de control para `TransformacionAfin`) desde el asset
-/// del paquete.
+/// IDs de los puntos de control para `TransformacionAfin`) y el mapa
+/// vectorial desde los assets del paquete.
 class CampusRepository {
   const CampusRepository();
 
@@ -29,5 +31,17 @@ class CampusRepository {
       grafo: parsearGrafoCampus(data),
       puntosControl: parsearPuntosControl(data),
     );
+  }
+
+  /// Carga el mapa vectorial (edificios, calles, áreas verdes...) de
+  /// `assets/campus_vector.json`. Es una carga aparte de
+  /// [cargarDatosCampus] a propósito: el grafo no depende de ella, así que
+  /// quien la llame no debe esperarla antes de cargar el grafo.
+  Future<MapaVectorial> cargarMapaVectorial({
+    String ruta = 'assets/campus_vector.json',
+  }) async {
+    final String contenido = await rootBundle.loadString(ruta);
+    return parsearMapaVectorial(
+        json.decode(contenido) as Map<String, dynamic>);
   }
 }
