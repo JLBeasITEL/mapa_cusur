@@ -17,11 +17,13 @@ import '../../instrumentacion/directorio_registros.dart';
 import '../../instrumentacion/registro_csv_campo.dart';
 import '../../instrumentacion/sesion_campo.dart';
 import '../../models/grafo_campus.dart';
+import '../../models/mapa_vectorial.dart';
 import '../../models/nodo.dart';
 import '../../models/ruta.dart';
 import '../../utils/cronometro.dart';
 import '../../utils/geodesia.dart';
 import '../../utils/indice_espacial.dart';
+import '../mapa/lienzo_mapa.dart';
 import '../navegacion/llegada_destino.dart';
 import '../theme/poppins.dart';
 import '../widgets/map_image_area.dart';
@@ -109,11 +111,28 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   int disparadorZoom = 0; // Disparador manual de cámara
   int disparadorReinicioCamara = 0; // Regresa el mapa a su vista original
 
+  /// Solo en modo vectorial; `null` mientras carga.
+  MapaVectorial? _mapaVectorial;
+
   @override
   void initState() {
     super.initState();
     _cargarDatosDelMapa();
+    // Carga aparte y sin esperarla: el grafo no depende del mapa vectorial.
+    if (kModoMapa == ModoMapa.vectorial) _cargarMapaVectorial();
     _loadMarkerImage();
+  }
+
+  Future<void> _cargarMapaVectorial() async {
+    try {
+      final mapa = await _repositorio.cargarMapaVectorial();
+      if (!mounted) return;
+      setState(() {
+        _mapaVectorial = mapa;
+      });
+    } catch (e) {
+      debugPrint("❌ Error cargando el mapa vectorial: $e");
+    }
   }
 
   @override
@@ -637,6 +656,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
                 disparadorReinicioCamara: disparadorReinicioCamara,
                 onVerificarAqui:
                     _modoVerificacion ? _registrarVerificacionEnNodo : null,
+                mapaVectorial: _mapaVectorial,
               ),
             ),
             Positioned(

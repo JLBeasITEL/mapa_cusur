@@ -3,9 +3,12 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
 import '../../data/diccionario_nombres.dart';
+import '../../domain/proyeccion_local.dart';
 import '../../domain/transformacion_geo.dart';
 import '../../domain/ubicacion_en_ruta.dart';
 import '../../models/grafo_campus.dart';
+import '../../models/mapa_vectorial.dart';
+import '../mapa/lienzo_mapa.dart';
 import '../painters/route_painter.dart';
 import '../theme/poppins.dart';
 
@@ -36,6 +39,14 @@ class MapImageArea extends StatefulWidget {
   /// invoca esto con el ID interno del nodo tocado.
   final void Function(String nodoId)? onVerificarAqui;
 
+  /// Modo del mapa; por omisión, el de la app ([kModoMapa]).
+  final ModoMapa modo;
+
+  /// Datos del mapa vectorial (solo en [ModoMapa.vectorial]). `null`
+  /// mientras `campus_vector.json` aún no termina de cargar: mientras
+  /// tanto no se dibuja nada, porque sin `meta` no hay lienzo.
+  final MapaVectorial? mapaVectorial;
+
   const MapImageArea({
     super.key,
     required this.ruta,
@@ -47,6 +58,8 @@ class MapImageArea extends StatefulWidget {
     required this.disparadorZoom,
     required this.disparadorReinicioCamara,
     this.onVerificarAqui,
+    this.modo = kModoMapa,
+    this.mapaVectorial,
   });
 
   @override
@@ -71,6 +84,19 @@ class _MapImageAreaState extends State<MapImageArea>
 
   bool _isCameraLocked = false;
 
+  /// El lienzo activo: el de la imagen (que siempre existe, aunque sin
+  /// transformación no pueda ubicar el GPS) o el vectorial (que no existe
+  /// hasta que llega `mapaVectorial`).
+  LienzoMapa? get _lienzo {
+    switch (widget.modo) {
+      case ModoMapa.imagen:
+        return LienzoImagen(widget.transformacion);
+      case ModoMapa.vectorial:
+        final mapa = widget.mapaVectorial;
+        return mapa == null ? null : LienzoVectorial(ProyeccionLocal(mapa.meta));
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -88,13 +114,19 @@ class _MapImageAreaState extends State<MapImageArea>
   void _moverCamara(int duracionMillis) {
     final grafo = widget.grafo;
     final ubicacion = widget.ubicacionGPS;
-    final transformacion = widget.transformacion;
+    final lienzo = _lienzo;
     if (ubicacion == null ||
         grafo == null ||
         grafo.nodos.isEmpty ||
-        transformacion == null) {
+        lienzo == null) {
       return;
     }
+
+    // En modo imagen es null sin modelo de transformación (igual que
+    // antes); en modo vectorial siempre hay posición.
+    final Offset? posicionCanvas =
+        lienzo.geoALienzo(ubicacion.lat, ubicacion.lng);
+    if (posicionCanvas == null) return;
 
     final RenderBox? stackBox =
         _stackKey.currentContext?.findRenderObject() as RenderBox?;
@@ -102,9 +134,6 @@ class _MapImageAreaState extends State<MapImageArea>
 
     final Size imgSize = stackBox.size;
     final Size screen = context.size ?? const Size(400, 400);
-
-    final posicionCanvas =
-        geoACanvas(transformacion, lat: ubicacion.lat, lng: ubicacion.lng);
 
     // --- CÁLCULO DE CENTRADO DE CÁMARA ---
     double scale = screen.width / imgSize.width;
@@ -116,8 +145,8 @@ class _MapImageAreaState extends State<MapImageArea>
     final double offsetX = (screen.width - renderWidth) / 2;
     final double offsetY = (screen.height - renderHeight) / 2;
 
-    final double targetScreenX = offsetX + (posicionCanvas.x * scale);
-    final double targetScreenY = offsetY + (posicionCanvas.y * scale);
+    final double targetScreenX = offsetX + (posicionCanvas.dx * scale);
+    final double targetScreenY = offsetY + (posicionCanvas.dy * scale);
 
     const double zoomNivel = 3.0;
     final double dx = (screen.width / 2) - (targetScreenX * zoomNivel);
@@ -183,15 +212,16 @@ class _MapImageAreaState extends State<MapImageArea>
 
   void _manejarToqueEnMapa(BuildContext context, Offset toque) {
     final grafo = widget.grafo;
-    if (grafo == null) return;
+    final lienzo = _lienzo;
+    if (grafo == null || lienzo == null) return;
 
     String? nodoMasCercano;
     double distanciaMinima = double.infinity;
 
     for (final entry in grafo.nodos.entries) {
       if (!diccionarioNombres.containsKey(entry.key)) continue;
-      final p = pixelesACanvas(entry.value.pixelX, entry.value.pixelY);
-      final double distancia = (Offset(p.x, p.y) - toque).distance;
+      final double distancia =
+          (lienzo.nodoALienzo(entry.value) - toque).distance;
       if (distancia < distanciaMinima) {
         distanciaMinima = distancia;
         nodoMasCercano = entry.key;
@@ -293,9 +323,25 @@ class _MapImageAreaState extends State<MapImageArea>
     );
   }
 
+  /// El fondo del lienzo, que además le da su tamaño al `Stack`.
+  Widget _fondo(LienzoMapa lienzo) {
+    switch (widget.modo) {
+      case ModoMapa.imagen:
+        return Image.asset('assets/mapa_CUSur.png');
+      case ModoMapa.vectorial:
+        // Fase 3: el mapa vectorial todavía no se dibuja; el lienzo ya
+        // tiene su tamaño y la imagen queda solo como relleno provisional
+        // (no coincide con las coordenadas vectoriales).
+        return SizedBox.fromSize(
+          size: lienzo.tamano,
+          child: Image.asset('assets/mapa_CUSur.png', fit: BoxFit.contain),
+        );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final grafo = widget.grafo;
+    final lienzo = _lienzo;
     return Container(
       color: Colors.white,
       child: InteractiveViewer(
@@ -309,36 +355,45 @@ class _MapImageAreaState extends State<MapImageArea>
         },
         child: FittedBox(
           fit: BoxFit.contain,
-          child: GestureDetector(
-            onTapUp: (details) => _manejarToqueEnMapa(context, details.localPosition),
-            child: Stack(
-              key: _stackKey,
-              children: [
-                Image.asset('assets/mapa_CUSur.png'),
-                // La ruta resaltada, los pines y el marcador de GPS -lo que
-                // cambia con cada actualización de posición-. El trazado
-                // estático del grafo (aristas y nodos azules) no se dibuja:
-                // solo debe verse la ruta calculada.
-                if (grafo != null && grafo.nodos.isNotEmpty)
-                  Positioned.fill(
-                    child: ValueListenableBuilder<double>(
-                      valueListenable: _zoomNotifier,
-                      builder: (context, zoom, _) => CustomPaint(
-                        painter: RoutePainter(
-                          ruta: widget.ruta,
-                          grafo: grafo,
-                          transformacion: widget.transformacion,
-                          markerImage: widget.markerImage,
-                          zoomScale: zoom,
-                          ubicacionGPS: widget.ubicacionGPS,
-                        ),
-                      ),
-                    ),
-                  ),
-              ],
-            ),
-          ),
+          // Solo es null en modo vectorial, mientras carga
+          // campus_vector.json.
+          child: lienzo == null
+              ? const SizedBox.shrink()
+              : _contenido(context, lienzo),
         ),
+      ),
+    );
+  }
+
+  Widget _contenido(BuildContext context, LienzoMapa lienzo) {
+    final grafo = widget.grafo;
+    return GestureDetector(
+      onTapUp: (details) => _manejarToqueEnMapa(context, details.localPosition),
+      child: Stack(
+        key: _stackKey,
+        children: [
+          _fondo(lienzo),
+          // La ruta resaltada, los pines y el marcador de GPS -lo que
+          // cambia con cada actualización de posición-. El trazado
+          // estático del grafo (aristas y nodos azules) no se dibuja:
+          // solo debe verse la ruta calculada.
+          if (grafo != null && grafo.nodos.isNotEmpty)
+            Positioned.fill(
+              child: ValueListenableBuilder<double>(
+                valueListenable: _zoomNotifier,
+                builder: (context, zoom, _) => CustomPaint(
+                  painter: RoutePainter(
+                    ruta: widget.ruta,
+                    grafo: grafo,
+                    lienzo: lienzo,
+                    markerImage: widget.markerImage,
+                    zoomScale: zoom,
+                    ubicacionGPS: widget.ubicacionGPS,
+                  ),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }

@@ -2,9 +2,9 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
-import '../../domain/transformacion_geo.dart';
 import '../../models/grafo_campus.dart';
 import '../../models/nodo.dart';
+import '../mapa/lienzo_mapa.dart';
 
 /// Dibuja el trazado estático del grafo: las aristas (líneas) y los nodos
 /// reales -sin los fantasma, que se ven pero no se marcan- del grafo ya
@@ -21,26 +21,35 @@ import '../../models/nodo.dart';
 /// reconstruía las líneas de todas las aristas y los círculos de todos los
 /// nodos desde cero en cada repintado, incluso cuando ni el grafo ni el
 /// zoom habían cambiado. El caché se invalida solo si cambia el grafo (por
-/// identidad: es la misma instancia mientras la app no recargue datos) o
-/// la escala de zoom (de la que depende el radio de los círculos).
+/// identidad: es la misma instancia mientras la app no recargue datos), la
+/// escala de zoom (de la que depende el radio de los círculos) o el lienzo
+/// (modo imagen o vectorial).
 class GrafoEstaticoPainter extends CustomPainter {
   final GrafoCampus grafo;
   final double zoomScale;
 
-  GrafoEstaticoPainter({required this.grafo, required this.zoomScale});
+  /// Dónde cae cada nodo en el lienzo; por omisión, el de la imagen
+  /// (`pixelesACanvas`), que no necesita modelo de transformación.
+  final LienzoMapa lienzo;
+
+  GrafoEstaticoPainter({
+    required this.grafo,
+    required this.zoomScale,
+    this.lienzo = const LienzoImagen(null),
+  });
 
   static GrafoCampus? _grafoCacheado;
   static double? _zoomCacheado;
+  static LienzoMapa? _lienzoCacheado;
   static ui.Path? _pathAristasCacheado;
   static ui.Path? _pathNodosCacheado;
 
-  static Offset _transformar(Nodo nodo) {
-    final p = pixelesACanvas(nodo.pixelX, nodo.pixelY);
-    return Offset(p.x, p.y);
-  }
+  Offset _transformar(Nodo nodo) => lienzo.nodoALienzo(nodo);
 
   ({ui.Path aristas, ui.Path nodos}) _trazadoEstatico() {
-    if (identical(_grafoCacheado, grafo) && _zoomCacheado == zoomScale) {
+    if (identical(_grafoCacheado, grafo) &&
+        _zoomCacheado == zoomScale &&
+        _lienzoCacheado == lienzo) {
       return (aristas: _pathAristasCacheado!, nodos: _pathNodosCacheado!);
     }
 
@@ -71,6 +80,7 @@ class GrafoEstaticoPainter extends CustomPainter {
 
     _grafoCacheado = grafo;
     _zoomCacheado = zoomScale;
+    _lienzoCacheado = lienzo;
     _pathAristasCacheado = pathAristas;
     _pathNodosCacheado = pathNodos;
     return (aristas: pathAristas, nodos: pathNodos);
@@ -95,6 +105,7 @@ class GrafoEstaticoPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant GrafoEstaticoPainter oldDelegate) {
     return !identical(oldDelegate.grafo, grafo) ||
-        oldDelegate.zoomScale != zoomScale;
+        oldDelegate.zoomScale != zoomScale ||
+        oldDelegate.lienzo != lienzo;
   }
 }

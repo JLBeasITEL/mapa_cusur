@@ -4,10 +4,9 @@ import 'package:flutter/foundation.dart' show listEquals;
 import 'package:flutter/material.dart';
 
 import '../../data/diccionario_nombres.dart';
-import '../../domain/transformacion_geo.dart';
 import '../../domain/ubicacion_en_ruta.dart';
 import '../../models/grafo_campus.dart';
-import '../../models/nodo.dart';
+import '../mapa/lienzo_mapa.dart';
 import '../theme/poppins.dart';
 
 /// Dibuja la ruta resaltada, los pines de origen/destino y el marcador de
@@ -22,9 +21,9 @@ class RoutePainter extends CustomPainter {
   final List<String> ruta;
   final GrafoCampus grafo;
 
-  /// Modelo de transformación geo→píxel activo (Fase 4). `null` mientras
-  /// los datos del campus aún no terminan de cargar.
-  final TransformacionGeoPixel? transformacion;
+  /// Dónde cae cada nodo y la posición GPS en el lienzo (modo imagen o
+  /// vectorial; ver ui/mapa/lienzo_mapa.dart).
+  final LienzoMapa lienzo;
 
   final ui.Image? markerImage;
   final double zoomScale;
@@ -38,16 +37,11 @@ class RoutePainter extends CustomPainter {
   RoutePainter({
     required this.ruta,
     required this.grafo,
-    required this.transformacion,
+    required this.lienzo,
     required this.markerImage,
     required this.zoomScale,
     required this.ubicacionGPS,
   });
-
-  static Offset _transformar(Nodo nodo) {
-    final p = pixelesACanvas(nodo.pixelX, nodo.pixelY);
-    return Offset(p.x, p.y);
-  }
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -97,7 +91,8 @@ class RoutePainter extends CustomPainter {
         final n1 = grafo.nodos[ruta[i]];
         final n2 = grafo.nodos[ruta[i + 1]];
         if (n1 != null && n2 != null) {
-          canvas.drawLine(_transformar(n1), _transformar(n2), paintRuta);
+          canvas.drawLine(
+              lienzo.nodoALienzo(n1), lienzo.nodoALienzo(n2), paintRuta);
         }
       }
       final String origenNombre = ruta.first;
@@ -110,19 +105,21 @@ class RoutePainter extends CustomPainter {
 
       if (nodoOrigenRuta != null && ubicacionGPS == null) {
         dibujarPinConEtiquetaTexto(
-            aliasOrigen, _transformar(nodoOrigenRuta), Colors.green);
+            aliasOrigen, lienzo.nodoALienzo(nodoOrigenRuta), Colors.green);
       }
       if (nodoDestinoRuta != null) {
         dibujarPinConEtiquetaTexto(
-            aliasDestino, _transformar(nodoDestinoRuta), Colors.red);
+            aliasDestino, lienzo.nodoALienzo(nodoDestinoRuta), Colors.red);
       }
     }
 
-    if (ubicacionGPS != null && transformacion != null && grafo.nodos.isNotEmpty) {
-      final posGeo = geoACanvas(transformacion!,
-          lat: ubicacionGPS!.lat, lng: ubicacionGPS!.lng);
-      final Offset posicionUsuarioCanvas = Offset(posGeo.x, posGeo.y);
+    // En modo imagen es null mientras no haya modelo de transformación
+    // (igual que antes); en modo vectorial siempre hay posición.
+    final Offset? posicionUsuarioCanvas = ubicacionGPS == null
+        ? null
+        : lienzo.geoALienzo(ubicacionGPS!.lat, ubicacionGPS!.lng);
 
+    if (posicionUsuarioCanvas != null && grafo.nodos.isNotEmpty) {
       final paintAura = Paint()
         ..color = Colors.blue.withValues(alpha: 0.3)
         ..style = PaintingStyle.fill;
@@ -171,6 +168,7 @@ class RoutePainter extends CustomPainter {
     // `listEquals` compara elemento por elemento.
     return oldDelegate.zoomScale != zoomScale ||
         !listEquals(oldDelegate.ruta, ruta) ||
-        oldDelegate.ubicacionGPS != ubicacionGPS;
+        oldDelegate.ubicacionGPS != ubicacionGPS ||
+        oldDelegate.lienzo != lienzo;
   }
 }
