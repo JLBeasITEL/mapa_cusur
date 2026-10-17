@@ -65,8 +65,22 @@ double radioInsignia(double zoom, {double tamano = 1}) =>
 /// dibujarlas se escalan a [radioInsignia].
 const double _radioMaquetado = 11;
 
+/// Margen en pantalla alrededor de cada etiqueta para la detección de
+/// colisiones.
+const double kMargenColision = 4;
+
+/// Fracciones de la longitud de la calle donde se prueba su nombre si no
+/// cabe en la posición del JSON, en este orden.
+const List<double> kFraccionesAlternativasCalle = [0.3, 0.7, 0.2, 0.8];
+
+/// Prioridad de un texto en la detección de colisiones (de mayor a menor:
+/// entradas, letras de edificio, insignias, nombres largos y, al final,
+/// nombres de calles).
+enum _Clase { entrada, letra, largo }
+
 /// Una insignia: círculo con un ícono que crece con el zoom hasta un tope.
 class _Insignia {
+  final String nombre; // para depurar y para las pruebas
   final Offset ancla; // metros
   final double tamano; // 1 normal; 1.25 en las entradas
   final Color fondo;
@@ -78,6 +92,7 @@ class _Insignia {
   final bool ocultable;
 
   _Insignia({
+    required this.nombre,
     required this.ancla,
     required this.tamano,
     required this.fondo,
@@ -97,6 +112,7 @@ class _Texto {
   final TextPainter relleno;
   final TextPainter? halo;
   final bool soloDetalle;
+  final _Clase clase;
 
   /// La insignia bajo la que va el texto, si la hay: entonces su
   /// separación depende del radio actual de la insignia, no de [dy].
@@ -114,6 +130,7 @@ class _Texto {
     required this.relleno,
     required this.halo,
     required this.soloDetalle,
+    required this.clase,
     this.anguloGrados = 0,
     this.insignia,
     this.linea = 0,
@@ -136,6 +153,38 @@ class _Texto {
   }
 }
 
+/// Una posición posible para el nombre de una calle.
+class _PosicionCalle {
+  final Offset ancla; // metros
+  final double anguloGrados;
+
+  const _PosicionCalle(this.ancla, this.anguloGrados);
+}
+
+/// El nombre de una calle y las posiciones donde puede ir: primero la del
+/// JSON y luego puntos sobre la propia calle
+/// ([kFraccionesAlternativasCalle]).
+class _Calle {
+  final TextPainter relleno;
+  final List<_PosicionCalle> posiciones;
+
+  _Calle(this.relleno, this.posiciones);
+}
+
+/// Dónde quedan las etiquetas en pantalla para una escala, un zoom y el
+/// estado del botón de íconos: el rectángulo de cada elemento dibujado
+/// (con su margen) y la posición elegida para cada nombre de calle que
+/// cabe. Las coordenadas son de lienzo multiplicadas por la escala de
+/// pantalla, así que la distancia entre dos elementos es la de la
+/// pantalla (desplazar el mapa no cambia nada).
+class ColocacionEtiquetas {
+  final List<({String nombre, Rect rect})> ocupados;
+  final List<({String texto, Offset ancla, double anguloGrados, Rect rect})>
+      calles;
+
+  const ColocacionEtiquetas(this.ocupados, this.calles);
+}
+
 /// Las insignias y los textos del mapa vectorial, ya maquetados en píxeles
 /// de pantalla. Se construyen una sola vez al cargar los datos: al hacer
 /// zoom solo cambia la escala con que se dibujan, no su maquetación.
@@ -143,8 +192,10 @@ class EtiquetasMapaVectorial {
   final MetaMapaVectorial meta;
   final List<_Insignia> _insignias;
   final List<_Texto> _textos;
+  final List<_Calle> _calles;
 
-  EtiquetasMapaVectorial._(this.meta, this._insignias, this._textos);
+  EtiquetasMapaVectorial._(
+      this.meta, this._insignias, this._textos, this._calles);
 
   int get totalInsignias => _insignias.length;
   int get totalTextos => _textos.length;
@@ -155,10 +206,13 @@ class EtiquetasMapaVectorial {
         textos: _textos.where((t) => _visible(t.soloDetalle, zoom)).length,
       );
 
-  /// Textos (sin repetir) que se dibujan con [zoom].
+  /// Textos (sin repetir) que se dibujan con [zoom]. Los nombres de
+  /// calles siempre están en la lista, pero además solo se dibujan si caben
+  /// ([colocar]).
   Set<String> textosCon(double zoom) => {
         for (final t in _textos)
           if (_visible(t.soloDetalle, zoom)) t.relleno.plainText,
+        for (final c in _calles) c.relleno.plainText,
       };
 
   static bool _visible(bool soloDetalle, double zoom) =>
@@ -184,7 +238,8 @@ class EtiquetasMapaVectorial {
     // colgar de ella el texto que va debajo.
     final insigniaDe = Map<Object, _Insignia>.identity();
 
-    void insignia(Object elemento, Offset ancla, String nombreIcono,
+    void insignia(Object elemento, String nombre, Offset ancla,
+        String nombreIcono,
         {bool soloDetalle = false, bool esEntrada = false}) {
       final icono = kIconosMapa[nombreIcono];
       if (icono == null) {
@@ -193,6 +248,7 @@ class EtiquetasMapaVectorial {
       }
       final tamano = esEntrada ? 1.25 : 1.0;
       insignias.add(insigniaDe[elemento] = _Insignia(
+        nombre: nombre,
         ancla: ancla,
         tamano: tamano,
         fondo: esEntrada
@@ -222,6 +278,7 @@ class EtiquetasMapaVectorial {
       Color? colorHalo,
       double anchoHalo = 3,
       bool soloDetalle = false,
+      _Clase clase = _Clase.largo,
       double anguloGrados = 0,
       Object? debajoDe,
       int linea = 0,
@@ -248,6 +305,7 @@ class EtiquetasMapaVectorial {
                   ..strokeJoin = StrokeJoin.round
                   ..color = colorHalo)),
         soloDetalle: soloDetalle,
+        clase: clase,
         insignia: debajoDe == null ? null : insigniaDe[debajoDe],
         linea: linea,
         lineas: lineas,
@@ -257,26 +315,28 @@ class EtiquetasMapaVectorial {
 
     // --- Insignias (todas debajo de los textos, como en la referencia) ---
     for (final e in mapa.edificios) {
-      if (e.icono != null) insignia(e, e.etiqueta, e.icono!);
+      if (e.icono != null) {
+        insignia(e, e.nombre ?? e.icono!, e.etiqueta, e.icono!);
+      }
     }
     for (final c in mapa.canchasFutbol) {
       if (c.icono != null && c.iconoPos != null) {
-        insignia(c, c.iconoPos!, c.icono!);
+        insignia(c, c.nombre ?? c.icono!, c.iconoPos!, c.icono!);
       }
     }
     for (final c in mapa.canchas) {
       if (c.icono != null && c.iconoPos != null) {
-        insignia(c, c.iconoPos!, c.icono!);
+        insignia(c, c.icono!, c.iconoPos!, c.icono!);
       }
     }
     for (final l in mapa.lugares) {
-      insignia(l, l.pos, l.icono, soloDetalle: true);
+      insignia(l, l.nombre, l.pos, l.icono, soloDetalle: true);
     }
     for (final e in mapa.entradas) {
-      insignia(e, e.pos, 'door_front', esEntrada: true);
+      insignia(e, e.nombre, e.pos, 'door_front', esEntrada: true);
     }
     for (final e in mapa.estacionamientos) {
-      insignia(e, e.pos, 'directions_car');
+      insignia(e, e.nombre, e.pos, 'directions_car');
     }
 
     // --- Textos ---
@@ -285,7 +345,8 @@ class EtiquetasMapaVectorial {
         texto(e.etiqueta, e.letra!,
             tamano: 15,
             peso: FontWeight.w600,
-            color: ColoresMapaVectorial.textoEdificio);
+            color: ColoresMapaVectorial.textoEdificio,
+            clase: _Clase.letra);
       }
       if (e.texto != null) {
         final techada = e.tipo == TipoEdificio.techada;
@@ -336,7 +397,8 @@ class EtiquetasMapaVectorial {
           color: ColoresMapaVectorial.entrada,
           colorHalo: ColoresMapaVectorial.halo,
           anchoHalo: 3.5,
-          debajoDe: e);
+          debajoDe: e,
+          clase: _Clase.entrada);
     }
     for (final e in mapa.estacionamientos) {
       texto(e.pos, e.nombre,
@@ -365,15 +427,180 @@ class EtiquetasMapaVectorial {
     for (final c in mapa.canchasFutbol) {
       nombreDeZona(c.nombre, _centro(c.poligono));
     }
-    for (final c in mapa.etiquetasCalles) {
-      texto(c.pos, c.texto,
-          tamano: 11,
-          peso: FontWeight.w400,
-          color: ColoresMapaVectorial.tenue,
-          anguloGrados: c.anguloGrados);
+    final calles = [
+      for (final c in mapa.etiquetasCalles)
+        _Calle(
+          TextPainter(
+            text: TextSpan(
+                text: c.texto,
+                style: poppins(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w400,
+                    color: ColoresMapaVectorial.tenue)),
+            textDirection: TextDirection.ltr,
+          )..layout(),
+          [
+            _PosicionCalle(c.pos, c.anguloGrados),
+            ..._posicionesSobreLaCalle(mapa, c.texto),
+          ],
+        ),
+    ];
+
+    return EtiquetasMapaVectorial._(mapa.meta, insignias, textos, calles);
+  }
+
+  /// Puntos a [kFraccionesAlternativasCalle] de la longitud de la vialidad
+  /// más larga que se llama [nombre], con el ángulo del tramo en cada
+  /// punto (llevado a (−90°, 90°] para que el texto no quede de cabeza).
+  static List<_PosicionCalle> _posicionesSobreLaCalle(
+      MapaVectorial mapa, String nombre) {
+    List<Offset>? linea;
+    double longitud = 0;
+    for (final v in mapa.vialidades) {
+      if (v.nombre != nombre) continue;
+      final l = _longitud(v.linea);
+      if (l > longitud) {
+        longitud = l;
+        linea = v.linea;
+      }
+    }
+    if (linea == null || longitud == 0) return const [];
+
+    return [
+      for (final fraccion in kFraccionesAlternativasCalle)
+        _puntoALo(linea, fraccion * longitud),
+    ];
+  }
+
+  static double _longitud(List<Offset> linea) {
+    var total = 0.0;
+    for (var i = 1; i < linea.length; i++) {
+      total += (linea[i] - linea[i - 1]).distance;
+    }
+    return total;
+  }
+
+  /// El punto a [distancia] metros del inicio de [linea] y el ángulo del
+  /// tramo donde cae.
+  static _PosicionCalle _puntoALo(List<Offset> linea, double distancia) {
+    var recorrido = 0.0;
+    for (var i = 1; i < linea.length; i++) {
+      final tramo = linea[i] - linea[i - 1];
+      final largo = tramo.distance;
+      if (largo == 0) continue;
+      if (recorrido + largo >= distancia || i == linea.length - 1) {
+        final t = ((distancia - recorrido) / largo).clamp(0.0, 1.0);
+        var angulo = math.atan2(tramo.dy, tramo.dx) * 180 / math.pi;
+        if (angulo > 90) angulo -= 180;
+        if (angulo <= -90) angulo += 180;
+        return _PosicionCalle(linea[i - 1] + tramo * t, angulo);
+      }
+      recorrido += largo;
+    }
+    return _PosicionCalle(linea.first, 0);
+  }
+
+  // Última colocación calculada y con qué se calculó: mientras no cambien
+  // la escala, el zoom ni el botón de íconos (por ejemplo, al desplazar el
+  // mapa o con cada lectura de GPS), no se vuelve a calcular.
+  ColocacionEtiquetas? _colocacion;
+  (double, double, bool, double)? _claveColocacion;
+
+  /// Coloca las etiquetas en pantalla (ver [ColocacionEtiquetas]). Las
+  /// entradas, las letras, las insignias y los nombres largos se registran
+  /// tal como se dibujan; cada nombre de calle va en la primera de sus
+  /// posiciones que no choque con nada de lo ya registrado, o no se
+  /// dibuja.
+  ColocacionEtiquetas colocar({
+    required ProyeccionLocal proyeccion,
+    required double pantallaPorLienzo,
+    required double zoom,
+    required bool mostrarIconos,
+  }) {
+    final clave = (pantallaPorLienzo, zoom, mostrarIconos, proyeccion.escala);
+    final previa = _colocacion;
+    if (previa != null && _claveColocacion == clave) return previa;
+
+    Offset enPantalla(Offset metros) =>
+        proyeccion.localALienzo(metros.dx, metros.dy) * pantallaPorLienzo;
+
+    final ocupados = <({String nombre, Rect rect})>[];
+    void registrar(String nombre, Rect rect) =>
+        ocupados.add((nombre: nombre, rect: rect.inflate(kMargenColision)));
+
+    void registrarInsignias(bool Function(_Insignia) cuales) {
+      for (final i in _insignias) {
+        if (!cuales(i) || !_insigniaVisible(i, zoom, mostrarIconos)) continue;
+        registrar(
+            i.nombre,
+            Rect.fromCircle(
+                center: enPantalla(i.ancla),
+                radius: radioInsignia(zoom, tamano: i.tamano)));
+      }
     }
 
-    return EtiquetasMapaVectorial._(mapa.meta, insignias, textos);
+    void registrarTextos(_Clase clase) {
+      for (final t in _textos) {
+        if (t.clase != clase || !_visible(t.soloDetalle, zoom)) continue;
+        registrar(
+            t.relleno.plainText,
+            _rectanguloDeTexto(
+                enPantalla(t.ancla) +
+                    Offset(0, t.dyCon(zoom, mostrarIconos: mostrarIconos)),
+                t.relleno.size,
+                t.anguloGrados));
+      }
+    }
+
+    // Por prioridad: entradas, letras, insignias y nombres largos.
+    registrarInsignias((i) => !i.ocultable);
+    registrarTextos(_Clase.entrada);
+    registrarTextos(_Clase.letra);
+    registrarInsignias((i) => i.ocultable);
+    registrarTextos(_Clase.largo);
+
+    // Al final, los nombres de calles.
+    final limites = Rect.fromPoints(enPantalla(Offset(meta.minX, meta.minY)),
+        enPantalla(Offset(meta.maxX, meta.maxY)));
+    final calles =
+        <({String texto, Offset ancla, double anguloGrados, Rect rect})>[];
+    for (final c in _calles) {
+      for (final posicion in c.posiciones) {
+        final centro = enPantalla(posicion.ancla);
+        if (!limites.contains(centro)) continue;
+        final rect = _rectanguloDeTexto(
+                centro, c.relleno.size, posicion.anguloGrados)
+            .inflate(kMargenColision);
+        if (ocupados.any((o) => o.rect.overlaps(rect))) continue;
+        calles.add((
+          texto: c.relleno.plainText,
+          ancla: posicion.ancla,
+          anguloGrados: posicion.anguloGrados,
+          rect: rect,
+        ));
+        ocupados.add((nombre: c.relleno.plainText, rect: rect));
+        break;
+      }
+    }
+
+    _claveColocacion = clave;
+    return _colocacion = ColocacionEtiquetas(ocupados, calles);
+  }
+
+  static bool _insigniaVisible(_Insignia i, double zoom, bool mostrarIconos) =>
+      _visible(i.soloDetalle, zoom) && (mostrarIconos || !i.ocultable);
+
+  /// Rectángulo (alineado a los ejes) que envuelve un texto de [tamano]
+  /// centrado en [centro] y girado [anguloGrados].
+  static Rect _rectanguloDeTexto(
+      Offset centro, Size tamano, double anguloGrados) {
+    final a = anguloGrados * math.pi / 180;
+    final c = math.cos(a).abs(), s = math.sin(a).abs();
+    return Rect.fromCenter(
+      center: centro,
+      width: tamano.width * c + tamano.height * s,
+      height: tamano.width * s + tamano.height * c,
+    );
   }
 
   static TextPainter _icono(IconData icono, double tamano, Color color) =>
@@ -413,6 +640,9 @@ class EtiquetasMapaVectorial {
     for (final t in _textos) {
       t.relleno.dispose();
       t.halo?.dispose();
+    }
+    for (final c in _calles) {
+      c.relleno.dispose();
     }
   }
 }
@@ -456,8 +686,9 @@ class EtiquetasMapaPainter extends CustomPainter {
     final borde = Paint()..style = PaintingStyle.stroke;
 
     for (final i in etiquetas._insignias) {
-      if (!EtiquetasMapaVectorial._visible(i.soloDetalle, zoom)) continue;
-      if (!mostrarIconos && i.ocultable) continue;
+      if (!EtiquetasMapaVectorial._insigniaVisible(i, zoom, mostrarIconos)) {
+        continue;
+      }
       final ancla = _aLienzo(i.ancla);
       canvas.save();
       canvas.translate(ancla.dx, ancla.dy);
@@ -490,6 +721,26 @@ class EtiquetasMapaPainter extends CustomPainter {
                   t.relleno.height / 2);
       t.halo?.paint(canvas, esquina);
       t.relleno.paint(canvas, esquina);
+      canvas.restore();
+    }
+
+    // Los nombres de calles, solo donde caben sin chocar con lo demás.
+    final colocacion = etiquetas.colocar(
+      proyeccion: proyeccion,
+      pantallaPorLienzo: pantallaPorLienzo,
+      zoom: zoom,
+      mostrarIconos: mostrarIconos,
+    );
+    for (final calle in colocacion.calles) {
+      final relleno = etiquetas._calles
+          .firstWhere((c) => c.relleno.plainText == calle.texto)
+          .relleno;
+      final ancla = _aLienzo(calle.ancla);
+      canvas.save();
+      canvas.translate(ancla.dx, ancla.dy);
+      canvas.scale(k);
+      canvas.rotate(calle.anguloGrados * math.pi / 180);
+      relleno.paint(canvas, Offset(-relleno.width / 2, -relleno.height / 2));
       canvas.restore();
     }
   }
