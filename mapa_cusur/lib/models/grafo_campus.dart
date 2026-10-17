@@ -9,6 +9,26 @@ class GrafoCampus {
 
   const GrafoCampus({required this.nodos, required this.conexiones});
 
+  /// Este grafo sin los nodos [ids] ni sus aristas.
+  GrafoCampus sinNodos(Iterable<String> ids) {
+    final fuera = ids.toSet();
+    if (fuera.isEmpty) return this;
+    return GrafoCampus(
+      nodos: {
+        for (final e in nodos.entries)
+          if (!fuera.contains(e.key)) e.key: e.value,
+      },
+      conexiones: {
+        for (final e in conexiones.entries)
+          if (!fuera.contains(e.key))
+            e.key: {
+              for (final v in e.value.entries)
+                if (!fuera.contains(v.key)) v.key: v.value,
+            },
+      },
+    );
+  }
+
   /// Todas las aristas dirigidas del grafo, aplanadas desde [conexiones].
   /// Usado por domain/validador_grafo.dart (Fase 6) para recorrer el grafo
   /// arista por arista.

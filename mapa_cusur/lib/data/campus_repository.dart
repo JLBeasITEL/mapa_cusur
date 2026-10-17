@@ -18,7 +18,14 @@ class CampusRepository {
   /// microsegundos el `json.decode` bajo la etiqueta `"parseo_json"`. Es
   /// opcional y no cambia el resultado: sin él, el comportamiento es
   /// idéntico.
-  Future<({GrafoCampus grafo, List<String> puntosControl})> cargarDatosCampus({
+  /// `pixelesDerivados`: los nodos cuyo píxel no es digitalizado (ver
+  /// [parsearPixelesDerivados]).
+  Future<
+      ({
+        GrafoCampus grafo,
+        List<String> puntosControl,
+        List<String> pixelesDerivados,
+      })> cargarDatosCampus({
     String ruta = 'assets/campus_data.json',
     Cronometro? cronometro,
   }) async {
@@ -30,6 +37,7 @@ class CampusRepository {
     return (
       grafo: parsearGrafoCampus(data),
       puntosControl: parsearPuntosControl(data),
+      pixelesDerivados: parsearPixelesDerivados(data),
     );
   }
 

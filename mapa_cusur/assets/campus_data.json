@@ -2084,5 +2084,13 @@
         "Edificio_W",
         "Edificio_Y",
         "Proteccion_Civil"
+    ],
+    "pixeles_derivados": [
+        "Cancha_Futbol_Central",
+        "Cancha_Futbol_Norte",
+        "Cancha_Multiple",
+        "Lab_Programacion",
+        "Lab_Electronica",
+        "Lab_Periodismo"
     ]
 }

@@ -187,7 +187,9 @@ void main() {
         () {
       final Map<String, dynamic> data =
           json.decode(File('assets/campus_data.json').readAsStringSync());
-      final grafo = parsearGrafoCampus(data);
+      // Solo los nodos con píxel digitalizado, igual que la app.
+      final grafo =
+          parsearGrafoCampus(data).sinNodos(parsearPixelesDerivados(data));
       final idsControl = parsearPuntosControl(data);
 
       expect(idsControl, isNotEmpty,
@@ -220,7 +222,8 @@ void main() {
         'afín (consistente con la tabla de cifras: ~18.2 m vs. ~7.3 m)', () {
       final Map<String, dynamic> data =
           json.decode(File('assets/campus_data.json').readAsStringSync());
-      final grafo = parsearGrafoCampus(data);
+      final grafo =
+          parsearGrafoCampus(data).sinNodos(parsearPixelesDerivados(data));
 
       final dosPuntos = TransformacionDosPuntos(
         controlA: grafo.nodos['EntradaA']!,
@@ -236,6 +239,39 @@ void main() {
           '(${resultado.rmseMetros.toStringAsFixed(2)} m)');
 
       expect(resultado.rmseMetros, greaterThan(15.0));
+    });
+
+    test(
+        'sin los nodos de píxel derivado, las cifras son exactamente las de '
+        'los 144 nodos digitalizados (las que cita la tesis)', () {
+      final Map<String, dynamic> data =
+          json.decode(File('assets/campus_data.json').readAsStringSync());
+      final completo = parsearGrafoCampus(data);
+      final derivados = parsearPixelesDerivados(data);
+      final grafo = completo.sinNodos(derivados);
+
+      expect(derivados, isNotEmpty);
+      expect(derivados.every(completo.nodos.containsKey), isTrue);
+      expect(grafo.nodos, hasLength(144));
+
+      final puntosControl =
+          parsearPuntosControl(data).map((id) => grafo.nodos[id]!).toList();
+      final afin = TransformacionAfin.ajustar(puntosControl);
+      final dosPuntos = TransformacionDosPuntos(
+        controlA: grafo.nodos['EntradaA']!,
+        controlB: grafo.nodos['Edificio_M']!,
+      );
+      final pxPorMetro = calcularEscalaPxPorMetro(grafo);
+      final rAfin =
+          evaluarTransformacion(afin, grafo.nodos.values, pxPorMetro: pxPorMetro);
+      final rDosPuntos = evaluarTransformacion(dosPuntos, grafo.nodos.values,
+          pxPorMetro: pxPorMetro);
+
+      expect(pxPorMetro, closeTo(1.772, 0.0005));
+      expect(rAfin.rmsePx, closeTo(12.53, 0.005));
+      expect(rAfin.rmseMetros, closeTo(7.07, 0.005));
+      expect(rDosPuntos.rmsePx, closeTo(31.15, 0.005));
+      expect(rDosPuntos.rmseMetros, closeTo(17.58, 0.005));
     });
   });
 }

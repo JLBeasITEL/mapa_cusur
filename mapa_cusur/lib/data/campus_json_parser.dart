@@ -46,3 +46,15 @@ List<String> parsearPuntosControl(Map<String, dynamic> data) {
   if (lista == null) return const [];
   return lista.map((id) => id as String).toList();
 }
+
+/// Lee la sección `pixeles_derivados` de `assets/campus_data.json`: los IDs
+/// de los nodos cuyo `coordenadas_pix` no se digitalizó sobre la imagen sino
+/// que se calculó (los nodos de acceso agregados con el mapa vectorial).
+/// No deben contar al medir la precisión de las transformaciones ni la
+/// escala px/m, que se comparan contra píxeles digitalizados. Devuelve una
+/// lista vacía si la sección no existe.
+List<String> parsearPixelesDerivados(Map<String, dynamic> data) {
+  final List<dynamic>? lista = data['pixeles_derivados'];
+  if (lista == null) return const [];
+  return lista.map((id) => id as String).toList();
+}

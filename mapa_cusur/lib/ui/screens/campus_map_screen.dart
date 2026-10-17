@@ -199,18 +199,25 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
         debugPrint('No se pudo ajustar TransformacionAfin: $e');
       }
 
-      final double pxPorMetro = calcularEscalaPxPorMetro(grafoBase);
+      // La escala px/m y el RMSE se miden solo contra píxeles digitalizados:
+      // sin los nodos de `pixeles_derivados`, las cifras son las mismas que
+      // antes de agregarlos.
+      final GrafoCampus grafoDigitalizado =
+          grafoBase.sinNodos(datos.pixelesDerivados);
+      final double pxPorMetro = calcularEscalaPxPorMetro(grafoDigitalizado);
 
       if (kDebugMode) {
-        final rDosPuntos = evaluarTransformacion(dosPuntos, grafoBase.nodos.values,
+        final rDosPuntos = evaluarTransformacion(
+            dosPuntos, grafoDigitalizado.nodos.values,
             pxPorMetro: pxPorMetro);
-        debugPrint('RMSE TransformacionDosPuntos (${grafoBase.nodos.length} '
+        debugPrint('RMSE TransformacionDosPuntos (${grafoDigitalizado.nodos.length} '
             'nodos): ${rDosPuntos.rmsePx.toStringAsFixed(2)} px '
             '(${rDosPuntos.rmseMetros.toStringAsFixed(2)} m)');
         if (afin != null) {
-          final rAfin = evaluarTransformacion(afin, grafoBase.nodos.values,
+          final rAfin = evaluarTransformacion(
+              afin, grafoDigitalizado.nodos.values,
               pxPorMetro: pxPorMetro);
-          debugPrint('RMSE TransformacionAfin (${grafoBase.nodos.length} '
+          debugPrint('RMSE TransformacionAfin (${grafoDigitalizado.nodos.length} '
               'nodos): ${rAfin.rmsePx.toStringAsFixed(2)} px '
               '(${rAfin.rmseMetros.toStringAsFixed(2)} m)');
         }
