@@ -37,6 +37,47 @@ void main() {
     expect(kIconosMapa['door_front'], Icons.door_front_door_rounded);
   });
 
+  group('tamaño de las insignias', () {
+    test('el radio crece con el zoom hasta un tope de 22 px', () {
+      expect(radioInsignia(1), 5.5);
+      expect(radioInsignia(2), 11);
+      expect(radioInsignia(4), 22);
+      expect(radioInsignia(8), 22);
+    });
+
+    test('las entradas conservan su factor de 1.25', () {
+      expect(radioInsignia(2, tamano: 1.25), 13.75);
+      expect(radioInsignia(8, tamano: 1.25), 27.5);
+    });
+
+    final etiquetas = EtiquetasMapaVectorial(mapa);
+    tearDownAll(etiquetas.dispose);
+
+    test('el texto debajo de un ícono queda a radio + 8 px', () {
+      for (final zoom in [1.0, 2.0, 4.0, 8.0]) {
+        final r = radioInsignia(zoom);
+        expect(etiquetas.desplazamientoDe('Estacionamiento 1', zoom: zoom),
+            r + 8);
+        expect(etiquetas.desplazamientoDe('Cafetería Principal', zoom: zoom),
+            r + 8);
+        expect(etiquetas.desplazamientoDe('Entrada Sur', zoom: zoom),
+            radioInsignia(zoom, tamano: 1.25) + 8);
+        // La segunda línea de un lugar va una línea más abajo.
+        expect(etiquetas.desplazamientoDe('Periodismo', zoom: zoom),
+            closeTo(r + 8 + 1.15 * 10.5, 1e-9));
+      }
+    });
+
+    test('los textos que no van debajo de un ícono no se mueven', () {
+      for (final zoom in [1.0, 2.0, 8.0]) {
+        expect(etiquetas.desplazamientoDe('Z', zoom: zoom), 0);
+        expect(etiquetas.desplazamientoDe('Coordinación de tecnologías',
+            zoom: zoom), 13);
+        expect(etiquetas.desplazamientoDe('Sala de Gobierno', zoom: zoom), 0);
+      }
+    });
+  });
+
   group('EtiquetasMapaVectorial: visibilidad por zoom', () {
     final etiquetas = EtiquetasMapaVectorial(mapa);
     tearDownAll(etiquetas.dispose);

@@ -43,7 +43,29 @@ const Map<String, IconData> kIconosMapa = {
 /// zonas deportivas.
 const double kZoomDetalle = 1.8;
 
-/// Una insignia: círculo con un ícono, de tamaño constante en pantalla.
+/// Radio en pantalla de una insignia con zoom ×1; crece en proporción al
+/// zoom, como si fuera parte del mapa (11 px con ×2).
+const double kRadioInsigniaZoom1 = 5.5;
+
+/// Tope del radio en pantalla, para que con zoom alto (×5 a ×8) las
+/// insignias no se vuelvan enormes.
+const double kRadioInsigniaMaximo = 22;
+
+/// Separación en pantalla entre el borde de una insignia y el centro del
+/// texto que va debajo de ella.
+const double kSeparacionTextoInsignia = 8;
+
+/// Radio en pantalla de una insignia con [zoom]. [tamano] es 1.25 en las
+/// entradas, que conservan esa proporción sobre las demás (también por
+/// encima del tope).
+double radioInsignia(double zoom, {double tamano = 1}) =>
+    math.min(kRadioInsigniaZoom1 * zoom, kRadioInsigniaMaximo) * tamano;
+
+/// Radio con el que se maquetan las insignias (el de zoom ×2); al
+/// dibujarlas se escalan a [radioInsignia].
+const double _radioMaquetado = 11;
+
+/// Una insignia: círculo con un ícono que crece con el zoom hasta un tope.
 class _Insignia {
   final Offset ancla; // metros
   final double tamano; // 1 normal; 1.25 en las entradas
@@ -66,11 +88,20 @@ class _Insignia {
 /// en pantalla, con halo opcional.
 class _Texto {
   final Offset ancla; // metros
-  final double dy; // píxeles de pantalla hacia abajo
+  final double dy; // píxeles de pantalla hacia abajo (si no hay insignia)
   final double anguloGrados;
   final TextPainter relleno;
   final TextPainter? halo;
   final bool soloDetalle;
+
+  /// La insignia bajo la que va el texto, si la hay: entonces su
+  /// separación depende del radio actual de la insignia, no de [dy].
+  final _Insignia? insignia;
+
+  /// Número de línea (desde 0) de un texto de varias líneas y la
+  /// distancia en pantalla entre líneas.
+  final int linea;
+  final double interlineado;
 
   _Texto({
     required this.ancla,
@@ -79,7 +110,19 @@ class _Texto {
     required this.halo,
     required this.soloDetalle,
     this.anguloGrados = 0,
+    this.insignia,
+    this.linea = 0,
+    this.interlineado = 0,
   });
+
+  /// Desplazamiento vertical en pantalla del centro del texto con [zoom].
+  double dyCon(double zoom) {
+    final i = insignia;
+    if (i == null) return dy;
+    return radioInsignia(zoom, tamano: i.tamano) +
+        kSeparacionTextoInsignia +
+        linea * interlineado;
+  }
 }
 
 /// Las insignias y los textos del mapa vectorial, ya maquetados en píxeles
@@ -110,11 +153,24 @@ class EtiquetasMapaVectorial {
   static bool _visible(bool soloDetalle, double zoom) =>
       !soloDetalle || zoom >= kZoomDetalle;
 
+  /// Desplazamiento vertical en pantalla del primer texto igual a
+  /// [contenido] con [zoom]; `null` si no existe.
+  @visibleForTesting
+  double? desplazamientoDe(String contenido, {required double zoom}) {
+    for (final t in _textos) {
+      if (t.relleno.plainText == contenido) return t.dyCon(zoom);
+    }
+    return null;
+  }
+
   factory EtiquetasMapaVectorial(MapaVectorial mapa) {
     final insignias = <_Insignia>[];
     final textos = <_Texto>[];
+    // La insignia de cada edificio, lugar, entrada y estacionamiento, para
+    // colgar de ella el texto que va debajo.
+    final insigniaDe = Map<Object, _Insignia>.identity();
 
-    void insignia(Offset ancla, String nombreIcono,
+    void insignia(Object elemento, Offset ancla, String nombreIcono,
         {bool soloDetalle = false, bool esEntrada = false}) {
       final icono = kIconosMapa[nombreIcono];
       if (icono == null) {
@@ -122,7 +178,7 @@ class EtiquetasMapaVectorial {
         return;
       }
       final tamano = esEntrada ? 1.25 : 1.0;
-      insignias.add(_Insignia(
+      insignias.add(insigniaDe[elemento] = _Insignia(
         ancla: ancla,
         tamano: tamano,
         fondo: esEntrada
@@ -152,6 +208,9 @@ class EtiquetasMapaVectorial {
       double anchoHalo = 3,
       bool soloDetalle = false,
       double anguloGrados = 0,
+      Object? debajoDe,
+      int linea = 0,
+      double interlineado = 0,
     }) {
       TextPainter maquetar(TextStyle estilo) => TextPainter(
             text: TextSpan(text: contenido, style: estilo),
@@ -173,27 +232,34 @@ class EtiquetasMapaVectorial {
                   ..strokeJoin = StrokeJoin.round
                   ..color = colorHalo)),
         soloDetalle: soloDetalle,
+        insignia: debajoDe == null ? null : insigniaDe[debajoDe],
+        linea: linea,
+        interlineado: interlineado,
       ));
     }
 
     // --- Insignias (todas debajo de los textos, como en la referencia) ---
     for (final e in mapa.edificios) {
-      if (e.icono != null) insignia(e.etiqueta, e.icono!);
+      if (e.icono != null) insignia(e, e.etiqueta, e.icono!);
     }
     for (final c in mapa.canchasFutbol) {
-      if (c.icono != null && c.iconoPos != null) insignia(c.iconoPos!, c.icono!);
+      if (c.icono != null && c.iconoPos != null) {
+        insignia(c, c.iconoPos!, c.icono!);
+      }
     }
     for (final c in mapa.canchas) {
-      if (c.icono != null && c.iconoPos != null) insignia(c.iconoPos!, c.icono!);
+      if (c.icono != null && c.iconoPos != null) {
+        insignia(c, c.iconoPos!, c.icono!);
+      }
     }
     for (final l in mapa.lugares) {
-      insignia(l.pos, l.icono, soloDetalle: true);
+      insignia(l, l.pos, l.icono, soloDetalle: true);
     }
     for (final e in mapa.entradas) {
-      insignia(e.pos, 'door_front', esEntrada: true);
+      insignia(e, e.pos, 'door_front', esEntrada: true);
     }
     for (final e in mapa.estacionamientos) {
-      insignia(e.pos, 'directions_car');
+      insignia(e, e.pos, 'directions_car');
     }
 
     // --- Textos ---
@@ -213,7 +279,9 @@ class EtiquetasMapaVectorial {
                 ? ColoresMapaVectorial.tinta
                 : ColoresMapaVectorial.textoEdificio,
             colorHalo: techada ? ColoresMapaVectorial.halo : null,
-            dy: e.letra != null ? 14 : (e.icono != null ? 19 : 0),
+            // Debajo de la letra, o de la insignia si tiene ícono.
+            dy: e.letra != null ? 14 : 0,
+            debajoDe: e.letra == null && e.icono != null ? e : null,
             soloDetalle: true);
       }
       final subtitulo = e.subtitulo ?? const <String>[];
@@ -237,7 +305,9 @@ class EtiquetasMapaVectorial {
             colorHalo: l.enAreaVerde
                 ? ColoresMapaVectorial.halo
                 : ColoresMapaVectorial.edificio,
-            dy: 19 + 1.15 * 10.5 * k,
+            debajoDe: l,
+            linea: k,
+            interlineado: 1.15 * 10.5,
             soloDetalle: true);
       }
     }
@@ -248,7 +318,7 @@ class EtiquetasMapaVectorial {
           color: ColoresMapaVectorial.entrada,
           colorHalo: ColoresMapaVectorial.halo,
           anchoHalo: 3.5,
-          dy: 22);
+          debajoDe: e);
     }
     for (final e in mapa.estacionamientos) {
       texto(e.pos, e.nombre,
@@ -256,7 +326,7 @@ class EtiquetasMapaVectorial {
           peso: FontWeight.w500,
           color: ColoresMapaVectorial.tinta,
           colorHalo: ColoresMapaVectorial.halo,
-          dy: 19,
+          debajoDe: e,
           soloDetalle: true);
     }
     void nombreDeZona(String? nombre, Offset posicion) {
@@ -329,10 +399,11 @@ class EtiquetasMapaVectorial {
   }
 }
 
-/// Dibuja las insignias y los textos del mapa vectorial con tamaño
-/// constante en pantalla: tamaño en lienzo = tamaño en pantalla ÷
+/// Dibuja las insignias y los textos del mapa vectorial. Los textos tienen
+/// tamaño constante en pantalla: tamaño en lienzo = tamaño en pantalla ÷
 /// [pantallaPorLienzo] (la escala del `FittedBox` por la del
-/// `InteractiveViewer`). Por eso, a diferencia de la capa estática, se
+/// `InteractiveViewer`). Las insignias crecen con el zoom hasta un tope
+/// ([radioInsignia]). Por eso, a diferencia de la capa estática, se
 /// repinta con el zoom.
 class EtiquetasMapaPainter extends CustomPainter {
   final EtiquetasMapaVectorial etiquetas;
@@ -365,8 +436,10 @@ class EtiquetasMapaPainter extends CustomPainter {
       final ancla = _aLienzo(i.ancla);
       canvas.save();
       canvas.translate(ancla.dx, ancla.dy);
-      canvas.scale(k);
-      final double radio = 11 * i.tamano;
+      // La insignia está maquetada con radio 11 (16 px de ícono, 1 px de
+      // borde); se escala entera, borde incluido, al radio de este zoom.
+      canvas.scale(k * radioInsignia(zoom) / _radioMaquetado);
+      final double radio = _radioMaquetado * i.tamano;
       canvas.drawCircle(Offset.zero, radio, fondo..color = i.fondo);
       canvas.drawCircle(
           Offset.zero,
@@ -387,7 +460,7 @@ class EtiquetasMapaPainter extends CustomPainter {
       canvas.scale(k);
       if (t.anguloGrados != 0) canvas.rotate(t.anguloGrados * math.pi / 180);
       final esquina =
-          Offset(-t.relleno.width / 2, t.dy - t.relleno.height / 2);
+          Offset(-t.relleno.width / 2, t.dyCon(zoom) - t.relleno.height / 2);
       t.halo?.paint(canvas, esquina);
       t.relleno.paint(canvas, esquina);
       canvas.restore();
