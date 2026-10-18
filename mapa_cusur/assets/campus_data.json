@@ -603,6 +603,10 @@
         "Centro_Aprendizaje_Global": [
             19.725803545,
             -103.462625534
+        ],
+        "Radio_UDG": [
+            19.72461668,
+            -103.460137248
         ]
     },
     "coordenadas_pix": {
@@ -1209,6 +1213,10 @@
         "Centro_Aprendizaje_Global": [
             91,
             535
+        ],
+        "Radio_UDG": [
+            520,
+            300
         ]
     },
     "conexiones": {
@@ -1770,7 +1778,8 @@
             "P3": 0.45,
             "V2": 0.52,
             "Ce1": 0.56,
-            "Sala_de_Gobierno": 0.25
+            "Sala_de_Gobierno": 0.25,
+            "Radio_UDG": 0.27
         },
         "P2": {
             "P1": 0.18,
@@ -2085,6 +2094,9 @@
         },
         "Centro_Aprendizaje_Global": {
             "F7": 0.44
+        },
+        "Radio_UDG": {
+            "P1": 0.27
         }
     },
     "puntos_control": [
@@ -2104,6 +2116,7 @@
         "Lab_Programacion",
         "Lab_Electronica",
         "Lab_Periodismo",
-        "Centro_Aprendizaje_Global"
+        "Centro_Aprendizaje_Global",
+        "Radio_UDG"
     ]
 }

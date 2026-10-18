@@ -53,7 +53,10 @@ const Map<String, String> diccionarioNombres = {
   'Auditorio_CASA': 'Auditorio C.A.S.A.',
   'Sala_de_Gobierno': 'Sala de Gobierno',
   'CMID': 'C.M.I.D.',
-  'RadioUDG': 'Radio UDG',
+  // El edificio de Radio UDG está en la columna de Av. Colón. El nodo
+  // anterior, 'RadioUDG' (junto a C.A.S.A.), se conserva sin nombre como
+  // cruce del andador: conecta L5 y L6 con el Auditorio C.A.S.A.
+  'Radio_UDG': 'Radio UDG',
   'Proteccion_Civil': 'Protección Civil',
   // Nodos de acceso agregados con el mapa vectorial (posición en la orilla
   // del lugar, tomada de campus_vector.json; píxeles derivados).

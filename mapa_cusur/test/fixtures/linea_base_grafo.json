@@ -1,10 +1,10 @@
 {
-  "nodos_antes_interpolar": 151,
-  "aristas_antes_interpolar_dirigidas": 572,
-  "peso_total_antes": 230.80999999999975,
-  "nodos_despues_interpolar": 1019,
-  "aristas_despues_interpolar_dirigidas": 2340,
-  "peso_total_despues": 245.70000000000252,
+  "nodos_antes_interpolar": 152,
+  "aristas_antes_interpolar_dirigidas": 574,
+  "peso_total_antes": 231.34999999999977,
+  "nodos_despues_interpolar": 1022,
+  "aristas_despues_interpolar_dirigidas": 2346,
+  "peso_total_despues": 246.24000000000254,
   "nodos_con_nombre_amigable": 52,
   "pares_calculados": 2652,
   "pares_inalcanzables": 0

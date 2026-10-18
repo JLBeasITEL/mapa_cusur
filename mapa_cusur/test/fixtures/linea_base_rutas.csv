@@ -46,7 +46,7 @@ Auditorio C.A.S.A.,Laboratorio de Electrónica,1.260000,14,5f60b93c94ba73f8
 Auditorio C.A.S.A.,Laboratorio de Periodismo,1.360000,15,-e410b844dd88540
 Auditorio C.A.S.A.,Laboratorio de Programación,0.700000,8,037a9d79336d2767
 Auditorio C.A.S.A.,Protección Civil,4.570000,45,776ffe23408bd3df
-Auditorio C.A.S.A.,Radio UDG,0.280000,4,4b696abff98a43a2
+Auditorio C.A.S.A.,Radio UDG,3.870000,40,-263f0dcf1500328e
 Auditorio C.A.S.A.,Rectoría,2.070000,21,3890c8ad29edb615
 Auditorio C.A.S.A.,Sala de Gobierno,3.660000,38,4803af6c0a5d9f8d
 Auditorio C.A.S.A.,Hospital Veterinario,3.790000,38,0e9663453cbc2266
@@ -97,7 +97,7 @@ Auditorio Antonio González Ochoa,Laboratorio de Electrónica,3.610000,36,267b87
 Auditorio Antonio González Ochoa,Laboratorio de Periodismo,4.900000,49,2a4d382143359563
 Auditorio Antonio González Ochoa,Laboratorio de Programación,4.240000,41,12afc63cd898187e
 Auditorio Antonio González Ochoa,Protección Civil,0.420000,5,-7fcae4b2143d58c1
-Auditorio Antonio González Ochoa,Radio UDG,4.870000,48,0d414aa2ea9e2ebb
+Auditorio Antonio González Ochoa,Radio UDG,2.100000,23,024c13c4076a8f51
 Auditorio Antonio González Ochoa,Rectoría,3.410000,35,-730b504a7fce105a
 Auditorio Antonio González Ochoa,Sala de Gobierno,2.080000,23,-6f5bc7d2db1b6704
 Auditorio Antonio González Ochoa,Hospital Veterinario,5.860000,57,-36cf27757450dc04
@@ -148,7 +148,7 @@ Auditorio Adolfo Aguilar Zínser,Laboratorio de Electrónica,2.460000,24,-2c44b1
 Auditorio Adolfo Aguilar Zínser,Laboratorio de Periodismo,2.610000,25,17081843e2f3ce7f
 Auditorio Adolfo Aguilar Zínser,Laboratorio de Programación,3.330000,35,-1169ecf993021bd3
 Auditorio Adolfo Aguilar Zínser,Protección Civil,4.600000,45,573ec88b7c6e5333
-Auditorio Adolfo Aguilar Zínser,Radio UDG,2.570000,27,-3fa594d5f9243861
+Auditorio Adolfo Aguilar Zínser,Radio UDG,3.850000,40,-2c0a2184cd35a332
 Auditorio Adolfo Aguilar Zínser,Rectoría,1.450000,14,27c4e7ced33b4295
 Auditorio Adolfo Aguilar Zínser,Sala de Gobierno,3.640000,38,6d1988624a1566b9
 Auditorio Adolfo Aguilar Zínser,Hospital Veterinario,1.080000,11,-43f003232584a680
@@ -199,7 +199,7 @@ Bufete Jurídico,Laboratorio de Electrónica,4.060000,41,-382cd5e60af6726a
 Bufete Jurídico,Laboratorio de Periodismo,5.350000,54,642cb716254794f5
 Bufete Jurídico,Laboratorio de Programación,4.690000,46,7ec1b475e70d74f0
 Bufete Jurídico,Protección Civil,1.000000,11,-2ee88cc20b73c7fd
-Bufete Jurídico,Radio UDG,5.320000,53,71bf24cca7086a85
+Bufete Jurídico,Radio UDG,2.330000,26,-3166744761ae120d
 Bufete Jurídico,Rectoría,3.860000,40,20f136c5fa3fa078
 Bufete Jurídico,Sala de Gobierno,2.310000,26,-38192b3c4b2fc21a
 Bufete Jurídico,Hospital Veterinario,6.310000,62,-42072883a52cea8e
@@ -250,7 +250,7 @@ C.A.S.A. (Biblioteca),Laboratorio de Electrónica,1.800000,18,62321293373f8c83
 C.A.S.A. (Biblioteca),Laboratorio de Periodismo,1.200000,13,-421ec772d28a4515
 C.A.S.A. (Biblioteca),Laboratorio de Programación,1.300000,14,2c0c646564366856
 C.A.S.A. (Biblioteca),Protección Civil,5.110000,49,2b0742463f6eddc6
-C.A.S.A. (Biblioteca),Radio UDG,0.540000,6,-26b3786928878e0e
+C.A.S.A. (Biblioteca),Radio UDG,4.410000,44,525f17423f213b9b
 C.A.S.A. (Biblioteca),Rectoría,1.910000,19,-2726791e85bbb662
 C.A.S.A. (Biblioteca),Sala de Gobierno,4.200000,42,-a84fa07b4a444d4
 C.A.S.A. (Biblioteca),Hospital Veterinario,3.470000,35,0aa0afd1922465f5
@@ -301,7 +301,7 @@ C.M.I.D.,Laboratorio de Electrónica,2.080000,21,-5109df529257368b
 C.M.I.D.,Laboratorio de Periodismo,3.120000,32,69e331f1775eb12d
 C.M.I.D.,Laboratorio de Programación,1.440000,15,6c211cebb813971b
 C.M.I.D.,Protección Civil,4.970000,48,0577d900d7bcebc7
-C.M.I.D.,Radio UDG,2.140000,23,398f65292f136838
+C.M.I.D.,Radio UDG,4.270000,43,-39a52a9f1bf2b996
 C.M.I.D.,Rectoría,3.080000,30,1715d273159eb1da
 C.M.I.D.,Sala de Gobierno,4.060000,41,7a4ccbc0db950a95
 C.M.I.D.,Hospital Veterinario,5.500000,52,-7e783bf471b28ebd
@@ -352,7 +352,7 @@ Centro Acuático,Laboratorio de Electrónica,2.450000,24,01128e00add963e3
 Centro Acuático,Laboratorio de Periodismo,3.480000,35,2b5212b097fba352
 Centro Acuático,Laboratorio de Programación,1.800000,18,-77d626a94c75fed6
 Centro Acuático,Protección Civil,5.340000,51,-681a1b1cc94e545f
-Centro Acuático,Radio UDG,2.510000,26,-1ab003c900f5b826
+Centro Acuático,Radio UDG,4.640000,46,-71fe39d9cf48f9e0
 Centro Acuático,Rectoría,3.450000,33,7e75190a14173220
 Centro Acuático,Sala de Gobierno,4.430000,44,5e2d199d091187a7
 Centro Acuático,Hospital Veterinario,5.870000,55,-5a9a2358487a81c3
@@ -403,7 +403,7 @@ Cafetería Pequeña,Laboratorio de Electrónica,2.130000,21,3f322203ee831290
 Cafetería Pequeña,Laboratorio de Periodismo,1.530000,16,-56fba5e8cb221a8c
 Cafetería Pequeña,Laboratorio de Programación,1.630000,17,-45213639231f459d
 Cafetería Pequeña,Protección Civil,5.440000,52,-68fa607edffde789
-Cafetería Pequeña,Radio UDG,0.870000,9,7879fe52117076d5
+Cafetería Pequeña,Radio UDG,4.740000,47,-7b4f47cc39dc8146
 Cafetería Pequeña,Rectoría,2.240000,22,-4fc08fad9940ba7f
 Cafetería Pequeña,Sala de Gobierno,4.530000,45,-6e8abdac3bc25f3b
 Cafetería Pequeña,Hospital Veterinario,3.340000,32,0356c376af7c36d2
@@ -454,7 +454,7 @@ Cafetería Principal,Laboratorio de Electrónica,2.290000,22,7e5b0bcc68566c2e
 Cafetería Principal,Laboratorio de Periodismo,2.680000,25,5d6670ef1276d4c0
 Cafetería Principal,Laboratorio de Programación,3.050000,29,-1c892272df02ed9c
 Cafetería Principal,Protección Civil,2.810000,29,-4a08a3e89cd1c1f6
-Cafetería Principal,Radio UDG,2.980000,28,-27b359f804ad68f2
+Cafetería Principal,Radio UDG,1.700000,19,782ed1f3eab6a284
 Cafetería Principal,Rectoría,1.260000,13,-23bfac1c8106935f
 Cafetería Principal,Sala de Gobierno,1.490000,17,-2c5fc27e3307c935
 Cafetería Principal,Hospital Veterinario,3.180000,33,-232b7656987cc600
@@ -505,7 +505,7 @@ Cancha de fútbol central,Laboratorio de Electrónica,1.510000,16,6c31aafa8bb429
 Cancha de fútbol central,Laboratorio de Periodismo,2.800000,29,-4c0bd59a48a6e1b7
 Cancha de fútbol central,Laboratorio de Programación,2.140000,21,62e8da407da9bf94
 Cancha de fútbol central,Protección Civil,2.220000,23,-2d5a8af789cc8da3
-Cancha de fútbol central,Radio UDG,2.770000,28,-40e61b484f0a8a07
+Cancha de fútbol central,Radio UDG,1.520000,18,1ba6ba2aa34502e4
 Cancha de fútbol central,Rectoría,1.310000,15,4038e8d5f7fa5a9c
 Cancha de fútbol central,Sala de Gobierno,1.310000,16,-9ea9a8a8e63eb15
 Cancha de fútbol central,Hospital Veterinario,3.760000,37,77ac8c562c1bc64e
@@ -556,7 +556,7 @@ Cancha de fútbol norte,Laboratorio de Electrónica,2.260000,24,02533477a5ce347d
 Cancha de fútbol norte,Laboratorio de Periodismo,1.640000,17,-77bc3e954a0515e8
 Cancha de fútbol norte,Laboratorio de Programación,1.780000,19,57bc1292a349dcb3
 Cancha de fútbol norte,Protección Civil,5.170000,53,0865b32b60c026f2
-Cancha de fútbol norte,Radio UDG,1.020000,11,-7cd453397c64343b
+Cancha de fútbol norte,Radio UDG,4.470000,48,-6393b5ad90747c51
 Cancha de fútbol norte,Rectoría,1.940000,21,-ed8d492dccf1e52
 Cancha de fútbol norte,Sala de Gobierno,4.260000,46,-7a3aee22e2f977e0
 Cancha de fútbol norte,Hospital Veterinario,2.700000,27,-b6f4976ef322a46
@@ -607,7 +607,7 @@ Cancha múltiple,Laboratorio de Electrónica,1.850000,20,-2ef95f2ac17c913b
 Cancha múltiple,Laboratorio de Periodismo,1.650000,18,7d4b69130eb2856a
 Cancha múltiple,Laboratorio de Programación,2.220000,25,61c50eedd8243491
 Cancha múltiple,Protección Civil,4.760000,49,539e6d68d7f09d2a
-Cancha múltiple,Radio UDG,1.460000,17,-5701ab4a55a050ad
+Cancha múltiple,Radio UDG,4.060000,44,-1686868dfb361b49
 Cancha múltiple,Rectoría,1.530000,17,-6e720c177b8d212a
 Cancha múltiple,Sala de Gobierno,3.850000,42,-1e9abd56c0c06948
 Cancha múltiple,Hospital Veterinario,2.210000,23,2950090c6ce32fd7
@@ -658,7 +658,7 @@ Centro de Aprendizaje Global,Laboratorio de Electrónica,3.080000,30,-62023d1265
 Centro de Aprendizaje Global,Laboratorio de Periodismo,2.770000,27,6af16f4f0504f04a
 Centro de Aprendizaje Global,Laboratorio de Programación,2.460000,25,-384e4ceb164d4256
 Centro de Aprendizaje Global,Protección Civil,6.360000,61,-56965c1ed5495dce
-Centro de Aprendizaje Global,Radio UDG,2.110000,20,258697543701620b
+Centro de Aprendizaje Global,Radio UDG,5.660000,56,-76b370b43e33e91
 Centro de Aprendizaje Global,Rectoría,3.480000,33,57a93da7d2287cd3
 Centro de Aprendizaje Global,Sala de Gobierno,5.450000,54,0c3d2e87e9ab78e0
 Centro de Aprendizaje Global,Hospital Veterinario,4.580000,43,553e0e710f97f870
@@ -709,7 +709,7 @@ Clínica Escuela,Laboratorio de Electrónica,2.100000,21,-14648195cbb84c00
 Clínica Escuela,Laboratorio de Periodismo,3.390000,34,-be3606931e17cb9
 Clínica Escuela,Laboratorio de Programación,2.730000,26,-2fe713891cd6046e
 Clínica Escuela,Protección Civil,1.710000,18,-6ce34d9132f6d07
-Clínica Escuela,Radio UDG,3.360000,33,-455099f8dfab53c1
+Clínica Escuela,Radio UDG,0.780000,9,67cd76c3d929490f
 Clínica Escuela,Rectoría,1.900000,20,33aaa1ffe6f2a74a
 Clínica Escuela,Sala de Gobierno,0.760000,9,6b9518bd27efc51a
 Clínica Escuela,Hospital Veterinario,4.280000,44,1df87304996623fd
@@ -760,7 +760,7 @@ Edificio B,Laboratorio de Electrónica,1.050000,11,71032068ff3793df
 Edificio B,Laboratorio de Periodismo,1.200000,12,35952e429ca4cd4c
 Edificio B,Laboratorio de Programación,2.090000,20,-15c61526aa3aa3b5
 Edificio B,Protección Civil,3.670000,37,-6a9443f027395eae
-Edificio B,Radio UDG,1.500000,15,-163728b2e0cbf7b6
+Edificio B,Radio UDG,2.970000,32,1b6a6f31702b9f4f
 Edificio B,Rectoría,0.440000,5,5f2c2371436cc1ce
 Edificio B,Sala de Gobierno,2.760000,30,4f7dbee57d5bfe00
 Edificio B,Hospital Veterinario,2.710000,24,-ed8552262cef878
@@ -811,7 +811,7 @@ Edificio C,Laboratorio de Electrónica,0.290000,4,464086891f4ff47a
 Edificio C,Laboratorio de Periodismo,1.980000,19,-1cde1eb6e79ca95
 Edificio C,Laboratorio de Programación,1.330000,13,08ff8443d0f775fc
 Edificio C,Protección Civil,3.280000,33,-15a704b2a863eb80
-Edificio C,Radio UDG,1.550000,16,19a1a4b03c654149
+Edificio C,Radio UDG,2.580000,28,-44459d43bbcb641f
 Edificio C,Rectoría,0.830000,9,-200eee6fdb70d95b
 Edificio C,Sala de Gobierno,2.370000,26,0b05b23cafdc56de
 Edificio C,Hospital Veterinario,3.280000,31,25513e0df9890645
@@ -862,7 +862,7 @@ Edificio F,Laboratorio de Electrónica,1.890000,19,-6ca6e65a31cd5f9b
 Edificio F,Laboratorio de Periodismo,2.370000,25,6f78ff29a8f91c4a
 Edificio F,Laboratorio de Programación,1.130000,12,195e61a5d3dcbba6
 Edificio F,Protección Civil,5.030000,48,08e79ffe943d126e
-Edificio F,Radio UDG,1.290000,14,-5e5ee929648b1c44
+Edificio F,Radio UDG,4.330000,43,0b5cb73d5c58d773
 Edificio F,Rectoría,2.890000,28,18c1383fd28531ea
 Edificio F,Sala de Gobierno,4.120000,41,-1d28e4d20e553dec
 Edificio F,Hospital Veterinario,4.800000,48,08477b4c3e1cad2c
@@ -913,7 +913,7 @@ Edificio G,Laboratorio de Electrónica,1.870000,19,-2fdcaf6715a9fb1d
 Edificio G,Laboratorio de Periodismo,2.350000,25,-15f1cb6a09b77ce4
 Edificio G,Laboratorio de Programación,1.110000,12,58de31f04793b900
 Edificio G,Protección Civil,5.010000,48,2f11d61a24ce5768
-Edificio G,Radio UDG,1.270000,14,-8e32182afd372ca
+Edificio G,Radio UDG,4.310000,43,-1dacd388a9d44da7
 Edificio G,Rectoría,2.870000,28,-1f34abed5339ce0
 Edificio G,Sala de Gobierno,4.100000,41,-2725e74d447da4da
 Edificio G,Hospital Veterinario,4.780000,48,5dd341ac15a7dd2a
@@ -964,7 +964,7 @@ Edificio H,Laboratorio de Electrónica,1.400000,15,-28c238e195c1a648
 Edificio H,Laboratorio de Periodismo,2.060000,21,-2b1fdb947244ab22
 Edificio H,Laboratorio de Programación,2.440000,24,680b7b5fec45472e
 Edificio H,Protección Civil,3.510000,36,13a82cb2c6d9282a
-Edificio H,Radio UDG,2.360000,24,-1d8ebb6182c2622c
+Edificio H,Radio UDG,2.810000,31,-5ba6363db3aeb049
 Edificio H,Rectoría,0.640000,9,-75da8d00b07bd339
 Edificio H,Sala de Gobierno,2.600000,29,-3bcca65ba378ce48
 Edificio H,Hospital Veterinario,2.940000,29,-5f8c2b82a2b5013
@@ -1015,7 +1015,7 @@ Edificio I,Laboratorio de Electrónica,3.530000,35,-3d4abe5108da3884
 Edificio I,Laboratorio de Periodismo,3.680000,36,185030bdaaf0f4d3
 Edificio I,Laboratorio de Programación,4.570000,44,-65ef6abdf1a2d9ee
 Edificio I,Protección Civil,4.850000,51,1e81cd420e91d1b7
-Edificio I,Radio UDG,3.980000,39,-4f2f1162dcd4a267
+Edificio I,Radio UDG,3.150000,35,-6492b75c46e2342b
 Edificio I,Rectoría,2.520000,25,40b4ab83ed97b221
 Edificio I,Sala de Gobierno,2.860000,31,40abbe3e02a9fdd4
 Edificio I,Hospital Veterinario,2.180000,20,-5422457bed10518d
@@ -1066,7 +1066,7 @@ Edificio J,Laboratorio de Electrónica,1.140000,12,764ca91962052222
 Edificio J,Laboratorio de Periodismo,1.800000,18,4a0f4c699aa8dbe4
 Edificio J,Laboratorio de Programación,2.180000,21,21bcb7faf268b0e4
 Edificio J,Protección Civil,3.250000,33,452a4a21650ecaf4
-Edificio J,Radio UDG,2.100000,21,1a77c4c529df3b52
+Edificio J,Radio UDG,2.550000,28,4442eab64cbd43cd
 Edificio J,Rectoría,0.380000,6,-5bd5ff9ec86ebbf3
 Edificio J,Sala de Gobierno,2.340000,26,0f760f9c5578305a
 Edificio J,Hospital Veterinario,2.680000,26,-36c0e6d498a9d8e1
@@ -1117,7 +1117,7 @@ Edificio L,Laboratorio de Electrónica,0.490000,6,0449e5d2cd0f2db1
 Edificio L,Laboratorio de Periodismo,1.850000,19,-43775b9dbb0cad8
 Edificio L,Laboratorio de Programación,0.680000,8,173d5a269962b830
 Edificio L,Protección Civil,3.800000,37,5354bcef342c80fc
-Edificio L,Radio UDG,0.890000,10,-21efbab0b5935093
+Edificio L,Radio UDG,3.100000,32,-1722bef98f9c18fb
 Edificio L,Rectoría,1.490000,15,-66de3f138752a9ba
 Edificio L,Sala de Gobierno,2.890000,30,404e7677fab3d842
 Edificio L,Hospital Veterinario,3.910000,37,35d0069aca64de5f
@@ -1168,7 +1168,7 @@ Edificio M,Laboratorio de Electrónica,1.950000,20,-306d6b4a44fb45a4
 Edificio M,Laboratorio de Periodismo,1.750000,18,-70a22a96b79e7697
 Edificio M,Laboratorio de Programación,2.320000,25,-9ed075083320690
 Edificio M,Protección Civil,4.860000,49,-35ea082c7671a417
-Edificio M,Radio UDG,1.560000,17,-396d39e47d2beee4
+Edificio M,Radio UDG,4.160000,44,4578479509db49b8
 Edificio M,Rectoría,1.630000,17,0f5442a9866e4e6f
 Edificio M,Sala de Gobierno,3.950000,42,-1d0d4d66ffbc1811
 Edificio M,Hospital Veterinario,2.100000,22,09c2abb2bdca9088
@@ -1219,7 +1219,7 @@ Edificio N,Laboratorio de Electrónica,3.850000,39,70f2baa2baef936e
 Edificio N,Laboratorio de Periodismo,5.140000,52,452a248e3fa73dcd
 Edificio N,Laboratorio de Programación,4.480000,44,679f9377457b3948
 Edificio N,Protección Civil,1.660000,17,-29fee66faa22279c
-Edificio N,Radio UDG,5.110000,51,-70df60858b045923
+Edificio N,Radio UDG,1.900000,21,659a92134e32f925
 Edificio N,Rectoría,3.650000,38,-7366704add7375f0
 Edificio N,Sala de Gobierno,1.880000,21,2601bc4f41c5c328
 Edificio N,Hospital Veterinario,6.030000,62,-3c651b4ddf49149b
@@ -1270,7 +1270,7 @@ Edificio P,Laboratorio de Electrónica,2.020000,21,-6f19095d2087c05
 Edificio P,Laboratorio de Periodismo,3.310000,34,-504dd9aff2d03cac
 Edificio P,Laboratorio de Programación,2.650000,26,788c42e82b104c13
 Edificio P,Protección Civil,2.100000,22,-7974ce9a450eb677
-Edificio P,Radio UDG,3.280000,33,263b3334531d3d36
+Edificio P,Radio UDG,0.710000,9,-2ea895badaea326c
 Edificio P,Rectoría,1.820000,20,4547480c6a5816b1
 Edificio P,Sala de Gobierno,0.500000,7,7eafea16467fae7b
 Edificio P,Hospital Veterinario,4.170000,43,5b9d80d412ac6292
@@ -1321,7 +1321,7 @@ Edificio Q,Laboratorio de Electrónica,2.020000,21,0446cfa016c21abe
 Edificio Q,Laboratorio de Periodismo,3.310000,34,-770b7d49c8feaa3
 Edificio Q,Laboratorio de Programación,2.650000,26,2f0876649f077dd8
 Edificio Q,Protección Civil,2.290000,24,-3d9aeac7ae97d66a
-Edificio Q,Radio UDG,3.280000,33,-77e335354c2893b3
+Edificio Q,Radio UDG,0.800000,9,-36e78c67cba5d9a5
 Edificio Q,Rectoría,1.820000,20,-1ddbfd39928eb240
 Edificio Q,Sala de Gobierno,0.570000,6,5a88d5976acfbc6d
 Edificio Q,Hospital Veterinario,4.170000,43,0f9e158e510ad163
@@ -1372,7 +1372,7 @@ Edificio R,Laboratorio de Electrónica,1.870000,19,-873473a3011a085
 Edificio R,Laboratorio de Periodismo,2.230000,23,778527dd970cbe64
 Edificio R,Laboratorio de Programación,2.910000,28,-11efd352a8ab6a49
 Edificio R,Protección Civil,3.340000,34,-433f269c112d7593
-Edificio R,Radio UDG,2.530000,26,1fad398fbb5b11d2
+Edificio R,Radio UDG,2.230000,24,-202a39a88862a363
 Edificio R,Rectoría,0.840000,10,-2bbc7df6a9ae13e6
 Edificio R,Sala de Gobierno,2.020000,22,-eab9f794cb80d36
 Edificio R,Hospital Veterinario,2.650000,28,47225de10fbc28f7
@@ -1423,7 +1423,7 @@ Edificio S,Laboratorio de Electrónica,2.240000,22,-5df64bf18f0ceba7
 Edificio S,Laboratorio de Periodismo,2.410000,24,-683ae2ec8c052d45
 Edificio S,Laboratorio de Programación,3.280000,31,-664ceb960414cbaf
 Edificio S,Protección Civil,4.170000,42,1aa7edbdf5fb8320
-Edificio S,Radio UDG,2.710000,27,-22c835eb3b222fcf
+Edificio S,Radio UDG,2.470000,26,721e0a50776a1cfc
 Edificio S,Rectoría,1.210000,13,386b6e7182f0a9f0
 Edificio S,Sala de Gobierno,2.180000,22,15c699da3ed5088f
 Edificio S,Hospital Veterinario,2.450000,25,-632d483787e8a186
@@ -1474,7 +1474,7 @@ Edificio T,Laboratorio de Electrónica,2.320000,23,-38d0b7c0a4d62b8
 Edificio T,Laboratorio de Periodismo,2.470000,24,-297192f2df3220c9
 Edificio T,Laboratorio de Programación,3.360000,32,-52d19865fc516442
 Edificio T,Protección Civil,4.460000,46,-20a22528a6d7ded8
-Edificio T,Radio UDG,2.770000,27,-64185bda7ffd39a3
+Edificio T,Radio UDG,2.910000,31,-5e34844017daa58a
 Edificio T,Rectoría,1.310000,13,308c9816ca5b8bed
 Edificio T,Sala de Gobierno,2.620000,27,14f9565abad9f945
 Edificio T,Hospital Veterinario,2.120000,21,01167dda98d37d41
@@ -1525,7 +1525,7 @@ Edificio U,Laboratorio de Electrónica,3.210000,32,-4d50daac3c7b5268
 Edificio U,Laboratorio de Periodismo,3.360000,33,-4fd30695889cbbf9
 Edificio U,Laboratorio de Programación,4.060000,42,12371ccc30875153
 Edificio U,Protección Civil,5.340000,55,7b17f6a9ce437ea6
-Edificio U,Radio UDG,3.300000,34,-43f4427c8d7081b
+Edificio U,Radio UDG,3.640000,39,3a50387e88444022
 Edificio U,Rectoría,2.200000,22,3ad38219a980d2dd
 Edificio U,Sala de Gobierno,3.350000,35,-74cf40f254486957
 Edificio U,Hospital Veterinario,1.570000,16,-713b2ce4234c8a53
@@ -1576,7 +1576,7 @@ Edificio V,Laboratorio de Electrónica,2.900000,28,5fcdd76836779b6d
 Edificio V,Laboratorio de Periodismo,4.190000,41,-4cd9458ed5314812
 Edificio V,Laboratorio de Programación,3.530000,33,-12d87dd7e410467b
 Edificio V,Protección Civil,1.230000,13,037de6ee2ceedc2d
-Edificio V,Radio UDG,4.160000,40,-58f8e51e4ea57dd0
+Edificio V,Radio UDG,1.350000,15,5c88b97ce7aedfc7
 Edificio V,Rectoría,2.700000,27,-7e1bb470f54d2dcd
 Edificio V,Sala de Gobierno,1.330000,15,-1085d2812e6bca7e
 Edificio V,Hospital Veterinario,5.150000,49,46ea4982e1489a6f
@@ -1627,7 +1627,7 @@ Edificio W,Laboratorio de Electrónica,3.520000,36,015b612bb4b427ca
 Edificio W,Laboratorio de Periodismo,4.810000,49,-52499133a4bdc0f7
 Edificio W,Laboratorio de Programación,4.150000,41,3b03ab9a247d98d4
 Edificio W,Protección Civil,1.330000,14,-32590b8409ffa488
-Edificio W,Radio UDG,4.780000,48,-38b290bbebc3c247
+Edificio W,Radio UDG,1.570000,18,61ac52c88d61c2d1
 Edificio W,Rectoría,3.320000,35,-77d6fdd5815a324
 Edificio W,Sala de Gobierno,1.550000,18,1e82a11328c7237c
 Edificio W,Hospital Veterinario,5.700000,59,3f19f6a9dec6bff1
@@ -1678,7 +1678,7 @@ Edificio X,Laboratorio de Electrónica,3.080000,30,-7422bd11244961c0
 Edificio X,Laboratorio de Periodismo,4.370000,43,7c210aed6975db07
 Edificio X,Laboratorio de Programación,3.710000,35,562903252b6244d2
 Edificio X,Protección Civil,0.890000,9,28effddc26f0210e
-Edificio X,Radio UDG,4.340000,42,-744eb84f7edaac01
+Edificio X,Radio UDG,1.520000,17,-9ab9104d7650b57
 Edificio X,Rectoría,2.880000,29,-107a829352a65076
 Edificio X,Sala de Gobierno,1.500000,17,-4409a3764fb4e19c
 Edificio X,Hospital Veterinario,5.330000,51,68df1125568e17e8
@@ -1729,7 +1729,7 @@ Edificio Y,Laboratorio de Electrónica,3.500000,35,5cc70c3bcaa6f132
 Edificio Y,Laboratorio de Periodismo,4.790000,48,-3792d65ee566f2af
 Edificio Y,Laboratorio de Programación,4.130000,40,-7cc449911d899e84
 Edificio Y,Protección Civil,0.680000,7,-4c669a901eec0529
-Edificio Y,Radio UDG,4.760000,47,3cca9d16484a8021
+Edificio Y,Radio UDG,1.960000,22,6ac3316230a49337
 Edificio Y,Rectoría,3.300000,34,-679118b7de92a3c
 Edificio Y,Sala de Gobierno,1.940000,22,148fe4f594265172
 Edificio Y,Hospital Veterinario,5.750000,56,-7638d9cb586e2eaa
@@ -1780,7 +1780,7 @@ Edificio Z,Laboratorio de Electrónica,3.660000,37,-42f8cb27d617bcd2
 Edificio Z,Laboratorio de Periodismo,4.950000,50,5ad01d963493e40d
 Edificio Z,Laboratorio de Programación,4.290000,42,-2e52447413fc6ef8
 Edificio Z,Protección Civil,0.590000,7,-10533fda63c82836
-Edificio Z,Radio UDG,4.920000,49,769e1d7f44b9901d
+Edificio Z,Radio UDG,2.120000,24,30b7dacb663813e3
 Edificio Z,Rectoría,3.460000,36,03d1e00ace9d4fd0
 Edificio Z,Sala de Gobierno,2.100000,24,-19bf2b946d975d6a
 Edificio Z,Hospital Veterinario,5.910000,58,7b221f06f21eaf4a
@@ -1831,7 +1831,7 @@ Entrada Sur,Laboratorio de Electrónica,2.820000,27,-8917fb4cd25d36e
 Entrada Sur,Laboratorio de Periodismo,3.850000,38,-7ead032c9a1ab667
 Entrada Sur,Laboratorio de Programación,2.170000,21,76a08177b205ae1f
 Entrada Sur,Protección Civil,5.710000,54,71c978b695c89c92
-Entrada Sur,Radio UDG,2.880000,29,572d70bbab1bcdf3
+Entrada Sur,Radio UDG,5.010000,49,63d6d5aee87b870f
 Entrada Sur,Rectoría,3.820000,36,78b6e43da4eec6b9
 Entrada Sur,Sala de Gobierno,4.800000,47,-6bc0038e3f11d840
 Entrada Sur,Hospital Veterinario,6.240000,58,-2a8e423dc1c017dc
@@ -1882,7 +1882,7 @@ Entrada Principal,Laboratorio de Electrónica,3.820000,39,38459cbba3af5bd5
 Entrada Principal,Laboratorio de Periodismo,5.110000,52,3ded18a4268d26b6
 Entrada Principal,Laboratorio de Programación,4.450000,44,-3b3fb5bc4559c993
 Entrada Principal,Protección Civil,1.140000,12,-2601a7c252306488
-Entrada Principal,Radio UDG,5.080000,51,5b412262d5bcc058
+Entrada Principal,Radio UDG,1.870000,21,4d3c7395fd29178e
 Entrada Principal,Rectoría,3.620000,38,6bf4020f054c2a9b
 Entrada Principal,Sala de Gobierno,1.850000,21,-24636f48f0555dfb
 Entrada Principal,Hospital Veterinario,6.000000,62,-3bf76c2afdf81390
@@ -1933,7 +1933,7 @@ Entrada Este,Laboratorio de Electrónica,3.000000,29,-75f5dfda3419bf67
 Entrada Este,Laboratorio de Periodismo,3.170000,31,-5a0e51f806c22785
 Entrada Este,Laboratorio de Programación,4.040000,38,3d2a99d374b25191
 Entrada Este,Protección Civil,4.080000,42,10211efa56a8b464
-Entrada Este,Radio UDG,3.470000,34,-79f8ff0e0ca1548f
+Entrada Este,Radio UDG,2.380000,26,-132eb9c0785a21c0
 Entrada Este,Rectoría,1.970000,20,3052c301b2409db0
 Entrada Este,Sala de Gobierno,2.090000,22,60557a5515b959ab
 Entrada Este,Hospital Veterinario,2.820000,26,1a15debd9eede85d
@@ -1984,7 +1984,7 @@ Estacionamiento 1,Laboratorio de Electrónica,3.670000,35,255d77158ac206dc
 Estacionamiento 1,Laboratorio de Periodismo,3.820000,36,29ff90bbb20dcb73
 Estacionamiento 1,Laboratorio de Programación,4.520000,45,15abafee5cf6d56f
 Estacionamiento 1,Protección Civil,5.220000,54,2d5ef171afd1c041
-Estacionamiento 1,Radio UDG,3.760000,37,2a1e4cbc79a6d341
+Estacionamiento 1,Radio UDG,3.520000,38,179a2d53798ecbf7
 Estacionamiento 1,Rectoría,2.660000,25,0254a4a0ec487481
 Estacionamiento 1,Sala de Gobierno,3.230000,34,209f9e1ba60ab0ba
 Estacionamiento 1,Hospital Veterinario,1.380000,13,545e7b6f492ccaad
@@ -2035,7 +2035,7 @@ Estacionamiento 2,Laboratorio de Electrónica,2.730000,27,-1058003a48614738
 Estacionamiento 2,Laboratorio de Periodismo,3.090000,31,3ff57a2c30e723bf
 Estacionamiento 2,Laboratorio de Programación,3.770000,36,7e37269bc6f1663e
 Estacionamiento 2,Protección Civil,3.610000,37,-7c7a7f490c404078
-Estacionamiento 2,Radio UDG,3.390000,34,1ec302d86ff0a935
+Estacionamiento 2,Radio UDG,1.910000,21,-420d8485d030b0bc
 Estacionamiento 2,Rectoría,1.700000,18,63ab6b8ea38dd593
 Estacionamiento 2,Sala de Gobierno,1.620000,17,-4a428f4e8b59ee59
 Estacionamiento 2,Hospital Veterinario,3.250000,33,1bb2d79581b04e1a
@@ -2086,7 +2086,7 @@ Estacionamiento 3,Laboratorio de Electrónica,2.700000,27,-42f22a2aa8a4d686
 Estacionamiento 3,Laboratorio de Periodismo,3.710000,35,-3fc1727cbfb97e95
 Estacionamiento 3,Laboratorio de Programación,3.330000,32,0e8bb4321b6554c4
 Estacionamiento 3,Protección Civil,2.820000,29,-14161f18085f54ca
-Estacionamiento 3,Radio UDG,3.960000,39,-712402086509fb7
+Estacionamiento 3,Radio UDG,1.120000,13,54e5c1b906969772
 Estacionamiento 3,Rectoría,2.290000,23,-1919fe36c506548c
 Estacionamiento 3,Sala de Gobierno,0.830000,9,153e528629207df9
 Estacionamiento 3,Hospital Veterinario,4.050000,41,-6afffa219d00dfaa
@@ -2137,7 +2137,7 @@ Estacionamiento 4,Laboratorio de Electrónica,3.080000,30,2201e448c6b3693c
 Estacionamiento 4,Laboratorio de Periodismo,4.110000,41,6323df55b56120bb
 Estacionamiento 4,Laboratorio de Programación,2.430000,24,461e0f9a0979671d
 Estacionamiento 4,Protección Civil,5.970000,57,-1e4189f9b6b236f8
-Estacionamiento 4,Radio UDG,3.140000,32,-2bf0b3d24ea538cf
+Estacionamiento 4,Radio UDG,5.270000,52,-dd743b6ffb62dc7
 Estacionamiento 4,Rectoría,4.080000,39,-79076724922d30b5
 Estacionamiento 4,Sala de Gobierno,5.060000,50,-2f4a385e7b44de3a
 Estacionamiento 4,Hospital Veterinario,6.500000,61,-4d714456781c8cfe
@@ -2188,7 +2188,7 @@ Estacionamiento 5,Laboratorio de Electrónica,2.940000,28,-aabd7338cf2e5c6
 Estacionamiento 5,Laboratorio de Periodismo,3.970000,39,-2d777f7cf00e9a0f
 Estacionamiento 5,Laboratorio de Programación,2.290000,22,3cff797581850177
 Estacionamiento 5,Protección Civil,5.830000,55,-6e8684a0661ed646
-Estacionamiento 5,Radio UDG,3.000000,30,65c8c72f48ea9f4b
+Estacionamiento 5,Radio UDG,5.130000,50,-2e807904a92e5619
 Estacionamiento 5,Rectoría,3.940000,37,-7aeb65a60d80ab8f
 Estacionamiento 5,Sala de Gobierno,4.920000,48,-5620129181948878
 Estacionamiento 5,Hospital Veterinario,6.360000,59,-7d0231942e3af5a4
@@ -2239,7 +2239,7 @@ Laboratorio de técnicas deportivas y de rescate,Laboratorio de Electrónica,1.9
 Laboratorio de técnicas deportivas y de rescate,Laboratorio de Periodismo,2.990000,30,0-faa449a6270e89
 Laboratorio de técnicas deportivas y de rescate,Laboratorio de Programación,1.310000,13,3bb43b7b59bcb871
 Laboratorio de técnicas deportivas y de rescate,Protección Civil,4.850000,46,-10452aa095e2f904
-Laboratorio de técnicas deportivas y de rescate,Radio UDG,2.020000,21,6d45efd377f4eddd
+Laboratorio de técnicas deportivas y de rescate,Radio UDG,4.150000,41,31e4c70e91b82d05
 Laboratorio de técnicas deportivas y de rescate,Rectoría,2.960000,28,-21c12c72b1f5f9b1
 Laboratorio de técnicas deportivas y de rescate,Sala de Gobierno,3.940000,39,-5b75407cc32881be
 Laboratorio de técnicas deportivas y de rescate,Hospital Veterinario,5.380000,50,75eef4843e86e766
@@ -2290,7 +2290,7 @@ Laboratorio de Electrónica,Laboratorio de técnicas deportivas y de rescate,1.9
 Laboratorio de Electrónica,Laboratorio de Periodismo,1.810000,18,-284e7eb2dfa5da4e
 Laboratorio de Electrónica,Laboratorio de Programación,1.160000,12,52c181360b9f9333
 Laboratorio de Electrónica,Protección Civil,3.430000,34,-737ec68d67ad8c5e
-Laboratorio de Electrónica,Radio UDG,1.380000,15,0438d4d71243c552
+Laboratorio de Electrónica,Radio UDG,2.730000,29,5c5f7ebe50182d7f
 Laboratorio de Electrónica,Rectoría,1.120000,12,786397e5b6abc624
 Laboratorio de Electrónica,Sala de Gobierno,2.520000,27,4952f68fbeb73c90
 Laboratorio de Electrónica,Hospital Veterinario,3.540000,34,5e7c86717b225791
@@ -2341,7 +2341,7 @@ Laboratorio de Periodismo,Laboratorio de técnicas deportivas y de rescate,2.990
 Laboratorio de Periodismo,Laboratorio de Electrónica,1.810000,18,-75d8099e1183f93c
 Laboratorio de Periodismo,Laboratorio de Programación,1.840000,20,09271ee21044d890
 Laboratorio de Periodismo,Protección Civil,4.720000,47,006ab06b1ace9ec1
-Laboratorio de Periodismo,Radio UDG,1.080000,12,7308ee263aec203c
+Laboratorio de Periodismo,Radio UDG,4.020000,42,40a864509d23cc00
 Laboratorio de Periodismo,Rectoría,1.490000,15,-678ac4c0a2dc7909
 Laboratorio de Periodismo,Sala de Gobierno,3.810000,40,7aec7e9feca32b47
 Laboratorio de Periodismo,Hospital Veterinario,3.690000,35,436345f7e861072c
@@ -2392,7 +2392,7 @@ Laboratorio de Programación,Laboratorio de técnicas deportivas y de rescate,1.
 Laboratorio de Programación,Laboratorio de Electrónica,1.160000,12,444ac2df611db6dd
 Laboratorio de Programación,Laboratorio de Periodismo,1.840000,20,1d31fc06c68507cc
 Laboratorio de Programación,Protección Civil,4.060000,39,-76417c249ea312d0
-Laboratorio de Programación,Radio UDG,0.880000,11,18eea37d1ce6d9e9
+Laboratorio de Programación,Radio UDG,3.360000,34,4b219f887a37feb1
 Laboratorio de Programación,Rectoría,2.160000,21,-f1b53e1beb77b0e
 Laboratorio de Programación,Sala de Gobierno,3.150000,32,3af36c329dac058e
 Laboratorio de Programación,Hospital Veterinario,4.270000,43,-56a7214b43fe29e6
@@ -2443,61 +2443,61 @@ Protección Civil,Laboratorio de técnicas deportivas y de rescate,4.850000,46,6
 Protección Civil,Laboratorio de Electrónica,3.430000,34,7f0dcade2e1ede26
 Protección Civil,Laboratorio de Periodismo,4.720000,47,7274141dbaac26c5
 Protección Civil,Laboratorio de Programación,4.060000,39,0d0a3d6c76008600
-Protección Civil,Radio UDG,4.690000,46,-114e0d07dc1a5b4b
+Protección Civil,Radio UDG,2.240000,23,-9f92cc20d9dd220
 Protección Civil,Rectoría,3.230000,33,57d347368d64cea8
 Protección Civil,Sala de Gobierno,2.220000,23,-2f66e7cb4f584469
 Protección Civil,Hospital Veterinario,5.680000,55,0-f18cf966db611e
-Radio UDG,Auditorio C.A.S.A.,0.280000,4,-3815b940b93d08f2
-Radio UDG,Auditorio Antonio González Ochoa,4.870000,48,-3d381a6d75982869
-Radio UDG,Auditorio Adolfo Aguilar Zínser,2.430000,25,14bd72e0ce36a9ed
-Radio UDG,Bufete Jurídico,5.320000,53,1ea8b18f6c0f32a5
-Radio UDG,C.A.S.A. (Biblioteca),0.540000,6,-19c919ed90156756
-Radio UDG,C.M.I.D.,2.140000,23,-10f6b89c55e43bd2
-Radio UDG,Centro Acuático,2.510000,26,7c33e05d8752c998
-Radio UDG,Cafetería Pequeña,0.870000,9,-4df7a889a76844c5
-Radio UDG,Cafetería Principal,2.980000,28,-52d7b098995e6264
-Radio UDG,Cancha de fútbol central,2.770000,28,6d064f2265edcc09
-Radio UDG,Cancha de fútbol norte,1.020000,11,5a3c83143779f63b
-Radio UDG,Cancha múltiple,1.320000,15,-425627907559f4b7
-Radio UDG,Centro de Aprendizaje Global,2.110000,20,-5a58571de052770d
-Radio UDG,Clínica Escuela,3.360000,33,-3aec2f141c5c27ba
-Radio UDG,Edificio B,1.500000,15,-30b882a8ed710f2
-Radio UDG,Edificio C,1.550000,16,-408d19e08aa5c1f9
-Radio UDG,Edificio F,1.290000,14,3f1ce2068f28b072
-Radio UDG,Edificio G,1.270000,14,-7e775febdcf3076e
-Radio UDG,Edificio H,2.360000,24,-4c00929c7d5fa7ee
-Radio UDG,Edificio I,3.980000,39,02a7245cee80f1bd
-Radio UDG,Edificio J,2.100000,21,-73b1587c7b4e0b18
-Radio UDG,Edificio L,0.890000,10,440265aa6f49e6ef
-Radio UDG,Edificio M,1.420000,15,-6f1ca578ec344806
-Radio UDG,Edificio N,5.110000,51,557cec6352addf49
-Radio UDG,Edificio P,3.280000,33,534cecf55f33aaea
-Radio UDG,Edificio Q,3.280000,33,-6e363eaca5468d5f
-Radio UDG,Edificio R,2.530000,26,-1493c199cac7ef2
-Radio UDG,Edificio S,2.710000,27,-225910818d98d919
-Radio UDG,Edificio T,2.770000,27,-4c62aebe8b99d7d5
-Radio UDG,Edificio U,3.160000,32,2942a3fdb42a8c31
-Radio UDG,Edificio V,4.160000,40,-60c9bbb7dfbcbfc
-Radio UDG,Edificio W,4.780000,48,7b5c8b790ad8659b
-Radio UDG,Edificio X,4.340000,42,-1fc10a919b285be7
-Radio UDG,Edificio Y,4.760000,47,35b27b68500f5f83
-Radio UDG,Edificio Z,4.920000,49,-2f536fc48b083e33
-Radio UDG,Entrada Sur,2.880000,29,-3f7bfb95fb19939f
-Radio UDG,Entrada Principal,5.240000,51,30abcd6ddde1de86
-Radio UDG,Entrada Este,3.470000,34,6a312afbacaad20b
-Radio UDG,Estacionamiento 1,3.620000,35,2ff7891b70e25219
-Radio UDG,Estacionamiento 2,3.390000,34,7e0593122a36df4b
-Radio UDG,Estacionamiento 3,3.960000,39,-698e107aaf539943
-Radio UDG,Estacionamiento 4,3.140000,32,-b997b50af38d53d
-Radio UDG,Estacionamiento 5,3.000000,30,730b80e920ef495d
-Radio UDG,Laboratorio de técnicas deportivas y de rescate,2.020000,21,-227edc4a11d72a95
-Radio UDG,Laboratorio de Electrónica,1.380000,15,7be5ac5ad0017ba0
-Radio UDG,Laboratorio de Periodismo,1.080000,12,-5136e7b775b65f04
-Radio UDG,Laboratorio de Programación,0.880000,11,2383c3ad40e46973
-Radio UDG,Protección Civil,4.690000,46,-77a3c1db036006b9
-Radio UDG,Rectoría,1.790000,18,3447ed932f0a2dd9
-Radio UDG,Sala de Gobierno,3.780000,39,42052db6a1252015
-Radio UDG,Hospital Veterinario,3.510000,35,-69b680d424946076
+Radio UDG,Auditorio C.A.S.A.,3.870000,40,2b8550da59382016
+Radio UDG,Auditorio Antonio González Ochoa,2.100000,23,249bd8b56d0f98c5
+Radio UDG,Auditorio Adolfo Aguilar Zínser,3.850000,40,-ca96aa0ee9245f8
+Radio UDG,Bufete Jurídico,2.330000,26,-749eea5269fdf8fd
+Radio UDG,C.A.S.A. (Biblioteca),4.410000,44,-144083a881fb6dbd
+Radio UDG,C.M.I.D.,4.270000,43,30c13984fd6b7ed6
+Radio UDG,Centro Acuático,4.640000,46,-2dab62e61296b100
+Radio UDG,Cafetería Pequeña,4.740000,47,07585f3219546582
+Radio UDG,Cafetería Principal,1.700000,19,-36137adefa671db8
+Radio UDG,Cancha de fútbol central,1.520000,18,-4334638fa6f1730a
+Radio UDG,Cancha de fútbol norte,4.470000,48,-160d41b2ff42c6a9
+Radio UDG,Cancha múltiple,4.060000,44,-25a2a262b1c7c777
+Radio UDG,Centro de Aprendizaje Global,5.660000,56,23cd8d14af769f3f
+Radio UDG,Clínica Escuela,0.780000,9,47f5433f49a18a25
+Radio UDG,Edificio B,2.970000,32,7a511a97cb4e3d91
+Radio UDG,Edificio C,2.580000,28,-64cffff807bc8483
+Radio UDG,Edificio F,4.330000,43,2aa6732a2edb0f0f
+Radio UDG,Edificio G,4.310000,43,-70dda536bb3e7fa9
+Radio UDG,Edificio H,2.810000,31,5ff17d7868848195
+Radio UDG,Edificio I,3.150000,35,6072efc0083d479d
+Radio UDG,Edificio J,2.550000,28,-6a6d712a61851edf
+Radio UDG,Edificio L,3.100000,32,-57f450aa854d8315
+Radio UDG,Edificio M,4.160000,44,-11c27a9908bef5c6
+Radio UDG,Edificio N,1.900000,21,7adf3f88a51b387f
+Radio UDG,Edificio P,0.710000,9,3a0aa4b323e889cc
+Radio UDG,Edificio Q,0.800000,9,-7b3b2255fe7fc831
+Radio UDG,Edificio R,2.230000,24,255575c0b8e20da9
+Radio UDG,Edificio S,2.470000,26,-5fdc2698dbc3f85e
+Radio UDG,Edificio T,2.910000,31,0e84f7bbb01b46b4
+Radio UDG,Edificio U,3.640000,39,72f8f4ea18a80452
+Radio UDG,Edificio V,1.350000,15,1b8aa239ee3d3b37
+Radio UDG,Edificio W,1.570000,18,-3438ce54d52770bb
+Radio UDG,Edificio X,1.520000,17,-f86f1162064cae7
+Radio UDG,Edificio Y,1.960000,22,447dbb992bbe1079
+Radio UDG,Edificio Z,2.120000,24,-22003ddd85976ee5
+Radio UDG,Entrada Sur,5.010000,49,49667064572922c9
+Radio UDG,Entrada Principal,2.280000,25,34dc31dccacb511a
+Radio UDG,Entrada Este,2.380000,26,2d09b0c8503e919a
+Radio UDG,Estacionamiento 1,3.520000,38,53d81642ea198815
+Radio UDG,Estacionamiento 2,1.910000,21,1addd94885f66cb8
+Radio UDG,Estacionamiento 3,1.120000,13,2ae804141e2306d6
+Radio UDG,Estacionamiento 4,5.270000,52,3db5b3802e96a4db
+Radio UDG,Estacionamiento 5,5.130000,50,116440ed0fd80675
+Radio UDG,Laboratorio de técnicas deportivas y de rescate,4.150000,41,6eae3ef884a59b23
+Radio UDG,Laboratorio de Electrónica,2.730000,29,-50aa97fd55f10089
+Radio UDG,Laboratorio de Periodismo,4.020000,42,43812c6734f7c380
+Radio UDG,Laboratorio de Programación,3.360000,34,5f5bae2d972cef8f
+Radio UDG,Protección Civil,2.240000,23,-1885f3b505af0f16
+Radio UDG,Rectoría,2.530000,28,-1d56191dc2443093
+Radio UDG,Sala de Gobierno,0.520000,7,-5dd451f10866e613
+Radio UDG,Hospital Veterinario,4.880000,51,29973ddd37d35924
 Rectoría,Auditorio C.A.S.A.,2.070000,21,70b57790a377bcd1
 Rectoría,Auditorio Antonio González Ochoa,3.410000,35,641e411afc53a32e
 Rectoría,Auditorio Adolfo Aguilar Zínser,1.450000,14,4b5c600f6894e00f
@@ -2546,7 +2546,7 @@ Rectoría,Laboratorio de Electrónica,1.120000,12,7a0889f15d61a476
 Rectoría,Laboratorio de Periodismo,1.490000,15,5517eccbbacbfa29
 Rectoría,Laboratorio de Programación,2.160000,21,-5b492cc0e87de978
 Rectoría,Protección Civil,3.230000,33,-1deaf4bd86e0e830
-Rectoría,Radio UDG,1.790000,18,1a2990cb3166f66f
+Rectoría,Radio UDG,2.530000,28,068edea487782391
 Rectoría,Sala de Gobierno,2.320000,26,-1bec12a05a37fb52
 Rectoría,Hospital Veterinario,2.530000,24,-621fe2ea16b32234
 Sala de Gobierno,Auditorio C.A.S.A.,3.660000,38,335adc1cddbcf641
@@ -2597,7 +2597,7 @@ Sala de Gobierno,Laboratorio de Electrónica,2.520000,27,-3e4712b04398c86a
 Sala de Gobierno,Laboratorio de Periodismo,3.810000,40,-6aefffa8a9e9310b
 Sala de Gobierno,Laboratorio de Programación,3.150000,32,-665cfe5c9701d10
 Sala de Gobierno,Protección Civil,2.220000,23,-3c76ff54bdb73a37
-Sala de Gobierno,Radio UDG,3.780000,39,2e5c9b172a926885
+Sala de Gobierno,Radio UDG,0.520000,7,-1df96161b3c18ba1
 Sala de Gobierno,Rectoría,2.320000,26,-563f3da10dd68588
 Sala de Gobierno,Hospital Veterinario,4.610000,46,0fecbb1d51f86592
 Hospital Veterinario,Auditorio C.A.S.A.,3.810000,37,532453e1e1747e3c
@@ -2648,6 +2648,6 @@ Hospital Veterinario,Laboratorio de Electrónica,3.540000,34,-6d78062bc66d4521
 Hospital Veterinario,Laboratorio de Periodismo,3.690000,35,-25f9761be92cf3b4
 Hospital Veterinario,Laboratorio de Programación,4.290000,42,72617b40ff2bdae0
 Hospital Veterinario,Protección Civil,5.680000,55,04da9050047dd9fc
-Hospital Veterinario,Radio UDG,3.530000,34,-5e8102117a8b6714
+Hospital Veterinario,Radio UDG,4.880000,51,-136ee32de3141930
 Hospital Veterinario,Rectoría,2.530000,24,0-56083a35e77528
 Hospital Veterinario,Sala de Gobierno,4.610000,46,-291b2e9b522d0dee
