@@ -327,6 +327,7 @@ void main(List<String> args) {
   final informe = {
     'bloque': bloque['bloque'],
     'nodos': informeNodos,
+    'notas': bloque['notas'] ?? [],
     'nodos_eliminados': eliminados,
     'cruces_permitidos': bloque['cruces_permitidos'] ?? [],
     'aristas_quitadas': quitadas,

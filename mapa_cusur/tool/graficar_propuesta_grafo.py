@@ -10,6 +10,7 @@ tool/graficar_aristas_edificios.py) y se detiene si alguna lo hace.
 Uso, desde mapa_cusur/ (requiere matplotlib), después de
 `dart run tool/cambios_grafo.dart <bloque.json>`:
   python tool/graficar_propuesta_grafo.py build/fase6c/<bloque>_informe.json <salida.png>
+      [--ventana x0 x1 y0 y1]   # metros; por omisión, todo lo que toca el bloque
 """
 
 import json
@@ -29,6 +30,10 @@ def main():
     raiz = Path(__file__).resolve().parent.parent
     informe = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     salida = Path(sys.argv[2])
+    ventana_fija = None
+    if "--ventana" in sys.argv:
+        i = sys.argv.index("--ventana")
+        ventana_fija = [float(v) for v in sys.argv[i + 1:i + 5]]
     nodos_antes, pares_antes, mapa = gae.cargar(raiz)
     trazo = json.loads((raiz / "docs/mapa_vectorial/fase6c/trazo_usuario.json")
                        .read_text(encoding="utf-8"))["puntos"]
@@ -116,8 +121,8 @@ def main():
     xs = [nodos[i][0] for i in involucrados] + [nodos_antes[i][0] for i in involucrados if i in nodos_antes]
     ys = [nodos[i][1] for i in involucrados] + [nodos_antes[i][1] for i in involucrados if i in nodos_antes]
     margen = 12
-    ventana = gae.ajustar_ventana(ax, min(xs) - margen, max(xs) + margen, min(ys) - margen,
-                                  max(ys) + margen, aspecto=(0.62 * 16) / (0.88 * 9.6))
+    x0, x1, y0, y1 = ventana_fija or (min(xs) - margen, max(xs) + margen, min(ys) - margen, max(ys) + margen)
+    ventana = gae.ajustar_ventana(ax, x0, x1, y0, y1, aspecto=(0.62 * 16) / (0.88 * 9.6))
     gae.escala_y_norte(ax, *ventana)
 
     leyenda = [
@@ -135,7 +140,10 @@ def main():
     fig.text(0.01, 0.92, f"{subtitulo} · pesos = round(km Haversine / 0.0667, 2)",
              fontsize=10.5, color="#444444")
 
-    lineas = ["Nodos"]
+    lineas = []
+    if informe.get("notas"):
+        lineas += informe["notas"] + [""]
+    lineas += ["Nodos"]
     for n in informe["nodos"]:
         accion = "se mueve" if n["movido"] else "nuevo"
         lineas.append(f"  {n['id']} ({accion}): ({n['x']:.1f}, {n['y']:.1f}) m · píxel {n['pix'][0]}, "

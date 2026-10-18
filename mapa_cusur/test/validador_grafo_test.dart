@@ -200,17 +200,19 @@ void main() {
 
       final resultado = validarGrafo(grafo);
 
-      // 35: las 38 de la versión documentada menos tres aristas que no
+      // 34: las 38 de la versión documentada menos cuatro aristas que no
       // tenían vuelta y que la Fase 6c quitó: SP1→Cafeteria y
       // SP3→Cafeteria (Bloque 1, la Cafetería Pequeña pasó a destino sin
-      // paso) y B3→M8 (Bloque 2, cruzaba el Edificio B). Si este test
-      // empieza a fallar, algo cambió en assets/campus_data.json sin que
-      // nadie lo haya decidido explícitamente.
-      expect(resultado.aristasAsimetricas, hasLength(35));
+      // paso), B3→M8 (Bloque 2, cruzaba el Edificio B) y R2→R4 (Bloque 3,
+      // cruzaba el Edificio R a lo largo). Si este test empieza a fallar,
+      // algo cambió en assets/campus_data.json sin que nadie lo haya
+      // decidido explícitamente.
+      expect(resultado.aristasAsimetricas, hasLength(34));
       final descripciones =
           resultado.aristasAsimetricas.map((p) => p.descripcion).join('\n');
       expect(descripciones, isNot(contains('Cafeteria')));
       expect(descripciones, isNot(contains('B3→M8')));
+      expect(descripciones, isNot(contains('R2→R4')));
       expect(resultado.pesosNoPositivos, isEmpty);
       expect(resultado.autolazos, isEmpty);
       expect(resultado.idsInexistentes, isEmpty);
