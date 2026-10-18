@@ -99,7 +99,7 @@ Estado de la rama `feature/mapa-vectorial` al 17 de octubre de 2026, para retoma
 | Mejora de la búsqueda por texto | **No iniciada**; el prompt llega en la sesión nueva. |
 | Fase 5 (README) | **Sección agregada** (`c9871c3`). **Pendiente de decisión:** 8 partes del README describen todavía solo el modo imagen o cifras viejas (144/45 nodos, 1980 rutas, 63 pruebas, zoom 8x, painters). También falta decidir cómo presentar las cifras de la tesis frente a las actuales. Además, el README cita `MEJORAS.md` y `REPORTE_DATOS.md`, que el `.gitignore` excluye. |
 | Medición en modo perfil | **Descartada** por Juan Luis. |
-| Carpeta `mapa_cusur/mapa_vectorial/` sin rastrear | Archivos de entrega originales, ya copiados a `assets/` y `docs/`. Se puede borrar cuando Juan Luis lo confirme. |
+| Carpeta `mapa_cusur/mapa_vectorial/` sin rastrear | **Cerrado.** La borró la sesión anterior con autorización de Juan Luis; sus archivos ya estaban copiados a `assets/` y `docs/`. |
 
 Para regenerar el reporte de la Fase 6c:
 
