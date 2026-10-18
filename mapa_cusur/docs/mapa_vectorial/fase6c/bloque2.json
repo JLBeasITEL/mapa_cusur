@@ -1,0 +1,36 @@
+{
+  "bloque": "Bloque 2 — Quitar cruces (Edificio M, Edificio B, Rectoría y Auditorio Aguilar Zinser)",
+  "nodos": [
+    {"id": "M11", "x": -11.4, "y": -102.4,
+     "nota": "Esquina noroeste de M: se juntan el andador norte de M y el andador entre la Cancha múltiple y el Auditorio"},
+    {"id": "M12", "x": 5.3, "y": -102.3,
+     "nota": "Esquina noreste de M: del andador norte de M sale el que va al este, hacia M8"},
+    {"id": "M13", "x": -11.6, "y": -92.0,
+     "nota": "Lado oeste de M: el andador de la orilla sur de la Cancha múltiple llega al pasillo entre la cancha y M"},
+    {"id": "M14", "x": -10.8, "y": -142.0,
+     "nota": "Extremo norte del andador entre la Cancha múltiple y el Auditorio, frente a M9"},
+    {"id": "RB1", "x": 35.0, "y": -44.8,
+     "nota": "Esquina del andador al norte de la Rectoría, donde dobla hacia RB"}
+  ],
+  "quitar": [
+    ["B3", "M8"],
+    ["Edificio_M", "M2"],
+    ["M1", "M2"],
+    ["M2", "M8"],
+    ["B2", "RB"],
+    ["M10", "M9"]
+  ],
+  "eliminar": ["M2"],
+  "agregar": [
+    ["M4", "M13"],
+    ["Edificio_M", "M13"],
+    ["M13", "M11"],
+    ["M11", "M14"],
+    ["M14", "M9"],
+    ["M11", "M12"],
+    ["M12", "M8"],
+    ["B2", "RB1"],
+    ["RB1", "RB"]
+  ],
+  "cruces_permitidos": ["Cancha múltiple"]
+}

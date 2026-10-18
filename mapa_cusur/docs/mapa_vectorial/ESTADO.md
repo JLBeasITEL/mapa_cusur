@@ -105,7 +105,7 @@ Estado de la rama `feature/mapa-vectorial` al 17 de octubre de 2026, para retoma
 | "Entrada Este" sobre la letra R | **Hecho** (`398f112`). A ×1 su texto queda unos 34 px debajo del ícono; falta verlo en el teléfono. |
 | Gimnasio vs. Laboratorio de técnicas deportivas y de rescate | **Hecho** (`6829d28`); Juan Luis confirmó que son el mismo lugar. Si se prefiere el nombre corto "Laboratorio de técnicas deportivas", es cambiar un texto. |
 | Fase 6b (Radio UDG) | **Hecho** (`d35c0e0`). Falta confirmar la entrada: noroeste (`P1`, aplicada) u oeste (`V2`, 18.2 m, mismo peso). |
-| Fase 6c (aristas que cruzan edificios) | **En curso, por bloques.** El reporte (`d6ccb9b`) dio 170 cruces en 158 aristas y 27 edificios, 1976.9 m de cruce en total. Juan Luis trazó los andadores reales y decidió arista por arista; sus archivos están en `docs/mapa_vectorial/fase6c/` (`trazo_usuario.json`, `decisiones_aristas.csv`). Cada bloque: propuesta con `bloqueN.json` y `propuesta_bloqueN.png`, aprobación, commit del bloque y commit aparte de la línea base. **Bloque 1 (Cafetería Pequeña): hecho.** Bloques 2 a 5: pendientes. El Edificio P del mapa vectorial es un solo polígono que incluye Q y la Clínica Escuela. El polígono 35, sin nombre, tiene el nodo `Edificio_I` justo al norte. |
+| Fase 6c (aristas que cruzan edificios) | **En curso, por bloques.** El reporte (`d6ccb9b`) dio 170 cruces en 158 aristas y 27 edificios, 1976.9 m de cruce en total. Juan Luis trazó los andadores reales y decidió arista por arista; sus archivos están en `docs/mapa_vectorial/fase6c/` (`trazo_usuario.json`, `decisiones_aristas.csv`). Cada bloque: propuesta con `bloqueN.json` y `propuesta_bloqueN.png`, aprobación, commit del bloque y commit aparte de la línea base. **Bloques 1 (Cafetería Pequeña) y 2 (cruces de M, B, Rectoría y Auditorio): hechos.** Bloques 3 a 5: pendientes. El Edificio P del mapa vectorial es un solo polígono que incluye Q y la Clínica Escuela. El polígono 35, sin nombre, tiene el nodo `Edificio_I` justo al norte. |
 | Mejora de la búsqueda por texto | **No iniciada**; el prompt llega en la sesión nueva. |
 | Fase 5 (README) | **Sección agregada** (`c9871c3`). **Pendiente de decisión:** 8 partes del README describen todavía solo el modo imagen o cifras viejas (144/45 nodos, 1980 rutas, 63 pruebas, zoom 8x, painters). También falta decidir cómo presentar las cifras de la tesis frente a las actuales. Además, el README cita `MEJORAS.md` y `REPORTE_DATOS.md`, que el `.gitignore` excluye. |
 | Medición en modo perfil | **Descartada** por Juan Luis. |
@@ -135,14 +135,27 @@ dart run tool/cambios_grafo.dart docs/mapa_vectorial/fase6c/bloqueN.json --aplic
 dart run tool/generar_linea_base.dart                                               # commit aparte
 ```
 
-`cambios_grafo.dart` calcula los pesos con `round(km de Haversine / 0.0667, 2)` y los píxeles derivados con `TransformacionAfin.aPixeles`, a partir del nodo digitalizado más cercano. Pone las aristas en ambos sentidos. R1, R2 y R3 son las rutas de ejemplo de `mapa-vectorial-referencia.html`:
-- R1: Entrada Principal → Edificio M
-- R2: Rectoría → Auditorio C.A.S.A.
-- R3: C.M.I.D. → Auditorio Adolfo Aguilar Zínser
+`cambios_grafo.dart` calcula los pesos con `round(km de Haversine / 0.0667, 2)` y los píxeles derivados con `TransformacionAfin.aPixeles`, a partir del nodo digitalizado más cercano. Pone las aristas en ambos sentidos.
+
+**R1, R2 y R3** son las rutas de ejemplo de `mapa-vectorial-referencia.html`. Se miden de nodo a nodo, no desde la coordenada GPS de inicio de las pruebas de campo:
+- R1: `EntradaB` → `Edificio_M`
+- R2: `Rectoria` → `Auditorio_CASA`
+- R3: `CMID` → `Auditorio_Zinser`
+
+El informe de cada bloque da la secuencia de nodos antes y después de dos formas:
+- **Como la calcula la app:** Dijkstra sobre el grafo interpolado. Es la definición de la línea base.
+- **Sobre el grafo sin interpolar.**
+
+Las dos difieren porque `interpolarGrafo` subdivide las aristas de más de 8 m con tramos en ambos sentidos, aunque en el JSON tengan uno solo. Así lo hacía ya la versión de la tesis.
+- **R1 en la app:** 5.25 min, por Ce4–C1–C2–C3–CR–Rectoria–B2–B4–M5–M3–M4. Usa `B4→B2` en sentido contrario.
+- **R1 sin interpolar:** 5.45 min, por Q4–CF3–Cafeteria_P–CF4–Edificio_R–R3–B1–B3–M8–M2. Es la polilínea R1 de la referencia HTML (363 m).
 
 | Bloque | Commit | Cambio | Rutas |
 |---|---|---|---|
-| 1. Cafetería Pequeña | `8b18981` (línea base: commit siguiente) | `Cafeteria` pasa a la fachada sureste de su edificio como destino sin paso (`Cafeteria`–`CP1`). `CP1`, `CP2` y `CP3` siguen el trazo al norte (a SP3) y al oeste (a F7) de C.A.S.A. Se quitan las 4 aristas que cruzaban C.A.S.A. | 142 pares más largos: 102 de la cafetería (+0.15 a +1.01 min) y 40 del Centro de Aprendizaje Global (hasta +0.55). R1-R3 sin cambio. Asimétricas: 38 → 36. |
+| 1. Cafetería Pequeña | `8b18981` (línea base: `cbbaf89`) | `Cafeteria` pasa a la fachada sureste de su edificio como destino sin paso (`Cafeteria`–`CP1`). `CP1`, `CP2` y `CP3` siguen el trazo al norte (a SP3) y al oeste (a F7) de C.A.S.A. Se quitan las 4 aristas que cruzaban C.A.S.A. | 142 pares más largos: 102 de la cafetería (+0.15 a +1.01 min) y 40 del Centro de Aprendizaje Global (hasta +0.55). R1-R3 sin cambio. Asimétricas: 38 → 36. |
+| 2. Cruces de M, B, Rectoría y Auditorio | (este; línea base: commit siguiente) | Se quitan B3–M8, Edificio_M–M2, M1–M2, M2–M8, B2–RB y M10–M9. **Se elimina M2**, que quedaba como punta muerta dentro del Edificio M, junto con M2–M4. Nodos nuevos sobre el trazo: `M11` y `M12` (esquinas noroeste y noreste de M), `M13` (lado oeste de M) y `M14` (extremo norte del andador entre la Cancha múltiple y el Auditorio). M8 se llega por M12–M11, y M9 por M14–M11, en lugar de M10–M9. `RB1` rodea la Rectoría por el norte (B2–RB1–RB). Edificio_M–M13 da acceso desde el norte. M1 queda como punta muerta (se revisa en el Bloque 5). | 234 pares más largos, hasta +0.77 min (Hospital Veterinario → Centro de Aprendizaje Global). R1-R3 sin cambio en la app. Sin interpolar, R1 pasa de 5.45 a 6.07 min. Asimétricas: 36 → 35 (`B3→M8`). |
+
+**M2 sigue en `assets/calibracion_campo.json`.** Es el nodo del segmento M2–M8 donde la tesis reporta el desfase de 8 a 13 m. La tesis no cambia; solo el grafo de navegación deja de tenerlo.
 
 ## Reglas de trabajo
 

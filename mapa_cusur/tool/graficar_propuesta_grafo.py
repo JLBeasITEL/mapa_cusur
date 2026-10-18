@@ -15,6 +15,7 @@ Uso, desde mapa_cusur/ (requiere matplotlib), después de
 import json
 import math
 import sys
+import textwrap
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -39,17 +40,21 @@ def main():
     agregadas = [(a["a"], a["b"], a["metros"], a["peso"]) for a in informe["aristas_agregadas"]]
     pares = [p for p in pares_antes if p not in quitadas]
 
-    # Ninguna arista agregada puede cruzar un edificio.
-    cruces = []
+    # Ninguna arista agregada puede cruzar un edificio, salvo los que el
+    # bloque permite (p. ej. la Cancha múltiple techada, que se camina).
+    cruces, permitidos = [], []
     for a, b, *_ in agregadas:
         largo = math.dist(nodos[a], nodos[b])
         for e in mapa["edificios"]:
             t = gae.tramos_dentro(nodos[a], nodos[b], e["anillos"])
             m = sum(t1 - t0 for t0, t1 in t) * largo
             if m >= gae.UMBRAL_ROCE:
-                cruces.append(f"{a}–{b} cruza {gae.nombre_edificio(e)} ({m:.1f} m)")
+                texto = f"{a}–{b} cruza {gae.nombre_edificio(e)} ({m:.1f} m)"
+                (permitidos if gae.nombre_edificio(e) in informe["cruces_permitidos"]
+                 else cruces).append(texto)
     if cruces:
         raise SystemExit("Aristas agregadas que cruzan edificios:\n  " + "\n  ".join(cruces))
+    eliminados = {n["id"] for n in informe.get("nodos_eliminados", [])}
 
     fig = plt.figure(figsize=(16, 9.6), dpi=120)
     ax = fig.add_axes([0.01, 0.02, 0.62, 0.88])
@@ -101,6 +106,11 @@ def main():
         involucrados |= {a, b}
     for i in involucrados - {n["id"] for n in informe["nodos"]}:
         x, y = nodos[i]
+        if i in eliminados:
+            ax.scatter([x], [y], s=90, marker="X", color="#d62728", edgecolor="white", lw=0.8, zorder=10)
+            ax.text(x + 1.4, y - 1.4, f"{i} (se elimina)", fontsize=9, color="#a51d1d", zorder=11,
+                    path_effects=HALO)
+            continue
         ax.scatter([x], [y], s=30, color="black", zorder=10)
         ax.text(x + 1.2, y - 1.2, i, fontsize=9, zorder=11, path_effects=HALO)
     xs = [nodos[i][0] for i in involucrados] + [nodos_antes[i][0] for i in involucrados if i in nodos_antes]
@@ -120,7 +130,9 @@ def main():
     ax.legend(handles=leyenda, loc="lower right", fontsize=8.5, framealpha=0.92)
 
     fig.text(0.01, 0.955, f"Propuesta · {informe['bloque']}", fontsize=17, fontweight="bold")
-    fig.text(0.01, 0.92, "Ninguna arista agregada cruza un edificio · pesos = round(km Haversine / 0.0667, 2)",
+    subtitulo = ("Ninguna arista agregada cruza un edificio" if not permitidos else
+                 "Cruces permitidos: " + "; ".join(permitidos))
+    fig.text(0.01, 0.92, f"{subtitulo} · pesos = round(km Haversine / 0.0667, 2)",
              fontsize=10.5, color="#444444")
 
     lineas = ["Nodos"]
@@ -128,6 +140,8 @@ def main():
         accion = "se mueve" if n["movido"] else "nuevo"
         lineas.append(f"  {n['id']} ({accion}): ({n['x']:.1f}, {n['y']:.1f}) m · píxel {n['pix'][0]}, "
                       f"{n['pix'][1]} (de {n['ancla']})")
+    for i in sorted(eliminados):
+        lineas.append(f"  {i}: se elimina (con todas sus aristas)")
     lineas += ["", "Aristas quitadas"]
     for q in informe["aristas_quitadas"]:
         sentidos = " y ".join(s for s, p in (("ida", q["peso_ab"]), ("vuelta", q["peso_ba"])) if p is not None)
@@ -143,8 +157,16 @@ def main():
         c = informe["cambios"][0]
         lineas.append(f"  Mayor: {c['origen']} → {c['destino']}")
         lineas.append(f"         {c['antes']:.2f} → {c['despues']:.2f} min ({c['diferencia']:+.2f})")
+    lineas += ["", "R1-R3, de nodo a nodo, como las calcula la app (grafo interpolado)"]
     for r, e in informe["rutas_ejemplo"].items():
-        lineas.append(f"  {r} {e['origen']} → {e['destino']}: {e['antes']:.2f} → {e['despues']:.2f}")
+        lineas.append(f"  {r} {e['origen']} → {e['destino']}: {e['antes']:.2f} → {e['despues']:.2f} min")
+        if e["nodos_antes"] == e["nodos_despues"]:
+            pasos = [("    mismo recorrido: ", e["nodos_antes"])]
+        else:
+            pasos = [("    antes: ", e["nodos_antes"]), ("    después: ", e["nodos_despues"])]
+        for prefijo, nodos_ruta in pasos:
+            lineas += textwrap.wrap(" → ".join(nodos_ruta), width=88, initial_indent=prefijo,
+                                    subsequent_indent="      ")
     lineas += ["", "Validador"]
     for k, v in informe["validador"].items():
         if v["antes"] != v["despues"] or v["nuevos"]:
@@ -155,7 +177,7 @@ def main():
     lineas += ["", f"Cifras de la tesis (calibración congelada, {c['nodos_digitalizados']} nodos):",
                f"  {c['px_por_metro']:.3f} px/m · afín {c['afin_px']:.2f} px / {c['afin_m']:.2f} m · "
                f"dos puntos {c['dos_puntos_px']:.2f} px / {c['dos_puntos_m']:.2f} m"]
-    fig.text(0.645, 0.885, "\n".join(lineas), fontsize=8.8, va="top", family="DejaVu Sans")
+    fig.text(0.645, 0.885, "\n".join(lineas), fontsize=7.6, va="top", family="DejaVu Sans")
     salida.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(salida)
     plt.close(fig)

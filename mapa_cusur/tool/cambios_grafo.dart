@@ -9,7 +9,10 @@
 //     nodo entra en `pixeles_derivados`;
 //   - regresión: los pares entre nodos con nombre cuya distancia o
 //     recorrido cambia, con R1, R2 y R3 (las rutas de ejemplo de
-//     docs/mapa_vectorial/mapa-vectorial-referencia.html);
+//     docs/mapa_vectorial/mapa-vectorial-referencia.html, de nodo a nodo:
+//     EntradaB → Edificio_M, Rectoria → Auditorio_CASA y CMID →
+//     Auditorio_Zinser) y su secuencia de nodos antes y después, como las
+//     calcula la app (grafo interpolado) y sin interpolar;
 //   - conectividad y validador, antes y después;
 //   - las cifras de transformación de assets/calibracion_campo.json, con
 //     las que calibra la app (no dependen del bloque).
@@ -18,8 +21,10 @@
 // build/fase6c/. Formato del bloque (x, y en metros de campus_vector.json):
 //   {"bloque": "...",
 //    "nodos": [{"id": "CP1", "x": -102.0, "y": -86.8}],   // nuevo o movido
+//    "eliminar": ["M2"],                                  // nodo y sus aristas
 //    "quitar": [["Cafeteria", "SP1"]],                    // ambos sentidos
-//    "agregar": [["Cafeteria", "CP1"]]}                   // ambos sentidos
+//    "agregar": [["Cafeteria", "CP1"]],                   // ambos sentidos
+//    "cruces_permitidos": ["Cancha múltiple"]}            // ver graficar_propuesta_grafo.py
 //
 // Uso: dart run tool/cambios_grafo.dart <bloque.json> [--aplicar]
 import 'dart:convert';
@@ -140,7 +145,10 @@ void main(List<String> args) {
   final afin = TransformacionAfin.ajustar([
     for (final id in parsearPuntosControl(antes)) digitalizados[id]!,
   ]);
-  final tocados = {for (final n in bloque['nodos'] ?? []) n['id'] as String};
+  final tocados = {
+    for (final n in bloque['nodos'] ?? []) n['id'] as String,
+    for (final id in bloque['eliminar'] ?? []) id as String,
+  };
   final informeNodos = [];
   for (final n in bloque['nodos'] ?? []) {
     final id = n['id'] as String;
@@ -190,6 +198,37 @@ void main(List<String> args) {
     final pab = con[a]?.remove(b), pba = con[b]?.remove(a);
     if (pab == null && pba == null) errores.add('No existe la arista $a–$b');
     quitadas.add({'a': a, 'b': b, 'peso_ab': pab, 'peso_ba': pba});
+  }
+  // Después de `quitar`, para que un bloque pueda quitar aristas de un nodo
+  // que también elimina.
+  final eliminados = [];
+  for (final id in bloque['eliminar'] ?? []) {
+    if (!geo.containsKey(id)) {
+      errores.add('No existe el nodo $id');
+      continue;
+    }
+    if (parsearPuntosControl(antes).contains(id) ||
+        diccionarioNombres.containsKey(id)) {
+      errores.add('$id es punto de control o tiene nombre: no se elimina');
+      continue;
+    }
+    eliminados.add({'id': id, 'pix': pix[id]});
+    for (final v in (con[id] as Map).keys.toList()) {
+      quitadas.add({
+        'a': id,
+        'b': v,
+        'peso_ab': con[id][v],
+        'peso_ba': (con[v] as Map?)?.remove(id),
+      });
+    }
+    for (final otros in con.values) {
+      final peso = (otros as Map).remove(id);
+      if (peso != null) errores.add('Arista de un solo sentido hacia $id');
+    }
+    geo.remove(id);
+    pix.remove(id);
+    con.remove(id);
+    derivados.remove(id);
   }
   final agregadas = [];
   for (final par in bloque['agregar'] ?? []) {
@@ -260,6 +299,15 @@ void main(List<String> args) {
   final porNombre = {
     for (final e in diccionarioNombres.entries) e.value: e.key,
   };
+  // Además del cálculo de la app (sobre el grafo interpolado), el Dijkstra
+  // sobre el grafo sin interpolar, que es como está calculada la referencia
+  // HTML: difieren porque interpolarGrafo deja en ambos sentidos las
+  // aristas de más de 8 m aunque en el JSON tengan un solo sentido.
+  Map<String, Object?> sinInterpolar(GrafoCampus g, String o, String d) {
+    final r = calcularRutaMasCorta(g, o, d);
+    return {'minutos': r.esVacia ? null : r.minutos, 'nodos': r.nodos};
+  }
+
   final ejemplos = {
     for (final MapEntry(key: r, value: (o, d)) in _rutasEjemplo.entries)
       r: {
@@ -269,12 +317,18 @@ void main(List<String> args) {
         'despues': rDespues[(porNombre[o]!, porNombre[d]!)]!.minutos,
         'nodos_antes': rAntes[(porNombre[o]!, porNombre[d]!)]!.nodos,
         'nodos_despues': rDespues[(porNombre[o]!, porNombre[d]!)]!.nodos,
+        'sin_interpolar_antes':
+            sinInterpolar(grafoAntes, porNombre[o]!, porNombre[d]!),
+        'sin_interpolar_despues':
+            sinInterpolar(grafoDespues, porNombre[o]!, porNombre[d]!),
       },
   };
 
   final informe = {
     'bloque': bloque['bloque'],
     'nodos': informeNodos,
+    'nodos_eliminados': eliminados,
+    'cruces_permitidos': bloque['cruces_permitidos'] ?? [],
     'aristas_quitadas': quitadas,
     'aristas_agregadas': agregadas,
     'pares': rDespues.length,
@@ -303,8 +357,9 @@ void main(List<String> args) {
   destino.writeAsStringSync(salida);
 
   stdout.writeln('${bloque['bloque']}');
-  stdout.writeln('  ${informeNodos.length} nodos, '
-      '${quitadas.length} aristas quitadas, ${agregadas.length} agregadas');
+  stdout.writeln('  ${informeNodos.length} nodos, ${eliminados.length} '
+      'eliminados, ${quitadas.length} aristas quitadas, ${agregadas.length} '
+      'agregadas');
   stdout.writeln('  Pares: ${rDespues.length}, inalcanzables: $inalcanzables');
   stdout.writeln('  Cambian de distancia: ${cambios.length} '
       '(${informe['mas_largos']} más largos, ${informe['mas_cortos']} más '
@@ -315,10 +370,18 @@ void main(List<String> args) {
         '${(c['antes'] as double?)?.toStringAsFixed(2)} → '
         '${(c['despues'] as double?)?.toStringAsFixed(2)} min');
   }
+  String minutos(Object? m) => (m as double?)?.toStringAsFixed(2) ?? '∞';
   for (final MapEntry(key: r, value: e) in ejemplos.entries) {
+    final sa = e['sin_interpolar_antes'] as Map,
+        sd = e['sin_interpolar_despues'] as Map;
     stdout.writeln('  $r ${e['origen']} → ${e['destino']}: '
-        '${(e['antes'] as double?)?.toStringAsFixed(2)} → '
-        '${(e['despues'] as double?)?.toStringAsFixed(2)} min');
+        '${minutos(e['antes'])} → ${minutos(e['despues'])} min');
+    stdout.writeln('     antes:   ${(e['nodos_antes'] as List).join(' → ')}');
+    stdout.writeln('     después: ${(e['nodos_despues'] as List).join(' → ')}');
+    stdout.writeln('     sin interpolar: ${minutos(sa['minutos'])} → '
+        '${minutos(sd['minutos'])} min');
+    stdout.writeln('       antes:   ${(sa['nodos'] as List).join(' → ')}');
+    stdout.writeln('       después: ${(sd['nodos'] as List).join(' → ')}');
   }
   for (final MapEntry(key: k, value: v) in validador.entries) {
     if (v['antes'] != v['despues'] || (v['nuevos'] as List).isNotEmpty) {
