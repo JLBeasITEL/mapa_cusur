@@ -156,7 +156,7 @@ Las dos difieren porque `interpolarGrafo` subdivide las aristas de más de 8 m c
 | 1. Cafetería Pequeña | `8b18981` (línea base: `cbbaf89`) | `Cafeteria` pasa a la fachada sureste de su edificio como destino sin paso (`Cafeteria`–`CP1`). `CP1`, `CP2` y `CP3` siguen el trazo al norte (a SP3) y al oeste (a F7) de C.A.S.A. Se quitan las 4 aristas que cruzaban C.A.S.A. | 142 pares más largos: 102 de la cafetería (+0.15 a +1.01 min) y 40 del Centro de Aprendizaje Global (hasta +0.55). R1-R3 sin cambio. Asimétricas: 38 → 36. |
 | 2. Cruces de M, B, Rectoría y Auditorio | `9972f50` (línea base: `036b1c1`) | Se quitan B3–M8, Edificio_M–M2, M1–M2, M2–M8, B2–RB y M10–M9. **Se elimina M2**, que quedaba como punta muerta dentro del Edificio M, junto con M2–M4. Nodos nuevos sobre el trazo: `M11` y `M12` (esquinas noroeste y noreste de M), `M13` (lado oeste de M) y `M14` (extremo norte del andador entre la Cancha múltiple y el Auditorio). M8 se llega por M12–M11, y M9 por M14–M11, en lugar de M10–M9. `RB1` rodea la Rectoría por el norte (B2–RB1–RB). Edificio_M–M13 da acceso desde el norte. M1 queda como punta muerta (se revisa en el Bloque 5). | 234 pares más largos, hasta +0.77 min (Hospital Veterinario → Centro de Aprendizaje Global). R1-R3 sin cambio en la app. Sin interpolar, R1 pasa de 5.45 a 6.07 min. Asimétricas: 36 → 35 (`B3→M8`). |
 
-| 3. Salones por el pasillo exterior | (este; línea base: commit siguiente) | Se quitan R2–R4, T2–T4, V2–V4, X2–X4, Y2–Y4 y Z2–Z4, que cruzaban su edificio a lo largo. **R:** se usa el pasillo sur que ya existe (R1–Edificio_R–R3); el trazo no tiene andador al norte. **T, V, X, Y y Z:** pasillo norte afuera del edificio, X2–XN1–XN2–X4, con `TN1`/`TN2` … `ZN1`/`ZN2` a 1.2 m de las esquinas noreste y noroeste. V4, X4 y Y4 ya estaban dentro de su pared (0.3 a 1.9 m), y el tramo XN2–X4 entra eso mismo. | 2 pares, +0.02 min (Entrada Principal ↔ Protección Civil). R1-R3 sin cambio. Asimétricas: 35 → 34 (`R2→R4`). |
+| 3. Salones por el pasillo exterior | `7610ba1` (línea base: commit siguiente) | Se quitan R2–R4, T2–T4, V2–V4, X2–X4, Y2–Y4 y Z2–Z4, que cruzaban su edificio a lo largo. **R:** se usa el pasillo sur que ya existe (R1–Edificio_R–R3); el trazo no tiene andador al norte. **T, V, X, Y y Z:** pasillo norte afuera del edificio, X2–XN1–XN2–X4, con `TN1`/`TN2` … `ZN1`/`ZN2` a 1.2 m de las esquinas noreste y noroeste. V4, X4 y Y4 ya estaban dentro de su pared (0.3 a 1.9 m), y el tramo XN2–X4 entra eso mismo. | 2 pares, +0.02 min (Entrada Principal ↔ Protección Civil). R1-R3 sin cambio. Asimétricas: 35 → 34 (`R2→R4`). |
 
 **M2 sigue en `assets/calibracion_campo.json`.** Es el nodo del segmento M2–M8 donde la tesis reporta el desfase de 8 a 13 m. La tesis no cambia; solo el grafo de navegación deja de tenerlo.
 
@@ -184,10 +184,10 @@ flutter build apk --release
 
 Flutter está fijado en **3.47.6** en `C:\src\flutter` (checkout de la etiqueta con git, sin `flutter upgrade`). En `Documentos`, si `flutter test` no puede borrar `build\unit_test_assets`, se borra a mano y se repite.
 
-## Línea base de pruebas (18 de octubre de 2026, después del Bloque 2 de la Fase 6c)
+## Línea base de pruebas (18 de octubre de 2026, después del Bloque 3 de la Fase 6c)
 
 - `flutter analyze`: sin problemas.
 - `flutter test`: **207 pasan, 1 omitida y 1 falla**.
   - **Omitida:** el reporte de la Fase 6c, que corre solo bajo demanda.
-  - **Falla (esperada):** `validador_grafo_test.dart`, "el grafo real del campus NO pasa la validación…". Es la constancia de las aristas asimétricas sin resolver. Las pruebas que fijan las cifras pasan: 38 en la calibración congelada y 35 en el grafo actual.
-- Línea base de rutas: 2652 pares entre 52 nodos con nombre, todos alcanzables. Grafo: 159 nodos y 583 aristas antes de interpolar; 1015 nodos y 2324 aristas después.
+  - **Falla (esperada):** `validador_grafo_test.dart`, "el grafo real del campus NO pasa la validación…". Es la constancia de las aristas asimétricas sin resolver. Las pruebas que fijan las cifras pasan: 38 en la calibración congelada y 34 en el grafo actual.
+- Línea base de rutas: 2652 pares entre 52 nodos con nombre, todos alcanzables. Grafo: 169 nodos y 602 aristas antes de interpolar; 1019 nodos y 2330 aristas después.
