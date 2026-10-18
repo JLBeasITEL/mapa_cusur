@@ -384,14 +384,10 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
     if (mounted && _navegando) _detenerRuta();
   }
 
-  /// ID interno del nodo cuyo nombre amigable es [texto], o el mismo
-  /// [texto] si no corresponde a ningún nombre amigable.
-  String _obtenerId(String texto) {
-    for (var entry in diccionarioNombres.entries) {
-      if (entry.value == texto) return entry.key;
-    }
-    return texto;
-  }
+  /// ID interno del nodo cuyo nombre amigable (o alternativo, como
+  /// "Gimnasio") es [texto], o el mismo [texto] si no corresponde a
+  /// ninguno.
+  String _obtenerId(String texto) => idDeNombre(texto) ?? texto;
 
   void calcularRuta() {
     final grafo = _grafo;

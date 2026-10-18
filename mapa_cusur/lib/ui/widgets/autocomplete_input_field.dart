@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../data/diccionario_nombres.dart';
 import '../theme/poppins.dart';
 
 class AutocompleteInputField extends StatelessWidget {
@@ -37,10 +38,15 @@ class AutocompleteInputField extends StatelessWidget {
         ),
         Autocomplete<String>(
           initialValue: TextEditingValue(text: initialValue),
-          optionsBuilder: (val) => val.text.isEmpty
-              ? []
-              : suggestions
-                  .where((s) => s.toLowerCase().contains(val.text.toLowerCase())),
+          // Coincide con el nombre que se muestra o con sus nombres
+          // alternativos (p. ej. "Gimnasio"); la opción siempre muestra el
+          // nombre amigable.
+          optionsBuilder: (val) {
+            if (val.text.isEmpty) return const <String>[];
+            final buscado = val.text.toLowerCase();
+            return suggestions.where((s) => [s, ...alternativosDe(s)]
+                .any((n) => n.toLowerCase().contains(buscado)));
+          },
           onSelected: onSelected,
           // Se escucha el controller para que el botón de borrar aparezca o
           // desaparezca mientras el usuario escribe.

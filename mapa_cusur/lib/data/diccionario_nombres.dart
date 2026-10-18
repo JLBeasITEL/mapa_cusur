@@ -37,7 +37,10 @@ const Map<String, String> diccionarioNombres = {
   'Edificio_Y': 'Edificio Y',
   'Edificio_Z': 'Edificio Z',
   'C_Acuatico': 'Centro Acuático',
-  'Gimnasio': 'Gimnasio',
+  // El gimnasio es el Laboratorio de técnicas deportivas y de rescate
+  // (mismo lugar); se muestra con ese nombre y se encuentra también como
+  // "Gimnasio" (ver nombresAlternativos).
+  'Gimnasio': 'Laboratorio de técnicas deportivas y de rescate',
   'CASA': 'C.A.S.A. (Biblioteca)',
   'Cafeteria': 'Cafetería Pequeña',
   'Cafeteria_P': 'Cafetería Principal',
@@ -62,3 +65,32 @@ const Map<String, String> diccionarioNombres = {
   'Lab_Periodismo': 'Laboratorio de Periodismo',
   'Centro_Aprendizaje_Global': 'Centro de Aprendizaje Global',
 };
+
+/// Otros nombres con los que se puede buscar un lugar, por ID interno. No
+/// se muestran: al elegirlos o escribirlos, el lugar aparece con su nombre
+/// de [diccionarioNombres].
+const Map<String, List<String>> nombresAlternativos = {
+  'Gimnasio': ['Gimnasio'],
+};
+
+/// Los nombres alternativos del lugar que se muestra como [nombreAmigable].
+List<String> alternativosDe(String nombreAmigable) {
+  for (final entry in diccionarioNombres.entries) {
+    if (entry.value == nombreAmigable) {
+      return nombresAlternativos[entry.key] ?? const [];
+    }
+  }
+  return const [];
+}
+
+/// ID interno del lugar cuyo nombre amigable o alternativo es [texto];
+/// `null` si no corresponde a ninguno.
+String? idDeNombre(String texto) {
+  for (final entry in diccionarioNombres.entries) {
+    if (entry.value == texto) return entry.key;
+  }
+  for (final entry in nombresAlternativos.entries) {
+    if (entry.value.contains(texto)) return entry.key;
+  }
+  return null;
+}
