@@ -105,7 +105,7 @@ Estado de la rama `feature/mapa-vectorial` al 17 de octubre de 2026, para retoma
 | "Entrada Este" sobre la letra R | **Hecho** (`398f112`). A ×1 su texto queda unos 34 px debajo del ícono; falta verlo en el teléfono. |
 | Gimnasio vs. Laboratorio de técnicas deportivas y de rescate | **Hecho** (`6829d28`); Juan Luis confirmó que son el mismo lugar. Si se prefiere el nombre corto "Laboratorio de técnicas deportivas", es cambiar un texto. |
 | Fase 6b (Radio UDG) | **Hecho** (`d35c0e0`). Falta confirmar la entrada: noroeste (`P1`, aplicada) u oeste (`V2`, 18.2 m, mismo peso). |
-| Fase 6c (aristas que cruzan edificios) | **Reporte hecho** (`d6ccb9b`): 170 cruces en 158 aristas y 27 edificios, 1976.9 m de cruce en total. **Agrupado por edificio**: un PNG por edificio, con sus aristas numeradas, y `resumen.md`. **Falta la respuesta de Juan Luis por edificio** (pasillo real o corte de esquina); después se proponen los nodos intermedios. El Edificio P del mapa vectorial es un solo polígono que incluye Q y la Clínica Escuela. El polígono 35, sin nombre, tiene el nodo `Edificio_I` justo al norte. Se regenera con los comandos de abajo. |
+| Fase 6c (aristas que cruzan edificios) | **En curso, por bloques.** El reporte (`d6ccb9b`) dio 170 cruces en 158 aristas y 27 edificios, 1976.9 m de cruce en total. Juan Luis trazó los andadores reales y decidió arista por arista; sus archivos están en `docs/mapa_vectorial/fase6c/` (`trazo_usuario.json`, `decisiones_aristas.csv`). Cada bloque: propuesta con `bloqueN.json` y `propuesta_bloqueN.png`, aprobación, commit del bloque y commit aparte de la línea base. **Bloque 1 (Cafetería Pequeña): hecho.** Bloques 2 a 5: pendientes. El Edificio P del mapa vectorial es un solo polígono que incluye Q y la Clínica Escuela. El polígono 35, sin nombre, tiene el nodo `Edificio_I` justo al norte. |
 | Mejora de la búsqueda por texto | **No iniciada**; el prompt llega en la sesión nueva. |
 | Fase 5 (README) | **Sección agregada** (`c9871c3`). **Pendiente de decisión:** 8 partes del README describen todavía solo el modo imagen o cifras viejas (144/45 nodos, 1980 rutas, 63 pruebas, zoom 8x, painters). También falta decidir cómo presentar las cifras de la tesis frente a las actuales. Además, el README cita `MEJORAS.md` y `REPORTE_DATOS.md`, que el `.gitignore` excluye. |
 | Medición en modo perfil | **Descartada** por Juan Luis. |
@@ -123,6 +123,26 @@ python tool/graficar_aristas_edificios.py
 ```
 
 El script recalcula los cruces con la misma fórmula que el reporte en Dart y se detiene si no coinciden con el CSV. Separa por polígono los edificios sin nombre, que el CSV junta en "(sin nombre)".
+
+Para proponer y aplicar un bloque:
+
+```bash
+dart run tool/cambios_grafo.dart docs/mapa_vectorial/fase6c/bloqueN.json
+# sin --aplicar: escribe build/fase6c/campus_data_bloqueN.json y build/fase6c/bloqueN_informe.json
+# (regresión, R1-R3, validador y cifras de la calibración), sin tocar assets/
+python tool/graficar_propuesta_grafo.py build/fase6c/bloqueN_informe.json docs/mapa_vectorial/fase6c/propuesta_bloqueN.png
+dart run tool/cambios_grafo.dart docs/mapa_vectorial/fase6c/bloqueN.json --aplicar   # tras la aprobación
+dart run tool/generar_linea_base.dart                                               # commit aparte
+```
+
+`cambios_grafo.dart` calcula los pesos con `round(km de Haversine / 0.0667, 2)` y los píxeles derivados con `TransformacionAfin.aPixeles`, a partir del nodo digitalizado más cercano. Pone las aristas en ambos sentidos. R1, R2 y R3 son las rutas de ejemplo de `mapa-vectorial-referencia.html`:
+- R1: Entrada Principal → Edificio M
+- R2: Rectoría → Auditorio C.A.S.A.
+- R3: C.M.I.D. → Auditorio Adolfo Aguilar Zínser
+
+| Bloque | Commit | Cambio | Rutas |
+|---|---|---|---|
+| 1. Cafetería Pequeña | (este) | `Cafeteria` pasa a la fachada sureste de su edificio como destino sin paso (`Cafeteria`–`CP1`). `CP1`, `CP2` y `CP3` siguen el trazo al norte (a SP3) y al oeste (a F7) de C.A.S.A. Se quitan las 4 aristas que cruzaban C.A.S.A. | 142 pares más largos: 102 de la cafetería (+0.15 a +1.01 min) y 40 del Centro de Aprendizaje Global (hasta +0.55). R1-R3 sin cambio. Asimétricas: 38 → 36. |
 
 ## Reglas de trabajo
 

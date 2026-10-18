@@ -200,10 +200,15 @@ void main() {
 
       final resultado = validarGrafo(grafo);
 
-      // Las mismas 38 asimétricas de la versión documentada. Si este test
-      // empieza a fallar, algo cambió en assets/campus_data.json sin que
-      // nadie lo haya decidido explícitamente.
-      expect(resultado.aristasAsimetricas, hasLength(38));
+      // 36: las 38 de la versión documentada menos SP1→Cafeteria y
+      // SP3→Cafeteria (no tenían vuelta), que el Bloque 1 de la Fase 6c
+      // quitó al convertir la Cafetería Pequeña en destino sin paso. Si este
+      // test empieza a fallar, algo cambió en assets/campus_data.json sin
+      // que nadie lo haya decidido explícitamente.
+      expect(resultado.aristasAsimetricas, hasLength(36));
+      final descripciones =
+          resultado.aristasAsimetricas.map((p) => p.descripcion).join('\n');
+      expect(descripciones, isNot(contains('Cafeteria')));
       expect(resultado.pesosNoPositivos, isEmpty);
       expect(resultado.autolazos, isEmpty);
       expect(resultado.idsInexistentes, isEmpty);

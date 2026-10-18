@@ -1,0 +1,30 @@
+num,nodo_a,nodo_b,largo_m,edificio(m_dentro),decision
+1,B2,RB,37.4,Rectoría (Edificio D) (10.8),quitar y rodear
+2,B3,M8,25.6,Edificio B (14.6),quitar
+3,Edificio_M,M2,8.7,Edificio M (3.4),quitar
+4,Estacionamiento1,U4,63.5,Edificio U (4.3),esquina
+5,F2,L2,21.9,Edificio F (1.9),esquina
+6,G1,L1,24.7,Edificio G (2.0),esquina
+7,L2,L4,55.5,Edificio L (47.3),conservar
+8,M1,M2,15.0,Edificio M (7.6),quitar
+9,M10,M9,47.5,Cancha múltiple (2.4); Auditorio Aguilar Zinser (43.6),quitar y rodear
+10,M2,M8,40.5,Edificio M (13.0),quitar
+11,M4,M9,51.2,Cancha múltiple (50.4),conservar
+12,M6,SP6,17.6,Cancha múltiple (1.1),conservar
+13,M9,SP7,23.1,Cancha múltiple (23.1),conservar
+14,M9,SP8,27.3,Cancha múltiple (12.3),conservar
+15,Q2,Q4,31.8,Edificio P (28.6),conservar
+16,R2,R4,55.1,Edificio R (41.9),mover a pasillo exterior
+17,SP6,SP7,31.9,Cancha múltiple (31.9),conservar
+18,SP7,SP8,38.5,Cancha múltiple (26.6),conservar
+19,T2,T4,69.6,Edificio T (66.4),mover a pasillo exterior
+20,T2,U1,23.2,Edificio T (4.0),esquina
+21,U1,U2,11.3,Edificio U (8.7),esquina
+22,V2,V4,48.7,Edificio V (47.1),mover a pasillo exterior
+23,X2,X4,48.5,Edificio X (46.1),mover a pasillo exterior
+24,Y2,Y4,40.8,Edificio Y (39.9),mover a pasillo exterior
+25,Z2,Z4,48.1,Edificio Z (47.2),mover a pasillo exterior
+CP,Cafeteria,F7,53.5,C.A.S.A. (24.2),quitar (ver bloque Cafetería Pequeña)
+CP,Cafeteria,L6,43.8,C.A.S.A. (35.9),quitar (ver bloque Cafetería Pequeña)
+CP,Cafeteria,SP1,33.5,C.A.S.A. (6.5); Cafetería Pequeña (9.4),quitar (ver bloque Cafetería Pequeña)
+CP,Cafeteria,SP3,45.5,C.A.S.A. (15.9),quitar (ver bloque Cafetería Pequeña)
