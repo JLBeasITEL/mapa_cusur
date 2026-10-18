@@ -1,12 +1,12 @@
 origen,destino,minutos,num_nodos_ruta,hash_ruta
 Auditorio C.A.S.A.,Auditorio Antonio González Ochoa,4.750000,47,283f5cb6791f714f
-Auditorio C.A.S.A.,Auditorio Adolfo Aguilar Zínser,2.840000,31,-3432d9ed080e495b
+Auditorio C.A.S.A.,Auditorio Adolfo Aguilar Zínser,3.210000,35,-541403c27604c65f
 Auditorio C.A.S.A.,Bufete Jurídico,5.200000,52,-79f76fb5b9392713
 Auditorio C.A.S.A.,C.A.S.A. (Biblioteca),0.820000,9,-3c495fdab186590a
 Auditorio C.A.S.A.,C.M.I.D.,1.860000,20,-70d86f8d1c3f87b6
 Auditorio C.A.S.A.,Centro Acuático,2.230000,23,144b6a035230026c
 Auditorio C.A.S.A.,Cafetería Pequeña,2.160000,22,-6e61e4832521ce6f
-Auditorio C.A.S.A.,Cafetería Principal,3.280000,32,2cd57540e70c0cd6
+Auditorio C.A.S.A.,Cafetería Principal,3.320000,33,-4146fa43d8631075
 Auditorio C.A.S.A.,Cancha de fútbol central,2.650000,27,-1e32455526fe6eff
 Auditorio C.A.S.A.,Cancha de fútbol norte,1.300000,14,-30a7af53f48bb279
 Auditorio C.A.S.A.,Cancha múltiple,1.600000,18,09ca7be4d75adf15
@@ -47,23 +47,23 @@ Auditorio C.A.S.A.,Laboratorio de Periodismo,1.360000,15,-e410b844dd88540
 Auditorio C.A.S.A.,Laboratorio de Programación,0.700000,8,037a9d79336d2767
 Auditorio C.A.S.A.,Protección Civil,4.570000,45,776ffe23408bd3df
 Auditorio C.A.S.A.,Radio UDG,3.870000,40,-263f0dcf1500328e
-Auditorio C.A.S.A.,Rectoría,2.070000,21,3890c8ad29edb615
+Auditorio C.A.S.A.,Rectoría,2.260000,24,-5205becb75cd120c
 Auditorio C.A.S.A.,Sala de Gobierno,3.660000,38,4803af6c0a5d9f8d
-Auditorio C.A.S.A.,Hospital Veterinario,3.920000,41,6c1cf9fde06b78e2
+Auditorio C.A.S.A.,Hospital Veterinario,3.920000,40,-2a000cf9657a9cb0
 Auditorio Antonio González Ochoa,Auditorio C.A.S.A.,4.750000,47,-de6ba8eac162cf1
-Auditorio Antonio González Ochoa,Auditorio Adolfo Aguilar Zínser,4.780000,47,-1a61409cd90dde81
+Auditorio Antonio González Ochoa,Auditorio Adolfo Aguilar Zínser,5.170000,52,-12f7b38ab3f800d3
 Auditorio Antonio González Ochoa,Bufete Jurídico,0.630000,7,55739ec5c7a3e410
 Auditorio Antonio González Ochoa,C.A.S.A. (Biblioteca),5.290000,51,0b73ca55d1e2fcd4
 Auditorio Antonio González Ochoa,C.M.I.D.,5.150000,50,428c9feb3c085fc7
 Auditorio Antonio González Ochoa,Centro Acuático,5.520000,53,4d20754e98fef47f
-Auditorio Antonio González Ochoa,Cafetería Pequeña,6.210000,63,-abb731b46ad275e
-Auditorio Antonio González Ochoa,Cafetería Principal,2.990000,31,371b49710ec69b5f
+Auditorio Antonio González Ochoa,Cafetería Pequeña,6.310000,64,-3e02f23ebd50044
+Auditorio Antonio González Ochoa,Cafetería Principal,3.020000,32,-8d082c40af8ffaa
 Auditorio Antonio González Ochoa,Cancha de fútbol central,2.400000,25,13e52820149572e1
-Auditorio Antonio González Ochoa,Cancha de fútbol norte,5.350000,55,5d2d515730e114f4
-Auditorio Antonio González Ochoa,Cancha múltiple,4.940000,51,63378f8fc12d9cec
+Auditorio Antonio González Ochoa,Cancha de fútbol norte,5.450000,56,2e69b8324d255032
+Auditorio Antonio González Ochoa,Cancha múltiple,5.040000,52,4114ef2dbb6d5d6a
 Auditorio Antonio González Ochoa,Centro de Aprendizaje Global,6.540000,63,73af574832316248
 Auditorio Antonio González Ochoa,Clínica Escuela,1.890000,20,497abf94188b4e99
-Auditorio Antonio González Ochoa,Edificio B,3.850000,39,-50acb18023178e5c
+Auditorio Antonio González Ochoa,Edificio B,3.880000,40,11c9fd59c4a8a734
 Auditorio Antonio González Ochoa,Edificio C,3.460000,35,-66a5ddfc7d4bca88
 Auditorio Antonio González Ochoa,Edificio F,5.210000,50,-493e0d9354e7a48e
 Auditorio Antonio González Ochoa,Edificio G,5.190000,50,-6d24f85c1035c6e
@@ -71,17 +71,17 @@ Auditorio Antonio González Ochoa,Edificio H,3.690000,38,7ff7c1606621fd40
 Auditorio Antonio González Ochoa,Edificio I,4.710000,51,-798affdecb1c2dfa
 Auditorio Antonio González Ochoa,Edificio J,3.430000,35,351d4e6523a7bb1e
 Auditorio Antonio González Ochoa,Edificio L,3.980000,39,0338770cf3c183e6
-Auditorio Antonio González Ochoa,Edificio M,5.040000,51,2a338469859eab85
+Auditorio Antonio González Ochoa,Edificio M,5.140000,52,196891a93120ffe7
 Auditorio Antonio González Ochoa,Edificio N,1.400000,15,291cecbb428dd33e
 Auditorio Antonio González Ochoa,Edificio P,2.270000,25,5405d968132d370f
 Auditorio Antonio González Ochoa,Edificio Q,2.360000,25,35c3a5e2f99679ec
-Auditorio Antonio González Ochoa,Edificio R,3.520000,36,44487edb8fd11e98
+Auditorio Antonio González Ochoa,Edificio R,3.490000,36,-4b180be8fa118455
 Auditorio Antonio González Ochoa,Edificio S,4.030000,42,-763973648f49ecdf
 Auditorio Antonio González Ochoa,Edificio T,4.470000,47,10437df074d60773
 Auditorio Antonio González Ochoa,Edificio U,5.200000,55,2dffbe112abc9625
-Auditorio Antonio González Ochoa,Edificio V,1.010000,11,400b19abf18a8113
+Auditorio Antonio González Ochoa,Edificio V,1.000000,12,7d864e2450c94502
 Auditorio Antonio González Ochoa,Edificio W,1.070000,12,-32939166568a42b6
-Auditorio Antonio González Ochoa,Edificio X,0.660000,8,3e53af82e408fdaf
+Auditorio Antonio González Ochoa,Edificio X,0.650000,8,6bbedb84a240584b
 Auditorio Antonio González Ochoa,Edificio Y,0.300000,4,-e41b4102da82655
 Auditorio Antonio González Ochoa,Edificio Z,0.460000,6,-3afc8811c9a7e28b
 Auditorio Antonio González Ochoa,Entrada Sur,5.890000,56,48654020dd6ceeb2
@@ -94,78 +94,78 @@ Auditorio Antonio González Ochoa,Estacionamiento 4,6.150000,59,3802ce9db5b6a16a
 Auditorio Antonio González Ochoa,Estacionamiento 5,6.010000,57,-cf7e49c83a04752
 Auditorio Antonio González Ochoa,Laboratorio de técnicas deportivas y de rescate,5.030000,48,-690832155d256f3a
 Auditorio Antonio González Ochoa,Laboratorio de Electrónica,3.610000,36,267b8756496dadec
-Auditorio Antonio González Ochoa,Laboratorio de Periodismo,4.900000,49,2a4d382143359563
+Auditorio Antonio González Ochoa,Laboratorio de Periodismo,5.000000,50,22b3a2ab2b1057bd
 Auditorio Antonio González Ochoa,Laboratorio de Programación,4.240000,41,12afc63cd898187e
 Auditorio Antonio González Ochoa,Protección Civil,0.420000,5,-7fcae4b2143d58c1
 Auditorio Antonio González Ochoa,Radio UDG,2.100000,23,024c13c4076a8f51
-Auditorio Antonio González Ochoa,Rectoría,3.410000,35,-730b504a7fce105a
+Auditorio Antonio González Ochoa,Rectoría,3.560000,37,67a055c994c63786
 Auditorio Antonio González Ochoa,Sala de Gobierno,2.080000,23,-6f5bc7d2db1b6704
-Auditorio Antonio González Ochoa,Hospital Veterinario,5.860000,57,-36cf27757450dc04
-Auditorio Adolfo Aguilar Zínser,Auditorio C.A.S.A.,2.980000,33,-4d715d1cf6b629fd
-Auditorio Adolfo Aguilar Zínser,Auditorio Antonio González Ochoa,4.780000,47,2a795bc746e7ae8b
-Auditorio Adolfo Aguilar Zínser,Bufete Jurídico,5.230000,52,47ac0a9cc5debbf1
-Auditorio Adolfo Aguilar Zínser,C.A.S.A. (Biblioteca),2.660000,30,7fca76bef93c63ca
-Auditorio Adolfo Aguilar Zínser,C.M.I.D.,4.420000,42,5cc4cc6e384313dc
-Auditorio Adolfo Aguilar Zínser,Centro Acuático,4.790000,45,-752dbb9f5d7d5d6a
-Auditorio Adolfo Aguilar Zínser,Cafetería Pequeña,3.270000,36,06ad23c9d5e2311d
-Auditorio Adolfo Aguilar Zínser,Cafetería Principal,2.150000,22,-578fa2959ee82954
-Auditorio Adolfo Aguilar Zínser,Cancha de fútbol central,2.680000,27,2f5d427648fbbc95
-Auditorio Adolfo Aguilar Zínser,Cancha de fútbol norte,2.410000,28,5453a0365c92cb03
-Auditorio Adolfo Aguilar Zínser,Cancha múltiple,1.260000,16,-23fbb823f6205ef4
-Auditorio Adolfo Aguilar Zínser,Centro de Aprendizaje Global,4.340000,45,0884cc97fe9bceb9
-Auditorio Adolfo Aguilar Zínser,Clínica Escuela,3.250000,33,-4ebe01a1327f5fbc
-Auditorio Adolfo Aguilar Zínser,Edificio B,1.630000,14,0851c63143c5f2bd
-Auditorio Adolfo Aguilar Zínser,Edificio C,2.200000,21,2adda42dd55bbc4a
-Auditorio Adolfo Aguilar Zínser,Edificio F,3.990000,43,4afe03843638a967
-Auditorio Adolfo Aguilar Zínser,Edificio G,3.970000,43,2b017259182392af
-Auditorio Adolfo Aguilar Zínser,Edificio H,1.860000,19,-5e38fcca3537e596
-Auditorio Adolfo Aguilar Zínser,Edificio I,1.710000,16,00347cb1711b3315
-Auditorio Adolfo Aguilar Zínser,Edificio J,1.600000,16,17635e173a792340
-Auditorio Adolfo Aguilar Zínser,Edificio L,2.830000,27,-7162acbb2e1f5926
-Auditorio Adolfo Aguilar Zínser,Edificio M,1.150000,14,-317cc5baea0bae2e
-Auditorio Adolfo Aguilar Zínser,Edificio N,5.000000,51,62f7e377279de88b
-Auditorio Adolfo Aguilar Zínser,Edificio P,3.140000,32,4941205ee55fe28e
-Auditorio Adolfo Aguilar Zínser,Edificio Q,3.140000,32,0931293b6010a375
-Auditorio Adolfo Aguilar Zínser,Edificio R,1.620000,17,1ec51c18cecc583f
-Auditorio Adolfo Aguilar Zínser,Edificio S,1.490000,15,61eab1a5257bf064
+Auditorio Antonio González Ochoa,Hospital Veterinario,5.980000,58,1800f5d87b3bd867
+Auditorio Adolfo Aguilar Zínser,Auditorio C.A.S.A.,3.350000,37,1b560ae72028ba6f
+Auditorio Adolfo Aguilar Zínser,Auditorio Antonio González Ochoa,5.170000,52,4fbb1cea14461d33
+Auditorio Adolfo Aguilar Zínser,Bufete Jurídico,5.520000,59,00-6cb1d562b992e
+Auditorio Adolfo Aguilar Zínser,C.A.S.A. (Biblioteca),3.030000,34,-789eda0e88ee6c32
+Auditorio Adolfo Aguilar Zínser,C.M.I.D.,4.810000,47,-61e03786926282bc
+Auditorio Adolfo Aguilar Zínser,Centro Acuático,5.180000,50,1aedefc9485ae85e
+Auditorio Adolfo Aguilar Zínser,Cafetería Pequeña,3.640000,40,-4d48e6b3c1e33117
+Auditorio Adolfo Aguilar Zínser,Cafetería Principal,2.310000,26,-6fa9ced48ed7302d
+Auditorio Adolfo Aguilar Zínser,Cancha de fútbol central,3.070000,32,-721dce613c20c6e3
+Auditorio Adolfo Aguilar Zínser,Cancha de fútbol norte,2.780000,32,3d8acd65d3daf59f
+Auditorio Adolfo Aguilar Zínser,Cancha múltiple,1.630000,20,197192fc6ff73900
+Auditorio Adolfo Aguilar Zínser,Centro de Aprendizaje Global,4.710000,49,1d49dc14fb4f7d1d
+Auditorio Adolfo Aguilar Zínser,Clínica Escuela,3.340000,36,-56dba7192469488b
+Auditorio Adolfo Aguilar Zínser,Edificio B,2.020000,19,-3308d7ec5549ce4b
+Auditorio Adolfo Aguilar Zínser,Edificio C,2.590000,26,6ee1f978e53c1b82
+Auditorio Adolfo Aguilar Zínser,Edificio F,4.360000,47,-70a5c99e4aace025
+Auditorio Adolfo Aguilar Zínser,Edificio G,4.340000,47,7e3b71a77885e9c3
+Auditorio Adolfo Aguilar Zínser,Edificio H,2.250000,24,1449401042155142
+Auditorio Adolfo Aguilar Zínser,Edificio I,1.720000,17,665d1301fc44caab
+Auditorio Adolfo Aguilar Zínser,Edificio J,1.990000,21,-56c49da406204f68
+Auditorio Adolfo Aguilar Zínser,Edificio L,3.220000,32,04d501a52e95b012
+Auditorio Adolfo Aguilar Zínser,Edificio M,1.520000,18,-4c919e69e26c786a
+Auditorio Adolfo Aguilar Zínser,Edificio N,5.090000,54,-44e57ffc6ff8dd96
+Auditorio Adolfo Aguilar Zínser,Edificio P,3.230000,35,2ad6555b96a37c9f
+Auditorio Adolfo Aguilar Zínser,Edificio Q,3.230000,35,6efd2527ca652538
+Auditorio Adolfo Aguilar Zínser,Edificio R,1.740000,20,-74dc52f1c7e4547f
+Auditorio Adolfo Aguilar Zínser,Edificio S,1.540000,17,-31a14fbbb84b41a6
 Auditorio Adolfo Aguilar Zínser,Edificio T,1.210000,13,2b6ac46daeac5fe3
-Auditorio Adolfo Aguilar Zínser,Edificio U,0.810000,9,6cb4c6cb803009cf
-Auditorio Adolfo Aguilar Zínser,Edificio V,4.070000,39,-6721dc9a7a351c88
-Auditorio Adolfo Aguilar Zínser,Edificio W,4.670000,48,75b65ff21ecde391
-Auditorio Adolfo Aguilar Zínser,Edificio X,4.250000,41,-5d95673baa1e3c7b
-Auditorio Adolfo Aguilar Zínser,Edificio Y,4.670000,46,346263bdb62a6ed7
-Auditorio Adolfo Aguilar Zínser,Edificio Z,4.830000,48,595a21a45e6a23c1
-Auditorio Adolfo Aguilar Zínser,Entrada Sur,5.160000,48,12b25c31a7f172b7
-Auditorio Adolfo Aguilar Zínser,Entrada Principal,5.150000,50,-19c63e38d26ad316
+Auditorio Adolfo Aguilar Zínser,Edificio U,0.940000,11,-eaa9dab120c77a6
+Auditorio Adolfo Aguilar Zínser,Edificio V,4.460000,44,-786f851347089c40
+Auditorio Adolfo Aguilar Zínser,Edificio W,4.760000,51,-4f015a747f2eb8ba
+Auditorio Adolfo Aguilar Zínser,Edificio X,4.640000,46,738c257cde42233d
+Auditorio Adolfo Aguilar Zínser,Edificio Y,5.060000,51,734023a5061b5daf
+Auditorio Adolfo Aguilar Zínser,Edificio Z,5.220000,53,351ea5966821d159
+Auditorio Adolfo Aguilar Zínser,Entrada Sur,5.550000,53,251c9fc0f271f3bf
+Auditorio Adolfo Aguilar Zínser,Entrada Principal,5.470000,58,-7750f12a80a00559
 Auditorio Adolfo Aguilar Zínser,Entrada Este,2.130000,22,-42b2a79d37367686
-Auditorio Adolfo Aguilar Zínser,Estacionamiento 1,1.270000,12,-1f197a1e37d05565
-Auditorio Adolfo Aguilar Zínser,Estacionamiento 2,2.310000,23,56f1a80900ff55c2
-Auditorio Adolfo Aguilar Zínser,Estacionamiento 3,3.110000,31,-75d9a4555f051f0c
-Auditorio Adolfo Aguilar Zínser,Estacionamiento 4,5.420000,51,3f7e88b3886d7705
-Auditorio Adolfo Aguilar Zínser,Estacionamiento 5,5.280000,49,21d0ab04b4e956b7
-Auditorio Adolfo Aguilar Zínser,Laboratorio de técnicas deportivas y de rescate,4.300000,40,56a67cde3e1bef79
-Auditorio Adolfo Aguilar Zínser,Laboratorio de Electrónica,2.460000,24,-2c44b1315fa13290
-Auditorio Adolfo Aguilar Zínser,Laboratorio de Periodismo,2.610000,25,17081843e2f3ce7f
-Auditorio Adolfo Aguilar Zínser,Laboratorio de Programación,3.460000,38,-1628d5991c64eb89
-Auditorio Adolfo Aguilar Zínser,Protección Civil,4.600000,45,573ec88b7c6e5333
-Auditorio Adolfo Aguilar Zínser,Radio UDG,3.850000,40,-2c0a2184cd35a332
-Auditorio Adolfo Aguilar Zínser,Rectoría,1.450000,14,27c4e7ced33b4295
-Auditorio Adolfo Aguilar Zínser,Sala de Gobierno,3.640000,38,6d1988624a1566b9
-Auditorio Adolfo Aguilar Zínser,Hospital Veterinario,1.080000,11,-43f003232584a680
+Auditorio Adolfo Aguilar Zínser,Estacionamiento 1,1.400000,14,243e6a155cd33bb2
+Auditorio Adolfo Aguilar Zínser,Estacionamiento 2,2.360000,25,-39a5ff65fead7c0c
+Auditorio Adolfo Aguilar Zínser,Estacionamiento 3,3.160000,33,-565d0750738cc64e
+Auditorio Adolfo Aguilar Zínser,Estacionamiento 4,5.810000,56,-2f74e0f5d43373a3
+Auditorio Adolfo Aguilar Zínser,Estacionamiento 5,5.670000,54,65b4761d3d5e522f
+Auditorio Adolfo Aguilar Zínser,Laboratorio de técnicas deportivas y de rescate,4.690000,45,-6a2893989bd96af
+Auditorio Adolfo Aguilar Zínser,Laboratorio de Electrónica,2.850000,29,-e2122af159c2cb8
+Auditorio Adolfo Aguilar Zínser,Laboratorio de Periodismo,3.000000,30,-1c9da3c41fee7ac9
+Auditorio Adolfo Aguilar Zínser,Laboratorio de Programación,3.830000,42,2f3ca38baeee7c93
+Auditorio Adolfo Aguilar Zínser,Protección Civil,4.990000,50,6fa49c44b151d5fb
+Auditorio Adolfo Aguilar Zínser,Radio UDG,3.940000,43,0aac0bf35386cf27
+Auditorio Adolfo Aguilar Zínser,Rectoría,1.850000,20,0c7f8385a120d95e
+Auditorio Adolfo Aguilar Zínser,Sala de Gobierno,3.720000,38,-7c4881bdb5f83c1e
+Auditorio Adolfo Aguilar Zínser,Hospital Veterinario,1.450000,15,3762b2cd3912d061
 Bufete Jurídico,Auditorio C.A.S.A.,5.200000,52,78defbbdc4152841
 Bufete Jurídico,Auditorio Antonio González Ochoa,0.630000,7,5700fc4504ea4f90
-Bufete Jurídico,Auditorio Adolfo Aguilar Zínser,5.230000,52,623b62100c88b2b5
+Bufete Jurídico,Auditorio Adolfo Aguilar Zínser,5.520000,59,-22960754e346f15a
 Bufete Jurídico,C.A.S.A. (Biblioteca),5.740000,56,095b9a606f1bf7f6
 Bufete Jurídico,C.M.I.D.,5.600000,55,-27ddf4a21edbc367
 Bufete Jurídico,Centro Acuático,5.970000,58,-29de45340f0faf97
-Bufete Jurídico,Cafetería Pequeña,6.660000,68,-74ccb12b5d2a3f4c
-Bufete Jurídico,Cafetería Principal,3.280000,35,48309c114bf5a491
+Bufete Jurídico,Cafetería Pequeña,6.760000,69,178932e617073b56
+Bufete Jurídico,Cafetería Principal,3.310000,36,-243e9392124536e0
 Bufete Jurídico,Cancha de fútbol central,2.850000,30,622ede4ee27c2e57
-Bufete Jurídico,Cancha de fútbol norte,5.800000,60,-45f08f4d817fa7d6
-Bufete Jurídico,Cancha múltiple,5.390000,56,5715547e19a30ac2
+Bufete Jurídico,Cancha de fútbol norte,5.900000,61,-316d99f443d40208
+Bufete Jurídico,Cancha múltiple,5.490000,57,2a76cbc428b957d8
 Bufete Jurídico,Centro de Aprendizaje Global,6.990000,68,4a7d4a3ab89bf8d6
 Bufete Jurídico,Clínica Escuela,2.290000,25,654f7974badbfef1
-Bufete Jurídico,Edificio B,4.300000,44,4dcc3053b1e5ccde
+Bufete Jurídico,Edificio B,4.330000,45,4ecfe3cdccd3c77a
 Bufete Jurídico,Edificio C,3.910000,40,29764de80d6c4382
 Bufete Jurídico,Edificio F,5.660000,55,-252bf801fde0dfa8
 Bufete Jurídico,Edificio G,5.640000,55,-47982fa3e032c070
@@ -173,17 +173,17 @@ Bufete Jurídico,Edificio H,4.140000,43,-3be6312b90346606
 Bufete Jurídico,Edificio I,4.940000,54,5ad86d054c7d22d8
 Bufete Jurídico,Edificio J,3.880000,40,-5c1bbfa4038fb130
 Bufete Jurídico,Edificio L,4.430000,44,-36675f64e8250dbc
-Bufete Jurídico,Edificio M,5.490000,56,48326b3efd935c5f
+Bufete Jurídico,Edificio M,5.590000,57,3d7de3884e1c1789
 Bufete Jurídico,Edificio N,1.150000,13,-4ceacda0fc48873f
 Bufete Jurídico,Edificio P,2.500000,28,-1c630e751702d12b
 Bufete Jurídico,Edificio Q,2.590000,28,-6d4916cdca15821e
-Bufete Jurídico,Edificio R,3.810000,40,-3c89e8d275a66a0e
+Bufete Jurídico,Edificio R,3.780000,40,12a42e94720ac965
 Bufete Jurídico,Edificio S,4.260000,45,0933a3c13cf1b293
 Bufete Jurídico,Edificio T,4.700000,50,2eb96523cec53bcd
 Bufete Jurídico,Edificio U,5.430000,58,-4ba883964129e81
-Bufete Jurídico,Edificio V,1.430000,17,-84b9e0c6d08c2bc
+Bufete Jurídico,Edificio V,1.420000,17,0995632c19845e24
 Bufete Jurídico,Edificio W,0.820000,10,-39cf377569e092ff
-Bufete Jurídico,Edificio X,1.080000,13,51c085f834793679
+Bufete Jurídico,Edificio X,1.070000,13,28b16dcf9d73a019
 Bufete Jurídico,Edificio Y,0.570000,7,-7af1d8f6ce2a6cfb
 Bufete Jurídico,Edificio Z,0.440000,5,2a98178c2d572dbd
 Bufete Jurídico,Entrada Sur,6.340000,61,-340a195515ebe22c
@@ -196,21 +196,21 @@ Bufete Jurídico,Estacionamiento 4,6.600000,64,-56144a080202ce30
 Bufete Jurídico,Estacionamiento 5,6.460000,62,65d8d4694487ddac
 Bufete Jurídico,Laboratorio de técnicas deportivas y de rescate,5.480000,53,-2fe68fea129afcd0
 Bufete Jurídico,Laboratorio de Electrónica,4.060000,41,-382cd5e60af6726a
-Bufete Jurídico,Laboratorio de Periodismo,5.350000,54,642cb716254794f5
+Bufete Jurídico,Laboratorio de Periodismo,5.450000,55,49cc1eea83ad01ff
 Bufete Jurídico,Laboratorio de Programación,4.690000,46,7ec1b475e70d74f0
 Bufete Jurídico,Protección Civil,1.000000,11,-2ee88cc20b73c7fd
 Bufete Jurídico,Radio UDG,2.330000,26,-3166744761ae120d
-Bufete Jurídico,Rectoría,3.860000,40,20f136c5fa3fa078
+Bufete Jurídico,Rectoría,4.010000,42,-5c6be92bfae40250
 Bufete Jurídico,Sala de Gobierno,2.310000,26,-38192b3c4b2fc21a
-Bufete Jurídico,Hospital Veterinario,6.310000,62,-42072883a52cea8e
+Bufete Jurídico,Hospital Veterinario,6.430000,67,-4fdc5208978bf868
 C.A.S.A. (Biblioteca),Auditorio C.A.S.A.,0.820000,9,5be2c487591a298a
 C.A.S.A. (Biblioteca),Auditorio Antonio González Ochoa,5.290000,51,-5d74e397109b9d18
-C.A.S.A. (Biblioteca),Auditorio Adolfo Aguilar Zínser,2.520000,28,-3a73252abdd62914
+C.A.S.A. (Biblioteca),Auditorio Adolfo Aguilar Zínser,2.890000,32,-21b2a12693a37816
 C.A.S.A. (Biblioteca),Bufete Jurídico,5.740000,56,-7afe465afa6e2d38
 C.A.S.A. (Biblioteca),C.M.I.D.,2.580000,26,-422953fbd9c0657
 C.A.S.A. (Biblioteca),Centro Acuático,2.940000,29,-1abcb581278411d4
 C.A.S.A. (Biblioteca),Cafetería Pequeña,1.840000,19,6438decc36b38e46
-C.A.S.A. (Biblioteca),Cafetería Principal,3.120000,30,4ed86f757f7de053
+C.A.S.A. (Biblioteca),Cafetería Principal,3.160000,31,-7a7243a524bd6256
 C.A.S.A. (Biblioteca),Cancha de fútbol central,3.190000,31,-d9545bc98050d10
 C.A.S.A. (Biblioteca),Cancha de fútbol norte,0.980000,11,-62faa28c18986fd8
 C.A.S.A. (Biblioteca),Cancha múltiple,1.280000,15,-36ca65cff9e123dc
@@ -242,7 +242,7 @@ C.A.S.A. (Biblioteca),Entrada Principal,5.660000,54,-48ebbc036fb9a303
 C.A.S.A. (Biblioteca),Entrada Este,3.590000,35,0713c049df302028
 C.A.S.A. (Biblioteca),Estacionamiento 1,3.710000,38,-259a32f0aa5f25ee
 C.A.S.A. (Biblioteca),Estacionamiento 2,3.510000,35,-4e55bf70e04043c
-C.A.S.A. (Biblioteca),Estacionamiento 3,4.150000,40,-5221caed982bb984
+C.A.S.A. (Biblioteca),Estacionamiento 3,4.140000,40,7f78e2c426a631da
 C.A.S.A. (Biblioteca),Estacionamiento 4,3.570000,35,4b9c804582f63e0f
 C.A.S.A. (Biblioteca),Estacionamiento 5,3.430000,33,475bedafaf369c09
 C.A.S.A. (Biblioteca),Laboratorio de técnicas deportivas y de rescate,2.450000,24,1a6df23a5cf9d3a7
@@ -251,17 +251,17 @@ C.A.S.A. (Biblioteca),Laboratorio de Periodismo,1.200000,13,-421ec772d28a4515
 C.A.S.A. (Biblioteca),Laboratorio de Programación,1.300000,14,2c0c646564366856
 C.A.S.A. (Biblioteca),Protección Civil,5.110000,49,2b0742463f6eddc6
 C.A.S.A. (Biblioteca),Radio UDG,4.410000,44,525f17423f213b9b
-C.A.S.A. (Biblioteca),Rectoría,1.910000,19,-2726791e85bbb662
+C.A.S.A. (Biblioteca),Rectoría,2.100000,22,-22cc20a38bc370e7
 C.A.S.A. (Biblioteca),Sala de Gobierno,4.200000,42,-a84fa07b4a444d4
-C.A.S.A. (Biblioteca),Hospital Veterinario,3.600000,38,-4e92f74aa2320dc9
+C.A.S.A. (Biblioteca),Hospital Veterinario,3.600000,37,-1de6e94ed7c1c2d9
 C.M.I.D.,Auditorio C.A.S.A.,1.860000,20,-32c279a81e449bfc
 C.M.I.D.,Auditorio Antonio González Ochoa,5.150000,50,3f19a47dc61edf17
-C.M.I.D.,Auditorio Adolfo Aguilar Zínser,4.420000,42,28073643505af098
+C.M.I.D.,Auditorio Adolfo Aguilar Zínser,4.810000,47,-147db3653e14b7bc
 C.M.I.D.,Bufete Jurídico,5.600000,55,6951ed3c6e637525
 C.M.I.D.,C.A.S.A. (Biblioteca),2.580000,26,-77764c480d99c309
 C.M.I.D.,Centro Acuático,1.810000,18,-383dd98cc835e3d7
 C.M.I.D.,Cafetería Pequeña,3.920000,39,-416d42dd0be12a32
-C.M.I.D.,Cafetería Principal,3.960000,38,-2596694f2df9990d
+C.M.I.D.,Cafetería Principal,3.990000,39,-24c2a2a1e2dfb7f6
 C.M.I.D.,Cancha de fútbol central,3.050000,30,-5968a20c691a6577
 C.M.I.D.,Cancha de fútbol norte,3.060000,31,-7204d7ce13a0bd50
 C.M.I.D.,Cancha múltiple,3.360000,35,0a142f77a5e2315c
@@ -302,17 +302,17 @@ C.M.I.D.,Laboratorio de Periodismo,3.120000,32,69e331f1775eb12d
 C.M.I.D.,Laboratorio de Programación,1.440000,15,6c211cebb813971b
 C.M.I.D.,Protección Civil,4.970000,48,0577d900d7bcebc7
 C.M.I.D.,Radio UDG,4.270000,43,-39a52a9f1bf2b996
-C.M.I.D.,Rectoría,3.080000,30,1715d273159eb1da
+C.M.I.D.,Rectoría,3.230000,32,-695e6b988acd014e
 C.M.I.D.,Sala de Gobierno,4.060000,41,7a4ccbc0db950a95
-C.M.I.D.,Hospital Veterinario,5.500000,52,-7e783bf471b28ebd
+C.M.I.D.,Hospital Veterinario,5.620000,53,-63b77430cc92a6de
 Centro Acuático,Auditorio C.A.S.A.,2.230000,23,-2d870132bed654d6
 Centro Acuático,Auditorio Antonio González Ochoa,5.520000,53,26c87136f558f91d
-Centro Acuático,Auditorio Adolfo Aguilar Zínser,4.790000,45,-4c5a3fe775c4d55e
+Centro Acuático,Auditorio Adolfo Aguilar Zínser,5.180000,50,2101f5ca49358a5a
 Centro Acuático,Bufete Jurídico,5.970000,58,3691fab4402a4847
 Centro Acuático,C.A.S.A. (Biblioteca),2.940000,29,74c7b6721f7e8bcc
 Centro Acuático,C.M.I.D.,1.810000,18,-4fcd3b8dd335b6e5
 Centro Acuático,Cafetería Pequeña,4.280000,42,-17506069a91e0ced
-Centro Acuático,Cafetería Principal,4.330000,41,0100dc088135c939
+Centro Acuático,Cafetería Principal,4.360000,42,-59afbd6b7283cdc8
 Centro Acuático,Cancha de fútbol central,3.420000,33,-695385aba53d58e1
 Centro Acuático,Cancha de fútbol norte,3.420000,34,-3bd041d2052502fb
 Centro Acuático,Cancha múltiple,3.720000,38,544e530ff02bccb7
@@ -353,22 +353,22 @@ Centro Acuático,Laboratorio de Periodismo,3.480000,35,2b5212b097fba352
 Centro Acuático,Laboratorio de Programación,1.800000,18,-77d626a94c75fed6
 Centro Acuático,Protección Civil,5.340000,51,-681a1b1cc94e545f
 Centro Acuático,Radio UDG,4.640000,46,-71fe39d9cf48f9e0
-Centro Acuático,Rectoría,3.450000,33,7e75190a14173220
+Centro Acuático,Rectoría,3.600000,35,-3c190a5dd71223c8
 Centro Acuático,Sala de Gobierno,4.430000,44,5e2d199d091187a7
-Centro Acuático,Hospital Veterinario,5.870000,55,-5a9a2358487a81c3
+Centro Acuático,Hospital Veterinario,5.990000,56,-35643faffdae45c0
 Cafetería Pequeña,Auditorio C.A.S.A.,2.160000,22,-7df140be09fa5c43
-Cafetería Pequeña,Auditorio Antonio González Ochoa,6.210000,63,27e3ccb6560ece52
-Cafetería Pequeña,Auditorio Adolfo Aguilar Zínser,2.610000,28,3f94ed5497cb9aaf
-Cafetería Pequeña,Bufete Jurídico,6.660000,68,5cbbff727ae584be
+Cafetería Pequeña,Auditorio Antonio González Ochoa,6.310000,64,-4ae9b6602182500c
+Cafetería Pequeña,Auditorio Adolfo Aguilar Zínser,2.980000,32,-2469542dcf60fc85
+Cafetería Pequeña,Bufete Jurídico,6.760000,69,-5f97a72a6d66384
 Cafetería Pequeña,C.A.S.A. (Biblioteca),1.840000,19,-5bc70f8f3f0236d8
 Cafetería Pequeña,C.M.I.D.,3.920000,39,5a4858b17bbe2fd0
 Cafetería Pequeña,Centro Acuático,4.280000,42,07b029f4d674938b
-Cafetería Pequeña,Cafetería Principal,4.010000,40,4d5e400372988fa1
-Cafetería Pequeña,Cancha de fútbol central,4.110000,43,296290b9f0078892
+Cafetería Pequeña,Cafetería Principal,4.050000,41,-46cd2bf5844e1b10
+Cafetería Pequeña,Cancha de fútbol central,4.210000,44,-38990aef95c2ca5c
 Cafetería Pequeña,Cancha de fútbol norte,0.940000,11,5bb33b1adc6023f9
 Cafetería Pequeña,Cancha múltiple,1.370000,15,-5226c2a283092bc1
 Cafetería Pequeña,Centro de Aprendizaje Global,1.390000,14,69c814fb72f130c1
-Cafetería Pequeña,Clínica Escuela,4.700000,48,19c53d7ad0aa05af
+Cafetería Pequeña,Clínica Escuela,4.800000,49,0b3140bfb280ea61
 Cafetería Pequeña,Edificio B,2.510000,26,79bf339ec2973c57
 Cafetería Pequeña,Edificio C,3.290000,33,-4cca2d922c3b66a2
 Cafetería Pequeña,Edificio F,3.170000,32,-4bdb96518b18ad6f
@@ -378,100 +378,100 @@ Cafetería Pequeña,Edificio I,4.160000,42,-2725320aec87b851
 Cafetería Pequeña,Edificio J,3.130000,33,-4a7dc0bd08fd603
 Cafetería Pequeña,Edificio L,2.650000,26,38fa2edef7c68cd1
 Cafetería Pequeña,Edificio M,1.470000,15,50b53f4ad8bc3b1c
-Cafetería Pequeña,Edificio N,6.450000,66,650bdb49093f87d8
-Cafetería Pequeña,Edificio P,4.620000,48,309fd9146387a341
-Cafetería Pequeña,Edificio Q,4.620000,48,0d92f3e32064323a
+Cafetería Pequeña,Edificio N,6.550000,67,-2ace8ab40536b8ca
+Cafetería Pequeña,Edificio P,4.720000,49,19d9be7d40b1254f
+Cafetería Pequeña,Edificio Q,4.720000,49,4d15681dfd564c68
 Cafetería Pequeña,Edificio R,3.540000,37,394b51c9376cb607
-Cafetería Pequeña,Edificio S,3.720000,38,-112cd5c6b26b936
-Cafetería Pequeña,Edificio T,3.650000,38,-51965be774af9b71
+Cafetería Pequeña,Edificio S,3.660000,38,44ed85a9fc5e7d6a
+Cafetería Pequeña,Edificio T,3.580000,37,0b35687be7aa3025
 Cafetería Pequeña,Edificio U,3.340000,35,25d9beec2d697383
-Cafetería Pequeña,Edificio V,5.500000,55,42a781dbf7dbc343
-Cafetería Pequeña,Edificio W,6.120000,63,598bf74ff5a24928
-Cafetería Pequeña,Edificio X,5.680000,57,4f2142d6df1b2c44
-Cafetería Pequeña,Edificio Y,6.100000,62,4502fe3efe546f42
-Cafetería Pequeña,Edificio Z,6.260000,64,-29ce0de01bfea564
+Cafetería Pequeña,Edificio V,5.600000,56,3b8c80a5d97a4675
+Cafetería Pequeña,Edificio W,6.220000,64,-56b8455fd2a0703e
+Cafetería Pequeña,Edificio X,5.780000,58,192916a2a304cf42
+Cafetería Pequeña,Edificio Y,6.200000,63,677f200c35161574
+Cafetería Pequeña,Edificio Z,6.360000,65,-208b173004cc3d22
 Cafetería Pequeña,Entrada Sur,4.650000,45,6ef00dce2569899e
-Cafetería Pequeña,Entrada Principal,6.580000,66,6cf2aee412a48c63
-Cafetería Pequeña,Entrada Este,4.480000,45,6f7d1006e22b7c4a
+Cafetería Pequeña,Entrada Principal,6.680000,67,-732be020a4c0c127
+Cafetería Pequeña,Entrada Este,4.420000,45,4a41c16d434754ea
 Cafetería Pequeña,Estacionamiento 1,3.800000,38,-23148bf0ee197e91
 Cafetería Pequeña,Estacionamiento 2,4.400000,45,7d999a18dc633656
-Cafetería Pequeña,Estacionamiento 3,5.040000,50,-6417e4698935e30a
+Cafetería Pequeña,Estacionamiento 3,5.030000,50,64c166d2b49d1668
 Cafetería Pequeña,Estacionamiento 4,4.910000,48,-530ca1117b93fbd2
 Cafetería Pequeña,Estacionamiento 5,4.770000,46,5646594091b76012
 Cafetería Pequeña,Laboratorio de técnicas deportivas y de rescate,3.790000,37,0517d25bdb552e6a
 Cafetería Pequeña,Laboratorio de Electrónica,3.120000,32,-25ffa725d25d20d9
 Cafetería Pequeña,Laboratorio de Periodismo,2.500000,25,26c9d5a5c94bc28e
 Cafetería Pequeña,Laboratorio de Programación,2.640000,27,66ddd479711eaaf9
-Cafetería Pequeña,Protección Civil,6.030000,61,1e498987fe7e088c
-Cafetería Pequeña,Radio UDG,5.330000,56,-2a3562623bb951cb
-Cafetería Pequeña,Rectoría,2.800000,29,3ac36290e73a85f8
-Cafetería Pequeña,Sala de Gobierno,5.120000,54,-7101e62d3dcf6f2e
-Cafetería Pequeña,Hospital Veterinario,3.690000,38,-26fbf7340c05b814
-Cafetería Principal,Auditorio C.A.S.A.,3.280000,32,6089cd4464a05fd6
-Cafetería Principal,Auditorio Antonio González Ochoa,2.990000,31,69942b1cf56ac094
-Cafetería Principal,Auditorio Adolfo Aguilar Zínser,2.150000,22,-2a58348da8c8b784
-Cafetería Principal,Bufete Jurídico,3.280000,35,41b1e04f25096efd
-Cafetería Principal,C.A.S.A. (Biblioteca),3.120000,29,-1482dae84d866675
-Cafetería Principal,C.M.I.D.,3.960000,38,-3a75bf0fff751f23
-Cafetería Principal,Centro Acuático,4.330000,41,5f3d145e63e725b5
-Cafetería Principal,Cafetería Pequeña,4.010000,40,1e8113162afa4941
-Cafetería Principal,Cancha de fútbol central,1.210000,13,501c154eae9dab7b
-Cafetería Principal,Cancha de fútbol norte,3.150000,32,-4b0acb972cb9b149
-Cafetería Principal,Cancha múltiple,2.740000,28,-656c3b6efba32497
-Cafetería Principal,Centro de Aprendizaje Global,5.080000,49,-5a14f16268f08d1b
-Cafetería Principal,Clínica Escuela,1.100000,12,-2845b947479caabe
-Cafetería Principal,Edificio B,1.700000,17,-16192e2d8a64483b
-Cafetería Principal,Edificio C,2.000000,19,10c4b6ef0146b3fd
-Cafetería Principal,Edificio F,4.020000,38,-1fee12d41ce4e284
-Cafetería Principal,Edificio G,4.000000,38,000e7e5701303434
-Cafetería Principal,Edificio H,1.660000,17,-382bf6ee5d3e6af5
-Cafetería Principal,Edificio I,2.390000,26,3d34bd3633af4355
-Cafetería Principal,Edificio J,1.400000,14,-3afd740271566c91
-Cafetería Principal,Edificio L,2.660000,25,-642573d4e3cd3644
-Cafetería Principal,Edificio M,2.840000,28,24d4c270b738c79a
-Cafetería Principal,Edificio N,2.850000,30,0cf78da0168db8b5
-Cafetería Principal,Edificio P,0.990000,11,1b1a6098dbdac2d8
-Cafetería Principal,Edificio Q,0.990000,11,-5d0f0ddeb134ac51
-Cafetería Principal,Edificio R,0.530000,6,-147db5ad1d4b473
-Cafetería Principal,Edificio S,1.380000,15,711583d37cb66dfd
-Cafetería Principal,Edificio T,1.650000,18,-11dec7d53bc99e8a
-Cafetería Principal,Edificio U,2.670000,29,-6fee5fe3ecfddee3
-Cafetería Principal,Edificio V,2.280000,23,-7c2c504126967aeb
-Cafetería Principal,Edificio W,2.520000,27,-438940bfeb7d2289
-Cafetería Principal,Edificio X,2.460000,25,32eb03fc12c6d6e2
-Cafetería Principal,Edificio Y,2.880000,30,5659332385895a54
-Cafetería Principal,Edificio Z,3.040000,32,-3fcf5c7d4735af42
-Cafetería Principal,Entrada Sur,4.700000,44,-3536c0632607cc0
-Cafetería Principal,Entrada Principal,3.230000,34,-3f2d82978e4b1c80
-Cafetería Principal,Entrada Este,1.620000,17,-6481d881bafb938e
-Cafetería Principal,Estacionamiento 1,2.760000,29,05b52351bc67de3d
-Cafetería Principal,Estacionamiento 2,1.150000,12,-5d786c8a92facec0
-Cafetería Principal,Estacionamiento 3,1.050000,11,-2b950266070bc75a
-Cafetería Principal,Estacionamiento 4,4.960000,47,-3cb0422037f7376c
-Cafetería Principal,Estacionamiento 5,4.820000,45,0bba16d2d5aad550
-Cafetería Principal,Laboratorio de técnicas deportivas y de rescate,3.840000,36,3a3a77ebaefd89c4
-Cafetería Principal,Laboratorio de Electrónica,2.290000,22,7e5b0bcc68566c2e
-Cafetería Principal,Laboratorio de Periodismo,2.700000,26,-7408c46f0b1b3120
-Cafetería Principal,Laboratorio de Programación,3.050000,29,-1c892272df02ed9c
-Cafetería Principal,Protección Civil,2.810000,29,-4a08a3e89cd1c1f6
-Cafetería Principal,Radio UDG,1.700000,19,782ed1f3eab6a284
-Cafetería Principal,Rectoría,1.260000,13,-23bfac1c8106935f
-Cafetería Principal,Sala de Gobierno,1.490000,17,-2c5fc27e3307c935
-Cafetería Principal,Hospital Veterinario,3.180000,33,-232b7656987cc600
+Cafetería Pequeña,Protección Civil,6.130000,62,-3b847dbaf03f2a16
+Cafetería Pequeña,Radio UDG,5.430000,57,-7c87410225469309
+Cafetería Pequeña,Rectoría,2.990000,32,-1b86db3242eecbdd
+Cafetería Pequeña,Sala de Gobierno,5.220000,55,-7fed473b0ec64608
+Cafetería Pequeña,Hospital Veterinario,3.690000,37,-6b24605734637892
+Cafetería Principal,Auditorio C.A.S.A.,3.320000,33,5881442fb7acd2bd
+Cafetería Principal,Auditorio Antonio González Ochoa,3.020000,32,2d1d9abbf19cfebf
+Cafetería Principal,Auditorio Adolfo Aguilar Zínser,2.310000,26,-399f9266e5b9b3f7
+Cafetería Principal,Bufete Jurídico,3.310000,36,7fab10f2e07324ea
+Cafetería Principal,C.A.S.A. (Biblioteca),3.160000,30,0e0151ef68c9a158
+Cafetería Principal,C.M.I.D.,3.990000,39,0e0a05b5a8c2578a
+Cafetería Principal,Centro Acuático,4.360000,42,-4a3fb4a67b4e5d4
+Cafetería Principal,Cafetería Pequeña,4.050000,41,-6f2e90336f3bc84c
+Cafetería Principal,Cancha de fútbol central,1.240000,14,-63247ec769b20106
+Cafetería Principal,Cancha de fútbol norte,3.190000,33,49ef5780de945f2a
+Cafetería Principal,Cancha múltiple,2.780000,29,70e23492a0c607c2
+Cafetería Principal,Centro de Aprendizaje Global,5.120000,50,-69ffa48ef1e4b332
+Cafetería Principal,Clínica Escuela,1.130000,13,0972397b30bff2c2
+Cafetería Principal,Edificio B,1.620000,17,29564725eb3b55ac
+Cafetería Principal,Edificio C,2.040000,20,-7e83cf89d09e7eee
+Cafetería Principal,Edificio F,4.050000,39,5ba331d9449a59e3
+Cafetería Principal,Edificio G,4.030000,39,7077cdf891825d2b
+Cafetería Principal,Edificio H,1.700000,18,143892389a9dc392
+Cafetería Principal,Edificio I,2.430000,27,1fda0c6a8cabeb3e
+Cafetería Principal,Edificio J,1.440000,15,-3fbb2fc1433f3098
+Cafetería Principal,Edificio L,2.700000,26,-15212840168f8965
+Cafetería Principal,Edificio M,2.880000,29,1e7163437a9e7b5f
+Cafetería Principal,Edificio N,2.880000,31,-5210398d30c5c90e
+Cafetería Principal,Edificio P,1.020000,12,-5874bb0448549299
+Cafetería Principal,Edificio Q,1.020000,12,-abdf8cb6e64ee80
+Cafetería Principal,Edificio R,0.570000,7,124dbe23943b3992
+Cafetería Principal,Edificio S,1.420000,16,-2cdf9b55519cdf0c
+Cafetería Principal,Edificio T,1.690000,19,51170b2f29bf46db
+Cafetería Principal,Edificio U,2.710000,30,5da586e4259ffad4
+Cafetería Principal,Edificio V,2.310000,24,-5f61ac34b95aa0b4
+Cafetería Principal,Edificio W,2.550000,28,3f74c891ec6546ee
+Cafetería Principal,Edificio X,2.490000,26,-61a00fe13c31572f
+Cafetería Principal,Edificio Y,2.910000,31,-1142f9161cf99185
+Cafetería Principal,Edificio Z,3.070000,33,36bcd88fbbc73485
+Cafetería Principal,Entrada Sur,4.730000,45,-4e2e38a31bb232cb
+Cafetería Principal,Entrada Principal,3.260000,35,418f63373c77081f
+Cafetería Principal,Entrada Este,1.660000,18,6c6cd542d733a0e1
+Cafetería Principal,Estacionamiento 1,2.800000,30,53ca9b84a339d986
+Cafetería Principal,Estacionamiento 2,1.190000,13,1f450529e7a6a2dd
+Cafetería Principal,Estacionamiento 3,1.080000,12,63acc58cabd6b67d
+Cafetería Principal,Estacionamiento 4,4.990000,48,24e4bdc7b358420f
+Cafetería Principal,Estacionamiento 5,4.850000,46,-34db5fb5e8a297f7
+Cafetería Principal,Laboratorio de técnicas deportivas y de rescate,3.870000,37,5c62691be047d7a7
+Cafetería Principal,Laboratorio de Electrónica,2.330000,23,722df60a78b20ec7
+Cafetería Principal,Laboratorio de Periodismo,2.740000,27,-3e10956040eb640b
+Cafetería Principal,Laboratorio de Programación,3.080000,30,208eee7eac330d03
+Cafetería Principal,Protección Civil,2.840000,30,281fee1b8a88cc8f
+Cafetería Principal,Radio UDG,1.730000,20,3bfa47a70a90c06f
+Cafetería Principal,Rectoría,1.300000,14,-42e78a5f60ad6452
+Cafetería Principal,Sala de Gobierno,1.520000,18,4bfe10d153a2e7e0
+Cafetería Principal,Hospital Veterinario,3.220000,34,-3e4e7613032f590d
 Cancha de fútbol central,Auditorio C.A.S.A.,2.650000,27,2d546a05f61384fd
 Cancha de fútbol central,Auditorio Antonio González Ochoa,2.400000,25,-679207ff2d11e23f
-Cancha de fútbol central,Auditorio Adolfo Aguilar Zínser,2.680000,27,-c13806f1ba9ac5f
+Cancha de fútbol central,Auditorio Adolfo Aguilar Zínser,3.070000,32,-5e097d7a6be4a23d
 Cancha de fútbol central,Bufete Jurídico,2.850000,30,6dd13991ad79a493
 Cancha de fútbol central,C.A.S.A. (Biblioteca),3.190000,31,58aed9bf492b412a
 Cancha de fútbol central,C.M.I.D.,3.050000,30,780911fc6ed0400d
 Cancha de fútbol central,Centro Acuático,3.420000,33,2182c197832e10c5
-Cancha de fútbol central,Cafetería Pequeña,4.110000,43,052e9eaa2ed8e4a0
-Cancha de fútbol central,Cafetería Principal,1.210000,13,2e7a0aa22fb57a45
-Cancha de fútbol central,Cancha de fútbol norte,3.250000,35,410f0b00cab91806
-Cancha de fútbol central,Cancha múltiple,2.840000,31,-1f6d64ed6868d38a
+Cancha de fútbol central,Cafetería Pequeña,4.210000,44,-5aa8b494a003c77e
+Cancha de fútbol central,Cafetería Principal,1.240000,14,-2d6c6d44746d9d4c
+Cancha de fútbol central,Cancha de fútbol norte,3.350000,36,3ebaadedd0996c94
+Cancha de fútbol central,Cancha múltiple,2.940000,32,-576489d41b120b74
 Cancha de fútbol central,Centro de Aprendizaje Global,4.440000,43,2eb45a2aff2c4422
 Cancha de fútbol central,Clínica Escuela,0.890000,10,6658636e3a1709b8
-Cancha de fútbol central,Edificio B,1.750000,19,-5661366cb27756fe
+Cancha de fútbol central,Edificio B,1.780000,20,4024e37bff030a3e
 Cancha de fútbol central,Edificio C,1.360000,15,-1f8b894095ac2a22
 Cancha de fútbol central,Edificio F,3.110000,30,0-8a8965433343b4
 Cancha de fútbol central,Edificio G,3.090000,30,-5c53438b485ccd3c
@@ -479,11 +479,11 @@ Cancha de fútbol central,Edificio H,1.590000,18,-f7918522dbf099a
 Cancha de fútbol central,Edificio I,3.510000,37,-7decdd9f659212fb
 Cancha de fútbol central,Edificio J,1.330000,15,-16370ce352a1da5c
 Cancha de fútbol central,Edificio L,1.880000,19,05adfa51f56ea6b8
-Cancha de fútbol central,Edificio M,2.940000,31,6d3cd1ae3e32c4db
+Cancha de fútbol central,Edificio M,3.040000,32,-502b6712cbd0c35b
 Cancha de fútbol central,Edificio N,2.640000,28,546896fda9cbf46f
 Cancha de fútbol central,Edificio P,0.810000,10,-4f6fb505e5556848
 Cancha de fútbol central,Edificio Q,0.810000,10,-3b6c2fb36c5bf871
-Cancha de fútbol central,Edificio R,1.740000,18,-1c626e40de335dc
+Cancha de fútbol central,Edificio R,1.710000,18,1004fe9a9964acb3
 Cancha de fútbol central,Edificio S,2.430000,25,6f2862dddcb68501
 Cancha de fútbol central,Edificio T,2.540000,26,01b3bf0d3a98dc7f
 Cancha de fútbol central,Edificio U,3.470000,36,-3de96dbae7eb8c12
@@ -502,26 +502,26 @@ Cancha de fútbol central,Estacionamiento 4,4.050000,39,-7f5e48ce0fc2e25c
 Cancha de fútbol central,Estacionamiento 5,3.910000,37,3f6f7620d72bd000
 Cancha de fútbol central,Laboratorio de técnicas deportivas y de rescate,2.930000,28,0e9488d7e4ae5094
 Cancha de fútbol central,Laboratorio de Electrónica,1.510000,16,6c31aafa8bb4298a
-Cancha de fútbol central,Laboratorio de Periodismo,2.800000,29,-4c0bd59a48a6e1b7
+Cancha de fútbol central,Laboratorio de Periodismo,2.900000,30,-7f99bc469a9c7a7d
 Cancha de fútbol central,Laboratorio de Programación,2.140000,21,62e8da407da9bf94
 Cancha de fútbol central,Protección Civil,2.220000,23,-2d5a8af789cc8da3
 Cancha de fútbol central,Radio UDG,1.520000,18,1ba6ba2aa34502e4
-Cancha de fútbol central,Rectoría,1.310000,15,4038e8d5f7fa5a9c
+Cancha de fútbol central,Rectoría,1.460000,17,10ddb052a63ba70c
 Cancha de fútbol central,Sala de Gobierno,1.310000,16,-9ea9a8a8e63eb15
-Cancha de fútbol central,Hospital Veterinario,3.760000,37,77ac8c562c1bc64e
+Cancha de fútbol central,Hospital Veterinario,3.880000,38,01eca0b4b75f140d
 Cancha de fútbol norte,Auditorio C.A.S.A.,1.300000,14,-523ed4dc1e3ce371
-Cancha de fútbol norte,Auditorio Antonio González Ochoa,5.350000,55,-17c8f8a8e213b024
-Cancha de fútbol norte,Auditorio Adolfo Aguilar Zínser,1.750000,20,-7e08a24077e7b907
-Cancha de fútbol norte,Bufete Jurídico,5.800000,60,0eb9fa8be9bfaf94
+Cancha de fútbol norte,Auditorio Antonio González Ochoa,5.450000,56,1382f7755d690a8e
+Cancha de fútbol norte,Auditorio Adolfo Aguilar Zínser,2.120000,24,357c1faa32bf5965
+Cancha de fútbol norte,Bufete Jurídico,5.900000,61,18af0c5feb163d52
 Cancha de fútbol norte,C.A.S.A. (Biblioteca),0.980000,11,76c378bc4a84672e
 Cancha de fútbol norte,C.M.I.D.,3.060000,31,2038935e9f098b66
 Cancha de fútbol norte,Centro Acuático,3.420000,34,-48db38173599915b
 Cancha de fútbol norte,Cafetería Pequeña,0.940000,11,-30f914b38a67604f
-Cancha de fútbol norte,Cafetería Principal,3.150000,32,-7f0f42dbbc66e2dd
-Cancha de fútbol norte,Cancha de fútbol central,3.250000,35,6e6a3a061ddfc3ac
+Cancha de fútbol norte,Cafetería Principal,3.190000,33,4d7cc3ceec554e3a
+Cancha de fútbol norte,Cancha de fútbol central,3.350000,36,7376deb3205eb286
 Cancha de fútbol norte,Cancha múltiple,0.510000,7,-2526b034ef5a3587
 Cancha de fútbol norte,Centro de Aprendizaje Global,2.010000,20,59f340c54a2caf55
-Cancha de fútbol norte,Clínica Escuela,3.840000,40,-36186cf53d1ef0c7
+Cancha de fútbol norte,Clínica Escuela,3.940000,41,7fd4be8fb65c268b
 Cancha de fútbol norte,Edificio B,1.650000,18,-226578510119647f
 Cancha de fútbol norte,Edificio C,2.430000,25,256646b0e4a13998
 Cancha de fútbol norte,Edificio F,2.310000,24,-1bcc72196f682205
@@ -531,48 +531,48 @@ Cancha de fútbol norte,Edificio I,3.300000,34,-5ce5bed023c1e657
 Cancha de fútbol norte,Edificio J,2.270000,25,-40184142beda2109
 Cancha de fútbol norte,Edificio L,1.790000,18,3d9c6144da9c022f
 Cancha de fútbol norte,Edificio M,0.610000,7,7656909adfe1c1aa
-Cancha de fútbol norte,Edificio N,5.590000,58,1296545293f5672e
-Cancha de fútbol norte,Edificio P,3.760000,40,-52d5d9bea84bebd9
-Cancha de fútbol norte,Edificio Q,3.760000,40,-30c969c2a3ec60c0
+Cancha de fútbol norte,Edificio N,5.690000,59,-1b936c422392110c
+Cancha de fútbol norte,Edificio P,3.860000,41,597239729352e31d
+Cancha de fútbol norte,Edificio Q,3.860000,41,-af5e6ecdb0674da
 Cancha de fútbol norte,Edificio R,2.680000,29,-40a8be5af1fefb7f
-Cancha de fútbol norte,Edificio S,2.860000,30,51cf0d3045313b90
-Cancha de fútbol norte,Edificio T,2.790000,30,-4ef8db67d1815f63
+Cancha de fútbol norte,Edificio S,2.800000,30,66e5f3ce3208fef4
+Cancha de fútbol norte,Edificio T,2.720000,29,7deb3cf0e316d9df
 Cancha de fútbol norte,Edificio U,2.480000,27,3ad4492207791fad
-Cancha de fútbol norte,Edificio V,4.640000,47,-3485a7041124ad63
-Cancha de fútbol norte,Edificio W,5.260000,55,-73fd770adc8d9146
-Cancha de fútbol norte,Edificio X,4.820000,49,-671d5a9f9987c886
-Cancha de fútbol norte,Edificio Y,5.240000,54,-3d0cd50cac9f20f4
-Cancha de fútbol norte,Edificio Z,5.400000,56,5ba2a22d64252e56
+Cancha de fútbol norte,Edificio V,4.740000,48,-57c4c4f3db5c1a71
+Cancha de fútbol norte,Edificio W,5.360000,56,-6aa3d013731334dc
+Cancha de fútbol norte,Edificio X,4.920000,50,626de972543c3478
+Cancha de fútbol norte,Edificio Y,5.340000,55,-85c704491db2f42
+Cancha de fútbol norte,Edificio Z,5.500000,57,-377d709601065868
 Cancha de fútbol norte,Entrada Sur,3.790000,37,470d98b837ea8df0
-Cancha de fútbol norte,Entrada Principal,5.720000,58,28522e862459e121
-Cancha de fútbol norte,Entrada Este,3.620000,37,-7b31a7e281f0e5a8
+Cancha de fútbol norte,Entrada Principal,5.820000,59,4b7a55f4eeb76acf
+Cancha de fútbol norte,Entrada Este,3.560000,37,-61f251d16d21a454
 Cancha de fútbol norte,Estacionamiento 1,2.940000,30,-d204f92b2be00db
 Cancha de fútbol norte,Estacionamiento 2,3.540000,37,01acd38a2f8266b4
-Cancha de fútbol norte,Estacionamiento 3,4.180000,42,61ab219297eef34c
+Cancha de fútbol norte,Estacionamiento 3,4.170000,42,-5373a29bbc21176
 Cancha de fútbol norte,Estacionamiento 4,4.050000,40,-51cbcdd5fa9c057c
 Cancha de fútbol norte,Estacionamiento 5,3.910000,38,0948ca25d6b689e0
 Cancha de fútbol norte,Laboratorio de técnicas deportivas y de rescate,2.930000,29,-2dda163ff0aad04c
 Cancha de fútbol norte,Laboratorio de Electrónica,2.260000,24,02533477a5ce347d
 Cancha de fútbol norte,Laboratorio de Periodismo,1.640000,17,-77bc3e954a0515e8
 Cancha de fútbol norte,Laboratorio de Programación,1.780000,19,57bc1292a349dcb3
-Cancha de fútbol norte,Protección Civil,5.170000,53,0865b32b60c026f2
-Cancha de fútbol norte,Radio UDG,4.470000,48,-6393b5ad90747c51
-Cancha de fútbol norte,Rectoría,1.940000,21,-ed8d492dccf1e52
-Cancha de fútbol norte,Sala de Gobierno,4.260000,46,-7a3aee22e2f977e0
-Cancha de fútbol norte,Hospital Veterinario,2.830000,30,33f95aa08be6f826
+Cancha de fútbol norte,Protección Civil,5.270000,54,-23fb281c9e57dc50
+Cancha de fútbol norte,Radio UDG,4.570000,49,-dcda0a4217ebacf
+Cancha de fútbol norte,Rectoría,2.130000,24,-540cef4053981f97
+Cancha de fútbol norte,Sala de Gobierno,4.360000,47,-66941a912c8d0bf2
+Cancha de fútbol norte,Hospital Veterinario,2.830000,29,-6e55dd57f4968044
 Cancha múltiple,Auditorio C.A.S.A.,1.740000,20,716a46f9b47ba5f5
-Cancha múltiple,Auditorio Antonio González Ochoa,4.940000,51,1cb9bf3e5e2dacb4
-Cancha múltiple,Auditorio Adolfo Aguilar Zínser,1.260000,16,7cfbff1db79abd3a
-Cancha múltiple,Bufete Jurídico,5.390000,56,-63ad8f19eb5aa344
+Cancha múltiple,Auditorio Antonio González Ochoa,5.040000,52,4b2993232481a956
+Cancha múltiple,Auditorio Adolfo Aguilar Zínser,1.630000,20,-174dbf98203f8df0
+Cancha múltiple,Bufete Jurídico,5.490000,57,6a8e905d69d4f6ea
 Cancha múltiple,C.A.S.A. (Biblioteca),1.420000,17,-4d11086d4c6273d0
 Cancha múltiple,C.M.I.D.,3.500000,37,-369484745d883a78
 Cancha múltiple,Centro Acuático,3.860000,40,-5f7575c0a6ab457d
 Cancha múltiple,Cafetería Pequeña,2.030000,23,-18a752a893f672d1
-Cancha múltiple,Cafetería Principal,2.740000,28,3e04109b1598377b
-Cancha múltiple,Cancha de fútbol central,2.840000,31,7933edd9d0f38e64
+Cancha múltiple,Cafetería Principal,2.780000,29,-33716d78ad82181e
+Cancha múltiple,Cancha de fútbol central,2.940000,32,62a0693c44ef592e
 Cancha múltiple,Cancha de fútbol norte,1.170000,15,-79a9e9b587d60cbf
 Cancha múltiple,Centro de Aprendizaje Global,3.100000,32,-7f5baf4e5c0857e9
-Cancha múltiple,Clínica Escuela,3.430000,36,-7117f42240b0c7df
+Cancha múltiple,Clínica Escuela,3.530000,37,-2755b04d021cb59d
 Cancha múltiple,Edificio B,1.240000,14,-2be012a3c8839af7
 Cancha múltiple,Edificio C,2.020000,21,-621cc121ab6c8fc0
 Cancha múltiple,Edificio F,2.750000,30,4981546905145309
@@ -582,44 +582,44 @@ Cancha múltiple,Edificio I,2.810000,30,-47c04210c75a08ae
 Cancha múltiple,Edificio J,1.860000,21,-77333a9080af9e31
 Cancha múltiple,Edificio L,2.220000,23,2c15fe07c347f045
 Cancha múltiple,Edificio M,0.120000,3,-7e37e6a038a4dfe9
-Cancha múltiple,Edificio N,5.180000,54,-298b1b6d7a63940a
-Cancha múltiple,Edificio P,3.350000,36,1fa3f537067d0f8f
-Cancha múltiple,Edificio Q,3.350000,36,-344eb01a8e1f8d58
+Cancha múltiple,Edificio N,5.280000,55,-76771a05b238dd14
+Cancha múltiple,Edificio P,3.450000,37,-37d1e71004b6fbab
+Cancha múltiple,Edificio Q,3.450000,37,73a29ba1845de4be
 Cancha múltiple,Edificio R,2.270000,25,5b2fdb9d85f80799
-Cancha múltiple,Edificio S,2.450000,26,-56898ea997eb92e8
-Cancha múltiple,Edificio T,2.300000,26,25dc7679fe1822a8
+Cancha múltiple,Edificio S,2.310000,26,-2adc724bd383287f
+Cancha múltiple,Edificio T,2.230000,25,2b51aa09306f465e
 Cancha múltiple,Edificio U,1.990000,23,6be7b93eb0bd5e98
-Cancha múltiple,Edificio V,4.230000,43,4ee1b3a6582bc4b5
-Cancha múltiple,Edificio W,4.850000,51,-19d023c0b7b867fe
-Cancha múltiple,Edificio X,4.410000,45,57f46e53fed9ac02
-Cancha múltiple,Edificio Y,4.830000,50,-6672dbbbafafe04c
-Cancha múltiple,Edificio Z,4.990000,52,151373b502f3ec1e
+Cancha múltiple,Edificio V,4.330000,44,-49e72e63e154f989
+Cancha múltiple,Edificio W,4.950000,52,516799e789c9c47c
+Cancha múltiple,Edificio X,4.510000,46,1c6386b255096ad0
+Cancha múltiple,Edificio Y,4.930000,51,58cc8f021fa69756
+Cancha múltiple,Edificio Z,5.090000,53,515f931594f99dd0
 Cancha múltiple,Entrada Sur,4.230000,43,4decf419ba5835f6
-Cancha múltiple,Entrada Principal,5.310000,54,71440b1c7631a519
-Cancha múltiple,Entrada Este,3.210000,33,3bc449fb8a1253a0
+Cancha múltiple,Entrada Principal,5.410000,55,7c282879ee546497
+Cancha múltiple,Entrada Este,3.070000,33,-48d5aece5f68fba3
 Cancha múltiple,Estacionamiento 1,2.450000,26,-b71787d3223e574
 Cancha múltiple,Estacionamiento 2,3.130000,33,-72f517ae172b5a04
-Cancha múltiple,Estacionamiento 3,3.770000,38,581bb98a9e5eaee4
+Cancha múltiple,Estacionamiento 3,3.760000,38,-35157a76df7d2f2e
 Cancha múltiple,Estacionamiento 4,4.490000,46,3e5055ba70f62f16
 Cancha múltiple,Estacionamiento 5,4.350000,44,71ac439d10e7ee7a
 Cancha múltiple,Laboratorio de técnicas deportivas y de rescate,3.370000,35,3f3f02cb6f9a6f32
 Cancha múltiple,Laboratorio de Electrónica,1.850000,20,-2ef95f2ac17c913b
 Cancha múltiple,Laboratorio de Periodismo,1.650000,18,7d4b69130eb2856a
 Cancha múltiple,Laboratorio de Programación,2.220000,25,61c50eedd8243491
-Cancha múltiple,Protección Civil,4.760000,49,539e6d68d7f09d2a
-Cancha múltiple,Radio UDG,4.060000,44,-1686868dfb361b49
-Cancha múltiple,Rectoría,1.530000,17,-6e720c177b8d212a
-Cancha múltiple,Sala de Gobierno,3.850000,42,-1e9abd56c0c06948
-Cancha múltiple,Hospital Veterinario,2.340000,26,1ed8d622ac41e155
+Cancha múltiple,Protección Civil,4.860000,50,-2c62ba8b18b8d568
+Cancha múltiple,Radio UDG,4.160000,45,26e3936bd6cab029
+Cancha múltiple,Rectoría,1.720000,20,1f81eb7d70701601
+Cancha múltiple,Sala de Gobierno,3.950000,43,5bbd0c5282b12b56
+Cancha múltiple,Hospital Veterinario,2.340000,25,-647f9528c67398b7
 Centro de Aprendizaje Global,Auditorio C.A.S.A.,1.960000,20,-1da03e021cceb5b0
 Centro de Aprendizaje Global,Auditorio Antonio González Ochoa,6.540000,63,-dde15a9493ed364
-Centro de Aprendizaje Global,Auditorio Adolfo Aguilar Zínser,3.680000,37,73bc243a7590a31d
+Centro de Aprendizaje Global,Auditorio Adolfo Aguilar Zínser,4.050000,41,65132637d301b359
 Centro de Aprendizaje Global,Bufete Jurídico,6.990000,68,-3e646b279edf392c
 Centro de Aprendizaje Global,C.A.S.A. (Biblioteca),2.780000,28,-18486d7c7c148c3c
 Centro de Aprendizaje Global,C.M.I.D.,3.620000,37,-4acf56e4f33c1851
 Centro de Aprendizaje Global,Centro Acuático,3.990000,40,05845626467aac47
 Centro de Aprendizaje Global,Cafetería Pequeña,1.390000,14,44ebb5d5022a897f
-Centro de Aprendizaje Global,Cafetería Principal,5.080000,49,-43cb6ae8516ea269
+Centro de Aprendizaje Global,Cafetería Principal,5.120000,50,30a88b0a65003b7e
 Centro de Aprendizaje Global,Cancha de fútbol central,4.440000,43,5d24145c798b436c
 Centro de Aprendizaje Global,Cancha de fútbol norte,2.010000,20,06ab9c9e926f1b3b
 Centro de Aprendizaje Global,Cancha múltiple,2.440000,24,008ad004e1ac4e7d
@@ -637,8 +637,8 @@ Centro de Aprendizaje Global,Edificio N,6.780000,66,-2da98ad66dbee512
 Centro de Aprendizaje Global,Edificio P,4.950000,48,-58f173f07031e199
 Centro de Aprendizaje Global,Edificio Q,4.950000,48,-b3ab1b796423d80
 Centro de Aprendizaje Global,Edificio R,4.610000,46,-391cfc531e32377b
-Centro de Aprendizaje Global,Edificio S,4.790000,47,-339180545aa7353c
-Centro de Aprendizaje Global,Edificio T,4.720000,47,-1f297cfa56459457
+Centro de Aprendizaje Global,Edificio S,4.730000,47,1af2e12708b8ee00
+Centro de Aprendizaje Global,Edificio T,4.650000,46,2bafcdde9c2571e3
 Centro de Aprendizaje Global,Edificio U,4.410000,44,5f0e2d89997fa261
 Centro de Aprendizaje Global,Edificio V,5.830000,55,760a6a304beb10dd
 Centro de Aprendizaje Global,Edificio W,6.450000,63,6b8c0e5a9766b2fa
@@ -647,7 +647,7 @@ Centro de Aprendizaje Global,Edificio Y,6.430000,62,0376f6a76ed1014c
 Centro de Aprendizaje Global,Edificio Z,6.590000,64,-3cf4ba2a87a8eb6a
 Centro de Aprendizaje Global,Entrada Sur,4.360000,43,03776545f1470e3a
 Centro de Aprendizaje Global,Entrada Principal,6.910000,66,-23f4105a5910a19f
-Centro de Aprendizaje Global,Entrada Este,5.550000,54,-7f2100fb5ce6cc44
+Centro de Aprendizaje Global,Entrada Este,5.490000,54,-1b428c181bfbe2b8
 Centro de Aprendizaje Global,Estacionamiento 1,4.870000,47,5851c1c8d1f18149
 Centro de Aprendizaje Global,Estacionamiento 2,5.470000,54,-29d5588e27253bd8
 Centro de Aprendizaje Global,Estacionamiento 3,5.630000,54,-1a536bb8db60f81a
@@ -659,23 +659,23 @@ Centro de Aprendizaje Global,Laboratorio de Periodismo,3.320000,34,-1071303ca768
 Centro de Aprendizaje Global,Laboratorio de Programación,2.460000,25,-384e4ceb164d4256
 Centro de Aprendizaje Global,Protección Civil,6.360000,61,-56965c1ed5495dce
 Centro de Aprendizaje Global,Radio UDG,5.660000,56,-76b370b43e33e91
-Centro de Aprendizaje Global,Rectoría,3.870000,38,27ca32a347e1bfea
+Centro de Aprendizaje Global,Rectoría,4.060000,41,-1e51ee1ad570196b
 Centro de Aprendizaje Global,Sala de Gobierno,5.450000,54,0c3d2e87e9ab78e0
-Centro de Aprendizaje Global,Hospital Veterinario,4.760000,47,-3689e12d521a7146
+Centro de Aprendizaje Global,Hospital Veterinario,4.760000,46,-3bf97493bc0108b8
 Clínica Escuela,Auditorio C.A.S.A.,3.240000,32,5ccd1371fef325ab
 Clínica Escuela,Auditorio Antonio González Ochoa,1.890000,20,5714162022e39d35
-Clínica Escuela,Auditorio Adolfo Aguilar Zínser,3.250000,33,7114bcddb024e3dd
+Clínica Escuela,Auditorio Adolfo Aguilar Zínser,3.340000,36,-7a3f65c6ceda1064
 Clínica Escuela,Bufete Jurídico,2.290000,25,6869b9ff902fa6db
 Clínica Escuela,C.A.S.A. (Biblioteca),3.780000,36,6730eeb8a7ff5d48
 Clínica Escuela,C.M.I.D.,3.640000,35,-56d8a963e837b415
 Clínica Escuela,Centro Acuático,4.010000,38,-13dbb50776072a5
-Clínica Escuela,Cafetería Pequeña,4.700000,48,1a024e130d69ae3e
-Clínica Escuela,Cafetería Principal,1.100000,12,6be07cd15e0baa45
+Clínica Escuela,Cafetería Pequeña,4.800000,49,-6c13130e8042218
+Clínica Escuela,Cafetería Principal,1.130000,13,-1c3259cb1fa26d4c
 Clínica Escuela,Cancha de fútbol central,0.890000,10,-1ac69fdc1dbd506b
-Clínica Escuela,Cancha de fútbol norte,3.840000,40,25b57c21f3e679a0
-Clínica Escuela,Cancha múltiple,3.430000,36,-407eaf147e73e0a0
+Clínica Escuela,Cancha de fútbol norte,3.940000,41,-7574ce95e42c1f2
+Clínica Escuela,Cancha múltiple,3.530000,37,-6deb6a05605e922
 Clínica Escuela,Centro de Aprendizaje Global,5.030000,48,418a341061c51114
-Clínica Escuela,Edificio B,2.340000,24,1b0fbda246302558
+Clínica Escuela,Edificio B,2.370000,25,-369918b438379738
 Clínica Escuela,Edificio C,1.950000,20,0345a345f01acb04
 Clínica Escuela,Edificio F,3.700000,35,-2037d77aa02ce2da
 Clínica Escuela,Edificio G,3.680000,35,-5ef478dbc44998a
@@ -683,13 +683,13 @@ Clínica Escuela,Edificio H,2.180000,23,-69b2a8b9d8e38c24
 Clínica Escuela,Edificio I,3.230000,35,1db2396d555fa8a3
 Clínica Escuela,Edificio J,1.920000,20,4bdb6c1f867da132
 Clínica Escuela,Edificio L,2.470000,24,-6dcae4da4d7ae936
-Clínica Escuela,Edificio M,3.530000,36,-3c8d2f9ee412a40f
+Clínica Escuela,Edificio M,3.630000,37,0e53f89e3c0d30a3
 Clínica Escuela,Edificio N,1.860000,20,-2bad4b81c5a3de19
 Clínica Escuela,Edificio P,0.390000,5,-72011f7b74fbfcf
 Clínica Escuela,Edificio Q,0.580000,7,494044e4b8b5a044
-Clínica Escuela,Edificio R,1.630000,17,2133a1cbec855a24
-Clínica Escuela,Edificio S,2.480000,26,-6f5e62e24f2c756e
-Clínica Escuela,Edificio T,2.750000,29,-13299c870bca3fdf
+Clínica Escuela,Edificio R,1.600000,17,-6642950262c8c34d
+Clínica Escuela,Edificio S,2.450000,26,-32e8a5a78ae01701
+Clínica Escuela,Edificio T,2.720000,29,75a507f0debad560
 Clínica Escuela,Edificio U,3.720000,39,-791f5f8a1f7860e8
 Clínica Escuela,Edificio V,1.180000,12,-271c2b6f8ec00a16
 Clínica Escuela,Edificio W,1.530000,17,791c25a07680702d
@@ -706,73 +706,73 @@ Clínica Escuela,Estacionamiento 4,4.640000,44,75281b8844f1333e
 Clínica Escuela,Estacionamiento 5,4.500000,42,45c014c485861d42
 Clínica Escuela,Laboratorio de técnicas deportivas y de rescate,3.520000,33,7ac924ccffd8e7ba
 Clínica Escuela,Laboratorio de Electrónica,2.100000,21,-14648195cbb84c00
-Clínica Escuela,Laboratorio de Periodismo,3.390000,34,-be3606931e17cb9
+Clínica Escuela,Laboratorio de Periodismo,3.490000,35,23e9d6fc28df62f1
 Clínica Escuela,Laboratorio de Programación,2.730000,26,-2fe713891cd6046e
 Clínica Escuela,Protección Civil,1.710000,18,-6ce34d9132f6d07
 Clínica Escuela,Radio UDG,0.780000,9,67cd76c3d929490f
-Clínica Escuela,Rectoría,1.900000,20,33aaa1ffe6f2a74a
+Clínica Escuela,Rectoría,2.050000,22,249701cbfc352262
 Clínica Escuela,Sala de Gobierno,0.760000,9,6b9518bd27efc51a
-Clínica Escuela,Hospital Veterinario,4.280000,44,1df87304996623fd
+Clínica Escuela,Hospital Veterinario,4.250000,44,18305ba6c65ded96
 Edificio B,Auditorio C.A.S.A.,1.780000,18,-74850b4d82690a0e
-Edificio B,Auditorio Antonio González Ochoa,3.850000,39,-76577c2808b2dfc4
-Edificio B,Auditorio Adolfo Aguilar Zínser,1.630000,14,-5e6ff5c45d60c3c5
-Edificio B,Bufete Jurídico,4.300000,44,-63ecc368f451374c
+Edificio B,Auditorio Antonio González Ochoa,3.880000,40,-191d5996b5fac378
+Edificio B,Auditorio Adolfo Aguilar Zínser,2.020000,19,5c029dfaece09441
+Edificio B,Bufete Jurídico,4.330000,45,5ef78b8233b35b28
 Edificio B,C.A.S.A. (Biblioteca),1.620000,15,-78f1f97f28ffc511
 Edificio B,C.M.I.D.,3.010000,29,0fae6cd3ec8086fd
 Edificio B,Centro Acuático,3.380000,32,6a8b16744da22055
 Edificio B,Cafetería Pequeña,2.510000,26,-40e4dddc5ef37a9b
-Edificio B,Cafetería Principal,1.700000,17,5faceda19aa3e31b
-Edificio B,Cancha de fútbol central,1.750000,19,3209b34b138f3e0c
+Edificio B,Cafetería Principal,1.620000,17,770eef0b0ffd1a04
+Edificio B,Cancha de fútbol central,1.780000,20,48a720918532ab10
 Edificio B,Cancha de fútbol norte,1.650000,18,-620e2e1ff5dd8635
 Edificio B,Cancha múltiple,1.240000,14,5e087ab303a65f45
 Edificio B,Centro de Aprendizaje Global,3.580000,35,76f85ea5910c5cf1
-Edificio B,Clínica Escuela,2.340000,24,7cce0794336458d9
+Edificio B,Clínica Escuela,2.370000,25,-b2a84feba1c2edb
 Edificio B,Edificio C,1.220000,12,6a0459aa2cfdfc36
 Edificio B,Edificio F,2.790000,28,-bdb95a94f94e302
 Edificio B,Edificio G,2.770000,28,-65a051add6e9d72
-Edificio B,Edificio H,1.080000,13,-5a62c948b8398fb5
+Edificio B,Edificio H,0.960000,12,50fbb014852fabbd
 Edificio B,Edificio I,2.700000,25,-54398a743d273a8d
-Edificio B,Edificio J,0.820000,10,-4696fbdb740136d1
+Edificio B,Edificio J,0.700000,9,-33a58219ef166af7
 Edificio B,Edificio L,1.420000,14,-127be31b005804ed
 Edificio B,Edificio M,1.340000,14,3594b86165dc318e
-Edificio B,Edificio N,4.090000,42,39772d26993c754e
-Edificio B,Edificio P,2.260000,24,712354e5279612c7
-Edificio B,Edificio Q,2.260000,24,524059137dcb91e0
-Edificio B,Edificio R,1.250000,12,5254ad7d6768b94c
+Edificio B,Edificio N,4.120000,43,1eb561fe1021ef7a
+Edificio B,Edificio P,2.290000,25,435f8f925f6d8443
+Edificio B,Edificio Q,2.290000,25,-5455f0fd4c5f3754
+Edificio B,Edificio R,1.160000,13,-65754a2d319aedc
 Edificio B,Edificio S,1.430000,13,-6aaefff00b52c20f
 Edificio B,Edificio T,1.490000,13,-5bd580956021c5c7
 Edificio B,Edificio U,2.420000,23,2e8690ea0ab3f29c
-Edificio B,Edificio V,3.140000,31,-589ba065dce19a83
-Edificio B,Edificio W,3.760000,39,-76e1ceb1b0f1b866
-Edificio B,Edificio X,3.320000,33,-4baa4561cc019926
-Edificio B,Edificio Y,3.740000,38,-24ac54d10bf04d54
-Edificio B,Edificio Z,3.900000,40,269bed00cf67c7f6
+Edificio B,Edificio V,3.170000,32,-2f0dec03d4881217
+Edificio B,Edificio W,3.790000,40,-6f88db48f1eac2aa
+Edificio B,Edificio X,3.350000,34,-32887295770ee242
+Edificio B,Edificio Y,3.770000,39,-4a51cd96fe4792d8
+Edificio B,Edificio Z,3.930000,41,528bee08ad1ae682
 Edificio B,Entrada Sur,3.750000,35,-3cc89a2f08e6f6e0
-Edificio B,Entrada Principal,4.220000,42,3a4102bceccc4c01
+Edificio B,Entrada Principal,4.250000,43,-234f2cf8121b4d63
 Edificio B,Entrada Este,2.190000,20,-14580e30ae66973
 Edificio B,Estacionamiento 1,2.880000,26,-1bea7c9a72758a20
-Edificio B,Estacionamiento 2,2.110000,20,-418c34ad551db653
-Edificio B,Estacionamiento 3,2.730000,27,-66797a79493041bc
+Edificio B,Estacionamiento 2,2.020000,21,21a8df3a8fc29f75
+Edificio B,Estacionamiento 3,2.600000,26,7f648e3121d1e00c
 Edificio B,Estacionamiento 4,4.010000,38,49ff5f27a6a644b4
 Edificio B,Estacionamiento 5,3.870000,36,-6664a7eea345a610
 Edificio B,Laboratorio de técnicas deportivas y de rescate,2.890000,27,-2007e61f681ea5dc
 Edificio B,Laboratorio de Electrónica,1.050000,11,71032068ff3793df
 Edificio B,Laboratorio de Periodismo,1.200000,12,35952e429ca4cd4c
 Edificio B,Laboratorio de Programación,2.090000,20,-15c61526aa3aa3b5
-Edificio B,Protección Civil,3.670000,37,-6a9443f027395eae
-Edificio B,Radio UDG,2.970000,32,1b6a6f31702b9f4f
-Edificio B,Rectoría,0.440000,5,5f2c2371436cc1ce
-Edificio B,Sala de Gobierno,2.760000,30,4f7dbee57d5bfe00
-Edificio B,Hospital Veterinario,2.710000,24,-ed8552262cef878
+Edificio B,Protección Civil,3.700000,38,57ecba6125023b66
+Edificio B,Radio UDG,3.000000,33,5ce325aa639212fb
+Edificio B,Rectoría,0.560000,8,-207291820bb94251
+Edificio B,Sala de Gobierno,2.790000,31,-90c70ab52199cb4
+Edificio B,Hospital Veterinario,2.830000,25,1bd3f42766e6fc23
 Edificio C,Auditorio C.A.S.A.,1.430000,15,-7e1fe02dc9d09ab3
 Edificio C,Auditorio Antonio González Ochoa,3.460000,35,-5d570e2272d8e3e2
-Edificio C,Auditorio Adolfo Aguilar Zínser,2.200000,21,-df7ad04e496da96
+Edificio C,Auditorio Adolfo Aguilar Zínser,2.590000,26,-5620c01f8c4a7afe
 Edificio C,Bufete Jurídico,3.910000,40,-3502912379f2a01e
 Edificio C,C.A.S.A. (Biblioteca),1.970000,19,02d91a8e0d0f7b3a
 Edificio C,C.M.I.D.,2.250000,22,-4e7f8c74bc4e1bb6
 Edificio C,Centro Acuático,2.620000,25,7f4159dd32f9e66c
 Edificio C,Cafetería Pequeña,3.290000,33,-3bfd667f58e71a56
-Edificio C,Cafetería Principal,2.000000,19,-84ba9d784fb6bfb
+Edificio C,Cafetería Principal,2.040000,20,497adbe3e1078ef4
 Edificio C,Cancha de fútbol central,1.360000,15,-31bc2fc5fb61c8ea
 Edificio C,Cancha de fútbol norte,2.430000,25,-4ca2af2fb270ba24
 Edificio C,Cancha múltiple,2.020000,21,76b217b93ae23734
@@ -812,18 +812,18 @@ Edificio C,Laboratorio de Periodismo,1.980000,19,-1cde1eb6e79ca95
 Edificio C,Laboratorio de Programación,1.330000,13,08ff8443d0f775fc
 Edificio C,Protección Civil,3.280000,33,-15a704b2a863eb80
 Edificio C,Radio UDG,2.580000,28,-44459d43bbcb641f
-Edificio C,Rectoría,0.830000,9,-200eee6fdb70d95b
+Edificio C,Rectoría,0.980000,11,-7ea233c2d4ddcd21
 Edificio C,Sala de Gobierno,2.370000,26,0b05b23cafdc56de
-Edificio C,Hospital Veterinario,3.280000,31,25513e0df9890645
+Edificio C,Hospital Veterinario,3.400000,32,-2ef63ce3f0379578
 Edificio F,Auditorio C.A.S.A.,1.010000,11,6f10876481081130
 Edificio F,Auditorio Antonio González Ochoa,5.210000,50,33f4db2e714d89b0
-Edificio F,Auditorio Adolfo Aguilar Zínser,3.850000,41,-6584a5f1d592ff21
+Edificio F,Auditorio Adolfo Aguilar Zínser,4.220000,45,-31fcea4dc91756d5
 Edificio F,Bufete Jurídico,5.660000,55,-11c157e8b16c43c0
 Edificio F,C.A.S.A. (Biblioteca),1.830000,19,77aaec0665448764
 Edificio F,C.M.I.D.,2.200000,23,566e7a79bae70dbb
 Edificio F,Centro Acuático,2.570000,26,0dbfb85142bbb5cb
 Edificio F,Cafetería Pequeña,3.170000,32,59891e3e44d03b5b
-Edificio F,Cafetería Principal,4.020000,38,-15d55dabf915bf46
+Edificio F,Cafetería Principal,4.050000,39,43afb1d84feea5ef
 Edificio F,Cancha de fútbol central,3.110000,30,1b930d6621985838
 Edificio F,Cancha de fútbol norte,2.310000,24,-2ba1cfc366468a53
 Edificio F,Cancha múltiple,2.610000,28,-7a291db69f975ed1
@@ -863,18 +863,18 @@ Edificio F,Laboratorio de Periodismo,2.370000,25,6f78ff29a8f91c4a
 Edificio F,Laboratorio de Programación,1.130000,12,195e61a5d3dcbba6
 Edificio F,Protección Civil,5.030000,48,08e79ffe943d126e
 Edificio F,Radio UDG,4.330000,43,0b5cb73d5c58d773
-Edificio F,Rectoría,2.890000,28,18c1383fd28531ea
+Edificio F,Rectoría,3.040000,30,0af9ae9db01b3b42
 Edificio F,Sala de Gobierno,4.120000,41,-1d28e4d20e553dec
 Edificio F,Hospital Veterinario,4.930000,50,12452496aa0bfe9e
 Edificio G,Auditorio C.A.S.A.,0.990000,11,-517624df3f4765e2
 Edificio G,Auditorio Antonio González Ochoa,5.190000,50,-3078e662142e581a
-Edificio G,Auditorio Adolfo Aguilar Zínser,3.830000,41,-5c36b045037bfa97
+Edificio G,Auditorio Adolfo Aguilar Zínser,4.200000,45,-68e191ce82df0cab
 Edificio G,Bufete Jurídico,5.640000,55,-4b351537e23c7386
 Edificio G,C.A.S.A. (Biblioteca),1.810000,19,5245bbf452b1348a
 Edificio G,C.M.I.D.,2.180000,23,0a68bcb20fb83429
 Edificio G,Centro Acuático,2.550000,26,66a92d9737b98319
 Edificio G,Cafetería Pequeña,3.150000,32,-2d2ec95aac95f9cb
-Edificio G,Cafetería Principal,4.000000,38,68be95281f3a1a08
+Edificio G,Cafetería Principal,4.030000,39,5990733fc0bd58bd
 Edificio G,Cancha de fútbol central,3.090000,30,421bb8924df609be
 Edificio G,Cancha de fútbol norte,2.290000,24,-33a3e5e33aeb5765
 Edificio G,Cancha múltiple,2.590000,28,01dc83aeb4988469
@@ -914,24 +914,24 @@ Edificio G,Laboratorio de Periodismo,2.350000,25,-15f1cb6a09b77ce4
 Edificio G,Laboratorio de Programación,1.110000,12,58de31f04793b900
 Edificio G,Protección Civil,5.010000,48,2f11d61a24ce5768
 Edificio G,Radio UDG,4.310000,43,-1dacd388a9d44da7
-Edificio G,Rectoría,2.870000,28,-1f34abed5339ce0
+Edificio G,Rectoría,3.020000,30,-51a02d47135720c8
 Edificio G,Sala de Gobierno,4.100000,41,-2725e74d447da4da
 Edificio G,Hospital Veterinario,4.910000,50,064a5ed1d448a72c
 Edificio H,Auditorio C.A.S.A.,2.540000,26,-1c202480ffde8add
 Edificio H,Auditorio Antonio González Ochoa,3.690000,38,-4003fb14a337124c
-Edificio H,Auditorio Adolfo Aguilar Zínser,1.860000,19,-467cea5f9a336f6e
+Edificio H,Auditorio Adolfo Aguilar Zínser,2.250000,24,-19a90fbd39eada16
 Edificio H,Bufete Jurídico,4.140000,43,-6f8b83fb2232b844
 Edificio H,C.A.S.A. (Biblioteca),2.500000,25,-9bd39de8e2f5adb
 Edificio H,C.M.I.D.,3.360000,33,0138b09336c22534
 Edificio H,Centro Acuático,3.730000,36,1c81388350d242ae
 Edificio H,Cafetería Pequeña,3.390000,36,6fa6ad53156e4617
-Edificio H,Cafetería Principal,1.660000,17,336fe84c7392f08d
+Edificio H,Cafetería Principal,1.700000,18,-350d90b8ccaa36d4
 Edificio H,Cancha de fútbol central,1.590000,18,-1474f48aab31e9c
 Edificio H,Cancha de fútbol norte,2.530000,28,-1d95321803265337
 Edificio H,Cancha múltiple,2.120000,24,-7e2596fe7b1433dd
 Edificio H,Centro de Aprendizaje Global,4.360000,42,-78cdfbbea6ebe905
 Edificio H,Clínica Escuela,2.180000,23,7e36b253b786e121
-Edificio H,Edificio B,1.080000,13,-67b797dcdb4e4855
+Edificio H,Edificio B,0.960000,12,-18ab3129bf869cf1
 Edificio H,Edificio C,1.110000,12,242002e3cc137127
 Edificio H,Edificio F,3.170000,31,0d874dd792ea4b9c
 Edificio H,Edificio G,3.150000,31,1c766accdb602154
@@ -956,7 +956,7 @@ Edificio H,Entrada Principal,4.060000,41,524a4322f37ebe19
 Edificio H,Entrada Este,2.370000,24,-69db4cf59b585316
 Edificio H,Estacionamiento 1,3.110000,31,-6556e4e7e5c337e7
 Edificio H,Estacionamiento 2,2.100000,22,-2c9bb04d08fd3d53
-Edificio H,Estacionamiento 3,2.690000,27,5222456c9b7f97da
+Edificio H,Estacionamiento 3,2.680000,27,-e3d40fcedc5bc6c
 Edificio H,Estacionamiento 4,4.360000,42,-176846b722f90a53
 Edificio H,Estacionamiento 5,4.220000,40,2b9da1b402c3b55f
 Edificio H,Laboratorio de técnicas deportivas y de rescate,3.240000,31,-344f83a05afc6f1f
@@ -967,16 +967,16 @@ Edificio H,Protección Civil,3.510000,36,13a82cb2c6d9282a
 Edificio H,Radio UDG,2.810000,31,-5ba6363db3aeb049
 Edificio H,Rectoría,0.640000,9,-75da8d00b07bd339
 Edificio H,Sala de Gobierno,2.600000,29,-3bcca65ba378ce48
-Edificio H,Hospital Veterinario,2.940000,29,-5f8c2b82a2b5013
+Edificio H,Hospital Veterinario,3.060000,30,-3cc24cc086beaf90
 Edificio I,Auditorio C.A.S.A.,4.260000,42,-135b889733d6a51d
 Edificio I,Auditorio Antonio González Ochoa,4.710000,51,0-8beb3997cdfb6c
-Edificio I,Auditorio Adolfo Aguilar Zínser,1.710000,16,0cd48d4cb641080d
+Edificio I,Auditorio Adolfo Aguilar Zínser,1.720000,17,44d30b2a9553327b
 Edificio I,Bufete Jurídico,4.940000,54,03694d6732705bfc
 Edificio I,C.A.S.A. (Biblioteca),4.100000,39,-6561190506ce029e
 Edificio I,C.M.I.D.,5.490000,53,-30e8c14e315227a0
 Edificio I,Centro Acuático,5.860000,56,34aa579969589e22
 Edificio I,Cafetería Pequeña,4.820000,50,16d9564d2cd525cd
-Edificio I,Cafetería Principal,2.390000,26,-1f6a7d69f03a463f
+Edificio I,Cafetería Principal,2.430000,27,22704fe1187d92d0
 Edificio I,Cancha de fútbol central,3.510000,37,3133282c9e78d89d
 Edificio I,Cancha de fútbol norte,3.960000,42,5ed03e6ef7ce38f3
 Edificio I,Cancha múltiple,2.810000,30,-1f3a43bbdb4eb304
@@ -1016,24 +1016,24 @@ Edificio I,Laboratorio de Periodismo,3.680000,36,185030bdaaf0f4d3
 Edificio I,Laboratorio de Programación,4.570000,44,-65ef6abdf1a2d9ee
 Edificio I,Protección Civil,4.850000,51,1e81cd420e91d1b7
 Edificio I,Radio UDG,3.150000,35,-6492b75c46e2342b
-Edificio I,Rectoría,2.520000,25,40b4ab83ed97b221
+Edificio I,Rectoría,2.530000,26,2b1f783318569862
 Edificio I,Sala de Gobierno,2.860000,31,40abbe3e02a9fdd4
 Edificio I,Hospital Veterinario,2.180000,20,-5422457bed10518d
 Edificio J,Auditorio C.A.S.A.,2.280000,23,-65bfd5e024e0beb
 Edificio J,Auditorio Antonio González Ochoa,3.430000,35,-201d3a8bb18d32c6
-Edificio J,Auditorio Adolfo Aguilar Zínser,1.600000,16,-47c25a7fdef986cc
+Edificio J,Auditorio Adolfo Aguilar Zínser,1.990000,21,3da0b97fbad61438
 Edificio J,Bufete Jurídico,3.880000,40,483a9285e5cbf336
 Edificio J,C.A.S.A. (Biblioteca),2.240000,22,0ec50efdbce60107
 Edificio J,C.M.I.D.,3.100000,30,410df53eeb95ce02
 Edificio J,Centro Acuático,3.470000,33,319cc911a5158284
 Edificio J,Cafetería Pequeña,3.130000,33,53aaf5b37154878d
-Edificio J,Cafetería Principal,1.400000,14,0bee3b1f693d008f
+Edificio J,Cafetería Principal,1.440000,15,24ea743c22520c86
 Edificio J,Cancha de fútbol central,1.330000,15,-2346b90beca5db66
 Edificio J,Cancha de fútbol norte,2.270000,25,-5b22afb81bfb44cd
 Edificio J,Cancha múltiple,1.860000,21,5dff98302fd36fcd
 Edificio J,Centro de Aprendizaje Global,4.100000,39,3226865e1f609201
 Edificio J,Clínica Escuela,1.920000,20,-7f1bcea79197dda4
-Edificio J,Edificio B,0.820000,10,-526cba9bde6af4cf
+Edificio J,Edificio B,0.700000,9,77ed03a188877459
 Edificio J,Edificio C,0.850000,9,-75a72eedc510c627
 Edificio J,Edificio F,2.910000,28,-1a522dc6578568d2
 Edificio J,Edificio G,2.890000,28,-2e5aa206f1792c82
@@ -1058,7 +1058,7 @@ Edificio J,Entrada Principal,3.800000,38,0-f9bf520ed258d5
 Edificio J,Entrada Este,2.110000,21,-73b233cfe23128c4
 Edificio J,Estacionamiento 1,2.850000,28,03ef8770de111e6b
 Edificio J,Estacionamiento 2,1.840000,19,-2f1ccb9458b0bfcd
-Edificio J,Estacionamiento 3,2.430000,24,-1426bf8c79802870
+Edificio J,Estacionamiento 3,2.420000,24,-490925c12a7b929a
 Edificio J,Estacionamiento 4,4.100000,39,-2ff2d3f08870d7e9
 Edificio J,Estacionamiento 5,3.960000,37,-3348670b27a41b6f
 Edificio J,Laboratorio de técnicas deportivas y de rescate,2.980000,28,-13e1536aa3cab0f1
@@ -1069,16 +1069,16 @@ Edificio J,Protección Civil,3.250000,33,452a4a21650ecaf4
 Edificio J,Radio UDG,2.550000,28,4442eab64cbd43cd
 Edificio J,Rectoría,0.380000,6,-5bd5ff9ec86ebbf3
 Edificio J,Sala de Gobierno,2.340000,26,0f760f9c5578305a
-Edificio J,Hospital Veterinario,2.680000,26,-36c0e6d498a9d8e1
+Edificio J,Hospital Veterinario,2.800000,27,4bfe63609f51828e
 Edificio L,Auditorio C.A.S.A.,0.770000,9,-1dc5b20ed4558897
 Edificio L,Auditorio Antonio González Ochoa,3.980000,39,-14cad5226a1f7bfe
-Edificio L,Auditorio Adolfo Aguilar Zínser,2.830000,27,-4a87fd6c921360c
+Edificio L,Auditorio Adolfo Aguilar Zínser,3.220000,32,718f8318a733da78
 Edificio L,Bufete Jurídico,4.430000,44,-758dc02844d42352
 Edificio L,C.A.S.A. (Biblioteca),1.310000,13,556810168d65bafe
 Edificio L,C.M.I.D.,1.960000,20,1945298c0b2aeaaf
 Edificio L,Centro Acuático,2.320000,23,274b598213f4fc76
 Edificio L,Cafetería Pequeña,2.650000,26,-7fb7f1e756c7cd7
-Edificio L,Cafetería Principal,2.660000,25,613b32fb35bd68f4
+Edificio L,Cafetería Principal,2.700000,26,-68e8daebbcf3b4c7
 Edificio L,Cancha de fútbol central,1.880000,19,-6fffbb4d6ed0057e
 Edificio L,Cancha de fútbol norte,1.790000,18,5bf26f4cea435c5f
 Edificio L,Cancha múltiple,2.090000,22,-47115e9e45f0b4a3
@@ -1118,23 +1118,23 @@ Edificio L,Laboratorio de Periodismo,1.850000,19,-43775b9dbb0cad8
 Edificio L,Laboratorio de Programación,0.680000,8,173d5a269962b830
 Edificio L,Protección Civil,3.800000,37,5354bcef342c80fc
 Edificio L,Radio UDG,3.100000,32,-1722bef98f9c18fb
-Edificio L,Rectoría,1.490000,15,-66de3f138752a9ba
+Edificio L,Rectoría,1.640000,17,-12d00eb1184e709a
 Edificio L,Sala de Gobierno,2.890000,30,404e7677fab3d842
-Edificio L,Hospital Veterinario,3.910000,37,35d0069aca64de5f
+Edificio L,Hospital Veterinario,4.030000,38,-3a2c90e743ac6532
 Edificio M,Auditorio C.A.S.A.,1.840000,20,6b8378f81719f66c
-Edificio M,Auditorio Antonio González Ochoa,5.040000,51,77020fe18881ff65
-Edificio M,Auditorio Adolfo Aguilar Zínser,1.150000,14,6bdf092a77de1690
-Edificio M,Bufete Jurídico,5.490000,56,-47ec9223cf3776e1
+Edificio M,Auditorio Antonio González Ochoa,5.140000,52,-298b79972a307e5d
+Edificio M,Auditorio Adolfo Aguilar Zínser,1.520000,18,3e38da165cf06dce
+Edificio M,Bufete Jurídico,5.590000,57,0e937472cb5befb9
 Edificio M,C.A.S.A. (Biblioteca),1.520000,17,179a8ef44399ef3d
 Edificio M,C.M.I.D.,3.600000,37,583a55a263baf6ef
 Edificio M,Centro Acuático,3.960000,40,0-4a4b0468275d4a
 Edificio M,Cafetería Pequeña,2.130000,23,5d9be6ccef927ad2
-Edificio M,Cafetería Principal,2.840000,28,-5dcd58f85eb5e6a4
-Edificio M,Cancha de fútbol central,2.940000,31,-5a1f52fb4c05e099
+Edificio M,Cafetería Principal,2.880000,29,5096aaf5cf329351
+Edificio M,Cancha de fútbol central,3.040000,32,35492d1dd239b7cd
 Edificio M,Cancha de fútbol norte,1.270000,15,-48061ed0852bfd9c
 Edificio M,Cancha múltiple,0.120000,3,-54c31e20b64c6c3
 Edificio M,Centro de Aprendizaje Global,3.200000,32,5a61f9b238f11c28
-Edificio M,Clínica Escuela,3.530000,36,-310134dbdaf80d34
+Edificio M,Clínica Escuela,3.630000,37,71cb351a71263be2
 Edificio M,Edificio B,1.340000,14,-1da7ff65544cd198
 Edificio M,Edificio C,2.120000,21,-1514c37612853d5d
 Edificio M,Edificio F,2.850000,30,34b068acce7e6860
@@ -1143,50 +1143,50 @@ Edificio M,Edificio H,2.220000,24,-13dafe82ebf5492e
 Edificio M,Edificio I,2.700000,28,0e185234709abee0
 Edificio M,Edificio J,1.960000,21,71ceb18f0a916628
 Edificio M,Edificio L,2.320000,23,06127607814b1db6
-Edificio M,Edificio N,5.280000,54,70974045509a14f3
-Edificio M,Edificio P,3.450000,36,-1c67988da26fb884
-Edificio M,Edificio Q,3.450000,36,-4ad3eb382c73901d
-Edificio M,Edificio R,2.370000,25,-2a177bf9b4091e70
-Edificio M,Edificio S,2.520000,28,39117e173c9064bf
-Edificio M,Edificio T,2.190000,24,-33c01d1efd6e9426
+Edificio M,Edificio N,5.380000,55,-1cfd2b356bfeef2b
+Edificio M,Edificio P,3.550000,37,-7f564641bfad9a7a
+Edificio M,Edificio Q,3.550000,37,-7ff34a48f7689953
+Edificio M,Edificio R,2.330000,26,26e2b3184e3ea6e2
+Edificio M,Edificio S,2.200000,24,-665dad002ecbedb1
+Edificio M,Edificio T,2.120000,23,171c46878dc067ac
 Edificio M,Edificio U,1.880000,21,-2ab9df905d6995d2
-Edificio M,Edificio V,4.330000,43,-62161291bc6aebc6
-Edificio M,Edificio W,4.950000,51,-3c0c059318608be7
-Edificio M,Edificio X,4.510000,45,7845ffbf4a49a9b3
-Edificio M,Edificio Y,4.930000,50,37b9a4c5fcccf0b9
-Edificio M,Edificio Z,5.090000,52,2d8bcd961b2a755b
+Edificio M,Edificio V,4.430000,44,5f71f6eaac19df90
+Edificio M,Edificio W,5.050000,52,46147f2e79de9b57
+Edificio M,Edificio X,4.610000,46,-7fce399ad5644c93
+Edificio M,Edificio Y,5.030000,51,-4301c6bff0b04721
+Edificio M,Edificio Z,5.190000,53,059f7f62495fb6c9
 Edificio M,Entrada Sur,4.330000,43,23a2b0f5a37b1b97
-Edificio M,Entrada Principal,5.410000,54,-3a341389a90c2eb8
-Edificio M,Entrada Este,3.110000,33,-722fa642b9fef9cd
+Edificio M,Entrada Principal,5.510000,55,6279f3ae039cba02
+Edificio M,Entrada Este,2.960000,31,7037d6cca32aa0d3
 Edificio M,Estacionamiento 1,2.340000,24,0761d11e770f75d6
-Edificio M,Estacionamiento 2,3.230000,33,29d2f8931e72a6b1
-Edificio M,Estacionamiento 3,3.870000,38,-74847c227f7e62ef
+Edificio M,Estacionamiento 2,3.020000,32,-3de296783c1c203b
+Edificio M,Estacionamiento 3,3.820000,40,-6785b37826b7d8ef
 Edificio M,Estacionamiento 4,4.590000,46,6a199f9f86b505a5
 Edificio M,Estacionamiento 5,4.450000,44,-6ad82105e48623a9
 Edificio M,Laboratorio de técnicas deportivas y de rescate,3.470000,35,-76d44bda08f8f2a7
 Edificio M,Laboratorio de Electrónica,1.950000,20,-306d6b4a44fb45a4
 Edificio M,Laboratorio de Periodismo,1.750000,18,-70a22a96b79e7697
 Edificio M,Laboratorio de Programación,2.320000,25,-9ed075083320690
-Edificio M,Protección Civil,4.860000,49,-35ea082c7671a417
-Edificio M,Radio UDG,4.160000,44,4578479509db49b8
-Edificio M,Rectoría,1.630000,17,0f5442a9866e4e6f
-Edificio M,Sala de Gobierno,3.950000,42,-1d0d4d66ffbc1811
-Edificio M,Hospital Veterinario,2.230000,24,-52394d86ff24a2e5
+Edificio M,Protección Civil,4.960000,50,-4a4dcb8071169c55
+Edificio M,Radio UDG,4.260000,45,-5be47bac49d0013a
+Edificio M,Rectoría,1.820000,20,54e6dca61c24d56e
+Edificio M,Sala de Gobierno,4.050000,43,-5b73227654c3395f
+Edificio M,Hospital Veterinario,2.230000,23,-6ccbc81b1a83d3cd
 Edificio N,Auditorio C.A.S.A.,4.990000,50,75cb557813b7d119
 Edificio N,Auditorio Antonio González Ochoa,1.400000,15,7431a70301b9e94a
-Edificio N,Auditorio Adolfo Aguilar Zínser,5.000000,51,443b5b9552ce3025
+Edificio N,Auditorio Adolfo Aguilar Zínser,5.090000,54,-5e40330381e6ede8
 Edificio N,Bufete Jurídico,1.150000,13,-e1be769800d0011
 Edificio N,C.A.S.A. (Biblioteca),5.530000,54,59844728ca137a6e
 Edificio N,C.M.I.D.,5.390000,53,-22d0944e98987cbf
 Edificio N,Centro Acuático,5.760000,56,633b85f0482e98b1
-Edificio N,Cafetería Pequeña,6.450000,66,09167b08c3498b2c
-Edificio N,Cafetería Principal,2.850000,30,-22918745c49fb4bd
+Edificio N,Cafetería Pequeña,6.550000,67,-4d482e6ecffdc042
+Edificio N,Cafetería Principal,2.880000,31,0a11bfa334397d9a
 Edificio N,Cancha de fútbol central,2.640000,28,-317869bcf3580eb1
-Edificio N,Cancha de fútbol norte,5.590000,58,59f897b3d9278aa2
-Edificio N,Cancha múltiple,5.180000,54,0cc29a437440e65a
+Edificio N,Cancha de fútbol norte,5.690000,59,3def3570ca8e7320
+Edificio N,Cancha múltiple,5.280000,55,-59a2c26b84e6f020
 Edificio N,Centro de Aprendizaje Global,6.780000,66,-2b9962071e764e52
 Edificio N,Clínica Escuela,1.860000,20,-2cc14f19a1cbb095
-Edificio N,Edificio B,4.090000,42,637349ac97d5b2f6
+Edificio N,Edificio B,4.120000,43,-5e57b60586e37d3e
 Edificio N,Edificio C,3.700000,38,440c55555a2500fa
 Edificio N,Edificio F,5.450000,53,28cc6b482ea04c40
 Edificio N,Edificio G,5.430000,53,62956c0f59d9e9d8
@@ -1194,16 +1194,16 @@ Edificio N,Edificio H,3.930000,41,461ae67c683cff72
 Edificio N,Edificio I,4.510000,49,-6ee7f407bc44e3ee
 Edificio N,Edificio J,3.670000,38,2313a8d9cdc82e08
 Edificio N,Edificio L,4.220000,42,7490fa30bce1047c
-Edificio N,Edificio M,5.280000,54,-609fc185dcb388a9
+Edificio N,Edificio M,5.380000,55,-7bba8f385604ae8f
 Edificio N,Edificio P,2.070000,23,779956f35fc44afb
 Edificio N,Edificio Q,2.160000,23,-4e04f9bc7b261eb8
-Edificio N,Edificio R,3.380000,35,7c7cf88f31a94f0c
+Edificio N,Edificio R,3.350000,35,13753892cdb7b7a7
 Edificio N,Edificio S,3.830000,40,-6fbb37b1dcd8c5c3
 Edificio N,Edificio T,4.270000,45,-6c3674ecbe014bf1
 Edificio N,Edificio U,5.000000,53,-6e18bc4636807787
-Edificio N,Edificio V,1.220000,15,5fec27e60408c9cc
+Edificio N,Edificio V,1.330000,15,-1b32c5171d039a1e
 Edificio N,Edificio W,0.330000,4,69b5bd324833ca41
-Edificio N,Edificio X,0.870000,11,-1f780333272c5eef
+Edificio N,Edificio X,1.060000,12,-619f99fc9c47918a
 Edificio N,Edificio Y,1.110000,12,-401fd45b2596c7a5
 Edificio N,Edificio Z,1.240000,13,61ea89903bc0d372
 Edificio N,Entrada Sur,6.130000,59,1ba5180eebcc4e1c
@@ -1216,28 +1216,28 @@ Edificio N,Estacionamiento 4,6.390000,62,57f91a9de07576c8
 Edificio N,Estacionamiento 5,6.250000,60,0e844e6138515e04
 Edificio N,Laboratorio de técnicas deportivas y de rescate,5.270000,51,520e0c1e1cf87608
 Edificio N,Laboratorio de Electrónica,3.850000,39,70f2baa2baef936e
-Edificio N,Laboratorio de Periodismo,5.140000,52,452a248e3fa73dcd
+Edificio N,Laboratorio de Periodismo,5.240000,53,-1c6bca7f26d30339
 Edificio N,Laboratorio de Programación,4.480000,44,679f9377457b3948
 Edificio N,Protección Civil,1.660000,17,-29fee66faa22279c
 Edificio N,Radio UDG,1.900000,21,659a92134e32f925
-Edificio N,Rectoría,3.650000,38,-7366704add7375f0
+Edificio N,Rectoría,3.800000,40,-6cee9dec10eaa258
 Edificio N,Sala de Gobierno,1.880000,21,2601bc4f41c5c328
-Edificio N,Hospital Veterinario,6.030000,62,-3c651b4ddf49149b
+Edificio N,Hospital Veterinario,6.000000,62,-3d394a432c8f0a5e
 Edificio P,Auditorio C.A.S.A.,3.160000,32,30bd7d36e316ca82
 Edificio P,Auditorio Antonio González Ochoa,2.270000,25,-6b2426722b981039
-Edificio P,Auditorio Adolfo Aguilar Zínser,3.140000,32,3430ddf316a0ac9e
+Edificio P,Auditorio Adolfo Aguilar Zínser,3.230000,35,-47adfa0892f61f51
 Edificio P,Bufete Jurídico,2.500000,28,05dc0302a21cc33d
 Edificio P,C.A.S.A. (Biblioteca),3.700000,36,-75a723d51253a659
 Edificio P,C.M.I.D.,3.560000,35,2d4b9c59dba69c9a
 Edificio P,Centro Acuático,3.930000,38,-75a1532980ab9c24
-Edificio P,Cafetería Pequeña,4.620000,48,-351fa0abd545bdb3
-Edificio P,Cafetería Principal,0.990000,11,-386d37624653eb3c
+Edificio P,Cafetería Pequeña,4.720000,49,6954cb869fc094a3
+Edificio P,Cafetería Principal,1.020000,12,-6a99c0ea8f484937
 Edificio P,Cancha de fútbol central,0.810000,10,-51ee3459fdc06896
-Edificio P,Cancha de fútbol norte,3.760000,40,17c7f5e1f0230d73
-Edificio P,Cancha múltiple,3.350000,36,-3cce9c9f8e5159f3
+Edificio P,Cancha de fútbol norte,3.860000,41,4f2cef067970c3d5
+Edificio P,Cancha múltiple,3.450000,37,74a97e7126fc4037
 Edificio P,Centro de Aprendizaje Global,4.950000,48,-273fa423ab168975
 Edificio P,Clínica Escuela,0.390000,5,-10fbb84b18950181
-Edificio P,Edificio B,2.260000,24,-615f6c3adfbc94eb
+Edificio P,Edificio B,2.290000,25,-65b114a3d4652f2d
 Edificio P,Edificio C,1.870000,20,02bbb8ce1397ff19
 Edificio P,Edificio F,3.620000,35,4eabf24c44b25953
 Edificio P,Edificio G,3.600000,35,-3f23f2695b1b1de5
@@ -1245,10 +1245,10 @@ Edificio P,Edificio H,2.100000,23,-7229515e1aed849f
 Edificio P,Edificio I,2.840000,31,-42473ecf5bcb41a4
 Edificio P,Edificio J,1.840000,20,-3c393d37d9e0dbfb
 Edificio P,Edificio L,2.390000,24,4171fcdbe1a2627f
-Edificio P,Edificio M,3.450000,36,18686fda4ee862f6
+Edificio P,Edificio M,3.550000,37,06ff39177fd82bd4
 Edificio P,Edificio N,2.070000,23,-2ca948b0474bec8b
 Edificio P,Edificio Q,0.550000,6,123915eeb8e10b79
-Edificio P,Edificio R,1.520000,16,279bc65d694a4157
+Edificio P,Edificio R,1.490000,16,-2a6a3611b3c24598
 Edificio P,Edificio S,2.160000,22,7a1c511205b4caf7
 Edificio P,Edificio T,2.600000,27,39a1ced9936baaa1
 Edificio P,Edificio U,3.330000,35,2a452669f2c800bb
@@ -1267,28 +1267,28 @@ Edificio P,Estacionamiento 4,4.560000,44,134b949ef327633f
 Edificio P,Estacionamiento 5,4.420000,42,-76ab213251e79f67
 Edificio P,Laboratorio de técnicas deportivas y de rescate,3.440000,33,-52e831879796d5a9
 Edificio P,Laboratorio de Electrónica,2.020000,21,-6f19095d2087c05
-Edificio P,Laboratorio de Periodismo,3.310000,34,-504dd9aff2d03cac
+Edificio P,Laboratorio de Periodismo,3.410000,35,2862774d5ff663b2
 Edificio P,Laboratorio de Programación,2.650000,26,788c42e82b104c13
 Edificio P,Protección Civil,2.100000,22,-7974ce9a450eb677
 Edificio P,Radio UDG,0.710000,9,-2ea895badaea326c
-Edificio P,Rectoría,1.820000,20,4547480c6a5816b1
+Edificio P,Rectoría,1.970000,22,-54bf257530de26ed
 Edificio P,Sala de Gobierno,0.500000,7,7eafea16467fae7b
-Edificio P,Hospital Veterinario,4.170000,43,5b9d80d412ac6292
+Edificio P,Hospital Veterinario,4.140000,43,746304969d19d3d9
 Edificio Q,Auditorio C.A.S.A.,3.160000,32,-6311dc88ad30cb37
 Edificio Q,Auditorio Antonio González Ochoa,2.360000,25,-a1b115b607a1db2
-Edificio Q,Auditorio Adolfo Aguilar Zínser,3.140000,32,-4a0ef8fbcd5ae3d
+Edificio Q,Auditorio Adolfo Aguilar Zínser,3.230000,35,53bb044ce908393a
 Edificio Q,Bufete Jurídico,2.590000,28,3cbc05ed060fcade
 Edificio Q,C.A.S.A. (Biblioteca),3.700000,36,-73ea6fa9ce241222
 Edificio Q,C.M.I.D.,3.560000,35,-519794b16444feef
 Edificio Q,Centro Acuático,3.930000,38,-7865903da756779f
-Edificio Q,Cafetería Pequeña,4.620000,48,2dfc10e2e5bf461c
-Edificio Q,Cafetería Principal,0.990000,11,47672e02b9fe267b
+Edificio Q,Cafetería Pequeña,4.720000,49,-306c1eb60746d052
+Edificio Q,Cafetería Principal,1.020000,12,5dbe8a46e5b866e2
 Edificio Q,Cancha de fútbol central,0.810000,10,34548c856cd174ff
-Edificio Q,Cancha de fútbol norte,3.760000,40,-27fd80e8469e882e
-Edificio Q,Cancha múltiple,3.350000,36,253216a355b3e08a
+Edificio Q,Cancha de fútbol norte,3.860000,41,5ffb8772325a93d0
+Edificio Q,Cancha múltiple,3.450000,37,-30176423480de870
 Edificio Q,Centro de Aprendizaje Global,4.950000,48,-44061c46c0634822
 Edificio Q,Clínica Escuela,0.580000,7,64950285bf7082ae
-Edificio Q,Edificio B,2.260000,24,688d3c6884970f66
+Edificio Q,Edificio B,2.290000,25,50ca2f283bd9dab2
 Edificio Q,Edificio C,1.870000,20,7c40fea94ef36dea
 Edificio Q,Edificio F,3.620000,35,356cbeadf3c4abb0
 Edificio Q,Edificio G,3.600000,35,-2efe55a7379a7c38
@@ -1296,10 +1296,10 @@ Edificio Q,Edificio H,2.100000,23,1d767a06e07a6922
 Edificio Q,Edificio I,2.750000,30,-25712b1cebfbd676
 Edificio Q,Edificio J,1.840000,20,3745848c30a67438
 Edificio Q,Edificio L,2.390000,24,43e392aa63c1e62c
-Edificio Q,Edificio M,3.450000,36,386bef11e73dc887
+Edificio Q,Edificio M,3.550000,37,-4a3d1af866b0035f
 Edificio Q,Edificio N,2.160000,23,-21573dd68ca789ea
 Edificio Q,Edificio P,0.550000,6,-113fd1a84ab762fd
-Edificio Q,Edificio R,1.520000,16,-5b95d890c7cf517e
+Edificio Q,Edificio R,1.490000,16,-3038f93b7190d83f
 Edificio Q,Edificio S,2.070000,21,76e2fa63030d8a75
 Edificio Q,Edificio T,2.510000,26,0f16144805dba517
 Edificio Q,Edificio U,3.240000,34,-65dc65bdcd9ae3cf
@@ -1318,28 +1318,28 @@ Edificio Q,Estacionamiento 4,4.560000,44,0-48e49d5fc9cf48
 Edificio Q,Estacionamiento 5,4.420000,42,57d47b64e9562994
 Edificio Q,Laboratorio de técnicas deportivas y de rescate,3.440000,33,-6b725150d412cc8
 Edificio Q,Laboratorio de Electrónica,2.020000,21,0446cfa016c21abe
-Edificio Q,Laboratorio de Periodismo,3.310000,34,-770b7d49c8feaa3
+Edificio Q,Laboratorio de Periodismo,3.410000,35,6b3f35d2ae748257
 Edificio Q,Laboratorio de Programación,2.650000,26,2f0876649f077dd8
 Edificio Q,Protección Civil,2.290000,24,-3d9aeac7ae97d66a
 Edificio Q,Radio UDG,0.800000,9,-36e78c67cba5d9a5
-Edificio Q,Rectoría,1.820000,20,-1ddbfd39928eb240
+Edificio Q,Rectoría,1.970000,22,-72ea34e965101168
 Edificio Q,Sala de Gobierno,0.570000,6,5a88d5976acfbc6d
-Edificio Q,Hospital Veterinario,4.170000,43,0f9e158e510ad163
+Edificio Q,Hospital Veterinario,4.140000,43,-17c0cb455c3e9084
 Edificio R,Auditorio C.A.S.A.,2.810000,29,1ba283c5bd1ea16a
-Edificio R,Auditorio Antonio González Ochoa,3.520000,36,-735bf1c845ea26af
-Edificio R,Auditorio Adolfo Aguilar Zínser,1.620000,17,2dca4e9606fc01df
-Edificio R,Bufete Jurídico,3.810000,40,2915c6a0146363f0
+Edificio R,Auditorio Antonio González Ochoa,3.490000,36,05ab778d9aa37caa
+Edificio R,Auditorio Adolfo Aguilar Zínser,1.740000,20,-692ba3f95f34df03
+Edificio R,Bufete Jurídico,3.780000,40,-6c731f457c6a881
 Edificio R,C.A.S.A. (Biblioteca),2.650000,26,-472e095528b54189
 Edificio R,C.M.I.D.,3.830000,37,-164a851ee9b8bcbf
 Edificio R,Centro Acuático,4.200000,40,1d2b61e6b09fd8b1
 Edificio R,Cafetería Pequeña,3.540000,37,-27708b72ef060ac3
-Edificio R,Cafetería Principal,0.530000,6,-14f3bf35b7be8b27
-Edificio R,Cancha de fútbol central,1.740000,18,-9d647cbd451ed5c
+Edificio R,Cafetería Principal,0.570000,7,-11254dc2e3d4d0e8
+Edificio R,Cancha de fútbol central,1.710000,18,3ed922416658b661
 Edificio R,Cancha de fútbol norte,2.680000,29,6a077ececf67cd63
 Edificio R,Cancha múltiple,2.270000,25,1380109e8a8f32fd
 Edificio R,Centro de Aprendizaje Global,4.610000,46,19c239d304161cd9
-Edificio R,Clínica Escuela,1.630000,17,-341fff482ffc69d0
-Edificio R,Edificio B,1.250000,12,-760ead586938223c
+Edificio R,Clínica Escuela,1.600000,17,-31487a65dd1b2363
+Edificio R,Edificio B,1.160000,13,6d9e298ebf573cd0
 Edificio R,Edificio C,1.580000,16,-71200e11d7a78922
 Edificio R,Edificio F,3.640000,35,54148f3bbc323fa7
 Edificio R,Edificio G,3.620000,35,6ad94b594eb34fef
@@ -1347,20 +1347,20 @@ Edificio R,Edificio H,1.240000,14,10fe5eb44d78f026
 Edificio R,Edificio I,1.950000,21,-2dabfa295e088c9e
 Edificio R,Edificio J,0.980000,11,52fd44eb1a35ace4
 Edificio R,Edificio L,2.240000,22,-631f2fc67fbc8b01
-Edificio R,Edificio M,2.370000,25,-5b142d2f37dffc9a
-Edificio R,Edificio N,3.380000,35,-3cc08b01c503ad6c
-Edificio R,Edificio P,1.520000,16,-9476011aae430f7
-Edificio R,Edificio Q,1.520000,16,-7c47080ce98699fe
+Edificio R,Edificio M,2.330000,26,3b6ccb67adae338a
+Edificio R,Edificio N,3.350000,35,57252eae4654c75b
+Edificio R,Edificio P,1.490000,16,0672b51f74003c1e
+Edificio R,Edificio Q,1.490000,16,-75c68cd6ba4c513b
 Edificio R,Edificio S,0.850000,10,7717caac9162c2d8
 Edificio R,Edificio T,1.120000,13,108aa1c4de876b27
 Edificio R,Edificio U,2.140000,24,-2f8b8a2b5ec85350
-Edificio R,Edificio V,2.810000,28,09e05c391306a356
-Edificio R,Edificio W,3.050000,32,7db3cd4cb8d70804
-Edificio R,Edificio X,2.990000,30,-48be1300cf970629
-Edificio R,Edificio Y,3.410000,35,-2bbf78fbe41db88b
-Edificio R,Edificio Z,3.570000,37,-2d233ec8edce6919
+Edificio R,Edificio V,2.780000,28,-1ec8f58ce79f4325
+Edificio R,Edificio W,3.020000,32,-6bc0d97b77bbb5df
+Edificio R,Edificio X,2.960000,30,37fbdf61ad836c2c
+Edificio R,Edificio Y,3.380000,35,-640af121e89bc0d6
+Edificio R,Edificio Z,3.540000,37,-232f99b6a55decfc
 Edificio R,Entrada Sur,4.570000,43,7e9b8c9b94318e1c
-Edificio R,Entrada Principal,3.760000,39,1694f03225319169
+Edificio R,Entrada Principal,3.730000,39,-f7aa9333ce51a8a
 Edificio R,Entrada Este,1.180000,12,3bf3608673f5e8e5
 Edificio R,Estacionamiento 1,2.320000,24,-2b8eaab14978d446
 Edificio R,Estacionamiento 2,0.860000,9,2bc83a651f877e2b
@@ -1371,25 +1371,25 @@ Edificio R,Laboratorio de técnicas deportivas y de rescate,3.710000,35,557e0311
 Edificio R,Laboratorio de Electrónica,1.870000,19,-873473a3011a085
 Edificio R,Laboratorio de Periodismo,2.230000,23,778527dd970cbe64
 Edificio R,Laboratorio de Programación,2.910000,28,-11efd352a8ab6a49
-Edificio R,Protección Civil,3.340000,34,-433f269c112d7593
-Edificio R,Radio UDG,2.230000,24,-202a39a88862a363
+Edificio R,Protección Civil,3.310000,34,-2bbceb8292dea55c
+Edificio R,Radio UDG,2.200000,24,16965cb6536a84be
 Edificio R,Rectoría,0.840000,10,-2bbc7df6a9ae13e6
-Edificio R,Sala de Gobierno,2.020000,22,-eab9f794cb80d36
+Edificio R,Sala de Gobierno,1.990000,22,6023be95dfb72089
 Edificio R,Hospital Veterinario,2.650000,28,47225de10fbc28f7
 Edificio S,Auditorio C.A.S.A.,2.990000,30,0cd99e7ae264830b
 Edificio S,Auditorio Antonio González Ochoa,4.030000,42,-4aa3a8e2c6d13f51
-Edificio S,Auditorio Adolfo Aguilar Zínser,1.490000,15,-2e0f85fef9f002fa
+Edificio S,Auditorio Adolfo Aguilar Zínser,1.540000,17,6f463e6966c94f30
 Edificio S,Bufete Jurídico,4.260000,45,6db063f2b656bfb5
 Edificio S,C.A.S.A. (Biblioteca),2.830000,27,60455a14399721fa
 Edificio S,C.M.I.D.,4.200000,40,-7b45d9aa908f6eed
 Edificio S,Centro Acuático,4.570000,43,-442fa5f89c501add
 Edificio S,Cafetería Pequeña,3.720000,38,-7ce68e418f0bb3a6
-Edificio S,Cafetería Principal,1.380000,15,-26bc82b423ca3359
+Edificio S,Cafetería Principal,1.420000,16,6e828c4498ae2a4e
 Edificio S,Cancha de fútbol central,2.430000,25,51cfe172f55c0d1b
 Edificio S,Cancha de fútbol norte,2.860000,30,6bf62be572effecc
-Edificio S,Cancha múltiple,2.450000,26,12389d95073404e4
+Edificio S,Cancha múltiple,2.310000,26,-1cd279047de74e93
 Edificio S,Centro de Aprendizaje Global,4.790000,47,2b123c677c395ee0
-Edificio S,Clínica Escuela,2.480000,26,471858f28a98dec1
+Edificio S,Clínica Escuela,2.450000,26,3632adf08ce76ada
 Edificio S,Edificio B,1.430000,13,-25ad7320f04d3cdf
 Edificio S,Edificio C,1.950000,19,189558b73362f66c
 Edificio S,Edificio F,4.000000,40,40404080c18fbacf
@@ -1398,7 +1398,7 @@ Edificio S,Edificio H,1.610000,17,6b7ccc62a54d27b8
 Edificio S,Edificio I,1.410000,16,7bf1800f32e07494
 Edificio S,Edificio J,1.350000,14,6bb8aa980fb807b6
 Edificio S,Edificio L,2.610000,25,33e88c2a74c31a29
-Edificio S,Edificio M,2.520000,28,-539d3d36fa0affe3
+Edificio S,Edificio M,2.200000,24,21bd1cf09b4953a9
 Edificio S,Edificio N,3.830000,40,54040c689028581d
 Edificio S,Edificio P,2.160000,22,6595f73e4624dfe9
 Edificio S,Edificio Q,2.070000,21,56e693c21ca004c5
@@ -1422,7 +1422,7 @@ Edificio S,Laboratorio de técnicas deportivas y de rescate,4.080000,38,3f817720
 Edificio S,Laboratorio de Electrónica,2.240000,22,-5df64bf18f0ceba7
 Edificio S,Laboratorio de Periodismo,2.410000,24,-683ae2ec8c052d45
 Edificio S,Laboratorio de Programación,3.280000,31,-664ceb960414cbaf
-Edificio S,Protección Civil,4.170000,42,1aa7edbdf5fb8320
+Edificio S,Protección Civil,4.160000,43,-5bfb4f4a624dd29e
 Edificio S,Radio UDG,2.470000,26,721e0a50776a1cfc
 Edificio S,Rectoría,1.210000,13,386b6e7182f0a9f0
 Edificio S,Sala de Gobierno,2.180000,22,15c699da3ed5088f
@@ -1435,12 +1435,12 @@ Edificio T,C.A.S.A. (Biblioteca),2.890000,27,2cd25ee301d03eee
 Edificio T,C.M.I.D.,4.280000,41,-57f9a005a76b4bc
 Edificio T,Centro Acuático,4.650000,44,1684ff66b332625e
 Edificio T,Cafetería Pequeña,3.780000,38,4e45580c6f3fd4ce
-Edificio T,Cafetería Principal,1.650000,18,-6f5ad0937594d348
+Edificio T,Cafetería Principal,1.690000,19,281ac431dd3320ad
 Edificio T,Cancha de fútbol central,2.540000,26,54652fc75f81531d
 Edificio T,Cancha de fútbol norte,2.920000,30,-6d2c35f0992aae50
-Edificio T,Cancha múltiple,2.300000,26,6912f9ef99c8b5a0
+Edificio T,Cancha múltiple,2.230000,25,-2cb34d3227e08016
 Edificio T,Centro de Aprendizaje Global,4.850000,47,-165bc63c510d3454
-Edificio T,Clínica Escuela,2.750000,29,28065c4f377f8a88
+Edificio T,Clínica Escuela,2.720000,29,-1f0825a3a31cfb61
 Edificio T,Edificio B,1.490000,13,15c45b2d820d8fb5
 Edificio T,Edificio C,2.060000,20,-26fe6c5539152a7e
 Edificio T,Edificio F,4.060000,40,4bf60b05939d0c43
@@ -1449,7 +1449,7 @@ Edificio T,Edificio H,1.720000,18,44022b3e23722f42
 Edificio T,Edificio I,1.210000,13,-d6ba4d78b6d4a1c
 Edificio T,Edificio J,1.460000,15,168e351b75afaa98
 Edificio T,Edificio L,2.690000,26,4462f35b24d80e12
-Edificio T,Edificio M,2.190000,24,-72edd6b25274274a
+Edificio T,Edificio M,2.120000,23,675134481fe2199c
 Edificio T,Edificio N,4.270000,45,3de2140646104c4f
 Edificio T,Edificio P,2.600000,27,-d30f801a37423e5
 Edificio T,Edificio Q,2.510000,26,-5fbac5a433883aa9
@@ -1473,20 +1473,20 @@ Edificio T,Laboratorio de técnicas deportivas y de rescate,4.160000,39,18a550e0
 Edificio T,Laboratorio de Electrónica,2.320000,23,-38d0b7c0a4d62b8
 Edificio T,Laboratorio de Periodismo,2.470000,24,-297192f2df3220c9
 Edificio T,Laboratorio de Programación,3.360000,32,-52d19865fc516442
-Edificio T,Protección Civil,4.460000,46,-20a22528a6d7ded8
+Edificio T,Protección Civil,4.430000,46,-55e067ab11f2129f
 Edificio T,Radio UDG,2.910000,31,-5e34844017daa58a
-Edificio T,Rectoría,1.310000,13,308c9816ca5b8bed
+Edificio T,Rectoría,1.320000,14,0c7f51c1f676835e
 Edificio T,Sala de Gobierno,2.620000,27,14f9565abad9f945
 Edificio T,Hospital Veterinario,2.120000,21,01167dda98d37d41
 Edificio U,Auditorio C.A.S.A.,3.710000,40,363d3a42f2b8cf2d
 Edificio U,Auditorio Antonio González Ochoa,5.200000,55,0b05d87755478111
-Edificio U,Auditorio Adolfo Aguilar Zínser,0.810000,9,2e086e64f7449de5
+Edificio U,Auditorio Adolfo Aguilar Zínser,0.940000,11,-4fd34b3c4fdb307c
 Edificio U,Bufete Jurídico,5.430000,58,-25354687544866f1
 Edificio U,C.A.S.A. (Biblioteca),3.390000,37,17c18a21bd3c9cd8
 Edificio U,C.M.I.D.,5.210000,51,-b8e99adced91c85
 Edificio U,Centro Acuático,5.580000,54,-717d0957a8bc88f5
 Edificio U,Cafetería Pequeña,4.000000,43,3dc1820856944f97
-Edificio U,Cafetería Principal,2.670000,29,130fc6170de87039
+Edificio U,Cafetería Principal,2.710000,30,-16c18043ee8c16c8
 Edificio U,Cancha de fútbol central,3.470000,36,-5d40a121160efe00
 Edificio U,Cancha de fútbol norte,3.140000,35,5dc0fe82e8df9e49
 Edificio U,Cancha múltiple,1.990000,23,-9fdf438d4e87fde
@@ -1526,24 +1526,24 @@ Edificio U,Laboratorio de Periodismo,3.400000,34,30e3229c80fe1cf6
 Edificio U,Laboratorio de Programación,4.190000,45,04578e6c31f4e1c9
 Edificio U,Protección Civil,5.340000,55,7b17f6a9ce437ea6
 Edificio U,Radio UDG,3.640000,39,3a50387e88444022
-Edificio U,Rectoría,2.240000,23,-73996446e60bfcfa
+Edificio U,Rectoría,2.250000,24,541a2e376c52923f
 Edificio U,Sala de Gobierno,3.350000,35,-74cf40f254486957
 Edificio U,Hospital Veterinario,1.570000,16,-713b2ce4234c8a53
 Edificio V,Auditorio C.A.S.A.,4.040000,39,-14546bcb532e4f4c
-Edificio V,Auditorio Antonio González Ochoa,1.010000,11,71fd578a42685869
-Edificio V,Auditorio Adolfo Aguilar Zínser,4.070000,39,11329038d62498c4
-Edificio V,Bufete Jurídico,1.430000,16,-7f88a82fb9891e65
+Edificio V,Auditorio Antonio González Ochoa,1.000000,12,-54453a224fd69926
+Edificio V,Auditorio Adolfo Aguilar Zínser,4.460000,44,1431dcd8e8f5f3a8
+Edificio V,Bufete Jurídico,1.420000,17,-1c36f249673f8842
 Edificio V,C.A.S.A. (Biblioteca),4.580000,43,3b4305f7fc50ee19
 Edificio V,C.M.I.D.,4.440000,42,-338600151e82926c
 Edificio V,Centro Acuático,4.810000,45,0a823e88c558738e
-Edificio V,Cafetería Pequeña,5.500000,55,-2483d9ec0bad2bb9
-Edificio V,Cafetería Principal,2.280000,23,-52128997d1104e84
+Edificio V,Cafetería Pequeña,5.600000,56,-6bbc4ce59f339963
+Edificio V,Cafetería Principal,2.310000,24,-7141a59601a45acf
 Edificio V,Cancha de fútbol central,1.690000,17,548262ffa76247e0
-Edificio V,Cancha de fútbol norte,4.640000,47,-172b16863b4a79c7
-Edificio V,Cancha múltiple,4.230000,43,-43fc8b0a38458aed
+Edificio V,Cancha de fútbol norte,4.740000,48,-33afed75b741d77d
+Edificio V,Cancha múltiple,4.330000,44,6117350eb1f3149d
 Edificio V,Centro de Aprendizaje Global,5.830000,55,16701a8f8d0ce5e9
 Edificio V,Clínica Escuela,1.180000,12,38e8722b357316c6
-Edificio V,Edificio B,3.140000,31,5fe59bf6393ad567
+Edificio V,Edificio B,3.170000,32,142cdeb359b0fda9
 Edificio V,Edificio C,2.750000,27,71bcdbd773786f63
 Edificio V,Edificio F,4.500000,42,-1d2aff1bc4a17b77
 Edificio V,Edificio G,4.480000,42,-12e0731928033847
@@ -1551,20 +1551,20 @@ Edificio V,Edificio H,2.980000,30,25383be757b021eb
 Edificio V,Edificio I,3.960000,43,6f7607f2048f2124
 Edificio V,Edificio J,2.720000,27,-7bc1b1e7ed9a4d71
 Edificio V,Edificio L,3.270000,31,-1c62a1019b4ca9b3
-Edificio V,Edificio M,4.330000,43,24939cada06e67b8
-Edificio V,Edificio N,1.220000,15,165b64970b2634bc
+Edificio V,Edificio M,4.430000,44,3231bbc4c704cd86
+Edificio V,Edificio N,1.330000,15,-33d49aeb64dfc43a
 Edificio V,Edificio P,1.520000,17,0573728e5417a321
 Edificio V,Edificio Q,1.610000,17,-68c7f01287309012
-Edificio V,Edificio R,2.810000,28,5981659265f1568d
+Edificio V,Edificio R,2.780000,28,-37f9fd711420808e
 Edificio V,Edificio S,3.280000,34,-7481050f24589b81
 Edificio V,Edificio T,3.720000,39,2ab330822fa221f9
 Edificio V,Edificio U,4.450000,47,-2d1980ea09c29e7d
-Edificio V,Edificio W,0.890000,12,2db1f9f53db81bcc
+Edificio V,Edificio W,1.000000,12,4c810132de476a92
 Edificio V,Edificio X,0.350000,5,-5f0fe781123fef83
-Edificio V,Edificio Y,0.870000,10,7c810c035183230d
-Edificio V,Edificio Z,1.030000,12,4f9c109d095e7d9f
+Edificio V,Edificio Y,0.860000,11,-5646169f574fb7be
+Edificio V,Edificio Z,1.020000,13,-6f1f2ea438411c64
 Edificio V,Entrada Sur,5.180000,48,-724030596d7cda11
-Edificio V,Entrada Principal,1.350000,14,-35916e9219a292b4
+Edificio V,Entrada Principal,1.340000,15,346462c2abb2fd63
 Edificio V,Entrada Este,3.190000,34,5a346ab967b263f7
 Edificio V,Estacionamiento 1,4.330000,46,6aa4b182f10b1000
 Edificio V,Estacionamiento 2,2.720000,29,5a29c8a0735c6d0b
@@ -1573,28 +1573,28 @@ Edificio V,Estacionamiento 4,5.440000,51,-7749d6a8734fbc73
 Edificio V,Estacionamiento 5,5.300000,49,5f495eb2f5b899bf
 Edificio V,Laboratorio de técnicas deportivas y de rescate,4.320000,40,-56f4f1518cd2307f
 Edificio V,Laboratorio de Electrónica,2.900000,28,5fcdd76836779b6d
-Edificio V,Laboratorio de Periodismo,4.190000,41,-4cd9458ed5314812
+Edificio V,Laboratorio de Periodismo,4.290000,42,-254b7ced940d417c
 Edificio V,Laboratorio de Programación,3.530000,33,-12d87dd7e410467b
 Edificio V,Protección Civil,1.230000,13,037de6ee2ceedc2d
 Edificio V,Radio UDG,1.350000,15,5c88b97ce7aedfc7
-Edificio V,Rectoría,2.700000,27,-7e1bb470f54d2dcd
+Edificio V,Rectoría,2.850000,29,-3bd6c2ca665da763
 Edificio V,Sala de Gobierno,1.330000,15,-1085d2812e6bca7e
-Edificio V,Hospital Veterinario,5.150000,49,46ea4982e1489a6f
+Edificio V,Hospital Veterinario,5.270000,50,-4c2f156ac33234a2
 Edificio W,Auditorio C.A.S.A.,4.660000,47,-6b2b6f7b227e0dc3
 Edificio W,Auditorio Antonio González Ochoa,1.070000,12,3a458ad8c278e6d6
-Edificio W,Auditorio Adolfo Aguilar Zínser,4.670000,48,5dcf137fbc9c74c9
+Edificio W,Auditorio Adolfo Aguilar Zínser,4.760000,51,683595c4a935dc9c
 Edificio W,Bufete Jurídico,0.820000,10,51a375c38782bf6d
 Edificio W,C.A.S.A. (Biblioteca),5.200000,51,-19fecbf047cd5b96
 Edificio W,C.M.I.D.,5.060000,50,0ee46dac541d1d4d
 Edificio W,Centro Acuático,5.430000,53,-d567b42afe0a37b
-Edificio W,Cafetería Pequeña,6.120000,63,7f1bf032708b0fe0
-Edificio W,Cafetería Principal,2.520000,27,2998c8725a08a577
+Edificio W,Cafetería Pequeña,6.220000,64,-63c563a0e00ffdbe
+Edificio W,Cafetería Principal,2.550000,28,-234c2ce2ac50f562
 Edificio W,Cancha de fútbol central,2.310000,25,689c06defbc886cb
-Edificio W,Cancha de fútbol norte,5.260000,55,005184f2e89d32c6
-Edificio W,Cancha múltiple,4.850000,51,0978ff83fd935b36
+Edificio W,Cancha de fútbol norte,5.360000,56,-2c1133d2fe6ad42c
+Edificio W,Cancha múltiple,4.950000,52,3793d63ce78518cc
 Edificio W,Centro de Aprendizaje Global,6.450000,63,-43440accfb6e291e
 Edificio W,Clínica Escuela,1.530000,17,2cfd9ef6d1381017
-Edificio W,Edificio B,3.760000,39,6eabb345e6bef5c2
+Edificio W,Edificio B,3.790000,40,57cf404425f5757e
 Edificio W,Edificio C,3.370000,35,3a41cbdfbfe0bb9e
 Edificio W,Edificio F,5.120000,50,-7463602edf8457f4
 Edificio W,Edificio G,5.100000,50,04ca0659edcd1e84
@@ -1602,16 +1602,16 @@ Edificio W,Edificio H,3.600000,38,-2185374027250ada
 Edificio W,Edificio I,4.180000,46,7949325b46eef986
 Edificio W,Edificio J,3.340000,35,70336678795b4be4
 Edificio W,Edificio L,3.890000,39,-2c4eddb320225688
-Edificio W,Edificio M,4.950000,51,-7b2e169468dd9165
+Edificio W,Edificio M,5.050000,52,-7d63b22cd06cf1b
 Edificio W,Edificio N,0.330000,4,-61978d0a816a6d9
 Edificio W,Edificio P,1.740000,20,3ee4ca0d62a2428f
 Edificio W,Edificio Q,1.830000,20,20a29688490b856c
-Edificio W,Edificio R,3.050000,32,051888a4450a6cc0
+Edificio W,Edificio R,3.020000,32,51522dbe1d5bb9b3
 Edificio W,Edificio S,3.500000,37,-7bfda1af3652615f
 Edificio W,Edificio T,3.940000,42,4464bfba32f2a2f3
 Edificio W,Edificio U,4.670000,50,-574af3a5f9b1465b
-Edificio W,Edificio V,0.890000,12,-6f3019fd5045f4f0
-Edificio W,Edificio X,0.540000,8,-4a25707bd4eeb4ab
+Edificio W,Edificio V,1.000000,12,-64d748cc053b1492
+Edificio W,Edificio X,0.730000,9,-27f55cb8f2f5dc0e
 Edificio W,Edificio Y,0.780000,9,-6359c20f4fd9d927
 Edificio W,Edificio Z,0.910000,10,-6ef7c292a95dbfd0
 Edificio W,Entrada Sur,5.800000,56,6b5c19007a47c490
@@ -1624,28 +1624,28 @@ Edificio W,Estacionamiento 4,6.060000,59,-e1480e8e8f49b1c
 Edificio W,Estacionamiento 5,5.920000,57,3c513850d437e240
 Edificio W,Laboratorio de técnicas deportivas y de rescate,4.940000,48,2ed06d914fca83d4
 Edificio W,Laboratorio de Electrónica,3.520000,36,015b612bb4b427ca
-Edificio W,Laboratorio de Periodismo,4.810000,49,-52499133a4bdc0f7
+Edificio W,Laboratorio de Periodismo,4.910000,50,-e82f6cb3914e23d
 Edificio W,Laboratorio de Programación,4.150000,41,3b03ab9a247d98d4
 Edificio W,Protección Civil,1.330000,14,-32590b8409ffa488
 Edificio W,Radio UDG,1.570000,18,61ac52c88d61c2d1
-Edificio W,Rectoría,3.320000,35,-77d6fdd5815a324
+Edificio W,Rectoría,3.470000,37,-65925195e707c234
 Edificio W,Sala de Gobierno,1.550000,18,1e82a11328c7237c
-Edificio W,Hospital Veterinario,5.700000,59,3f19f6a9dec6bff1
+Edificio W,Hospital Veterinario,5.670000,59,6ec3e69240b78296
 Edificio X,Auditorio C.A.S.A.,4.220000,41,-239cc09dbdfe6515
-Edificio X,Auditorio Antonio González Ochoa,0.660000,8,-23de388d07056ee7
-Edificio X,Auditorio Adolfo Aguilar Zínser,4.250000,41,-2ec099b225507e5
-Edificio X,Bufete Jurídico,1.080000,13,-69cc23b66550e475
+Edificio X,Auditorio Antonio González Ochoa,0.650000,8,-6c8340ebca128371
+Edificio X,Auditorio Adolfo Aguilar Zínser,4.640000,46,-7f567e0a9581081f
+Edificio X,Bufete Jurídico,1.070000,13,0b76e0720928085d
 Edificio X,C.A.S.A. (Biblioteca),4.760000,45,-7bf8cf8b31df278
 Edificio X,C.M.I.D.,4.620000,44,5fe10356cabe772b
 Edificio X,Centro Acuático,4.990000,47,-1db423f3b7f2ebe5
-Edificio X,Cafetería Pequeña,5.680000,57,26eea01ac24da57e
-Edificio X,Cafetería Principal,2.460000,25,-1d06d76303eb295d
+Edificio X,Cafetería Pequeña,5.780000,58,7d4ad10bf4ab46a8
+Edificio X,Cafetería Principal,2.490000,26,-3cb1bd26e5e7d046
 Edificio X,Cancha de fútbol central,1.870000,19,-4c81425256e51dab
-Edificio X,Cancha de fútbol norte,4.820000,49,-6aba2b84861fba0
-Edificio X,Cancha múltiple,4.410000,45,356647e1f2c04a20
+Edificio X,Cancha de fútbol norte,4.920000,50,52e8472fdadff94e
+Edificio X,Cancha múltiple,4.510000,46,-58ebd8af8f031ae2
 Edificio X,Centro de Aprendizaje Global,6.010000,57,3a30f01723f205d4
 Edificio X,Clínica Escuela,1.360000,14,1c2479bf198d87e5
-Edificio X,Edificio B,3.320000,33,-65dcaf49c6837ee8
+Edificio X,Edificio B,3.350000,34,-5a8aa85d336a36f8
 Edificio X,Edificio C,2.930000,29,-404d5d01eafdd53c
 Edificio X,Edificio F,4.680000,44,-5ad57335941a3f1a
 Edificio X,Edificio G,4.660000,44,7a43e09e65216c36
@@ -1653,20 +1653,20 @@ Edificio X,Edificio H,3.160000,32,-31702dc172283664
 Edificio X,Edificio I,4.130000,45,-316f034f67d36962
 Edificio X,Edificio J,2.900000,29,49ae067d18819972
 Edificio X,Edificio L,3.450000,33,14c2fce5b077e88a
-Edificio X,Edificio M,4.510000,45,-5d95fec219a27f4f
-Edificio X,Edificio N,0.870000,11,6547b7161126492b
+Edificio X,Edificio M,4.610000,46,-3efb24c72532cc1d
+Edificio X,Edificio N,1.060000,12,-272cba1f6c383b08
 Edificio X,Edificio P,1.690000,19,-726b6e71e97967a9
 Edificio X,Edificio Q,1.780000,19,-7e1de4a32a4a224c
-Edificio X,Edificio R,2.990000,30,13cdca13e9d48eec
+Edificio X,Edificio R,2.960000,30,213ddcc91bb3e147
 Edificio X,Edificio S,3.450000,36,-142694ee1adbf67
 Edificio X,Edificio T,3.890000,41,-32ca42895677b685
 Edificio X,Edificio U,4.620000,49,-d9ecb33aa957563
 Edificio X,Edificio V,0.350000,5,53b84456b71b041d
-Edificio X,Edificio W,0.540000,8,-59b54431b6cbec8f
-Edificio X,Edificio Y,0.520000,7,6d34dba7569f80bd
-Edificio X,Edificio Z,0.680000,9,-588f710dbbf3d6b1
+Edificio X,Edificio W,0.730000,9,-443ffb4dd89edcf8
+Edificio X,Edificio Y,0.510000,7,-484f583c75f70485
+Edificio X,Edificio Z,0.670000,9,7669ed5e04613185
 Edificio X,Entrada Sur,5.360000,50,-6826b41f1f195352
-Edificio X,Entrada Principal,1.000000,11,-4e23737ba2384404
+Edificio X,Entrada Principal,0.990000,11,-3ca910b176decd92
 Edificio X,Entrada Este,3.360000,36,-4ff2d4dbe036e7f
 Edificio X,Estacionamiento 1,4.500000,48,-27a077a464a1295a
 Edificio X,Estacionamiento 2,2.890000,31,3ae1c3629bb5047d
@@ -1675,28 +1675,28 @@ Edificio X,Estacionamiento 4,5.620000,53,-271c5bce6b657482
 Edificio X,Estacionamiento 5,5.480000,51,5c26a553de3bae82
 Edificio X,Laboratorio de técnicas deportivas y de rescate,4.500000,42,-68c0912caf1c8e06
 Edificio X,Laboratorio de Electrónica,3.080000,30,-7422bd11244961c0
-Edificio X,Laboratorio de Periodismo,4.370000,43,7c210aed6975db07
+Edificio X,Laboratorio de Periodismo,4.470000,44,28049deeebb47131
 Edificio X,Laboratorio de Programación,3.710000,35,562903252b6244d2
-Edificio X,Protección Civil,0.890000,9,28effddc26f0210e
+Edificio X,Protección Civil,0.910000,10,6fd05ecc4d31090f
 Edificio X,Radio UDG,1.520000,17,-9ab9104d7650b57
-Edificio X,Rectoría,2.880000,29,-107a829352a65076
+Edificio X,Rectoría,3.030000,31,1633440e3bcfc022
 Edificio X,Sala de Gobierno,1.500000,17,-4409a3764fb4e19c
-Edificio X,Hospital Veterinario,5.330000,51,68df1125568e17e8
+Edificio X,Hospital Veterinario,5.450000,52,479c71260893aa43
 Edificio Y,Auditorio C.A.S.A.,4.640000,46,-7cafe8061e372dbb
 Edificio Y,Auditorio Antonio González Ochoa,0.300000,4,-6a362c37e916086b
-Edificio Y,Auditorio Adolfo Aguilar Zínser,4.670000,46,36fe03bda694e129
+Edificio Y,Auditorio Adolfo Aguilar Zínser,5.060000,51,-1044b893d77f6515
 Edificio Y,Bufete Jurídico,0.570000,7,7498a3cbe3bfdab7
 Edificio Y,C.A.S.A. (Biblioteca),5.180000,50,2f5a575e8e3f7ab2
 Edificio Y,C.M.I.D.,5.040000,49,7a0963b8a7c9fd05
 Edificio Y,Centro Acuático,5.410000,52,0e046f7f56af98fd
-Edificio Y,Cafetería Pequeña,6.100000,62,5c263da4fc17a888
-Edificio Y,Cafetería Principal,2.880000,30,3bcc539616cce5d1
+Edificio Y,Cafetería Pequeña,6.200000,63,-60f02d80e8118246
+Edificio Y,Cafetería Principal,2.910000,31,-23d66418e638cf20
 Edificio Y,Cancha de fútbol central,2.290000,24,489c52afdf7ae8b3
-Edificio Y,Cancha de fútbol norte,5.240000,54,2847066fa116c0ee
-Edificio Y,Cancha múltiple,4.830000,50,4f74683d693f16be
+Edificio Y,Cancha de fútbol norte,5.340000,55,-7b2ec4d19c20a414
+Edificio Y,Cancha múltiple,4.930000,51,-f09b850ffc4a2fc
 Edificio Y,Centro de Aprendizaje Global,6.430000,62,34da84162819f10a
 Edificio Y,Clínica Escuela,1.780000,19,-43ca150464c37dfd
-Edificio Y,Edificio B,3.740000,38,7a4fc23769d4078a
+Edificio Y,Edificio B,3.770000,39,-20174a24c32eb60a
 Edificio Y,Edificio C,3.350000,34,-a417104ae52c53a
 Edificio Y,Edificio F,5.100000,49,18120fa2a47f0d44
 Edificio Y,Edificio G,5.080000,49,-9829753c7ece304
@@ -1704,17 +1704,17 @@ Edificio Y,Edificio H,3.580000,37,-733c884d441a0c32
 Edificio Y,Edificio I,4.570000,50,0f9e161e4e53f3d4
 Edificio Y,Edificio J,3.320000,34,3ca31c9640a6fe8c
 Edificio Y,Edificio L,3.870000,38,-39c360f99e5c0ae0
-Edificio Y,Edificio M,4.930000,50,-5b07b6a9d82ec8fd
+Edificio Y,Edificio M,5.030000,51,52ca295093f9501d
 Edificio Y,Edificio N,1.110000,12,2a46a57ab95c9c99
 Edificio Y,Edificio P,2.130000,24,332a8530572662b1
 Edificio Y,Edificio Q,2.220000,24,7d3465b45f0e6bbe
-Edificio Y,Edificio R,3.410000,35,04d6d2a0fdba2332
+Edificio Y,Edificio R,3.380000,35,5935bbebfc763025
 Edificio Y,Edificio S,3.890000,41,6a1d33224ed8d6cf
 Edificio Y,Edificio T,4.330000,46,-6023a4d1375015b7
 Edificio Y,Edificio U,5.060000,54,-3cbd9d59fef82ead
-Edificio Y,Edificio V,0.870000,10,-6bedd0593a91a1c3
+Edificio Y,Edificio V,0.860000,11,-53711d3e301a8328
 Edificio Y,Edificio W,0.780000,9,0f4bdd92034a726b
-Edificio Y,Edificio X,0.520000,7,-4992a9a03a4beff3
+Edificio Y,Edificio X,0.510000,7,-2a3178caa15f9bf3
 Edificio Y,Edificio Z,0.260000,4,-7d4aabc0ff343007
 Edificio Y,Entrada Sur,5.780000,55,-10d4dfa591ef7618
 Edificio Y,Entrada Principal,0.520000,6,3d62886bbd8b7b0e
@@ -1726,28 +1726,28 @@ Edificio Y,Estacionamiento 4,6.040000,58,-4b49be89c9bc4314
 Edificio Y,Estacionamiento 5,5.900000,56,6fb5cd4bbcfee0c8
 Edificio Y,Laboratorio de técnicas deportivas y de rescate,4.920000,47,299ac231df0444fc
 Edificio Y,Laboratorio de Electrónica,3.500000,35,5cc70c3bcaa6f132
-Edificio Y,Laboratorio de Periodismo,4.790000,48,-3792d65ee566f2af
+Edificio Y,Laboratorio de Periodismo,4.890000,49,47750ef0aaf59cdb
 Edificio Y,Laboratorio de Programación,4.130000,40,-7cc449911d899e84
 Edificio Y,Protección Civil,0.680000,7,-4c669a901eec0529
 Edificio Y,Radio UDG,1.960000,22,6ac3316230a49337
-Edificio Y,Rectoría,3.300000,34,-679118b7de92a3c
+Edificio Y,Rectoría,3.450000,36,-59ec7a5ef2d2428c
 Edificio Y,Sala de Gobierno,1.940000,22,148fe4f594265172
-Edificio Y,Hospital Veterinario,5.750000,56,-7638d9cb586e2eaa
+Edificio Y,Hospital Veterinario,5.870000,57,3b2a7d572e1d5175
 Edificio Z,Auditorio C.A.S.A.,4.800000,48,0548dbfa5c26e5d9
 Edificio Z,Auditorio Antonio González Ochoa,0.460000,6,-6628fbf8d755d93f
-Edificio Z,Auditorio Adolfo Aguilar Zínser,4.830000,48,21e0bb00795f4e2d
+Edificio Z,Auditorio Adolfo Aguilar Zínser,5.220000,53,3fb128134d38b027
 Edificio Z,Bufete Jurídico,0.440000,5,-4204ac37b1d7e5cb
 Edificio Z,C.A.S.A. (Biblioteca),5.340000,52,-537b81c34bbc42d2
 Edificio Z,C.M.I.D.,5.200000,51,61edf07fd279eb01
 Edificio Z,Centro Acuático,5.570000,54,-5e913b6081a5d20f
-Edificio Z,Cafetería Pequeña,6.260000,64,-5fd074429db97714
-Edificio Z,Cafetería Principal,3.040000,32,14f48506d2ea7cad
+Edificio Z,Cafetería Pequeña,6.360000,65,4d5839e2e458c2fe
+Edificio Z,Cafetería Principal,3.070000,33,-396693ef77309b74
 Edificio Z,Cancha de fútbol central,2.450000,26,35e29040bd88188f
-Edificio Z,Cancha de fútbol norte,5.400000,56,6448280caf1051e2
-Edificio Z,Cancha múltiple,4.990000,52,2b3084493aab789a
+Edificio Z,Cancha de fútbol norte,5.500000,57,-473cfc7322ac3620
+Edificio Z,Cancha múltiple,5.090000,53,4337d9378deebea0
 Edificio Z,Centro de Aprendizaje Global,6.590000,64,-797133560e761512
 Edificio Z,Clínica Escuela,1.940000,21,39972a59e0e085f7
-Edificio Z,Edificio B,3.900000,40,-42d1b458f33e95ca
+Edificio Z,Edificio B,3.930000,41,-37876d428afa867e
 Edificio Z,Edificio C,3.510000,36,-3f0690f5ade90fc6
 Edificio Z,Edificio F,5.260000,51,275efb75efb84080
 Edificio Z,Edificio G,5.240000,51,6eef569bf479f918
@@ -1755,17 +1755,17 @@ Edificio Z,Edificio H,3.740000,39,-d771b03fa796a4e
 Edificio Z,Edificio I,4.730000,52,42f71a5e2550ba08
 Edificio Z,Edificio J,3.480000,36,-4a1cf553629cdd38
 Edificio Z,Edificio L,4.030000,40,3ef3cc84b8414ebc
-Edificio Z,Edificio M,5.090000,52,-5bfae1ab12dfb069
+Edificio Z,Edificio M,5.190000,53,3048a151b2d92231
 Edificio Z,Edificio N,1.240000,13,3ea5b5665f4b0492
 Edificio Z,Edificio P,2.290000,26,-460655fa3b3a94db
 Edificio Z,Edificio Q,2.380000,26,5a4d6d5cf586f432
-Edificio Z,Edificio R,3.570000,37,-7c7639283f02b4b2
+Edificio Z,Edificio R,3.540000,37,-113ff13c2cc785b7
 Edificio Z,Edificio S,4.050000,43,3df621a7147c2323
 Edificio Z,Edificio T,4.490000,48,-5816fb9c265a1523
 Edificio Z,Edificio U,5.220000,56,-1bc015efbc6f41f1
-Edificio Z,Edificio V,1.030000,13,-4c7137f0d5daf894
+Edificio Z,Edificio V,1.020000,13,40dbb2d3703395bc
 Edificio Z,Edificio W,0.910000,10,-2324d49c862ab282
-Edificio Z,Edificio X,0.680000,9,-f234fd1438f350f
+Edificio Z,Edificio X,0.670000,9,-68e91681a769cfbf
 Edificio Z,Edificio Y,0.260000,4,6028b481ac0a7c6b
 Edificio Z,Entrada Sur,5.940000,57,67e15e02807eab5c
 Edificio Z,Entrada Principal,0.580000,6,46fb52531062257b
@@ -1777,22 +1777,22 @@ Edificio Z,Estacionamiento 4,6.200000,60,-7857cec66b02ee78
 Edificio Z,Estacionamiento 5,6.060000,58,39216a86ff716ec4
 Edificio Z,Laboratorio de técnicas deportivas y de rescate,5.080000,49,3a80c4a5128804c8
 Edificio Z,Laboratorio de Electrónica,3.660000,37,-42f8cb27d617bcd2
-Edificio Z,Laboratorio de Periodismo,4.950000,50,5ad01d963493e40d
+Edificio Z,Laboratorio de Periodismo,5.050000,51,7c72591918c62087
 Edificio Z,Laboratorio de Programación,4.290000,42,-2e52447413fc6ef8
 Edificio Z,Protección Civil,0.590000,7,-10533fda63c82836
 Edificio Z,Radio UDG,2.120000,24,30b7dacb663813e3
-Edificio Z,Rectoría,3.460000,36,03d1e00ace9d4fd0
+Edificio Z,Rectoría,3.610000,38,19963a3a5bd9cee8
 Edificio Z,Sala de Gobierno,2.100000,24,-19bf2b946d975d6a
-Edificio Z,Hospital Veterinario,5.910000,58,7b221f06f21eaf4a
+Edificio Z,Hospital Veterinario,6.030000,59,-a1faa2c31395a37
 Entrada Sur,Auditorio C.A.S.A.,2.600000,26,7efe1147b1c226e1
 Entrada Sur,Auditorio Antonio González Ochoa,5.890000,56,091bd51eb7cc97fc
-Entrada Sur,Auditorio Adolfo Aguilar Zínser,5.160000,48,53c1c54d0b587f87
+Entrada Sur,Auditorio Adolfo Aguilar Zínser,5.550000,53,6e09d04efc18e055
 Entrada Sur,Bufete Jurídico,6.340000,61,2d0e1e2f426944f4
 Entrada Sur,C.A.S.A. (Biblioteca),3.310000,32,148931d22b7c211b
 Entrada Sur,C.M.I.D.,2.180000,21,-b4dba0a1e99151c
 Entrada Sur,Centro Acuático,0.420000,5,42d0dc35660bac36
 Entrada Sur,Cafetería Pequeña,4.650000,45,71953ea4b73fd0e2
-Entrada Sur,Cafetería Principal,4.700000,44,-8c0d24bba60cf12
+Entrada Sur,Cafetería Principal,4.730000,45,4dfe097b511335b3
 Entrada Sur,Cancha de fútbol central,3.790000,36,5ad8b2375af5bccc
 Entrada Sur,Cancha de fútbol norte,3.790000,37,-38878c03415a234c
 Entrada Sur,Cancha múltiple,4.090000,41,71f0007bc19b8cb0
@@ -1832,24 +1832,24 @@ Entrada Sur,Laboratorio de Periodismo,3.850000,38,-7ead032c9a1ab667
 Entrada Sur,Laboratorio de Programación,2.170000,21,76a08177b205ae1f
 Entrada Sur,Protección Civil,5.710000,54,71c978b695c89c92
 Entrada Sur,Radio UDG,5.010000,49,63d6d5aee87b870f
-Entrada Sur,Rectoría,3.820000,36,78b6e43da4eec6b9
+Entrada Sur,Rectoría,3.970000,38,-464ee90fd2df55a5
 Entrada Sur,Sala de Gobierno,4.800000,47,-6bc0038e3f11d840
-Entrada Sur,Hospital Veterinario,6.240000,58,-2a8e423dc1c017dc
+Entrada Sur,Hospital Veterinario,6.360000,59,5926fe0da937372f
 Entrada Principal,Auditorio C.A.S.A.,4.960000,50,-69bbb3b3d07e77c4
 Entrada Principal,Auditorio Antonio González Ochoa,0.780000,8,70037f3bc1e3ef50
-Entrada Principal,Auditorio Adolfo Aguilar Zínser,4.970000,51,7009f3cb2eaa1bec
+Entrada Principal,Auditorio Adolfo Aguilar Zínser,5.060000,54,0ddf9e31a1361f59
 Entrada Principal,Bufete Jurídico,0.490000,6,5cbe735844228d12
 Entrada Principal,C.A.S.A. (Biblioteca),5.500000,54,280ede723f17e7c1
 Entrada Principal,C.M.I.D.,5.360000,53,12e3d8b2291cc42c
 Entrada Principal,Centro Acuático,5.730000,56,0efdb36d5a4b5786
-Entrada Principal,Cafetería Pequeña,6.420000,66,-3a8b7dece1fdcef1
-Entrada Principal,Cafetería Principal,2.820000,30,-5e0878c7dcc100d4
+Entrada Principal,Cafetería Pequeña,6.520000,67,72bffff9b7f9bd55
+Entrada Principal,Cafetería Principal,2.850000,31,-2bab77817c6e97df
 Entrada Principal,Cancha de fútbol central,2.610000,28,-1864dee76e974858
-Entrada Principal,Cancha de fútbol norte,5.560000,58,-3cccaec25dfdfa1f
-Entrada Principal,Cancha múltiple,5.150000,54,64b3b5ffd2726abb
+Entrada Principal,Cancha de fútbol norte,5.660000,59,-170cf4265572a085
+Entrada Principal,Cancha múltiple,5.250000,55,0dc56f6c356391b5
 Entrada Principal,Centro de Aprendizaje Global,6.750000,66,347da7b1a8622c71
 Entrada Principal,Clínica Escuela,1.830000,20,62695680787edc04
-Entrada Principal,Edificio B,4.060000,42,-4cebcfadec8c10f1
+Entrada Principal,Edificio B,4.090000,43,-3ffb6ab0b599d3ff
 Entrada Principal,Edificio C,3.670000,38,-4c9f2f7654b618d5
 Entrada Principal,Edificio F,5.420000,53,-387e2879bed263ff
 Entrada Principal,Edificio G,5.400000,53,1cd44c21c2cf1171
@@ -1857,17 +1857,17 @@ Entrada Principal,Edificio H,3.900000,41,-19cd267ce5fb152d
 Entrada Principal,Edificio I,4.480000,49,5c8d71051ff8f365
 Entrada Principal,Edificio J,3.640000,38,-1f58460921cac849
 Entrada Principal,Edificio L,4.190000,42,24a25101d504b0f5
-Entrada Principal,Edificio M,5.250000,54,0e23ee43e7b8a8e0
+Entrada Principal,Edificio M,5.350000,55,23f091cbb8677cbe
 Entrada Principal,Edificio N,0.690000,8,014f47010997a4d8
 Entrada Principal,Edificio P,2.040000,23,-78758b9850a3cc9c
 Entrada Principal,Edificio Q,2.130000,23,-4de5422b63e78df9
-Entrada Principal,Edificio R,3.350000,35,4a1f88aa83e0b8bd
+Entrada Principal,Edificio R,3.320000,35,-78fc25eafc6508fe
 Entrada Principal,Edificio S,3.800000,40,002997ed133ec0ca
 Entrada Principal,Edificio T,4.240000,45,60651bb7892729ac
 Entrada Principal,Edificio U,4.970000,53,0b5134d31cd0dd5a
-Entrada Principal,Edificio V,1.190000,15,2afd590f3851bcfd
+Entrada Principal,Edificio V,1.300000,15,701f2a42a4d0ac9f
 Entrada Principal,Edificio W,0.360000,5,-4a35cb573cde4fd8
-Entrada Principal,Edificio X,0.840000,11,53f7fd92272be890
+Entrada Principal,Edificio X,0.990000,11,-1e8470938b37e7e8
 Entrada Principal,Edificio Y,0.520000,6,-300c0bf8134f1972
 Entrada Principal,Edificio Z,0.580000,6,21a8788af270149f
 Entrada Principal,Entrada Sur,6.100000,59,7e68db82f14d68e7
@@ -1879,13 +1879,13 @@ Entrada Principal,Estacionamiento 4,6.360000,62,67a892e14e2252b5
 Entrada Principal,Estacionamiento 5,6.220000,60,54ce456491d1b847
 Entrada Principal,Laboratorio de técnicas deportivas y de rescate,5.240000,51,-5f82d189a01a53d7
 Entrada Principal,Laboratorio de Electrónica,3.820000,39,38459cbba3af5bd5
-Entrada Principal,Laboratorio de Periodismo,5.110000,52,3ded18a4268d26b6
+Entrada Principal,Laboratorio de Periodismo,5.210000,53,0d4470976f26381c
 Entrada Principal,Laboratorio de Programación,4.450000,44,-3b3fb5bc4559c993
 Entrada Principal,Protección Civil,1.160000,11,33c7d9f127c9dec6
 Entrada Principal,Radio UDG,1.870000,21,4d3c7395fd29178e
-Entrada Principal,Rectoría,3.620000,38,6bf4020f054c2a9b
+Entrada Principal,Rectoría,3.770000,40,63ac04dc590579c5
 Entrada Principal,Sala de Gobierno,1.850000,21,-24636f48f0555dfb
-Entrada Principal,Hospital Veterinario,6.000000,62,-3bf76c2afdf81390
+Entrada Principal,Hospital Veterinario,5.970000,62,-fcae892b6aeaa1d
 Entrada Este,Auditorio C.A.S.A.,3.750000,37,-670379e34382a35
 Entrada Este,Auditorio Antonio González Ochoa,3.940000,42,37046a0f84c48613
 Entrada Este,Auditorio Adolfo Aguilar Zínser,2.130000,22,5729029323d8f41a
@@ -1894,10 +1894,10 @@ Entrada Este,C.A.S.A. (Biblioteca),3.590000,34,146ebaf6d2e130ba
 Entrada Este,C.M.I.D.,4.960000,47,-6fcefd849c0a37ad
 Entrada Este,Centro Acuático,5.330000,50,4a339b5d91b371e3
 Entrada Este,Cafetería Pequeña,4.480000,45,-68575f7ab8c29266
-Entrada Este,Cafetería Principal,1.620000,17,50d91c92b36912a0
+Entrada Este,Cafetería Principal,1.660000,18,-14d60972c76a7dbb
 Entrada Este,Cancha de fútbol central,2.740000,28,-6e7e2a553f39bcaa
 Entrada Este,Cancha de fútbol norte,3.620000,37,-640ec18cb083af74
-Entrada Este,Cancha múltiple,3.210000,33,5502c9a6b1f2aba4
+Entrada Este,Cancha múltiple,3.070000,33,3a6a275001a977ad
 Entrada Este,Centro de Aprendizaje Global,5.550000,54,2711ee769a7d8d20
 Entrada Este,Clínica Escuela,2.460000,26,-12a782c0fa28e076
 Entrada Este,Edificio B,2.190000,20,7c2dcef5d8b3fc61
@@ -1908,7 +1908,7 @@ Entrada Este,Edificio H,2.370000,24,734f40088c7e30f8
 Entrada Este,Edificio I,0.940000,9,-21911bc3087fb8b2
 Entrada Este,Edificio J,2.110000,21,3445730183c07276
 Entrada Este,Edificio L,3.370000,32,-4bd0c2e0193c3917
-Entrada Este,Edificio M,3.110000,33,3d47887ade8c588f
+Entrada Este,Edificio M,2.960000,31,-4b82080af5e81497
 Entrada Este,Edificio N,3.740000,40,-72d63bc5bd31cebf
 Entrada Este,Edificio P,2.070000,22,38aef646f83177bd
 Entrada Este,Edificio Q,1.980000,21,2ec9cf9ba9d5e839
@@ -1939,13 +1939,13 @@ Entrada Este,Sala de Gobierno,2.090000,22,60557a5515b959ab
 Entrada Este,Hospital Veterinario,2.820000,26,1a15debd9eede85d
 Estacionamiento 1,Auditorio C.A.S.A.,4.170000,43,-1ac9f55dfe0fb8e7
 Estacionamiento 1,Auditorio Antonio González Ochoa,5.080000,54,-47cfc0bf00972a86
-Estacionamiento 1,Auditorio Adolfo Aguilar Zínser,1.270000,12,-2263cd0e7f832aaf
+Estacionamiento 1,Auditorio Adolfo Aguilar Zínser,1.400000,14,-1c6976021e0bf998
 Estacionamiento 1,Bufete Jurídico,5.310000,57,1bdaa87ffa57654a
 Estacionamiento 1,C.A.S.A. (Biblioteca),3.850000,40,340caa0b7a88941c
 Estacionamiento 1,C.M.I.D.,5.670000,54,-25551200d90bf129
 Estacionamiento 1,Centro Acuático,6.040000,57,4abf2a19cddc17af
 Estacionamiento 1,Cafetería Pequeña,4.460000,46,-c3f64c647119cfd
-Estacionamiento 1,Cafetería Principal,2.760000,29,43350398fe3b2957
+Estacionamiento 1,Cafetería Principal,2.800000,30,-5e7ca525a1e45542
 Estacionamiento 1,Cancha de fútbol central,3.880000,40,610a804268787c77
 Estacionamiento 1,Cancha de fútbol norte,3.600000,38,4da95ecc5351d375
 Estacionamiento 1,Cancha múltiple,2.450000,26,-21fe24a8e1c3314a
@@ -1985,24 +1985,24 @@ Estacionamiento 1,Laboratorio de Periodismo,3.860000,37,06840b329e222a42
 Estacionamiento 1,Laboratorio de Programación,4.650000,48,038796922f77bc05
 Estacionamiento 1,Protección Civil,5.220000,54,2d5ef171afd1c041
 Estacionamiento 1,Radio UDG,3.520000,38,179a2d53798ecbf7
-Estacionamiento 1,Rectoría,2.700000,26,-2280423742009916
+Estacionamiento 1,Rectoría,2.710000,27,-10f4e1e6beb37ead
 Estacionamiento 1,Sala de Gobierno,3.230000,34,209f9e1ba60ab0ba
 Estacionamiento 1,Hospital Veterinario,1.380000,13,545e7b6f492ccaad
 Estacionamiento 2,Auditorio C.A.S.A.,3.670000,37,5504f951bdd08d7f
 Estacionamiento 2,Auditorio Antonio González Ochoa,3.470000,37,7fef100c3288c5f7
-Estacionamiento 2,Auditorio Adolfo Aguilar Zínser,2.310000,23,3228a5cf980b323e
+Estacionamiento 2,Auditorio Adolfo Aguilar Zínser,2.360000,25,4f204d2d1f5c36a8
 Estacionamiento 2,Bufete Jurídico,3.700000,40,1d83e8dffeebeaed
 Estacionamiento 2,C.A.S.A. (Biblioteca),3.510000,34,-55956a7a5d68cada
 Estacionamiento 2,C.M.I.D.,4.690000,45,-7a726fc181156e3c
 Estacionamiento 2,Centro Acuático,5.060000,48,0b99e65fe1e2e1de
 Estacionamiento 2,Cafetería Pequeña,4.400000,45,7af67707348aae96
-Estacionamiento 2,Cafetería Principal,1.150000,12,-150eab3ce4820ae4
+Estacionamiento 2,Cafetería Principal,1.190000,13,750d264c21b68891
 Estacionamiento 2,Cancha de fútbol central,2.270000,23,-4ba0ac75b0155886
 Estacionamiento 2,Cancha de fútbol norte,3.540000,37,412b9b43246fc5b8
 Estacionamiento 2,Cancha múltiple,3.130000,33,-14c5448afc4a4168
 Estacionamiento 2,Centro de Aprendizaje Global,5.470000,54,0cf321be38199664
 Estacionamiento 2,Clínica Escuela,1.990000,21,-7298abb98afad532
-Estacionamiento 2,Edificio B,2.110000,20,539a31a682a3b77d
+Estacionamiento 2,Edificio B,2.020000,21,-159a0074983b3dad
 Estacionamiento 2,Edificio C,2.440000,24,6deff2f3ddc472d7
 Estacionamiento 2,Edificio F,4.500000,43,15ca28f03b415bcc
 Estacionamiento 2,Edificio G,4.480000,43,-45fe9135c9e82dbc
@@ -2010,7 +2010,7 @@ Estacionamiento 2,Edificio H,2.100000,22,-58af86d38c42e117
 Estacionamiento 2,Edificio I,1.500000,18,-19ff00d4e6fb3212
 Estacionamiento 2,Edificio J,1.840000,19,-2c2097261ddb3f53
 Estacionamiento 2,Edificio L,3.100000,30,2acacd105218e092
-Estacionamiento 2,Edificio M,3.230000,33,4e78b0ac201f7849
+Estacionamiento 2,Edificio M,3.020000,32,788b1b67b2aeca01
 Estacionamiento 2,Edificio N,3.270000,35,0c2b6bae1c656665
 Estacionamiento 2,Edificio P,1.600000,17,-2f804b974159a97f
 Estacionamiento 2,Edificio Q,1.510000,16,77c312ed86a7256d
@@ -2041,31 +2041,31 @@ Estacionamiento 2,Sala de Gobierno,1.620000,17,-4a428f4e8b59ee59
 Estacionamiento 2,Hospital Veterinario,3.250000,33,1bb2d79581b04e1a
 Estacionamiento 3,Auditorio C.A.S.A.,3.840000,38,-11b8934992dc93b3
 Estacionamiento 3,Auditorio Antonio González Ochoa,2.680000,29,-17f34625bfbd901f
-Estacionamiento 3,Auditorio Adolfo Aguilar Zínser,3.110000,31,3473ec18e4d71972
+Estacionamiento 3,Auditorio Adolfo Aguilar Zínser,3.160000,33,609da0107da06b6c
 Estacionamiento 3,Bufete Jurídico,2.910000,32,-5534e281b5c44a61
-Estacionamiento 3,C.A.S.A. (Biblioteca),4.150000,39,-6a30e1084cc3966
+Estacionamiento 3,C.A.S.A. (Biblioteca),4.140000,39,-4434e43f9fa1a208
 Estacionamiento 3,C.M.I.D.,4.240000,41,1cf2838412a5c83d
 Estacionamiento 3,Centro Acuático,4.610000,44,-24a922779a9c11eb
-Estacionamiento 3,Cafetería Pequeña,5.040000,50,-4954374538a20846
-Estacionamiento 3,Cafetería Principal,1.050000,11,-496b15fec076010a
+Estacionamiento 3,Cafetería Pequeña,5.030000,50,655d0aa1955aeb14
+Estacionamiento 3,Cafetería Principal,1.080000,12,-2f5619414a6eb295
 Estacionamiento 3,Cancha de fútbol central,1.490000,16,756abf0b6b76b9db
-Estacionamiento 3,Cancha de fútbol norte,4.180000,42,-218273ca9acaca14
-Estacionamiento 3,Cancha múltiple,3.770000,38,-814f3d64e7d24fc
+Estacionamiento 3,Cancha de fútbol norte,4.170000,42,4b3bb31104ceea4a
+Estacionamiento 3,Cancha múltiple,3.760000,38,-995a085683d2b9e
 Estacionamiento 3,Centro de Aprendizaje Global,5.630000,54,3c38eb8b71453132
 Estacionamiento 3,Clínica Escuela,1.200000,13,-6d373e55d1ed40cc
-Estacionamiento 3,Edificio B,2.730000,27,-29e979931bb517c6
+Estacionamiento 3,Edificio B,2.600000,26,-5bee83358061a774
 Estacionamiento 3,Edificio C,2.550000,26,-5c99fd9ae4c92352
 Estacionamiento 3,Edificio F,4.300000,41,-7ae1363be35f46e4
 Estacionamiento 3,Edificio G,4.280000,41,-6bf219469ae9712c
-Estacionamiento 3,Edificio H,2.690000,27,-23800b12d66c8acc
+Estacionamiento 3,Edificio H,2.680000,27,-3e224c402e25ad8e
 Estacionamiento 3,Edificio I,2.300000,26,28363b0e6c89f642
-Estacionamiento 3,Edificio J,2.430000,24,-746cb9c54b3a6516
+Estacionamiento 3,Edificio J,2.420000,24,67f0a14a277c1708
 Estacionamiento 3,Edificio L,3.070000,30,2a7e07ada1ee8a08
-Estacionamiento 3,Edificio M,3.870000,38,-21733e542c62c5e3
+Estacionamiento 3,Edificio M,3.820000,40,-342a051fa81a630b
 Estacionamiento 3,Edificio N,2.480000,27,-42e7efc3df8cd45
 Estacionamiento 3,Edificio P,0.810000,9,-6f803670352ccbe9
 Estacionamiento 3,Edificio Q,0.720000,8,038b336da2cc1993
-Estacionamiento 3,Edificio R,1.550000,16,141868ec9c395032
+Estacionamiento 3,Edificio R,1.550000,16,5a8db4dcd8a585f2
 Estacionamiento 3,Edificio S,1.620000,17,-2a382bce9a5a9073
 Estacionamiento 3,Edificio T,2.060000,22,-63615b2bc92ca921
 Estacionamiento 3,Edificio U,2.790000,30,533dcd915ce205c9
@@ -2083,22 +2083,22 @@ Estacionamiento 3,Estacionamiento 4,5.240000,50,2d01a7d021b0bcf4
 Estacionamiento 3,Estacionamiento 5,5.100000,48,0f485ac341722430
 Estacionamiento 3,Laboratorio de técnicas deportivas y de rescate,4.120000,39,-2f3db784fdab2b9c
 Estacionamiento 3,Laboratorio de Electrónica,2.700000,27,-42f22a2aa8a4d686
-Estacionamiento 3,Laboratorio de Periodismo,3.730000,36,46613fcf54f176db
+Estacionamiento 3,Laboratorio de Periodismo,3.720000,36,-7658e0b2a8bc9b6b
 Estacionamiento 3,Laboratorio de Programación,3.330000,32,0e8bb4321b6554c4
 Estacionamiento 3,Protección Civil,2.820000,29,-14161f18085f54ca
 Estacionamiento 3,Radio UDG,1.120000,13,54e5c1b906969772
-Estacionamiento 3,Rectoría,2.290000,23,-1919fe36c506548c
+Estacionamiento 3,Rectoría,2.280000,23,7afad5139f0e2b4e
 Estacionamiento 3,Sala de Gobierno,0.830000,9,153e528629207df9
 Estacionamiento 3,Hospital Veterinario,4.050000,41,-6afffa219d00dfaa
 Estacionamiento 4,Auditorio C.A.S.A.,2.860000,29,0402f6559445c6eb
 Estacionamiento 4,Auditorio Antonio González Ochoa,6.150000,59,-79f550ec1395db7a
-Estacionamiento 4,Auditorio Adolfo Aguilar Zínser,5.420000,51,30e9e369bfcec145
+Estacionamiento 4,Auditorio Adolfo Aguilar Zínser,5.810000,56,044ee7c458309fbf
 Estacionamiento 4,Bufete Jurídico,6.600000,64,696e5fe237af325a
 Estacionamiento 4,C.A.S.A. (Biblioteca),3.570000,35,1c861cd14a9b0101
 Estacionamiento 4,C.M.I.D.,2.440000,24,6fbbf804fd80b04a
 Estacionamiento 4,Centro Acuático,0.630000,7,-57da2c0aec395125
 Estacionamiento 4,Cafetería Pequeña,4.910000,48,0347fca282439084
-Estacionamiento 4,Cafetería Principal,4.960000,47,-626a21d4cac5b3d8
+Estacionamiento 4,Cafetería Principal,4.990000,48,6c6383a57b4c201d
 Estacionamiento 4,Cancha de fútbol central,4.050000,39,146fe35ab1bf815e
 Estacionamiento 4,Cancha de fútbol norte,4.050000,40,30fc044ca33a95ba
 Estacionamiento 4,Cancha múltiple,4.350000,44,-125e405a4909036e
@@ -2138,18 +2138,18 @@ Estacionamiento 4,Laboratorio de Periodismo,4.110000,41,6323df55b56120bb
 Estacionamiento 4,Laboratorio de Programación,2.430000,24,461e0f9a0979671d
 Estacionamiento 4,Protección Civil,5.970000,57,-1e4189f9b6b236f8
 Estacionamiento 4,Radio UDG,5.270000,52,-dd743b6ffb62dc7
-Estacionamiento 4,Rectoría,4.080000,39,-79076724922d30b5
+Estacionamiento 4,Rectoría,4.230000,41,117d13bf393f9f75
 Estacionamiento 4,Sala de Gobierno,5.060000,50,-2f4a385e7b44de3a
-Estacionamiento 4,Hospital Veterinario,6.500000,61,-4d714456781c8cfe
+Estacionamiento 4,Hospital Veterinario,6.620000,62,-19b1dfc9f4eff81f
 Estacionamiento 5,Auditorio C.A.S.A.,2.720000,27,0f83ef354b895f79
 Estacionamiento 5,Auditorio Antonio González Ochoa,6.010000,57,725d7a476c9f45c4
-Estacionamiento 5,Auditorio Adolfo Aguilar Zínser,5.280000,49,7cf8d6b89b99badf
+Estacionamiento 5,Auditorio Adolfo Aguilar Zínser,5.670000,54,6bea8401808a204d
 Estacionamiento 5,Bufete Jurídico,6.460000,62,2c8fa90af7db4ccc
 Estacionamiento 5,C.A.S.A. (Biblioteca),3.430000,33,1674a36486443dd3
 Estacionamiento 5,C.M.I.D.,2.300000,22,-493d66d0df32a9d4
 Estacionamiento 5,Centro Acuático,1.230000,12,5e781a83e3732615
 Estacionamiento 5,Cafetería Pequeña,4.770000,46,-56efa9f5afba8316
-Estacionamiento 5,Cafetería Principal,4.820000,45,-3361001e36cfbd9a
+Estacionamiento 5,Cafetería Principal,4.850000,46,-50882d5c1785a1e5
 Estacionamiento 5,Cancha de fútbol central,3.910000,37,-5bbf6e075e24530c
 Estacionamiento 5,Cancha de fútbol norte,3.910000,38,32cbea44439c2b9c
 Estacionamiento 5,Cancha múltiple,4.210000,42,3d94f2f12a0c4008
@@ -2189,18 +2189,18 @@ Estacionamiento 5,Laboratorio de Periodismo,3.970000,39,-2d777f7cf00e9a0f
 Estacionamiento 5,Laboratorio de Programación,2.290000,22,3cff797581850177
 Estacionamiento 5,Protección Civil,5.830000,55,-6e8684a0661ed646
 Estacionamiento 5,Radio UDG,5.130000,50,-2e807904a92e5619
-Estacionamiento 5,Rectoría,3.940000,37,-7aeb65a60d80ab8f
+Estacionamiento 5,Rectoría,4.090000,39,-7b8d9446eb43aead
 Estacionamiento 5,Sala de Gobierno,4.920000,48,-5620129181948878
-Estacionamiento 5,Hospital Veterinario,6.360000,59,-7d0231942e3af5a4
+Estacionamiento 5,Hospital Veterinario,6.480000,60,5bcb6e658f42cf87
 Laboratorio de técnicas deportivas y de rescate,Auditorio C.A.S.A.,1.740000,18,47d14e3ccd91390f
 Laboratorio de técnicas deportivas y de rescate,Auditorio Antonio González Ochoa,5.030000,48,-5bd691b8e888a9fe
-Laboratorio de técnicas deportivas y de rescate,Auditorio Adolfo Aguilar Zínser,4.300000,40,5170713c844044b9
+Laboratorio de técnicas deportivas y de rescate,Auditorio Adolfo Aguilar Zínser,4.690000,45,2260c8f9b93f801b
 Laboratorio de técnicas deportivas y de rescate,Bufete Jurídico,5.480000,53,23284caf4fe922ae
 Laboratorio de técnicas deportivas y de rescate,C.A.S.A. (Biblioteca),2.450000,24,1642c7b9fae17235
 Laboratorio de técnicas deportivas y de rescate,C.M.I.D.,1.320000,13,3e4e95a2cd880d86
 Laboratorio de técnicas deportivas y de rescate,Centro Acuático,0.490000,6,4a68bb6f22dcce9f
 Laboratorio de técnicas deportivas y de rescate,Cafetería Pequeña,3.790000,37,0dadbaa89694d678
-Laboratorio de técnicas deportivas y de rescate,Cafetería Principal,3.840000,36,-2cd2b0b495230f94
+Laboratorio de técnicas deportivas y de rescate,Cafetería Principal,3.870000,37,-7249ad831b0b2c1f
 Laboratorio de técnicas deportivas y de rescate,Cancha de fútbol central,2.930000,28,7f6aba7fd1209082
 Laboratorio de técnicas deportivas y de rescate,Cancha de fútbol norte,2.930000,29,-7a329c3b533fa022
 Laboratorio de técnicas deportivas y de rescate,Cancha múltiple,3.230000,33,57b4637663674b46
@@ -2240,18 +2240,18 @@ Laboratorio de técnicas deportivas y de rescate,Laboratorio de Periodismo,2.990
 Laboratorio de técnicas deportivas y de rescate,Laboratorio de Programación,1.310000,13,3bb43b7b59bcb871
 Laboratorio de técnicas deportivas y de rescate,Protección Civil,4.850000,46,-10452aa095e2f904
 Laboratorio de técnicas deportivas y de rescate,Radio UDG,4.150000,41,31e4c70e91b82d05
-Laboratorio de técnicas deportivas y de rescate,Rectoría,2.960000,28,-21c12c72b1f5f9b1
+Laboratorio de técnicas deportivas y de rescate,Rectoría,3.110000,30,-150fa1d35677febf
 Laboratorio de técnicas deportivas y de rescate,Sala de Gobierno,3.940000,39,-5b75407cc32881be
-Laboratorio de técnicas deportivas y de rescate,Hospital Veterinario,5.380000,50,75eef4843e86e766
+Laboratorio de técnicas deportivas y de rescate,Hospital Veterinario,5.500000,51,-6e67c3f17f78983b
 Laboratorio de Electrónica,Auditorio C.A.S.A.,1.260000,14,5c0b9a0942eb04e6
 Laboratorio de Electrónica,Auditorio Antonio González Ochoa,3.610000,36,3b1225eea2768fcc
-Laboratorio de Electrónica,Auditorio Adolfo Aguilar Zínser,2.460000,24,-2fd39d0cc8fcd12a
+Laboratorio de Electrónica,Auditorio Adolfo Aguilar Zínser,2.850000,29,728f1456e5acbe76
 Laboratorio de Electrónica,Bufete Jurídico,4.060000,41,14e05c2335e15ac4
 Laboratorio de Electrónica,C.A.S.A. (Biblioteca),1.800000,18,3125772f78b6d793
 Laboratorio de Electrónica,C.M.I.D.,2.080000,21,-40160bf1847e730b
 Laboratorio de Electrónica,Centro Acuático,2.450000,24,60cee4cf5e8de58d
 Laboratorio de Electrónica,Cafetería Pequeña,3.120000,32,-cd98455e191895d
-Laboratorio de Electrónica,Cafetería Principal,2.290000,22,-3eb94914313f32ca
+Laboratorio de Electrónica,Cafetería Principal,2.330000,23,300e36daa278452b
 Laboratorio de Electrónica,Cancha de fútbol central,1.510000,16,-67dc7ba8cd3bcf24
 Laboratorio de Electrónica,Cancha de fútbol norte,2.260000,24,202555cec71685d5
 Laboratorio de Electrónica,Cancha múltiple,1.850000,20,35228ea777773637
@@ -2291,23 +2291,23 @@ Laboratorio de Electrónica,Laboratorio de Periodismo,1.810000,18,-284e7eb2dfa5d
 Laboratorio de Electrónica,Laboratorio de Programación,1.160000,12,52c181360b9f9333
 Laboratorio de Electrónica,Protección Civil,3.430000,34,-737ec68d67ad8c5e
 Laboratorio de Electrónica,Radio UDG,2.730000,29,5c5f7ebe50182d7f
-Laboratorio de Electrónica,Rectoría,1.120000,12,786397e5b6abc624
+Laboratorio de Electrónica,Rectoría,1.270000,14,72582ab2c7164b94
 Laboratorio de Electrónica,Sala de Gobierno,2.520000,27,4952f68fbeb73c90
-Laboratorio de Electrónica,Hospital Veterinario,3.540000,34,5e7c86717b225791
+Laboratorio de Electrónica,Hospital Veterinario,3.660000,35,-190e5d7a359f130c
 Laboratorio de Periodismo,Auditorio C.A.S.A.,1.360000,15,3cbb6ead741f700c
-Laboratorio de Periodismo,Auditorio Antonio González Ochoa,4.900000,49,-2bba1b07af83c143
-Laboratorio de Periodismo,Auditorio Adolfo Aguilar Zínser,2.610000,25,47b0f01e3bd08e6f
-Laboratorio de Periodismo,Bufete Jurídico,5.350000,54,-36ac994812b367d9
+Laboratorio de Periodismo,Auditorio Antonio González Ochoa,5.000000,50,-5ee0daab36254d95
+Laboratorio de Periodismo,Auditorio Adolfo Aguilar Zínser,3.000000,30,2afb461e5f9229fd
+Laboratorio de Periodismo,Bufete Jurídico,5.450000,55,60e5fc8b5ef56611
 Laboratorio de Periodismo,C.A.S.A. (Biblioteca),1.200000,13,-6d9562efff3cc01
 Laboratorio de Periodismo,C.M.I.D.,3.120000,32,-3c3ee6c9606f0531
 Laboratorio de Periodismo,Centro Acuático,3.480000,35,-4fb42a3487d40c6a
 Laboratorio de Periodismo,Cafetería Pequeña,2.500000,25,-7f06bc2d3b06f7c8
-Laboratorio de Periodismo,Cafetería Principal,2.700000,26,2552179f0fa85d74
-Laboratorio de Periodismo,Cancha de fútbol central,2.800000,29,-297059e623f5cb41
+Laboratorio de Periodismo,Cafetería Principal,2.740000,27,-5016af39e3abc847
+Laboratorio de Periodismo,Cancha de fútbol central,2.900000,30,5a58a7e7c2d04bf5
 Laboratorio de Periodismo,Cancha de fútbol norte,1.640000,17,-66ee8d3223d4f9e2
 Laboratorio de Periodismo,Cancha múltiple,1.650000,18,-992b9b2f7650526
 Laboratorio de Periodismo,Centro de Aprendizaje Global,3.320000,34,-1cacc22f0f76b8a2
-Laboratorio de Periodismo,Clínica Escuela,3.390000,34,-362fa8cf0fbfa5ac
+Laboratorio de Periodismo,Clínica Escuela,3.490000,35,-5a780093e4ce9b26
 Laboratorio de Periodismo,Edificio B,1.200000,12,-5b34743eaccd5c30
 Laboratorio de Periodismo,Edificio C,1.980000,19,-7dafd0a63ec4ffb5
 Laboratorio de Periodismo,Edificio F,2.370000,25,-31c96c31543bda00
@@ -2317,43 +2317,43 @@ Laboratorio de Periodismo,Edificio I,3.680000,36,-6982130b9b1f6931
 Laboratorio de Periodismo,Edificio J,1.820000,19,-278e39f8a2185da0
 Laboratorio de Periodismo,Edificio L,1.850000,19,-348e6024e473af20
 Laboratorio de Periodismo,Edificio M,1.750000,18,-f172d0543100729
-Laboratorio de Periodismo,Edificio N,5.140000,52,20031c2373484cfb
-Laboratorio de Periodismo,Edificio P,3.310000,34,-1a1bcdf3e5359cbc
-Laboratorio de Periodismo,Edificio Q,3.310000,34,-21faca9d22b2e3d5
+Laboratorio de Periodismo,Edificio N,5.240000,53,1e3e5715d5a70c8d
+Laboratorio de Periodismo,Edificio P,3.410000,35,7d96eb734e76451e
+Laboratorio de Periodismo,Edificio Q,3.410000,35,015da97d2029b7c5
 Laboratorio de Periodismo,Edificio R,2.230000,23,7325861132159568
 Laboratorio de Periodismo,Edificio S,2.410000,24,-331808b1dcd69773
 Laboratorio de Periodismo,Edificio T,2.470000,24,1892e68293f46925
 Laboratorio de Periodismo,Edificio U,3.400000,34,-5646a020f7777050
-Laboratorio de Periodismo,Edificio V,4.190000,41,-40af17eeb18b098e
-Laboratorio de Periodismo,Edificio W,4.810000,49,165b37bd3352ea01
-Laboratorio de Periodismo,Edificio X,4.370000,43,4b9143379cd9fbbb
-Laboratorio de Periodismo,Edificio Y,4.790000,48,00df76c850638661
-Laboratorio de Periodismo,Edificio Z,4.950000,50,2b26bcdc8b09eda3
+Laboratorio de Periodismo,Edificio V,4.290000,42,176432eaafd25a58
+Laboratorio de Periodismo,Edificio W,4.910000,50,-42f810cc427a6691
+Laboratorio de Periodismo,Edificio X,4.470000,44,0213277620a96fe5
+Laboratorio de Periodismo,Edificio Y,4.890000,49,2b74aae553905277
+Laboratorio de Periodismo,Edificio Z,5.050000,51,-408394801cc11d9f
 Laboratorio de Periodismo,Entrada Sur,3.850000,38,-25a89d28ff0aac49
-Laboratorio de Periodismo,Entrada Principal,5.270000,52,-bd8f750983da000
+Laboratorio de Periodismo,Entrada Principal,5.370000,53,-2728f6ca7b28f2b6
 Laboratorio de Periodismo,Entrada Este,3.170000,31,140aa5413e47faa9
 Laboratorio de Periodismo,Estacionamiento 1,3.860000,37,6b508312cb160d34
 Laboratorio de Periodismo,Estacionamiento 2,3.090000,31,58a8eb30300c4db9
-Laboratorio de Periodismo,Estacionamiento 3,3.730000,36,-6c4fcafce5399f97
+Laboratorio de Periodismo,Estacionamiento 3,3.720000,36,1a2b071d6db5d7e3
 Laboratorio de Periodismo,Estacionamiento 4,4.110000,41,3a74e7a8502aca05
 Laboratorio de Periodismo,Estacionamiento 5,3.970000,39,6c02fba53b98dfb7
 Laboratorio de Periodismo,Laboratorio de técnicas deportivas y de rescate,2.990000,30,7e3dd59164fa4279
 Laboratorio de Periodismo,Laboratorio de Electrónica,1.810000,18,-75d8099e1183f93c
 Laboratorio de Periodismo,Laboratorio de Programación,1.840000,20,09271ee21044d890
-Laboratorio de Periodismo,Protección Civil,4.720000,47,006ab06b1ace9ec1
-Laboratorio de Periodismo,Radio UDG,4.020000,42,40a864509d23cc00
-Laboratorio de Periodismo,Rectoría,1.490000,15,-678ac4c0a2dc7909
-Laboratorio de Periodismo,Sala de Gobierno,3.810000,40,7aec7e9feca32b47
-Laboratorio de Periodismo,Hospital Veterinario,3.690000,35,436345f7e861072c
+Laboratorio de Periodismo,Protección Civil,4.820000,48,-304fc7ce3f85f56d
+Laboratorio de Periodismo,Radio UDG,4.120000,43,-70f7a2bc377aa242
+Laboratorio de Periodismo,Rectoría,1.680000,18,3de35281a0241fe6
+Laboratorio de Periodismo,Sala de Gobierno,3.910000,41,-6f9f03d627b7f677
+Laboratorio de Periodismo,Hospital Veterinario,3.810000,36,-605f087710655569
 Laboratorio de Programación,Auditorio C.A.S.A.,0.700000,8,5e683efcb09bc15f
 Laboratorio de Programación,Auditorio Antonio González Ochoa,4.240000,41,70b1cbf1aacbb70e
-Laboratorio de Programación,Auditorio Adolfo Aguilar Zínser,3.320000,36,-3f68eb45eb9225e7
+Laboratorio de Programación,Auditorio Adolfo Aguilar Zínser,3.690000,40,595559e0d8ab1285
 Laboratorio de Programación,Bufete Jurídico,4.690000,46,-4d29b996bddcc92e
 Laboratorio de Programación,C.A.S.A. (Biblioteca),1.300000,14,5fd69b348815305a
 Laboratorio de Programación,C.M.I.D.,1.440000,15,72c7fa6e6fd9cea7
 Laboratorio de Programación,Centro Acuático,1.800000,18,-7c40e38387870912
 Laboratorio de Programación,Cafetería Pequeña,2.640000,27,-38417ea6c219e17b
-Laboratorio de Programación,Cafetería Principal,3.050000,29,01c64ffacb30c580
+Laboratorio de Programación,Cafetería Principal,3.080000,30,76d1f861fa1d5ce5
 Laboratorio de Programación,Cancha de fútbol central,2.140000,21,-5cd136706efabffa
 Laboratorio de Programación,Cancha de fútbol norte,1.780000,19,-bd3cad06222e355
 Laboratorio de Programación,Cancha múltiple,2.080000,23,-7225ceaf87de2627
@@ -2393,24 +2393,24 @@ Laboratorio de Programación,Laboratorio de Electrónica,1.160000,12,444ac2df611
 Laboratorio de Programación,Laboratorio de Periodismo,1.840000,20,1d31fc06c68507cc
 Laboratorio de Programación,Protección Civil,4.060000,39,-76417c249ea312d0
 Laboratorio de Programación,Radio UDG,3.360000,34,4b219f887a37feb1
-Laboratorio de Programación,Rectoría,2.160000,21,-f1b53e1beb77b0e
+Laboratorio de Programación,Rectoría,2.310000,23,-3359552ee0792df6
 Laboratorio de Programación,Sala de Gobierno,3.150000,32,3af36c329dac058e
-Laboratorio de Programación,Hospital Veterinario,4.400000,46,-6baac2e40862be3a
+Laboratorio de Programación,Hospital Veterinario,4.400000,45,-2a3cfe23f8fbbfe4
 Protección Civil,Auditorio C.A.S.A.,4.570000,45,22e72674c5a7f0b1
 Protección Civil,Auditorio Antonio González Ochoa,0.420000,5,5f5f0bf49eb0017d
-Protección Civil,Auditorio Adolfo Aguilar Zínser,4.600000,45,-5f15fd2f9334235b
+Protección Civil,Auditorio Adolfo Aguilar Zínser,4.990000,50,-751042c328da9ca1
 Protección Civil,Bufete Jurídico,1.000000,11,3bcc440f12fe675f
 Protección Civil,C.A.S.A. (Biblioteca),5.110000,49,-c2f82f0fd7be19a
 Protección Civil,C.M.I.D.,4.970000,48,-306d031098fb5b97
 Protección Civil,Centro Acuático,5.340000,51,12541d3814e698d9
-Protección Civil,Cafetería Pequeña,6.030000,61,-4ab98c850196ed5c
-Protección Civil,Cafetería Principal,2.810000,29,-35db20850f08d35b
+Protección Civil,Cafetería Pequeña,6.130000,62,5f4fd2e0bc6e0246
+Protección Civil,Cafetería Principal,2.840000,30,-780a7f9d05f81b2c
 Protección Civil,Cancha de fútbol central,2.220000,23,31ad0be914e1a707
-Protección Civil,Cancha de fútbol norte,5.170000,53,-303a6e1aa7d92766
-Protección Civil,Cancha múltiple,4.760000,49,-6de1f247329a41ce
+Protección Civil,Cancha de fútbol norte,5.270000,54,37a0ab6b09b6c428
+Protección Civil,Cancha múltiple,4.860000,50,-b80240b026d9938
 Protección Civil,Centro de Aprendizaje Global,6.360000,61,-4d4419266e9f9a3a
 Protección Civil,Clínica Escuela,1.710000,18,3abb0637eff8ed2f
-Protección Civil,Edificio B,3.670000,37,749bdfbc7758ac8e
+Protección Civil,Edificio B,3.700000,38,30d4b9ca6acb126a
 Protección Civil,Edificio C,3.280000,33,45c3f5e450b75c32
 Protección Civil,Edificio F,5.030000,48,-29a9fd219f991e78
 Protección Civil,Edificio G,5.010000,48,323e3a7d82d0b040
@@ -2418,17 +2418,17 @@ Protección Civil,Edificio H,3.510000,36,-76c8b5cc7d0451d6
 Protección Civil,Edificio I,4.850000,51,-5d04e58fe35fb71
 Protección Civil,Edificio J,3.250000,33,-27fc94729db48580
 Protección Civil,Edificio L,3.800000,37,324a4a9c0fe89974
-Protección Civil,Edificio M,4.860000,49,5949eee2e642480f
+Protección Civil,Edificio M,4.960000,50,23041275ad5f43b9
 Protección Civil,Edificio N,1.660000,17,-5acd89b6423d9e00
 Protección Civil,Edificio P,2.100000,22,17abb04f2534e415
 Protección Civil,Edificio Q,2.290000,24,-4ef056fec4654968
-Protección Civil,Edificio R,3.340000,34,3fe29642b7591256
-Protección Civil,Edificio S,4.170000,42,7e7c6b561a08776c
-Protección Civil,Edificio T,4.460000,44,718c6168944678eb
+Protección Civil,Edificio R,3.310000,34,4a4dde52f0dff3d1
+Protección Civil,Edificio S,4.160000,43,4f8c62313fa86229
+Protección Civil,Edificio T,4.430000,46,-3c7e1878b9f7e846
 Protección Civil,Edificio U,5.340000,55,-3fd8cb44c317ec74
 Protección Civil,Edificio V,1.230000,13,-7adac2777f2c58e1
 Protección Civil,Edificio W,1.330000,14,-10321ac9b6241890
-Protección Civil,Edificio X,0.890000,9,-7f2fc2d8700bafd8
+Protección Civil,Edificio X,0.910000,10,-3cbb8855670ca2d7
 Protección Civil,Edificio Y,0.680000,7,-5eb9e23e4ac45f21
 Protección Civil,Edificio Z,0.590000,7,6c2cd2f772258cde
 Protección Civil,Entrada Sur,5.710000,54,-2627993112f4de3c
@@ -2441,27 +2441,27 @@ Protección Civil,Estacionamiento 4,5.970000,57,527350c188456300
 Protección Civil,Estacionamiento 5,5.830000,55,-7014a674d4e0c584
 Protección Civil,Laboratorio de técnicas deportivas y de rescate,4.850000,46,60a05fda2b85f3e0
 Protección Civil,Laboratorio de Electrónica,3.430000,34,7f0dcade2e1ede26
-Protección Civil,Laboratorio de Periodismo,4.720000,47,7274141dbaac26c5
+Protección Civil,Laboratorio de Periodismo,4.820000,48,-6600744cf48994f1
 Protección Civil,Laboratorio de Programación,4.060000,39,0d0a3d6c76008600
 Protección Civil,Radio UDG,2.240000,23,-9f92cc20d9dd220
-Protección Civil,Rectoría,3.230000,33,57d347368d64cea8
+Protección Civil,Rectoría,3.380000,35,0c9cd853bb52fb60
 Protección Civil,Sala de Gobierno,2.220000,23,-2f66e7cb4f584469
-Protección Civil,Hospital Veterinario,5.680000,55,0-f18cf966db611e
+Protección Civil,Hospital Veterinario,5.800000,56,500b2d6d2f6dae01
 Radio UDG,Auditorio C.A.S.A.,3.870000,40,2b8550da59382016
 Radio UDG,Auditorio Antonio González Ochoa,2.100000,23,249bd8b56d0f98c5
-Radio UDG,Auditorio Adolfo Aguilar Zínser,3.850000,40,-ca96aa0ee9245f8
+Radio UDG,Auditorio Adolfo Aguilar Zínser,3.940000,43,096d798e2e2d4645
 Radio UDG,Bufete Jurídico,2.330000,26,-749eea5269fdf8fd
 Radio UDG,C.A.S.A. (Biblioteca),4.410000,44,-144083a881fb6dbd
 Radio UDG,C.M.I.D.,4.270000,43,30c13984fd6b7ed6
 Radio UDG,Centro Acuático,4.640000,46,-2dab62e61296b100
-Radio UDG,Cafetería Pequeña,5.330000,56,79bd58c31ae365a1
-Radio UDG,Cafetería Principal,1.700000,19,-36137adefa671db8
+Radio UDG,Cafetería Pequeña,5.430000,57,450c6d0c4b6403b7
+Radio UDG,Cafetería Principal,1.730000,20,-6c4d59324c8b5583
 Radio UDG,Cancha de fútbol central,1.520000,18,-4334638fa6f1730a
-Radio UDG,Cancha de fútbol norte,4.470000,48,-160d41b2ff42c6a9
-Radio UDG,Cancha múltiple,4.060000,44,-25a2a262b1c7c777
+Radio UDG,Cancha de fútbol norte,4.570000,49,3c3f07fda16401a9
+Radio UDG,Cancha múltiple,4.160000,45,-5a8b2ed645cf7e7d
 Radio UDG,Centro de Aprendizaje Global,5.660000,56,23cd8d14af769f3f
 Radio UDG,Clínica Escuela,0.780000,9,47f5433f49a18a25
-Radio UDG,Edificio B,2.970000,32,7a511a97cb4e3d91
+Radio UDG,Edificio B,3.000000,33,-6921f5a8856531d1
 Radio UDG,Edificio C,2.580000,28,-64cffff807bc8483
 Radio UDG,Edificio F,4.330000,43,2aa6732a2edb0f0f
 Radio UDG,Edificio G,4.310000,43,-70dda536bb3e7fa9
@@ -2469,11 +2469,11 @@ Radio UDG,Edificio H,2.810000,31,5ff17d7868848195
 Radio UDG,Edificio I,3.150000,35,6072efc0083d479d
 Radio UDG,Edificio J,2.550000,28,-6a6d712a61851edf
 Radio UDG,Edificio L,3.100000,32,-57f450aa854d8315
-Radio UDG,Edificio M,4.160000,44,-11c27a9908bef5c6
+Radio UDG,Edificio M,4.260000,45,5c719896d82afde8
 Radio UDG,Edificio N,1.900000,21,7adf3f88a51b387f
 Radio UDG,Edificio P,0.710000,9,3a0aa4b323e889cc
 Radio UDG,Edificio Q,0.800000,9,-7b3b2255fe7fc831
-Radio UDG,Edificio R,2.230000,24,255575c0b8e20da9
+Radio UDG,Edificio R,2.200000,24,4cf0d47f85f9f296
 Radio UDG,Edificio S,2.470000,26,-5fdc2698dbc3f85e
 Radio UDG,Edificio T,2.910000,31,0e84f7bbb01b46b4
 Radio UDG,Edificio U,3.640000,39,72f8f4ea18a80452
@@ -2492,78 +2492,78 @@ Radio UDG,Estacionamiento 4,5.270000,52,3db5b3802e96a4db
 Radio UDG,Estacionamiento 5,5.130000,50,116440ed0fd80675
 Radio UDG,Laboratorio de técnicas deportivas y de rescate,4.150000,41,6eae3ef884a59b23
 Radio UDG,Laboratorio de Electrónica,2.730000,29,-50aa97fd55f10089
-Radio UDG,Laboratorio de Periodismo,4.020000,42,43812c6734f7c380
+Radio UDG,Laboratorio de Periodismo,4.120000,43,250355348ba99fbe
 Radio UDG,Laboratorio de Programación,3.360000,34,5f5bae2d972cef8f
 Radio UDG,Protección Civil,2.240000,23,-1885f3b505af0f16
-Radio UDG,Rectoría,2.530000,28,-1d56191dc2443093
+Radio UDG,Rectoría,2.680000,30,02a9ab6da01cac27
 Radio UDG,Sala de Gobierno,0.520000,7,-5dd451f10866e613
-Radio UDG,Hospital Veterinario,4.880000,51,29973ddd37d35924
-Rectoría,Auditorio C.A.S.A.,2.070000,21,70b57790a377bcd1
-Rectoría,Auditorio Antonio González Ochoa,3.410000,35,641e411afc53a32e
-Rectoría,Auditorio Adolfo Aguilar Zínser,1.450000,14,4b5c600f6894e00f
-Rectoría,Bufete Jurídico,3.860000,40,-c90ee5ab150d0ce
-Rectoría,C.A.S.A. (Biblioteca),1.910000,18,-26d5947d4890c0fc
-Rectoría,C.M.I.D.,3.080000,30,-3a03b11b550e73a2
-Rectoría,Centro Acuático,3.450000,33,1a7a8bfcd79c4da8
-Rectoría,Cafetería Pequeña,2.800000,29,3249997d624f9b40
-Rectoría,Cafetería Principal,1.260000,13,159cdc51b248e695
-Rectoría,Cancha de fútbol central,1.310000,15,-7d917e5aae38ffda
-Rectoría,Cancha de fútbol norte,1.940000,21,-677325e1758fb21a
-Rectoría,Cancha múltiple,1.530000,17,-16a09d687794c5aa
-Rectoría,Centro de Aprendizaje Global,3.870000,38,-41b62780037ff07e
-Rectoría,Clínica Escuela,1.900000,20,342971e7da7c5770
-Rectoría,Edificio B,0.440000,5,-421cc397b097199e
-Rectoría,Edificio C,0.830000,9,14fb5a54b9da2645
-Rectoría,Edificio F,2.890000,28,67b5a02af1eb2cc2
-Rectoría,Edificio G,2.870000,28,-7feab47ef28a1de
+Radio UDG,Hospital Veterinario,4.850000,51,-643988c06a677261
+Rectoría,Auditorio C.A.S.A.,2.260000,24,-7f498af61bb3abd4
+Rectoría,Auditorio Antonio González Ochoa,3.560000,37,5a68c98824f09248
+Rectoría,Auditorio Adolfo Aguilar Zínser,1.850000,20,-1fc5345f19edfece
+Rectoría,Bufete Jurídico,4.010000,42,2d73d2e046d30268
+Rectoría,C.A.S.A. (Biblioteca),2.100000,21,61ebfde180cdda0d
+Rectoría,C.M.I.D.,3.230000,32,-40d5ff2572a4330
+Rectoría,Centro Acuático,3.600000,35,-4be84749b6e6f0e
+Rectoría,Cafetería Pequeña,2.990000,32,-2ebe1da1fd78d0b1
+Rectoría,Cafetería Principal,1.300000,14,-4e6f8e90f5136abc
+Rectoría,Cancha de fútbol central,1.460000,17,479b102ad265ded0
+Rectoría,Cancha de fútbol norte,2.130000,24,5c6f5f76295449a1
+Rectoría,Cancha múltiple,1.720000,20,-6f58e9877f46f685
+Rectoría,Centro de Aprendizaje Global,4.060000,41,5778a3fdce8b2a37
+Rectoría,Clínica Escuela,2.050000,22,4cb8ab367b9614e5
+Rectoría,Edificio B,0.560000,8,6d99deb0e9a0e8a7
+Rectoría,Edificio C,0.980000,11,-48fb0c568fb0cc3d
+Rectoría,Edificio F,3.040000,30,6b3345db5a653120
+Rectoría,Edificio G,3.020000,30,-43a0a21a0203a7c8
 Rectoría,Edificio H,0.640000,9,13f8e4ca114e6b7d
-Rectoría,Edificio I,2.520000,25,0870ab9e51af18af
+Rectoría,Edificio I,2.530000,26,2c593dccf4b1632c
 Rectoría,Edificio J,0.380000,6,344390f92b0ef549
-Rectoría,Edificio L,1.490000,15,-5a7f5480a1fa369c
-Rectoría,Edificio M,1.630000,17,6a72b6606020373b
-Rectoría,Edificio N,3.650000,38,-5d3ab5396204122c
-Rectoría,Edificio P,1.820000,20,-6d20b9e7623e5d03
-Rectoría,Edificio Q,1.820000,20,3e0a01ddc8a74006
+Rectoría,Edificio L,1.640000,17,6b8db8dfde9da8e6
+Rectoría,Edificio M,1.820000,20,-46fb39bf667af360
+Rectoría,Edificio N,3.800000,40,74cd16f28a280d3a
+Rectoría,Edificio P,1.970000,22,237a5af014ad4883
+Rectoría,Edificio Q,1.970000,22,787c296c9bfe88ec
 Rectoría,Edificio R,0.840000,10,-33d696d1dfeb6c1c
 Rectoría,Edificio S,1.210000,13,-499e177d8f406b4e
-Rectoría,Edificio T,1.310000,13,-3aa8304fdb56a8fb
-Rectoría,Edificio U,2.240000,23,-67f869e984087b70
-Rectoría,Edificio V,2.700000,27,7fc88bdf5688d4af
-Rectoría,Edificio W,3.320000,35,2bdb235f679d3fc4
-Rectoría,Edificio X,2.880000,29,-2cd1baad5f136e8
-Rectoría,Edificio Y,3.300000,34,2a2f1822abc8b51e
-Rectoría,Edificio Z,3.460000,36,1f5938f621512f78
-Rectoría,Entrada Sur,3.820000,36,1d2f063ec29759f1
-Rectoría,Entrada Principal,3.780000,38,-7ebef249cafe191
+Rectoría,Edificio T,1.320000,14,7943e73a7f43e19c
+Rectoría,Edificio U,2.250000,24,4023bcf19d39f3c9
+Rectoría,Edificio V,2.850000,29,-6511e346ae18b6d7
+Rectoría,Edificio W,3.470000,37,2181cc16f57b4d96
+Rectoría,Edificio X,3.030000,31,098e8c82d4ca157e
+Rectoría,Edificio Y,3.450000,36,-103ac7bb3f729298
+Rectoría,Edificio Z,3.610000,38,-37b512b9cb53363e
+Rectoría,Entrada Sur,3.970000,38,-12763c9e2cc02c4d
+Rectoría,Entrada Principal,3.930000,40,47c3c704f96103dd
 Rectoría,Entrada Este,1.970000,20,-14aeb9ae8d48ba6e
-Rectoría,Estacionamiento 1,2.700000,26,58cfc015c4d160d4
+Rectoría,Estacionamiento 1,2.710000,27,-69c3d0762a39021f
 Rectoría,Estacionamiento 2,1.700000,18,1a008b729a138f35
-Rectoría,Estacionamiento 3,2.290000,23,5578077942c8bd62
-Rectoría,Estacionamiento 4,4.080000,39,-6cfe343fa3eb27ed
-Rectoría,Estacionamiento 5,3.940000,37,-d11d87584de4eb3
-Rectoría,Laboratorio de técnicas deportivas y de rescate,2.960000,28,1ce2e8459f6bbdfb
-Rectoría,Laboratorio de Electrónica,1.120000,12,7a0889f15d61a476
-Rectoría,Laboratorio de Periodismo,1.490000,15,5517eccbbacbfa29
-Rectoría,Laboratorio de Programación,2.160000,21,-5b492cc0e87de978
-Rectoría,Protección Civil,3.230000,33,-1deaf4bd86e0e830
-Rectoría,Radio UDG,2.530000,28,068edea487782391
-Rectoría,Sala de Gobierno,2.320000,26,-1bec12a05a37fb52
-Rectoría,Hospital Veterinario,2.530000,24,-621fe2ea16b32234
+Rectoría,Estacionamiento 3,2.280000,23,-50f6e7a4b1452e34
+Rectoría,Estacionamiento 4,4.230000,41,1e2430c88242ffd9
+Rectoría,Estacionamiento 5,4.090000,39,37d655439392946b
+Rectoría,Laboratorio de técnicas deportivas y de rescate,3.110000,30,-42953f1c89316433
+Rectoría,Laboratorio de Electrónica,1.270000,14,-608df15f0ec69b14
+Rectoría,Laboratorio de Periodismo,1.680000,18,-4143cf86cd986c8a
+Rectoría,Laboratorio de Programación,2.310000,23,249122c197aa7802
+Rectoría,Protección Civil,3.380000,35,1a669736ff045ea6
+Rectoría,Radio UDG,2.680000,30,4f339b9b1f3d75bb
+Rectoría,Sala de Gobierno,2.470000,28,1811b6ab61e8b80c
+Rectoría,Hospital Veterinario,2.660000,26,56fe71575bd8b758
 Sala de Gobierno,Auditorio C.A.S.A.,3.660000,38,335adc1cddbcf641
 Sala de Gobierno,Auditorio Antonio González Ochoa,2.080000,23,4f324a9ae37bcec2
-Sala de Gobierno,Auditorio Adolfo Aguilar Zínser,3.640000,38,76c3fd5dc7119b2b
+Sala de Gobierno,Auditorio Adolfo Aguilar Zínser,3.720000,38,1f374303a968a2b0
 Sala de Gobierno,Bufete Jurídico,2.310000,26,-61d5ed79e003ca9e
 Sala de Gobierno,C.A.S.A. (Biblioteca),4.200000,42,-34ec5d28eb6f8e0a
 Sala de Gobierno,C.M.I.D.,4.060000,41,44defcccec7afa99
 Sala de Gobierno,Centro Acuático,4.430000,44,-ce180a80e5ae597
-Sala de Gobierno,Cafetería Pequeña,5.120000,54,-2a1a35043e11654c
-Sala de Gobierno,Cafetería Principal,1.490000,17,54fa0dd34aa72c63
+Sala de Gobierno,Cafetería Pequeña,5.220000,55,05cb58568475b556
+Sala de Gobierno,Cafetería Principal,1.520000,18,7d98a2cbc63a1dfa
 Sala de Gobierno,Cancha de fútbol central,1.310000,16,32602f9248dad857
-Sala de Gobierno,Cancha de fútbol norte,4.260000,46,5605ae95e209922a
-Sala de Gobierno,Cancha múltiple,3.850000,42,115c8973a67da8c2
+Sala de Gobierno,Cancha de fútbol norte,4.360000,47,-15a15a43ff6f2808
+Sala de Gobierno,Cancha múltiple,3.950000,43,-4636ba680f2a2a28
 Sala de Gobierno,Centro de Aprendizaje Global,5.450000,54,-3ea7b85094b4d2a
 Sala de Gobierno,Clínica Escuela,0.760000,9,-51774031def04c06
-Sala de Gobierno,Edificio B,2.760000,30,-61d9aa04233f7522
+Sala de Gobierno,Edificio B,2.790000,31,-569feec875e85e86
 Sala de Gobierno,Edificio C,2.370000,26,-40cdc9d59af6fe7e
 Sala de Gobierno,Edificio F,4.120000,41,-536e915e220681a8
 Sala de Gobierno,Edificio G,4.100000,41,-75dac90004586270
@@ -2571,11 +2571,11 @@ Sala de Gobierno,Edificio H,2.600000,29,-7deafe992c160806
 Sala de Gobierno,Edificio I,2.860000,31,-3561c5a6f765de7a
 Sala de Gobierno,Edificio J,2.340000,26,-684ea549ba033730
 Sala de Gobierno,Edificio L,2.890000,30,-89564cb66960fbc
-Sala de Gobierno,Edificio M,3.950000,42,782c56960331a65f
+Sala de Gobierno,Edificio M,4.050000,43,20f111eef1270189
 Sala de Gobierno,Edificio N,1.880000,21,2df61c973e94bf7a
 Sala de Gobierno,Edificio P,0.500000,7,43b54b80fc3d05b7
 Sala de Gobierno,Edificio Q,0.570000,6,-19cd60861d0ee43d
-Sala de Gobierno,Edificio R,2.020000,22,6e5886686dacaa6a
+Sala de Gobierno,Edificio R,1.990000,22,4bad1ed8aefa7669
 Sala de Gobierno,Edificio S,2.180000,22,-28ad8d980222795f
 Sala de Gobierno,Edificio T,2.620000,27,27ab6823b09d8af3
 Sala de Gobierno,Edificio U,3.350000,35,-2e75e30ddb38de5b
@@ -2594,60 +2594,60 @@ Sala de Gobierno,Estacionamiento 4,5.060000,50,-5e7ada674a9ab030
 Sala de Gobierno,Estacionamiento 5,4.920000,48,66125fa8f8f5d7ac
 Sala de Gobierno,Laboratorio de técnicas deportivas y de rescate,3.940000,39,187f1f4c25b72130
 Sala de Gobierno,Laboratorio de Electrónica,2.520000,27,-3e4712b04398c86a
-Sala de Gobierno,Laboratorio de Periodismo,3.810000,40,-6aefffa8a9e9310b
+Sala de Gobierno,Laboratorio de Periodismo,3.910000,41,1ab14adf21b7dbff
 Sala de Gobierno,Laboratorio de Programación,3.150000,32,-665cfe5c9701d10
 Sala de Gobierno,Protección Civil,2.220000,23,-3c76ff54bdb73a37
 Sala de Gobierno,Radio UDG,0.520000,7,-1df96161b3c18ba1
-Sala de Gobierno,Rectoría,2.320000,26,-563f3da10dd68588
+Sala de Gobierno,Rectoría,2.470000,28,-597ce9e158db1450
 Sala de Gobierno,Hospital Veterinario,4.610000,46,0fecbb1d51f86592
-Hospital Veterinario,Auditorio C.A.S.A.,4.060000,43,-803ecc6c071dd96
-Hospital Veterinario,Auditorio Antonio González Ochoa,5.860000,57,-434bd232ce8590fe
-Hospital Veterinario,Auditorio Adolfo Aguilar Zínser,1.080000,11,305a649d1b3fb9a0
-Hospital Veterinario,Bufete Jurídico,6.310000,62,-4ba2ba09cf9daa52
-Hospital Veterinario,C.A.S.A. (Biblioteca),3.740000,40,-529707718b328c1
-Hospital Veterinario,C.M.I.D.,5.500000,52,-782ec0c29a419c03
-Hospital Veterinario,Centro Acuático,5.870000,55,109229bdcd568f55
-Hospital Veterinario,Cafetería Pequeña,4.350000,46,103da46d9f857140
-Hospital Veterinario,Cafetería Principal,3.180000,33,-6d7a40606193fe3a
-Hospital Veterinario,Cancha de fútbol central,3.760000,37,-3d48eab93fdd147e
-Hospital Veterinario,Cancha de fútbol norte,3.490000,38,6f815e1092dac3e6
-Hospital Veterinario,Cancha múltiple,2.340000,26,6bb82d0c2a6ff197
-Hospital Veterinario,Centro de Aprendizaje Global,5.420000,55,54760683f8e1e182
-Hospital Veterinario,Clínica Escuela,4.280000,44,2847e9ce269b752e
-Hospital Veterinario,Edificio B,2.710000,24,-38c35e58825b734
-Hospital Veterinario,Edificio C,3.280000,31,-64a1a3a89f3f57cf
-Hospital Veterinario,Edificio F,5.070000,53,321937754b841016
-Hospital Veterinario,Edificio G,5.050000,53,5b1e2139d28734e6
-Hospital Veterinario,Edificio H,2.940000,29,-53f7ce5f812eeb19
+Hospital Veterinario,Auditorio C.A.S.A.,4.060000,42,-47f9fa738f2edd20
+Hospital Veterinario,Auditorio Antonio González Ochoa,5.980000,58,131c594ee77d20ff
+Hospital Veterinario,Auditorio Adolfo Aguilar Zínser,1.450000,15,14f5944639d1ebfb
+Hospital Veterinario,Bufete Jurídico,6.430000,63,75f9ed5247a8231d
+Hospital Veterinario,C.A.S.A. (Biblioteca),3.740000,39,-32d85fb7149efa37
+Hospital Veterinario,C.M.I.D.,5.620000,53,-77d551f7238fa200
+Hospital Veterinario,Centro Acuático,5.990000,56,508cda408e6808c2
+Hospital Veterinario,Cafetería Pequeña,4.350000,45,555f77244e00c4f6
+Hospital Veterinario,Cafetería Principal,3.220000,34,01662523b03a2fbb
+Hospital Veterinario,Cancha de fútbol central,3.880000,38,-221b9bb37371ab0f
+Hospital Veterinario,Cancha de fútbol norte,3.490000,37,64b594801068c2d8
+Hospital Veterinario,Cancha múltiple,2.340000,25,-7e8970450d9032f7
+Hospital Veterinario,Centro de Aprendizaje Global,5.420000,54,786d24a111842044
+Hospital Veterinario,Clínica Escuela,4.250000,44,-6fcbe64ba990e693
+Hospital Veterinario,Edificio B,2.830000,25,240e85ef386acfd9
+Hospital Veterinario,Edificio C,3.400000,32,-58925ac7bad217da
+Hospital Veterinario,Edificio F,5.070000,52,5bc911d3846eac1c
+Hospital Veterinario,Edificio G,5.050000,52,6ab82ec8cce481d4
+Hospital Veterinario,Edificio H,3.060000,30,758b84a294dea46e
 Hospital Veterinario,Edificio I,2.180000,20,-43a63144e19b8e53
-Hospital Veterinario,Edificio J,2.680000,26,-7c37a663976fa28d
-Hospital Veterinario,Edificio L,3.910000,37,664a5a8d45c27013
-Hospital Veterinario,Edificio M,2.230000,24,1748453b0a676a37
-Hospital Veterinario,Edificio N,6.030000,62,7572b01772fa8ef1
-Hospital Veterinario,Edificio P,4.170000,43,-1c09e4a7ae1d3e0c
-Hospital Veterinario,Edificio Q,4.170000,43,435a72d9edf9155b
+Hospital Veterinario,Edificio J,2.800000,27,-1c7f1e0cbe150314
+Hospital Veterinario,Edificio L,4.030000,38,-faba0978cd2b74a
+Hospital Veterinario,Edificio M,2.230000,23,-3586e86de2de42eb
+Hospital Veterinario,Edificio N,6.000000,62,162a99172dd8a662
+Hospital Veterinario,Edificio P,4.140000,43,-763fbfc086e31e9
+Hospital Veterinario,Edificio Q,4.140000,43,7a0d99f501e224b0
 Hospital Veterinario,Edificio R,2.650000,28,48ae33e5aeebd47d
 Hospital Veterinario,Edificio S,2.450000,25,63dc378f8cfe213e
 Hospital Veterinario,Edificio T,2.120000,21,555f151fb364750f
 Hospital Veterinario,Edificio U,1.570000,16,-13440864a2f8ecb7
-Hospital Veterinario,Edificio V,5.150000,49,-1fa07c94385a18ad
-Hospital Veterinario,Edificio W,5.700000,59,1462cadae423b643
-Hospital Veterinario,Edificio X,5.330000,51,-6270ca28bce0d74c
-Hospital Veterinario,Edificio Y,5.750000,56,0-3a0c6e516fabce
-Hospital Veterinario,Edificio Z,5.910000,58,42350f0486dc244c
-Hospital Veterinario,Entrada Sur,6.240000,58,054b249cfaeee820
-Hospital Veterinario,Entrada Principal,6.230000,60,-b9c3993ef4f1dad
+Hospital Veterinario,Edificio V,5.270000,50,-76dda959332492f4
+Hospital Veterinario,Edificio W,5.670000,59,-28b9dd4e3b1ea762
+Hospital Veterinario,Edificio X,5.450000,52,-6e7fad26533c99ef
+Hospital Veterinario,Edificio Y,5.870000,57,3e15f52e1d3f8c3b
+Hospital Veterinario,Edificio Z,6.030000,59,-61778be8b3394dbb
+Hospital Veterinario,Entrada Sur,6.360000,59,-66c67680f52b28fd
+Hospital Veterinario,Entrada Principal,6.350000,61,56456c6c1233832e
 Hospital Veterinario,Entrada Este,2.820000,26,-79c0fceb35da1c79
 Hospital Veterinario,Estacionamiento 1,1.380000,13,116604557ce3b249
 Hospital Veterinario,Estacionamiento 2,3.250000,33,-16630f21de833fc
 Hospital Veterinario,Estacionamiento 3,4.050000,41,46d7d647aefb59a2
-Hospital Veterinario,Estacionamiento 4,6.500000,61,618aa2b0c76a31b4
-Hospital Veterinario,Estacionamiento 5,6.360000,59,2d5391ce99ca90f0
-Hospital Veterinario,Laboratorio de técnicas deportivas y de rescate,5.380000,50,0ab53a1be3444724
-Hospital Veterinario,Laboratorio de Electrónica,3.540000,34,-6d78062bc66d4521
-Hospital Veterinario,Laboratorio de Periodismo,3.690000,35,-25f9761be92cf3b4
-Hospital Veterinario,Laboratorio de Programación,4.540000,48,4ef13d74e993b0b6
-Hospital Veterinario,Protección Civil,5.680000,55,04da9050047dd9fc
-Hospital Veterinario,Radio UDG,4.880000,51,-136ee32de3141930
-Hospital Veterinario,Rectoría,2.530000,24,0-56083a35e77528
+Hospital Veterinario,Estacionamiento 4,6.620000,62,-1ea1c57c8d431497
+Hospital Veterinario,Estacionamiento 5,6.480000,60,08be7600ae0fab9b
+Hospital Veterinario,Laboratorio de técnicas deportivas y de rescate,5.500000,51,2598128966869d9d
+Hospital Veterinario,Laboratorio de Electrónica,3.660000,35,1f590f48a648735c
+Hospital Veterinario,Laboratorio de Periodismo,3.810000,36,5061796025caabf3
+Hospital Veterinario,Laboratorio de Programación,4.540000,47,769bb25e9b7cd534
+Hospital Veterinario,Protección Civil,5.800000,56,15d4b07c0be8c94f
+Hospital Veterinario,Radio UDG,4.850000,51,-3c26b51539c29081
+Hospital Veterinario,Rectoría,2.660000,26,-52bccc946b0d2a7e
 Hospital Veterinario,Sala de Gobierno,4.610000,46,-291b2e9b522d0dee
