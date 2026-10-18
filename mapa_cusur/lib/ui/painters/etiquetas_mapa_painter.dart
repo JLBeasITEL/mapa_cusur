@@ -88,6 +88,10 @@ const double kFraccionDiametroLetra = 0.9;
 /// Margen en metros alrededor de cada insignia que la letra debe evitar.
 const double kMargenInsigniaLetra = 1;
 
+/// Separación en pantalla entre el borde de la insignia de una entrada y
+/// su texto cuando el texto va a un lado (a la derecha o a la izquierda).
+const double kSeparacionLateralEntrada = 4;
+
 /// Margen en pantalla alrededor de cada etiqueta para la detección de
 /// colisiones.
 const double kMargenColision = 4;
@@ -261,11 +265,20 @@ class ColocacionEtiquetas {
   /// chocan con algo de mayor prioridad.
   final List<String> largosOcultos;
 
+  /// Dónde quedó el texto de cada entrada respecto a su insignia:
+  /// `abajo`, `derecha`, `izquierda`, `arriba` o, de respaldo, una
+  /// diagonal (`abajo-derecha`...); con `(+1)` o `(+2)` si tuvo que
+  /// alejarse una o dos alturas de texto.
+  final Map<String, String> ladoEntradas;
+
   // Los mismos, por identidad, para el painter.
   final Set<Object> _ocultos;
 
-  const ColocacionEtiquetas(
-      this.ocupados, this.calles, this.largosOcultos, this._ocultos);
+  // Centro elegido (en píxeles, desde el ancla) del texto de cada entrada.
+  final Map<Object, Offset> _centrosEntradas;
+
+  const ColocacionEtiquetas(this.ocupados, this.calles, this.largosOcultos,
+      this.ladoEntradas, this._ocultos, this._centrosEntradas);
 }
 
 /// Las insignias y los textos del mapa vectorial, ya maquetados en píxeles
@@ -791,31 +804,118 @@ class EtiquetasMapaVectorial {
           t.anguloGrados);
     }
 
-    void registrarTextos(_Clase clase) {
-      for (final t in _textos) {
-        if (t.clase != clase) continue;
-        final rect = rectangulo(t);
-        if (rect != null) registrar(t.relleno.plainText, clase.name, rect, null);
+    // El área del mapa en pantalla: lo que se dibuje fuera se corta.
+    final limites = Rect.fromPoints(enPantalla(Offset(meta.minX, meta.minY)),
+        enPantalla(Offset(meta.maxX, meta.maxY)));
+
+    // Rectángulos de las letras (siempre se dibujan).
+    final ubicacion = _ubicarLetras(pantallaPorMetro / zoom);
+    final letras = [
+      for (final l in _letras)
+        (
+          letra: l,
+          rect: Rect.fromCenter(
+              center: enPantalla(ubicacion[l]!.centro),
+              width: l.relleno.width *
+                  l.factor(ubicacion[l]!.radio, pantallaPorMetro),
+              height: l.relleno.height *
+                  l.factor(ubicacion[l]!.radio, pantallaPorMetro)),
+        ),
+    ];
+
+    // El texto de cada entrada va en el primer lado (abajo, derecha,
+    // izquierda, arriba y, de respaldo, las cuatro diagonales; primero
+    // pegado a la insignia y luego un poco más lejos) que cabe completo en
+    // el mapa y no se sobrepone con una letra ni con otra insignia
+    // visible. Si ninguno sirve, en el primero que no toque letras; si
+    // tampoco, abajo.
+    final obstaculos = [
+      for (final x in letras)
+        (dueno: null, esLetra: true, rect: x.rect.inflate(kMargenColision)),
+      for (final i in _insignias)
+        if (_insigniaVisible(i, pantallaPorMetro, mostrarIconos))
+          (
+            dueno: i.dueno,
+            esLetra: false,
+            rect: Rect.fromCircle(
+                    center: enPantalla(i.ancla),
+                    radius: radioInsignia(zoom, tamano: i.tamano))
+                .inflate(kMargenColision),
+          ),
+    ];
+    final centrosEntradas = Map<Object, Offset>.identity();
+    final ladoEntradas = <String, String>{};
+    for (final t in _textos.where((t) => t.clase == _Clase.entrada)) {
+      final r = radioInsignia(zoom, tamano: t.insignia?.tamano ?? 1);
+      final mitad = t.relleno.width / 2;
+      final alto = t.relleno.height;
+      // Primero pegado a la insignia; si nada cabe, alejándose una y dos
+      // alturas de texto (anillos 1 y 2), con el mismo orden de lados.
+      final lados = <String, Offset>{};
+      for (final anillo in const [0, 1, 2]) {
+        final extra = anillo * alto;
+        final sufijo = anillo == 0 ? '' : ' (+$anillo)';
+        // Diagonales: la esquina del texto junto a la de la insignia.
+        final dx = r * math.sqrt1_2 + kSeparacionLateralEntrada + mitad + extra;
+        final dy =
+            r * math.sqrt1_2 + kSeparacionLateralEntrada + alto / 2 + extra;
+        lados.addAll({
+          'abajo$sufijo': Offset(
+              0, t.dyCon(zoom, mostrarIconos: mostrarIconos) + extra),
+          'derecha$sufijo':
+              Offset(r + kSeparacionLateralEntrada + mitad + extra, 0),
+          'izquierda$sufijo':
+              Offset(-(r + kSeparacionLateralEntrada + mitad + extra), 0),
+          'arriba$sufijo': Offset(0, -(r + kSeparacionTextoInsignia + extra)),
+          'abajo-derecha$sufijo': Offset(dx, dy),
+          'abajo-izquierda$sufijo': Offset(-dx, dy),
+          'arriba-derecha$sufijo': Offset(dx, -dy),
+          'arriba-izquierda$sufijo': Offset(-dx, -dy),
+        });
       }
+      final ancla = enPantalla(t.ancla);
+      bool choca(Offset centro, {required bool soloLetras}) {
+        final texto = Rect.fromCenter(
+            center: ancla + centro,
+            width: t.relleno.width,
+            height: t.relleno.height);
+        if (!limites.contains(texto.topLeft) ||
+            !limites.contains(texto.bottomRight)) {
+          return true;
+        }
+        final rect = texto.inflate(kMargenColision);
+        return obstaculos.any((o) =>
+            (o.esLetra || !soloLetras) &&
+            !identical(o.dueno, t.dueno) &&
+            o.rect.overlaps(rect));
+      }
+
+      final elegido = lados.keys.firstWhere(
+          (lado) => !choca(lados[lado]!, soloLetras: false),
+          orElse: () => lados.keys.firstWhere(
+              (lado) => !choca(lados[lado]!, soloLetras: true),
+              orElse: () => 'abajo'));
+      centrosEntradas[t] = lados[elegido]!;
+      ladoEntradas[t.relleno.plainText] = elegido;
     }
 
     // Por prioridad: entradas, letras e insignias.
     registrarInsignias((i) => !i.ocultable);
-    registrarTextos(_Clase.entrada);
+    for (final t in _textos.where((t) => t.clase == _Clase.entrada)) {
+      registrar(
+          t.relleno.plainText,
+          _Clase.entrada.name,
+          Rect.fromCenter(
+              center: enPantalla(t.ancla) + centrosEntradas[t]!,
+              width: t.relleno.width,
+              height: t.relleno.height),
+          null);
+    }
     // Las letras registran su dueño: el subtítulo de su edificio va justo
     // debajo de ella, a propósito.
-    final ubicacion = _ubicarLetras(pantallaPorMetro / zoom);
-    for (final l in _letras) {
-      final polo = ubicacion[l]!;
-      registrar(
-          l.relleno.plainText,
-          _Clase.letra.name,
-          Rect.fromCenter(
-              center: enPantalla(polo.centro),
-              width: l.relleno.width * l.factor(polo.radio, pantallaPorMetro),
-              height:
-                  l.relleno.height * l.factor(polo.radio, pantallaPorMetro)),
-          l.edificio);
+    for (final x in letras) {
+      registrar(x.letra.relleno.plainText, _Clase.letra.name, x.rect,
+          x.letra.edificio);
     }
     registrarInsignias((i) => i.ocultable);
 
@@ -858,8 +958,6 @@ class EtiquetasMapaVectorial {
     }
 
     // Al final, los nombres de calles.
-    final limites = Rect.fromPoints(enPantalla(Offset(meta.minX, meta.minY)),
-        enPantalla(Offset(meta.maxX, meta.maxY)));
     final calles =
         <({String texto, Offset ancla, double anguloGrados, Rect rect})>[];
     for (final c in _calles) {
@@ -894,7 +992,9 @@ class EtiquetasMapaVectorial {
       ],
       calles,
       largosOcultos,
+      ladoEntradas,
       ocultos,
+      centrosEntradas,
     );
   }
 
@@ -1071,10 +1171,11 @@ class EtiquetasMapaPainter extends CustomPainter {
       canvas.translate(ancla.dx, ancla.dy);
       canvas.scale(k);
       if (t.anguloGrados != 0) canvas.rotate(t.anguloGrados * math.pi / 180);
+      // El texto de una entrada va en el lado que eligió la colocación.
+      final centro = colocacion._centrosEntradas[t] ??
+          Offset(0, t.dyCon(zoom, mostrarIconos: mostrarIconos));
       final esquina =
-          Offset(-t.relleno.width / 2,
-              t.dyCon(zoom, mostrarIconos: mostrarIconos) -
-                  t.relleno.height / 2);
+          centro - Offset(t.relleno.width / 2, t.relleno.height / 2);
       t.halo?.paint(canvas, esquina);
       t.relleno.paint(canvas, esquina);
       canvas.restore();

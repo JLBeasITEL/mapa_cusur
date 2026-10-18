@@ -200,6 +200,63 @@ void main() {
     });
   });
 
+  group('textos de las entradas', () {
+    void sinChoqueConLetras(double zoom, {bool mostrarIconos = true}) {
+      final colocacion = colocar(zoom, mostrarIconos: mostrarIconos);
+      final entradas = colocacion.ocupados.where((o) => o.tipo == 'entrada');
+      final letras = colocacion.ocupados.where((o) => o.tipo == 'letra');
+      expect(entradas, hasLength(mapa.entradas.length));
+      for (final e in entradas) {
+        for (final l in letras) {
+          expect(e.rect.overlaps(l.rect), isFalse,
+              reason: '"${e.nombre}" se sobrepone con la letra ${l.nombre} '
+                  '(lado: ${colocacion.ladoEntradas[e.nombre]})');
+        }
+      }
+    }
+
+    test('con 412 × 360 y zoom ×1, ningún texto de entrada se sobrepone con '
+        'una letra de edificio', () {
+      sinChoqueConLetras(1);
+      sinChoqueConLetras(1, mostrarIconos: false);
+    });
+
+    test('tampoco con zoom ×2 ni ×4', () {
+      sinChoqueConLetras(2);
+      sinChoqueConLetras(4);
+    });
+
+    test('el texto de cada entrada queda completo dentro del mapa', () {
+      for (final zoom in [1.0, 2.0, 4.0]) {
+        final colocacion = colocar(zoom);
+        final esquina1 = proyeccion.localALienzo(mapa.meta.minX, mapa.meta.minY) *
+            (ajusteTelefono * zoom);
+        final esquina2 = proyeccion.localALienzo(mapa.meta.maxX, mapa.meta.maxY) *
+            (ajusteTelefono * zoom);
+        final limites = Rect.fromPoints(esquina1, esquina2);
+        for (final e in colocacion.ocupados.where((o) => o.tipo == 'entrada')) {
+          final texto = e.rect.deflate(4); // sin el margen de colisión
+          expect(
+              limites.contains(texto.topLeft) &&
+                  limites.contains(texto.bottomRight),
+              isTrue,
+              reason: '${e.nombre} con zoom $zoom sale del mapa '
+                  '(lado: ${colocacion.ladoEntradas[e.nombre]})');
+        }
+      }
+    });
+
+    test('cada entrada informa en qué lado quedó su texto', () {
+      final lados = colocar(1).ladoEntradas;
+      expect(lados.keys,
+          unorderedEquals(mapa.entradas.map((e) => e.nombre)));
+      expect(
+          lados.values,
+          everyElement(matches(RegExp(r'^(abajo|derecha|izquierda|arriba)'
+              r'(-(derecha|izquierda))?( \(\+[12]\))?$'))));
+    });
+  });
+
   test('la colocación no se recalcula si no cambian la escala ni el zoom', () {
     expect(identical(colocar(2), colocar(2)), isTrue);
     expect(identical(colocar(2), colocar(2.5)), isFalse);
