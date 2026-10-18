@@ -599,6 +599,10 @@
         "Lab_Periodismo": [
             19.72539804,
             -103.461799941
+        ],
+        "Centro_Aprendizaje_Global": [
+            19.725803545,
+            -103.462625534
         ]
     },
     "coordenadas_pix": {
@@ -1201,6 +1205,10 @@
         "Lab_Periodismo": [
             238,
             448
+        ],
+        "Centro_Aprendizaje_Global": [
+            91,
+            535
         ]
     },
     "conexiones": {
@@ -1375,7 +1383,8 @@
         },
         "F7": {
             "F6": 0.31,
-            "Cafeteria": 0.8
+            "Cafeteria": 0.8,
+            "Centro_Aprendizaje_Global": 0.44
         },
         "Cafeteria": {
             "F7": 0.8,
@@ -2073,6 +2082,9 @@
         },
         "Lab_Periodismo": {
             "L8": 0.09
+        },
+        "Centro_Aprendizaje_Global": {
+            "F7": 0.44
         }
     },
     "puntos_control": [
@@ -2091,6 +2103,7 @@
         "Cancha_Multiple",
         "Lab_Programacion",
         "Lab_Electronica",
-        "Lab_Periodismo"
+        "Lab_Periodismo",
+        "Centro_Aprendizaje_Global"
     ]
 }

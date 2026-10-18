@@ -10,6 +10,7 @@ Auditorio C.A.S.A.,Cafetería Principal,3.260000,31,41c2046fe5c4ef70
 Auditorio C.A.S.A.,Cancha de fútbol central,2.650000,27,-1e32455526fe6eff
 Auditorio C.A.S.A.,Cancha de fútbol norte,1.300000,14,-30a7af53f48bb279
 Auditorio C.A.S.A.,Cancha múltiple,1.600000,18,09ca7be4d75adf15
+Auditorio C.A.S.A.,Centro de Aprendizaje Global,1.960000,20,2406862fa986ce14
 Auditorio C.A.S.A.,Clínica Escuela,3.240000,32,-3da52e1297516712
 Auditorio C.A.S.A.,Edificio B,1.780000,18,2f6056603be6fa12
 Auditorio C.A.S.A.,Edificio C,1.430000,15,1408810d775a877f
@@ -60,6 +61,7 @@ Auditorio Antonio González Ochoa,Cafetería Principal,2.990000,31,371b49710ec69
 Auditorio Antonio González Ochoa,Cancha de fútbol central,2.400000,25,13e52820149572e1
 Auditorio Antonio González Ochoa,Cancha de fútbol norte,5.350000,55,5d2d515730e114f4
 Auditorio Antonio González Ochoa,Cancha múltiple,4.940000,51,63378f8fc12d9cec
+Auditorio Antonio González Ochoa,Centro de Aprendizaje Global,6.540000,63,73af574832316248
 Auditorio Antonio González Ochoa,Clínica Escuela,1.890000,20,497abf94188b4e99
 Auditorio Antonio González Ochoa,Edificio B,3.850000,39,-50acb18023178e5c
 Auditorio Antonio González Ochoa,Edificio C,3.460000,35,-66a5ddfc7d4bca88
@@ -110,6 +112,7 @@ Auditorio Adolfo Aguilar Zínser,Cafetería Principal,2.150000,22,-578fa2959ee82
 Auditorio Adolfo Aguilar Zínser,Cancha de fútbol central,2.680000,27,2f5d427648fbbc95
 Auditorio Adolfo Aguilar Zínser,Cancha de fútbol norte,2.200000,22,075ce7e828966c23
 Auditorio Adolfo Aguilar Zínser,Cancha múltiple,1.130000,13,-54475b6083e1e712
+Auditorio Adolfo Aguilar Zínser,Centro de Aprendizaje Global,4.080000,38,10eb20a472c3e0d3
 Auditorio Adolfo Aguilar Zínser,Clínica Escuela,3.250000,33,-4ebe01a1327f5fbc
 Auditorio Adolfo Aguilar Zínser,Edificio B,1.630000,14,0851c63143c5f2bd
 Auditorio Adolfo Aguilar Zínser,Edificio C,2.200000,21,2adda42dd55bbc4a
@@ -160,6 +163,7 @@ Bufete Jurídico,Cafetería Principal,3.280000,35,48309c114bf5a491
 Bufete Jurídico,Cancha de fútbol central,2.850000,30,622ede4ee27c2e57
 Bufete Jurídico,Cancha de fútbol norte,5.800000,60,-45f08f4d817fa7d6
 Bufete Jurídico,Cancha múltiple,5.390000,56,5715547e19a30ac2
+Bufete Jurídico,Centro de Aprendizaje Global,6.990000,68,4a7d4a3ab89bf8d6
 Bufete Jurídico,Clínica Escuela,2.290000,25,654f7974badbfef1
 Bufete Jurídico,Edificio B,4.300000,44,4dcc3053b1e5ccde
 Bufete Jurídico,Edificio C,3.910000,40,29764de80d6c4382
@@ -210,6 +214,7 @@ C.A.S.A. (Biblioteca),Cafetería Principal,3.100000,29,-1800207c1d8ca62f
 C.A.S.A. (Biblioteca),Cancha de fútbol central,3.190000,31,-d9545bc98050d10
 C.A.S.A. (Biblioteca),Cancha de fútbol norte,0.980000,11,-62faa28c18986fd8
 C.A.S.A. (Biblioteca),Cancha múltiple,1.280000,15,-36ca65cff9e123dc
+C.A.S.A. (Biblioteca),Centro de Aprendizaje Global,2.230000,21,-3b41de4efcc22f58
 C.A.S.A. (Biblioteca),Clínica Escuela,3.780000,36,-539cde076bf0193b
 C.A.S.A. (Biblioteca),Edificio B,1.620000,16,-4a5e7cc672baaa0f
 C.A.S.A. (Biblioteca),Edificio C,1.970000,19,7867ad2707a5aa0a
@@ -260,6 +265,7 @@ C.M.I.D.,Cafetería Principal,3.960000,38,-2596694f2df9990d
 C.M.I.D.,Cancha de fútbol central,3.050000,30,-5968a20c691a6577
 C.M.I.D.,Cancha de fútbol norte,3.060000,31,-7204d7ce13a0bd50
 C.M.I.D.,Cancha múltiple,3.360000,35,0a142f77a5e2315c
+C.M.I.D.,Centro de Aprendizaje Global,3.620000,37,26adcc7466e1ad2b
 C.M.I.D.,Clínica Escuela,3.640000,35,5acbecd0db00ebc6
 C.M.I.D.,Edificio B,3.010000,29,07cdab236371401b
 C.M.I.D.,Edificio C,2.250000,22,55d08b67ab6736d0
@@ -310,6 +316,7 @@ Centro Acuático,Cafetería Principal,4.330000,41,0100dc088135c939
 Centro Acuático,Cancha de fútbol central,3.420000,33,-695385aba53d58e1
 Centro Acuático,Cancha de fútbol norte,3.420000,34,-3bd041d2052502fb
 Centro Acuático,Cancha múltiple,3.720000,38,544e530ff02bccb7
+Centro Acuático,Centro de Aprendizaje Global,3.990000,40,04e9349bb05440b1
 Centro Acuático,Clínica Escuela,4.010000,38,64b41280895b8ef4
 Centro Acuático,Edificio B,3.380000,32,-28e30211c2105bf3
 Centro Acuático,Edificio C,2.620000,25,-2267d1e919035656
@@ -360,6 +367,7 @@ Cafetería Pequeña,Cafetería Principal,3.430000,32,61824d50feca4304
 Cafetería Pequeña,Cancha de fútbol central,3.520000,34,39c18cb92f42e179
 Cafetería Pequeña,Cancha de fútbol norte,0.720000,8,6fec9b65ecbce02f
 Cafetería Pequeña,Cancha múltiple,1.150000,12,05749d4d630320d1
+Cafetería Pequeña,Centro de Aprendizaje Global,1.240000,12,6c0848f27fe4c78d
 Cafetería Pequeña,Clínica Escuela,4.110000,39,-2d72a40c1c1b6eca
 Cafetería Pequeña,Edificio B,1.950000,19,-76d041bd8164662a
 Cafetería Pequeña,Edificio C,2.300000,22,-24352d29cf7067a9
@@ -410,6 +418,7 @@ Cafetería Principal,Cafetería Pequeña,3.430000,32,-59e61d7b1580e768
 Cafetería Principal,Cancha de fútbol central,1.210000,13,501c154eae9dab7b
 Cafetería Principal,Cancha de fútbol norte,3.130000,31,1c901aad8950ac97
 Cafetería Principal,Cancha múltiple,2.720000,27,-204ed178f2628837
+Cafetería Principal,Centro de Aprendizaje Global,4.670000,43,-512c7c797e474e6c
 Cafetería Principal,Clínica Escuela,1.100000,12,-2845b947479caabe
 Cafetería Principal,Edificio B,1.700000,17,-16192e2d8a64483b
 Cafetería Principal,Edificio C,2.000000,19,10c4b6ef0146b3fd
@@ -460,6 +469,7 @@ Cancha de fútbol central,Cafetería Pequeña,3.520000,34,-36a1d15da8ddb045
 Cancha de fútbol central,Cafetería Principal,1.210000,13,2e7a0aa22fb57a45
 Cancha de fútbol central,Cancha de fútbol norte,3.250000,35,410f0b00cab91806
 Cancha de fútbol central,Cancha múltiple,2.840000,31,-1f6d64ed6868d38a
+Cancha de fútbol central,Centro de Aprendizaje Global,4.440000,43,2eb45a2aff2c4422
 Cancha de fútbol central,Clínica Escuela,0.890000,10,6658636e3a1709b8
 Cancha de fútbol central,Edificio B,1.750000,19,-5661366cb27756fe
 Cancha de fútbol central,Edificio C,1.360000,15,-1f8b894095ac2a22
@@ -510,6 +520,7 @@ Cancha de fútbol norte,Cafetería Pequeña,0.720000,8,-4003564052bef9b9
 Cancha de fútbol norte,Cafetería Principal,3.130000,31,4e91f835e05903a1
 Cancha de fútbol norte,Cancha de fútbol central,3.250000,35,6e6a3a061ddfc3ac
 Cancha de fútbol norte,Cancha múltiple,0.510000,7,-2526b034ef5a3587
+Cancha de fútbol norte,Centro de Aprendizaje Global,1.960000,19,013603a4a5031d8f
 Cancha de fútbol norte,Clínica Escuela,3.840000,40,-36186cf53d1ef0c7
 Cancha de fútbol norte,Edificio B,1.650000,18,-226578510119647f
 Cancha de fútbol norte,Edificio C,2.430000,25,256646b0e4a13998
@@ -560,6 +571,7 @@ Cancha múltiple,Cafetería Pequeña,1.810000,20,1519915a84ab7ee1
 Cancha múltiple,Cafetería Principal,2.720000,27,5377f072b06077e9
 Cancha múltiple,Cancha de fútbol central,2.840000,31,7933edd9d0f38e64
 Cancha múltiple,Cancha de fútbol norte,1.170000,15,-79a9e9b587d60cbf
+Cancha múltiple,Centro de Aprendizaje Global,3.050000,31,7999ebdf12a11eb1
 Cancha múltiple,Clínica Escuela,3.430000,36,-7117f42240b0c7df
 Cancha múltiple,Edificio B,1.240000,14,-2be012a3c8839af7
 Cancha múltiple,Edificio C,2.020000,21,-621cc121ab6c8fc0
@@ -599,6 +611,57 @@ Cancha múltiple,Radio UDG,1.460000,17,-5701ab4a55a050ad
 Cancha múltiple,Rectoría,1.530000,17,-6e720c177b8d212a
 Cancha múltiple,Sala de Gobierno,3.850000,42,-1e9abd56c0c06948
 Cancha múltiple,Hospital Veterinario,2.210000,23,2950090c6ce32fd7
+Centro de Aprendizaje Global,Auditorio C.A.S.A.,1.960000,20,-1da03e021cceb5b0
+Centro de Aprendizaje Global,Auditorio Antonio González Ochoa,6.540000,63,-dde15a9493ed364
+Centro de Aprendizaje Global,Auditorio Adolfo Aguilar Zínser,3.500000,33,18bac2f00d93b0e3
+Centro de Aprendizaje Global,Bufete Jurídico,6.990000,68,-3e646b279edf392c
+Centro de Aprendizaje Global,C.A.S.A. (Biblioteca),2.230000,21,23e8fa91d0391b64
+Centro de Aprendizaje Global,C.M.I.D.,3.620000,37,-4acf56e4f33c1851
+Centro de Aprendizaje Global,Centro Acuático,3.990000,40,05845626467aac47
+Centro de Aprendizaje Global,Cafetería Pequeña,1.240000,12,-65b85611ef897301
+Centro de Aprendizaje Global,Cafetería Principal,4.670000,43,-6a12fc985c7652ce
+Centro de Aprendizaje Global,Cancha de fútbol central,4.440000,43,5d24145c798b436c
+Centro de Aprendizaje Global,Cancha de fútbol norte,1.960000,19,-3542d4244ffedd73
+Centro de Aprendizaje Global,Cancha múltiple,2.390000,23,-24c49f853030e13d
+Centro de Aprendizaje Global,Clínica Escuela,5.030000,48,-16a6f287c6fa307
+Centro de Aprendizaje Global,Edificio B,3.190000,30,4ade9f60be4e5854
+Centro de Aprendizaje Global,Edificio C,3.250000,31,0769b395a750416f
+Centro de Aprendizaje Global,Edificio F,2.770000,28,49c9691772e9efcb
+Centro de Aprendizaje Global,Edificio G,2.750000,28,02390df16e283733
+Centro de Aprendizaje Global,Edificio H,4.050000,39,-7ff89b36a57d6d00
+Centro de Aprendizaje Global,Edificio I,5.050000,47,4c6377483e1b29a3
+Centro de Aprendizaje Global,Edificio J,3.790000,36,-66265b190db9f0a2
+Centro de Aprendizaje Global,Edificio L,2.600000,26,-6f2bc4e8479f0133
+Centro de Aprendizaje Global,Edificio M,2.490000,23,7f2d11475f2f3428
+Centro de Aprendizaje Global,Edificio N,6.780000,66,-2da98ad66dbee512
+Centro de Aprendizaje Global,Edificio P,4.950000,48,-58f173f07031e199
+Centro de Aprendizaje Global,Edificio Q,4.950000,48,-b3ab1b796423d80
+Centro de Aprendizaje Global,Edificio R,4.220000,41,-783fb5cdb2b531d4
+Centro de Aprendizaje Global,Edificio S,4.400000,42,-4c4a06c7c4882ef
+Centro de Aprendizaje Global,Edificio T,4.370000,41,-32386a903e3965d2
+Centro de Aprendizaje Global,Edificio U,4.230000,40,23db950261aee037
+Centro de Aprendizaje Global,Edificio V,5.830000,55,760a6a304beb10dd
+Centro de Aprendizaje Global,Edificio W,6.450000,63,6b8c0e5a9766b2fa
+Centro de Aprendizaje Global,Edificio X,6.010000,57,-4d0dce27ebb450c6
+Centro de Aprendizaje Global,Edificio Y,6.430000,62,0376f6a76ed1014c
+Centro de Aprendizaje Global,Edificio Z,6.590000,64,-3cf4ba2a87a8eb6a
+Centro de Aprendizaje Global,Entrada Sur,4.360000,43,03776545f1470e3a
+Centro de Aprendizaje Global,Entrada Principal,6.910000,66,-23f4105a5910a19f
+Centro de Aprendizaje Global,Entrada Este,5.160000,49,2ffcb7e2d69f75ad
+Centro de Aprendizaje Global,Estacionamiento 1,4.690000,43,-b027202663ff30d
+Centro de Aprendizaje Global,Estacionamiento 2,5.080000,49,-3cbd6e066a3420f3
+Centro de Aprendizaje Global,Estacionamiento 3,5.630000,54,-1a536bb8db60f81a
+Centro de Aprendizaje Global,Estacionamiento 4,4.620000,46,-645e3ec907eb24be
+Centro de Aprendizaje Global,Estacionamiento 5,4.480000,44,43107577380640c6
+Centro de Aprendizaje Global,Gimnasio,3.500000,35,-7dc732b20a880c22
+Centro de Aprendizaje Global,Laboratorio de Electrónica,3.080000,30,-62023d1265137738
+Centro de Aprendizaje Global,Laboratorio de Periodismo,2.770000,27,6af16f4f0504f04a
+Centro de Aprendizaje Global,Laboratorio de Programación,2.460000,25,-384e4ceb164d4256
+Centro de Aprendizaje Global,Protección Civil,6.360000,61,-56965c1ed5495dce
+Centro de Aprendizaje Global,Radio UDG,2.110000,20,258697543701620b
+Centro de Aprendizaje Global,Rectoría,3.480000,33,57a93da7d2287cd3
+Centro de Aprendizaje Global,Sala de Gobierno,5.450000,54,0c3d2e87e9ab78e0
+Centro de Aprendizaje Global,Hospital Veterinario,4.580000,43,553e0e710f97f870
 Clínica Escuela,Auditorio C.A.S.A.,3.240000,32,5ccd1371fef325ab
 Clínica Escuela,Auditorio Antonio González Ochoa,1.890000,20,5714162022e39d35
 Clínica Escuela,Auditorio Adolfo Aguilar Zínser,3.250000,33,7114bcddb024e3dd
@@ -611,6 +674,7 @@ Clínica Escuela,Cafetería Principal,1.100000,12,6be07cd15e0baa45
 Clínica Escuela,Cancha de fútbol central,0.890000,10,-1ac69fdc1dbd506b
 Clínica Escuela,Cancha de fútbol norte,3.840000,40,25b57c21f3e679a0
 Clínica Escuela,Cancha múltiple,3.430000,36,-407eaf147e73e0a0
+Clínica Escuela,Centro de Aprendizaje Global,5.030000,48,418a341061c51114
 Clínica Escuela,Edificio B,2.340000,24,1b0fbda246302558
 Clínica Escuela,Edificio C,1.950000,20,0345a345f01acb04
 Clínica Escuela,Edificio F,3.700000,35,-2037d77aa02ce2da
@@ -661,6 +725,7 @@ Edificio B,Cafetería Principal,1.700000,17,5faceda19aa3e31b
 Edificio B,Cancha de fútbol central,1.750000,19,3209b34b138f3e0c
 Edificio B,Cancha de fútbol norte,1.650000,18,-620e2e1ff5dd8635
 Edificio B,Cancha múltiple,1.240000,14,5e087ab303a65f45
+Edificio B,Centro de Aprendizaje Global,3.190000,30,38f3d5d165ddd260
 Edificio B,Clínica Escuela,2.340000,24,7cce0794336458d9
 Edificio B,Edificio C,1.220000,12,6a0459aa2cfdfc36
 Edificio B,Edificio F,2.790000,28,-bdb95a94f94e302
@@ -711,6 +776,7 @@ Edificio C,Cafetería Principal,2.000000,19,-84ba9d784fb6bfb
 Edificio C,Cancha de fútbol central,1.360000,15,-31bc2fc5fb61c8ea
 Edificio C,Cancha de fútbol norte,2.430000,25,-4ca2af2fb270ba24
 Edificio C,Cancha múltiple,2.020000,21,76b217b93ae23734
+Edificio C,Centro de Aprendizaje Global,3.250000,31,-7da70dd16b11f387
 Edificio C,Clínica Escuela,1.950000,20,-38dd6feeb7408e00
 Edificio C,Edificio B,1.220000,12,271592efd3187fc0
 Edificio C,Edificio F,2.060000,20,03a535c1c6e28c06
@@ -761,6 +827,7 @@ Edificio F,Cafetería Principal,4.020000,38,-15d55dabf915bf46
 Edificio F,Cancha de fútbol central,3.110000,30,1b930d6621985838
 Edificio F,Cancha de fútbol norte,2.310000,24,-2ba1cfc366468a53
 Edificio F,Cancha múltiple,2.610000,28,-7a291db69f975ed1
+Edificio F,Centro de Aprendizaje Global,2.770000,28,-223d75ef442ba341
 Edificio F,Clínica Escuela,3.700000,35,3ccaeff74904395d
 Edificio F,Edificio B,2.790000,28,-7ea19fff45f45bac
 Edificio F,Edificio C,2.060000,20,-4ea17284f38c58e0
@@ -811,6 +878,7 @@ Edificio G,Cafetería Principal,4.000000,38,68be95281f3a1a08
 Edificio G,Cancha de fútbol central,3.090000,30,421bb8924df609be
 Edificio G,Cancha de fútbol norte,2.290000,24,-33a3e5e33aeb5765
 Edificio G,Cancha múltiple,2.590000,28,01dc83aeb4988469
+Edificio G,Centro de Aprendizaje Global,2.750000,28,78049502b0affffd
 Edificio G,Clínica Escuela,3.680000,35,0bdca547b47c1ab3
 Edificio G,Edificio B,2.770000,28,-7005c66b307d4192
 Edificio G,Edificio C,2.040000,20,43024a5034eefcaa
@@ -861,6 +929,7 @@ Edificio H,Cafetería Principal,1.660000,17,336fe84c7392f08d
 Edificio H,Cancha de fútbol central,1.590000,18,-1474f48aab31e9c
 Edificio H,Cancha de fútbol norte,2.510000,27,-31bf198a6ce350b7
 Edificio H,Cancha múltiple,2.100000,23,-3420caa39977905d
+Edificio H,Centro de Aprendizaje Global,4.050000,39,-1ccf574e327c2e86
 Edificio H,Clínica Escuela,2.180000,23,7e36b253b786e121
 Edificio H,Edificio B,1.080000,13,-67b797dcdb4e4855
 Edificio H,Edificio C,1.110000,12,242002e3cc137127
@@ -911,6 +980,7 @@ Edificio I,Cafetería Principal,2.390000,26,-1f6a7d69f03a463f
 Edificio I,Cancha de fútbol central,3.510000,37,3133282c9e78d89d
 Edificio I,Cancha de fútbol norte,3.590000,34,244ac15a405e05e2
 Edificio I,Cancha múltiple,2.680000,27,-455f0245728aaa62
+Edificio I,Centro de Aprendizaje Global,5.470000,50,-1f7b9a4b92221016
 Edificio I,Clínica Escuela,3.230000,35,0-331eb47dd0ec8b
 Edificio I,Edificio B,2.700000,25,644cf9e67116e979
 Edificio I,Edificio C,3.270000,32,55ee145d92944cc6
@@ -961,6 +1031,7 @@ Edificio J,Cafetería Principal,1.400000,14,0bee3b1f693d008f
 Edificio J,Cancha de fútbol central,1.330000,15,-2346b90beca5db66
 Edificio J,Cancha de fútbol norte,2.250000,24,06fa442a97416ae3
 Edificio J,Cancha múltiple,1.840000,20,-2a780aa27e309083
+Edificio J,Centro de Aprendizaje Global,3.790000,36,-5fb0abde37e81638
 Edificio J,Clínica Escuela,1.920000,20,-7f1bcea79197dda4
 Edificio J,Edificio B,0.820000,10,-526cba9bde6af4cf
 Edificio J,Edificio C,0.850000,9,-75a72eedc510c627
@@ -1011,6 +1082,7 @@ Edificio L,Cafetería Principal,2.660000,25,613b32fb35bd68f4
 Edificio L,Cancha de fútbol central,1.880000,19,-6fffbb4d6ed0057e
 Edificio L,Cancha de fútbol norte,1.790000,18,5bf26f4cea435c5f
 Edificio L,Cancha múltiple,2.090000,22,-47115e9e45f0b4a3
+Edificio L,Centro de Aprendizaje Global,2.600000,26,057f4d2d95329e55
 Edificio L,Clínica Escuela,2.470000,24,41a4497820c6251f
 Edificio L,Edificio B,1.420000,14,7d62a5203ec4382f
 Edificio L,Edificio C,0.660000,7,4d2384b9b5a66c8c
@@ -1061,6 +1133,7 @@ Edificio M,Cafetería Principal,2.630000,28,-23f15ef471aacb05
 Edificio M,Cancha de fútbol central,2.940000,31,-5a1f52fb4c05e099
 Edificio M,Cancha de fútbol norte,1.270000,15,-48061ed0852bfd9c
 Edificio M,Cancha múltiple,0.120000,3,-54c31e20b64c6c3
+Edificio M,Centro de Aprendizaje Global,3.150000,31,-3bb99780c1271294
 Edificio M,Clínica Escuela,3.530000,36,-310134dbdaf80d34
 Edificio M,Edificio B,1.340000,14,-1da7ff65544cd198
 Edificio M,Edificio C,2.120000,21,-1514c37612853d5d
@@ -1111,6 +1184,7 @@ Edificio N,Cafetería Principal,2.850000,30,-22918745c49fb4bd
 Edificio N,Cancha de fútbol central,2.640000,28,-317869bcf3580eb1
 Edificio N,Cancha de fútbol norte,5.590000,58,59f897b3d9278aa2
 Edificio N,Cancha múltiple,5.180000,54,0cc29a437440e65a
+Edificio N,Centro de Aprendizaje Global,6.780000,66,-2b9962071e764e52
 Edificio N,Clínica Escuela,1.860000,20,-2cc14f19a1cbb095
 Edificio N,Edificio B,4.090000,42,637349ac97d5b2f6
 Edificio N,Edificio C,3.700000,38,440c55555a2500fa
@@ -1161,6 +1235,7 @@ Edificio P,Cafetería Principal,0.990000,11,-386d37624653eb3c
 Edificio P,Cancha de fútbol central,0.810000,10,-51ee3459fdc06896
 Edificio P,Cancha de fútbol norte,3.760000,40,17c7f5e1f0230d73
 Edificio P,Cancha múltiple,3.350000,36,-3cce9c9f8e5159f3
+Edificio P,Centro de Aprendizaje Global,4.950000,48,-273fa423ab168975
 Edificio P,Clínica Escuela,0.390000,5,-10fbb84b18950181
 Edificio P,Edificio B,2.260000,24,-615f6c3adfbc94eb
 Edificio P,Edificio C,1.870000,20,02bbb8ce1397ff19
@@ -1211,6 +1286,7 @@ Edificio Q,Cafetería Principal,0.990000,11,47672e02b9fe267b
 Edificio Q,Cancha de fútbol central,0.810000,10,34548c856cd174ff
 Edificio Q,Cancha de fútbol norte,3.760000,40,-27fd80e8469e882e
 Edificio Q,Cancha múltiple,3.350000,36,253216a355b3e08a
+Edificio Q,Centro de Aprendizaje Global,4.950000,48,-44061c46c0634822
 Edificio Q,Clínica Escuela,0.580000,7,64950285bf7082ae
 Edificio Q,Edificio B,2.260000,24,688d3c6884970f66
 Edificio Q,Edificio C,1.870000,20,7c40fea94ef36dea
@@ -1261,6 +1337,7 @@ Edificio R,Cafetería Principal,0.530000,6,-14f3bf35b7be8b27
 Edificio R,Cancha de fútbol central,1.740000,18,-9d647cbd451ed5c
 Edificio R,Cancha de fútbol norte,2.680000,29,6a077ececf67cd63
 Edificio R,Cancha múltiple,2.210000,24,5d7ddb52a92c5cf7
+Edificio R,Centro de Aprendizaje Global,4.220000,41,6a4a297e9aef8048
 Edificio R,Clínica Escuela,1.630000,17,-341fff482ffc69d0
 Edificio R,Edificio B,1.250000,12,-760ead586938223c
 Edificio R,Edificio C,1.580000,16,-71200e11d7a78922
@@ -1311,6 +1388,7 @@ Edificio S,Cafetería Principal,1.380000,15,-26bc82b423ca3359
 Edificio S,Cancha de fútbol central,2.430000,25,51cfe172f55c0d1b
 Edificio S,Cancha de fútbol norte,2.860000,30,6bf62be572effecc
 Edificio S,Cancha múltiple,2.080000,22,072b76ee0b01def6
+Edificio S,Centro de Aprendizaje Global,4.400000,42,0f629ec64128a097
 Edificio S,Clínica Escuela,2.480000,26,471858f28a98dec1
 Edificio S,Edificio B,1.430000,13,-25ad7320f04d3cdf
 Edificio S,Edificio C,1.950000,19,189558b73362f66c
@@ -1361,6 +1439,7 @@ Edificio T,Cafetería Principal,1.650000,18,-6f5ad0937594d348
 Edificio T,Cancha de fútbol central,2.540000,26,54652fc75f81531d
 Edificio T,Cancha de fútbol norte,2.920000,30,-6d2c35f0992aae50
 Edificio T,Cancha múltiple,2.000000,21,36707ae64c293ce9
+Edificio T,Centro de Aprendizaje Global,4.460000,42,-34284ed6c9c5fbdd
 Edificio T,Clínica Escuela,2.750000,29,28065c4f377f8a88
 Edificio T,Edificio B,1.490000,13,15c45b2d820d8fb5
 Edificio T,Edificio C,2.060000,20,-26fe6c5539152a7e
@@ -1411,6 +1490,7 @@ Edificio U,Cafetería Principal,2.670000,29,130fc6170de87039
 Edificio U,Cancha de fútbol central,3.430000,35,169b0613013a92ad
 Edificio U,Cancha de fútbol norte,2.690000,27,4cee12343fc067da
 Edificio U,Cancha múltiple,1.860000,20,-6e653152b0bbf940
+Edificio U,Centro de Aprendizaje Global,4.570000,43,7936616873d16802
 Edificio U,Clínica Escuela,3.720000,39,64c79ad29cb9cd24
 Edificio U,Edificio B,2.380000,22,-170390dcdc1ce45b
 Edificio U,Edificio C,2.950000,29,340305c153a6cf32
@@ -1461,6 +1541,7 @@ Edificio V,Cafetería Principal,2.280000,23,-52128997d1104e84
 Edificio V,Cancha de fútbol central,1.690000,17,548262ffa76247e0
 Edificio V,Cancha de fútbol norte,4.640000,47,-172b16863b4a79c7
 Edificio V,Cancha múltiple,4.230000,43,-43fc8b0a38458aed
+Edificio V,Centro de Aprendizaje Global,5.830000,55,16701a8f8d0ce5e9
 Edificio V,Clínica Escuela,1.180000,12,38e8722b357316c6
 Edificio V,Edificio B,3.140000,31,5fe59bf6393ad567
 Edificio V,Edificio C,2.750000,27,71bcdbd773786f63
@@ -1511,6 +1592,7 @@ Edificio W,Cafetería Principal,2.520000,27,2998c8725a08a577
 Edificio W,Cancha de fútbol central,2.310000,25,689c06defbc886cb
 Edificio W,Cancha de fútbol norte,5.260000,55,005184f2e89d32c6
 Edificio W,Cancha múltiple,4.850000,51,0978ff83fd935b36
+Edificio W,Centro de Aprendizaje Global,6.450000,63,-43440accfb6e291e
 Edificio W,Clínica Escuela,1.530000,17,2cfd9ef6d1381017
 Edificio W,Edificio B,3.760000,39,6eabb345e6bef5c2
 Edificio W,Edificio C,3.370000,35,3a41cbdfbfe0bb9e
@@ -1561,6 +1643,7 @@ Edificio X,Cafetería Principal,2.460000,25,-1d06d76303eb295d
 Edificio X,Cancha de fútbol central,1.870000,19,-4c81425256e51dab
 Edificio X,Cancha de fútbol norte,4.820000,49,-6aba2b84861fba0
 Edificio X,Cancha múltiple,4.410000,45,356647e1f2c04a20
+Edificio X,Centro de Aprendizaje Global,6.010000,57,3a30f01723f205d4
 Edificio X,Clínica Escuela,1.360000,14,1c2479bf198d87e5
 Edificio X,Edificio B,3.320000,33,-65dcaf49c6837ee8
 Edificio X,Edificio C,2.930000,29,-404d5d01eafdd53c
@@ -1611,6 +1694,7 @@ Edificio Y,Cafetería Principal,2.880000,30,3bcc539616cce5d1
 Edificio Y,Cancha de fútbol central,2.290000,24,489c52afdf7ae8b3
 Edificio Y,Cancha de fútbol norte,5.240000,54,2847066fa116c0ee
 Edificio Y,Cancha múltiple,4.830000,50,4f74683d693f16be
+Edificio Y,Centro de Aprendizaje Global,6.430000,62,34da84162819f10a
 Edificio Y,Clínica Escuela,1.780000,19,-43ca150464c37dfd
 Edificio Y,Edificio B,3.740000,38,7a4fc23769d4078a
 Edificio Y,Edificio C,3.350000,34,-a417104ae52c53a
@@ -1661,6 +1745,7 @@ Edificio Z,Cafetería Principal,3.040000,32,14f48506d2ea7cad
 Edificio Z,Cancha de fútbol central,2.450000,26,35e29040bd88188f
 Edificio Z,Cancha de fútbol norte,5.400000,56,6448280caf1051e2
 Edificio Z,Cancha múltiple,4.990000,52,2b3084493aab789a
+Edificio Z,Centro de Aprendizaje Global,6.590000,64,-797133560e761512
 Edificio Z,Clínica Escuela,1.940000,21,39972a59e0e085f7
 Edificio Z,Edificio B,3.900000,40,-42d1b458f33e95ca
 Edificio Z,Edificio C,3.510000,36,-3f0690f5ade90fc6
@@ -1711,6 +1796,7 @@ Entrada Sur,Cafetería Principal,4.700000,44,-8c0d24bba60cf12
 Entrada Sur,Cancha de fútbol central,3.790000,36,5ad8b2375af5bccc
 Entrada Sur,Cancha de fútbol norte,3.790000,37,-38878c03415a234c
 Entrada Sur,Cancha múltiple,4.090000,41,71f0007bc19b8cb0
+Entrada Sur,Centro de Aprendizaje Global,4.360000,43,-32551dde525ef4a0
 Entrada Sur,Clínica Escuela,4.380000,41,2e6e2ac0cc77ca99
 Entrada Sur,Edificio B,3.750000,35,77d501c3fbf626e8
 Entrada Sur,Edificio C,2.990000,28,34bf163c32be9965
@@ -1761,6 +1847,7 @@ Entrada Principal,Cafetería Principal,2.820000,30,-5e0878c7dcc100d4
 Entrada Principal,Cancha de fútbol central,2.610000,28,-1864dee76e974858
 Entrada Principal,Cancha de fútbol norte,5.560000,58,-3cccaec25dfdfa1f
 Entrada Principal,Cancha múltiple,5.150000,54,64b3b5ffd2726abb
+Entrada Principal,Centro de Aprendizaje Global,6.750000,66,347da7b1a8622c71
 Entrada Principal,Clínica Escuela,1.830000,20,62695680787edc04
 Entrada Principal,Edificio B,4.060000,42,-4cebcfadec8c10f1
 Entrada Principal,Edificio C,3.670000,38,-4c9f2f7654b618d5
@@ -1811,6 +1898,7 @@ Entrada Este,Cafetería Principal,1.620000,17,50d91c92b36912a0
 Entrada Este,Cancha de fútbol central,2.740000,28,-6e7e2a553f39bcaa
 Entrada Este,Cancha de fútbol norte,3.620000,37,-640ec18cb083af74
 Entrada Este,Cancha múltiple,2.840000,29,-31d403594370204a
+Entrada Este,Centro de Aprendizaje Global,5.160000,49,765dafa61ea25cd7
 Entrada Este,Clínica Escuela,2.460000,26,-12a782c0fa28e076
 Entrada Este,Edificio B,2.190000,20,7c2dcef5d8b3fc61
 Entrada Este,Edificio C,2.710000,26,1f585ff59259e1ac
@@ -1861,6 +1949,7 @@ Estacionamiento 1,Cafetería Principal,2.760000,29,43350398fe3b2957
 Estacionamiento 1,Cancha de fútbol central,3.880000,40,610a804268787c77
 Estacionamiento 1,Cancha de fútbol norte,3.080000,29,-6a333ce44dba770c
 Estacionamiento 1,Cancha múltiple,2.320000,23,-2ea28b4194f506ac
+Estacionamiento 1,Centro de Aprendizaje Global,4.960000,45,0126a62843f2e39c
 Estacionamiento 1,Clínica Escuela,3.600000,38,0b246548eef739ef
 Estacionamiento 1,Edificio B,2.840000,25,-1f5752ff467635a7
 Estacionamiento 1,Edificio C,3.410000,32,-4b57d58c27e6f05a
@@ -1911,6 +2000,7 @@ Estacionamiento 2,Cafetería Principal,1.150000,12,-150eab3ce4820ae4
 Estacionamiento 2,Cancha de fútbol central,2.270000,23,-4ba0ac75b0155886
 Estacionamiento 2,Cancha de fútbol norte,3.540000,37,412b9b43246fc5b8
 Estacionamiento 2,Cancha múltiple,2.900000,30,-40dfe0f0e7addc22
+Estacionamiento 2,Centro de Aprendizaje Global,5.080000,49,498ca36336e506db
 Estacionamiento 2,Clínica Escuela,1.990000,21,-7298abb98afad532
 Estacionamiento 2,Edificio B,2.110000,20,539a31a682a3b77d
 Estacionamiento 2,Edificio C,2.440000,24,6deff2f3ddc472d7
@@ -1961,6 +2051,7 @@ Estacionamiento 3,Cafetería Principal,1.050000,11,-496b15fec076010a
 Estacionamiento 3,Cancha de fútbol central,1.490000,16,756abf0b6b76b9db
 Estacionamiento 3,Cancha de fútbol norte,4.160000,41,-733d3a64fa646e24
 Estacionamiento 3,Cancha múltiple,3.700000,38,-b7be5d6270356a6
+Estacionamiento 3,Centro de Aprendizaje Global,5.630000,54,3c38eb8b71453132
 Estacionamiento 3,Clínica Escuela,1.200000,13,-6d373e55d1ed40cc
 Estacionamiento 3,Edificio B,2.730000,27,-29e979931bb517c6
 Estacionamiento 3,Edificio C,2.550000,26,-5c99fd9ae4c92352
@@ -2011,6 +2102,7 @@ Estacionamiento 4,Cafetería Principal,4.960000,47,-626a21d4cac5b3d8
 Estacionamiento 4,Cancha de fútbol central,4.050000,39,146fe35ab1bf815e
 Estacionamiento 4,Cancha de fútbol norte,4.050000,40,30fc044ca33a95ba
 Estacionamiento 4,Cancha múltiple,4.350000,44,-125e405a4909036e
+Estacionamiento 4,Centro de Aprendizaje Global,4.620000,46,57dee9a92815f072
 Estacionamiento 4,Clínica Escuela,4.640000,44,13d8339cdc1fea13
 Estacionamiento 4,Edificio B,4.010000,38,4a6cafe6d6269fae
 Estacionamiento 4,Edificio C,3.250000,31,-39eb3d5ea225d5bd
@@ -2061,6 +2153,7 @@ Estacionamiento 5,Cafetería Principal,4.820000,45,-3361001e36cfbd9a
 Estacionamiento 5,Cancha de fútbol central,3.910000,37,-5bbf6e075e24530c
 Estacionamiento 5,Cancha de fútbol norte,3.910000,38,32cbea44439c2b9c
 Estacionamiento 5,Cancha múltiple,4.210000,42,3d94f2f12a0c4008
+Estacionamiento 5,Centro de Aprendizaje Global,4.480000,44,-449f131d045650b8
 Estacionamiento 5,Clínica Escuela,4.500000,42,20c26547389090f1
 Estacionamiento 5,Edificio B,3.870000,36,20956e018f07f600
 Estacionamiento 5,Edificio C,3.110000,29,32421a223ce0868d
@@ -2111,6 +2204,7 @@ Gimnasio,Cafetería Principal,3.840000,36,-2cd2b0b495230f94
 Gimnasio,Cancha de fútbol central,2.930000,28,7f6aba7fd1209082
 Gimnasio,Cancha de fútbol norte,2.930000,29,-7a329c3b533fa022
 Gimnasio,Cancha múltiple,3.230000,33,57b4637663674b46
+Gimnasio,Centro de Aprendizaje Global,3.500000,35,-1bf193d341728282
 Gimnasio,Clínica Escuela,3.520000,33,4eb1f99b3fd6471f
 Gimnasio,Edificio B,2.890000,27,-5b07b0ab824f5de6
 Gimnasio,Edificio C,2.130000,20,-82e445a0c89c409
@@ -2161,6 +2255,7 @@ Laboratorio de Electrónica,Cafetería Principal,2.290000,22,-3eb94914313f32ca
 Laboratorio de Electrónica,Cancha de fútbol central,1.510000,16,-67dc7ba8cd3bcf24
 Laboratorio de Electrónica,Cancha de fútbol norte,2.260000,24,202555cec71685d5
 Laboratorio de Electrónica,Cancha múltiple,1.850000,20,35228ea777773637
+Laboratorio de Electrónica,Centro de Aprendizaje Global,3.080000,30,7999c0c3ec0d83c8
 Laboratorio de Electrónica,Clínica Escuela,2.100000,21,48eda7c4aaa9bd29
 Laboratorio de Electrónica,Edificio B,1.050000,11,-16c88aaab6c82f37
 Laboratorio de Electrónica,Edificio C,0.290000,4,31d7b11cade30dde
@@ -2211,6 +2306,7 @@ Laboratorio de Periodismo,Cafetería Principal,2.680000,25,-48fb5570a530e5e2
 Laboratorio de Periodismo,Cancha de fútbol central,2.800000,29,-297059e623f5cb41
 Laboratorio de Periodismo,Cancha de fútbol norte,1.640000,17,-66ee8d3223d4f9e2
 Laboratorio de Periodismo,Cancha múltiple,1.650000,18,-992b9b2f7650526
+Laboratorio de Periodismo,Centro de Aprendizaje Global,2.770000,27,-650b83bb392f02fe
 Laboratorio de Periodismo,Clínica Escuela,3.390000,34,-362fa8cf0fbfa5ac
 Laboratorio de Periodismo,Edificio B,1.200000,12,-5b34743eaccd5c30
 Laboratorio de Periodismo,Edificio C,1.980000,19,-7dafd0a63ec4ffb5
@@ -2261,6 +2357,7 @@ Laboratorio de Programación,Cafetería Principal,3.050000,29,01c64ffacb30c580
 Laboratorio de Programación,Cancha de fútbol central,2.140000,21,-5cd136706efabffa
 Laboratorio de Programación,Cancha de fútbol norte,1.780000,19,-bd3cad06222e355
 Laboratorio de Programación,Cancha múltiple,2.080000,23,-7225ceaf87de2627
+Laboratorio de Programación,Centro de Aprendizaje Global,2.460000,25,-11bbd5ae38d7fe32
 Laboratorio de Programación,Clínica Escuela,2.730000,26,-db67f413c6e18f5
 Laboratorio de Programación,Edificio B,2.090000,20,-664572f9d8c4f2cd
 Laboratorio de Programación,Edificio C,1.330000,13,-614ca641c0a91848
@@ -2311,6 +2408,7 @@ Protección Civil,Cafetería Principal,2.810000,29,-35db20850f08d35b
 Protección Civil,Cancha de fútbol central,2.220000,23,31ad0be914e1a707
 Protección Civil,Cancha de fútbol norte,5.170000,53,-303a6e1aa7d92766
 Protección Civil,Cancha múltiple,4.760000,49,-6de1f247329a41ce
+Protección Civil,Centro de Aprendizaje Global,6.360000,61,-4d4419266e9f9a3a
 Protección Civil,Clínica Escuela,1.710000,18,3abb0637eff8ed2f
 Protección Civil,Edificio B,3.670000,37,749bdfbc7758ac8e
 Protección Civil,Edificio C,3.280000,33,45c3f5e450b75c32
@@ -2361,6 +2459,7 @@ Radio UDG,Cafetería Principal,2.980000,28,-52d7b098995e6264
 Radio UDG,Cancha de fútbol central,2.770000,28,6d064f2265edcc09
 Radio UDG,Cancha de fútbol norte,1.020000,11,5a3c83143779f63b
 Radio UDG,Cancha múltiple,1.320000,15,-425627907559f4b7
+Radio UDG,Centro de Aprendizaje Global,2.110000,20,-5a58571de052770d
 Radio UDG,Clínica Escuela,3.360000,33,-3aec2f141c5c27ba
 Radio UDG,Edificio B,1.500000,15,-30b882a8ed710f2
 Radio UDG,Edificio C,1.550000,16,-408d19e08aa5c1f9
@@ -2411,6 +2510,7 @@ Rectoría,Cafetería Principal,1.260000,13,159cdc51b248e695
 Rectoría,Cancha de fútbol central,1.310000,15,-7d917e5aae38ffda
 Rectoría,Cancha de fútbol norte,1.940000,21,-677325e1758fb21a
 Rectoría,Cancha múltiple,1.530000,17,-16a09d687794c5aa
+Rectoría,Centro de Aprendizaje Global,3.480000,33,-4d1304e19c3237eb
 Rectoría,Clínica Escuela,1.900000,20,342971e7da7c5770
 Rectoría,Edificio B,0.440000,5,-421cc397b097199e
 Rectoría,Edificio C,0.830000,9,14fb5a54b9da2645
@@ -2461,6 +2561,7 @@ Sala de Gobierno,Cafetería Principal,1.490000,17,54fa0dd34aa72c63
 Sala de Gobierno,Cancha de fútbol central,1.310000,16,32602f9248dad857
 Sala de Gobierno,Cancha de fútbol norte,4.260000,46,5605ae95e209922a
 Sala de Gobierno,Cancha múltiple,3.850000,42,115c8973a67da8c2
+Sala de Gobierno,Centro de Aprendizaje Global,5.450000,54,-3ea7b85094b4d2a
 Sala de Gobierno,Clínica Escuela,0.760000,9,-51774031def04c06
 Sala de Gobierno,Edificio B,2.760000,30,-61d9aa04233f7522
 Sala de Gobierno,Edificio C,2.370000,26,-40cdc9d59af6fe7e
@@ -2511,6 +2612,7 @@ Hospital Veterinario,Cafetería Principal,3.180000,33,-6d7a40606193fe3a
 Hospital Veterinario,Cancha de fútbol central,3.760000,37,-3d48eab93fdd147e
 Hospital Veterinario,Cancha de fútbol norte,2.720000,26,-69266081ced03faa
 Hospital Veterinario,Cancha múltiple,2.210000,23,3a2db95c55feca47
+Hospital Veterinario,Centro de Aprendizaje Global,4.600000,42,-17a1bfb75ebf920a
 Hospital Veterinario,Clínica Escuela,4.280000,44,2847e9ce269b752e
 Hospital Veterinario,Edificio B,2.710000,24,-38c35e58825b734
 Hospital Veterinario,Edificio C,3.280000,31,-64a1a3a89f3f57cf

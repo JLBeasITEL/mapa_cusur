@@ -60,4 +60,5 @@ const Map<String, String> diccionarioNombres = {
   'Lab_Programacion': 'Laboratorio de Programación',
   'Lab_Electronica': 'Laboratorio de Electrónica',
   'Lab_Periodismo': 'Laboratorio de Periodismo',
+  'Centro_Aprendizaje_Global': 'Centro de Aprendizaje Global',
 };
