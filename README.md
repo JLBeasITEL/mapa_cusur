@@ -15,6 +15,10 @@ Aplicación móvil de mapa interactivo para el campus de **CUSur** (Centro Unive
   - [Ubicación GPS en tiempo real](#ubicación-gps-en-tiempo-real)
   - [Renderizado del mapa](#renderizado-del-mapa)
   - [Transformación geo→píxel: dos puntos y afín](#transformación-geopíxel-dos-puntos-y-afín)
+- [Mapa vectorial](#mapa-vectorial)
+  - [De dónde salen los datos](#de-dónde-salen-los-datos)
+  - [Licencia de los datos (ODbL)](#licencia-de-los-datos-odbl)
+  - [Cambiar entre el mapa vectorial y la imagen](#cambiar-entre-el-mapa-vectorial-y-la-imagen)
 - [Instrumentación de campo](#instrumentación-de-campo)
 - [Herramientas de datos](#herramientas-de-datos)
   - [`exportar_rutas.py`](#exportar_rutaspy)
@@ -155,6 +159,35 @@ Para ubicar una coordenada GPS sobre el mapa (cámara y marcador "Estás aquí")
 - **`TransformacionAfin`**: ajuste por mínimos cuadrados de 6 parámetros sobre los 8 `puntos_control` del JSON, resuelto con ecuaciones normales (regla de Cramer, sin librería de álgebra lineal). RMSE sobre los 144 nodos: **~7.1 m**.
 
 En modo debug, la app registra el RMSE de ambos modelos al arrancar.
+
+## Mapa vectorial
+
+Además del modo original sobre la imagen `mapa_CUSur.png`, la app puede dibujar el campus como **mapa vectorial**: edificios, canchas, calles, áreas verdes, lugares, entradas y estacionamientos se dibujan a partir de coordenadas, así que las líneas y los textos se mantienen nítidos a cualquier zoom y el mapa queda con el norte arriba. Es el modo activo por defecto.
+
+- **Datos**: `assets/campus_vector.json`, todo en metros sobre una proyección local del campus (`x` hacia el este, `y` hacia el sur desde el origen de `meta.origen`). Se lee con `lib/data/mapa_vectorial_parser.dart` y se convierte a lienzo con `lib/domain/proyeccion_local.dart` (11 unidades de lienzo por metro, la escala aproximada del lienzo de la imagen, para que la ruta, los pines y el marcador se vean igual en los dos modos).
+- **Dibujo**: una capa estática que se construye una sola vez (`MapaVectorialPainter`), una capa de etiquetas e íconos que mantiene los textos a tamaño constante en pantalla y evita que se encimen (`EtiquetasMapaPainter`), y encima el mismo `RoutePainter` del modo imagen. En la esquina superior derecha, un botón muestra u oculta los íconos.
+- **Rutas**: el grafo, Dijkstra y la interpolación son los mismos en los dos modos; el mapa vectorial solo cambia cómo se dibuja. Los lugares que el mapa muestra y que no tenían nodo (las dos canchas de fútbol, la Cancha múltiple, los laboratorios del edificio L y el Centro de Aprendizaje Global) tienen nodos de acceso propios en `campus_data.json`. Sus `coordenadas_pix` son derivadas, no digitalizadas, y están listadas en `pixeles_derivados`, así que no entran en el cálculo del RMSE ni de la escala px/m de la transformación geo→píxel.
+- **Referencia visual**: `mapa_cusur/docs/mapa_vectorial/mapa-vectorial-referencia.html` es la vista previa aprobada (colores, orden de capas, tamaños de texto); `exportar_flutter.py`, en la misma carpeta, documenta cómo se generó el JSON (depende de archivos de trabajo externos y no se ejecuta dentro del repositorio).
+
+### De dónde salen los datos
+
+- **OpenStreetMap**: los edificios, las canchas y las calles.
+- **Trazos propios de Juan Luis Beas**: la Cafetería Pequeña, los dos edificios junto a Av. Colón (el Laboratorio de análisis clínicos y uno sin nombre todavía) y las canchas de la Cancha múltiple. En el JSON, esos edificios tienen `"origen": "trazo propio"`.
+- **Áreas verdes ilustrativas**: se generaron automáticamente en los espacios libres del campus, lejos de edificios y andadores; no son un levantamiento. En la zona central (de C.A.S.A. a Rectoría) los andadores se dibujaron a mano siguiendo la disposición real: la explanada principal, las diagonales hacia el Edificio M y los andadores hacia los edificios L y C.
+
+### Licencia de los datos (ODbL)
+
+`assets/campus_vector.json` contiene datos derivados de OpenStreetMap y se distribuye bajo la [Open Database License (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/1-0/), con la atribución **"© colaboradores de OpenStreetMap"** ([openstreetmap.org/copyright](https://www.openstreetmap.org/copyright)). La app muestra esa atribución siempre que el mapa vectorial está en pantalla. Esta licencia aplica solo a esos datos; el código de la app sigue bajo los términos indicados al final de este archivo.
+
+### Cambiar entre el mapa vectorial y la imagen
+
+El modo se elige con la constante `kModoMapa` en `mapa_cusur/lib/ui/mapa/lienzo_mapa.dart`:
+
+```dart
+const ModoMapa kModoMapa = ModoMapa.vectorial; // o ModoMapa.imagen
+```
+
+Con `ModoMapa.imagen`, la app vuelve a la versión documentada en la tesis: dibuja la ruta sobre `mapa_CUSur.png` con `coordenadas_pix`, no carga `campus_vector.json`, no muestra la atribución ni el botón de íconos, y el zoom máximo vuelve a ser 8x (en modo vectorial es 12x). Los cálculos de la transformación geo→píxel y de la instrumentación de campo funcionan igual en los dos modos.
 
 ## Instrumentación de campo
 
