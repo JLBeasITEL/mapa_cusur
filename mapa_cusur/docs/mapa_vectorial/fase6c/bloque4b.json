@@ -1,0 +1,43 @@
+{
+  "bloque": "Bloque 4b — Destinos sin paso y pasillo del Edificio X",
+  "notas": [
+    "Destinos sin paso: la puerta es la única arista que queda; lo agregado une a los vecinos por fuera.",
+    "  Rectoria: puerta a RB (8.3 m; esquina noreste, donde se juntan los andadores del trazo).",
+    "     Edificio_B–RB1 sigue la diagonal del trazo.",
+    "  Cafeteria_P: puerta a CF5, nodo nuevo donde el trazo toca la fachada oeste;",
+    "     CF3–CF5–CF4 reemplaza el paso por dentro.",
+    "  Auditorio_Zinser: puerta a U3 (sale por la fachada este, a 0.3 m del trazo). B5, en la",
+    "     esquina noreste del Edificio B, une B3 con M8 por el andador del trazo (B3 está dentro de B).",
+    "Edificio X: NO es destino sin paso. El trazo tiene un pasillo norte–sur (x ≈ 99) que atraviesa",
+    "  P, V y X; Edificio_X está sobre él. Queda XV–Edificio_X–X5–Y4 (el pasillo) y se quitan las",
+    "  diagonales a X1 y X3, que no lo siguen; X3–X5–X1 repone el pasillo sur. Los tramos del",
+    "  pasillo en V y P quedan para el Bloque 5.",
+    "Regresión de cada parte por separado (pares que cambian · peor caso):",
+    "  Rectoría (RB): 290 · +0.19",
+    "  Cafetería Principal: 190 (88 más cortos) · +0.04",
+    "  Auditorio: 170 (27 más cortos) · +0.39 (R3)",
+    "  Edificio X (pasillo): 30 (18 más cortos) · +0.19"
+  ],
+  "nodos": [
+    {"id": "CF5", "x": 89.6, "y": -12.8,
+     "nota": "Frente a la fachada oeste de la Cafetería Principal, donde la toca el trazo"},
+    {"id": "B5", "x": 47.3, "y": -95.6,
+     "nota": "Esquina noreste del Edificio B, afuera, sobre el andador de B a M8"},
+    {"id": "X5", "x": 99.0, "y": 122.4,
+     "nota": "Salida sur del pasillo norte–sur del Edificio X, en el pasillo sur"}
+  ],
+  "quitar": [
+    ["Rectoria", "B1"], ["Rectoria", "B2"], ["Rectoria", "Edificio_B"], ["Rectoria", "CR"],
+    ["Cafeteria_P", "CF3"], ["Cafeteria_P", "CF4"],
+    ["Auditorio_Zinser", "B3"], ["Auditorio_Zinser", "M10"], ["Auditorio_Zinser", "M8"],
+    ["Auditorio_Zinser", "U4"],
+    ["Edificio_X", "X1"], ["Edificio_X", "X3"], ["Edificio_X", "Y4"]
+  ],
+  "agregar": [
+    ["Edificio_B", "RB1"],
+    ["Cafeteria_P", "CF5"], ["CF3", "CF5"], ["CF5", "CF4"],
+    ["B3", "B5"], ["B5", "M8"],
+    ["Edificio_X", "X5"], ["X3", "X5"], ["X5", "X1"], ["X5", "Y4"]
+  ],
+  "cruces_permitidos": ["Edificio B"]
+}

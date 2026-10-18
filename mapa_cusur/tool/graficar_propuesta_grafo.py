@@ -46,7 +46,9 @@ def main():
     pares = [p for p in pares_antes if p not in quitadas]
 
     # Ninguna arista agregada puede cruzar un edificio, salvo los que el
-    # bloque permite (p. ej. la Cancha múltiple techada, que se camina).
+    # bloque permite (p. ej. la Cancha múltiple techada, que se camina) o
+    # uno en el que ya está uno de sus extremos (la puerta de un destino, o
+    # un nodo que quedó dentro de la pared): ese tramo es inevitable.
     cruces, permitidos = [], []
     for a, b, *_ in agregadas:
         largo = math.dist(nodos[a], nodos[b])
@@ -54,15 +56,17 @@ def main():
             t = gae.tramos_dentro(nodos[a], nodos[b], e["anillos"])
             m = sum(t1 - t0 for t0, t1 in t) * largo
             if m >= gae.UMBRAL_ROCE:
-                texto = f"{a}–{b} cruza {gae.nombre_edificio(e)} ({m:.1f} m)"
-                (permitidos if gae.nombre_edificio(e) in informe["cruces_permitidos"]
+                adentro = [n for n in (a, b) if gae.dentro(nodos[n], e["anillos"])]
+                texto = (f"{a}–{b} cruza {gae.nombre_edificio(e)} ({m:.1f} m"
+                         + (f", {adentro[0]} está dentro)" if adentro else ")"))
+                (permitidos if adentro or gae.nombre_edificio(e) in informe["cruces_permitidos"]
                  else cruces).append(texto)
     if cruces:
         raise SystemExit("Aristas agregadas que cruzan edificios:\n  " + "\n  ".join(cruces))
     eliminados = {n["id"] for n in informe.get("nodos_eliminados", [])}
 
     fig = plt.figure(figsize=(16, 9.6), dpi=120)
-    ax = fig.add_axes([0.01, 0.02, 0.62, 0.88])
+    ax = fig.add_axes([0.01, 0.02, 0.62, 0.86])
     ax.add_patch(plt.Polygon(mapa["campus"], closed=True, fc="#f7f7f2", ec="#bbbbbb", lw=1, zorder=0))
     for anillo in mapa["areas_verdes"]:
         ax.add_patch(plt.Polygon(anillo, closed=True, fc="#dcefd2", ec="none", zorder=1))
@@ -99,10 +103,10 @@ def main():
                         arrowprops=dict(arrowstyle="->", color="#7a3db8", lw=1.6, ls="--"))
             ax.scatter([ox], [oy], s=40, facecolor="white", edgecolor="#7a3db8", lw=1.5, zorder=8)
             ax.text(ox, oy + 2.2, f"{n['id']} (antes)", fontsize=8, color="#7a3db8", ha="center",
-                    va="top", zorder=9, path_effects=HALO)
+                    va="top", zorder=9, path_effects=HALO, clip_on=True)
         ax.scatter([x], [y], s=70, color="#7a3db8", edgecolor="white", lw=1.2, zorder=10)
         ax.text(x, y - 1.8, n["id"], fontsize=10, fontweight="bold", color="#4b1f7a",
-                ha="center", va="bottom", zorder=11, path_effects=HALO)
+                ha="center", va="bottom", zorder=11, path_effects=HALO, clip_on=True)
 
     involucrados = {n["id"] for n in informe["nodos"]}
     for a, b, *_ in agregadas:
@@ -114,15 +118,15 @@ def main():
         if i in eliminados:
             ax.scatter([x], [y], s=90, marker="X", color="#d62728", edgecolor="white", lw=0.8, zorder=10)
             ax.text(x + 1.4, y - 1.4, f"{i} (se elimina)", fontsize=9, color="#a51d1d", zorder=11,
-                    path_effects=HALO)
+                    path_effects=HALO, clip_on=True)
             continue
         ax.scatter([x], [y], s=30, color="black", zorder=10)
-        ax.text(x + 1.2, y - 1.2, i, fontsize=9, zorder=11, path_effects=HALO)
+        ax.text(x + 1.2, y - 1.2, i, fontsize=9, zorder=11, path_effects=HALO, clip_on=True)
     xs = [nodos[i][0] for i in involucrados] + [nodos_antes[i][0] for i in involucrados if i in nodos_antes]
     ys = [nodos[i][1] for i in involucrados] + [nodos_antes[i][1] for i in involucrados if i in nodos_antes]
     margen = 12
     x0, x1, y0, y1 = ventana_fija or (min(xs) - margen, max(xs) + margen, min(ys) - margen, max(ys) + margen)
-    ventana = gae.ajustar_ventana(ax, x0, x1, y0, y1, aspecto=(0.62 * 16) / (0.88 * 9.6))
+    ventana = gae.ajustar_ventana(ax, x0, x1, y0, y1, aspecto=(0.62 * 16) / (0.86 * 9.6))
     gae.escala_y_norte(ax, *ventana)
 
     leyenda = [
@@ -134,11 +138,12 @@ def main():
     ]
     ax.legend(handles=leyenda, loc="lower right", fontsize=8.5, framealpha=0.92)
 
-    fig.text(0.01, 0.955, f"Propuesta · {informe['bloque']}", fontsize=17, fontweight="bold")
+    fig.text(0.01, 0.962, f"Propuesta · {informe['bloque']}", fontsize=17, fontweight="bold")
     subtitulo = ("Ninguna arista agregada cruza un edificio" if not permitidos else
                  "Cruces permitidos: " + "; ".join(permitidos))
-    fig.text(0.01, 0.92, f"{subtitulo} · pesos = round(km Haversine / 0.0667, 2)",
-             fontsize=10.5, color="#444444")
+    fig.text(0.01, 0.938, "\n".join(textwrap.wrap(f"{subtitulo} · pesos = round(km Haversine / 0.0667, 2)",
+                                                 width=170)),
+             fontsize=10.5 if len(subtitulo) < 140 else 9, color="#444444", va="top")
 
     lineas = []
     if informe.get("notas"):
@@ -185,7 +190,8 @@ def main():
     lineas += ["", f"Cifras de la tesis (calibración congelada, {c['nodos_digitalizados']} nodos):",
                f"  {c['px_por_metro']:.3f} px/m · afín {c['afin_px']:.2f} px / {c['afin_m']:.2f} m · "
                f"dos puntos {c['dos_puntos_px']:.2f} px / {c['dos_puntos_m']:.2f} m"]
-    fig.text(0.645, 0.885, "\n".join(lineas), fontsize=7.6, va="top", family="DejaVu Sans")
+    fig.text(0.645, 0.885, "\n".join(lineas), fontsize=min(7.6, 580 / (1.25 * len(lineas))), va="top",
+             family="DejaVu Sans")
     salida.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(salida)
     plt.close(fig)
