@@ -142,7 +142,7 @@ dart run tool/generar_linea_base.dart                                           
 
 | Bloque | Commit | Cambio | Rutas |
 |---|---|---|---|
-| 1. Cafetería Pequeña | (este) | `Cafeteria` pasa a la fachada sureste de su edificio como destino sin paso (`Cafeteria`–`CP1`). `CP1`, `CP2` y `CP3` siguen el trazo al norte (a SP3) y al oeste (a F7) de C.A.S.A. Se quitan las 4 aristas que cruzaban C.A.S.A. | 142 pares más largos: 102 de la cafetería (+0.15 a +1.01 min) y 40 del Centro de Aprendizaje Global (hasta +0.55). R1-R3 sin cambio. Asimétricas: 38 → 36. |
+| 1. Cafetería Pequeña | `8b18981` (línea base: commit siguiente) | `Cafeteria` pasa a la fachada sureste de su edificio como destino sin paso (`Cafeteria`–`CP1`). `CP1`, `CP2` y `CP3` siguen el trazo al norte (a SP3) y al oeste (a F7) de C.A.S.A. Se quitan las 4 aristas que cruzaban C.A.S.A. | 142 pares más largos: 102 de la cafetería (+0.15 a +1.01 min) y 40 del Centro de Aprendizaje Global (hasta +0.55). R1-R3 sin cambio. Asimétricas: 38 → 36. |
 
 ## Reglas de trabajo
 
@@ -168,10 +168,10 @@ flutter build apk --release
 
 Flutter está fijado en **3.47.6** en `C:\src\flutter` (checkout de la etiqueta con git, sin `flutter upgrade`). En `Documentos`, si `flutter test` no puede borrar `build\unit_test_assets`, se borra a mano y se repite.
 
-## Línea base de pruebas (17 de octubre de 2026, commit `58498e9`)
+## Línea base de pruebas (18 de octubre de 2026, después del Bloque 1 de la Fase 6c)
 
 - `flutter analyze`: sin problemas.
-- `flutter test`: **205 pasan, 1 omitida y 1 falla**.
+- `flutter test`: **207 pasan, 1 omitida y 1 falla**.
   - **Omitida:** el reporte de la Fase 6c, que corre solo bajo demanda.
-  - **Falla (esperada):** `validador_grafo_test.dart`, "el grafo real del campus NO pasa la validación…". Es la constancia de las 38 aristas asimétricas sin resolver; la prueba hermana, que fija ese número en 38, pasa.
-- Línea base de rutas: 2652 pares entre 52 nodos con nombre, todos alcanzables. Grafo: 152 nodos y 574 aristas antes de interpolar; 1022 nodos y 2346 aristas después.
+  - **Falla (esperada):** `validador_grafo_test.dart`, "el grafo real del campus NO pasa la validación…". Es la constancia de las aristas asimétricas sin resolver. Las pruebas que fijan las cifras pasan: 38 en la calibración congelada y 36 en el grafo actual.
+- Línea base de rutas: 2652 pares entre 52 nodos con nombre, todos alcanzables. Grafo: 155 nodos y 578 aristas antes de interpolar; 1016 nodos y 2330 aristas después.
