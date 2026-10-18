@@ -27,7 +27,7 @@ Auditorio C.A.S.A.,Edificio Q,3.160000,32,-7f04f96e240df717
 Auditorio C.A.S.A.,Edificio R,2.810000,29,-52aa8fa8b52d34de
 Auditorio C.A.S.A.,Edificio S,2.990000,30,-7eab271cbfff46c5
 Auditorio C.A.S.A.,Edificio T,3.050000,30,4d9d360a2e68adcf
-Auditorio C.A.S.A.,Edificio U,3.570000,38,-1fa479d6bf163447
+Auditorio C.A.S.A.,Edificio U,3.630000,38,-1fa479d6bf163447
 Auditorio C.A.S.A.,Edificio V,4.040000,39,-74c973cbc8ea6f44
 Auditorio C.A.S.A.,Edificio W,4.660000,47,49ec9dc0de6fe583
 Auditorio C.A.S.A.,Edificio X,4.220000,41,13c6a1408691cc61
@@ -36,7 +36,7 @@ Auditorio C.A.S.A.,Edificio Z,4.800000,48,-2280c0282bfccb6b
 Auditorio C.A.S.A.,Entrada Sur,2.600000,26,-1407e0201d4de68b
 Auditorio C.A.S.A.,Entrada Principal,5.120000,50,7b2730c79a57747e
 Auditorio C.A.S.A.,Entrada Este,3.750000,37,-15fbaed8ea9185b1
-Auditorio C.A.S.A.,Estacionamiento 1,4.030000,41,-36605dc64e57a6f
+Auditorio C.A.S.A.,Estacionamiento 1,4.070000,42,-1fe73b2897158015
 Auditorio C.A.S.A.,Estacionamiento 2,3.670000,37,-5ef62fc974bd0141
 Auditorio C.A.S.A.,Estacionamiento 3,3.840000,38,2ed2db67afd2c925
 Auditorio C.A.S.A.,Estacionamiento 4,2.860000,29,-1bd9fdfc383faf31
@@ -44,7 +44,7 @@ Auditorio C.A.S.A.,Estacionamiento 5,2.720000,27,-4d1d47a2ccaed437
 Auditorio C.A.S.A.,Laboratorio de técnicas deportivas y de rescate,1.740000,18,3cac906cbfb07067
 Auditorio C.A.S.A.,Laboratorio de Electrónica,1.260000,14,5f60b93c94ba73f8
 Auditorio C.A.S.A.,Laboratorio de Periodismo,1.360000,15,-e410b844dd88540
-Auditorio C.A.S.A.,Laboratorio de Programación,0.700000,8,037a9d79336d2767
+Auditorio C.A.S.A.,Laboratorio de Programación,0.720000,9,76e457f311333ee9
 Auditorio C.A.S.A.,Protección Civil,4.570000,45,776ffe23408bd3df
 Auditorio C.A.S.A.,Radio UDG,3.870000,40,-263f0dcf1500328e
 Auditorio C.A.S.A.,Rectoría,2.260000,24,-5205becb75cd120c
@@ -61,7 +61,7 @@ Auditorio Antonio González Ochoa,Cafetería Principal,3.020000,32,-8d082c40af8f
 Auditorio Antonio González Ochoa,Cancha de fútbol central,2.400000,25,13e52820149572e1
 Auditorio Antonio González Ochoa,Cancha de fútbol norte,5.450000,56,2e69b8324d255032
 Auditorio Antonio González Ochoa,Cancha múltiple,5.040000,52,4114ef2dbb6d5d6a
-Auditorio Antonio González Ochoa,Centro de Aprendizaje Global,6.540000,63,73af574832316248
+Auditorio Antonio González Ochoa,Centro de Aprendizaje Global,6.560000,64,-3e684679b03049d2
 Auditorio Antonio González Ochoa,Clínica Escuela,1.890000,20,497abf94188b4e99
 Auditorio Antonio González Ochoa,Edificio B,3.880000,40,11c9fd59c4a8a734
 Auditorio Antonio González Ochoa,Edificio C,3.460000,35,-66a5ddfc7d4bca88
@@ -78,7 +78,7 @@ Auditorio Antonio González Ochoa,Edificio Q,2.360000,25,35c3a5e2f99679ec
 Auditorio Antonio González Ochoa,Edificio R,3.490000,36,-4b180be8fa118455
 Auditorio Antonio González Ochoa,Edificio S,4.030000,42,-763973648f49ecdf
 Auditorio Antonio González Ochoa,Edificio T,4.470000,47,10437df074d60773
-Auditorio Antonio González Ochoa,Edificio U,5.200000,55,2dffbe112abc9625
+Auditorio Antonio González Ochoa,Edificio U,5.420000,58,-410f19eff9b1cfd7
 Auditorio Antonio González Ochoa,Edificio V,1.000000,12,7d864e2450c94502
 Auditorio Antonio González Ochoa,Edificio W,1.070000,12,-32939166568a42b6
 Auditorio Antonio González Ochoa,Edificio X,0.650000,8,6bbedb84a240584b
@@ -87,7 +87,7 @@ Auditorio Antonio González Ochoa,Edificio Z,0.460000,6,-3afc8811c9a7e28b
 Auditorio Antonio González Ochoa,Entrada Sur,5.890000,56,48654020dd6ceeb2
 Auditorio Antonio González Ochoa,Entrada Principal,0.780000,8,51d509d4f798501e
 Auditorio Antonio González Ochoa,Entrada Este,3.940000,42,-2a05a50fc5d8437
-Auditorio Antonio González Ochoa,Estacionamiento 1,5.080000,54,4fb3502aa5a383fe
+Auditorio Antonio González Ochoa,Estacionamiento 1,5.210000,57,-258d67b34396086
 Auditorio Antonio González Ochoa,Estacionamiento 2,3.470000,37,2bca19d1e3b3ee75
 Auditorio Antonio González Ochoa,Estacionamiento 3,2.680000,29,-e3f180330725939
 Auditorio Antonio González Ochoa,Estacionamiento 4,6.150000,59,3802ce9db5b6a16a
@@ -129,7 +129,7 @@ Auditorio Adolfo Aguilar Zínser,Edificio Q,3.230000,35,6efd2527ca652538
 Auditorio Adolfo Aguilar Zínser,Edificio R,1.740000,20,-74dc52f1c7e4547f
 Auditorio Adolfo Aguilar Zínser,Edificio S,1.540000,17,-31a14fbbb84b41a6
 Auditorio Adolfo Aguilar Zínser,Edificio T,1.210000,13,2b6ac46daeac5fe3
-Auditorio Adolfo Aguilar Zínser,Edificio U,0.940000,11,-eaa9dab120c77a6
+Auditorio Adolfo Aguilar Zínser,Edificio U,1.020000,11,-eaa9dab120c77a6
 Auditorio Adolfo Aguilar Zínser,Edificio V,4.460000,44,-786f851347089c40
 Auditorio Adolfo Aguilar Zínser,Edificio W,4.760000,51,-4f015a747f2eb8ba
 Auditorio Adolfo Aguilar Zínser,Edificio X,4.640000,46,738c257cde42233d
@@ -138,7 +138,7 @@ Auditorio Adolfo Aguilar Zínser,Edificio Z,5.220000,53,351ea5966821d159
 Auditorio Adolfo Aguilar Zínser,Entrada Sur,5.550000,53,251c9fc0f271f3bf
 Auditorio Adolfo Aguilar Zínser,Entrada Principal,5.470000,58,-7750f12a80a00559
 Auditorio Adolfo Aguilar Zínser,Entrada Este,2.130000,22,-42b2a79d37367686
-Auditorio Adolfo Aguilar Zínser,Estacionamiento 1,1.400000,14,243e6a155cd33bb2
+Auditorio Adolfo Aguilar Zínser,Estacionamiento 1,1.460000,15,-e0463f6cfbf6c24
 Auditorio Adolfo Aguilar Zínser,Estacionamiento 2,2.360000,25,-39a5ff65fead7c0c
 Auditorio Adolfo Aguilar Zínser,Estacionamiento 3,3.160000,33,-565d0750738cc64e
 Auditorio Adolfo Aguilar Zínser,Estacionamiento 4,5.810000,56,-2f74e0f5d43373a3
@@ -163,7 +163,7 @@ Bufete Jurídico,Cafetería Principal,3.310000,36,-243e9392124536e0
 Bufete Jurídico,Cancha de fútbol central,2.850000,30,622ede4ee27c2e57
 Bufete Jurídico,Cancha de fútbol norte,5.900000,61,-316d99f443d40208
 Bufete Jurídico,Cancha múltiple,5.490000,57,2a76cbc428b957d8
-Bufete Jurídico,Centro de Aprendizaje Global,6.990000,68,4a7d4a3ab89bf8d6
+Bufete Jurídico,Centro de Aprendizaje Global,7.010000,69,1afcc8933dff34cc
 Bufete Jurídico,Clínica Escuela,2.290000,25,654f7974badbfef1
 Bufete Jurídico,Edificio B,4.330000,45,4ecfe3cdccd3c77a
 Bufete Jurídico,Edificio C,3.910000,40,29764de80d6c4382
@@ -180,7 +180,7 @@ Bufete Jurídico,Edificio Q,2.590000,28,-6d4916cdca15821e
 Bufete Jurídico,Edificio R,3.780000,40,12a42e94720ac965
 Bufete Jurídico,Edificio S,4.260000,45,0933a3c13cf1b293
 Bufete Jurídico,Edificio T,4.700000,50,2eb96523cec53bcd
-Bufete Jurídico,Edificio U,5.430000,58,-4ba883964129e81
+Bufete Jurídico,Edificio U,5.650000,61,-570792ef53e5c455
 Bufete Jurídico,Edificio V,1.420000,17,0995632c19845e24
 Bufete Jurídico,Edificio W,0.820000,10,-39cf377569e092ff
 Bufete Jurídico,Edificio X,1.070000,13,28b16dcf9d73a019
@@ -189,7 +189,7 @@ Bufete Jurídico,Edificio Z,0.440000,5,2a98178c2d572dbd
 Bufete Jurídico,Entrada Sur,6.340000,61,-340a195515ebe22c
 Bufete Jurídico,Entrada Principal,0.490000,6,12f7c5babdbb7618
 Bufete Jurídico,Entrada Este,4.170000,45,-1a031f1f1de686e5
-Bufete Jurídico,Estacionamiento 1,5.310000,57,-6071eaad78d63a5c
+Bufete Jurídico,Estacionamiento 1,5.440000,60,2890b023e27de878
 Bufete Jurídico,Estacionamiento 2,3.700000,40,-76e3adfb1e12faf9
 Bufete Jurídico,Estacionamiento 3,2.910000,32,2b55fe382f8715c1
 Bufete Jurídico,Estacionamiento 4,6.600000,64,-56144a080202ce30
@@ -231,7 +231,7 @@ C.A.S.A. (Biblioteca),Edificio Q,3.700000,36,135571a988a9c64c
 C.A.S.A. (Biblioteca),Edificio R,2.650000,27,-32c9c1cf728906af
 C.A.S.A. (Biblioteca),Edificio S,2.830000,28,-1aa762dfcbc12620
 C.A.S.A. (Biblioteca),Edificio T,2.890000,28,76229f4b0e0bbfb8
-C.A.S.A. (Biblioteca),Edificio U,3.250000,35,5c929f37333661fa
+C.A.S.A. (Biblioteca),Edificio U,3.310000,35,5c929f37333661fa
 C.A.S.A. (Biblioteca),Edificio V,4.580000,43,62259144d8b60b49
 C.A.S.A. (Biblioteca),Edificio W,5.200000,51,2c009ec8748945b6
 C.A.S.A. (Biblioteca),Edificio X,4.760000,45,-5d80fe77e41d0562
@@ -240,7 +240,7 @@ C.A.S.A. (Biblioteca),Edificio Z,5.340000,52,4c329936cf4e06a2
 C.A.S.A. (Biblioteca),Entrada Sur,3.310000,32,3f91b982d6b9e135
 C.A.S.A. (Biblioteca),Entrada Principal,5.660000,54,-48ebbc036fb9a303
 C.A.S.A. (Biblioteca),Entrada Este,3.590000,35,0713c049df302028
-C.A.S.A. (Biblioteca),Estacionamiento 1,3.710000,38,-259a32f0aa5f25ee
+C.A.S.A. (Biblioteca),Estacionamiento 1,3.750000,39,-1ae91f7d46d48704
 C.A.S.A. (Biblioteca),Estacionamiento 2,3.510000,35,-4e55bf70e04043c
 C.A.S.A. (Biblioteca),Estacionamiento 3,4.140000,40,7f78e2c426a631da
 C.A.S.A. (Biblioteca),Estacionamiento 4,3.570000,35,4b9c804582f63e0f
@@ -282,7 +282,7 @@ C.M.I.D.,Edificio Q,3.560000,35,-8866d96c64552df
 C.M.I.D.,Edificio R,3.830000,37,-7da68d624e54d1d1
 C.M.I.D.,Edificio S,4.200000,40,-62fdf433e04509b5
 C.M.I.D.,Edificio T,4.280000,41,5a5296f32b954c0a
-C.M.I.D.,Edificio U,5.210000,51,5f26250105c81d53
+C.M.I.D.,Edificio U,5.290000,51,5f26250105c81d53
 C.M.I.D.,Edificio V,4.440000,42,-f51c1537062d17c
 C.M.I.D.,Edificio W,5.060000,50,-5a31eb68568487e5
 C.M.I.D.,Edificio X,4.620000,44,3d31479118e93b99
@@ -291,7 +291,7 @@ C.M.I.D.,Edificio Z,5.200000,51,6cf89bdad127f14d
 C.M.I.D.,Entrada Sur,2.180000,21,3a1ef5736301e894
 C.M.I.D.,Entrada Principal,5.520000,53,5c5622dc19a5ba06
 C.M.I.D.,Entrada Este,4.960000,47,275e95d66bcb2d1f
-C.M.I.D.,Estacionamiento 1,5.670000,54,1570c7397a8af67f
+C.M.I.D.,Estacionamiento 1,5.730000,55,4c1dbc8e4343f83d
 C.M.I.D.,Estacionamiento 2,4.690000,45,-1223faeaad43c6d2
 C.M.I.D.,Estacionamiento 3,4.240000,41,67ee2ccb5eee923d
 C.M.I.D.,Estacionamiento 4,2.440000,24,234efb6d6317ec10
@@ -333,7 +333,7 @@ Centro Acuático,Edificio Q,3.930000,38,4e8b83fe8d69bdcb
 Centro Acuático,Edificio R,4.200000,40,51ede1616fd78691
 Centro Acuático,Edificio S,4.570000,43,-243bc9c5f0e6193b
 Centro Acuático,Edificio T,4.650000,44,-1df367e33dbe96ac
-Centro Acuático,Edificio U,5.580000,54,-794796822e9dbb9f
+Centro Acuático,Edificio U,5.660000,54,-794796822e9dbb9f
 Centro Acuático,Edificio V,4.810000,45,-218b7aaeef2a4aae
 Centro Acuático,Edificio W,5.430000,53,094cf9f7c9241a61
 Centro Acuático,Edificio X,4.990000,47,-32d0778085d21ce5
@@ -342,7 +342,7 @@ Centro Acuático,Edificio Z,5.570000,54,-76d90988d1fdbdbd
 Centro Acuático,Entrada Sur,0.420000,5,6c48da4836bbf23c
 Centro Acuático,Entrada Principal,5.890000,56,5d25495749de0160
 Centro Acuático,Entrada Este,5.330000,50,0070a9f0b6c2a8e1
-Centro Acuático,Estacionamiento 1,6.040000,57,1860e01b00baf349
+Centro Acuático,Estacionamiento 1,6.100000,58,5d0f87efa2ed34c3
 Centro Acuático,Estacionamiento 2,5.060000,48,334d1f372782b604
 Centro Acuático,Estacionamiento 3,4.610000,44,59180790b1b15823
 Centro Acuático,Estacionamiento 4,0.630000,7,-23ade7ed9c1a8191
@@ -384,7 +384,7 @@ Cafetería Pequeña,Edificio Q,4.720000,49,4d15681dfd564c68
 Cafetería Pequeña,Edificio R,3.540000,37,394b51c9376cb607
 Cafetería Pequeña,Edificio S,3.660000,38,44ed85a9fc5e7d6a
 Cafetería Pequeña,Edificio T,3.580000,37,0b35687be7aa3025
-Cafetería Pequeña,Edificio U,3.340000,35,25d9beec2d697383
+Cafetería Pequeña,Edificio U,3.400000,35,25d9beec2d697383
 Cafetería Pequeña,Edificio V,5.600000,56,3b8c80a5d97a4675
 Cafetería Pequeña,Edificio W,6.220000,64,-56b8455fd2a0703e
 Cafetería Pequeña,Edificio X,5.780000,58,192916a2a304cf42
@@ -393,7 +393,7 @@ Cafetería Pequeña,Edificio Z,6.360000,65,-208b173004cc3d22
 Cafetería Pequeña,Entrada Sur,4.650000,45,6ef00dce2569899e
 Cafetería Pequeña,Entrada Principal,6.680000,67,-732be020a4c0c127
 Cafetería Pequeña,Entrada Este,4.420000,45,4a41c16d434754ea
-Cafetería Pequeña,Estacionamiento 1,3.800000,38,-23148bf0ee197e91
+Cafetería Pequeña,Estacionamiento 1,3.840000,39,-70cefe33afe77293
 Cafetería Pequeña,Estacionamiento 2,4.400000,45,7d999a18dc633656
 Cafetería Pequeña,Estacionamiento 3,5.030000,50,64c166d2b49d1668
 Cafetería Pequeña,Estacionamiento 4,4.910000,48,-530ca1117b93fbd2
@@ -435,7 +435,7 @@ Cafetería Principal,Edificio Q,1.020000,12,-abdf8cb6e64ee80
 Cafetería Principal,Edificio R,0.570000,7,124dbe23943b3992
 Cafetería Principal,Edificio S,1.420000,16,-2cdf9b55519cdf0c
 Cafetería Principal,Edificio T,1.690000,19,51170b2f29bf46db
-Cafetería Principal,Edificio U,2.710000,30,5da586e4259ffad4
+Cafetería Principal,Edificio U,2.790000,30,5da586e4259ffad4
 Cafetería Principal,Edificio V,2.310000,24,-5f61ac34b95aa0b4
 Cafetería Principal,Edificio W,2.550000,28,3f74c891ec6546ee
 Cafetería Principal,Edificio X,2.490000,26,-61a00fe13c31572f
@@ -444,7 +444,7 @@ Cafetería Principal,Edificio Z,3.070000,33,36bcd88fbbc73485
 Cafetería Principal,Entrada Sur,4.730000,45,-4e2e38a31bb232cb
 Cafetería Principal,Entrada Principal,3.260000,35,418f63373c77081f
 Cafetería Principal,Entrada Este,1.660000,18,6c6cd542d733a0e1
-Cafetería Principal,Estacionamiento 1,2.800000,30,53ca9b84a339d986
+Cafetería Principal,Estacionamiento 1,2.930000,33,-5e14cfaf1b8f095e
 Cafetería Principal,Estacionamiento 2,1.190000,13,1f450529e7a6a2dd
 Cafetería Principal,Estacionamiento 3,1.080000,12,63acc58cabd6b67d
 Cafetería Principal,Estacionamiento 4,4.990000,48,24e4bdc7b358420f
@@ -469,7 +469,7 @@ Cancha de fútbol central,Cafetería Pequeña,4.210000,44,-5aa8b494a003c77e
 Cancha de fútbol central,Cafetería Principal,1.240000,14,-2d6c6d44746d9d4c
 Cancha de fútbol central,Cancha de fútbol norte,3.350000,36,3ebaadedd0996c94
 Cancha de fútbol central,Cancha múltiple,2.940000,32,-576489d41b120b74
-Cancha de fútbol central,Centro de Aprendizaje Global,4.440000,43,2eb45a2aff2c4422
+Cancha de fútbol central,Centro de Aprendizaje Global,4.460000,44,-49507996ab184450
 Cancha de fútbol central,Clínica Escuela,0.890000,10,6658636e3a1709b8
 Cancha de fútbol central,Edificio B,1.780000,20,4024e37bff030a3e
 Cancha de fútbol central,Edificio C,1.360000,15,-1f8b894095ac2a22
@@ -486,7 +486,7 @@ Cancha de fútbol central,Edificio Q,0.810000,10,-3b6c2fb36c5bf871
 Cancha de fútbol central,Edificio R,1.710000,18,1004fe9a9964acb3
 Cancha de fútbol central,Edificio S,2.430000,25,6f2862dddcb68501
 Cancha de fútbol central,Edificio T,2.540000,26,01b3bf0d3a98dc7f
-Cancha de fútbol central,Edificio U,3.470000,36,-3de96dbae7eb8c12
+Cancha de fútbol central,Edificio U,3.550000,36,-3de96dbae7eb8c12
 Cancha de fútbol central,Edificio V,1.690000,17,30c4ecd80d41ade6
 Cancha de fútbol central,Edificio W,2.310000,25,-17267766239878cb
 Cancha de fútbol central,Edificio X,1.870000,19,1b19530b159395c7
@@ -495,7 +495,7 @@ Cancha de fútbol central,Edificio Z,2.450000,26,5a6785fc556064d7
 Cancha de fútbol central,Entrada Sur,3.790000,36,-570ef9f52e77ce30
 Cancha de fútbol central,Entrada Principal,2.770000,28,-5b75c3ba33c6b3ec
 Cancha de fútbol central,Entrada Este,2.740000,28,-43ee53d8cd716ebe
-Cancha de fútbol central,Estacionamiento 1,3.880000,40,-2dbd9aae9e6bb773
+Cancha de fútbol central,Estacionamiento 1,3.990000,40,-283bc6fd7ceeb2d0
 Cancha de fútbol central,Estacionamiento 2,2.270000,23,-35b76d4fc1f66af0
 Cancha de fútbol central,Estacionamiento 3,1.490000,16,4c75faa1722f3647
 Cancha de fútbol central,Estacionamiento 4,4.050000,39,-7f5e48ce0fc2e25c
@@ -537,7 +537,7 @@ Cancha de fútbol norte,Edificio Q,3.860000,41,-af5e6ecdb0674da
 Cancha de fútbol norte,Edificio R,2.680000,29,-40a8be5af1fefb7f
 Cancha de fútbol norte,Edificio S,2.800000,30,66e5f3ce3208fef4
 Cancha de fútbol norte,Edificio T,2.720000,29,7deb3cf0e316d9df
-Cancha de fútbol norte,Edificio U,2.480000,27,3ad4492207791fad
+Cancha de fútbol norte,Edificio U,2.540000,27,3ad4492207791fad
 Cancha de fútbol norte,Edificio V,4.740000,48,-57c4c4f3db5c1a71
 Cancha de fútbol norte,Edificio W,5.360000,56,-6aa3d013731334dc
 Cancha de fútbol norte,Edificio X,4.920000,50,626de972543c3478
@@ -546,7 +546,7 @@ Cancha de fútbol norte,Edificio Z,5.500000,57,-377d709601065868
 Cancha de fútbol norte,Entrada Sur,3.790000,37,470d98b837ea8df0
 Cancha de fútbol norte,Entrada Principal,5.820000,59,4b7a55f4eeb76acf
 Cancha de fútbol norte,Entrada Este,3.560000,37,-61f251d16d21a454
-Cancha de fútbol norte,Estacionamiento 1,2.940000,30,-d204f92b2be00db
+Cancha de fútbol norte,Estacionamiento 1,2.980000,31,-6ae9dbfd31ce4251
 Cancha de fútbol norte,Estacionamiento 2,3.540000,37,01acd38a2f8266b4
 Cancha de fútbol norte,Estacionamiento 3,4.170000,42,-5373a29bbc21176
 Cancha de fútbol norte,Estacionamiento 4,4.050000,40,-51cbcdd5fa9c057c
@@ -588,7 +588,7 @@ Cancha múltiple,Edificio Q,3.450000,37,73a29ba1845de4be
 Cancha múltiple,Edificio R,2.270000,25,5b2fdb9d85f80799
 Cancha múltiple,Edificio S,2.310000,26,-2adc724bd383287f
 Cancha múltiple,Edificio T,2.230000,25,2b51aa09306f465e
-Cancha múltiple,Edificio U,1.990000,23,6be7b93eb0bd5e98
+Cancha múltiple,Edificio U,2.050000,23,6be7b93eb0bd5e98
 Cancha múltiple,Edificio V,4.330000,44,-49e72e63e154f989
 Cancha múltiple,Edificio W,4.950000,52,516799e789c9c47c
 Cancha múltiple,Edificio X,4.510000,46,1c6386b255096ad0
@@ -597,7 +597,7 @@ Cancha múltiple,Edificio Z,5.090000,53,515f931594f99dd0
 Cancha múltiple,Entrada Sur,4.230000,43,4decf419ba5835f6
 Cancha múltiple,Entrada Principal,5.410000,55,7c282879ee546497
 Cancha múltiple,Entrada Este,3.070000,33,-48d5aece5f68fba3
-Cancha múltiple,Estacionamiento 1,2.450000,26,-b71787d3223e574
+Cancha múltiple,Estacionamiento 1,2.490000,27,-12c1793b312024c6
 Cancha múltiple,Estacionamiento 2,3.130000,33,-72f517ae172b5a04
 Cancha múltiple,Estacionamiento 3,3.760000,38,-35157a76df7d2f2e
 Cancha múltiple,Estacionamiento 4,4.490000,46,3e5055ba70f62f16
@@ -612,55 +612,55 @@ Cancha múltiple,Rectoría,1.720000,20,1f81eb7d70701601
 Cancha múltiple,Sala de Gobierno,3.950000,43,5bbd0c5282b12b56
 Cancha múltiple,Hospital Veterinario,2.340000,25,-647f9528c67398b7
 Centro de Aprendizaje Global,Auditorio C.A.S.A.,1.960000,20,-1da03e021cceb5b0
-Centro de Aprendizaje Global,Auditorio Antonio González Ochoa,6.540000,63,-dde15a9493ed364
+Centro de Aprendizaje Global,Auditorio Antonio González Ochoa,6.560000,64,5de8fb958add9f9c
 Centro de Aprendizaje Global,Auditorio Adolfo Aguilar Zínser,4.050000,41,65132637d301b359
-Centro de Aprendizaje Global,Bufete Jurídico,6.990000,68,-3e646b279edf392c
+Centro de Aprendizaje Global,Bufete Jurídico,7.010000,69,60e5b120a6e417d4
 Centro de Aprendizaje Global,C.A.S.A. (Biblioteca),2.780000,28,-18486d7c7c148c3c
 Centro de Aprendizaje Global,C.M.I.D.,3.620000,37,-4acf56e4f33c1851
 Centro de Aprendizaje Global,Centro Acuático,3.990000,40,05845626467aac47
 Centro de Aprendizaje Global,Cafetería Pequeña,1.390000,14,44ebb5d5022a897f
 Centro de Aprendizaje Global,Cafetería Principal,5.120000,50,30a88b0a65003b7e
-Centro de Aprendizaje Global,Cancha de fútbol central,4.440000,43,5d24145c798b436c
+Centro de Aprendizaje Global,Cancha de fútbol central,4.460000,44,-697497912975b394
 Centro de Aprendizaje Global,Cancha de fútbol norte,2.010000,20,06ab9c9e926f1b3b
 Centro de Aprendizaje Global,Cancha múltiple,2.440000,24,008ad004e1ac4e7d
-Centro de Aprendizaje Global,Clínica Escuela,5.030000,48,-16a6f287c6fa307
+Centro de Aprendizaje Global,Clínica Escuela,5.050000,49,-4dac9b1c12467807
 Centro de Aprendizaje Global,Edificio B,3.580000,35,25246b94c17c5275
-Centro de Aprendizaje Global,Edificio C,3.250000,31,0769b395a750416f
+Centro de Aprendizaje Global,Edificio C,3.270000,32,7337629998a44bae
 Centro de Aprendizaje Global,Edificio F,2.770000,28,49c9691772e9efcb
 Centro de Aprendizaje Global,Edificio G,2.750000,28,02390df16e283733
-Centro de Aprendizaje Global,Edificio H,4.360000,42,-773a60effef78939
+Centro de Aprendizaje Global,Edificio H,4.380000,43,-7e0a327a92501502
 Centro de Aprendizaje Global,Edificio I,5.230000,51,08b20c9fc25e142d
-Centro de Aprendizaje Global,Edificio J,4.100000,39,-4a1afaba18570ed
-Centro de Aprendizaje Global,Edificio L,2.600000,26,-6f2bc4e8479f0133
+Centro de Aprendizaje Global,Edificio J,4.120000,40,-5d08e2b17ba23284
+Centro de Aprendizaje Global,Edificio L,2.610000,26,-432ed4f21077242
 Centro de Aprendizaje Global,Edificio M,2.540000,24,-114cecf001486e1a
-Centro de Aprendizaje Global,Edificio N,6.780000,66,-2da98ad66dbee512
-Centro de Aprendizaje Global,Edificio P,4.950000,48,-58f173f07031e199
-Centro de Aprendizaje Global,Edificio Q,4.950000,48,-b3ab1b796423d80
+Centro de Aprendizaje Global,Edificio N,6.800000,67,-390252a9287f3a12
+Centro de Aprendizaje Global,Edificio P,4.970000,49,-56c11a6bebb26099
+Centro de Aprendizaje Global,Edificio Q,4.970000,49,-90a583311c2bc80
 Centro de Aprendizaje Global,Edificio R,4.610000,46,-391cfc531e32377b
 Centro de Aprendizaje Global,Edificio S,4.730000,47,1af2e12708b8ee00
 Centro de Aprendizaje Global,Edificio T,4.650000,46,2bafcdde9c2571e3
-Centro de Aprendizaje Global,Edificio U,4.410000,44,5f0e2d89997fa261
-Centro de Aprendizaje Global,Edificio V,5.830000,55,760a6a304beb10dd
-Centro de Aprendizaje Global,Edificio W,6.450000,63,6b8c0e5a9766b2fa
-Centro de Aprendizaje Global,Edificio X,6.010000,57,-4d0dce27ebb450c6
-Centro de Aprendizaje Global,Edificio Y,6.430000,62,0376f6a76ed1014c
-Centro de Aprendizaje Global,Edificio Z,6.590000,64,-3cf4ba2a87a8eb6a
+Centro de Aprendizaje Global,Edificio U,4.470000,44,5f0e2d89997fa261
+Centro de Aprendizaje Global,Edificio V,5.850000,56,59eb6f05932c11dd
+Centro de Aprendizaje Global,Edificio W,6.470000,64,-16cc39c6fd32dc06
+Centro de Aprendizaje Global,Edificio X,6.030000,58,-1144b12c90eb3dc6
+Centro de Aprendizaje Global,Edificio Y,6.450000,63,-33bf993fed4c0bb4
+Centro de Aprendizaje Global,Edificio Z,6.610000,65,04357ffee32a9796
 Centro de Aprendizaje Global,Entrada Sur,4.360000,43,03776545f1470e3a
-Centro de Aprendizaje Global,Entrada Principal,6.910000,66,-23f4105a5910a19f
+Centro de Aprendizaje Global,Entrada Principal,6.930000,67,-1bb91fc6b4ca269f
 Centro de Aprendizaje Global,Entrada Este,5.490000,54,-1b428c181bfbe2b8
-Centro de Aprendizaje Global,Estacionamiento 1,4.870000,47,5851c1c8d1f18149
+Centro de Aprendizaje Global,Estacionamiento 1,4.910000,48,-463b6b1586ef1d3d
 Centro de Aprendizaje Global,Estacionamiento 2,5.470000,54,-29d5588e27253bd8
-Centro de Aprendizaje Global,Estacionamiento 3,5.630000,54,-1a536bb8db60f81a
+Centro de Aprendizaje Global,Estacionamiento 3,5.650000,55,4aea40d81e0ba2e6
 Centro de Aprendizaje Global,Estacionamiento 4,4.620000,46,-645e3ec907eb24be
 Centro de Aprendizaje Global,Estacionamiento 5,4.480000,44,43107577380640c6
 Centro de Aprendizaje Global,Laboratorio de técnicas deportivas y de rescate,3.500000,35,-7dc732b20a880c22
-Centro de Aprendizaje Global,Laboratorio de Electrónica,3.080000,30,-62023d1265137738
+Centro de Aprendizaje Global,Laboratorio de Electrónica,3.100000,31,-4e7b72c1c0a699a9
 Centro de Aprendizaje Global,Laboratorio de Periodismo,3.320000,34,-1071303ca7680396
-Centro de Aprendizaje Global,Laboratorio de Programación,2.460000,25,-384e4ceb164d4256
-Centro de Aprendizaje Global,Protección Civil,6.360000,61,-56965c1ed5495dce
-Centro de Aprendizaje Global,Radio UDG,5.660000,56,-76b370b43e33e91
+Centro de Aprendizaje Global,Laboratorio de Programación,2.480000,26,-696fe44e49a5b156
+Centro de Aprendizaje Global,Protección Civil,6.380000,62,-7c41668a1162cce
+Centro de Aprendizaje Global,Radio UDG,5.680000,57,69a00d9997a6926f
 Centro de Aprendizaje Global,Rectoría,4.060000,41,-1e51ee1ad570196b
-Centro de Aprendizaje Global,Sala de Gobierno,5.450000,54,0c3d2e87e9ab78e0
+Centro de Aprendizaje Global,Sala de Gobierno,5.470000,55,-7f5b972042c92620
 Centro de Aprendizaje Global,Hospital Veterinario,4.760000,46,-3bf97493bc0108b8
 Clínica Escuela,Auditorio C.A.S.A.,3.240000,32,5ccd1371fef325ab
 Clínica Escuela,Auditorio Antonio González Ochoa,1.890000,20,5714162022e39d35
@@ -674,7 +674,7 @@ Clínica Escuela,Cafetería Principal,1.130000,13,-1c3259cb1fa26d4c
 Clínica Escuela,Cancha de fútbol central,0.890000,10,-1ac69fdc1dbd506b
 Clínica Escuela,Cancha de fútbol norte,3.940000,41,-7574ce95e42c1f2
 Clínica Escuela,Cancha múltiple,3.530000,37,-6deb6a05605e922
-Clínica Escuela,Centro de Aprendizaje Global,5.030000,48,418a341061c51114
+Clínica Escuela,Centro de Aprendizaje Global,5.050000,49,-7cf43a0993d410ae
 Clínica Escuela,Edificio B,2.370000,25,-369918b438379738
 Clínica Escuela,Edificio C,1.950000,20,0345a345f01acb04
 Clínica Escuela,Edificio F,3.700000,35,-2037d77aa02ce2da
@@ -690,7 +690,7 @@ Clínica Escuela,Edificio Q,0.580000,7,494044e4b8b5a044
 Clínica Escuela,Edificio R,1.600000,17,-6642950262c8c34d
 Clínica Escuela,Edificio S,2.450000,26,-32e8a5a78ae01701
 Clínica Escuela,Edificio T,2.720000,29,75a507f0debad560
-Clínica Escuela,Edificio U,3.720000,39,-791f5f8a1f7860e8
+Clínica Escuela,Edificio U,3.820000,40,0b4dc173f46ea4fb
 Clínica Escuela,Edificio V,1.180000,12,-271c2b6f8ec00a16
 Clínica Escuela,Edificio W,1.530000,17,791c25a07680702d
 Clínica Escuela,Edificio X,1.360000,14,-17fde1267ad4273d
@@ -699,7 +699,7 @@ Clínica Escuela,Edificio Z,1.940000,21,-4e53c42899f0b5d5
 Clínica Escuela,Entrada Sur,4.380000,41,3f54d429958060ee
 Clínica Escuela,Entrada Principal,2.240000,24,418eff682d73b732
 Clínica Escuela,Entrada Este,2.460000,26,151beaae33f80fc8
-Clínica Escuela,Estacionamiento 1,3.600000,38,40882ca4e84fc2d7
+Clínica Escuela,Estacionamiento 1,3.730000,41,-3c3600bdef35d30d
 Clínica Escuela,Estacionamiento 2,1.990000,21,7323a7efabb8e8c6
 Clínica Escuela,Estacionamiento 3,1.200000,13,-2e3660228ef2a924
 Clínica Escuela,Estacionamiento 4,4.640000,44,75281b8844f1333e
@@ -741,7 +741,7 @@ Edificio B,Edificio Q,2.290000,25,-5455f0fd4c5f3754
 Edificio B,Edificio R,1.160000,13,-65754a2d319aedc
 Edificio B,Edificio S,1.430000,13,-6aaefff00b52c20f
 Edificio B,Edificio T,1.490000,13,-5bd580956021c5c7
-Edificio B,Edificio U,2.420000,23,2e8690ea0ab3f29c
+Edificio B,Edificio U,2.500000,23,2e8690ea0ab3f29c
 Edificio B,Edificio V,3.170000,32,-2f0dec03d4881217
 Edificio B,Edificio W,3.790000,40,-6f88db48f1eac2aa
 Edificio B,Edificio X,3.350000,34,-32887295770ee242
@@ -750,7 +750,7 @@ Edificio B,Edificio Z,3.930000,41,528bee08ad1ae682
 Edificio B,Entrada Sur,3.750000,35,-3cc89a2f08e6f6e0
 Edificio B,Entrada Principal,4.250000,43,-234f2cf8121b4d63
 Edificio B,Entrada Este,2.190000,20,-14580e30ae66973
-Edificio B,Estacionamiento 1,2.880000,26,-1bea7c9a72758a20
+Edificio B,Estacionamiento 1,2.940000,27,0126a2ad92c41dbe
 Edificio B,Estacionamiento 2,2.020000,21,21a8df3a8fc29f75
 Edificio B,Estacionamiento 3,2.600000,26,7f648e3121d1e00c
 Edificio B,Estacionamiento 4,4.010000,38,49ff5f27a6a644b4
@@ -776,7 +776,7 @@ Edificio C,Cafetería Principal,2.040000,20,497adbe3e1078ef4
 Edificio C,Cancha de fútbol central,1.360000,15,-31bc2fc5fb61c8ea
 Edificio C,Cancha de fútbol norte,2.430000,25,-4ca2af2fb270ba24
 Edificio C,Cancha múltiple,2.020000,21,76b217b93ae23734
-Edificio C,Centro de Aprendizaje Global,3.250000,31,-7da70dd16b11f387
+Edificio C,Centro de Aprendizaje Global,3.270000,32,4035ae0344851575
 Edificio C,Clínica Escuela,1.950000,20,-38dd6feeb7408e00
 Edificio C,Edificio B,1.220000,12,271592efd3187fc0
 Edificio C,Edificio F,2.060000,20,03a535c1c6e28c06
@@ -792,7 +792,7 @@ Edificio C,Edificio Q,1.870000,20,1a752dc35e5240b6
 Edificio C,Edificio R,1.580000,16,75570b907c1dc574
 Edificio C,Edificio S,1.950000,19,-4784d939372045e
 Edificio C,Edificio T,2.060000,20,083facf236f79e0c
-Edificio C,Edificio U,2.990000,30,-13c03d686b22467
+Edificio C,Edificio U,3.070000,30,-13c03d686b22467
 Edificio C,Edificio V,2.750000,27,-16304a7958c4a301
 Edificio C,Edificio W,3.370000,35,4a3d37be77f37b14
 Edificio C,Edificio X,2.930000,29,-23bf1fbad607d138
@@ -801,7 +801,7 @@ Edificio C,Edificio Z,3.510000,36,-60923c688dbffc18
 Edificio C,Entrada Sur,2.990000,28,-488442afbe5fc28b
 Edificio C,Entrada Principal,3.830000,38,-486181bc704ca7a1
 Edificio C,Entrada Este,2.710000,26,09f66bc860c3ca42
-Edificio C,Estacionamiento 1,3.450000,33,4658856224ca71b1
+Edificio C,Estacionamiento 1,3.510000,34,-1ac7b812a981cd35
 Edificio C,Estacionamiento 2,2.440000,24,-1584235b362e8dbb
 Edificio C,Estacionamiento 3,2.550000,26,-59681f0e62ab32f8
 Edificio C,Estacionamiento 4,3.250000,31,5f6ed56d72bf7ccf
@@ -843,7 +843,7 @@ Edificio F,Edificio Q,3.620000,35,-1064f5e320245ebc
 Edificio F,Edificio R,3.640000,35,-62629434085968a1
 Edificio F,Edificio S,4.000000,40,-4245b6a2a6a556ef
 Edificio F,Edificio T,4.060000,40,2e0ebdde5f3bc9d9
-Edificio F,Edificio U,4.580000,48,-24c90333c2f4af0d
+Edificio F,Edificio U,4.640000,48,-24c90333c2f4af0d
 Edificio F,Edificio V,4.500000,42,-5ba17c011c6841cf
 Edificio F,Edificio W,5.120000,50,4ecb117a07c2de2e
 Edificio F,Edificio X,4.680000,44,7c246e8f5f792616
@@ -852,7 +852,7 @@ Edificio F,Edificio Z,5.260000,51,-1c65556553f14b66
 Edificio F,Entrada Sur,2.940000,29,-35408f0be476f122
 Edificio F,Entrada Principal,5.580000,53,-5d204158cb7c3db
 Edificio F,Entrada Este,4.760000,47,6a98ad8da00141ad
-Edificio F,Estacionamiento 1,5.040000,51,-514029a481ec6e21
+Edificio F,Estacionamiento 1,5.080000,52,27c5cc95e493cd5d
 Edificio F,Estacionamiento 2,4.500000,43,24f30b87dfa6819e
 Edificio F,Estacionamiento 3,4.300000,41,-840c49a81b6d716
 Edificio F,Estacionamiento 4,3.200000,32,139c3b66d77cdcee
@@ -894,7 +894,7 @@ Edificio G,Edificio Q,3.600000,35,34fbeb1910ab634e
 Edificio G,Edificio R,3.620000,35,-2d70f3c6b365e86f
 Edificio G,Edificio S,3.980000,40,-250c6bce0a571fb9
 Edificio G,Edificio T,4.040000,40,-f7db9cbb4650c75
-Edificio G,Edificio U,4.560000,48,2eb61f5d467735dd
+Edificio G,Edificio U,4.620000,48,2eb61f5d467735dd
 Edificio G,Edificio V,4.480000,42,-50079fb0c1217299
 Edificio G,Edificio W,5.100000,50,78547c6b1a6bfaec
 Edificio G,Edificio X,4.660000,44,-2b0d5582753ecea0
@@ -903,7 +903,7 @@ Edificio G,Edificio Z,5.240000,51,-72fe769d19888d60
 Edificio G,Entrada Sur,2.920000,29,5a3de9db616b6404
 Edificio G,Entrada Principal,5.560000,53,-433a9cf4e6250819
 Edificio G,Entrada Este,4.740000,47,2bdb9eda15a973eb
-Edificio G,Estacionamiento 1,5.020000,51,-46677f72413d8e6b
+Edificio G,Estacionamiento 1,5.060000,52,0-2782ed833b9721
 Edificio G,Estacionamiento 2,4.480000,43,6b9827591b455704
 Edificio G,Estacionamiento 3,4.280000,41,-5d6f0806783da20
 Edificio G,Estacionamiento 4,3.180000,32,28ee9bc6a20805c0
@@ -929,7 +929,7 @@ Edificio H,Cafetería Principal,1.700000,18,-350d90b8ccaa36d4
 Edificio H,Cancha de fútbol central,1.590000,18,-1474f48aab31e9c
 Edificio H,Cancha de fútbol norte,2.530000,28,-1d95321803265337
 Edificio H,Cancha múltiple,2.120000,24,-7e2596fe7b1433dd
-Edificio H,Centro de Aprendizaje Global,4.360000,42,-78cdfbbea6ebe905
+Edificio H,Centro de Aprendizaje Global,4.380000,43,380a3c5bb3f1e1b0
 Edificio H,Clínica Escuela,2.180000,23,7e36b253b786e121
 Edificio H,Edificio B,0.960000,12,-18ab3129bf869cf1
 Edificio H,Edificio C,1.110000,12,242002e3cc137127
@@ -945,7 +945,7 @@ Edificio H,Edificio Q,2.100000,23,-702bf8e4c18c9258
 Edificio H,Edificio R,1.240000,14,-1237f76bd1e45db4
 Edificio H,Edificio S,1.610000,17,4e3c7d13de57956a
 Edificio H,Edificio T,1.720000,18,7090e78df1124684
-Edificio H,Edificio U,2.650000,28,-432e764c9f346dcf
+Edificio H,Edificio U,2.730000,28,-432e764c9f346dcf
 Edificio H,Edificio V,2.980000,30,54a9f176afb73fb5
 Edificio H,Edificio W,3.600000,38,-2085ed807f301cfe
 Edificio H,Edificio X,3.160000,32,-2154cb117b9a32fe
@@ -954,7 +954,7 @@ Edificio H,Edificio Z,3.740000,39,-11d97234af7c22e2
 Edificio H,Entrada Sur,4.100000,39,-32645468f9f6c231
 Edificio H,Entrada Principal,4.060000,41,524a4322f37ebe19
 Edificio H,Entrada Este,2.370000,24,-69db4cf59b585316
-Edificio H,Estacionamiento 1,3.110000,31,-6556e4e7e5c337e7
+Edificio H,Estacionamiento 1,3.170000,32,3fcd3bbe3d4ac813
 Edificio H,Estacionamiento 2,2.100000,22,-2c9bb04d08fd3d53
 Edificio H,Estacionamiento 3,2.680000,27,-e3d40fcedc5bc6c
 Edificio H,Estacionamiento 4,4.360000,42,-176846b722f90a53
@@ -996,7 +996,7 @@ Edificio I,Edificio Q,2.750000,30,61061d453760380a
 Edificio I,Edificio R,1.950000,21,-335da77e1938b25e
 Edificio I,Edificio S,1.410000,16,-4de979fb160c6348
 Edificio I,Edificio T,1.210000,13,-1fbbd25776924210
-Edificio I,Edificio U,0.920000,9,-54a689045d6a2094
+Edificio I,Edificio U,0.950000,9,-54a689045d6a2094
 Edificio I,Edificio V,3.960000,43,0b679f11ccec8af2
 Edificio I,Edificio W,4.180000,46,62a8381a6a4daa10
 Edificio I,Edificio X,4.130000,45,-6d8502a13d3dc1e2
@@ -1005,7 +1005,7 @@ Edificio I,Edificio Z,4.730000,52,-4d3260a3a357ace2
 Edificio I,Entrada Sur,6.230000,59,-61ae4eb4aeda455d
 Edificio I,Entrada Principal,4.890000,53,-3b468feca70d9c0b
 Edificio I,Entrada Este,0.940000,9,40b813c34a2138fe
-Edificio I,Estacionamiento 1,0.800000,8,76aac52b89ebd263
+Edificio I,Estacionamiento 1,0.740000,8,76aac52b89ebd263
 Edificio I,Estacionamiento 2,1.500000,18,-7990268d17413fee
 Edificio I,Estacionamiento 3,2.300000,26,-19e44280ea9eac5c
 Edificio I,Estacionamiento 4,6.490000,62,1f2e2695f641b1c9
@@ -1018,7 +1018,7 @@ Edificio I,Protección Civil,4.850000,51,1e81cd420e91d1b7
 Edificio I,Radio UDG,3.150000,35,-6492b75c46e2342b
 Edificio I,Rectoría,2.530000,26,2b1f783318569862
 Edificio I,Sala de Gobierno,2.860000,31,40abbe3e02a9fdd4
-Edificio I,Hospital Veterinario,2.180000,20,-5422457bed10518d
+Edificio I,Hospital Veterinario,2.120000,20,-5422457bed10518d
 Edificio J,Auditorio C.A.S.A.,2.280000,23,-65bfd5e024e0beb
 Edificio J,Auditorio Antonio González Ochoa,3.430000,35,-201d3a8bb18d32c6
 Edificio J,Auditorio Adolfo Aguilar Zínser,1.990000,21,3da0b97fbad61438
@@ -1031,7 +1031,7 @@ Edificio J,Cafetería Principal,1.440000,15,24ea743c22520c86
 Edificio J,Cancha de fútbol central,1.330000,15,-2346b90beca5db66
 Edificio J,Cancha de fútbol norte,2.270000,25,-5b22afb81bfb44cd
 Edificio J,Cancha múltiple,1.860000,21,5dff98302fd36fcd
-Edificio J,Centro de Aprendizaje Global,4.100000,39,3226865e1f609201
+Edificio J,Centro de Aprendizaje Global,4.120000,40,-2ec9164b2b358db2
 Edificio J,Clínica Escuela,1.920000,20,-7f1bcea79197dda4
 Edificio J,Edificio B,0.700000,9,77ed03a188877459
 Edificio J,Edificio C,0.850000,9,-75a72eedc510c627
@@ -1047,7 +1047,7 @@ Edificio J,Edificio Q,1.840000,20,-87ec07db94b74ae
 Edificio J,Edificio R,0.980000,11,514e73db663fcd26
 Edificio J,Edificio S,1.350000,14,0-fc2882cf2395bc
 Edificio J,Edificio T,1.460000,15,118c75910a70b30e
-Edificio J,Edificio U,2.390000,25,3eae820aa8edac9f
+Edificio J,Edificio U,2.470000,25,3eae820aa8edac9f
 Edificio J,Edificio V,2.720000,27,-793d98b18b7998f5
 Edificio J,Edificio W,3.340000,35,-777d4896602e3560
 Edificio J,Edificio X,2.900000,29,-18232b2f1b395b04
@@ -1056,7 +1056,7 @@ Edificio J,Edificio Z,3.480000,36,-79898a92108a1fec
 Edificio J,Entrada Sur,3.840000,36,-11a83ea79aa27553
 Edificio J,Entrada Principal,3.800000,38,0-f9bf520ed258d5
 Edificio J,Entrada Este,2.110000,21,-73b233cfe23128c4
-Edificio J,Estacionamiento 1,2.850000,28,03ef8770de111e6b
+Edificio J,Estacionamiento 1,2.910000,29,-6b7eedf085f0aa77
 Edificio J,Estacionamiento 2,1.840000,19,-2f1ccb9458b0bfcd
 Edificio J,Estacionamiento 3,2.420000,24,-490925c12a7b929a
 Edificio J,Estacionamiento 4,4.100000,39,-2ff2d3f08870d7e9
@@ -1082,7 +1082,7 @@ Edificio L,Cafetería Principal,2.700000,26,-68e8daebbcf3b4c7
 Edificio L,Cancha de fútbol central,1.880000,19,-6fffbb4d6ed0057e
 Edificio L,Cancha de fútbol norte,1.790000,18,5bf26f4cea435c5f
 Edificio L,Cancha múltiple,2.090000,22,-47115e9e45f0b4a3
-Edificio L,Centro de Aprendizaje Global,2.600000,26,057f4d2d95329e55
+Edificio L,Centro de Aprendizaje Global,2.610000,26,-1ce49b398760d92e
 Edificio L,Clínica Escuela,2.470000,24,41a4497820c6251f
 Edificio L,Edificio B,1.420000,14,7d62a5203ec4382f
 Edificio L,Edificio C,0.660000,7,4d2384b9b5a66c8c
@@ -1098,7 +1098,7 @@ Edificio L,Edificio Q,2.390000,24,640aa5d33be39b6a
 Edificio L,Edificio R,2.240000,22,2dfa7f872a59bf3b
 Edificio L,Edificio S,2.610000,25,-3f9243665864cc89
 Edificio L,Edificio T,2.690000,26,-62a27d6527921fb2
-Edificio L,Edificio U,3.620000,36,319a1ee843ff35df
+Edificio L,Edificio U,3.700000,36,319a1ee843ff35df
 Edificio L,Edificio V,3.270000,31,-19902152da9c1ad
 Edificio L,Edificio W,3.890000,39,06c192f97d9a8878
 Edificio L,Edificio X,3.450000,33,-609fa3152830624c
@@ -1107,7 +1107,7 @@ Edificio L,Edificio Z,4.030000,40,-7d379528d3f756b4
 Edificio L,Entrada Sur,2.690000,26,-10343c6e76ad21a9
 Edificio L,Entrada Principal,4.350000,42,00-2cfa3ddd850ad
 Edificio L,Entrada Este,3.370000,32,1c5ab827068a56db
-Edificio L,Estacionamiento 1,4.080000,39,-3d99501f2fa856d5
+Edificio L,Estacionamiento 1,4.140000,40,-4882beac3a6bcab7
 Edificio L,Estacionamiento 2,3.100000,30,-85135925f456e76
 Edificio L,Estacionamiento 3,3.070000,30,-62c4c92967050ae4
 Edificio L,Estacionamiento 4,2.950000,29,050f2507316f91e5
@@ -1149,7 +1149,7 @@ Edificio M,Edificio Q,3.550000,37,-7ff34a48f7689953
 Edificio M,Edificio R,2.330000,26,26e2b3184e3ea6e2
 Edificio M,Edificio S,2.200000,24,-665dad002ecbedb1
 Edificio M,Edificio T,2.120000,23,171c46878dc067ac
-Edificio M,Edificio U,1.880000,21,-2ab9df905d6995d2
+Edificio M,Edificio U,1.940000,21,-2ab9df905d6995d2
 Edificio M,Edificio V,4.430000,44,5f71f6eaac19df90
 Edificio M,Edificio W,5.050000,52,46147f2e79de9b57
 Edificio M,Edificio X,4.610000,46,-7fce399ad5644c93
@@ -1158,7 +1158,7 @@ Edificio M,Edificio Z,5.190000,53,059f7f62495fb6c9
 Edificio M,Entrada Sur,4.330000,43,23a2b0f5a37b1b97
 Edificio M,Entrada Principal,5.510000,55,6279f3ae039cba02
 Edificio M,Entrada Este,2.960000,31,7037d6cca32aa0d3
-Edificio M,Estacionamiento 1,2.340000,24,0761d11e770f75d6
+Edificio M,Estacionamiento 1,2.380000,25,-7aa1368961191710
 Edificio M,Estacionamiento 2,3.020000,32,-3de296783c1c203b
 Edificio M,Estacionamiento 3,3.820000,40,-6785b37826b7d8ef
 Edificio M,Estacionamiento 4,4.590000,46,6a199f9f86b505a5
@@ -1184,7 +1184,7 @@ Edificio N,Cafetería Principal,2.880000,31,0a11bfa334397d9a
 Edificio N,Cancha de fútbol central,2.640000,28,-317869bcf3580eb1
 Edificio N,Cancha de fútbol norte,5.690000,59,3def3570ca8e7320
 Edificio N,Cancha múltiple,5.280000,55,-59a2c26b84e6f020
-Edificio N,Centro de Aprendizaje Global,6.780000,66,-2b9962071e764e52
+Edificio N,Centro de Aprendizaje Global,6.800000,67,02717cb6cc932454
 Edificio N,Clínica Escuela,1.860000,20,-2cc14f19a1cbb095
 Edificio N,Edificio B,4.120000,43,-5e57b60586e37d3e
 Edificio N,Edificio C,3.700000,38,440c55555a2500fa
@@ -1200,7 +1200,7 @@ Edificio N,Edificio Q,2.160000,23,-4e04f9bc7b261eb8
 Edificio N,Edificio R,3.350000,35,13753892cdb7b7a7
 Edificio N,Edificio S,3.830000,40,-6fbb37b1dcd8c5c3
 Edificio N,Edificio T,4.270000,45,-6c3674ecbe014bf1
-Edificio N,Edificio U,5.000000,53,-6e18bc4636807787
+Edificio N,Edificio U,5.220000,56,-2909c995db65f6eb
 Edificio N,Edificio V,1.330000,15,-1b32c5171d039a1e
 Edificio N,Edificio W,0.330000,4,69b5bd324833ca41
 Edificio N,Edificio X,1.060000,12,-619f99fc9c47918a
@@ -1209,7 +1209,7 @@ Edificio N,Edificio Z,1.240000,13,61ea89903bc0d372
 Edificio N,Entrada Sur,6.130000,59,1ba5180eebcc4e1c
 Edificio N,Entrada Principal,1.100000,12,1548263aa4ddee86
 Edificio N,Entrada Este,3.740000,40,679f14e3afcfc835
-Edificio N,Estacionamiento 1,4.880000,52,131361869b433f0a
+Edificio N,Estacionamiento 1,5.010000,55,-237539c746c28b52
 Edificio N,Estacionamiento 2,3.270000,35,3a0a014b241c6649
 Edificio N,Estacionamiento 3,2.480000,27,2b6c5a0e2fe67903
 Edificio N,Estacionamiento 4,6.390000,62,57f91a9de07576c8
@@ -1235,7 +1235,7 @@ Edificio P,Cafetería Principal,1.020000,12,-6a99c0ea8f484937
 Edificio P,Cancha de fútbol central,0.810000,10,-51ee3459fdc06896
 Edificio P,Cancha de fútbol norte,3.860000,41,4f2cef067970c3d5
 Edificio P,Cancha múltiple,3.450000,37,74a97e7126fc4037
-Edificio P,Centro de Aprendizaje Global,4.950000,48,-273fa423ab168975
+Edificio P,Centro de Aprendizaje Global,4.970000,49,604eb525bc37c637
 Edificio P,Clínica Escuela,0.390000,5,-10fbb84b18950181
 Edificio P,Edificio B,2.290000,25,-65b114a3d4652f2d
 Edificio P,Edificio C,1.870000,20,02bbb8ce1397ff19
@@ -1251,7 +1251,7 @@ Edificio P,Edificio Q,0.550000,6,123915eeb8e10b79
 Edificio P,Edificio R,1.490000,16,-2a6a3611b3c24598
 Edificio P,Edificio S,2.160000,22,7a1c511205b4caf7
 Edificio P,Edificio T,2.600000,27,39a1ced9936baaa1
-Edificio P,Edificio U,3.330000,35,2a452669f2c800bb
+Edificio P,Edificio U,3.550000,38,-49f66441ed1904d1
 Edificio P,Edificio V,1.520000,17,7980c31510799be1
 Edificio P,Edificio W,1.740000,20,-695b96d843858849
 Edificio P,Edificio X,1.690000,19,-4a4b44747707dc69
@@ -1260,7 +1260,7 @@ Edificio P,Edificio Z,2.290000,26,1b96995ea470fbed
 Edificio P,Entrada Sur,4.300000,41,26fe6b49acc35325
 Edificio P,Entrada Principal,2.450000,27,-71566b8190ee04c0
 Edificio P,Entrada Este,2.070000,22,1a64aae68b4ef88f
-Edificio P,Estacionamiento 1,3.210000,34,-6eed5f8826d0b5f8
+Edificio P,Estacionamiento 1,3.340000,37,-3cb73aba7082432c
 Edificio P,Estacionamiento 2,1.600000,17,-6679d03b3042e6ed
 Edificio P,Estacionamiento 3,0.810000,9,0c9be93a1a893575
 Edificio P,Estacionamiento 4,4.560000,44,134b949ef327633f
@@ -1286,7 +1286,7 @@ Edificio Q,Cafetería Principal,1.020000,12,5dbe8a46e5b866e2
 Edificio Q,Cancha de fútbol central,0.810000,10,34548c856cd174ff
 Edificio Q,Cancha de fútbol norte,3.860000,41,5ffb8772325a93d0
 Edificio Q,Cancha múltiple,3.450000,37,-30176423480de870
-Edificio Q,Centro de Aprendizaje Global,4.950000,48,-44061c46c0634822
+Edificio Q,Centro de Aprendizaje Global,4.970000,49,-2be646d2b9cc89bc
 Edificio Q,Clínica Escuela,0.580000,7,64950285bf7082ae
 Edificio Q,Edificio B,2.290000,25,50ca2f283bd9dab2
 Edificio Q,Edificio C,1.870000,20,7c40fea94ef36dea
@@ -1302,7 +1302,7 @@ Edificio Q,Edificio P,0.550000,6,-113fd1a84ab762fd
 Edificio Q,Edificio R,1.490000,16,-3038f93b7190d83f
 Edificio Q,Edificio S,2.070000,21,76e2fa63030d8a75
 Edificio Q,Edificio T,2.510000,26,0f16144805dba517
-Edificio Q,Edificio U,3.240000,34,-65dc65bdcd9ae3cf
+Edificio Q,Edificio U,3.460000,37,161b2efb225accad
 Edificio Q,Edificio V,1.610000,17,76358c21a67f5494
 Edificio Q,Edificio W,1.830000,20,-7b081cc042e11e9e
 Edificio Q,Edificio X,1.780000,19,35ae0ee15da58c84
@@ -1311,7 +1311,7 @@ Edificio Q,Edificio Z,2.380000,26,-67a494258adbe8a0
 Edificio Q,Entrada Sur,4.300000,41,-fd44883394c9cb4
 Edificio Q,Entrada Principal,2.540000,27,-475e44f98271920d
 Edificio Q,Entrada Este,1.980000,21,1c09ff407f4ab30d
-Edificio Q,Estacionamiento 1,3.120000,33,-663bd47d4eacb38e
+Edificio Q,Estacionamiento 1,3.250000,36,-3ac83c61779c82ca
 Edificio Q,Estacionamiento 2,1.510000,16,-9936e43fba1ab4f
 Edificio Q,Estacionamiento 3,0.720000,8,-29a1509ca850d455
 Edificio Q,Estacionamiento 4,4.560000,44,0-48e49d5fc9cf48
@@ -1353,7 +1353,7 @@ Edificio R,Edificio P,1.490000,16,0672b51f74003c1e
 Edificio R,Edificio Q,1.490000,16,-75c68cd6ba4c513b
 Edificio R,Edificio S,0.850000,10,7717caac9162c2d8
 Edificio R,Edificio T,1.120000,13,108aa1c4de876b27
-Edificio R,Edificio U,2.140000,24,-2f8b8a2b5ec85350
+Edificio R,Edificio U,2.220000,24,-2f8b8a2b5ec85350
 Edificio R,Edificio V,2.780000,28,-1ec8f58ce79f4325
 Edificio R,Edificio W,3.020000,32,-6bc0d97b77bbb5df
 Edificio R,Edificio X,2.960000,30,37fbdf61ad836c2c
@@ -1362,7 +1362,7 @@ Edificio R,Edificio Z,3.540000,37,-232f99b6a55decfc
 Edificio R,Entrada Sur,4.570000,43,7e9b8c9b94318e1c
 Edificio R,Entrada Principal,3.730000,39,-f7aa9333ce51a8a
 Edificio R,Entrada Este,1.180000,12,3bf3608673f5e8e5
-Edificio R,Estacionamiento 1,2.320000,24,-2b8eaab14978d446
+Edificio R,Estacionamiento 1,2.450000,27,4f3a81ffd763b89e
 Edificio R,Estacionamiento 2,0.860000,9,2bc83a651f877e2b
 Edificio R,Estacionamiento 3,1.550000,16,56f55e73a8f71014
 Edificio R,Estacionamiento 4,4.830000,46,30be99af7c0136c8
@@ -1404,7 +1404,7 @@ Edificio S,Edificio P,2.160000,22,6595f73e4624dfe9
 Edificio S,Edificio Q,2.070000,21,56e693c21ca004c5
 Edificio S,Edificio R,0.850000,10,-51e6c1cecd69a8ac
 Edificio S,Edificio T,0.920000,10,2d09eb0ad517959c
-Edificio S,Edificio U,1.900000,20,-57d6eb6b4df7c16d
+Edificio S,Edificio U,2.020000,21,-500ab25aa4d9e0f9
 Edificio S,Edificio V,3.280000,34,5ad92c78760faa89
 Edificio S,Edificio W,3.500000,37,-6ce2f7532b6151c1
 Edificio S,Edificio X,3.450000,36,-35444c0833e2da11
@@ -1413,7 +1413,7 @@ Edificio S,Edificio Z,4.050000,43,-14799ac34d884d9b
 Edificio S,Entrada Sur,4.940000,46,-257512511599d5aa
 Edificio S,Entrada Principal,4.210000,44,-55ac7b241cd0a368
 Edificio S,Entrada Este,0.760000,8,-1897a6ce17915383
-Edificio S,Estacionamiento 1,1.780000,19,-65bfa1fe3bec3e30
+Edificio S,Estacionamiento 1,1.910000,22,266a877dd5bea5dc
 Edificio S,Estacionamiento 2,0.820000,9,03cdfc9e367f7e93
 Edificio S,Estacionamiento 3,1.620000,17,-6ab325e3e9d185a5
 Edificio S,Estacionamiento 4,5.200000,49,6d697f4f7d73d2b6
@@ -1455,7 +1455,7 @@ Edificio T,Edificio P,2.600000,27,-d30f801a37423e5
 Edificio T,Edificio Q,2.510000,26,-5fbac5a433883aa9
 Edificio T,Edificio R,1.120000,13,291eaf512d36ab53
 Edificio T,Edificio S,0.920000,10,45a446de52d6817c
-Edificio T,Edificio U,1.610000,17,-1653b41b968e70c6
+Edificio T,Edificio U,1.690000,17,-1653b41b968e70c6
 Edificio T,Edificio V,3.720000,39,3f9e195b0fa51387
 Edificio T,Edificio W,3.940000,42,5b4e50847c666755
 Edificio T,Edificio X,3.890000,41,-20e88978f57c04f7
@@ -1464,7 +1464,7 @@ Edificio T,Edificio Z,4.490000,48,-3b64dd943bbc5f15
 Edificio T,Entrada Sur,5.020000,47,548efca425b00dbf
 Edificio T,Entrada Principal,4.650000,49,3a6206d850eb510a
 Edificio T,Entrada Este,0.920000,10,7afaffe497f52701
-Edificio T,Estacionamiento 1,1.580000,16,-12e5332c681381c0
+Edificio T,Estacionamiento 1,1.710000,19,1806f9070239214c
 Edificio T,Estacionamiento 2,1.260000,14,-57dc33549fc80f73
 Edificio T,Estacionamiento 3,2.060000,22,-42ba6ac6f57ca797
 Edificio T,Estacionamiento 4,5.280000,50,68e01ff38daeba5d
@@ -1478,57 +1478,57 @@ Edificio T,Radio UDG,2.910000,31,-5e34844017daa58a
 Edificio T,Rectoría,1.320000,14,0c7f51c1f676835e
 Edificio T,Sala de Gobierno,2.620000,27,14f9565abad9f945
 Edificio T,Hospital Veterinario,2.120000,21,01167dda98d37d41
-Edificio U,Auditorio C.A.S.A.,3.710000,40,363d3a42f2b8cf2d
-Edificio U,Auditorio Antonio González Ochoa,5.200000,55,0b05d87755478111
-Edificio U,Auditorio Adolfo Aguilar Zínser,0.940000,11,-4fd34b3c4fdb307c
-Edificio U,Bufete Jurídico,5.430000,58,-25354687544866f1
-Edificio U,C.A.S.A. (Biblioteca),3.390000,37,17c18a21bd3c9cd8
-Edificio U,C.M.I.D.,5.210000,51,-b8e99adced91c85
-Edificio U,Centro Acuático,5.580000,54,-717d0957a8bc88f5
-Edificio U,Cafetería Pequeña,4.000000,43,3dc1820856944f97
-Edificio U,Cafetería Principal,2.710000,30,-16c18043ee8c16c8
-Edificio U,Cancha de fútbol central,3.470000,36,-5d40a121160efe00
-Edificio U,Cancha de fútbol norte,3.140000,35,5dc0fe82e8df9e49
-Edificio U,Cancha múltiple,1.990000,23,-9fdf438d4e87fde
-Edificio U,Centro de Aprendizaje Global,5.070000,52,-298533071cf3e091
-Edificio U,Clínica Escuela,3.720000,39,64c79ad29cb9cd24
-Edificio U,Edificio B,2.420000,23,35320b6088eb8ef2
-Edificio U,Edificio C,2.990000,30,-543873c029dd6dad
-Edificio U,Edificio F,4.720000,50,-5619fa1550bf5b3f
-Edificio U,Edificio G,4.700000,50,-5b9b8aa3c2e5a0cf
-Edificio U,Edificio H,2.650000,28,-1805d8ab4f5cf4f3
-Edificio U,Edificio I,0.920000,9,-412f69b823778cec
-Edificio U,Edificio J,2.390000,25,321ff1b722987559
-Edificio U,Edificio L,3.620000,36,1f02d1193741d6e1
-Edificio U,Edificio M,1.880000,21,00f8f7485fa53754
-Edificio U,Edificio N,5.000000,53,-12045fd7bdc18555
-Edificio U,Edificio P,3.330000,35,31dc25336f5212c7
-Edificio U,Edificio Q,3.240000,34,6cca05a202e8ec83
-Edificio U,Edificio R,2.140000,24,-9968edef43fbbb2
-Edificio U,Edificio S,1.900000,20,-1d74765437db6027
-Edificio U,Edificio T,1.610000,17,3d683021670eaeb4
-Edificio U,Edificio V,4.450000,47,362cb4e22a43496b
-Edificio U,Edificio W,4.670000,50,339a0133c5151ff1
-Edificio U,Edificio X,4.620000,49,544e3aa2d52d7eed
-Edificio U,Edificio Y,5.060000,54,122822c516e9bae5
-Edificio U,Edificio Z,5.220000,56,-232bcf8328c23da9
-Edificio U,Entrada Sur,5.950000,57,3741b87242a5e51e
-Edificio U,Entrada Principal,5.380000,57,784b211fd01fa2e6
-Edificio U,Entrada Este,1.560000,15,-5d7a145dd137ca82
-Edificio U,Estacionamiento 1,0.800000,8,351a12b69232390b
-Edificio U,Estacionamiento 2,1.990000,22,365930b689a104a1
-Edificio U,Estacionamiento 3,2.790000,30,-5309e9c51cc82513
-Edificio U,Estacionamiento 4,6.210000,60,2e034d57df307eae
-Edificio U,Estacionamiento 5,6.070000,58,-73d3a9232580386e
-Edificio U,Laboratorio de técnicas deportivas y de rescate,5.090000,49,65464f533bd528ea
-Edificio U,Laboratorio de Electrónica,3.250000,33,12c0ead59b5caed1
-Edificio U,Laboratorio de Periodismo,3.400000,34,30e3229c80fe1cf6
-Edificio U,Laboratorio de Programación,4.190000,45,04578e6c31f4e1c9
-Edificio U,Protección Civil,5.340000,55,7b17f6a9ce437ea6
-Edificio U,Radio UDG,3.640000,39,3a50387e88444022
-Edificio U,Rectoría,2.250000,24,541a2e376c52923f
-Edificio U,Sala de Gobierno,3.350000,35,-74cf40f254486957
-Edificio U,Hospital Veterinario,1.570000,16,-713b2ce4234c8a53
+Edificio U,Auditorio C.A.S.A.,3.770000,40,363d3a42f2b8cf2d
+Edificio U,Auditorio Antonio González Ochoa,5.420000,58,-6f91a45c01dee407
+Edificio U,Auditorio Adolfo Aguilar Zínser,1.020000,11,-4fd34b3c4fdb307c
+Edificio U,Bufete Jurídico,5.650000,61,1c5d815132972ca7
+Edificio U,C.A.S.A. (Biblioteca),3.450000,37,17c18a21bd3c9cd8
+Edificio U,C.M.I.D.,5.290000,51,-b8e99adced91c85
+Edificio U,Centro Acuático,5.660000,54,-717d0957a8bc88f5
+Edificio U,Cafetería Pequeña,4.060000,43,3dc1820856944f97
+Edificio U,Cafetería Principal,2.790000,30,-16c18043ee8c16c8
+Edificio U,Cancha de fútbol central,3.550000,36,-5d40a121160efe00
+Edificio U,Cancha de fútbol norte,3.200000,35,5dc0fe82e8df9e49
+Edificio U,Cancha múltiple,2.050000,23,-9fdf438d4e87fde
+Edificio U,Centro de Aprendizaje Global,5.130000,52,-298533071cf3e091
+Edificio U,Clínica Escuela,3.820000,40,62df397e95b76d94
+Edificio U,Edificio B,2.500000,23,35320b6088eb8ef2
+Edificio U,Edificio C,3.070000,30,-543873c029dd6dad
+Edificio U,Edificio F,4.780000,50,-5619fa1550bf5b3f
+Edificio U,Edificio G,4.760000,50,-5b9b8aa3c2e5a0cf
+Edificio U,Edificio H,2.730000,28,-1805d8ab4f5cf4f3
+Edificio U,Edificio I,0.950000,9,-412f69b823778cec
+Edificio U,Edificio J,2.470000,25,321ff1b722987559
+Edificio U,Edificio L,3.700000,36,1f02d1193741d6e1
+Edificio U,Edificio M,1.940000,21,00f8f7485fa53754
+Edificio U,Edificio N,5.220000,56,2acd09c7e403b033
+Edificio U,Edificio P,3.550000,38,-62c28abefe5c59c1
+Edificio U,Edificio Q,3.460000,37,-dcb28840fe15795
+Edificio U,Edificio R,2.220000,24,-9968edef43fbbb2
+Edificio U,Edificio S,2.020000,21,23996a2f964beb35
+Edificio U,Edificio T,1.690000,17,3d683021670eaeb4
+Edificio U,Edificio V,4.670000,50,-63e6cb1984ed936d
+Edificio U,Edificio W,4.890000,53,537e53112d8966d9
+Edificio U,Edificio X,4.840000,52,-1cb0caba1f142f9b
+Edificio U,Edificio Y,5.280000,57,2a7c68bca8f535dd
+Edificio U,Edificio Z,5.440000,59,-2d8e1ce3e9fdd911
+Edificio U,Entrada Sur,6.030000,57,3741b87242a5e51e
+Edificio U,Entrada Principal,5.600000,60,48a9901a8970af5e
+Edificio U,Entrada Este,1.780000,18,-78b91157af55c56a
+Edificio U,Estacionamiento 1,0.750000,8,351a12b69232390b
+Edificio U,Estacionamiento 2,2.210000,25,-15aa0e0e4e6beab7
+Edificio U,Estacionamiento 3,3.010000,33,-136753f76fafa87b
+Edificio U,Estacionamiento 4,6.290000,60,2e034d57df307eae
+Edificio U,Estacionamiento 5,6.150000,58,-73d3a9232580386e
+Edificio U,Laboratorio de técnicas deportivas y de rescate,5.170000,49,65464f533bd528ea
+Edificio U,Laboratorio de Electrónica,3.330000,33,12c0ead59b5caed1
+Edificio U,Laboratorio de Periodismo,3.480000,34,30e3229c80fe1cf6
+Edificio U,Laboratorio de Programación,4.250000,45,04578e6c31f4e1c9
+Edificio U,Protección Civil,5.470000,54,5e141d8fd6649f56
+Edificio U,Radio UDG,3.860000,42,-55a3f4bfac23e956
+Edificio U,Rectoría,2.330000,24,541a2e376c52923f
+Edificio U,Sala de Gobierno,3.570000,38,-4479c137cc136e7f
+Edificio U,Hospital Veterinario,1.560000,15,-3dac254414c117c1
 Edificio V,Auditorio C.A.S.A.,4.040000,39,-14546bcb532e4f4c
 Edificio V,Auditorio Antonio González Ochoa,1.000000,12,-54453a224fd69926
 Edificio V,Auditorio Adolfo Aguilar Zínser,4.460000,44,1431dcd8e8f5f3a8
@@ -1541,7 +1541,7 @@ Edificio V,Cafetería Principal,2.310000,24,-7141a59601a45acf
 Edificio V,Cancha de fútbol central,1.690000,17,548262ffa76247e0
 Edificio V,Cancha de fútbol norte,4.740000,48,-33afed75b741d77d
 Edificio V,Cancha múltiple,4.330000,44,6117350eb1f3149d
-Edificio V,Centro de Aprendizaje Global,5.830000,55,16701a8f8d0ce5e9
+Edificio V,Centro de Aprendizaje Global,5.850000,56,-5f586ce64989ee1b
 Edificio V,Clínica Escuela,1.180000,12,38e8722b357316c6
 Edificio V,Edificio B,3.170000,32,142cdeb359b0fda9
 Edificio V,Edificio C,2.750000,27,71bcdbd773786f63
@@ -1558,7 +1558,7 @@ Edificio V,Edificio Q,1.610000,17,-68c7f01287309012
 Edificio V,Edificio R,2.780000,28,-37f9fd711420808e
 Edificio V,Edificio S,3.280000,34,-7481050f24589b81
 Edificio V,Edificio T,3.720000,39,2ab330822fa221f9
-Edificio V,Edificio U,4.450000,47,-2d1980ea09c29e7d
+Edificio V,Edificio U,4.670000,50,-7bdfb2aa667d46e9
 Edificio V,Edificio W,1.000000,12,4c810132de476a92
 Edificio V,Edificio X,0.350000,5,-5f0fe781123fef83
 Edificio V,Edificio Y,0.860000,11,-5646169f574fb7be
@@ -1566,7 +1566,7 @@ Edificio V,Edificio Z,1.020000,13,-6f1f2ea438411c64
 Edificio V,Entrada Sur,5.180000,48,-724030596d7cda11
 Edificio V,Entrada Principal,1.340000,15,346462c2abb2fd63
 Edificio V,Entrada Este,3.190000,34,5a346ab967b263f7
-Edificio V,Estacionamiento 1,4.330000,46,6aa4b182f10b1000
+Edificio V,Estacionamiento 1,4.460000,49,3040793024b9c40c
 Edificio V,Estacionamiento 2,2.720000,29,5a29c8a0735c6d0b
 Edificio V,Estacionamiento 3,1.930000,21,-32aff408da4b7493
 Edificio V,Estacionamiento 4,5.440000,51,-7749d6a8734fbc73
@@ -1592,7 +1592,7 @@ Edificio W,Cafetería Principal,2.550000,28,-234c2ce2ac50f562
 Edificio W,Cancha de fútbol central,2.310000,25,689c06defbc886cb
 Edificio W,Cancha de fútbol norte,5.360000,56,-2c1133d2fe6ad42c
 Edificio W,Cancha múltiple,4.950000,52,3793d63ce78518cc
-Edificio W,Centro de Aprendizaje Global,6.450000,63,-43440accfb6e291e
+Edificio W,Centro de Aprendizaje Global,6.470000,64,4b72397e1ec7dd70
 Edificio W,Clínica Escuela,1.530000,17,2cfd9ef6d1381017
 Edificio W,Edificio B,3.790000,40,57cf404425f5757e
 Edificio W,Edificio C,3.370000,35,3a41cbdfbfe0bb9e
@@ -1609,7 +1609,7 @@ Edificio W,Edificio Q,1.830000,20,20a29688490b856c
 Edificio W,Edificio R,3.020000,32,51522dbe1d5bb9b3
 Edificio W,Edificio S,3.500000,37,-7bfda1af3652615f
 Edificio W,Edificio T,3.940000,42,4464bfba32f2a2f3
-Edificio W,Edificio U,4.670000,50,-574af3a5f9b1465b
+Edificio W,Edificio U,4.890000,53,-56c14974a0e34457
 Edificio W,Edificio V,1.000000,12,-64d748cc053b1492
 Edificio W,Edificio X,0.730000,9,-27f55cb8f2f5dc0e
 Edificio W,Edificio Y,0.780000,9,-6359c20f4fd9d927
@@ -1617,7 +1617,7 @@ Edificio W,Edificio Z,0.910000,10,-6ef7c292a95dbfd0
 Edificio W,Entrada Sur,5.800000,56,6b5c19007a47c490
 Edificio W,Entrada Principal,0.770000,9,-318956b9a5726a30
 Edificio W,Entrada Este,3.410000,37,1b3e6b86d2039749
-Edificio W,Estacionamiento 1,4.550000,49,-3091188bdf0cd082
+Edificio W,Estacionamiento 1,4.680000,52,22fbc2b37c6032fa
 Edificio W,Estacionamiento 2,2.940000,32,2d50ccd8ebf308f5
 Edificio W,Estacionamiento 3,2.150000,24,-6d3f324e2b79bab9
 Edificio W,Estacionamiento 4,6.060000,59,-e1480e8e8f49b1c
@@ -1643,7 +1643,7 @@ Edificio X,Cafetería Principal,2.490000,26,-3cb1bd26e5e7d046
 Edificio X,Cancha de fútbol central,1.870000,19,-4c81425256e51dab
 Edificio X,Cancha de fútbol norte,4.920000,50,52e8472fdadff94e
 Edificio X,Cancha múltiple,4.510000,46,-58ebd8af8f031ae2
-Edificio X,Centro de Aprendizaje Global,6.010000,57,3a30f01723f205d4
+Edificio X,Centro de Aprendizaje Global,6.030000,58,-20fef6f2f18ec7ee
 Edificio X,Clínica Escuela,1.360000,14,1c2479bf198d87e5
 Edificio X,Edificio B,3.350000,34,-5a8aa85d336a36f8
 Edificio X,Edificio C,2.930000,29,-404d5d01eafdd53c
@@ -1660,7 +1660,7 @@ Edificio X,Edificio Q,1.780000,19,-7e1de4a32a4a224c
 Edificio X,Edificio R,2.960000,30,213ddcc91bb3e147
 Edificio X,Edificio S,3.450000,36,-142694ee1adbf67
 Edificio X,Edificio T,3.890000,41,-32ca42895677b685
-Edificio X,Edificio U,4.620000,49,-d9ecb33aa957563
+Edificio X,Edificio U,4.840000,52,4c986366a2995e01
 Edificio X,Edificio V,0.350000,5,53b84456b71b041d
 Edificio X,Edificio W,0.730000,9,-443ffb4dd89edcf8
 Edificio X,Edificio Y,0.510000,7,-484f583c75f70485
@@ -1668,7 +1668,7 @@ Edificio X,Edificio Z,0.670000,9,7669ed5e04613185
 Edificio X,Entrada Sur,5.360000,50,-6826b41f1f195352
 Edificio X,Entrada Principal,0.990000,11,-3ca910b176decd92
 Edificio X,Entrada Este,3.360000,36,-4ff2d4dbe036e7f
-Edificio X,Estacionamiento 1,4.500000,48,-27a077a464a1295a
+Edificio X,Estacionamiento 1,4.630000,51,-74a8419f5ea58cbe
 Edificio X,Estacionamiento 2,2.890000,31,3ae1c3629bb5047d
 Edificio X,Estacionamiento 3,2.100000,23,-79e56af6c35a9b91
 Edificio X,Estacionamiento 4,5.620000,53,-271c5bce6b657482
@@ -1694,7 +1694,7 @@ Edificio Y,Cafetería Principal,2.910000,31,-23d66418e638cf20
 Edificio Y,Cancha de fútbol central,2.290000,24,489c52afdf7ae8b3
 Edificio Y,Cancha de fútbol norte,5.340000,55,-7b2ec4d19c20a414
 Edificio Y,Cancha múltiple,4.930000,51,-f09b850ffc4a2fc
-Edificio Y,Centro de Aprendizaje Global,6.430000,62,34da84162819f10a
+Edificio Y,Centro de Aprendizaje Global,6.450000,63,-5b230f2f6185d5f8
 Edificio Y,Clínica Escuela,1.780000,19,-43ca150464c37dfd
 Edificio Y,Edificio B,3.770000,39,-20174a24c32eb60a
 Edificio Y,Edificio C,3.350000,34,-a417104ae52c53a
@@ -1711,7 +1711,7 @@ Edificio Y,Edificio Q,2.220000,24,7d3465b45f0e6bbe
 Edificio Y,Edificio R,3.380000,35,5935bbebfc763025
 Edificio Y,Edificio S,3.890000,41,6a1d33224ed8d6cf
 Edificio Y,Edificio T,4.330000,46,-6023a4d1375015b7
-Edificio Y,Edificio U,5.060000,54,-3cbd9d59fef82ead
+Edificio Y,Edificio U,5.280000,57,7eefb8597510cde7
 Edificio Y,Edificio V,0.860000,11,-53711d3e301a8328
 Edificio Y,Edificio W,0.780000,9,0f4bdd92034a726b
 Edificio Y,Edificio X,0.510000,7,-2a3178caa15f9bf3
@@ -1719,7 +1719,7 @@ Edificio Y,Edificio Z,0.260000,4,-7d4aabc0ff343007
 Edificio Y,Entrada Sur,5.780000,55,-10d4dfa591ef7618
 Edificio Y,Entrada Principal,0.520000,6,3d62886bbd8b7b0e
 Edificio Y,Entrada Este,3.800000,41,-5053c635037a6179
-Edificio Y,Estacionamiento 1,4.940000,53,5015fd3966621e90
+Edificio Y,Estacionamiento 1,5.070000,56,45a54dd199c86f9c
 Edificio Y,Estacionamiento 2,3.330000,36,-5012d10ad6662f25
 Edificio Y,Estacionamiento 3,2.540000,28,-5ef6b2997063e63
 Edificio Y,Estacionamiento 4,6.040000,58,-4b49be89c9bc4314
@@ -1745,7 +1745,7 @@ Edificio Z,Cafetería Principal,3.070000,33,-396693ef77309b74
 Edificio Z,Cancha de fútbol central,2.450000,26,35e29040bd88188f
 Edificio Z,Cancha de fútbol norte,5.500000,57,-473cfc7322ac3620
 Edificio Z,Cancha múltiple,5.090000,53,4337d9378deebea0
-Edificio Z,Centro de Aprendizaje Global,6.590000,64,-797133560e761512
+Edificio Z,Centro de Aprendizaje Global,6.610000,65,-2c2a81bd0f8b5b6c
 Edificio Z,Clínica Escuela,1.940000,21,39972a59e0e085f7
 Edificio Z,Edificio B,3.930000,41,-37876d428afa867e
 Edificio Z,Edificio C,3.510000,36,-3f0690f5ade90fc6
@@ -1762,7 +1762,7 @@ Edificio Z,Edificio Q,2.380000,26,5a4d6d5cf586f432
 Edificio Z,Edificio R,3.540000,37,-113ff13c2cc785b7
 Edificio Z,Edificio S,4.050000,43,3df621a7147c2323
 Edificio Z,Edificio T,4.490000,48,-5816fb9c265a1523
-Edificio Z,Edificio U,5.220000,56,-1bc015efbc6f41f1
+Edificio Z,Edificio U,5.440000,59,3107dfb0e741fcfb
 Edificio Z,Edificio V,1.020000,13,40dbb2d3703395bc
 Edificio Z,Edificio W,0.910000,10,-2324d49c862ab282
 Edificio Z,Edificio X,0.670000,9,-68e91681a769cfbf
@@ -1770,7 +1770,7 @@ Edificio Z,Edificio Y,0.260000,4,6028b481ac0a7c6b
 Edificio Z,Entrada Sur,5.940000,57,67e15e02807eab5c
 Edificio Z,Entrada Principal,0.580000,6,46fb52531062257b
 Edificio Z,Entrada Este,3.960000,43,-1a815d9ac845c395
-Edificio Z,Estacionamiento 1,5.100000,55,73dc735a70e3ee74
+Edificio Z,Estacionamiento 1,5.230000,58,4f439836f6b91748
 Edificio Z,Estacionamiento 2,3.490000,38,6b90b42dab0d9917
 Edificio Z,Estacionamiento 3,2.700000,30,11933c7fd76392b1
 Edificio Z,Estacionamiento 4,6.200000,60,-7857cec66b02ee78
@@ -1813,7 +1813,7 @@ Entrada Sur,Edificio Q,4.300000,41,52ba869685b76b20
 Entrada Sur,Edificio R,4.570000,43,-1f9f055e99f9b038
 Entrada Sur,Edificio S,4.940000,46,-4ee61dfb26efd17a
 Entrada Sur,Edificio T,5.020000,47,7f0ef6707c5b5ded
-Entrada Sur,Edificio U,5.950000,57,-5cce13503b516d68
+Entrada Sur,Edificio U,6.030000,57,-5cce13503b516d68
 Entrada Sur,Edificio V,5.180000,48,-68f7d0f76d35b743
 Entrada Sur,Edificio W,5.800000,56,3efee6ed0af0eada
 Entrada Sur,Edificio X,5.360000,50,-d397757e8da3f66
@@ -1821,7 +1821,7 @@ Entrada Sur,Edificio Y,5.780000,55,-64f5ea52a3c04a14
 Entrada Sur,Edificio Z,5.940000,57,-341373018cfb5ca
 Entrada Sur,Entrada Principal,6.260000,59,3f33c4229ccb3741
 Entrada Sur,Entrada Este,5.700000,53,-2649013a4b836a8a
-Entrada Sur,Estacionamiento 1,6.410000,60,1d1f8634ad4c6e8c
+Entrada Sur,Estacionamiento 1,6.470000,61,572d0f6ece4eef3a
 Entrada Sur,Estacionamiento 2,5.430000,51,3a1f2ae6b9fdde19
 Entrada Sur,Estacionamiento 3,4.980000,47,3fe1803062ebf786
 Entrada Sur,Estacionamiento 4,0.730000,8,-7cbb1fa51c630e6b
@@ -1847,7 +1847,7 @@ Entrada Principal,Cafetería Principal,2.850000,31,-2bab77817c6e97df
 Entrada Principal,Cancha de fútbol central,2.610000,28,-1864dee76e974858
 Entrada Principal,Cancha de fútbol norte,5.660000,59,-170cf4265572a085
 Entrada Principal,Cancha múltiple,5.250000,55,0dc56f6c356391b5
-Entrada Principal,Centro de Aprendizaje Global,6.750000,66,347da7b1a8622c71
+Entrada Principal,Centro de Aprendizaje Global,6.770000,67,1dc0c902171066dd
 Entrada Principal,Clínica Escuela,1.830000,20,62695680787edc04
 Entrada Principal,Edificio B,4.090000,43,-3ffb6ab0b599d3ff
 Entrada Principal,Edificio C,3.670000,38,-4c9f2f7654b618d5
@@ -1864,7 +1864,7 @@ Entrada Principal,Edificio Q,2.130000,23,-4de5422b63e78df9
 Entrada Principal,Edificio R,3.320000,35,-78fc25eafc6508fe
 Entrada Principal,Edificio S,3.800000,40,002997ed133ec0ca
 Entrada Principal,Edificio T,4.240000,45,60651bb7892729ac
-Entrada Principal,Edificio U,4.970000,53,0b5134d31cd0dd5a
+Entrada Principal,Edificio U,5.190000,56,-7098686cb98e0b82
 Entrada Principal,Edificio V,1.300000,15,701f2a42a4d0ac9f
 Entrada Principal,Edificio W,0.360000,5,-4a35cb573cde4fd8
 Entrada Principal,Edificio X,0.990000,11,-1e8470938b37e7e8
@@ -1872,7 +1872,7 @@ Entrada Principal,Edificio Y,0.520000,6,-300c0bf8134f1972
 Entrada Principal,Edificio Z,0.580000,6,21a8788af270149f
 Entrada Principal,Entrada Sur,6.100000,59,7e68db82f14d68e7
 Entrada Principal,Entrada Este,3.710000,40,-59506779720f99e
-Entrada Principal,Estacionamiento 1,4.850000,52,-4bcc406884ca3753
+Entrada Principal,Estacionamiento 1,4.980000,55,-566aad3aa61b7d47
 Entrada Principal,Estacionamiento 2,3.240000,35,33ac62ee7116f130
 Entrada Principal,Estacionamiento 3,2.450000,27,04a478497f3c702e
 Entrada Principal,Estacionamiento 4,6.360000,62,67a892e14e2252b5
@@ -1915,7 +1915,7 @@ Entrada Este,Edificio Q,1.980000,21,2ec9cf9ba9d5e839
 Entrada Este,Edificio R,1.180000,12,5ce1d454d93841f9
 Entrada Este,Edificio S,0.760000,8,27d6db1858aaa4e1
 Entrada Este,Edificio T,0.920000,10,159d4ca2dce8d649
-Entrada Este,Edificio U,1.560000,15,013b57c85be91ae6
+Entrada Este,Edificio U,1.780000,18,-ca580172cf0675e
 Entrada Este,Edificio V,3.190000,34,01da9ce5f8ff4935
 Entrada Este,Edificio W,3.410000,37,46aa3fd2da93a753
 Entrada Este,Edificio X,3.360000,36,-1b58fa5bc6a659c5
@@ -1923,7 +1923,7 @@ Entrada Este,Edificio Y,3.800000,41,25bbabfff8192e1f
 Entrada Este,Edificio Z,3.960000,43,-375ed25b7c1c5df7
 Entrada Este,Entrada Sur,5.700000,53,-ccb345a6d3374ea
 Entrada Este,Entrada Principal,4.120000,44,-61d2727ba6fc53e4
-Entrada Este,Estacionamiento 1,1.440000,14,54eeaeb4fb405b51
+Entrada Este,Estacionamiento 1,1.570000,17,367a6c9cd52cef25
 Entrada Este,Estacionamiento 2,0.730000,9,-38ab2458bc146761
 Entrada Este,Estacionamiento 3,1.530000,17,439c302707fc5db7
 Entrada Este,Estacionamiento 4,5.960000,56,-25c73610f3373d0a
@@ -1936,57 +1936,57 @@ Entrada Este,Protección Civil,4.080000,42,10211efa56a8b464
 Entrada Este,Radio UDG,2.380000,26,-132eb9c0785a21c0
 Entrada Este,Rectoría,1.970000,20,3052c301b2409db0
 Entrada Este,Sala de Gobierno,2.090000,22,60557a5515b959ab
-Entrada Este,Hospital Veterinario,2.820000,26,1a15debd9eede85d
-Estacionamiento 1,Auditorio C.A.S.A.,4.170000,43,-1ac9f55dfe0fb8e7
-Estacionamiento 1,Auditorio Antonio González Ochoa,5.080000,54,-47cfc0bf00972a86
-Estacionamiento 1,Auditorio Adolfo Aguilar Zínser,1.400000,14,-1c6976021e0bf998
-Estacionamiento 1,Bufete Jurídico,5.310000,57,1bdaa87ffa57654a
-Estacionamiento 1,C.A.S.A. (Biblioteca),3.850000,40,340caa0b7a88941c
-Estacionamiento 1,C.M.I.D.,5.670000,54,-25551200d90bf129
-Estacionamiento 1,Centro Acuático,6.040000,57,4abf2a19cddc17af
-Estacionamiento 1,Cafetería Pequeña,4.460000,46,-c3f64c647119cfd
-Estacionamiento 1,Cafetería Principal,2.800000,30,-5e7ca525a1e45542
-Estacionamiento 1,Cancha de fútbol central,3.880000,40,610a804268787c77
-Estacionamiento 1,Cancha de fútbol norte,3.600000,38,4da95ecc5351d375
-Estacionamiento 1,Cancha múltiple,2.450000,26,-21fe24a8e1c3314a
-Estacionamiento 1,Centro de Aprendizaje Global,5.530000,55,3ab02037975cb263
-Estacionamiento 1,Clínica Escuela,3.600000,38,0b246548eef739ef
-Estacionamiento 1,Edificio B,2.880000,26,51a6aaa043e37c66
-Estacionamiento 1,Edificio C,3.450000,33,51945907b600e017
-Estacionamiento 1,Edificio F,5.180000,53,-5a6bfba3083e25cb
-Estacionamiento 1,Edificio G,5.160000,53,-71b7dec5a4ae7d2b
-Estacionamiento 1,Edificio H,3.110000,31,-65fd68dda9ce2fd7
-Estacionamiento 1,Edificio I,0.800000,8,0e60ed8b96f0e045
-Estacionamiento 1,Edificio J,2.850000,28,-4e1de554f2561393
-Estacionamiento 1,Edificio L,4.080000,39,1dae0aca2c52faf5
-Estacionamiento 1,Edificio M,2.340000,24,-30aacf1cf3e7f998
-Estacionamiento 1,Edificio N,4.880000,52,5dd7d072b9acaf92
-Estacionamiento 1,Edificio P,3.210000,34,2b2806f64a09cff8
-Estacionamiento 1,Edificio Q,3.120000,33,-7f7bc6affad71f24
-Estacionamiento 1,Edificio R,2.320000,24,-69ee196b125faf44
-Estacionamiento 1,Edificio S,1.780000,19,7379a9596783453a
-Estacionamiento 1,Edificio T,1.580000,16,-63e7b227ff2fc816
-Estacionamiento 1,Edificio U,0.800000,8,-716e820ca41d24d3
-Estacionamiento 1,Edificio V,4.330000,46,-56da0dcd5bb042a8
-Estacionamiento 1,Edificio W,4.550000,49,028f08c673c4f2ce
-Estacionamiento 1,Edificio X,4.500000,48,2bf1183d290179d8
-Estacionamiento 1,Edificio Y,4.940000,53,-17d7f66f2244c0de
-Estacionamiento 1,Edificio Z,5.100000,55,-6ae9163d6d5f0904
-Estacionamiento 1,Entrada Sur,6.410000,60,5c53d52a6c512ca2
-Estacionamiento 1,Entrada Principal,5.260000,56,-1886d468df7f59c1
-Estacionamiento 1,Entrada Este,1.440000,14,54ba0df7c70bffaf
-Estacionamiento 1,Estacionamiento 2,1.870000,21,14b2c886ed144bbc
-Estacionamiento 1,Estacionamiento 3,2.670000,29,-6ccad28169310bb6
-Estacionamiento 1,Estacionamiento 4,6.670000,63,-4e69bd11136d84a6
-Estacionamiento 1,Estacionamiento 5,6.530000,61,060d077d4ed1de7e
-Estacionamiento 1,Laboratorio de técnicas deportivas y de rescate,5.550000,52,23860d8b6b72be36
-Estacionamiento 1,Laboratorio de Electrónica,3.710000,36,22ba3b1ba478c9d5
-Estacionamiento 1,Laboratorio de Periodismo,3.860000,37,06840b329e222a42
-Estacionamiento 1,Laboratorio de Programación,4.650000,48,038796922f77bc05
-Estacionamiento 1,Protección Civil,5.220000,54,2d5ef171afd1c041
-Estacionamiento 1,Radio UDG,3.520000,38,179a2d53798ecbf7
-Estacionamiento 1,Rectoría,2.710000,27,-10f4e1e6beb37ead
-Estacionamiento 1,Sala de Gobierno,3.230000,34,209f9e1ba60ab0ba
+Entrada Este,Hospital Veterinario,2.950000,29,7fbffb4333980ce9
+Estacionamiento 1,Auditorio C.A.S.A.,4.210000,44,59be6c95867ed70b
+Estacionamiento 1,Auditorio Antonio González Ochoa,5.210000,57,-535201b4ab8b2e1a
+Estacionamiento 1,Auditorio Adolfo Aguilar Zínser,1.460000,15,51ae54bb055ae4ca
+Estacionamiento 1,Bufete Jurídico,5.440000,60,-54765133e17d241a
+Estacionamiento 1,C.A.S.A. (Biblioteca),3.890000,41,-59622103ec1a693e
+Estacionamiento 1,C.M.I.D.,5.730000,55,-4c3f8f33098e9b8f
+Estacionamiento 1,Centro Acuático,6.100000,58,-6274ae9c6d6417bf
+Estacionamiento 1,Cafetería Pequeña,4.500000,47,37db07aaa3d52b15
+Estacionamiento 1,Cafetería Principal,2.930000,33,-264ade0966cb08ae
+Estacionamiento 1,Cancha de fútbol central,3.990000,40,59f4c8aa574a98fe
+Estacionamiento 1,Cancha de fútbol norte,3.640000,39,-5a2b09bc7ee47145
+Estacionamiento 1,Cancha múltiple,2.490000,27,-848aa450ce93e7c
+Estacionamiento 1,Centro de Aprendizaje Global,5.570000,56,-582d7b4cfabdd29f
+Estacionamiento 1,Clínica Escuela,3.730000,41,5658bbc79eb7873b
+Estacionamiento 1,Edificio B,2.940000,27,-627151a7deba2378
+Estacionamiento 1,Edificio C,3.510000,34,-6644344a8f119373
+Estacionamiento 1,Edificio F,5.220000,54,-423188d9bae2f131
+Estacionamiento 1,Edificio G,5.200000,54,-4a440aa1fff32ee9
+Estacionamiento 1,Edificio H,3.170000,32,7950e0bf695769db
+Estacionamiento 1,Edificio I,0.740000,8,0e60ed8b96f0e045
+Estacionamiento 1,Edificio J,2.910000,29,65345eba420c3f3f
+Estacionamiento 1,Edificio L,4.140000,40,-194d619cf366d8b1
+Estacionamiento 1,Edificio M,2.380000,25,-4b964131479554f6
+Estacionamiento 1,Edificio N,5.010000,55,-5c6fbd6f6969b5f2
+Estacionamiento 1,Edificio P,3.340000,37,-3f1e5d50190c42c
+Estacionamiento 1,Edificio Q,3.250000,36,7e0ec1764eb670c8
+Estacionamiento 1,Edificio R,2.450000,27,-4a355f39a7344050
+Estacionamiento 1,Edificio S,1.910000,22,4df20d001e000c96
+Estacionamiento 1,Edificio T,1.710000,19,-b340cebf427d0b2
+Estacionamiento 1,Edificio U,0.750000,8,-716e820ca41d24d3
+Estacionamiento 1,Edificio V,4.460000,49,-59d6ca5080480e94
+Estacionamiento 1,Edificio W,4.680000,52,-4d7e9a215141b526
+Estacionamiento 1,Edificio X,4.630000,51,-4f660ea0aeb1c454
+Estacionamiento 1,Edificio Y,5.070000,56,4fdc28340f69cbae
+Estacionamiento 1,Edificio Z,5.230000,58,-5b6b3d37019bdcf8
+Estacionamiento 1,Entrada Sur,6.470000,61,-30b62d76ed227f94
+Estacionamiento 1,Entrada Principal,5.390000,59,-2f587d1a0e7131a5
+Estacionamiento 1,Entrada Este,1.570000,17,795d3f4c69bed023
+Estacionamiento 1,Estacionamiento 2,2.000000,24,-34de3d20ee84c740
+Estacionamiento 1,Estacionamiento 3,2.800000,32,-5b5b369ca31eb422
+Estacionamiento 1,Estacionamiento 4,6.730000,64,-32e1c867671e35e8
+Estacionamiento 1,Estacionamiento 5,6.590000,62,6bccbdbcfc16f874
+Estacionamiento 1,Laboratorio de técnicas deportivas y de rescate,5.610000,53,2488d3540324ba58
+Estacionamiento 1,Laboratorio de Electrónica,3.770000,37,-19003cd2fbea3615
+Estacionamiento 1,Laboratorio de Periodismo,3.920000,38,-1924b8eb6c366160
+Estacionamiento 1,Laboratorio de Programación,4.690000,49,33e7c3f5c5260abf
+Estacionamiento 1,Protección Civil,5.350000,57,-263ade97303e5453
+Estacionamiento 1,Radio UDG,3.650000,41,-547a81fe0eb862cd
+Estacionamiento 1,Rectoría,2.770000,28,-77688e47cf46d8f
+Estacionamiento 1,Sala de Gobierno,3.360000,37,-34f5110e7d6b6cf2
 Estacionamiento 1,Hospital Veterinario,1.380000,13,545e7b6f492ccaad
 Estacionamiento 2,Auditorio C.A.S.A.,3.670000,37,5504f951bdd08d7f
 Estacionamiento 2,Auditorio Antonio González Ochoa,3.470000,37,7fef100c3288c5f7
@@ -2017,7 +2017,7 @@ Estacionamiento 2,Edificio Q,1.510000,16,77c312ed86a7256d
 Estacionamiento 2,Edificio R,0.860000,9,-3feb4287b5df180b
 Estacionamiento 2,Edificio S,0.820000,9,4fb0b5d0a717f689
 Estacionamiento 2,Edificio T,1.260000,14,-604e198cd486e215
-Estacionamiento 2,Edificio U,1.990000,22,6b8a0e1c07c9ddcd
+Estacionamiento 2,Edificio U,2.210000,25,10a924203f157cb1
 Estacionamiento 2,Edificio V,2.720000,29,574308ab888f9351
 Estacionamiento 2,Edificio W,2.940000,32,-2fbacef9689dab99
 Estacionamiento 2,Edificio X,2.890000,31,791c5b611d5f3827
@@ -2026,7 +2026,7 @@ Estacionamiento 2,Edificio Z,3.490000,38,-4447b118bf62e623
 Estacionamiento 2,Entrada Sur,5.430000,51,60d2ed34e8a1c53f
 Estacionamiento 2,Entrada Principal,3.650000,39,78df7b4367e7c950
 Estacionamiento 2,Entrada Este,0.730000,9,-63482c0e0e3b50cf
-Estacionamiento 2,Estacionamiento 1,1.870000,21,0a9929b995558016
+Estacionamiento 2,Estacionamiento 1,2.000000,24,05ed57db7b6fe4f2
 Estacionamiento 2,Estacionamiento 3,1.060000,12,-1dc8dc1927af2a4d
 Estacionamiento 2,Estacionamiento 4,5.690000,54,-7ef3ff8ffbb97723
 Estacionamiento 2,Estacionamiento 5,5.550000,52,-17167224d8606051
@@ -2038,7 +2038,7 @@ Estacionamiento 2,Protección Civil,3.610000,37,-7c7a7f490c404078
 Estacionamiento 2,Radio UDG,1.910000,21,-420d8485d030b0bc
 Estacionamiento 2,Rectoría,1.700000,18,63ab6b8ea38dd593
 Estacionamiento 2,Sala de Gobierno,1.620000,17,-4a428f4e8b59ee59
-Estacionamiento 2,Hospital Veterinario,3.250000,33,1bb2d79581b04e1a
+Estacionamiento 2,Hospital Veterinario,3.270000,33,6edb59753bb83fd2
 Estacionamiento 3,Auditorio C.A.S.A.,3.840000,38,-11b8934992dc93b3
 Estacionamiento 3,Auditorio Antonio González Ochoa,2.680000,29,-17f34625bfbd901f
 Estacionamiento 3,Auditorio Adolfo Aguilar Zínser,3.160000,33,609da0107da06b6c
@@ -2051,7 +2051,7 @@ Estacionamiento 3,Cafetería Principal,1.080000,12,-2f5619414a6eb295
 Estacionamiento 3,Cancha de fútbol central,1.490000,16,756abf0b6b76b9db
 Estacionamiento 3,Cancha de fútbol norte,4.170000,42,4b3bb31104ceea4a
 Estacionamiento 3,Cancha múltiple,3.760000,38,-995a085683d2b9e
-Estacionamiento 3,Centro de Aprendizaje Global,5.630000,54,3c38eb8b71453132
+Estacionamiento 3,Centro de Aprendizaje Global,5.650000,55,363ddd48ae943300
 Estacionamiento 3,Clínica Escuela,1.200000,13,-6d373e55d1ed40cc
 Estacionamiento 3,Edificio B,2.600000,26,-5bee83358061a774
 Estacionamiento 3,Edificio C,2.550000,26,-5c99fd9ae4c92352
@@ -2068,7 +2068,7 @@ Estacionamiento 3,Edificio Q,0.720000,8,038b336da2cc1993
 Estacionamiento 3,Edificio R,1.550000,16,5a8db4dcd8a585f2
 Estacionamiento 3,Edificio S,1.620000,17,-2a382bce9a5a9073
 Estacionamiento 3,Edificio T,2.060000,22,-63615b2bc92ca921
-Estacionamiento 3,Edificio U,2.790000,30,533dcd915ce205c9
+Estacionamiento 3,Edificio U,3.010000,33,-1e64485191005a1b
 Estacionamiento 3,Edificio V,1.930000,21,1ff3952f29baee3b
 Estacionamiento 3,Edificio W,2.150000,24,-545c744fc8cdadbf
 Estacionamiento 3,Edificio X,2.100000,23,2bf27f24bdc022dd
@@ -2077,7 +2077,7 @@ Estacionamiento 3,Edificio Z,2.700000,30,2cff0b2f143682e7
 Estacionamiento 3,Entrada Sur,4.980000,47,-6376616f41447620
 Estacionamiento 3,Entrada Principal,2.860000,31,5d58d3ea9c286ed6
 Estacionamiento 3,Entrada Este,1.530000,17,-75065998104f207b
-Estacionamiento 3,Estacionamiento 1,2.670000,29,6d4a7469bd7ffb5a
+Estacionamiento 3,Estacionamiento 1,2.800000,32,-12d74662bcdc5242
 Estacionamiento 3,Estacionamiento 2,1.060000,12,36183860abca6419
 Estacionamiento 3,Estacionamiento 4,5.240000,50,2d01a7d021b0bcf4
 Estacionamiento 3,Estacionamiento 5,5.100000,48,0f485ac341722430
@@ -2089,7 +2089,7 @@ Estacionamiento 3,Protección Civil,2.820000,29,-14161f18085f54ca
 Estacionamiento 3,Radio UDG,1.120000,13,54e5c1b906969772
 Estacionamiento 3,Rectoría,2.280000,23,7afad5139f0e2b4e
 Estacionamiento 3,Sala de Gobierno,0.830000,9,153e528629207df9
-Estacionamiento 3,Hospital Veterinario,4.050000,41,-6afffa219d00dfaa
+Estacionamiento 3,Hospital Veterinario,4.070000,41,-77f4fe9cfc0533fa
 Estacionamiento 4,Auditorio C.A.S.A.,2.860000,29,0402f6559445c6eb
 Estacionamiento 4,Auditorio Antonio González Ochoa,6.150000,59,-79f550ec1395db7a
 Estacionamiento 4,Auditorio Adolfo Aguilar Zínser,5.810000,56,044ee7c458309fbf
@@ -2119,7 +2119,7 @@ Estacionamiento 4,Edificio Q,4.560000,44,2a671c1d55ec722e
 Estacionamiento 4,Edificio R,4.830000,46,05b6f4c3a26ce51e
 Estacionamiento 4,Edificio S,5.200000,49,68e512b516667fac
 Estacionamiento 4,Edificio T,5.280000,50,-2c914faf7fb821b5
-Estacionamiento 4,Edificio U,6.210000,60,-29b8b1ee47ae1ece
+Estacionamiento 4,Edificio U,6.290000,60,-29b8b1ee47ae1ece
 Estacionamiento 4,Edificio V,5.440000,51,68ba94d0e52d2607
 Estacionamiento 4,Edificio W,6.060000,59,-598d474d1b1ee74
 Estacionamiento 4,Edificio X,5.620000,53,08430d416365a680
@@ -2128,7 +2128,7 @@ Estacionamiento 4,Edificio Z,6.200000,60,-2097131741687a00
 Estacionamiento 4,Entrada Sur,0.730000,8,-14e69b79ced57e1
 Estacionamiento 4,Entrada Principal,6.520000,62,5436cc82efb8a507
 Estacionamiento 4,Entrada Este,5.960000,56,195f9c652167b0a4
-Estacionamiento 4,Estacionamiento 1,6.670000,63,-45062726dfb54ae6
+Estacionamiento 4,Estacionamiento 1,6.730000,64,71d7c0b8fc0d2a64
 Estacionamiento 4,Estacionamiento 2,5.690000,54,0c7b5aa863e3739b
 Estacionamiento 4,Estacionamiento 3,5.240000,50,-7ddb373db16345c0
 Estacionamiento 4,Estacionamiento 5,1.540000,15,21825684b3ecc1f6
@@ -2170,7 +2170,7 @@ Estacionamiento 5,Edificio Q,4.420000,42,-2a0e2d9f1a02c088
 Estacionamiento 5,Edificio R,4.690000,44,61fa643a90164ff0
 Estacionamiento 5,Edificio S,5.060000,47,1d7eba3ed8ca327e
 Estacionamiento 5,Edificio T,5.140000,48,6a2826457280e055
-Estacionamiento 5,Edificio U,6.070000,58,-15b340428b16b980
+Estacionamiento 5,Edificio U,6.150000,58,-15b340428b16b980
 Estacionamiento 5,Edificio V,5.300000,49,-4afff33c2b1c0e1b
 Estacionamiento 5,Edificio W,5.920000,57,707522e9cef060b2
 Estacionamiento 5,Edificio X,5.480000,51,5caa2cf9bee87592
@@ -2179,7 +2179,7 @@ Estacionamiento 5,Edificio Z,6.060000,58,3a06edd8d975832e
 Estacionamiento 5,Entrada Sur,0.810000,8,4e2b70b77c8a628e
 Estacionamiento 5,Entrada Principal,6.380000,60,38bfe647ab5295a9
 Estacionamiento 5,Entrada Este,5.820000,54,3a1b02f733a5c1ee
-Estacionamiento 5,Estacionamiento 1,6.530000,61,18415977b89489c4
+Estacionamiento 5,Estacionamiento 1,6.590000,62,47edb7cc4daaa2b2
 Estacionamiento 5,Estacionamiento 2,5.550000,52,52e8ddb9e0fbb911
 Estacionamiento 5,Estacionamiento 3,5.100000,48,133814084e37563e
 Estacionamiento 5,Estacionamiento 4,1.540000,15,3c0a33b5154482a2
@@ -2221,7 +2221,7 @@ Laboratorio de técnicas deportivas y de rescate,Edificio Q,3.440000,33,-7d2cc2a
 Laboratorio de técnicas deportivas y de rescate,Edificio R,3.710000,35,-40430e43cf4d527e
 Laboratorio de técnicas deportivas y de rescate,Edificio S,4.080000,38,-5c8e7395ecbea8e0
 Laboratorio de técnicas deportivas y de rescate,Edificio T,4.160000,39,4ef883bf9498d847
-Laboratorio de técnicas deportivas y de rescate,Edificio U,5.090000,49,61b061747cb5c6f6
+Laboratorio de técnicas deportivas y de rescate,Edificio U,5.170000,49,61b061747cb5c6f6
 Laboratorio de técnicas deportivas y de rescate,Edificio V,4.320000,40,1ae4f26412b7a453
 Laboratorio de técnicas deportivas y de rescate,Edificio W,4.940000,48,-5cb0238f6e497188
 Laboratorio de técnicas deportivas y de rescate,Edificio X,4.500000,42,-19f0e2a86cf1d04c
@@ -2230,7 +2230,7 @@ Laboratorio de técnicas deportivas y de rescate,Edificio Z,5.080000,49,4a98a853
 Laboratorio de técnicas deportivas y de rescate,Entrada Sur,0.860000,9,224544f42458fe12
 Laboratorio de técnicas deportivas y de rescate,Entrada Principal,5.400000,51,-367410f431aa4ead
 Laboratorio de técnicas deportivas y de rescate,Entrada Este,4.840000,45,-81357df351e9f98
-Laboratorio de técnicas deportivas y de rescate,Estacionamiento 1,5.550000,52,-4dd2b1768c1d7d12
+Laboratorio de técnicas deportivas y de rescate,Estacionamiento 1,5.610000,53,4222c92e3924aac8
 Laboratorio de técnicas deportivas y de rescate,Estacionamiento 2,4.570000,43,-bd976ace0c68261
 Laboratorio de técnicas deportivas y de rescate,Estacionamiento 3,4.120000,39,-5e44cc865c4648e4
 Laboratorio de técnicas deportivas y de rescate,Estacionamiento 4,1.120000,12,-31de18a85bd67af6
@@ -2255,7 +2255,7 @@ Laboratorio de Electrónica,Cafetería Principal,2.330000,23,300e36daa278452b
 Laboratorio de Electrónica,Cancha de fútbol central,1.510000,16,-67dc7ba8cd3bcf24
 Laboratorio de Electrónica,Cancha de fútbol norte,2.260000,24,202555cec71685d5
 Laboratorio de Electrónica,Cancha múltiple,1.850000,20,35228ea777773637
-Laboratorio de Electrónica,Centro de Aprendizaje Global,3.080000,30,7999c0c3ec0d83c8
+Laboratorio de Electrónica,Centro de Aprendizaje Global,3.100000,31,48f997bc199716ae
 Laboratorio de Electrónica,Clínica Escuela,2.100000,21,48eda7c4aaa9bd29
 Laboratorio de Electrónica,Edificio B,1.050000,11,-16c88aaab6c82f37
 Laboratorio de Electrónica,Edificio C,0.290000,4,31d7b11cade30dde
@@ -2272,7 +2272,7 @@ Laboratorio de Electrónica,Edificio Q,2.020000,21,2e43e09f31f382b0
 Laboratorio de Electrónica,Edificio R,1.870000,19,-6ef613968966551b
 Laboratorio de Electrónica,Edificio S,2.240000,22,-35ac9fb7ce7dddf7
 Laboratorio de Electrónica,Edificio T,2.320000,23,316c7e311fdcf420
-Laboratorio de Electrónica,Edificio U,3.250000,33,6e51a5b5e59c7db5
+Laboratorio de Electrónica,Edificio U,3.330000,33,6e51a5b5e59c7db5
 Laboratorio de Electrónica,Edificio V,2.900000,28,-2aac799b10a98ed3
 Laboratorio de Electrónica,Edificio W,3.520000,36,-4495407efad87a36
 Laboratorio de Electrónica,Edificio X,3.080000,30,37c342ea9ec891ea
@@ -2281,7 +2281,7 @@ Laboratorio de Electrónica,Edificio Z,3.660000,37,65eef089f63804c6
 Laboratorio de Electrónica,Entrada Sur,2.820000,27,5892d6a8ab0c87f8
 Laboratorio de Electrónica,Entrada Principal,3.980000,39,2d1ac3a308181f51
 Laboratorio de Electrónica,Entrada Este,3.000000,29,-29fc7e223e1557db
-Laboratorio de Electrónica,Estacionamiento 1,3.710000,36,278dd4a21ac43c5d
+Laboratorio de Electrónica,Estacionamiento 1,3.770000,37,-7179f99f739f5f39
 Laboratorio de Electrónica,Estacionamiento 2,2.730000,27,-6faa636933a50f78
 Laboratorio de Electrónica,Estacionamiento 3,2.700000,27,-32612e9b61d1ff4a
 Laboratorio de Electrónica,Estacionamiento 4,3.080000,30,-3abc1ab8b307e504
@@ -2323,7 +2323,7 @@ Laboratorio de Periodismo,Edificio Q,3.410000,35,015da97d2029b7c5
 Laboratorio de Periodismo,Edificio R,2.230000,23,7325861132159568
 Laboratorio de Periodismo,Edificio S,2.410000,24,-331808b1dcd69773
 Laboratorio de Periodismo,Edificio T,2.470000,24,1892e68293f46925
-Laboratorio de Periodismo,Edificio U,3.400000,34,-5646a020f7777050
+Laboratorio de Periodismo,Edificio U,3.480000,34,-5646a020f7777050
 Laboratorio de Periodismo,Edificio V,4.290000,42,176432eaafd25a58
 Laboratorio de Periodismo,Edificio W,4.910000,50,-42f810cc427a6691
 Laboratorio de Periodismo,Edificio X,4.470000,44,0213277620a96fe5
@@ -2332,7 +2332,7 @@ Laboratorio de Periodismo,Edificio Z,5.050000,51,-408394801cc11d9f
 Laboratorio de Periodismo,Entrada Sur,3.850000,38,-25a89d28ff0aac49
 Laboratorio de Periodismo,Entrada Principal,5.370000,53,-2728f6ca7b28f2b6
 Laboratorio de Periodismo,Entrada Este,3.170000,31,140aa5413e47faa9
-Laboratorio de Periodismo,Estacionamiento 1,3.860000,37,6b508312cb160d34
+Laboratorio de Periodismo,Estacionamiento 1,3.920000,38,-ef31aac9a7c561e
 Laboratorio de Periodismo,Estacionamiento 2,3.090000,31,58a8eb30300c4db9
 Laboratorio de Periodismo,Estacionamiento 3,3.720000,36,1a2b071d6db5d7e3
 Laboratorio de Periodismo,Estacionamiento 4,4.110000,41,3a74e7a8502aca05
@@ -2345,7 +2345,7 @@ Laboratorio de Periodismo,Radio UDG,4.120000,43,-70f7a2bc377aa242
 Laboratorio de Periodismo,Rectoría,1.680000,18,3de35281a0241fe6
 Laboratorio de Periodismo,Sala de Gobierno,3.910000,41,-6f9f03d627b7f677
 Laboratorio de Periodismo,Hospital Veterinario,3.810000,36,-605f087710655569
-Laboratorio de Programación,Auditorio C.A.S.A.,0.700000,8,5e683efcb09bc15f
+Laboratorio de Programación,Auditorio C.A.S.A.,0.720000,9,13a334a6da4f15ad
 Laboratorio de Programación,Auditorio Antonio González Ochoa,4.240000,41,70b1cbf1aacbb70e
 Laboratorio de Programación,Auditorio Adolfo Aguilar Zínser,3.690000,40,595559e0d8ab1285
 Laboratorio de Programación,Bufete Jurídico,4.690000,46,-4d29b996bddcc92e
@@ -2357,7 +2357,7 @@ Laboratorio de Programación,Cafetería Principal,3.080000,30,76d1f861fa1d5ce5
 Laboratorio de Programación,Cancha de fútbol central,2.140000,21,-5cd136706efabffa
 Laboratorio de Programación,Cancha de fútbol norte,1.780000,19,-bd3cad06222e355
 Laboratorio de Programación,Cancha múltiple,2.080000,23,-7225ceaf87de2627
-Laboratorio de Programación,Centro de Aprendizaje Global,2.460000,25,-11bbd5ae38d7fe32
+Laboratorio de Programación,Centro de Aprendizaje Global,2.480000,26,-3d8f7e3924c47dcc
 Laboratorio de Programación,Clínica Escuela,2.730000,26,-db67f413c6e18f5
 Laboratorio de Programación,Edificio B,2.090000,20,-664572f9d8c4f2cd
 Laboratorio de Programación,Edificio C,1.330000,13,-614ca641c0a91848
@@ -2374,7 +2374,7 @@ Laboratorio de Programación,Edificio Q,2.650000,26,6f0cd096d5a0cca6
 Laboratorio de Programación,Edificio R,2.910000,28,0760ebee51737597
 Laboratorio de Programación,Edificio S,3.280000,31,05ca67c8e2eef4a3
 Laboratorio de Programación,Edificio T,3.360000,32,-3c108228b19207ee
-Laboratorio de Programación,Edificio U,4.050000,43,37d5ff52c7f29c8d
+Laboratorio de Programación,Edificio U,4.110000,43,37d5ff52c7f29c8d
 Laboratorio de Programación,Edificio V,3.530000,33,71636793d56d670f
 Laboratorio de Programación,Edificio W,4.150000,41,-6fa824da6e918b5c
 Laboratorio de Programación,Edificio X,3.710000,35,673bfefbfca1d0f8
@@ -2383,7 +2383,7 @@ Laboratorio de Programación,Edificio Z,4.290000,42,-5af50fab1b1113e8
 Laboratorio de Programación,Entrada Sur,2.170000,21,76649ff98ec2010f
 Laboratorio de Programación,Entrada Principal,4.610000,44,4e7c65177399234f
 Laboratorio de Programación,Entrada Este,4.040000,38,4c07dbd19eb90df7
-Laboratorio de Programación,Estacionamiento 1,4.510000,46,-6e446850b652ba3b
+Laboratorio de Programación,Estacionamiento 1,4.550000,47,-5814b362f64eba71
 Laboratorio de Programación,Estacionamiento 2,3.770000,36,-3e3a408a9364b99a
 Laboratorio de Programación,Estacionamiento 3,3.330000,32,477eed8dd9c7e758
 Laboratorio de Programación,Estacionamiento 4,2.430000,24,-6c83beaba281c793
@@ -2408,7 +2408,7 @@ Protección Civil,Cafetería Principal,2.840000,30,-780a7f9d05f81b2c
 Protección Civil,Cancha de fútbol central,2.220000,23,31ad0be914e1a707
 Protección Civil,Cancha de fútbol norte,5.270000,54,37a0ab6b09b6c428
 Protección Civil,Cancha múltiple,4.860000,50,-b80240b026d9938
-Protección Civil,Centro de Aprendizaje Global,6.360000,61,-4d4419266e9f9a3a
+Protección Civil,Centro de Aprendizaje Global,6.380000,62,236665c815468abc
 Protección Civil,Clínica Escuela,1.710000,18,3abb0637eff8ed2f
 Protección Civil,Edificio B,3.700000,38,30d4b9ca6acb126a
 Protección Civil,Edificio C,3.280000,33,45c3f5e450b75c32
@@ -2425,7 +2425,7 @@ Protección Civil,Edificio Q,2.290000,24,-4ef056fec4654968
 Protección Civil,Edificio R,3.310000,34,4a4dde52f0dff3d1
 Protección Civil,Edificio S,4.160000,43,4f8c62313fa86229
 Protección Civil,Edificio T,4.430000,46,-3c7e1878b9f7e846
-Protección Civil,Edificio U,5.340000,55,-3fd8cb44c317ec74
+Protección Civil,Edificio U,5.470000,54,33e8b232652201d2
 Protección Civil,Edificio V,1.230000,13,-7adac2777f2c58e1
 Protección Civil,Edificio W,1.330000,14,-10321ac9b6241890
 Protección Civil,Edificio X,0.910000,10,-3cbb8855670ca2d7
@@ -2434,7 +2434,7 @@ Protección Civil,Edificio Z,0.590000,7,6c2cd2f772258cde
 Protección Civil,Entrada Sur,5.710000,54,-2627993112f4de3c
 Protección Civil,Entrada Principal,1.160000,11,-1007de66305f9dfe
 Protección Civil,Entrada Este,4.080000,42,2449c5aeaddb3154
-Protección Civil,Estacionamiento 1,5.220000,54,-c7d4ee0b3b5143d
+Protección Civil,Estacionamiento 1,5.350000,57,462727a696b1ec47
 Protección Civil,Estacionamiento 2,3.610000,37,-625e316b1e1c9ce6
 Protección Civil,Estacionamiento 3,2.820000,29,-4de24fa9a5cfc698
 Protección Civil,Estacionamiento 4,5.970000,57,527350c188456300
@@ -2459,7 +2459,7 @@ Radio UDG,Cafetería Principal,1.730000,20,-6c4d59324c8b5583
 Radio UDG,Cancha de fútbol central,1.520000,18,-4334638fa6f1730a
 Radio UDG,Cancha de fútbol norte,4.570000,49,3c3f07fda16401a9
 Radio UDG,Cancha múltiple,4.160000,45,-5a8b2ed645cf7e7d
-Radio UDG,Centro de Aprendizaje Global,5.660000,56,23cd8d14af769f3f
+Radio UDG,Centro de Aprendizaje Global,5.680000,57,-612028a3ba5dd9dd
 Radio UDG,Clínica Escuela,0.780000,9,47f5433f49a18a25
 Radio UDG,Edificio B,3.000000,33,-6921f5a8856531d1
 Radio UDG,Edificio C,2.580000,28,-64cffff807bc8483
@@ -2476,7 +2476,7 @@ Radio UDG,Edificio Q,0.800000,9,-7b3b2255fe7fc831
 Radio UDG,Edificio R,2.200000,24,4cf0d47f85f9f296
 Radio UDG,Edificio S,2.470000,26,-5fdc2698dbc3f85e
 Radio UDG,Edificio T,2.910000,31,0e84f7bbb01b46b4
-Radio UDG,Edificio U,3.640000,39,72f8f4ea18a80452
+Radio UDG,Edificio U,3.860000,42,-2c024d7ccdde832a
 Radio UDG,Edificio V,1.350000,15,1b8aa239ee3d3b37
 Radio UDG,Edificio W,1.570000,18,-3438ce54d52770bb
 Radio UDG,Edificio X,1.520000,17,-f86f1162064cae7
@@ -2485,7 +2485,7 @@ Radio UDG,Edificio Z,2.120000,24,-22003ddd85976ee5
 Radio UDG,Entrada Sur,5.010000,49,49667064572922c9
 Radio UDG,Entrada Principal,2.280000,25,34dc31dccacb511a
 Radio UDG,Entrada Este,2.380000,26,2d09b0c8503e919a
-Radio UDG,Estacionamiento 1,3.520000,38,53d81642ea198815
+Radio UDG,Estacionamiento 1,3.650000,41,-503c2a8f5cbf8cbf
 Radio UDG,Estacionamiento 2,1.910000,21,1addd94885f66cb8
 Radio UDG,Estacionamiento 3,1.120000,13,2ae804141e2306d6
 Radio UDG,Estacionamiento 4,5.270000,52,3db5b3802e96a4db
@@ -2527,7 +2527,7 @@ Rectoría,Edificio Q,1.970000,22,787c296c9bfe88ec
 Rectoría,Edificio R,0.840000,10,-33d696d1dfeb6c1c
 Rectoría,Edificio S,1.210000,13,-499e177d8f406b4e
 Rectoría,Edificio T,1.320000,14,7943e73a7f43e19c
-Rectoría,Edificio U,2.250000,24,4023bcf19d39f3c9
+Rectoría,Edificio U,2.330000,24,4023bcf19d39f3c9
 Rectoría,Edificio V,2.850000,29,-6511e346ae18b6d7
 Rectoría,Edificio W,3.470000,37,2181cc16f57b4d96
 Rectoría,Edificio X,3.030000,31,098e8c82d4ca157e
@@ -2536,7 +2536,7 @@ Rectoría,Edificio Z,3.610000,38,-37b512b9cb53363e
 Rectoría,Entrada Sur,3.970000,38,-12763c9e2cc02c4d
 Rectoría,Entrada Principal,3.930000,40,47c3c704f96103dd
 Rectoría,Entrada Este,1.970000,20,-14aeb9ae8d48ba6e
-Rectoría,Estacionamiento 1,2.710000,27,-69c3d0762a39021f
+Rectoría,Estacionamiento 1,2.770000,28,0b3300dbe0f766fb
 Rectoría,Estacionamiento 2,1.700000,18,1a008b729a138f35
 Rectoría,Estacionamiento 3,2.280000,23,-50f6e7a4b1452e34
 Rectoría,Estacionamiento 4,4.230000,41,1e2430c88242ffd9
@@ -2561,7 +2561,7 @@ Sala de Gobierno,Cafetería Principal,1.520000,18,7d98a2cbc63a1dfa
 Sala de Gobierno,Cancha de fútbol central,1.310000,16,32602f9248dad857
 Sala de Gobierno,Cancha de fútbol norte,4.360000,47,-15a15a43ff6f2808
 Sala de Gobierno,Cancha múltiple,3.950000,43,-4636ba680f2a2a28
-Sala de Gobierno,Centro de Aprendizaje Global,5.450000,54,-3ea7b85094b4d2a
+Sala de Gobierno,Centro de Aprendizaje Global,5.470000,55,01c5da51170f72cc
 Sala de Gobierno,Clínica Escuela,0.760000,9,-51774031def04c06
 Sala de Gobierno,Edificio B,2.790000,31,-569feec875e85e86
 Sala de Gobierno,Edificio C,2.370000,26,-40cdc9d59af6fe7e
@@ -2578,7 +2578,7 @@ Sala de Gobierno,Edificio Q,0.570000,6,-19cd60861d0ee43d
 Sala de Gobierno,Edificio R,1.990000,22,4bad1ed8aefa7669
 Sala de Gobierno,Edificio S,2.180000,22,-28ad8d980222795f
 Sala de Gobierno,Edificio T,2.620000,27,27ab6823b09d8af3
-Sala de Gobierno,Edificio U,3.350000,35,-2e75e30ddb38de5b
+Sala de Gobierno,Edificio U,3.570000,38,35c84fd6771ca3a9
 Sala de Gobierno,Edificio V,1.330000,15,-2cbba79f87110020
 Sala de Gobierno,Edificio W,1.550000,18,32c5dc7b122ead56
 Sala de Gobierno,Edificio X,1.500000,17,-4a3c1ee2627f0a90
@@ -2587,7 +2587,7 @@ Sala de Gobierno,Edificio Z,2.100000,24,-4737534f2e3a0bcc
 Sala de Gobierno,Entrada Sur,4.800000,47,553b4283acbc87d4
 Sala de Gobierno,Entrada Principal,2.260000,25,-7a5e31040cd7e529
 Sala de Gobierno,Entrada Este,2.090000,22,-309ddeae813980b7
-Sala de Gobierno,Estacionamiento 1,3.230000,34,3c141ca471b9177e
+Sala de Gobierno,Estacionamiento 1,3.360000,37,-58785268b00a6506
 Sala de Gobierno,Estacionamiento 2,1.620000,17,143de6ca555540f5
 Sala de Gobierno,Estacionamiento 3,0.830000,9,2949e8572d733d47
 Sala de Gobierno,Estacionamiento 4,5.060000,50,-5e7ada674a9ab030
@@ -2599,7 +2599,7 @@ Sala de Gobierno,Laboratorio de Programación,3.150000,32,-665cfe5c9701d10
 Sala de Gobierno,Protección Civil,2.220000,23,-3c76ff54bdb73a37
 Sala de Gobierno,Radio UDG,0.520000,7,-1df96161b3c18ba1
 Sala de Gobierno,Rectoría,2.470000,28,-597ce9e158db1450
-Sala de Gobierno,Hospital Veterinario,4.610000,46,0fecbb1d51f86592
+Sala de Gobierno,Hospital Veterinario,4.630000,46,4f971ce1c40cadfa
 Hospital Veterinario,Auditorio C.A.S.A.,4.060000,42,-47f9fa738f2edd20
 Hospital Veterinario,Auditorio Antonio González Ochoa,5.980000,58,131c594ee77d20ff
 Hospital Veterinario,Auditorio Adolfo Aguilar Zínser,1.450000,15,14f5944639d1ebfb
@@ -2619,7 +2619,7 @@ Hospital Veterinario,Edificio C,3.400000,32,-58925ac7bad217da
 Hospital Veterinario,Edificio F,5.070000,52,5bc911d3846eac1c
 Hospital Veterinario,Edificio G,5.050000,52,6ab82ec8cce481d4
 Hospital Veterinario,Edificio H,3.060000,30,758b84a294dea46e
-Hospital Veterinario,Edificio I,2.180000,20,-43a63144e19b8e53
+Hospital Veterinario,Edificio I,2.120000,20,-43a63144e19b8e53
 Hospital Veterinario,Edificio J,2.800000,27,-1c7f1e0cbe150314
 Hospital Veterinario,Edificio L,4.030000,38,-faba0978cd2b74a
 Hospital Veterinario,Edificio M,2.230000,23,-3586e86de2de42eb
@@ -2629,7 +2629,7 @@ Hospital Veterinario,Edificio Q,4.140000,43,7a0d99f501e224b0
 Hospital Veterinario,Edificio R,2.650000,28,48ae33e5aeebd47d
 Hospital Veterinario,Edificio S,2.450000,25,63dc378f8cfe213e
 Hospital Veterinario,Edificio T,2.120000,21,555f151fb364750f
-Hospital Veterinario,Edificio U,1.570000,16,-13440864a2f8ecb7
+Hospital Veterinario,Edificio U,1.560000,15,-7afa3724af496635
 Hospital Veterinario,Edificio V,5.270000,50,-76dda959332492f4
 Hospital Veterinario,Edificio W,5.670000,59,-28b9dd4e3b1ea762
 Hospital Veterinario,Edificio X,5.450000,52,-6e7fad26533c99ef
@@ -2637,10 +2637,10 @@ Hospital Veterinario,Edificio Y,5.870000,57,3e15f52e1d3f8c3b
 Hospital Veterinario,Edificio Z,6.030000,59,-61778be8b3394dbb
 Hospital Veterinario,Entrada Sur,6.360000,59,-66c67680f52b28fd
 Hospital Veterinario,Entrada Principal,6.350000,61,56456c6c1233832e
-Hospital Veterinario,Entrada Este,2.820000,26,-79c0fceb35da1c79
+Hospital Veterinario,Entrada Este,2.950000,29,15a90333c6ab6d3b
 Hospital Veterinario,Estacionamiento 1,1.380000,13,116604557ce3b249
-Hospital Veterinario,Estacionamiento 2,3.250000,33,-16630f21de833fc
-Hospital Veterinario,Estacionamiento 3,4.050000,41,46d7d647aefb59a2
+Hospital Veterinario,Estacionamiento 2,3.270000,33,-4088335931f4f060
+Hospital Veterinario,Estacionamiento 3,4.070000,41,-4d300e391fc00f42
 Hospital Veterinario,Estacionamiento 4,6.620000,62,-1ea1c57c8d431497
 Hospital Veterinario,Estacionamiento 5,6.480000,60,08be7600ae0fab9b
 Hospital Veterinario,Laboratorio de técnicas deportivas y de rescate,5.500000,51,2598128966869d9d
@@ -2650,4 +2650,4 @@ Hospital Veterinario,Laboratorio de Programación,4.540000,47,769bb25e9b7cd534
 Hospital Veterinario,Protección Civil,5.800000,56,15d4b07c0be8c94f
 Hospital Veterinario,Radio UDG,4.850000,51,-3c26b51539c29081
 Hospital Veterinario,Rectoría,2.660000,26,-52bccc946b0d2a7e
-Hospital Veterinario,Sala de Gobierno,4.610000,46,-291b2e9b522d0dee
+Hospital Veterinario,Sala de Gobierno,4.630000,46,-37d0e07b8c3be612
