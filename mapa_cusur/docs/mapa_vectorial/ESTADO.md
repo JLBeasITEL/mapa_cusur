@@ -95,7 +95,7 @@ Estado de la rama `feature/mapa-vectorial` al 17 de octubre de 2026, para retoma
 | "Entrada Este" sobre la letra R | **Hecho** (`398f112`). A ×1 su texto queda unos 34 px debajo del ícono; falta verlo en el teléfono. |
 | Gimnasio vs. Laboratorio de técnicas deportivas y de rescate | **Hecho** (`6829d28`); Juan Luis confirmó que son el mismo lugar. Si se prefiere el nombre corto "Laboratorio de técnicas deportivas", es cambiar un texto. |
 | Fase 6b (Radio UDG) | **Hecho** (`d35c0e0`). Falta confirmar la entrada: noroeste (`P1`, aplicada) u oeste (`V2`, 18.2 m, mismo peso). |
-| Fase 6c (aristas que cruzan edificios) | **Reporte hecho** (`d6ccb9b`): 170 cruces en 158 aristas y 27 edificios. **Falta la clasificación de Juan Luis** (pasillo real o corte de esquina); después se proponen los nodos intermedios. El CSV se regenera con el comando de abajo. |
+| Fase 6c (aristas que cruzan edificios) | **Reporte hecho** (`d6ccb9b`): 170 cruces en 158 aristas y 27 edificios, 1976.9 m de cruce en total. **Agrupado por edificio**: un PNG por edificio, con sus aristas numeradas, y `resumen.md`. **Falta la respuesta de Juan Luis por edificio** (pasillo real o corte de esquina); después se proponen los nodos intermedios. El Edificio P del mapa vectorial es un solo polígono que incluye Q y la Clínica Escuela. El polígono 35, sin nombre, tiene el nodo `Edificio_I` justo al norte. Se regenera con los comandos de abajo. |
 | Mejora de la búsqueda por texto | **No iniciada**; el prompt llega en la sesión nueva. |
 | Fase 5 (README) | **Sección agregada** (`c9871c3`). **Pendiente de decisión:** 8 partes del README describen todavía solo el modo imagen o cifras viejas (144/45 nodos, 1980 rutas, 63 pruebas, zoom 8x, painters). También falta decidir cómo presentar las cifras de la tesis frente a las actuales. Además, el README cita `MEJORAS.md` y `REPORTE_DATOS.md`, que el `.gitignore` excluye. |
 | Medición en modo perfil | **Descartada** por Juan Luis. |
@@ -107,7 +107,12 @@ Para regenerar el reporte de la Fase 6c:
 cd mapa_cusur
 REPORTE_ARISTAS=1 flutter test test/reporte_aristas_edificios_test.dart
 # escribe build/reporte_aristas_edificios.csv (o REPORTE_ARISTAS=<ruta del csv>)
+python tool/graficar_aristas_edificios.py
+# escribe build/aristas_por_edificio/: 00_vista_general.png, un NN_<edificio>.png
+# por edificio, resumen.csv, resumen.md y aristas_por_edificio.csv (requiere matplotlib)
 ```
+
+El script recalcula los cruces con la misma fórmula que el reporte en Dart y se detiene si no coinciden con el CSV. Separa por polígono los edificios sin nombre, que el CSV junta en "(sin nombre)".
 
 ## Reglas de trabajo
 
