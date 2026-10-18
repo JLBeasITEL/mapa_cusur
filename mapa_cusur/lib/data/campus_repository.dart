@@ -8,9 +8,23 @@ import '../utils/cronometro.dart';
 import 'campus_json_parser.dart';
 import 'mapa_vectorial_parser.dart';
 
-/// Carga los datos del campus (el grafo base, antes de interpolar, y los
-/// IDs de los puntos de control para `TransformacionAfin`) y el mapa
-/// vectorial desde los assets del paquete.
+/// Calibración congelada: copia exacta del `assets/campus_data.json` de la
+/// etiqueta `v-pruebas-campo`. La afín, la escala px/m, el RMSE y la
+/// instrumentación de campo se calculan con ella, así que esas cifras son
+/// las de la tesis aunque el grafo de navegación cambie. No se edita.
+const String kRutaCalibracion = 'assets/calibracion_campo.json';
+
+/// El grafo base (antes de interpolar), los IDs de los puntos de control
+/// para `TransformacionAfin` y los nodos cuyo píxel no es digitalizado (ver
+/// [parsearPixelesDerivados]).
+typedef DatosCampus = ({
+  GrafoCampus grafo,
+  List<String> puntosControl,
+  List<String> pixelesDerivados,
+});
+
+/// Carga los datos del campus, la calibración congelada y el mapa vectorial
+/// desde los assets del paquete.
 class CampusRepository {
   const CampusRepository();
 
@@ -18,14 +32,7 @@ class CampusRepository {
   /// microsegundos el `json.decode` bajo la etiqueta `"parseo_json"`. Es
   /// opcional y no cambia el resultado: sin él, el comportamiento es
   /// idéntico.
-  /// `pixelesDerivados`: los nodos cuyo píxel no es digitalizado (ver
-  /// [parsearPixelesDerivados]).
-  Future<
-      ({
-        GrafoCampus grafo,
-        List<String> puntosControl,
-        List<String> pixelesDerivados,
-      })> cargarDatosCampus({
+  Future<DatosCampus> cargarDatosCampus({
     String ruta = 'assets/campus_data.json',
     Cronometro? cronometro,
   }) async {
@@ -40,6 +47,12 @@ class CampusRepository {
       pixelesDerivados: parsearPixelesDerivados(data),
     );
   }
+
+  /// Carga la calibración congelada ([kRutaCalibracion]). Solo sirve para
+  /// las transformaciones y sus cifras; la navegación usa
+  /// [cargarDatosCampus].
+  Future<DatosCampus> cargarCalibracion({String ruta = kRutaCalibracion}) =>
+      cargarDatosCampus(ruta: ruta);
 
   /// Carga el mapa vectorial (edificios, calles, áreas verdes...) de
   /// `assets/campus_vector.json`. Es una carga aparte de

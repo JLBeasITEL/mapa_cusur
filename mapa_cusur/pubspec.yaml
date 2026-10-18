@@ -62,6 +62,7 @@ flutter:
     # El guión debe tener exactamente 4 espacios a la izquierda
     - assets/mapa_CUSur.png
     - assets/campus_data.json
+    - assets/calibracion_campo.json
     - assets/campus_vector.json
     - assets/pin.png
   #   - images/a_dot_burr.jpeg

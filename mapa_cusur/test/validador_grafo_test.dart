@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mapa_cusur/data/campus_json_parser.dart';
+import 'package:mapa_cusur/data/campus_repository.dart';
 import 'package:mapa_cusur/domain/validador_grafo.dart';
 import 'package:mapa_cusur/models/grafo_campus.dart';
 import 'package:mapa_cusur/models/nodo.dart';
@@ -171,8 +172,11 @@ void main() {
 
     test('cifras exactas de los problemas conocidos (para detectar si el '
         'inventario de REPORTE_DATOS.md queda desactualizado)', () {
+      // Sobre la calibración congelada (copia exacta del campus_data.json de
+      // v-pruebas-campo): es el dato de la versión documentada. El grafo
+      // actual tiene su propia prueba abajo.
       final Map<String, dynamic> data =
-          json.decode(File('assets/campus_data.json').readAsStringSync());
+          json.decode(File(kRutaCalibracion).readAsStringSync());
       final grafo = parsearGrafoCampus(data);
 
       final resultado = validarGrafo(grafo);
@@ -180,10 +184,25 @@ void main() {
       // Estas cifras están verificadas y documentadas en REPORTE_DATOS.md.
       // Bajaron de 50/2/1 a 38/0/0 tras la corrección autorizada de las 7
       // aristas de Estacionamiento1/B1 y la eliminación del autolazo R4→R4
-      // (ver REPORTE_DATOS.md, sección "Correcciones aplicadas"). Si este
-      // test empieza a fallar de nuevo, algo más cambió en
-      // assets/campus_data.json sin que nadie lo haya decidido
-      // explícitamente, y hay que actualizar ese documento.
+      // (ver REPORTE_DATOS.md, sección "Correcciones aplicadas").
+      expect(resultado.aristasAsimetricas, hasLength(38));
+      expect(resultado.pesosNoPositivos, isEmpty);
+      expect(resultado.autolazos, isEmpty);
+      expect(resultado.idsInexistentes, isEmpty);
+      expect(resultado.componentesDesconectadas, isEmpty); // grafo conexo
+      expect(resultado.pixelesDuplicados, isEmpty);
+    });
+
+    test('cifras exactas del grafo actual (assets/campus_data.json)', () {
+      final Map<String, dynamic> data =
+          json.decode(File('assets/campus_data.json').readAsStringSync());
+      final grafo = parsearGrafoCampus(data);
+
+      final resultado = validarGrafo(grafo);
+
+      // Las mismas 38 asimétricas de la versión documentada. Si este test
+      // empieza a fallar, algo cambió en assets/campus_data.json sin que
+      // nadie lo haya decidido explícitamente.
       expect(resultado.aristasAsimetricas, hasLength(38));
       expect(resultado.pesosNoPositivos, isEmpty);
       expect(resultado.autolazos, isEmpty);

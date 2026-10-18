@@ -16,6 +16,16 @@ Estado de la rama `feature/mapa-vectorial` al 17 de octubre de 2026, para retoma
   Con `ModoMapa.imagen` la app vuelve a la versión documentada en la tesis: dibuja sobre `mapa_CUSur.png` con `coordenadas_pix`, no carga `campus_vector.json`, no muestra la atribución ni el botón de íconos, y el zoom máximo vuelve a ser ×8.
 - **Referencia visual aprobada:** `docs/mapa_vectorial/mapa-vectorial-referencia.html`. `exportar_flutter.py`, en la misma carpeta, solo documenta cómo se generó el JSON.
 
+## Calibración congelada (`assets/calibracion_campo.json`)
+
+**No se edita.** Es una copia byte por byte del `assets/campus_data.json` de la etiqueta `v-pruebas-campo` (blob `f61d201`).
+
+- **Para qué sirve:** la Fase 6c cambia el grafo de navegación: mueve nodos digitalizados y quita aristas entre ellos. La escala px/m es la mediana sobre esas aristas, así que esos cambios moverían las cifras de la tesis. Por ejemplo, el Bloque 1 solo ya daba 1.780 px/m.
+- **Quién la usa:** la app (`CampusRepository.cargarCalibracion`, `kRutaCalibracion`) calcula con este archivo la afín, la de dos puntos, la escala px/m y el RMSE. La instrumentación de campo y la posición GPS en modo imagen usan esas transformaciones.
+- **Cifras:** 1.772 px/m, afín 12.53 px (7.07 m) y dos puntos 31.15 px (17.58 m) sobre 144 nodos digitalizados, con 38 aristas asimétricas.
+- **La navegación** usa `campus_data.json`.
+- **Punto de verificación de la instrumentación:** compara contra el nodo del grafo de navegación. `transformacion_geo_test.dart` exige que cada nodo de `campus_data.json` con píxel digitalizado sea idéntico al de la calibración. Un nodo digitalizado que se mueve pasa a `pixeles_derivados`.
+
 ## Commits de la rama (desde `d0586da`)
 
 | Commit | Qué hace |

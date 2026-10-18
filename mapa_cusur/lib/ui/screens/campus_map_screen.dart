@@ -185,25 +185,29 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
 
       filtrados.sort();
 
+      // Las transformaciones, la escala px/m y el RMSE salen de la
+      // calibración congelada (kRutaCalibracion), no del grafo de
+      // navegación: así siguen siendo las cifras de la tesis aunque el
+      // grafo cambie. Se miden solo contra píxeles digitalizados.
+      final calibracion = await _repositorio.cargarCalibracion();
+      final GrafoCampus grafoDigitalizado =
+          calibracion.grafo.sinNodos(calibracion.pixelesDerivados);
+
       final dosPuntos = TransformacionDosPuntos(
-        controlA: grafoBase.nodos['EntradaA']!,
-        controlB: grafoBase.nodos['Edificio_M']!,
+        controlA: grafoDigitalizado.nodos['EntradaA']!,
+        controlB: grafoDigitalizado.nodos['Edificio_M']!,
       );
 
       TransformacionAfin? afin;
       try {
-        final puntosControl =
-            datos.puntosControl.map((id) => grafoBase.nodos[id]!).toList();
+        final puntosControl = calibracion.puntosControl
+            .map((id) => grafoDigitalizado.nodos[id]!)
+            .toList();
         afin = TransformacionAfin.ajustar(puntosControl);
       } catch (e) {
         debugPrint('No se pudo ajustar TransformacionAfin: $e');
       }
 
-      // La escala px/m y el RMSE se miden solo contra píxeles digitalizados:
-      // sin los nodos de `pixeles_derivados`, las cifras son las mismas que
-      // antes de agregarlos.
-      final GrafoCampus grafoDigitalizado =
-          grafoBase.sinNodos(datos.pixelesDerivados);
       final double pxPorMetro = calcularEscalaPxPorMetro(grafoDigitalizado);
 
       if (kDebugMode) {

@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mapa_cusur/data/campus_json_parser.dart';
+import 'package:mapa_cusur/data/campus_repository.dart';
 import 'package:mapa_cusur/domain/transformacion_geo.dart';
 import 'package:mapa_cusur/models/nodo.dart';
 import 'package:mapa_cusur/utils/geodesia.dart';
@@ -180,20 +181,23 @@ void main() {
     });
   });
 
+  // Las cifras de la tesis se calculan, igual que en la app, con la
+  // calibración congelada (kRutaCalibracion, copia exacta del
+  // campus_data.json de v-pruebas-campo), no con el grafo de navegación.
   group('Verificación contra los datos reales del campus', () {
     test(
         'en modo afín, transformar las coordenadas geo de los 144 nodos '
         'produce píxeles cercanos a coordenadas_pix (RMSE ~12.5 px / ~7.3 m)',
         () {
       final Map<String, dynamic> data =
-          json.decode(File('assets/campus_data.json').readAsStringSync());
+          json.decode(File(kRutaCalibracion).readAsStringSync());
       // Solo los nodos con píxel digitalizado, igual que la app.
       final grafo =
           parsearGrafoCampus(data).sinNodos(parsearPixelesDerivados(data));
       final idsControl = parsearPuntosControl(data);
 
       expect(idsControl, isNotEmpty,
-          reason: 'assets/campus_data.json debe tener la sección '
+          reason: '$kRutaCalibracion debe tener la sección '
               '"puntos_control"');
 
       final puntosControl = idsControl.map((id) => grafo.nodos[id]!).toList();
@@ -221,7 +225,7 @@ void main() {
     test('el modelo de dos puntos, evaluado igual, da un RMSE mayor que el '
         'afín (consistente con la tabla de cifras: ~18.2 m vs. ~7.3 m)', () {
       final Map<String, dynamic> data =
-          json.decode(File('assets/campus_data.json').readAsStringSync());
+          json.decode(File(kRutaCalibracion).readAsStringSync());
       final grafo =
           parsearGrafoCampus(data).sinNodos(parsearPixelesDerivados(data));
 
@@ -242,16 +246,17 @@ void main() {
     });
 
     test(
-        'sin los nodos de píxel derivado, las cifras son exactamente las de '
-        'los 144 nodos digitalizados (las que cita la tesis)', () {
+        'la calibración congelada da exactamente las cifras de los 144 nodos '
+        'digitalizados (las que cita la tesis)', () {
       final Map<String, dynamic> data =
-          json.decode(File('assets/campus_data.json').readAsStringSync());
+          json.decode(File(kRutaCalibracion).readAsStringSync());
       final completo = parsearGrafoCampus(data);
       final derivados = parsearPixelesDerivados(data);
       final grafo = completo.sinNodos(derivados);
 
-      expect(derivados, isNotEmpty);
-      expect(derivados.every(completo.nodos.containsKey), isTrue);
+      // Es la versión de las pruebas de campo: todavía no hay nodos con
+      // píxel derivado.
+      expect(derivados, isEmpty);
       expect(grafo.nodos, hasLength(144));
 
       final puntosControl =
@@ -272,6 +277,29 @@ void main() {
       expect(rAfin.rmseMetros, closeTo(7.07, 0.005));
       expect(rDosPuntos.rmsePx, closeTo(31.15, 0.005));
       expect(rDosPuntos.rmseMetros, closeTo(17.58, 0.005));
+    });
+
+    test(
+        'cada nodo de campus_data.json con píxel digitalizado es idéntico al '
+        'de la calibración congelada', () {
+      // El punto de verificación de la instrumentación compara contra el
+      // nodo del grafo de navegación: con esto, para los nodos
+      // digitalizados es el mismo de la calibración. Un nodo digitalizado
+      // que se mueve debe pasar a `pixeles_derivados`.
+      final Map<String, dynamic> actual =
+          json.decode(File('assets/campus_data.json').readAsStringSync());
+      final Map<String, dynamic> calibracion =
+          json.decode(File(kRutaCalibracion).readAsStringSync());
+      final derivados = parsearPixelesDerivados(actual).toSet();
+      final Map<String, dynamic> geo = actual['coordenadas_geo'];
+
+      expect(derivados.every(geo.containsKey), isTrue);
+      for (final id in geo.keys.where((id) => !derivados.contains(id))) {
+        expect(calibracion['coordenadas_geo'][id], geo[id], reason: id);
+        expect(calibracion['coordenadas_pix'][id],
+            actual['coordenadas_pix'][id],
+            reason: id);
+      }
     });
   });
 }
