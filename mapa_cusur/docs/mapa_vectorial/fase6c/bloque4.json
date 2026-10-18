@@ -1,0 +1,35 @@
+{
+  "bloque": "Bloque 4 — Esquinas (filas 4, 5, 6, 20 y 21)",
+  "notas": [
+    "U2 y U4 estaban dentro del Edificio U (3.1 y 0.95 m); como en los salones del Bloque 3, en U",
+    "solo se camina por fuera: pasan al lado norte, a 1.2 m de la pared, sobre el trazo, con píxel",
+    "derivado. U4 queda en la esquina noroeste (a 1.2 m de las paredes norte y oeste).",
+    "  Fila 4, Estacionamiento1–U4: con U4 afuera ya no entra al edificio; se conserva (U5 sobra).",
+    "  Fila 5, F2–L2: por F8, esquina noreste del Edificio F.",
+    "  Fila 6, G1–L1: por G5, esquina sureste del Edificio G (G1 sigue 0.6 m dentro de la pared).",
+    "  Fila 20, T2–U1: por TN1 (Bloque 3), que ya está en la esquina noreste de T; sin nodo nuevo.",
+    "  Fila 21, U1–U2: rodea el extremo este de U por U6 y U7 (esquinas sureste y noreste); con U2",
+    "     afuera, U7–U2 ya no entra a la pared. U6 y U7 siguen haciendo falta: U1 está al sur de U.",
+    "Las aristas que conservan U2 y U4 se recalculan con la misma fórmula."
+  ],
+  "nodos": [
+    {"id": "U4", "x": 48.0, "y": -135.8, "nota": "Esquina noroeste del Edificio U, afuera (antes 0.95 m dentro)"},
+    {"id": "U2", "x": 112.4, "y": -135.5, "nota": "Lado norte del Edificio U, a 1.2 m de la pared (antes 3.1 m dentro)"},
+    {"id": "F8", "x": -70.8, "y": -11.5, "nota": "Esquina noreste del Edificio F, afuera"},
+    {"id": "G5", "x": -71.6, "y": 24.9, "nota": "Esquina sureste del Edificio G, afuera"},
+    {"id": "U6", "x": 116.8, "y": -121.3, "nota": "Esquina sureste del Edificio U, afuera"},
+    {"id": "U7", "x": 116.8, "y": -135.5, "nota": "Esquina noreste del Edificio U, afuera"}
+  ],
+  "quitar": [
+    ["F2", "L2"],
+    ["G1", "L1"],
+    ["T2", "U1"],
+    ["U1", "U2"]
+  ],
+  "agregar": [
+    ["F2", "F8"], ["F8", "L2"],
+    ["G1", "G5"], ["G5", "L1"],
+    ["TN1", "U1"],
+    ["U1", "U6"], ["U6", "U7"], ["U7", "U2"]
+  ]
+}

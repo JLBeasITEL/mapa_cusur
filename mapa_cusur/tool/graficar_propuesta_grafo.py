@@ -63,6 +63,20 @@ def main():
                  else cruces).append(texto)
     if cruces:
         raise SystemExit("Aristas agregadas que cruzan edificios:\n  " + "\n  ".join(cruces))
+    # Aristas que conservan los nodos movidos: con la posición nueva pueden
+    # cruzar (o dejar de cruzar) un edificio; se reportan, sin detenerse.
+    movidos = {n["id"] for n in informe["nodos"] if n["movido"]}
+    cruces_movidos = []
+    for a, b in pares:
+        if not ({a, b} & movidos):
+            continue
+        largo = math.dist(nodos[a], nodos[b])
+        for e in mapa["edificios"]:
+            m = sum(t1 - t0 for t0, t1 in gae.tramos_dentro(nodos[a], nodos[b], e["anillos"])) * largo
+            if m >= gae.UMBRAL_ROCE:
+                adentro = [n for n in (a, b) if gae.dentro(nodos[n], e["anillos"])]
+                cruces_movidos.append(f"{a}–{b} cruza {gae.nombre_edificio(e)} ({m:.1f} m"
+                                      + (f", {adentro[0]} está dentro)" if adentro else ")"))
     eliminados = {n["id"] for n in informe.get("nodos_eliminados", [])}
 
     fig = plt.figure(figsize=(16, 9.6), dpi=120)
@@ -163,6 +177,13 @@ def main():
     lineas += ["", "Aristas agregadas (ambos sentidos)"]
     for a, b, metros, peso in agregadas:
         lineas.append(f"  {a}–{b}: {metros:.1f} m, {peso:.2f}")
+    if informe.get("pesos_recalculados"):
+        lineas += ["", "Pesos recalculados (aristas que conservan los nodos movidos)"]
+        lineas += [f"  {r['a']}→{r['b']}: {r['antes']:.2f} → {r['despues']:.2f}"
+                   for r in informe["pesos_recalculados"]]
+    if cruces_movidos:
+        lineas += ["", "Aristas que se conservan de nodos movidos y siguen cruzando"]
+        lineas += [f"  {t}" for t in cruces_movidos]
     lineas += ["", f"Regresión ({informe['pares']} pares, {informe['pares_inalcanzables']} inalcanzables)",
                f"  Cambian de distancia: {informe['pares_que_cambian_de_distancia']} "
                f"({informe['mas_largos']} más largos, {informe['mas_cortos']} más cortos)"]

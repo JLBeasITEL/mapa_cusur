@@ -7,6 +7,8 @@
 //   - coordenadas_pix derivadas: el píxel del nodo digitalizado más cercano
 //     más el desplazamiento de TransformacionAfin.aPixeles entre ambos; el
 //     nodo entra en `pixeles_derivados`;
+//   - si un nodo se mueve, las aristas que conserva se recalculan con la
+//     misma fórmula (en los sentidos que ya existían);
 //   - regresión: los pares entre nodos con nombre cuya distancia o
 //     recorrido cambia, con R1, R2 y R3 (las rutas de ejemplo de
 //     docs/mapa_vectorial/mapa-vectorial-referencia.html, de nodo a nodo:
@@ -251,6 +253,23 @@ void main(List<String> args) {
       'peso': peso,
     });
   }
+  // Las aristas que conservan los nodos movidos cambian de largo: se
+  // recalcula su peso con la misma fórmula, en los sentidos que existan.
+  final recalculados = [];
+  for (final n in informeNodos.where((n) => n['movido'] == true)) {
+    final id = n['id'] as String;
+    for (final o in con.keys) {
+      for (final (a, b) in [(id, o), (o, id)]) {
+        final anterior = (con[a] as Map?)?[b];
+        if (a == b || anterior == null) continue;
+        final peso = _peso(geo, a, b);
+        con[a][b] = peso;
+        if (peso != anterior) {
+          recalculados.add({'a': a, 'b': b, 'antes': anterior, 'despues': peso});
+        }
+      }
+    }
+  }
   if (errores.isNotEmpty) {
     stderr.writeln(errores.join('\n'));
     exit(1);
@@ -260,14 +279,20 @@ void main(List<String> args) {
   final grafoDespues = parsearGrafoCampus(despues);
   final vAntes = _problemas(validarGrafo(grafoAntes));
   final vDespues = _problemas(validarGrafo(grafoDespues));
+  // Un problema es el mismo aunque cambie el peso (p. ej. al recalcular las
+  // aristas de un nodo movido): se comparan sin los números.
+  String sinPesos(String p) => p.replaceAll(RegExp(r' = [\d.]+'), '');
   final validador = {
     for (final k in vAntes.keys)
       k: {
         'antes': vAntes[k]!.length,
         'despues': vDespues[k]!.length,
-        'nuevos': vDespues[k]!.where((p) => !vAntes[k]!.contains(p)).toList(),
-        'resueltos':
-            vAntes[k]!.where((p) => !vDespues[k]!.contains(p)).toList(),
+        'nuevos': vDespues[k]!
+            .where((p) => !vAntes[k]!.map(sinPesos).contains(sinPesos(p)))
+            .toList(),
+        'resueltos': vAntes[k]!
+            .where((p) => !vDespues[k]!.map(sinPesos).contains(sinPesos(p)))
+            .toList(),
       },
   };
 
@@ -332,6 +357,7 @@ void main(List<String> args) {
     'cruces_permitidos': bloque['cruces_permitidos'] ?? [],
     'aristas_quitadas': quitadas,
     'aristas_agregadas': agregadas,
+    'pesos_recalculados': recalculados,
     'pares': rDespues.length,
     'pares_inalcanzables': inalcanzables,
     'pares_que_cambian_de_distancia': cambios.length,
