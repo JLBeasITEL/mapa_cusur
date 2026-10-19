@@ -1,0 +1,46 @@
+{
+  "bloque": "Bloque 6c — Paso por el Edificio C: se quita el andador de la cara norte",
+  "notas": [
+    "Las rutas no usaban el paso interior: L4–C4–Edificio_C–C3, por encima de la cara norte de C,",
+    "sumaba 0.68 min contra 0.75 de L4–CI1–C3. En la realidad se cruza C por dentro: se entra por",
+    "la cara oeste (L4) y se sale por la cara norte en el extremo este (C3) o por la cara este (CE1).",
+    "  - Se quitan Edificio_C–C3 y el nodo C4 (Bloque 6) con L4–C4 y C4–Edificio_C.",
+    "  - Edificio_C pasa a la mitad del pasillo interior, sobre L4–CI1: L4–Edificio_C–CI1",
+    "    reemplaza L4–CI1 (píxel derivado). Queda igual de cerca de las dos salidas.",
+    "CQ1 (esquina de la Cafetería Pequeña) no tiene que ver con este andador y se conserva."
+  ],
+  "nodos": [
+    {
+      "id": "Edificio_C",
+      "x": 22.6,
+      "y": 0.46,
+      "nota": "A la mitad del pasillo interior de C, entre L4 y CI1"
+    }
+  ],
+  "quitar": [
+    [
+      "Edificio_C",
+      "C3"
+    ],
+    [
+      "L4",
+      "CI1"
+    ]
+  ],
+  "eliminar": [
+    "C4"
+  ],
+  "agregar": [
+    [
+      "L4",
+      "Edificio_C"
+    ],
+    [
+      "Edificio_C",
+      "CI1"
+    ]
+  ],
+  "cruces_permitidos": [
+    "Edificio C"
+  ]
+}
