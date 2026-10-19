@@ -150,6 +150,31 @@ void main() {
       expect(_nombres(buscador.buscar('alfa beta')), ['Omegalfa Zetabeta']);
     });
 
+    test('palabras de 1-2 letras no coinciden a la mitad de una palabra', () {
+      final buscador = _generico(['Omegalfa', 'Albatros', 'Kappa']);
+      // "al" está dentro de "omegalfa", pero solo cuenta como inicio.
+      expect(_nombres(buscador.buscar('al')), ['Albatros']);
+      expect(buscador.buscar('pa'), isEmpty);
+      expect(buscador.buscar('a'), hasLength(1));
+      // Con 3 letras sí.
+      expect(_nombres(buscador.buscar('alf')), ['Omegalfa']);
+      expect(buscador.buscar('alf').single.nivel, NivelCoincidencia.contiene);
+    });
+
+    test('en "contiene", las palabras cortas siguen valiendo como inicio', () {
+      final buscador = _generico(['Omegalfa Beta', 'Omegalfa Zeta']);
+      final r = buscador.buscar('b alfa');
+      expect(_nombres(r), ['Omegalfa Beta']);
+      expect(r.single.nivel, NivelCoincidencia.contiene);
+      expect(buscador.buscar('et alfa'), isEmpty);
+    });
+
+    test('en el campus, "dif" encuentra los edificios; "di", no', () {
+      expect(_nombres(campus.buscar('dif')), contains('Edificio B'));
+      expect(_nombres(campus.buscar('di')), isNot(contains('Edificio B')));
+      expect(campus.buscar('ua'), isEmpty);
+    });
+
     test('dentro de un nivel, alfabético sin importar acentos ni mayúsculas',
         () {
       final buscador =

@@ -15,9 +15,16 @@ enum NivelCoincidencia {
   palabras,
 
   /// Cada palabra de la consulta aparece dentro de alguna palabra del
-  /// nombre, aunque sea a la mitad.
+  /// nombre, aunque sea a la mitad. Las palabras de menos de
+  /// [kMinLetrasContiene] letras tienen que seguir siendo el inicio de una
+  /// palabra del nombre.
   contiene,
 }
+
+/// Letras mínimas de una palabra de la consulta para que cuente aunque
+/// aparezca a la mitad de una palabra del nombre ([NivelCoincidencia.contiene]).
+/// Con menos, "b" o "de" coincidirían con casi todo.
+const int kMinLetrasContiene = 3;
 
 /// Un lugar encontrado: siempre con su nombre oficial ([nombre]). Si
 /// coincidió por un alias y no por el nombre, [aliasCoincidente] es ese
@@ -145,7 +152,8 @@ class BuscadorUbicaciones {
     if (palabras.every((p) => forma.palabras.any((w) => w.startsWith(p)))) {
       return NivelCoincidencia.palabras;
     }
-    if (palabras.every((p) => forma.palabras.any((w) => w.contains(p)))) {
+    if (palabras.every((p) => forma.palabras.any((w) =>
+        p.length >= kMinLetrasContiene ? w.contains(p) : w.startsWith(p)))) {
       return NivelCoincidencia.contiene;
     }
     return null;
