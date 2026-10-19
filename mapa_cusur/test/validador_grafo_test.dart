@@ -200,17 +200,20 @@ void main() {
 
       final resultado = validarGrafo(grafo);
 
-      // 31: las 38 de la versión documentada menos siete que la Fase 6c
+      // 25: las 38 de la versión documentada menos trece que la Fase 6c
       // quitó: SP1→Cafeteria y SP3→Cafeteria (Bloque 1, la Cafetería
       // Pequeña pasó a destino sin paso), B3→M8 (Bloque 2, cruzaba el
       // Edificio B), R2→R4 (Bloque 3, cruzaba el Edificio R a lo largo), el
       // par X1→Edificio_X = 0.27 / Edificio_X→X1 = 0.40, de pesos distintos
-      // (Bloque 4b, la diagonal no sigue el pasillo del Edificio X), y
-      // L4→B2 (Bloque 5, se partió en LE7, donde llega el andador al este
-      // de L, y quedó en ambos sentidos). Si este test empieza a fallar,
-      // algo cambió en assets/campus_data.json sin que nadie lo haya
-      // decidido explícitamente.
-      expect(resultado.aristasAsimetricas, hasLength(31));
+      // (Bloque 4b, la diagonal no sigue el pasillo del Edificio X), L4→B2
+      // (Bloque 5, se partió en LE7 y quedó en ambos sentidos) y, en el
+      // Bloque 6 (revisión final de cruces), el par B1→Edificio_B = 0.22 /
+      // Edificio_B→B1 = 0.63 (ahora rodea la esquina por B6), S2→S4 (va
+      // por SN1), XV→Y4 (duplicaba el pasillo de X), Y3→Z4 y
+      // Edificio_Y→Z2 (rodean Z por ZN2 y ZN1). Si este test empieza a
+      // fallar, algo cambió en assets/campus_data.json sin que nadie lo
+      // haya decidido explícitamente.
+      expect(resultado.aristasAsimetricas, hasLength(25));
       final descripciones =
           resultado.aristasAsimetricas.map((p) => p.descripcion).join('\n');
       expect(descripciones, isNot(contains('Cafeteria')));
@@ -218,6 +221,9 @@ void main() {
       expect(descripciones, isNot(contains('R2→R4')));
       expect(descripciones, isNot(contains('X1→Edificio_X')));
       expect(descripciones, isNot(contains('L4→B2')));
+      for (final quitada in ['S2→S4', 'XV→Y4', 'Y3→Z4', 'Edificio_Y→Z2', 'B1→Edificio_B']) {
+        expect(descripciones, isNot(contains(quitada)));
+      }
       expect(resultado.pesosNoPositivos, isEmpty);
       expect(resultado.autolazos, isEmpty);
       expect(resultado.idsInexistentes, isEmpty);
