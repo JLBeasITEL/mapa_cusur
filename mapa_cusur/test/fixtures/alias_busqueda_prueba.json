@@ -1,0 +1,9 @@
+{
+  "CASA": ["bibli", "  La Biblio  "],
+  "Rectoria": ["rectoría central", "Rectoria Central"],
+  "Gimnasio": ["gimnasio", "gym"],
+  "NoExiste": ["x"],
+  "R4": ["y"],
+  "Edificio_M": "no es lista",
+  "Edificio_B": ["", 5, "Bede"]
+}

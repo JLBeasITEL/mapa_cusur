@@ -7,9 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
 
+import '../../data/almacen_recientes_preferencias.dart';
 import '../../data/campus_repository.dart';
 import '../../data/diccionario_nombres.dart';
+import '../../data/ubicaciones_buscables.dart';
+import '../../domain/buscador_ubicaciones.dart';
+import '../../domain/area_mapa.dart';
 import '../../domain/dijkstra.dart';
+import '../../domain/historial_recientes.dart';
 import '../../domain/interpolacion_nodos.dart';
 import '../../domain/transformacion_geo.dart';
 import '../../domain/ubicacion_en_ruta.dart';
@@ -71,6 +76,9 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   TransformacionAfin? _transformacionAfin;
   double _pxPorMetro = 0;
   List<String> ubicacionesDisponibles = [];
+  BuscadorUbicaciones? _buscador;
+  final HistorialRecientes _historial =
+      HistorialRecientes(AlmacenRecientesPreferencias());
   Ruta rutaCalculada = Ruta.vacia;
   String tiempoEstimado = "";
   ui.Image? markerImage;
@@ -137,6 +145,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
 
   @override
   void dispose() {
+    _historial.dispose();
     _gpsStream?.cancel();
     super.dispose();
   }
@@ -184,6 +193,16 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
           .toList();
 
       filtrados.sort();
+      // Los nombres y alias se normalizan aquí, una sola vez, y no en cada
+      // tecla. Sin alias_busqueda.json, la búsqueda funciona igual.
+      final aliasExtra = await _repositorio.cargarAliasBusqueda(
+          grafoBase.nodos.keys.where(diccionarioNombres.containsKey).toSet());
+      final buscador = BuscadorUbicaciones(ubicacionesBuscables(
+          grafoBase.nodos.keys,
+          aliasExtra: aliasExtra,
+          nodos: grafoBase.nodos));
+      // Sin esperarla: los IDs guardados que ya no existen se descartan.
+      _historial.cargar(idsValidos: buscador.ids);
 
       // Las transformaciones, la escala px/m y el RMSE salen de la
       // calibración congelada (kRutaCalibracion), no del grafo de
@@ -237,6 +256,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
         _transformacionActiva =
             (_modoTransformacion == 'afin' && afin != null) ? afin : dosPuntos;
         ubicacionesDisponibles = filtrados;
+        _buscador = buscador;
       });
     } catch (e) {
       debugPrint("❌ Error cargando datos: $e");
@@ -386,6 +406,20 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
     );
     // Misma lógica que "Detener ruta" (el destino se conserva).
     if (mounted && _navegando) _detenerRuta();
+  }
+
+  /// La posición para la distancia a cada resultado de búsqueda: la
+  /// ubicación actual (filtrada, suavizada y proyectada), solo si hay GPS y
+  /// cae dentro de `meta.limites` del mapa vectorial (más
+  /// [kMargenAreaMapaMetros]). Sin mapa vectorial (modo imagen), `null`.
+  PosicionGeo? get _posicionParaBusqueda {
+    final ubicacion = _ubicacionActual;
+    final mapa = _mapaVectorial;
+    if (ubicacion == null || mapa == null) return null;
+    if (!estaDentroDelAreaDelMapa(mapa.meta, ubicacion.lat, ubicacion.lng)) {
+      return null;
+    }
+    return (lat: ubicacion.lat, lng: ubicacion.lng);
   }
 
   /// ID interno del nodo cuyo nombre amigable (o alternativo, como
@@ -676,6 +710,9 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
               height: screenHeight * 0.5,
               child: PlanningPanel(
                 ubicaciones: ubicacionesDisponibles,
+                buscador: _buscador,
+                historial: _historial,
+                posicionUsuario: _posicionParaBusqueda,
                 onCalcular: _comenzarRuta,
                 onDetener: _detenerRuta,
                 navegando: _navegando,

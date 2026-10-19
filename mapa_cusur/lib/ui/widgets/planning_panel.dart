@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/buscador_ubicaciones.dart';
+import '../../domain/historial_recientes.dart';
 import '../theme/poppins.dart';
 import 'autocomplete_input_field.dart';
 
@@ -18,6 +20,17 @@ class PlanningPanel extends StatelessWidget {
   final Function(String) onDestinoChanged;
   final VoidCallback onLimpiar;
 
+  /// El buscador de origen y destino, armado una sola vez al cargar los
+  /// datos. Si es `null`, cada campo arma el suyo con [ubicaciones].
+  final BuscadorUbicaciones? buscador;
+
+  /// El historial de recientes, compartido por origen y destino.
+  final HistorialRecientes? historial;
+
+  /// La posición del usuario para la distancia a cada resultado (ver
+  /// AutocompleteInputField.posicion).
+  final PosicionGeo? posicionUsuario;
+
   const PlanningPanel({
     super.key,
     required this.ubicaciones,
@@ -33,6 +46,9 @@ class PlanningPanel extends StatelessWidget {
     required this.onOrigenChanged,
     required this.onDestinoChanged,
     required this.onLimpiar,
+    this.buscador,
+    this.historial,
+    this.posicionUsuario,
   });
 
   Color get _colorBotonPrincipal =>
@@ -112,6 +128,9 @@ class PlanningPanel extends StatelessWidget {
                           placeholder: '¿Dónde estás?',
                           initialValue: origenValue,
                           suggestions: ubicaciones,
+                          buscador: buscador,
+                          historial: historial,
+                          posicion: posicionUsuario,
                           onSelected: onOrigenChanged)
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -193,6 +212,9 @@ class PlanningPanel extends StatelessWidget {
                 placeholder: '¿A dónde vas?',
                 initialValue: destinoValue,
                 suggestions: ubicaciones,
+                buscador: buscador,
+                historial: historial,
+                posicion: posicionUsuario,
                 onSelected: onDestinoChanged),
 
             const SizedBox(height: 24), // Damos un poco más de espacio aquí
