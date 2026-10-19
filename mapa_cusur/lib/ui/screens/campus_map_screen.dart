@@ -7,11 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
 
+import '../../data/almacen_recientes_preferencias.dart';
 import '../../data/campus_repository.dart';
 import '../../data/diccionario_nombres.dart';
 import '../../data/ubicaciones_buscables.dart';
 import '../../domain/buscador_ubicaciones.dart';
 import '../../domain/dijkstra.dart';
+import '../../domain/historial_recientes.dart';
 import '../../domain/interpolacion_nodos.dart';
 import '../../domain/transformacion_geo.dart';
 import '../../domain/ubicacion_en_ruta.dart';
@@ -74,6 +76,8 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   double _pxPorMetro = 0;
   List<String> ubicacionesDisponibles = [];
   BuscadorUbicaciones? _buscador;
+  final HistorialRecientes _historial =
+      HistorialRecientes(AlmacenRecientesPreferencias());
   Ruta rutaCalculada = Ruta.vacia;
   String tiempoEstimado = "";
   ui.Image? markerImage;
@@ -140,6 +144,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
 
   @override
   void dispose() {
+    _historial.dispose();
     _gpsStream?.cancel();
     super.dispose();
   }
@@ -194,6 +199,8 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
       final buscador = BuscadorUbicaciones(ubicacionesBuscables(
           grafoBase.nodos.keys,
           aliasExtra: aliasExtra));
+      // Sin esperarla: los IDs guardados que ya no existen se descartan.
+      _historial.cargar(idsValidos: buscador.ids);
 
       // Las transformaciones, la escala px/m y el RMSE salen de la
       // calibración congelada (kRutaCalibracion), no del grafo de
@@ -688,6 +695,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
               child: PlanningPanel(
                 ubicaciones: ubicacionesDisponibles,
                 buscador: _buscador,
+                historial: _historial,
                 onCalcular: _comenzarRuta,
                 onDetener: _detenerRuta,
                 navegando: _navegando,

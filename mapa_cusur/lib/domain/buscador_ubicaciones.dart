@@ -149,9 +149,17 @@ typedef _Candidato = ({_Entrada entrada, ResultadoBusqueda resultado});
 /// cada tecla.
 class BuscadorUbicaciones {
   final List<_Entrada> _entradas;
+  final Map<String, UbicacionBuscable> _porId;
 
   BuscadorUbicaciones(Iterable<UbicacionBuscable> ubicaciones)
-      : _entradas = [for (final u in ubicaciones) _Entrada(u)];
+      : _entradas = [for (final u in ubicaciones) _Entrada(u)],
+        _porId = {for (final u in ubicaciones) u.id: u};
+
+  /// El lugar con ese ID, o `null` si no es un lugar buscable.
+  UbicacionBuscable? ubicacion(String id) => _porId[id];
+
+  /// Los IDs de todos los lugares buscables.
+  Set<String> get ids => _porId.keys.toSet();
 
   /// Lo que la barra muestra para [consulta]:
   ///

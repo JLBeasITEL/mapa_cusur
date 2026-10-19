@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../domain/buscador_ubicaciones.dart';
+import '../../domain/historial_recientes.dart';
 import '../theme/poppins.dart';
 import 'autocomplete_input_field.dart';
 
@@ -23,6 +24,9 @@ class PlanningPanel extends StatelessWidget {
   /// datos. Si es `null`, cada campo arma el suyo con [ubicaciones].
   final BuscadorUbicaciones? buscador;
 
+  /// El historial de recientes, compartido por origen y destino.
+  final HistorialRecientes? historial;
+
   const PlanningPanel({
     super.key,
     required this.ubicaciones,
@@ -39,6 +43,7 @@ class PlanningPanel extends StatelessWidget {
     required this.onDestinoChanged,
     required this.onLimpiar,
     this.buscador,
+    this.historial,
   });
 
   Color get _colorBotonPrincipal =>
@@ -119,6 +124,7 @@ class PlanningPanel extends StatelessWidget {
                           initialValue: origenValue,
                           suggestions: ubicaciones,
                           buscador: buscador,
+                          historial: historial,
                           onSelected: onOrigenChanged)
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -201,6 +207,7 @@ class PlanningPanel extends StatelessWidget {
                 initialValue: destinoValue,
                 suggestions: ubicaciones,
                 buscador: buscador,
+                historial: historial,
                 onSelected: onDestinoChanged),
 
             const SizedBox(height: 24), // Damos un poco más de espacio aquí

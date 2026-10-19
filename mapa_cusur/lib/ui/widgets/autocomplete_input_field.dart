@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/ubicaciones_buscables.dart';
 import '../../domain/buscador_ubicaciones.dart';
+import '../../domain/historial_recientes.dart';
 import '../theme/poppins.dart';
 import 'opciones_busqueda.dart';
 
@@ -17,6 +18,11 @@ class AutocompleteInputField extends StatefulWidget {
   /// cargar los datos). Si es `null`, se arma uno con [suggestions].
   final BuscadorUbicaciones? buscador;
 
+  /// Los últimos lugares elegidos de la lista (compartido entre origen y
+  /// destino). Con el campo vacío y enfocado se muestran como "Recientes".
+  /// Si es `null`, no hay recientes.
+  final HistorialRecientes? historial;
+
   const AutocompleteInputField({
     super.key,
     required this.iconColor,
@@ -26,6 +32,7 @@ class AutocompleteInputField extends StatefulWidget {
     required this.onSelected,
     this.initialValue = "",
     this.buscador,
+    this.historial,
   });
 
   @override
@@ -89,19 +96,27 @@ class _AutocompleteInputFieldState extends State<AutocompleteInputField> {
           // importar acentos, mayúsculas ni orden de las palabras, también
           // por alias (p. ej. "Gimnasio") y, si no hay nada, tolerando
           // errores de dedo. La opción siempre muestra el nombre amigable.
-          optionsBuilder: (val) =>
-              OpcionBusqueda.de(_buscador.consultar(val.text)),
+          optionsBuilder: (val) => OpcionBusqueda.de(
+              _buscador.consultar(val.text),
+              conRecientes: widget.historial != null),
           displayStringForOption: (o) => switch (o) {
             OpcionLugar(:final resultado) => resultado.nombre,
             OpcionSinResultados(:final respuesta) => respuesta.consulta,
+            OpcionRecientes() => '',
           },
+          // Solo lo elegido de la lista cuenta como reciente; lo escrito a
+          // mano llega a la pantalla por onChanged y no se guarda.
           onSelected: (o) {
-            if (o is OpcionLugar) widget.onSelected(o.resultado.nombre);
+            if (o is! OpcionLugar) return;
+            widget.historial?.agregar(o.resultado.id);
+            widget.onSelected(o.resultado.nombre);
           },
           optionsViewBuilder: (ctx, onSelected, opciones) => OpcionesBusqueda(
             opciones: opciones,
             onSelected: onSelected,
             onSugerencia: _usarSugerencia,
+            historial: widget.historial,
+            buscador: _buscador,
           ),
           // Se escucha el controller para que el botón de borrar aparezca o
           // desaparezca mientras el usuario escribe.
