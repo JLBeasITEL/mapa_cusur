@@ -64,6 +64,7 @@ flutter:
     - assets/campus_data.json
     - assets/calibracion_campo.json
     - assets/campus_vector.json
+    - assets/alias_busqueda.json
     - assets/pin.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

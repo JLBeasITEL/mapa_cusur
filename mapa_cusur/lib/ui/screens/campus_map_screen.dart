@@ -187,9 +187,13 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
           .toList();
 
       filtrados.sort();
-      // Los nombres se normalizan aquí, una sola vez, y no en cada tecla.
-      final buscador =
-          BuscadorUbicaciones(ubicacionesBuscables(grafoBase.nodos.keys));
+      // Los nombres y alias se normalizan aquí, una sola vez, y no en cada
+      // tecla. Sin alias_busqueda.json, la búsqueda funciona igual.
+      final aliasExtra = await _repositorio.cargarAliasBusqueda(
+          grafoBase.nodos.keys.where(diccionarioNombres.containsKey).toSet());
+      final buscador = BuscadorUbicaciones(ubicacionesBuscables(
+          grafoBase.nodos.keys,
+          aliasExtra: aliasExtra));
 
       // Las transformaciones, la escala px/m y el RMSE salen de la
       // calibración congelada (kRutaCalibracion), no del grafo de

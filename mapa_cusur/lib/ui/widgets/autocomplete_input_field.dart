@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../data/ubicaciones_buscables.dart';
 import '../../domain/buscador_ubicaciones.dart';
 import '../theme/poppins.dart';
+import 'opciones_busqueda.dart';
 
 class AutocompleteInputField extends StatefulWidget {
   final Color iconColor;
@@ -77,6 +78,8 @@ class _AutocompleteInputFieldState extends State<AutocompleteInputField> {
           optionsBuilder: (val) => _buscador.buscar(val.text),
           displayStringForOption: (r) => r.nombre,
           onSelected: (r) => widget.onSelected(r.nombre),
+          optionsViewBuilder: (ctx, onSelected, opciones) =>
+              OpcionesBusqueda(opciones: opciones, onSelected: onSelected),
           // Se escucha el controller para que el botón de borrar aparezca o
           // desaparezca mientras el usuario escribe.
           fieldViewBuilder: (ctx, ctrl, node, fn) =>

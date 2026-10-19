@@ -1,10 +1,12 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart' show debugPrint, kDebugMode;
 import 'package:flutter/services.dart' show rootBundle;
 
 import '../models/grafo_campus.dart';
 import '../models/mapa_vectorial.dart';
 import '../utils/cronometro.dart';
+import 'alias_busqueda_parser.dart';
 import 'campus_json_parser.dart';
 import 'mapa_vectorial_parser.dart';
 
@@ -53,6 +55,29 @@ class CampusRepository {
   /// [cargarDatosCampus].
   Future<DatosCampus> cargarCalibracion({String ruta = kRutaCalibracion}) =>
       cargarDatosCampus(ruta: ruta);
+
+  /// Carga los alias de búsqueda de `assets/alias_busqueda.json` (ver
+  /// [parsearAliasBusqueda]), solo para los IDs de [idsBuscables]. Nunca
+  /// falla: si el archivo no existe o tiene errores, devuelve lo que se
+  /// pudo leer (o nada) y avisa en la consola en modo debug.
+  Future<Map<String, List<String>>> cargarAliasBusqueda(
+    Set<String> idsBuscables, {
+    String ruta = 'assets/alias_busqueda.json',
+  }) async {
+    void advertir(String mensaje) {
+      if (kDebugMode) debugPrint('⚠️ $ruta: $mensaje');
+    }
+
+    String? contenido;
+    try {
+      contenido = await rootBundle.loadString(ruta);
+    } catch (e) {
+      advertir('no se pudo leer ($e); la búsqueda sigue sin estos alias.');
+      return const {};
+    }
+    return parsearAliasBusqueda(contenido,
+        idsValidos: idsBuscables, advertir: advertir);
+  }
 
   /// Carga el mapa vectorial (edificios, calles, áreas verdes...) de
   /// `assets/campus_vector.json`. Es una carga aparte de
