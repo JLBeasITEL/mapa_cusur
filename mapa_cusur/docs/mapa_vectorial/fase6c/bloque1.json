@@ -1,0 +1,26 @@
+{
+  "bloque": "Bloque 1 — Cafetería Pequeña",
+  "nodos": [
+    {"id": "Cafeteria", "x": -112.7, "y": -86.8,
+     "nota": "Destino sin paso: fachada sureste de la Cafetería Pequeña, donde llega el ramal del trazo"},
+    {"id": "CP1", "x": -102.0, "y": -86.8,
+     "nota": "Frente a la cafetería, donde se juntan el andador norte de C.A.S.A. y la diagonal del lado oeste"},
+    {"id": "CP2", "x": -76.0, "y": -86.9,
+     "nota": "Esquina del andador norte: termina el tramo recto y empieza la diagonal hacia SP3"},
+    {"id": "CP3", "x": -132.0, "y": -64.3,
+     "nota": "Esquina del lado oeste: termina la diagonal y el trazo baja hacia el sur"}
+  ],
+  "quitar": [
+    ["Cafeteria", "SP1"],
+    ["Cafeteria", "SP3"],
+    ["Cafeteria", "L6"],
+    ["Cafeteria", "F7"]
+  ],
+  "agregar": [
+    ["Cafeteria", "CP1"],
+    ["CP1", "CP2"],
+    ["CP2", "SP3"],
+    ["CP1", "CP3"],
+    ["CP3", "F7"]
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "nodos_antes_interpolar": 236,
+  "aristas_antes_interpolar_dirigidas": 781,
+  "peso_total_antes": 255.64999999999992,
+  "nodos_despues_interpolar": 1142,
+  "aristas_despues_interpolar_dirigidas": 2616,
+  "peso_total_despues": 265.1800000000027,
+  "nodos_con_nombre_amigable": 52,
+  "pares_calculados": 2652,
+  "pares_inalcanzables": 0
+}

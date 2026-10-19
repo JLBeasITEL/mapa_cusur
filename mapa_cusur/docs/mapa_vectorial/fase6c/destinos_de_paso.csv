@@ -1,0 +1,15 @@
+nodo,nombre,edificio,es_su_edificio,vecinos,aristas,pares_que_pasan,transiciones_principales,decision
+Rectoria,Rectoría,Rectoría (Edificio D),si,5,"B1 (0.45), B2 (0.51), CR (0.19), Edificio_B (0.44), RB (0.12)",200,CR → Rectoria → B2 (80); B2 → Rectoria → CR (80); CR → Rectoria → Edificio_B (16); Edificio_B → Rectoria → CR (16); RB → Rectoria → Edificio_B (4),destino sin paso (Bloque 4b)
+Edificio_P,Edificio P,Edificio P,si,4,"P2 (0.26), P4 (0.19), Q1 (0.32), Q3 (0.28)",126,Q3 → Edificio_P → P2 (57); P2 → Edificio_P → Q3 (57); P4 → Edificio_P → Q1 (6); Q1 → Edificio_P → P4 (6),se puede atravesar
+Edificio_L,Edificio L,Edificio L,si,3,"L2 (0.41), L4 (0.43), L5 (0.53)",78,L5 → Edificio_L → L4 (39); L4 → Edificio_L → L5 (39),se puede atravesar
+Cafeteria_P,Cafetería Principal,Cafetería Principal,si,2,"CF3 (0.19), CF4 (0.22)",65,CF3 → Cafeteria_P → CF4 (33); CF4 → Cafeteria_P → CF3 (32),destino sin paso (Bloque 4b)
+Auditorio_Zinser,Auditorio Adolfo Aguilar Zínser,Auditorio Aguilar Zinser,si,5,"B3 (0.65), M10 (0.28), M8 (0.28), U3 (0.27), U4 (0.32)",63,M10 → Auditorio_Zinser → B3 (23); B3 → Auditorio_Zinser → M10 (22); M10 → Auditorio_Zinser → M8 (10); M8 → Auditorio_Zinser → M10 (8),destino sin paso (Bloque 4b)
+Clinica_Escuela,Clínica Escuela,Edificio P,si,4,"Ce1 (0.30), Ce2 (0.39), P3 (0.06), P4 (0.20)",14,Ce1 → Clinica_Escuela → Ce2 (12); P4 → Clinica_Escuela → Ce1 (2),se puede atravesar
+Edificio_X,Edificio X,Edificio X,si,4,"X1 (0.40), X3 (0.36), XV (0.17), Y4 (0.27)",7,X1 → Edificio_X → XV (3); Y4 → Edificio_X → XV (2); XV → Edificio_X → X1 (2),se puede atravesar por el pasillo norte–sur (XV–Edificio_X–X5); sin diagonales a X1 y X3 (Bloque 4b)
+Auditorio_Ochoa,Auditorio Antonio González Ochoa,Edificio Z,si,3,"Y3 (0.22), Z1 (0.53), Z4 (0.22)",0,,sin cambios por ahora (pendiente opcional)
+Bufete_Juridico,Bufete Jurídico,Bufete Jurídico,si,2,"Z1 (0.10), Z3 (0.73)",0,,sin cambios por ahora (pendiente opcional)
+CASA,C.A.S.A. (Biblioteca),C.A.S.A.,si,3,"L6 (0.33), L7 (0.81), M7 (0.28)",0,,sin cambios por ahora (pendiente opcional)
+Edificio_Q,Edificio Q,Edificio P,si,4,"P2 (0.35), P4 (0.38), Q1 (0.23), Q3 (0.28)",0,,sin cambios por ahora (pendiente opcional)
+Edificio_U,Edificio U,Edificio U,si,2,"U2 (0.46), U4 (0.49, solo ida)",0,,sin cambios por ahora (pendiente opcional)
+Edificio_V,Edificio V,Edificio V,si,3,"V1 (0.39, solo ida), V3 (0.35, solo ida), XV (0.18)",0,,sin cambios por ahora (pendiente opcional)
+Edificio_Z,Edificio Z,Edificio Z,si,5,"Edificio_Y (0.26), Y3 (0.24, solo ida), Z1 (0.34, solo ida), Z2 (0.36, solo vuelta), Z4 (0.39)",0,,sin cambios por ahora (pendiente opcional)

@@ -1,0 +1,43 @@
+{
+  "bloque": "Bloque 3 — Salones por el pasillo exterior (R, T, V, X, Y y Z)",
+  "notas": [
+    "Lado elegido por edificio (N = pasillo norte nuevo, con dos nodos de esquina;",
+    "S = pasillo sur que ya existe por X1, Edificio_X y X3; solo se quita X2–X4):",
+    "  R: S. Tu trazo no tiene andador al norte de R (32 %, solo las diagonales a",
+    "     Edificio_S); al sur sí, de R3 a R1. R2→R4 tenía un solo sentido.",
+    "  T, V, X, Y, Z: N. Tu trazo rodea el norte de punta a punta, a < 1 m de",
+    "     las esquinas nuevas; se conserva ese pasillo, ahora afuera del edificio.",
+    "Regresión de cada opción por separado: N y S dan lo mismo (0 pares, salvo",
+    "Z: 2 pares +0.02 min con cualquiera de las dos).",
+    "V4, X4 y Y4 ya están dentro de su pared (0.3 a 1.9 m): el tramo de la",
+    "esquina nueva a esos nodos entra lo mismo. Los nodos destino no se tocan."
+  ],
+  "nodos": [
+    {"id": "TN1", "x": 128.6, "y": -109.1, "nota": "Esquina noreste de T, afuera"},
+    {"id": "TN2", "x": 59.8, "y": -109.4, "nota": "Esquina noroeste de T, afuera"},
+    {"id": "VN1", "x": 124.4, "y": 84.9, "nota": "Esquina noreste de V, afuera"},
+    {"id": "VN2", "x": 74.8, "y": 84.3, "nota": "Esquina noroeste de V, afuera"},
+    {"id": "XN1", "x": 123.1, "y": 108.2, "nota": "Esquina noreste de X, afuera"},
+    {"id": "XN2", "x": 73.5, "y": 107.6, "nota": "Esquina noroeste de X, afuera"},
+    {"id": "YN1", "x": 141.1, "y": 131.1, "nota": "Esquina noreste de Y, afuera"},
+    {"id": "YN2", "x": 98.3, "y": 130.8, "nota": "Esquina noroeste de Y, afuera"},
+    {"id": "ZN1", "x": 123.8, "y": 152.7, "nota": "Esquina noreste de Z, afuera"},
+    {"id": "ZN2", "x": 74.2, "y": 152.0, "nota": "Esquina noroeste de Z, afuera"}
+  ],
+  "quitar": [
+    ["R2", "R4"],
+    ["T2", "T4"],
+    ["V2", "V4"],
+    ["X2", "X4"],
+    ["Y2", "Y4"],
+    ["Z2", "Z4"]
+  ],
+  "agregar": [
+    ["T2", "TN1"], ["TN1", "TN2"], ["TN2", "T4"],
+    ["V2", "VN1"], ["VN1", "VN2"], ["VN2", "V4"],
+    ["X2", "XN1"], ["XN1", "XN2"], ["XN2", "X4"],
+    ["Y2", "YN1"], ["YN1", "YN2"], ["YN2", "Y4"],
+    ["Z2", "ZN1"], ["ZN1", "ZN2"], ["ZN2", "Z4"]
+  ],
+  "cruces_permitidos": ["Edificio V", "Edificio X", "Edificio Y"]
+}

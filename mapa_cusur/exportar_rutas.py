@@ -1,9 +1,22 @@
+import argparse
 import heapq
 from math import radians, sin, cos, sqrt, atan2
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import os
 import json
+import sys
+
+# En Windows, la consola por defecto no siempre usa UTF-8: sin esto, los
+# acentos y flechas (→) de los mensajes de este script pueden hacerlo
+# fallar directamente con UnicodeEncodeError en vez de solo verse mal.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
+# matplotlib ya no se importa aquí: `plt`/`mpimg` no se usaban en ningún
+# lugar de este script (verificado, cero referencias), así que era una
+# dependencia obligatoria de algo que en realidad no la necesitaba. Si en
+# el futuro se agrega una función de visualización, importa matplotlib
+# DENTRO de esa función (no en el encabezado) para que quien solo necesite
+# generar el JSON no tenga que instalarlo.
 
 # Función para calcular distancia con Haversine (en km) - usada solo para el grafo
 def haversine(lat1, lon1, lat2, lon2):
@@ -532,11 +545,18 @@ graph = {
     },
     'B1': {
         'Rectoria': km_a_minutos(haversine(*coordenadas_geo['B1'], *coordenadas_geo['Rectoria'])),
-        'B2': km_a_minutos(haversine(*coordenadas_geo['B2'], *coordenadas_geo['B2'])),
-        'B3': km_a_minutos(haversine(*coordenadas_geo['B2'], *coordenadas_geo['B3'])),
+        # CORREGIDO (Fase 6/autorizado): estas 4 líneas usaban
+        # coordenadas_geo['B2'] como primer argumento en vez de
+        # coordenadas_geo['B1'] -el mismo tipo de error de copiar/pegar que
+        # en 'Estacionamiento1' más abajo-. 'B2' contra sí mismo daba
+        # exactamente el peso cero B1->B2=0.0 documentado en
+        # REPORTE_DATOS.md. 'Edificio_B' se deja sin tocar a propósito: esa
+        # corrección no fue autorizada.
+        'B2': km_a_minutos(haversine(*coordenadas_geo['B1'], *coordenadas_geo['B2'])),
+        'B3': km_a_minutos(haversine(*coordenadas_geo['B1'], *coordenadas_geo['B3'])),
         'Edificio_B': km_a_minutos(haversine(*coordenadas_geo['B2'], *coordenadas_geo['Edificio_B'])),
-        'S3': km_a_minutos(haversine(*coordenadas_geo['B2'], *coordenadas_geo['S3'])),
-        'S4': km_a_minutos(haversine(*coordenadas_geo['B2'], *coordenadas_geo['S4'])),
+        'S3': km_a_minutos(haversine(*coordenadas_geo['B1'], *coordenadas_geo['S3'])),
+        'S4': km_a_minutos(haversine(*coordenadas_geo['B1'], *coordenadas_geo['S4'])),
         'RB': km_a_minutos(haversine(*coordenadas_geo['B1'], *coordenadas_geo['RB'])),
         'R3': km_a_minutos(haversine(*coordenadas_geo['B1'], *coordenadas_geo['R3']))
     },
@@ -795,11 +815,14 @@ graph = {
           'Edificio_R': km_a_minutos(haversine(*coordenadas_geo['R3'], *coordenadas_geo['Edificio_R'])),
        }, 
     'R4': {
+          # ELIMINADO (Fase 6/autorizado): había una entrada 'R4': ... aquí
+          # -un autolazo espurio, R4 conectado consigo mismo con peso 0.0-,
+          # documentada en REPORTE_DATOS.md. No es un dato real: nunca
+          # debió existir una arista de un nodo hacia sí mismo.
           'R3': km_a_minutos(haversine(*coordenadas_geo['R4'], *coordenadas_geo['R3'])),
           'S3': km_a_minutos(haversine(*coordenadas_geo['R4'], *coordenadas_geo['S3'])),
           'Edificio_S': km_a_minutos(haversine(*coordenadas_geo['R4'], *coordenadas_geo['Edificio_S'])),
-          'R4': km_a_minutos(haversine(*coordenadas_geo['R4'], *coordenadas_geo['R4'])),
-       }, 
+       },
     'Edificio_R': {
           'R3': km_a_minutos(haversine(*coordenadas_geo['Edificio_R'], *coordenadas_geo['R3'])),
           'R1': km_a_minutos(haversine(*coordenadas_geo['Edificio_R'], *coordenadas_geo['R1'])),
@@ -1094,10 +1117,15 @@ graph = {
            'EntradaC': km_a_minutos(haversine(*coordenadas_geo['Edificio_I'], *coordenadas_geo['EntradaC'])),
        }, 
     'Estacionamiento1': {
+           # CORREGIDO (Fase 6/autorizado): las 3 líneas de abajo usaban
+           # coordenadas_geo['Estacionamiento2'] como primer argumento en
+           # vez de coordenadas_geo['Estacionamiento1'] -causa raíz
+           # documentada en REPORTE_DATOS.md de los 3 pesos con mayor
+           # desviación contra la fórmula de todo el grafo.
            'VT': km_a_minutos(haversine(*coordenadas_geo['Estacionamiento1'], *coordenadas_geo['VT'])),
-           'M10': km_a_minutos(haversine(*coordenadas_geo['Estacionamiento2'], *coordenadas_geo['M10'])),
-           'U4': km_a_minutos(haversine(*coordenadas_geo['Estacionamiento2'], *coordenadas_geo['U4'])),
-           'U2': km_a_minutos(haversine(*coordenadas_geo['Estacionamiento2'], *coordenadas_geo['U2'])),
+           'M10': km_a_minutos(haversine(*coordenadas_geo['Estacionamiento1'], *coordenadas_geo['M10'])),
+           'U4': km_a_minutos(haversine(*coordenadas_geo['Estacionamiento1'], *coordenadas_geo['U4'])),
+           'U2': km_a_minutos(haversine(*coordenadas_geo['Estacionamiento1'], *coordenadas_geo['U2'])),
        },
     'Estacionamiento2': {
            'CF2': km_a_minutos(haversine(*coordenadas_geo['Estacionamiento2'], *coordenadas_geo['CF2'])),
@@ -1212,25 +1240,174 @@ def dijkstra(graph, start, end):
     return path[::-1], distances.get(end, float('inf'))
 
 
-def generar_json_para_flutter():
-    # Juntamos toda tu información
+# Los 8 puntos de control usados por TransformacionAfin (Fase 4 de la app
+# Flutter). Se seleccionaron sobre 60,000 combinaciones de lugares
+# identificables en campo; ver REPORTE_DATOS.md y MEJORAS.md.
+PUNTOS_CONTROL = [
+    "Bufete_Juridico", "Edificio_F", "Edificio_L", "Edificio_N",
+    "Edificio_T", "Edificio_W", "Edificio_Y", "Proteccion_Civil",
+]
+
+
+def validar_grafo(coordenadas_geo, coordenadas_pix, graph):
+    """Replica en Python las mismas comprobaciones de
+    lib/domain/validador_grafo.dart: IDs inexistentes, aristas asimétricas,
+    pesos no positivos o no finitos, autolazos, componentes desconectadas y
+    píxeles duplicados. No corrige nada -solo reporta-: qué hacer con cada
+    hallazgo es una decisión humana (ver REPORTE_DATOS.md)."""
+    problemas = {
+        "ids_inexistentes": [],
+        "aristas_asimetricas": [],
+        "pesos_no_positivos": [],
+        "pesos_no_finitos": [],
+        "autolazos": [],
+        "componentes_desconectadas": [],
+        "pixeles_duplicados": [],
+    }
+
+    aristas_vistas = set()
+    for origen, vecinos in graph.items():
+        for destino, peso in vecinos.items():
+            if origen not in coordenadas_geo or origen not in coordenadas_pix:
+                problemas["ids_inexistentes"].append(
+                    f"{origen} no tiene coordenadas (aparece como origen)")
+            if destino not in coordenadas_geo or destino not in coordenadas_pix:
+                problemas["ids_inexistentes"].append(
+                    f"{destino} no tiene coordenadas (referenciado desde {origen})")
+
+            if origen == destino:
+                problemas["autolazos"].append(f"{origen}→{origen} (peso {peso})")
+
+            if peso != peso or peso in (float("inf"), float("-inf")):  # NaN o infinito
+                problemas["pesos_no_finitos"].append(f"{origen}→{destino} = {peso}")
+            elif peso <= 0:
+                problemas["pesos_no_positivos"].append(f"{origen}→{destino} = {peso}")
+
+            clave = f"{origen}→{destino}"
+            if clave not in aristas_vistas:
+                aristas_vistas.add(clave)
+                peso_inverso = graph.get(destino, {}).get(origen)
+                if origen != destino:
+                    if peso_inverso is None:
+                        problemas["aristas_asimetricas"].append(
+                            f"{origen}→{destino} = {peso}, pero {destino}→{origen} no existe")
+                    elif abs(peso_inverso - peso) > 1e-6:
+                        problemas["aristas_asimetricas"].append(
+                            f"{origen}→{destino} = {peso}, pero {destino}→{origen} = {peso_inverso}")
+
+    # Componentes desconectadas: se trata el grafo como no dirigido -una
+    # arista en cualquier sentido basta para considerar dos nodos
+    # alcanzables entre sí a efectos de conectividad, aunque el grafo real
+    # sea asimétrico.
+    adyacencia = {}
+    for origen, vecinos in graph.items():
+        adyacencia.setdefault(origen, set())
+        for destino in vecinos:
+            adyacencia.setdefault(destino, set())
+            adyacencia[origen].add(destino)
+            adyacencia[destino].add(origen)
+    for nodo in coordenadas_geo:
+        adyacencia.setdefault(nodo, set())
+
+    visitados = set()
+    componentes = []
+    for inicio in adyacencia:
+        if inicio in visitados:
+            continue
+        pila = [inicio]
+        visitados.add(inicio)
+        componente = []
+        while pila:
+            actual = pila.pop()
+            componente.append(actual)
+            for vecino in adyacencia[actual]:
+                if vecino not in visitados:
+                    visitados.add(vecino)
+                    pila.append(vecino)
+        componentes.append(componente)
+    if len(componentes) > 1:
+        componentes.sort(key=len, reverse=True)
+        for comp in componentes[1:]:
+            problemas["componentes_desconectadas"].append(
+                f"Componente aislada de {len(comp)} nodo(s): {', '.join(comp)}")
+
+    # Píxeles duplicados
+    por_pixel = {}
+    for nodo, pix in coordenadas_pix.items():
+        por_pixel.setdefault(tuple(pix), []).append(nodo)
+    for pix, nodos in por_pixel.items():
+        if len(nodos) > 1:
+            problemas["pixeles_duplicados"].append(
+                f"{', '.join(nodos)} comparten el píxel {pix}")
+
+    return problemas
+
+
+def imprimir_reporte_validacion(problemas):
+    etiquetas = {
+        "ids_inexistentes": "IDs inexistentes",
+        "aristas_asimetricas": "Aristas asimétricas",
+        "pesos_no_positivos": "Pesos no positivos",
+        "pesos_no_finitos": "Pesos no finitos",
+        "autolazos": "Autolazos",
+        "componentes_desconectadas": "Componentes desconectadas",
+        "pixeles_duplicados": "Píxeles duplicados",
+    }
+    total = sum(len(v) for v in problemas.values())
+    print(f"\n=== Validación de integridad: {total} problema(s) encontrado(s) ===")
+    for clave, etiqueta in etiquetas.items():
+        items = problemas[clave]
+        if not items:
+            continue
+        print(f"{etiqueta} ({len(items)}):")
+        for item in items:
+            print(f"  - {item}")
+    if total == 0:
+        print("Sin problemas de integridad.")
+    else:
+        print("No se corrige nada automáticamente: qué hacer con cada uno es "
+              "una decisión humana (ver REPORTE_DATOS.md).")
+
+
+def generar_json_para_flutter(ruta="assets/campus_data.json"):
+    problemas = validar_grafo(coordenadas_geo, coordenadas_pix, graph)
+    imprimir_reporte_validacion(problemas)
+
+    # Juntamos toda la información. "puntos_control" tiene que venir aquí
+    # también -y no solo en el JSON ya generado-: si no, regenerar el JSON
+    # con este script borraría en silencio la sección que usa
+    # TransformacionAfin (Fase 4 de la app Flutter).
     datos = {
         "coordenadas_geo": coordenadas_geo,
         "coordenadas_pix": coordenadas_pix,
-        "conexiones": graph  # Asegúrate de que tu diccionario de rutas se llame 'graph'
+        "conexiones": graph,  # Asegúrate de que tu diccionario de rutas se llame 'graph'
+        "puntos_control": PUNTOS_CONTROL,
     }
-    
-    # Obtenemos la ruta donde se guardará
-    ruta_archivo = os.path.join(os.getcwd(), "campus_data.json")
-    
-    # Creamos el archivo JSON
-    with open(ruta_archivo, "w", encoding="utf-8") as f:
+
+    with open(ruta, "w", encoding="utf-8") as f:
         json.dump(datos, f, indent=4, ensure_ascii=False)
-        
+
+    num_nodos = len(coordenadas_geo)
+    num_aristas = sum(len(vecinos) for vecinos in graph.values())
+    peso_total = sum(peso for vecinos in graph.values() for peso in vecinos.values())
+
     print("--------------------------------------------------")
     print("¡ÉXITO! El archivo se generó correctamente en esta ruta:")
-    print(ruta_archivo)
+    print(os.path.abspath(ruta))
+    print(f"Nodos: {num_nodos}")
+    print(f"Aristas (dirigidas): {num_aristas}")
+    print(f"Peso total: {peso_total:.2f} min")
     print("--------------------------------------------------")
 
-generar_json_para_flutter()
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Genera assets/campus_data.json a partir del grafo "
+                     "definido en este script, validando su integridad "
+                     "primero (sin corregir nada automáticamente).")
+    parser.add_argument(
+        "ruta", nargs="?", default="assets/campus_data.json",
+        help="Ruta del archivo de salida (por defecto: assets/campus_data.json)")
+    args = parser.parse_args()
+    generar_json_para_flutter(args.ruta)
     

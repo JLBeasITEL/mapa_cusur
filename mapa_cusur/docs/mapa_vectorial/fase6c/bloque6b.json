@@ -1,0 +1,18 @@
+{
+  "bloque": "Bloque 6b — Paso por dentro del Edificio C, con salida por la cara este",
+  "notas": [
+    "El paso L4–CI1–C3 (Bloque 5, parte B) no lo usaba ninguna ruta: CI1 solo salía al norte (C3).",
+    "Según Juan Luis, el pasillo atraviesa C de oeste a este y sale por la cara este:",
+    "  - CE1, salida a 1.2 m afuera de la cara este, a la altura del pasillo; CI1–CE1 va por dentro.",
+    "  - CE2 parte C2–C1 (andador del lado este) frente a la salida; CE1–CE2.",
+    "  - Se conserva CI1–C3, la salida al norte que dibuja el trazo (ninguna ruta la usa).",
+    "Rutas que pasan por el paso de C (por CI1): hoy 0; con la salida este, 234."
+  ],
+  "nodos": [
+    {"id": "CE1", "x": 48.0, "y": 1.0, "nota": "Salida del paso de C, a 1.2 m afuera de la cara este"},
+    {"id": "CE2", "x": 54.43, "y": 1.0, "nota": "Andador del lado este de C, frente a la salida del paso (sobre C2–C1)"}
+  ],
+  "quitar": [["C2", "C1"]],
+  "agregar": [["CI1", "CE1"], ["CE1", "CE2"], ["C2", "CE2"], ["CE2", "C1"]],
+  "cruces_permitidos": ["Edificio C"]
+}
