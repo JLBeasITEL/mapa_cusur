@@ -153,8 +153,17 @@ def main():
     ax.legend(handles=leyenda, loc="lower right", fontsize=8.5, framealpha=0.92)
 
     fig.text(0.01, 0.962, f"Propuesta · {informe['bloque']}", fontsize=17, fontweight="bold")
-    subtitulo = ("Ninguna arista agregada cruza un edificio" if not permitidos else
-                 "Cruces permitidos: " + "; ".join(permitidos))
+    if not permitidos:
+        subtitulo = "Ninguna arista agregada cruza un edificio"
+    elif len(permitidos) <= 4:
+        subtitulo = "Cruces permitidos: " + "; ".join(permitidos)
+    else:  # la lista completa no cabe: se resume por edificio
+        por_edificio = {}
+        for t in permitidos:
+            nombre = t.split(" cruza ")[1].split(" (")[0]
+            por_edificio[nombre] = por_edificio.get(nombre, 0) + 1
+        subtitulo = (f"{len(permitidos)} cruces permitidos (en el bloque o porque un extremo ya está dentro): "
+                     + ", ".join(f"{n} ({c})" for n, c in por_edificio.items()))
     fig.text(0.01, 0.938, "\n".join(textwrap.wrap(f"{subtitulo} · pesos = round(km Haversine / 0.0667, 2)",
                                                  width=170)),
              fontsize=10.5 if len(subtitulo) < 140 else 9, color="#444444", va="top")
@@ -162,7 +171,8 @@ def main():
     lineas = []
     if informe.get("notas"):
         lineas += informe["notas"] + [""]
-    lineas += ["Nodos"]
+    resumen = lineas
+    lineas = ["Nodos"]
     for n in informe["nodos"]:
         accion = "se mueve" if n["movido"] else "nuevo"
         lineas.append(f"  {n['id']} ({accion}): ({n['x']:.1f}, {n['y']:.1f}) m · píxel {n['pix'][0]}, "
@@ -184,6 +194,13 @@ def main():
     if cruces_movidos:
         lineas += ["", "Aristas que se conservan de nodos movidos y siguen cruzando"]
         lineas += [f"  {t}" for t in cruces_movidos]
+    # En un bloque grande el detalle no cabe legible: se resume (está en el
+    # bloque .json y en el informe).
+    if len(lineas) > 45:
+        lineas = [f"{len(informe['nodos'])} nodos nuevos o movidos, {len(eliminados)} eliminados, "
+                  f"{len(informe['aristas_quitadas'])} aristas quitadas y {len(agregadas)} agregadas",
+                  "(el detalle está en el bloque .json y en su informe)"]
+    lineas = resumen + lineas
     lineas += ["", f"Regresión ({informe['pares']} pares, {informe['pares_inalcanzables']} inalcanzables)",
                f"  Cambian de distancia: {informe['pares_que_cambian_de_distancia']} "
                f"({informe['mas_largos']} más largos, {informe['mas_cortos']} más cortos)"]

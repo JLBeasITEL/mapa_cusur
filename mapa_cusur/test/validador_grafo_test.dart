@@ -200,21 +200,24 @@ void main() {
 
       final resultado = validarGrafo(grafo);
 
-      // 32: las 38 de la versión documentada menos seis que la Fase 6c
+      // 31: las 38 de la versión documentada menos siete que la Fase 6c
       // quitó: SP1→Cafeteria y SP3→Cafeteria (Bloque 1, la Cafetería
       // Pequeña pasó a destino sin paso), B3→M8 (Bloque 2, cruzaba el
-      // Edificio B), R2→R4 (Bloque 3, cruzaba el Edificio R a lo largo) y el
+      // Edificio B), R2→R4 (Bloque 3, cruzaba el Edificio R a lo largo), el
       // par X1→Edificio_X = 0.27 / Edificio_X→X1 = 0.40, de pesos distintos
-      // (Bloque 4b, la diagonal no sigue el pasillo del Edificio X). Si este
-      // test empieza a fallar, algo cambió en assets/campus_data.json sin
-      // que nadie lo haya decidido explícitamente.
-      expect(resultado.aristasAsimetricas, hasLength(32));
+      // (Bloque 4b, la diagonal no sigue el pasillo del Edificio X), y
+      // L4→B2 (Bloque 5, se partió en LE7, donde llega el andador al este
+      // de L, y quedó en ambos sentidos). Si este test empieza a fallar,
+      // algo cambió en assets/campus_data.json sin que nadie lo haya
+      // decidido explícitamente.
+      expect(resultado.aristasAsimetricas, hasLength(31));
       final descripciones =
           resultado.aristasAsimetricas.map((p) => p.descripcion).join('\n');
       expect(descripciones, isNot(contains('Cafeteria')));
       expect(descripciones, isNot(contains('B3→M8')));
       expect(descripciones, isNot(contains('R2→R4')));
       expect(descripciones, isNot(contains('X1→Edificio_X')));
+      expect(descripciones, isNot(contains('L4→B2')));
       expect(resultado.pesosNoPositivos, isEmpty);
       expect(resultado.autolazos, isEmpty);
       expect(resultado.idsInexistentes, isEmpty);
