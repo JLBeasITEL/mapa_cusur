@@ -1,5 +1,7 @@
 # Estado del mapa vectorial
 
+Estado: rama terminada e integrada en main como v1.1.0 (19 de octubre de 2026). Pendientes opcionales: destinos 8–14 como destinos sin paso, búsqueda por texto sin acentos, medición en modo perfil.
+
 Estado de la rama `feature/mapa-vectorial` al 18 de octubre de 2026, para retomar el trabajo en una sesión nueva.
 
 ## Resumen

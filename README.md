@@ -2,6 +2,16 @@
 
 Aplicación móvil de mapa interactivo para el campus de **CUSur** (Centro Universitario del Sur, Universidad de Guadalajara), desarrollada en **Flutter**. Permite ubicar puntos del campus, trazar la ruta caminando más corta entre un origen y un destino sobre una imagen del mapa, y seguir la posición del usuario en tiempo real por GPS, proyectada ortogonalmente sobre el sendero más cercano.
 
+## Versiones
+
+| Versión | Dónde | Qué es |
+|---|---|---|
+| `v1.0-tesis` | Etiqueta | Código al momento de redactar la tesis (17 de agosto de 2026), con el mapa de imagen. |
+| `v-pruebas-campo` | Etiqueta (commit `d0586da`) | Versión instalada en las pruebas de campo del 8 de octubre de 2026. Con ella se obtuvieron los resultados reportados en la tesis. |
+| `v1.1.0` | Rama `main` | Mapa vectorial dibujado por la app con datos de OpenStreetMap y grafo de andadores corregido con un trazo de campo. |
+
+Las cifras del grafo que aparecen más abajo en este README (144 nodos, 1 980 rutas en la línea base, 38 aristas asimétricas, 63 pruebas) corresponden a la versión evaluada en la tesis. La calibración de esa versión se conserva sin cambios en `mapa_cusur/assets/calibracion_campo.json`, por lo que las cifras de transformación reportadas en la tesis se reproducen exactamente en `main`. El detalle de la versión 1.1.0 está en `mapa_cusur/docs/mapa_vectorial/ESTADO.md`.
+
 ## Tabla de contenido
 
 - [Descripción general](#descripción-general)
