@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../data/diccionario_nombres.dart';
+import '../../data/ubicaciones_buscables.dart';
+import '../../domain/buscador_ubicaciones.dart';
 import '../theme/poppins.dart';
 
-class AutocompleteInputField extends StatelessWidget {
+class AutocompleteInputField extends StatefulWidget {
   final Color iconColor;
   final String title;
   final String placeholder;
   final List<String> suggestions;
   final Function(String) onSelected;
   final String initialValue;
+
+  /// El buscador ya armado (con sus nombres normalizados una sola vez al
+  /// cargar los datos). Si es `null`, se arma uno con [suggestions].
+  final BuscadorUbicaciones? buscador;
 
   const AutocompleteInputField({
     super.key,
@@ -19,7 +24,34 @@ class AutocompleteInputField extends StatelessWidget {
     required this.suggestions,
     required this.onSelected,
     this.initialValue = "",
+    this.buscador,
   });
+
+  @override
+  State<AutocompleteInputField> createState() => _AutocompleteInputFieldState();
+}
+
+class _AutocompleteInputFieldState extends State<AutocompleteInputField> {
+  late BuscadorUbicaciones _buscador;
+
+  @override
+  void initState() {
+    super.initState();
+    _buscador = _armarBuscador();
+  }
+
+  @override
+  void didUpdateWidget(AutocompleteInputField oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.buscador != oldWidget.buscador ||
+        widget.suggestions != oldWidget.suggestions) {
+      _buscador = _armarBuscador();
+    }
+  }
+
+  BuscadorUbicaciones _armarBuscador() =>
+      widget.buscador ??
+      BuscadorUbicaciones(ubicacionesDesdeNombres(widget.suggestions));
 
   @override
   Widget build(BuildContext context) {
@@ -29,25 +61,22 @@ class AutocompleteInputField extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 4, bottom: 6),
           child: Text(
-            title,
+            widget.title,
             style: poppins(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: const Color(0xFF64748B)),
           ),
         ),
-        Autocomplete<String>(
-          initialValue: TextEditingValue(text: initialValue),
-          // Coincide con el nombre que se muestra o con sus nombres
-          // alternativos (p. ej. "Gimnasio"); la opción siempre muestra el
-          // nombre amigable.
-          optionsBuilder: (val) {
-            if (val.text.isEmpty) return const <String>[];
-            final buscado = val.text.toLowerCase();
-            return suggestions.where((s) => [s, ...alternativosDe(s)]
-                .any((n) => n.toLowerCase().contains(buscado)));
-          },
-          onSelected: onSelected,
+        Autocomplete<ResultadoBusqueda>(
+          initialValue: TextEditingValue(text: widget.initialValue),
+          // La comparación y el orden viven en BuscadorUbicaciones: sin
+          // importar acentos, mayúsculas ni orden de las palabras, y también
+          // por nombres alternativos (p. ej. "Gimnasio"). La opción siempre
+          // muestra el nombre amigable.
+          optionsBuilder: (val) => _buscador.buscar(val.text),
+          displayStringForOption: (r) => r.nombre,
+          onSelected: (r) => widget.onSelected(r.nombre),
           // Se escucha el controller para que el botón de borrar aparezca o
           // desaparezca mientras el usuario escribe.
           fieldViewBuilder: (ctx, ctrl, node, fn) =>
@@ -56,7 +85,7 @@ class AutocompleteInputField extends StatelessWidget {
             builder: (ctx, valor, _) => TextField(
               controller: ctrl,
               focusNode: node,
-              onChanged: onSelected,
+              onChanged: widget.onSelected,
               style: poppins(
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
@@ -66,9 +95,10 @@ class AutocompleteInputField extends StatelessWidget {
                   padding: const EdgeInsets.all(14.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: iconColor.withValues(alpha: 0.2), shape: BoxShape.circle),
+                        color: widget.iconColor.withValues(alpha: 0.2),
+                        shape: BoxShape.circle),
                     padding: const EdgeInsets.all(4),
-                    child: Icon(Icons.circle, color: iconColor, size: 10),
+                    child: Icon(Icons.circle, color: widget.iconColor, size: 10),
                   ),
                 ),
                 suffixIcon: valor.text.isEmpty
@@ -81,11 +111,11 @@ class AutocompleteInputField extends StatelessWidget {
                           // Vaciar el texto deja sin opciones al
                           // optionsBuilder, y quitar el foco cierra la lista.
                           ctrl.clear();
-                          onSelected("");
+                          widget.onSelected("");
                           node.unfocus();
                         },
                       ),
-                hintText: placeholder,
+                hintText: widget.placeholder,
                 hintStyle: poppins(color: const Color(0xFF94A3B8)),
                 filled: true,
                 fillColor: const Color(0xFFF8FAFC),

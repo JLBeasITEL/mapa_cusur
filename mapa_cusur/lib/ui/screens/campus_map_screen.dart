@@ -9,6 +9,8 @@ import 'package:geolocator/geolocator.dart';
 
 import '../../data/campus_repository.dart';
 import '../../data/diccionario_nombres.dart';
+import '../../data/ubicaciones_buscables.dart';
+import '../../domain/buscador_ubicaciones.dart';
 import '../../domain/dijkstra.dart';
 import '../../domain/interpolacion_nodos.dart';
 import '../../domain/transformacion_geo.dart';
@@ -71,6 +73,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
   TransformacionAfin? _transformacionAfin;
   double _pxPorMetro = 0;
   List<String> ubicacionesDisponibles = [];
+  BuscadorUbicaciones? _buscador;
   Ruta rutaCalculada = Ruta.vacia;
   String tiempoEstimado = "";
   ui.Image? markerImage;
@@ -184,6 +187,9 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
           .toList();
 
       filtrados.sort();
+      // Los nombres se normalizan aquí, una sola vez, y no en cada tecla.
+      final buscador =
+          BuscadorUbicaciones(ubicacionesBuscables(grafoBase.nodos.keys));
 
       // Las transformaciones, la escala px/m y el RMSE salen de la
       // calibración congelada (kRutaCalibracion), no del grafo de
@@ -237,6 +243,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
         _transformacionActiva =
             (_modoTransformacion == 'afin' && afin != null) ? afin : dosPuntos;
         ubicacionesDisponibles = filtrados;
+        _buscador = buscador;
       });
     } catch (e) {
       debugPrint("❌ Error cargando datos: $e");
@@ -676,6 +683,7 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
               height: screenHeight * 0.5,
               child: PlanningPanel(
                 ubicaciones: ubicacionesDisponibles,
+                buscador: _buscador,
                 onCalcular: _comenzarRuta,
                 onDetener: _detenerRuta,
                 navegando: _navegando,

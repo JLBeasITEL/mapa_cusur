@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/buscador_ubicaciones.dart';
 import '../theme/poppins.dart';
 import 'autocomplete_input_field.dart';
 
@@ -18,6 +19,10 @@ class PlanningPanel extends StatelessWidget {
   final Function(String) onDestinoChanged;
   final VoidCallback onLimpiar;
 
+  /// El buscador de origen y destino, armado una sola vez al cargar los
+  /// datos. Si es `null`, cada campo arma el suyo con [ubicaciones].
+  final BuscadorUbicaciones? buscador;
+
   const PlanningPanel({
     super.key,
     required this.ubicaciones,
@@ -33,6 +38,7 @@ class PlanningPanel extends StatelessWidget {
     required this.onOrigenChanged,
     required this.onDestinoChanged,
     required this.onLimpiar,
+    this.buscador,
   });
 
   Color get _colorBotonPrincipal =>
@@ -112,6 +118,7 @@ class PlanningPanel extends StatelessWidget {
                           placeholder: '¿Dónde estás?',
                           initialValue: origenValue,
                           suggestions: ubicaciones,
+                          buscador: buscador,
                           onSelected: onOrigenChanged)
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -193,6 +200,7 @@ class PlanningPanel extends StatelessWidget {
                 placeholder: '¿A dónde vas?',
                 initialValue: destinoValue,
                 suggestions: ubicaciones,
+                buscador: buscador,
                 onSelected: onDestinoChanged),
 
             const SizedBox(height: 24), // Damos un poco más de espacio aquí
