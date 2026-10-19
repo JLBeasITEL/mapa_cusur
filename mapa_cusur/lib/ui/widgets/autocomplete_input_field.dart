@@ -54,6 +54,20 @@ class _AutocompleteInputFieldState extends State<AutocompleteInputField> {
       widget.buscador ??
       BuscadorUbicaciones(ubicacionesDesdeNombres(widget.suggestions));
 
+  /// El controller del campo que crea `Autocomplete` (se recibe en su
+  /// fieldViewBuilder).
+  TextEditingController? _controlador;
+
+  /// "¿Quisiste decir [nombre]?": la consulta se reemplaza por [nombre], lo
+  /// que vuelve a buscar y muestra sus resultados. Se avisa con onSelected
+  /// igual que si se hubiera escrito (el campo siempre le avisa su texto a
+  /// la pantalla, ver onChanged); no es elegir un lugar de la lista.
+  void _usarSugerencia(String nombre) {
+    _controlador?.value = TextEditingValue(
+        text: nombre, selection: TextSelection.collapsed(offset: nombre.length));
+    widget.onSelected(nombre);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -69,22 +83,32 @@ class _AutocompleteInputFieldState extends State<AutocompleteInputField> {
                 color: const Color(0xFF64748B)),
           ),
         ),
-        Autocomplete<ResultadoBusqueda>(
+        Autocomplete<OpcionBusqueda>(
           initialValue: TextEditingValue(text: widget.initialValue),
           // La comparación y el orden viven en BuscadorUbicaciones: sin
-          // importar acentos, mayúsculas ni orden de las palabras, y también
-          // por nombres alternativos (p. ej. "Gimnasio"). La opción siempre
-          // muestra el nombre amigable.
-          optionsBuilder: (val) => _buscador.buscar(val.text),
-          displayStringForOption: (r) => r.nombre,
-          onSelected: (r) => widget.onSelected(r.nombre),
-          optionsViewBuilder: (ctx, onSelected, opciones) =>
-              OpcionesBusqueda(opciones: opciones, onSelected: onSelected),
+          // importar acentos, mayúsculas ni orden de las palabras, también
+          // por alias (p. ej. "Gimnasio") y, si no hay nada, tolerando
+          // errores de dedo. La opción siempre muestra el nombre amigable.
+          optionsBuilder: (val) =>
+              OpcionBusqueda.de(_buscador.consultar(val.text)),
+          displayStringForOption: (o) => switch (o) {
+            OpcionLugar(:final resultado) => resultado.nombre,
+            OpcionSinResultados(:final respuesta) => respuesta.consulta,
+          },
+          onSelected: (o) {
+            if (o is OpcionLugar) widget.onSelected(o.resultado.nombre);
+          },
+          optionsViewBuilder: (ctx, onSelected, opciones) => OpcionesBusqueda(
+            opciones: opciones,
+            onSelected: onSelected,
+            onSugerencia: _usarSugerencia,
+          ),
           // Se escucha el controller para que el botón de borrar aparezca o
           // desaparezca mientras el usuario escribe.
           fieldViewBuilder: (ctx, ctrl, node, fn) =>
               ValueListenableBuilder<TextEditingValue>(
-            valueListenable: ctrl,
+            // Se guarda el controller para poder usar una sugerencia.
+            valueListenable: _controlador = ctrl,
             builder: (ctx, valor, _) => TextField(
               controller: ctrl,
               focusNode: node,
