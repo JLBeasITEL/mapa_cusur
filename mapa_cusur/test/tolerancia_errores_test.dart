@@ -22,42 +22,56 @@ void main() {
   final campus =
       BuscadorUbicaciones(ubicacionesBuscables(diccionarioNombres.keys));
 
-  group('distanciaLevenshtein', () {
+  group('distanciaDeEdicion', () {
     test('casos clásicos', () {
-      expect(distanciaLevenshtein('kitten', 'sitting'), 3);
-      expect(distanciaLevenshtein('flaw', 'lawn'), 2);
-      expect(distanciaLevenshtein('biblioteca', 'bibloteca'), 1);
-      expect(distanciaLevenshtein('rectoria', 'rectoria'), 0);
+      expect(distanciaDeEdicion('kitten', 'sitting'), 3);
+      expect(distanciaDeEdicion('flaw', 'lawn'), 2);
+      expect(distanciaDeEdicion('biblioteca', 'bibloteca'), 1);
+      expect(distanciaDeEdicion('rectoria', 'rectoria'), 0);
     });
 
     test('cadenas vacías', () {
-      expect(distanciaLevenshtein('', ''), 0);
-      expect(distanciaLevenshtein('abc', ''), 3);
-      expect(distanciaLevenshtein('', 'abc'), 3);
+      expect(distanciaDeEdicion('', ''), 0);
+      expect(distanciaDeEdicion('abc', ''), 3);
+      expect(distanciaDeEdicion('', 'abc'), 3);
     });
 
     test('es simétrica', () {
       for (final (a, b) in [('kitten', 'sitting'), ('ab', 'ba'), ('', 'x')]) {
-        expect(distanciaLevenshtein(a, b), distanciaLevenshtein(b, a));
+        expect(distanciaDeEdicion(a, b), distanciaDeEdicion(b, a));
       }
     });
 
-    test('una transposición cuesta 2', () {
-      expect(distanciaLevenshtein('zinser', 'zisner'), 2);
+    test('intercambiar dos letras contiguas cuesta 1 (Damerau, OSA)', () {
+      expect(distanciaDeEdicion('zinser', 'zisner'), 1);
+      expect(distanciaDeEdicion('ab', 'ba'), 1);
+      expect(distanciaDeEdicion('auditoiro', 'auditorio'), 1);
+      expect(distanciaAPrefijo('bilbio', 'biblioteca'), 1);
+    });
+
+    test('variante OSA: cada tramo se edita una sola vez', () {
+      // Con Damerau sin restricción sería 2 ("ca" → "ac" → "abc").
+      expect(distanciaDeEdicion('ca', 'abc'), 3);
+    });
+
+    test('con máximo, la salida temprana respeta los intercambios', () {
+      expect(distanciaDeEdicion('zisner', 'zinser', maximo: 1), 1);
+      expect(distanciaDeEdicion('rcetorai', 'rectoria', maximo: 1), 2);
+      expect(distanciaDeEdicion('rcetorai', 'rectoria', maximo: 2), 2);
     });
 
     test('compara letras, no unidades de código', () {
-      expect(distanciaLevenshtein('añ', 'an'), 1);
-      expect(distanciaLevenshtein('😀a', 'a'), 1);
+      expect(distanciaDeEdicion('añ', 'an'), 1);
+      expect(distanciaDeEdicion('😀a', 'a'), 1);
     });
 
     test('con máximo: sale temprano con máximo + 1 si lo rebasa', () {
-      expect(distanciaLevenshtein('kitten', 'sitting', maximo: 3), 3);
-      expect(distanciaLevenshtein('kitten', 'sitting', maximo: 2), 3);
-      expect(distanciaLevenshtein('kitten', 'sitting', maximo: 0), 1);
+      expect(distanciaDeEdicion('kitten', 'sitting', maximo: 3), 3);
+      expect(distanciaDeEdicion('kitten', 'sitting', maximo: 2), 3);
+      expect(distanciaDeEdicion('kitten', 'sitting', maximo: 0), 1);
       // Por diferencia de largo, sin calcular la tabla.
-      expect(distanciaLevenshtein('a', 'abcdef', maximo: 1), 2);
-      expect(distanciaLevenshtein('rectoria', 'rektoria', maximo: 1), 1);
+      expect(distanciaDeEdicion('a', 'abcdef', maximo: 1), 2);
+      expect(distanciaDeEdicion('rectoria', 'rektoria', maximo: 1), 1);
     });
   });
 
@@ -122,6 +136,18 @@ void main() {
       expect(r.every((x) => x.nivel == NivelCoincidencia.aproximada), isTrue);
     });
 
+    test('un intercambio de letras es un solo error', () {
+      final r = campus.buscarAproximado('zisner');
+      expect(_nombres(r), ['Auditorio Adolfo Aguilar Zínser']);
+      expect(r.single.distanciaEdicion, 1);
+      expect(_nombres(campus.buscarAproximado('auditoiro')), [
+        'Auditorio Adolfo Aguilar Zínser',
+        'Auditorio Antonio González Ochoa',
+        'Auditorio C.A.S.A.',
+      ]);
+      expect(campus.buscarAproximado('bilbioteka').single.nombre, _biblioteca);
+    });
+
     test('también por alias, mostrando el nombre oficial', () {
       final r = campus.buscarAproximado('gimnacio');
       expect(r.single.nombre, _laboratorio);
@@ -131,7 +157,7 @@ void main() {
 
   group('sugerir', () {
     test('la más cercana con distancia de a lo más 3', () {
-      final s = campus.sugerir('bilbioteka')!;
+      final s = campus.sugerir('vivlioteka')!;
       expect(s.nombre, _biblioteca);
       expect(s.distanciaEdicion, 3);
       expect(campus.sugerir('rekt')!.nombre, 'Rectoría');
@@ -173,9 +199,9 @@ void main() {
     });
 
     test('sin aproximados: "¿Quisiste decir...?"', () {
-      final r = campus.consultar('  bilbioteka ');
+      final r = campus.consultar('  vivlioteka ');
       expect(r.resultados, isEmpty);
-      expect(r.consulta, 'bilbioteka');
+      expect(r.consulta, 'vivlioteka');
       expect(r.sugerencia!.nombre, _biblioteca);
     });
 
@@ -237,8 +263,8 @@ void main() {
 
     testWidgets('"¿Quisiste decir...?" reemplaza la consulta por el nombre',
         (WidgetTester tester) async {
-      await escribir(tester, 'bilbioteka');
-      expect(find.text('No encontramos «bilbioteka»'), findsOneWidget);
+      await escribir(tester, 'vivlioteka');
+      expect(find.text('No encontramos «vivlioteka»'), findsOneWidget);
       final sugerencia =
           find.textContaining('¿Quisiste decir', findRichText: true);
       expect(sugerencia, findsOneWidget);

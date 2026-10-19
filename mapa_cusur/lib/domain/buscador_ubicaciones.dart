@@ -31,7 +31,7 @@ enum NivelCoincidencia {
 /// Con menos, "b" o "de" coincidirían con casi todo.
 const int kMinLetrasContiene = 3;
 
-/// Cuántos errores de dedo (distancia de Levenshtein) se le toleran a una
+/// Cuántos errores de dedo ([distanciaDeEdicion]) se le toleran a una
 /// palabra de la consulta de [letras] letras en la búsqueda aproximada:
 /// ninguno con menos de 5, uno de 5 a 7 y dos con 8 o más.
 int toleranciaDeErrores(int letras) => letras < 5

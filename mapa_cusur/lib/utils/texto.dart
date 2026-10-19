@@ -63,29 +63,35 @@ List<String> formasBuscables(String texto) {
   return formas.toList();
 }
 
-/// Distancia de Levenshtein entre [a] y [b]: cuántas letras hay que
-/// insertar, borrar o cambiar para pasar de una a otra.
+/// Distancia de edición entre [a] y [b] (Damerau-Levenshtein en su
+/// variante OSA, "optimal string alignment"): cuántas letras hay que
+/// insertar, borrar o cambiar, o cuántos pares de letras contiguas hay que
+/// intercambiar, para pasar de una a otra. Intercambiar dos letras
+/// ("zisner" por "zinser") cuenta como un solo error. En la variante OSA
+/// cada tramo se edita a lo más una vez: "ca" → "abc" cuesta 3, no 2.
 ///
 /// Con [maximo], deja de calcular en cuanto sabe que la distancia lo
 /// rebasa y devuelve `maximo + 1`: así comparar contra muchas palabras es
 /// rápido aunque casi ninguna se parezca.
-int distanciaLevenshtein(String a, String b, {int? maximo}) =>
-    _distanciaEdicion(a, b, maximo: maximo, contraPrefijo: false);
+int distanciaDeEdicion(String a, String b, {int? maximo}) =>
+    _distanciaOsa(a, b, maximo: maximo, contraPrefijo: false);
 
-/// La menor distancia de Levenshtein entre [consulta] y algún inicio
-/// (prefijo) de [palabra], incluida la palabra completa:
+/// La menor [distanciaDeEdicion] entre [consulta] y algún inicio (prefijo)
+/// de [palabra], incluida la palabra completa:
 /// `distanciaAPrefijo('bibloteca', 'biblioteca')` es 1, igual que
 /// `distanciaAPrefijo('biblot', 'biblioteca')` ("bibliot"). Sirve para
 /// buscar mientras se escribe, cuando la palabra todavía va a la mitad.
-/// [maximo] funciona como en [distanciaLevenshtein].
+/// [maximo] funciona como en [distanciaDeEdicion].
 int distanciaAPrefijo(String consulta, String palabra, {int? maximo}) =>
-    _distanciaEdicion(consulta, palabra, maximo: maximo, contraPrefijo: true);
+    _distanciaOsa(consulta, palabra, maximo: maximo, contraPrefijo: true);
 
 /// Programación dinámica por renglones (uno por letra de [a]): el renglón
 /// i guarda la distancia entre las primeras i letras de [a] y cada inicio
-/// de [b]. El mínimo de un renglón nunca baja en los siguientes, así que si
-/// ya rebasa [maximo] se puede parar.
-int _distanciaEdicion(String a, String b,
+/// de [b]; el intercambio de dos letras mira dos renglones atrás. El mínimo
+/// de un renglón nunca baja en los siguientes (también con intercambios:
+/// D[i-2][j-2] + 1 nunca es menor que D[i-1][j-1]), así que si ya rebasa
+/// [maximo] se puede parar.
+int _distanciaOsa(String a, String b,
     {required int? maximo, required bool contraPrefijo}) {
   final x = a.runes.toList();
   final y = b.runes.toList();
@@ -93,6 +99,7 @@ int _distanciaEdicion(String a, String b,
     return maximo + 1;
   }
 
+  var antepenultimo = List<int>.filled(y.length + 1, 0);
   var anterior = List<int>.generate(y.length + 1, (j) => j);
   var actual = List<int>.filled(y.length + 1, 0);
   for (var i = 1; i <= x.length; i++) {
@@ -104,11 +111,19 @@ int _distanciaEdicion(String a, String b,
       final insertar = actual[j - 1] + 1;
       var d = cambio < borrar ? cambio : borrar;
       if (insertar < d) d = insertar;
+      if (i > 1 &&
+          j > 1 &&
+          x[i - 1] == y[j - 2] &&
+          x[i - 2] == y[j - 1] &&
+          antepenultimo[j - 2] + 1 < d) {
+        d = antepenultimo[j - 2] + 1;
+      }
       actual[j] = d;
       if (d < minimoDelRenglon) minimoDelRenglon = d;
     }
     if (maximo != null && minimoDelRenglon > maximo) return maximo + 1;
-    final t = anterior;
+    final t = antepenultimo;
+    antepenultimo = anterior;
     anterior = actual;
     actual = t;
   }
