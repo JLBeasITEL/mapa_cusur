@@ -5,6 +5,10 @@ de búsqueda (por ejemplo, un apodo o una abreviatura). **No se muestran como
 nombre del lugar**: el resultado siempre aparece con su nombre oficial y,
 debajo, en texto pequeño, "coincide con: <alias>".
 
+> TODO(JuanLuis): llenar los alias de `alias_busqueda.json`. Hoy todas las
+> listas están vacías (solo funciona "Gimnasio", que está en
+> `nombresAlternativos`).
+
 ## Formato
 
 Un objeto JSON. Cada clave es el **ID del nodo** (el de
