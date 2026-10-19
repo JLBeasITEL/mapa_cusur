@@ -15,6 +15,7 @@ import '../painters/etiquetas_mapa_painter.dart';
 import '../painters/mapa_vectorial_painter.dart';
 import '../painters/route_painter.dart';
 import '../theme/poppins.dart';
+import 'boton_reset_zoom.dart';
 
 /// Zoom máximo del modo imagen (el de siempre).
 const double kZoomMaximoImagen = 8.0;
@@ -97,7 +98,16 @@ class _MapImageAreaState extends State<MapImageArea>
   // ValueListenableBuilder de más abajo, solo ese subárbol se reconstruye
   // en cada frame.
   final ValueNotifier<double> _zoomNotifier = ValueNotifier(1.0);
+
+  /// Si la escala supera la de la vista inicial (ver
+  /// [kUmbralEscalaConZoom]). Solo cambia al cruzar el umbral, así que el
+  /// botón de restablecer no se reconstruye en cada frame del zoom.
+  final ValueNotifier<bool> _hayZoom = ValueNotifier(false);
   final GlobalKey _stackKey = GlobalKey();
+
+  /// Tamaño del área del mapa en el último layout (modo vectorial), para
+  /// [_compensarCambioDeVista].
+  Size? _vistaAnterior;
 
   bool _isCameraLocked = false;
 
@@ -140,7 +150,9 @@ class _MapImageAreaState extends State<MapImageArea>
         }
       });
     _transformationController.addListener(() {
-      _zoomNotifier.value = _transformationController.value.getMaxScaleOnAxis();
+      final double escala = _transformationController.value.getMaxScaleOnAxis();
+      _zoomNotifier.value = escala;
+      _hayZoom.value = escala > kUmbralEscalaConZoom;
     });
   }
 
@@ -212,6 +224,75 @@ class _MapImageAreaState extends State<MapImageArea>
     _animationController.forward(from: 0);
   }
 
+  /// Botón "Restablecer vista": como al tocar el mapa, la cámara deja de
+  /// seguir al GPS (si no, la siguiente lectura volvería a acercarla) y
+  /// regresa animada a la vista inicial.
+  void _restablecerVista() {
+    _isCameraLocked = false;
+    _reiniciarCamara();
+  }
+
+  /// Mantiene lo que el usuario está viendo cuando el área del mapa cambia
+  /// de tamaño con zoom activo (al minimizar o restaurar el panel).
+  ///
+  /// La vista inicial no lo necesita: la identidad siempre es "todo el mapa
+  /// encuadrado en el área actual", porque el FittedBox se reajusta solo.
+  /// Pero la matriz con zoom está en píxeles de pantalla y el ajuste del
+  /// FittedBox cambia con el área, así que sin esto la vista brincaría. Se
+  /// conservan el punto del lienzo que estaba al centro y el zoom efectivo
+  /// en pantalla, sin bajar de la escala 1 ni salirse de los bordes.
+  ///
+  /// Se llama desde el LayoutBuilder, antes de construir el
+  /// InteractiveViewer: la matriz nueva se usa en ese mismo frame, sin
+  /// quedarse un frame atrás durante la animación del panel.
+  void _compensarCambioDeVista(Size vista, Size lienzo) {
+    if (vista.isEmpty || lienzo.isEmpty) return;
+    final Size? anterior = _vistaAnterior;
+    _vistaAnterior = vista;
+    if (anterior == null || anterior == vista) return;
+
+    final Matrix4 matriz = _transformationController.value;
+    final double escala = matriz.getMaxScaleOnAxis();
+    if (escala <= 1.0) return;
+
+    final double ajusteAnterior = _ajusteContain(anterior, lienzo);
+    final double ajusteNuevo = _ajusteContain(vista, lienzo);
+
+    // El punto del lienzo que estaba al centro del área anterior.
+    final traslacionAnterior = matriz.getTranslation();
+    final Offset centroEnHijo = (anterior.center(Offset.zero) -
+            Offset(traslacionAnterior.x, traslacionAnterior.y)) /
+        escala;
+    final Offset punto = (centroEnHijo -
+            _margenContain(anterior, lienzo, ajusteAnterior)) /
+        ajusteAnterior;
+
+    final double escalaNueva = (escala * ajusteAnterior / ajusteNuevo)
+        .clamp(1.0, kZoomMaximoVectorial);
+    final Offset puntoEnHijo =
+        _margenContain(vista, lienzo, ajusteNuevo) + punto * ajusteNuevo;
+    final Offset traslacion =
+        vista.center(Offset.zero) - puntoEnHijo * escalaNueva;
+    // El hijo del InteractiveViewer mide lo mismo que el área: con escala
+    // s, la traslación válida va de área·(1 − s) a 0 en cada eje.
+    final double tx = traslacion.dx.clamp(vista.width * (1 - escalaNueva), 0.0);
+    final double ty =
+        traslacion.dy.clamp(vista.height * (1 - escalaNueva), 0.0);
+
+    _transformationController.value = Matrix4.identity()
+      ..translateByDouble(tx, ty, 0, 1)
+      ..scaleByDouble(escalaNueva, escalaNueva, escalaNueva, 1);
+  }
+
+  /// Escala del FittedBox (BoxFit.contain) del [lienzo] en [vista].
+  static double _ajusteContain(Size vista, Size lienzo) =>
+      math.min(vista.width / lienzo.width, vista.height / lienzo.height);
+
+  /// Margen con el que el FittedBox centra el lienzo en [vista].
+  static Offset _margenContain(Size vista, Size lienzo, double ajuste) =>
+      Offset((vista.width - lienzo.width * ajuste) / 2,
+          (vista.height - lienzo.height * ajuste) / 2);
+
   @override
   void didUpdateWidget(MapImageArea oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -241,6 +322,7 @@ class _MapImageAreaState extends State<MapImageArea>
     _transformationController.dispose();
     _animationController.dispose();
     _zoomNotifier.dispose();
+    _hayZoom.dispose();
     _capas?.etiquetas.dispose();
     super.dispose();
   }
@@ -401,6 +483,10 @@ class _MapImageAreaState extends State<MapImageArea>
               : math.min(
                   restricciones.maxWidth / capas.lienzo.tamano.width,
                   restricciones.maxHeight / capas.lienzo.tamano.height);
+          if (capas != null && restricciones.biggest.isFinite) {
+            _compensarCambioDeVista(
+                restricciones.biggest, capas.lienzo.tamano);
+          }
           return Stack(
             fit: StackFit.expand,
             children: [
@@ -429,6 +515,20 @@ class _MapImageAreaState extends State<MapImageArea>
                     mostrando: _mostrarIconos,
                     onPressed: () =>
                         setState(() => _mostrarIconos = !_mostrarIconos),
+                  ),
+                ),
+              // Abajo a la izquierda: el área del mapa termina en el borde
+              // del panel, así que el botón lo sigue al minimizarlo.
+              if (capas != null)
+                Positioned(
+                  left: 12,
+                  bottom: 14,
+                  child: ValueListenableBuilder<bool>(
+                    valueListenable: _hayZoom,
+                    builder: (context, hayZoom, _) => BotonResetZoom(
+                      visible: hayZoom,
+                      onPressed: _restablecerVista,
+                    ),
                   ),
                 ),
             ],
