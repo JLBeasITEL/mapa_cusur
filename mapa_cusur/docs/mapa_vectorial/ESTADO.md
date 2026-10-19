@@ -62,7 +62,7 @@ Estado de la rama `feature/mapa-vectorial` al 18 de octubre de 2026, para retoma
 | `ec1643c` | Cierra el pendiente de la carpeta de entrega `mapa_cusur/mapa_vectorial/`. |
 | `6966894` | Reporte de cruces agrupado por edificio, con un PNG por edificio (Fase 6c). |
 | `4a2ebba` | Calibración congelada en `assets/calibracion_campo.json`. |
-| `8b18981` … `89cd9df` | Fase 6c, bloques 1 a 6, cada uno con su línea base en un commit aparte (ver la sección Fase 6c). `1baee45` anota pendientes. |
+| `8b18981` … `ce1a818` | Fase 6c, bloques 1 a 6b, cada uno con su línea base en un commit aparte (ver la sección Fase 6c). `1baee45` y `5e760d1` actualizan este documento. |
 
 ## Decisiones tomadas
 
@@ -110,7 +110,7 @@ Estado de la rama `feature/mapa-vectorial` al 18 de octubre de 2026, para retoma
 | "Entrada Este" sobre la letra R | **Hecho** (`398f112`). A ×1 su texto queda unos 34 px debajo del ícono; falta verlo en el teléfono. |
 | Gimnasio vs. Laboratorio de técnicas deportivas y de rescate | **Hecho** (`6829d28`); Juan Luis confirmó que son el mismo lugar. Si se prefiere el nombre corto "Laboratorio de técnicas deportivas", es cambiar un texto. |
 | Fase 6b (Radio UDG) | **Hecho** (`d35c0e0`). Falta confirmar la entrada: noroeste (`P1`, aplicada) u oeste (`V2`, 18.2 m, mismo peso). |
-| Fase 6c (aristas que cruzan edificios) | **Terminada** (bloques 1 a 6, `8b18981` … `89cd9df`). No queda ninguna arista que cruce un edificio sin aprobación. Resumen en la sección "Fase 6c". |
+| Fase 6c (aristas que cruzan edificios) | **Terminada** (bloques 1 a 6b, `8b18981` … `ce1a818`). No queda ninguna arista que cruce un edificio sin aprobación. Resumen en la sección "Fase 6c". |
 | Fase 6c, destinos 8 a 14 del reporte de destinos de paso | **Pendiente opcional.** Auditorio_Ochoa, Bufete_Juridico, CASA, Edificio_Q, Edificio_U, Edificio_V y Edificio_Z están dentro de su edificio y tienen más de un vecino. Hoy ninguna ruta los atraviesa, pero podría si cambia el grafo. Juan Luis decidió dejarlos sin cambios por ahora (`destinos_de_paso.csv`). |
 | Mejora de la búsqueda por texto | **No iniciada**; el prompt llega en la sesión nueva. |
 | Fase 5 (README) | **Sección agregada** (`c9871c3`). **Pendiente de decisión:** 8 partes del README describen todavía solo el modo imagen o cifras viejas (144/45 nodos, 1980 rutas, 63 pruebas, zoom 8x, painters). También falta decidir cómo presentar las cifras de la tesis frente a las actuales. Además, el README cita `MEJORAS.md` y `REPORTE_DATOS.md`, que el `.gitignore` excluye. |
@@ -126,14 +126,14 @@ El reporte inicial (`d6ccb9b`) dio 170 cruces en 158 aristas y 27 edificios, 197
 4. Commit aparte con la línea base regenerada.
 
 **Resultado**
-- **Grafo:** de 152 nodos y 574 aristas dirigidas a 235 nodos y 779 aristas, antes de interpolar.
+- **Grafo:** de 152 nodos y 574 aristas dirigidas a 237 nodos y 785 aristas, antes de interpolar.
 - **Rutas:** los 2652 pares siguen alcanzables. R1 pasa de 5.25 a 5.22 min, R2 de 2.07 a 2.27 y R3 de 4.42 a 4.81.
 - **Asimetrías:** bajan de 38 a 25.
 - **Cifras de la tesis:** sin cambio. La calibración está congelada.
 - **Cruces:** ninguna arista cruza un edificio fuera de los cruces aprobados.
 
 **Cruces aprobados** (los únicos que quedan):
-- El paso por dentro del Edificio C.
+- El paso por dentro del Edificio C (L4–CI1–CE1, con salida por la cara este desde el Bloque 6b, y CI1–C3).
 - La Cancha múltiple techada.
 - Los pasillos del Edificio X, del Edificio P (con la Clínica Escuela) y del cuerpo central de L.
 - La arista L2–L4 de la fila 7 de las decisiones, que en el Bloque 6 se sustituyó por el pasillo sur de L.
@@ -206,7 +206,7 @@ Las dos difieren porque `interpolarGrafo` subdivide las aristas de más de 8 m c
 | 4. Esquinas | `b4167fb` (línea base: `94508b7`) | **U2 y U4**, que estaban dentro del Edificio U (3.1 y 0.95 m), pasan al lado norte a 1.2 m de la pared, sobre el trazo; tienen píxel derivado y se recalculan sus aristas. U4 queda en la esquina noroeste. Con eso Estacionamiento1–U4 (fila 4) ya no entra al edificio. **F2–L2** (fila 5) rodea por `F8`, esquina noreste de F. **G1–L1** (fila 6) rodea por `G5`, esquina sureste de G; G1 sigue 0.6 m dentro de la pared. **T2–U1** (fila 20) pasa por TN1 (Bloque 3). **U1–U2** (fila 21) rodea el extremo este de U por `U6` y `U7`, esquinas sureste y noreste. U3–U4 aún roza 1.3 m la esquina suroeste de U, porque U3 está a 0.3 m de la línea de la pared oeste. | 258 pares: 250 más largos y 8 más cortos, hasta +0.22 min (hacia el Edificio U). R1-R3 sin cambio. Asimétricas: 32, las mismas. |
 | 5. Caminos nuevos del trazo | `8fa2996` (línea base: `83e1f33`) | Partes A a M de `bloque5.json`, una imagen por zona. **A.** Contorno de la cancha de fútbol central, conectado solo por su esquina noreste (`Cancha_Futbol_Central`), que es la única entrada; sirve para ubicar con GPS a alguien dentro de la cancha. **B.** Paso por dentro de C. **C.** Andador al este de L hacia C. **D.** V del CMID. **E.** Andadores alrededor de C.A.S.A. **F.** Orilla norte de la Cancha múltiple. **G.** Lados de M y la V al suroeste; se eliminan M1 y M1–M3. **H.** Pasillo norte–sur en V (en P ya estaba). **I.** Pasillos de F y G; F4–F2 y G3–G1 salen de la pared. **J.** M12–B5. **K.** Rodeo del Edificio I (polígono 35) y borde este hasta EntradaC; se quitan las diagonales de Edificio_I a U1, T2 y EntradaC. **L.** X3–YN2. **M.** EntradaB–ZB2–ZB1, en el extremo este de Z. Los lados sur de T y de Y ya estaban en el grafo, y los tramos 10 (dentro de P) y 15 (junto a M7) no se agregan. Las aristas que el trazo cruza se parten en el cruce. | 1125 pares: 838 más cortos (hasta −0.61 min, Edificio V → Edificio R) y 287 más largos, hasta +0.29 (hacia el Edificio I). R1 5.35 → 5.14, R2 y R3 sin cambio. Asimétricas: 32 → 31 (`L4→B2`). |
 | 6. Errores del teléfono y revisión final de cruces | `a3db5ac` (línea base: `89cd9df`) | **Centro de Aprendizaje Global:** sale de C.A.S.A. a 1.2 m de la fachada norte de su zona y queda como destino sin paso (CAG–CP6, sobre el andador CP1–CP3); se quita su arista a F7. **Laboratorios de L**, según el diagrama de Juan Luis (`edificio_L_pasillos.png`): pasillo norte L5–LN1–LN2–LE9–LE8, pasillo sur L2–LS1–LS2–LS3–Edificio_L–LS4–LS5–LS6–L4 y pasillos del cuerpo central LN2–LS3 y LE9–LS4, alrededor de la escalera (sin nodo). Los tramos por dentro del cuerpo central son cruces permitidos. Destinos sin paso: Programación–LS2, Electrónica–LS5 y Periodismo–LE9. Se quitan L2–L4 y las diagonales de Edificio_L, y se elimina L8. **Rectoría:** RB1–RB2–RB, para que la línea de la ruta no tape la esquina. **Revisión final de cruces:** M10, VT, R3, S3, RadioUDG y Z1 salen de la pared (píxel derivado). S2–S4, CF1–CF3, F1–F2, R3–R4 y B1–Edificio_B salen por nodos de esquina. Las esquinas de X, Y, Z, V, R y S se rodean por los nodos de bloques anteriores. CA1, C4 y CQ1 son esquinas nuevas. Se quitan M10–M8 y XV–Y4. Al final no queda ningún cruce sin aprobar. | 1315 pares: 871 más largos (hasta +0.36 min, hacia el Laboratorio de Programación, cuya entrada pasó al patio) y 444 más cortos (hasta −1.68, Edificio L → Periodismo). R1 5.14 → 5.22, R2 2.26 → 2.27, R3 sin cambio. Asimétricas: 31 → 25. |
-| 6b. Paso de C con salida este | (este; línea base: commit siguiente) | El paso L4–CI1–C3 del Bloque 5 no lo usaba ninguna ruta, porque solo salía al norte. El pasillo atraviesa C de oeste a este: `CE1` es la salida, a 1.2 m de la cara este (CI1–CE1 va por dentro, cruce permitido), y `CE2` parte C2–C1, el andador del lado este, frente a la salida (CE1–CE2). CI1–C3 se conserva porque está en el trazo. | 234 pares más cortos, como mucho −0.03 min. Ahora 234 rutas pasan por el paso (antes 0). R1-R3 sin cambio de tiempo. Asimétricas: 25, las mismas. |
+| 6b. Paso de C con salida este | `081a274` (línea base: `ce1a818`) | El paso L4–CI1–C3 del Bloque 5 no lo usaba ninguna ruta, porque solo salía al norte. El pasillo atraviesa C de oeste a este: `CE1` es la salida, a 1.2 m de la cara este (CI1–CE1 va por dentro, cruce permitido), y `CE2` parte C2–C1, el andador del lado este, frente a la salida (CE1–CE2). CI1–C3 se conserva porque está en el trazo. | 234 pares más cortos, como mucho −0.03 min. Ahora 234 rutas pasan por el paso (antes 0). R1-R3 sin cambio de tiempo. Asimétricas: 25, las mismas. |
 
 **M2 sigue en `assets/calibracion_campo.json`.** Es el nodo del segmento M2–M8 donde la tesis reporta el desfase de 8 a 13 m. La tesis no cambia; solo el grafo de navegación deja de tenerlo.
 
@@ -240,4 +240,4 @@ Flutter está fijado en **3.47.6** en `C:\src\flutter` (checkout de la etiqueta 
 - `flutter test`: **207 pasan, 1 omitida y 1 falla**.
   - **Omitida:** el reporte de la Fase 6c, que corre solo bajo demanda.
   - **Falla (esperada):** `validador_grafo_test.dart`, "el grafo real del campus NO pasa la validación…". Es la constancia de las aristas asimétricas sin resolver. Las pruebas que fijan las cifras pasan: 38 en la calibración congelada y 25 en el grafo actual.
-- Línea base de rutas: 2652 pares entre 52 nodos con nombre, todos alcanzables. Grafo: 235 nodos y 779 aristas antes de interpolar; 1145 nodos y 2622 aristas después.
+- Línea base de rutas: 2652 pares entre 52 nodos con nombre, todos alcanzables. Grafo: 237 nodos y 785 aristas antes de interpolar; 1147 nodos y 2628 aristas después.
