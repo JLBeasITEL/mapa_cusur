@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../domain/buscador_ubicaciones.dart';
 import '../../domain/historial_recientes.dart';
+import '../../utils/formato_distancia.dart';
 import '../theme/poppins.dart';
 
 /// Altura máxima de la lista de opciones (la misma que usa `Autocomplete`
@@ -163,6 +164,7 @@ class _Lugar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final alias = resultado.aliasCoincidente;
+    final metros = resultado.distanciaMetros;
     return Semantics(
       button: true,
       child: InkWell(
@@ -171,15 +173,28 @@ class _Lugar extends StatelessWidget {
           color: resaltada ? Theme.of(context).focusColor : null,
           padding: EdgeInsets.symmetric(
               horizontal: 16, vertical: alias == null ? 16 : 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
+          child: Row(
             children: [
-              Text(resultado.nombre),
-              if (alias != null)
-                Text('coincide con: $alias',
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(resultado.nombre),
+                    if (alias != null)
+                      Text('coincide con: $alias',
+                          style: poppins(
+                              fontSize: 12, color: const Color(0xFF64748B))),
+                  ],
+                ),
+              ),
+              // En línea recta, no caminando por la ruta (de ahí el "≈").
+              if (metros != null) ...[
+                const SizedBox(width: 12),
+                Text(formatearDistanciaAproximada(metros),
                     style: poppins(
                         fontSize: 12, color: const Color(0xFF64748B))),
+              ],
             ],
           ),
         ),

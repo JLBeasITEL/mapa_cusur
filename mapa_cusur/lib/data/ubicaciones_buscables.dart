@@ -1,3 +1,4 @@
+import '../models/nodo.dart';
 import '../models/ubicacion_buscable.dart';
 import '../utils/texto.dart';
 import 'diccionario_nombres.dart';
@@ -6,10 +7,11 @@ import 'diccionario_nombres.dart';
 /// nombre amigable en [diccionarioNombres]. Sus alias son los de
 /// [nombresAlternativos] más los de [aliasExtra] (los de
 /// `assets/alias_busqueda.json`); un alias repetido -sin importar acentos
-/// ni mayúsculas- cuenta una sola vez.
+/// ni mayúsculas- cuenta una sola vez. Las coordenadas salen de [nodos].
 List<UbicacionBuscable> ubicacionesBuscables(
   Iterable<String> idsDelGrafo, {
   Map<String, List<String>> aliasExtra = const {},
+  Map<String, Nodo> nodos = const {},
 }) =>
     [
       for (final id in idsDelGrafo)
@@ -21,6 +23,8 @@ List<UbicacionBuscable> ubicacionesBuscables(
               ...?nombresAlternativos[id],
               ...?aliasExtra[id],
             ]),
+            lat: nodos[id]?.lat,
+            lng: nodos[id]?.lng,
           ),
     ];
 

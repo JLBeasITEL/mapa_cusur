@@ -23,6 +23,11 @@ class AutocompleteInputField extends StatefulWidget {
   /// Si es `null`, no hay recientes.
   final HistorialRecientes? historial;
 
+  /// La posición del usuario, si hay GPS y está dentro del área del mapa:
+  /// cada resultado muestra su distancia en línea recta, y los empates se
+  /// ordenan por ella. `null`: sin distancia.
+  final PosicionGeo? posicion;
+
   const AutocompleteInputField({
     super.key,
     required this.iconColor,
@@ -33,6 +38,7 @@ class AutocompleteInputField extends StatefulWidget {
     this.initialValue = "",
     this.buscador,
     this.historial,
+    this.posicion,
   });
 
   @override
@@ -97,7 +103,7 @@ class _AutocompleteInputFieldState extends State<AutocompleteInputField> {
           // por alias (p. ej. "Gimnasio") y, si no hay nada, tolerando
           // errores de dedo. La opción siempre muestra el nombre amigable.
           optionsBuilder: (val) => OpcionBusqueda.de(
-              _buscador.consultar(val.text),
+              _buscador.consultar(val.text, posicion: widget.posicion),
               conRecientes: widget.historial != null),
           displayStringForOption: (o) => switch (o) {
             OpcionLugar(:final resultado) => resultado.nombre,

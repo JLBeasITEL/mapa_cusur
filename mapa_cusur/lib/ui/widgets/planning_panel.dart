@@ -27,6 +27,10 @@ class PlanningPanel extends StatelessWidget {
   /// El historial de recientes, compartido por origen y destino.
   final HistorialRecientes? historial;
 
+  /// La posición del usuario para la distancia a cada resultado (ver
+  /// AutocompleteInputField.posicion).
+  final PosicionGeo? posicionUsuario;
+
   const PlanningPanel({
     super.key,
     required this.ubicaciones,
@@ -44,6 +48,7 @@ class PlanningPanel extends StatelessWidget {
     required this.onLimpiar,
     this.buscador,
     this.historial,
+    this.posicionUsuario,
   });
 
   Color get _colorBotonPrincipal =>
@@ -125,6 +130,7 @@ class PlanningPanel extends StatelessWidget {
                           suggestions: ubicaciones,
                           buscador: buscador,
                           historial: historial,
+                          posicion: posicionUsuario,
                           onSelected: onOrigenChanged)
                       : Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -208,6 +214,7 @@ class PlanningPanel extends StatelessWidget {
                 suggestions: ubicaciones,
                 buscador: buscador,
                 historial: historial,
+                posicion: posicionUsuario,
                 onSelected: onDestinoChanged),
 
             const SizedBox(height: 24), // Damos un poco más de espacio aquí

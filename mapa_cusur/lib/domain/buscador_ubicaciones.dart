@@ -1,5 +1,10 @@
 import '../models/ubicacion_buscable.dart';
+import '../utils/geodesia.dart';
 import '../utils/texto.dart';
+
+/// Una posición geográfica (la del usuario, para la distancia a cada
+/// resultado).
+typedef PosicionGeo = ({double lat, double lng});
 
 /// Qué tan bien coincide un lugar con la consulta, de mejor a peor (el
 /// orden de los valores es el orden de relevancia).
@@ -47,13 +52,16 @@ const int kDistanciaMaximaSugerencia = 3;
 /// coincidió por un alias y no por el nombre, [aliasCoincidente] es ese
 /// alias tal como está escrito en los datos. [distanciaEdicion] es la suma
 /// de los errores tolerados en las palabras de la consulta (0 salvo en
-/// [NivelCoincidencia.aproximada] y en las sugerencias).
+/// [NivelCoincidencia.aproximada] y en las sugerencias). [distanciaMetros]
+/// es la distancia en línea recta (Haversine) desde la posición con la que
+/// se buscó; `null` si no se dio posición.
 class ResultadoBusqueda {
   final String id;
   final String nombre;
   final NivelCoincidencia nivel;
   final String? aliasCoincidente;
   final int distanciaEdicion;
+  final double? distanciaMetros;
 
   const ResultadoBusqueda({
     required this.id,
@@ -61,11 +69,22 @@ class ResultadoBusqueda {
     required this.nivel,
     this.aliasCoincidente,
     this.distanciaEdicion = 0,
+    this.distanciaMetros,
   });
+
+  ResultadoBusqueda _conDistancia(double? metros) => ResultadoBusqueda(
+        id: id,
+        nombre: nombre,
+        nivel: nivel,
+        aliasCoincidente: aliasCoincidente,
+        distanciaEdicion: distanciaEdicion,
+        distanciaMetros: metros,
+      );
 
   @override
   String toString() => 'ResultadoBusqueda($id, $nivel'
       '${distanciaEdicion == 0 ? '' : ', distancia: $distanciaEdicion'}'
+      '${distanciaMetros == null ? '' : ', ${distanciaMetros!.round()} m'}'
       '${aliasCoincidente == null ? '' : ', alias: $aliasCoincidente'})';
 }
 
@@ -166,13 +185,16 @@ class BuscadorUbicaciones {
   /// 1. Los resultados de [buscar].
   /// 2. Si no hay, los de [buscarAproximado].
   /// 3. Si tampoco hay, ningún resultado y, si existe, la [sugerir].
-  RespuestaBusqueda consultar(String consulta) {
+  ///
+  /// Con [posicion], cada resultado trae su distancia en línea recta y
+  /// los empates se ordenan por ella (ver [buscar]).
+  RespuestaBusqueda consultar(String consulta, {PosicionGeo? posicion}) {
     final escrita = consulta.trim();
-    final exactos = buscar(escrita);
+    final exactos = buscar(escrita, posicion: posicion);
     if (exactos.isNotEmpty) {
       return RespuestaBusqueda(consulta: escrita, resultados: exactos);
     }
-    final aproximados = buscarAproximado(escrita);
+    final aproximados = buscarAproximado(escrita, posicion: posicion);
     if (aproximados.isNotEmpty) {
       return RespuestaBusqueda(consulta: escrita, resultados: aproximados);
     }
@@ -182,7 +204,12 @@ class BuscadorUbicaciones {
   /// Los lugares que coinciden con [consulta], del más al menos relevante
   /// (ver [NivelCoincidencia]); dentro de un mismo nivel, en orden
   /// alfabético. Vacía si [consulta] no tiene letras ni dígitos.
-  List<ResultadoBusqueda> buscar(String consulta) {
+  ///
+  /// Con [posicion], cada resultado trae su
+  /// [ResultadoBusqueda.distanciaMetros] y, dentro de un mismo nivel, el más
+  /// cercano va primero (y después el alfabético). La distancia nunca sube
+  /// un resultado sobre otro de mejor nivel.
+  List<ResultadoBusqueda> buscar(String consulta, {PosicionGeo? posicion}) {
     final normalizada = normalizarParaBusqueda(consulta);
     if (normalizada.isEmpty) return const [];
     final palabras = palabrasDeConsulta(normalizada);
@@ -194,16 +221,18 @@ class BuscadorUbicaciones {
         encontrados.add((entrada: entrada, resultado: resultado));
       }
     }
-    return _ordenados(encontrados);
+    return _ordenados(encontrados, posicion);
   }
 
   /// Los lugares que coinciden con [consulta] tolerando errores de dedo,
   /// palabra por palabra: cada palabra de la consulta tiene que parecerse
   /// al inicio de alguna palabra del nombre (o de un alias) con a lo más
   /// [toleranciaDeErrores] letras distintas. Ordenados por la suma de esas
-  /// distancias (menor primero) y luego alfabéticamente.
-  List<ResultadoBusqueda> buscarAproximado(String consulta) =>
-      _ordenados(_aproximados(consulta, toleranciaDeErrores));
+  /// distancias (menor primero), luego por distancia en línea recta a
+  /// [posicion] si se da, y luego alfabéticamente.
+  List<ResultadoBusqueda> buscarAproximado(String consulta,
+          {PosicionGeo? posicion}) =>
+      _ordenados(_aproximados(consulta, toleranciaDeErrores), posicion);
 
   /// El lugar más parecido a [consulta] para "¿Quisiste decir...?": la
   /// suma de las distancias de sus palabras es a lo más
@@ -217,7 +246,7 @@ class BuscadorUbicaciones {
       return menosDeLaMitad < kDistanciaMaximaSugerencia
           ? menosDeLaMitad
           : kDistanciaMaximaSugerencia;
-    }));
+    }), null);
     for (final c in candidatos) {
       if (c.distanciaEdicion <= kDistanciaMaximaSugerencia) return c;
     }
@@ -280,21 +309,44 @@ class BuscadorUbicaciones {
     return total;
   }
 
-  /// Ordenados por nivel, luego por distancia de edición y luego
-  /// alfabéticamente.
-  static List<ResultadoBusqueda> _ordenados(List<_Candidato> candidatos) {
-    final lista = [...candidatos]..sort((a, b) {
+  /// Ordenados por nivel, luego por distancia de edición, luego (con
+  /// [posicion]) por distancia en línea recta y luego alfabéticamente. Con
+  /// [posicion], cada resultado lleva su distancia en metros (Haversine;
+  /// no se calcula ninguna ruta).
+  static List<ResultadoBusqueda> _ordenados(
+      List<_Candidato> candidatos, PosicionGeo? posicion) {
+    final conDistancia = posicion == null
+        ? candidatos
+        : [
+            for (final c in candidatos)
+              (
+                entrada: c.entrada,
+                resultado: c.resultado
+                    ._conDistancia(_metrosA(c.entrada.ubicacion, posicion)),
+              ),
+          ];
+    final lista = [...conDistancia]..sort((a, b) {
         final porNivel =
             a.resultado.nivel.index.compareTo(b.resultado.nivel.index);
         if (porNivel != 0) return porNivel;
         final porDistancia = a.resultado.distanciaEdicion
             .compareTo(b.resultado.distanciaEdicion);
         if (porDistancia != 0) return porDistancia;
+        // Sin coordenadas, después de los que sí tienen.
+        final porMetros = (a.resultado.distanciaMetros ?? double.infinity)
+            .compareTo(b.resultado.distanciaMetros ?? double.infinity);
+        if (porMetros != 0) return porMetros;
         final porClave = a.entrada.claveOrden.compareTo(b.entrada.claveOrden);
         if (porClave != 0) return porClave;
         return a.resultado.nombre.compareTo(b.resultado.nombre);
       });
     return [for (final c in lista) c.resultado];
+  }
+
+  static double? _metrosA(UbicacionBuscable u, PosicionGeo posicion) {
+    final lat = u.lat, lng = u.lng;
+    if (lat == null || lng == null) return null;
+    return distanciaHaversineMetros(posicion.lat, posicion.lng, lat, lng);
   }
 
   /// El mejor nivel con el que alguna forma de [entrada] coincide. A igual
