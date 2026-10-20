@@ -246,7 +246,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(botonReset, findsNothing);
-      expect(find.byIcon(Icons.zoom_out_map), findsNothing);
+      expect(find.byIcon(Icons.zoom_out), findsNothing);
     });
 
     testWidgets('no aparece por debajo del umbral (×$kUmbralEscalaConZoom)',
@@ -281,9 +281,9 @@ void main() {
           greaterThan(kUmbralEscalaConZoom));
       expect(botonReset, findsOneWidget);
       expect(find.bySemanticsLabel('Restablecer vista'), findsOneWidget);
-      expect(find.byIcon(Icons.zoom_out_map), findsOneWidget);
+      expect(find.byIcon(Icons.zoom_out), findsOneWidget);
 
-      final boton = tester.getRect(find.byIcon(Icons.zoom_out_map));
+      final boton = tester.getRect(find.byIcon(Icons.zoom_out));
       final mapaRect = tester.getRect(find.byType(MapImageArea));
       expect(boton.left - mapaRect.left, lessThan(30));
       expect(mapaRect.bottom - boton.bottom, lessThan(30));

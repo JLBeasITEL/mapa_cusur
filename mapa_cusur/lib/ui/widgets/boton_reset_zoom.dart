@@ -60,7 +60,7 @@ class _Boton extends StatelessWidget {
             child: const SizedBox(
               width: 40,
               height: 40,
-              child: Icon(Icons.zoom_out_map,
+              child: Icon(Icons.zoom_out,
                   size: 22, color: Color(0xFF3B82F6)),
             ),
           ),
