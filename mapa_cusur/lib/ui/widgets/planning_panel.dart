@@ -59,32 +59,13 @@ class PlanningPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(40), topRight: Radius.circular(40)),
-        boxShadow: [
-          BoxShadow(
-              color: const Color(0xFF3B82F6).withValues(alpha: 0.08),
-              blurRadius: 20,
-              spreadRadius: 5,
-              offset: const Offset(0, -5))
-        ],
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
+    // El fondo blanco, los bordes redondeados y la rayita superior los pone
+    // PanelColapsable; aquí solo va el contenido, debajo de la rayita.
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(28, 0, 28, 16),
       child: SingleChildScrollView(
         child: Column(
           children: [
-            // --- RAYITA SUPERIOR ---
-            Container(
-                width: 50,
-                height: 5,
-                margin: const EdgeInsets.only(bottom: 20),
-                decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(10))),
-
             Row(
               children: [
                 Expanded(

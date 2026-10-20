@@ -32,6 +32,7 @@ import '../mapa/lienzo_mapa.dart';
 import '../navegacion/llegada_destino.dart';
 import '../theme/poppins.dart';
 import '../widgets/map_image_area.dart';
+import '../widgets/panel_colapsable.dart';
 import '../widgets/panel_instrumentacion.dart';
 import '../widgets/planning_panel.dart';
 import '../widgets/selector_sesion_campo.dart';
@@ -675,69 +676,68 @@ class _CampusMapScreenState extends State<CampusMapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
+    final media = MediaQuery.of(context);
+    final screenHeight = media.size.height;
     return Scaffold(
       backgroundColor: const Color(0xFFF1F5F9),
       body: SafeArea(
         child: Stack(
           children: [
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              height: screenHeight * 0.4,
-              child: MapImageArea(
-                ruta: rutaCalculada.nodos,
-                grafo: _grafo,
-                transformacion: _transformacionActiva,
-                markerImage: markerImage,
-                onNodoSeleccionado: _seleccionarDesdeMapa,
-                ubicacionGPS: _ubicacionActual,
-                disparadorZoom: disparadorZoom,
-                disparadorReinicioCamara: disparadorReinicioCamara,
-                onVerificarAqui:
-                    _modoVerificacion ? _registrarVerificacionEnNodo : null,
-                mapaVectorial: _mapaVectorial,
-                // El botón del panel de instrumentación ocupa la esquina
-                // superior derecha (top: 8, 40 px de alto).
-                margenSuperiorBotones: _modoInstrumentacion ? 56 : 8,
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: screenHeight * 0.5,
-              child: PlanningPanel(
-                ubicaciones: ubicacionesDisponibles,
-                buscador: _buscador,
-                historial: _historial,
-                posicionUsuario: _posicionParaBusqueda,
-                onCalcular: _comenzarRuta,
-                onDetener: _detenerRuta,
-                navegando: _navegando,
-                onGpsPressed: _toggleRastreoGPS,
-                isTracking: _rastreandoGPS,
-                tiempoEstimado: tiempoEstimado,
-                origenValue: origenSeleccionado,
-                destinoValue: destinoSeleccionado,
-                mapTapKey: mapTapKey,
-                onOrigenChanged: (val) {
-                  setState(() {
-                    origenSeleccionado = val;
-                    rutaCalculada = Ruta.vacia;
-                    tiempoEstimado = "";
-                  });
-                },
-                onDestinoChanged: (val) {
-                  setState(() {
-                    destinoSeleccionado = val;
-                    _navegando = false;
-                    rutaCalculada = Ruta.vacia;
-                    tiempoEstimado = "";
-                  });
-                },
-                onLimpiar: _limpiarRuta,
+            Positioned.fill(
+              child: PanelColapsable(
+                alturaExpandida: screenHeight * 0.5,
+                // El alto del SafeArea sin el teclado: aquí, fuera del
+                // Scaffold, viewPadding no cambia al abrirlo.
+                alturaDisponible: screenHeight -
+                    media.viewPadding.top -
+                    media.viewPadding.bottom,
+                cuerpo: MapImageArea(
+                  ruta: rutaCalculada.nodos,
+                  grafo: _grafo,
+                  transformacion: _transformacionActiva,
+                  markerImage: markerImage,
+                  onNodoSeleccionado: _seleccionarDesdeMapa,
+                  ubicacionGPS: _ubicacionActual,
+                  disparadorZoom: disparadorZoom,
+                  disparadorReinicioCamara: disparadorReinicioCamara,
+                  onVerificarAqui:
+                      _modoVerificacion ? _registrarVerificacionEnNodo : null,
+                  mapaVectorial: _mapaVectorial,
+                  // El botón del panel de instrumentación ocupa la esquina
+                  // superior derecha (top: 8, 40 px de alto).
+                  margenSuperiorBotones: _modoInstrumentacion ? 56 : 8,
+                ),
+                panel: PlanningPanel(
+                  ubicaciones: ubicacionesDisponibles,
+                  buscador: _buscador,
+                  historial: _historial,
+                  posicionUsuario: _posicionParaBusqueda,
+                  onCalcular: _comenzarRuta,
+                  onDetener: _detenerRuta,
+                  navegando: _navegando,
+                  onGpsPressed: _toggleRastreoGPS,
+                  isTracking: _rastreandoGPS,
+                  tiempoEstimado: tiempoEstimado,
+                  origenValue: origenSeleccionado,
+                  destinoValue: destinoSeleccionado,
+                  mapTapKey: mapTapKey,
+                  onOrigenChanged: (val) {
+                    setState(() {
+                      origenSeleccionado = val;
+                      rutaCalculada = Ruta.vacia;
+                      tiempoEstimado = "";
+                    });
+                  },
+                  onDestinoChanged: (val) {
+                    setState(() {
+                      destinoSeleccionado = val;
+                      _navegando = false;
+                      rutaCalculada = Ruta.vacia;
+                      tiempoEstimado = "";
+                    });
+                  },
+                  onLimpiar: _limpiarRuta,
+                ),
               ),
             ),
             if (_modoInstrumentacion)
