@@ -39,6 +39,7 @@ Las cifras del grafo que aparecen más abajo en este README (144 nodos, 1 980 ru
 - [Permisos](#permisos)
 - [Documentos del refactor](#documentos-del-refactor)
 - [Limitaciones conocidas y trabajo futuro](#limitaciones-conocidas-y-trabajo-futuro)
+- [Licencia](#licencia)
 
 ## Descripción general
 
@@ -302,4 +303,14 @@ El nombre visible de la app es **RutaCUSur** en ambas plataformas; el identifica
 - No hay CI configurado.
 
 
-- © 2026 Juan Luis Beas. Todos los derechos reservados. Código publicado solo como portafolio.
+## Licencia
+
+El código de este repositorio se distribuye bajo la [PolyForm Noncommercial License 1.0.0](LICENSE.md): puede estudiarse, modificarse y redistribuirse con cualquier fin no comercial (estudio personal, investigación, uso en instituciones educativas), conservando el aviso de copyright. El uso comercial requiere autorización expresa del autor.
+
+> Required Notice: Copyright 2026 Juan Luis Beas Vázquez (https://github.com/JLBeasITEL)
+
+Esa licencia no cubre los siguientes materiales de terceros incluidos en el repositorio, que conservan sus propios términos:
+
+- `mapa_cusur/assets/campus_vector.json`: datos derivados de OpenStreetMap, bajo la ODbL 1.0 (ver [Licencia de los datos (ODbL)](#licencia-de-los-datos-odbl)).
+- `mapa_cusur/assets/fonts/`: tipografía Poppins, bajo la SIL Open Font License (`OFL.txt`).
+- `mapa_cusur/assets/mapa_CUSur.png`: imagen basada en el «Mapa interactivo CUSUR» publicado en Genially por neri.gsoto (2021), usada con fines académicos; sus derechos pertenecen a su autor.
